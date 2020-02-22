@@ -19,7 +19,7 @@ typealias RequestFailure = (_ error: APIError?) -> Void
 //---
 typealias NetworkSuccess = (_ data: BaseResponse ) -> Void
 
-let noInternet = APIError(code: 2000, message: "No Internet")
+let noInternet = APIError(code: 2000, message: ["No Internet"])
 
 //---
 struct SuccessHandler<T> {
@@ -173,7 +173,7 @@ extension NetworkRequest {
     }
 
     private func makeUrl(path: String) -> URL {
-        let BASE_URL = "https://eop.datxanh.com.vn/"
+        let BASE_URL = "http://test.api.bizkasa.com"
         if let baseUrl = URL(string: BASE_URL) {
             let url = baseUrl.appendingPathComponent(path)
             print("\n---------------------- URL -------------------------------\n")

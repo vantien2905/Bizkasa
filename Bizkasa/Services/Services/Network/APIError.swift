@@ -10,21 +10,21 @@ import UIKit
 
 // MARK APPError
 struct APPError {
-    static let canNotParseData = APIError(message: "Can Not Parse Data")
+    static let canNotParseData = APIError(message: ["Can Not Parse Data"])
 }
 
 // MARK: APIError class
 class APIError: Error {
     let code: Int?
-    let message: String?
+    let message: [String]?
     var data: Any? = nil
 
-    init(code: Int?, message: String?) {
+    init(code: Int?, message: [String]?) {
         self.code = code
         self.message = message
     }
 
-    init(message: String?) {
+    init(message: [String]?) {
         self.message = message
         self.code = nil
     }
@@ -44,6 +44,6 @@ class APIError: Error {
 
     init(error: Error?) {
         self.code = nil
-        self.message = error?.localizedDescription
+        self.message = [(error?.localizedDescription ?? "")]
     }
 }

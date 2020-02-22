@@ -22,10 +22,9 @@ protocol EndPointType {
 struct DefaultHeader {
     func addAuthHeader() -> [String: String] {
         var header: [String: String] = ["Content-Type": "application/json"]
-//        if let authenticate = UserDefaultHelper.shared.get(key: AppKey.authenticatedUserDepartment) {
-//            header[AppKey.authenticatedUserDepartment] = authenticate
-////            header["User-Agent"] = "com.pvgas"
-//        }
+        if let authenticate = UserDefaultHelper.shared.get(key: AppKey.tokenID) {
+            header[AppKey.tokenID] = authenticate
+        }
         return header
     }
 }

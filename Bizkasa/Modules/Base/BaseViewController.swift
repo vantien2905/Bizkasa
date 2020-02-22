@@ -52,7 +52,7 @@ class BaseViewController: UIViewController {
     let btnNavi : UIButton = UIButton()
     
     func setUpViews() {
-        if UtilsHelper.isIpad() {
+        if CommonHelper.isIpad() {
             SlideInPresentationManager.shared.direction = .center
             SlideInPresentationManager.shared.sizePercent = 4/5
             //            SlideInPresentationManager.shared.direction = .center
@@ -409,7 +409,7 @@ extension BaseViewController {
                             textColor: UIColor = UIColor.white,
                             action: Selector? = nil ) {
         let lb = UILabel()
-        lb.font = UtilsHelper.isIpad() ? .muliBold25 : .muliBold19
+        lb.font = CommonHelper.isIpad() ? .muliBold25 : .muliBold19
         lb.text             = title
         lb.textAlignment    = .center
         lb.numberOfLines    = 2

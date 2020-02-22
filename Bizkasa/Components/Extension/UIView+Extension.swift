@@ -37,11 +37,19 @@ extension UIView {
     }
 
     func setShadow() {
-        self.backgroundColor = UIColor.blue
+        self.backgroundColor = UIColor.white
+//        self.layer.shadowColor = UIColor.black.cgColor
+//        self.layer.shadowRadius = 5
+//        self.layer.shadowOpacity = 0.75
+//        self.layer.shadowOffset = .zero
+
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = 5
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 5
-        self.layer.shadowOpacity = 0.75
-        self.layer.shadowOffset = .zero
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowRadius = 3.0
     }
 
     func setShadowCircle() {

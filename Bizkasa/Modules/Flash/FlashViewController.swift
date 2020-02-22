@@ -18,19 +18,28 @@ class FlashViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-                if UtilsHelper.isIpad() {
+                if CommonHelper.isIpad() {
                     SideMenuController.preferences.basic.menuWidth = 400
                 } else {
                     SideMenuController.preferences.basic.menuWidth = 300
                 }
                 CATransaction.begin()
                 CATransaction.setCompletionBlock({
-                    let home = HomeRouter.createModule().convertNavi()
-                    let menu = LeftMenuRouter.createModule()
-                    let vc = SideMenuController(contentViewController: home, menuViewController: menu)
-                    self.view.window?.rootViewController = vc
+                    self.gotoLogin()
                 })
                 CATransaction.commit()
+    }
+
+    private func gotoHome() {
+        let home = HomeRouter.createModule().convertNavi()
+        let menu = LeftMenuRouter.createModule()
+        let vc = SideMenuController(contentViewController: home, menuViewController: menu)
+        self.view.window?.rootViewController = vc
+    }
+
+    private func gotoLogin() {
+        let vc = LoginRouter.createModule().convertNavi()
+        self.view.window?.rootViewController = vc
     }
 
 }

@@ -33,12 +33,6 @@ struct APINetwork: APINetworkProtocol {
     func requestData(endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
         print("\n******************_____Parameter_____*********************\n")
         print(endPoint.parameters)
-
-        if !UtilsHelper.isConnectedToInternet() {
-            print("Not connect internet")
-            return
-        }
-
         ProgressView.shared.show()
         request.requestData(endPoint: endPoint, success: { data in
             let json = JSON(data)
@@ -51,49 +45,20 @@ struct APINetwork: APINetworkProtocol {
                 print(json)
             }
 
-            if let dic = json.dictionaryObject, let encryptString = dic["d"] as? String {
-                let decryptString = DecryptHelper.shared.decryptAES(cleanText: encryptString)&
-                do {
-                    let decryptJson =  try JSONSerialization.jsonObject(with: decryptString.data(using: .utf8)!, options: []) as? [String: Any]
-                    guard let result = Mapper<BaseResponse>().map(JSONObject: decryptJson) else {
-                        failure(APPError.canNotParseData)
-                        ProgressView.shared.hide()
-                        return
-                    }
-                    self.handleResponse(response: result, success: success, failure: failure)
-                    ProgressView.shared.hide()
-                } catch let error as NSError {
-                    print(error)
-                    failure(APPError.canNotParseData)
-                    ProgressView.shared.hide()
-                    return
-                }
-            } else {
-                //-- Result no format BaseResponse, only string encrypt
-                //Hard code need fix again
-                let encryptString = String(data: data, encoding: .utf8)
-                let fix = encryptString?.replacingOccurrences(of: "\"", with: "")
-                let decryptString = DecryptHelper.shared.decryptAES(cleanText: fix&)&
-                do {
-                    let decryptJson =  try JSONSerialization.jsonObject(with: decryptString.data(using: .utf8)!, options: []) as? [String: Any]
-                    guard let result = Mapper<BaseResponse>().map(JSONObject: decryptJson) else {
-                        failure(APPError.canNotParseData)
-                        ProgressView.shared.hide()
-                        return
-                    }
-                    self.handleResponse(response: result, success: success, failure: failure)
-                    ProgressView.shared.hide()
-                } catch let error as NSError {
-                    print(error)
-                    failure(APPError.canNotParseData)
-                    ProgressView.shared.hide()
-                    return
-                }
+            guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
+                
+                failure(APPError.canNotParseData)
+                ProgressView.shared.hide()
+                return
             }
+
+            self.handleResponse(response: result, success: success, failure: failure)
+            ProgressView.shared.hide()
         }) { error in
             print("APINetwork - requestData: \(String(describing: error?.code?.description&))")
             failure(APIError(error: error))
             ProgressView.shared.hide()
+
         }
     }
 
@@ -132,7 +97,7 @@ struct APINetwork: APINetworkProtocol {
 // handle base response
 extension APINetwork {
     private func handleResponse(response: BaseResponse, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
-        if response.status == 200 || response.status == nil || response.status == 1 {
+        if response.data != nil {
             success(response)
         } else {
             // handle error with message from API

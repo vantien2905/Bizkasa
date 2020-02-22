@@ -9,14 +9,14 @@
 import Alamofire
 
 enum UserEndPoint {
-    case getSecretKey
+    case login(userName: String, password: String)
 }
 
 extension UserEndPoint: EndPointType {
     var path: String {
         switch self {
-        case .getSecretKey:
-            return "mobileapis/SurePortalServices.svc/GetEncryptKey"
+        case .login:
+            return "api/Account/login"
         }
     }
 
@@ -29,16 +29,9 @@ extension UserEndPoint: EndPointType {
 
     var parameters: JSONDictionary {
         switch self {
-        case .getSecretKey:
-            var secretKey = ""
-            if let udidDevice: UUID = UIDevice.current.identifierForVendor {
-                secretKey += udidDevice.uuidString
-            } else {
-                secretKey += "XXX-XXX"
-            }
-//            let dateTime = Date().toFormatDate(format: "yyyy_MM_dd_HH_mm")
-//            secretKey += "_\(dateTime)"
-            return ["secretKey":secretKey]
+        case .login(let userName, let password):
+            return ["UserName": userName,
+                    "Password": password]
         }
     }
 

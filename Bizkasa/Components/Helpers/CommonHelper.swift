@@ -1,21 +1,39 @@
 //
-//  CommonHelper.swift
-//  DXG E-Office
+//  UtilsHelper.swift
+//  Vebrary
 //
-//  Created by DINH VAN TIEN on 12/3/19.
+//  Created by DINH VAN TIEN on 5/14/19.
 //  Copyright © 2019 DINH VAN TIEN. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Alamofire
 
-class ValidateHelper {
-    static let shared = ValidateHelper()
+class CommonHelper {
 
-    func canOpenURL(string: String?) -> Bool {
-        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", argumentArray:[regEx])
-        return predicate.evaluate(with: string)
+    static func isConnectedToInternet() -> Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
     }
 
+    static func isIpad() -> Bool {
+        if UIDevice().userInterfaceIdiom == .pad {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    static func gotoHome() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let home = HomeRouter.createModule().convertNavi()
+        let menu = LeftMenuRouter.createModule()
+        let vc = SideMenuController(contentViewController: home, menuViewController: menu)
+        appDelegate.window?.rootViewController = vc
+    }
+
+    static func gotoLogin() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let vc = LoginRouter.createModule()
+        appDelegate.window?.rootViewController = vc
+    }
 }

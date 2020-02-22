@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+            <connections>
+                <outlet property="tfContent" destination="mr6-xB-ESw" id="jxN-UU-KGE"/>
+                <outlet property="vBottomLine" destination="QNI-7o-5dN" id="jU7-qS-D1W"/>
+                <outlet property="vTitle" destination="rfC-ON-9oo" id="bMB-vt-BDr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="722" height="141"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bfq-wg-DtU">
+                    <rect key="frame" x="0.0" y="0.0" width="722" height="141"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfC-ON-9oo" customClass="AppTitleLogo" customModule="Bizkasa" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="722" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="fhR-Co-UEd"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mr6-xB-ESw">
+                            <rect key="frame" x="0.0" y="35" width="722" height="106"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-7o-5dN">
+                    <rect key="frame" x="0.0" y="140" width="722" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="eEB-mY-CPB"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="QNI-7o-5dN" firstAttribute="leading" secondItem="Bfq-wg-DtU" secondAttribute="leading" id="Nbc-Vt-PHy"/>
+                <constraint firstItem="Bfq-wg-DtU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Qgc-MX-QwL"/>
+                <constraint firstItem="QNI-7o-5dN" firstAttribute="trailing" secondItem="Bfq-wg-DtU" secondAttribute="trailing" id="UCv-sU-MlK"/>
+                <constraint firstItem="QNI-7o-5dN" firstAttribute="bottom" secondItem="Bfq-wg-DtU" secondAttribute="bottom" id="bsH-cz-Q5f"/>
+                <constraint firstItem="Bfq-wg-DtU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="pAi-S8-5QL"/>
+                <constraint firstAttribute="bottom" secondItem="Bfq-wg-DtU" secondAttribute="bottom" id="qxn-bP-4mQ"/>
+                <constraint firstItem="Bfq-wg-DtU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rZ2-Zu-HIU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="130.43478260869566" y="-140.29017857142856"/>
+        </view>
+    </objects>
+</document>

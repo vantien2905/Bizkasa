@@ -18,6 +18,10 @@ class LeftMenuViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func btnLogoutTapped() {
+        let vc = LoginRouter.createModule().convertNavi()
+        self.view.window?.rootViewController = vc
+    }
 }
 
 extension LeftMenuViewController: LeftMenuViewProtocol {

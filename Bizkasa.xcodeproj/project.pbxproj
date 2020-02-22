@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30957D02401084A00335639 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957CF2401084A00335639 /* UserEntity.swift */; };
+		B30957D824010B4400335639 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957D224010B4400335639 /* LoginPresenter.swift */; };
+		B30957D924010B4400335639 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957D324010B4400335639 /* LoginRouter.swift */; };
+		B30957DA24010B4400335639 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957D424010B4400335639 /* LoginViewController.swift */; };
+		B30957DB24010B4400335639 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957D524010B4400335639 /* LoginProtocols.swift */; };
+		B30957DC24010B4400335639 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957D624010B4400335639 /* LoginInteractor.swift */; };
+		B30957DD24010B4400335639 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957D724010B4400335639 /* LoginViewController.xib */; };
+		B30957E42401115300335639 /* AppTextFieldLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957DF2401115300335639 /* AppTextFieldLogo.xib */; };
+		B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E02401115300335639 /* AppTextFieldLogo.swift */; };
+		B30957E62401115300335639 /* AppTitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E22401115300335639 /* AppTitleLogo.swift */; };
+		B30957E72401115300335639 /* AppTitleLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957E32401115300335639 /* AppTitleLogo.xib */; };
 		B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97D23F9102E0088259F /* AppDelegate.swift */; };
 		B3E7B98023F9102E0088259F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97F23F9102E0088259F /* SceneDelegate.swift */; };
 		B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E7B98823F910310088259F /* LaunchScreen.storyboard */; };
@@ -130,10 +141,10 @@
 		B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2423F9105F0088259F /* SlideInPresentationManager.swift */; };
 		B3E7BAA823F9105F0088259F /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2523F9105F0088259F /* SlideInPresentationController.swift */; };
 		B3E7BAA923F9105F0088259F /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2723F9105F0088259F /* UserDefaultHelper.swift */; };
-		B3E7BAAA23F9105F0088259F /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2823F9105F0088259F /* CommonHelper.swift */; };
+		B3E7BAAA23F9105F0088259F /* ValidateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2823F9105F0088259F /* ValidateHelper.swift */; };
 		B3E7BAAB23F9105F0088259F /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2923F9105F0088259F /* LocalizationManager.swift */; };
 		B3E7BAAC23F9105F0088259F /* PlayVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2A23F9105F0088259F /* PlayVideoHelper.swift */; };
-		B3E7BAAD23F9105F0088259F /* UtilsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2B23F9105F0088259F /* UtilsHelper.swift */; };
+		B3E7BAAD23F9105F0088259F /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2B23F9105F0088259F /* CommonHelper.swift */; };
 		B3E7BAAE23F9105F0088259F /* DecryptHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2C23F9105F0088259F /* DecryptHelper.swift */; };
 		B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2D23F9105F0088259F /* CheckVersionHelper.swift */; };
 		B3E7BAB023F9105F0088259F /* ShareNativeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2E23F9105F0088259F /* ShareNativeHelper.swift */; };
@@ -147,6 +158,17 @@
 		53C1EF7F6741F2BF9CEC0E32 /* Pods_Bizkasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bizkasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C98898A87A52BB3D16E1F8 /* Pods-Bizkasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizkasa.release.xcconfig"; path = "Target Support Files/Pods-Bizkasa/Pods-Bizkasa.release.xcconfig"; sourceTree = "<group>"; };
 		9414DF4D33B12289940FA143 /* Pods-Bizkasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bizkasa.debug.xcconfig"; path = "Target Support Files/Pods-Bizkasa/Pods-Bizkasa.debug.xcconfig"; sourceTree = "<group>"; };
+		B30957CF2401084A00335639 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		B30957D224010B4400335639 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		B30957D324010B4400335639 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		B30957D424010B4400335639 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B30957D524010B4400335639 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		B30957D624010B4400335639 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		B30957D724010B4400335639 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B30957DF2401115300335639 /* AppTextFieldLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTextFieldLogo.xib; sourceTree = "<group>"; };
+		B30957E02401115300335639 /* AppTextFieldLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFieldLogo.swift; sourceTree = "<group>"; };
+		B30957E22401115300335639 /* AppTitleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleLogo.swift; sourceTree = "<group>"; };
+		B30957E32401115300335639 /* AppTitleLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTitleLogo.xib; sourceTree = "<group>"; };
 		B3E7B97A23F9102E0088259F /* Bizkasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizkasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B97D23F9102E0088259F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E7B97F23F9102E0088259F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -272,10 +294,10 @@
 		B3E7BA2423F9105F0088259F /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		B3E7BA2523F9105F0088259F /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
 		B3E7BA2723F9105F0088259F /* UserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
-		B3E7BA2823F9105F0088259F /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
+		B3E7BA2823F9105F0088259F /* ValidateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2923F9105F0088259F /* LocalizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		B3E7BA2A23F9105F0088259F /* PlayVideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoHelper.swift; sourceTree = "<group>"; };
-		B3E7BA2B23F9105F0088259F /* UtilsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsHelper.swift; sourceTree = "<group>"; };
+		B3E7BA2B23F9105F0088259F /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2C23F9105F0088259F /* DecryptHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2D23F9105F0088259F /* CheckVersionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVersionHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2E23F9105F0088259F /* ShareNativeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareNativeHelper.swift; sourceTree = "<group>"; };
@@ -304,6 +326,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B30957D124010B3100335639 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				B30957E824012BAF00335639 /* Login */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		B30957DE2401115300335639 /* AppTextFieldLogo */ = {
+			isa = PBXGroup;
+			children = (
+				B30957DF2401115300335639 /* AppTextFieldLogo.xib */,
+				B30957E02401115300335639 /* AppTextFieldLogo.swift */,
+			);
+			path = AppTextFieldLogo;
+			sourceTree = "<group>";
+		};
+		B30957E12401115300335639 /* AppTitleLogo */ = {
+			isa = PBXGroup;
+			children = (
+				B30957E22401115300335639 /* AppTitleLogo.swift */,
+				B30957E32401115300335639 /* AppTitleLogo.xib */,
+			);
+			path = AppTitleLogo;
+			sourceTree = "<group>";
+		};
+		B30957E824012BAF00335639 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B30957D224010B4400335639 /* LoginPresenter.swift */,
+				B30957D324010B4400335639 /* LoginRouter.swift */,
+				B30957D424010B4400335639 /* LoginViewController.swift */,
+				B30957D524010B4400335639 /* LoginProtocols.swift */,
+				B30957D624010B4400335639 /* LoginInteractor.swift */,
+				B30957D724010B4400335639 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		B3E7B97123F9102E0088259F = {
 			isa = PBXGroup;
 			children = (
@@ -328,13 +389,10 @@
 				B3E7B9A423F9105F0088259F /* Cells */,
 				B3E7B9D423F9105F0088259F /* Components */,
 				B3E7B9A523F9105F0088259F /* Entities */,
-				B3E7B9A623F9105F0088259F /* Modules */,
 				B3E7B99123F9105F0088259F /* Services */,
+				B3E7B9A623F9105F0088259F /* Modules */,
 				B3E7B9D123F9105F0088259F /* SupportFiles */,
-				B3E7B97D23F9102E0088259F /* AppDelegate.swift */,
-				B3E7B97F23F9102E0088259F /* SceneDelegate.swift */,
 				B3E7B98823F910310088259F /* LaunchScreen.storyboard */,
-				B3E7B98B23F910310088259F /* Info.plist */,
 			);
 			path = Bizkasa;
 			sourceTree = "<group>";
@@ -430,6 +488,7 @@
 		B3E7B9A523F9105F0088259F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				B30957CF2401084A00335639 /* UserEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -437,6 +496,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B30957D124010B3100335639 /* UserManager */,
 				B3E7B9A723F9105F0088259F /* Home */,
 				B3E7B9AE23F9105F0088259F /* LeftMenu */,
 				B3E7B9B523F9105F0088259F /* Flash */,
@@ -528,6 +588,9 @@
 		B3E7B9D123F9105F0088259F /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B3E7B98B23F910310088259F /* Info.plist */,
+				B3E7B97D23F9102E0088259F /* AppDelegate.swift */,
+				B3E7B97F23F9102E0088259F /* SceneDelegate.swift */,
 				B3E7B9D223F9105F0088259F /* Assets.xcassets */,
 				B3E7BAB323F9167D0088259F /* Color.xcassets */,
 			);
@@ -671,6 +734,8 @@
 		B3E7BA2123F9105F0088259F /* CustomerViews */ = {
 			isa = PBXGroup;
 			children = (
+				B30957DE2401115300335639 /* AppTextFieldLogo */,
+				B30957E12401115300335639 /* AppTitleLogo */,
 				B3E7BA2223F9105F0088259F /* Presentation */,
 			);
 			path = CustomerViews;
@@ -690,10 +755,10 @@
 			isa = PBXGroup;
 			children = (
 				B3E7BA2723F9105F0088259F /* UserDefaultHelper.swift */,
-				B3E7BA2823F9105F0088259F /* CommonHelper.swift */,
+				B3E7BA2823F9105F0088259F /* ValidateHelper.swift */,
 				B3E7BA2923F9105F0088259F /* LocalizationManager.swift */,
 				B3E7BA2A23F9105F0088259F /* PlayVideoHelper.swift */,
-				B3E7BA2B23F9105F0088259F /* UtilsHelper.swift */,
+				B3E7BA2B23F9105F0088259F /* CommonHelper.swift */,
 				B3E7BA2C23F9105F0088259F /* DecryptHelper.swift */,
 				B3E7BA2D23F9105F0088259F /* CheckVersionHelper.swift */,
 				B3E7BA2E23F9105F0088259F /* ShareNativeHelper.swift */,
@@ -775,11 +840,14 @@
 				B3E7BA5C23F9105F0088259F /* DatePickerViewController.xib in Resources */,
 				B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
+				B30957E72401115300335639 /* AppTitleLogo.xib in Resources */,
 				B3E7BA4723F9105F0088259F /* FlashViewController.xib in Resources */,
+				B30957E42401115300335639 /* AppTextFieldLogo.xib in Resources */,
 				B3E7BA4123F9105F0088259F /* LeftMenuViewController.xib in Resources */,
 				B3E7BA3C23F9105F0088259F /* HomeViewController.xib in Resources */,
 				B3E7BA5F23F9105F0088259F /* Assets.xcassets in Resources */,
 				B3E7BA5823F9105F0088259F /* DateTimePickerViewController.xib in Resources */,
+				B30957DD24010B4400335639 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,24 +959,29 @@
 				B3E7BA9D23F9105F0088259F /* ProgressViewWhite.swift in Sources */,
 				B3E7BAA023F9105F0088259F /* EnumParamSearch.swift in Sources */,
 				B3E7BA9B23F9105F0088259F /* KActivityIndicatorAnimationDelegate.swift in Sources */,
-				B3E7BAAD23F9105F0088259F /* UtilsHelper.swift in Sources */,
+				B3E7BAAD23F9105F0088259F /* CommonHelper.swift in Sources */,
 				B3E7BA8F23F9105F0088259F /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				B30957DB24010B4400335639 /* LoginProtocols.swift in Sources */,
 				B3E7BA8C23F9105F0088259F /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				B3E7BA3923F9105F0088259F /* Provider.swift in Sources */,
 				B3E7BA4C23F9105F0088259F /* FlashProtocols.swift in Sources */,
 				B3E7BA8423F9105F0088259F /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				B3E7BA9923F9105F0088259F /* KActivityIndicatorShape.swift in Sources */,
 				B3E7BA9023F9105F0088259F /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				B30957E62401115300335639 /* AppTitleLogo.swift in Sources */,
+				B30957D02401084A00335639 /* UserEntity.swift in Sources */,
 				B3E7BA4E23F9105F0088259F /* StatusBar.swift in Sources */,
 				B3E7BA7F23F9105F0088259F /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				B3E7BA6723F9105F0088259F /* UIView+Extension.swift in Sources */,
 				B3E7BA3323F9105F0088259F /* Network.swift in Sources */,
 				B3E7BA9423F9105F0088259F /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				B3E7BA9323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				B30957D824010B4400335639 /* LoginPresenter.swift in Sources */,
 				B3E7BA7B23F9105F0088259F /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				B3E7BAA423F9105F0088259F /* AppKey.swift in Sources */,
 				B3E7BA4F23F9105F0088259F /* UIViewController+Container.swift in Sources */,
 				B3E7BAAE23F9105F0088259F /* DecryptHelper.swift in Sources */,
+				B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */,
 				B3E7BA8A23F9105F0088259F /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				B3E7BA3123F9105F0088259F /* APIError.swift in Sources */,
 				B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */,
@@ -924,7 +997,8 @@
 				B3E7BA6323F9105F0088259F /* UIDevice+Extension.swift in Sources */,
 				B3E7BA4223F9105F0088259F /* LeftMenuPresenter.swift in Sources */,
 				B3E7BA9823F9105F0088259F /* KActivityIndicatorType.swift in Sources */,
-				B3E7BAAA23F9105F0088259F /* CommonHelper.swift in Sources */,
+				B30957DC24010B4400335639 /* LoginInteractor.swift in Sources */,
+				B3E7BAAA23F9105F0088259F /* ValidateHelper.swift in Sources */,
 				B3E7BA6623F9105F0088259F /* UIButton+Extension.swift in Sources */,
 				B3E7BA5723F9105F0088259F /* BaseViewController.swift in Sources */,
 				B3E7BA5323F9105F0088259F /* TransitionContext.swift in Sources */,
@@ -932,6 +1006,7 @@
 				B3E7BA5E23F9105F0088259F /* BaseView.swift in Sources */,
 				B3E7BA5023F9105F0088259F /* UIView+Container.swift in Sources */,
 				B3E7BA8523F9105F0088259F /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				B30957D924010B4400335639 /* LoginRouter.swift in Sources */,
 				B3E7BA6823F9105F0088259F /* UIImage+Extension.swift in Sources */,
 				B3E7BA7023F9105F0088259F /* UIViewExtensions.swift in Sources */,
 				B3E7BA7123F9105F0088259F /* Loading+Extension.swift in Sources */,
@@ -949,6 +1024,7 @@
 				B3E7BA4523F9105F0088259F /* LeftMenuInteractor.swift in Sources */,
 				B3E7BA3623F9105F0088259F /* DeviceParam.swift in Sources */,
 				B3E7BA5123F9105F0088259F /* Preferences.swift in Sources */,
+				B30957DA24010B4400335639 /* LoginViewController.swift in Sources */,
 				B3E7BA8E23F9105F0088259F /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				B3E7BA5923F9105F0088259F /* DatePickerViewController.swift in Sources */,
 				B3E7BA7723F9105F0088259F /* KActivityIndicatorAnimationOrbit.swift in Sources */,
@@ -1094,7 +1170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Bizkasa/Info.plist;
+				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1112,7 +1188,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Bizkasa/Info.plist;
+				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

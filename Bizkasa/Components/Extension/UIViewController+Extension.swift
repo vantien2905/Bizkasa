@@ -166,7 +166,7 @@ extension UIViewController {
         guard let navi = self.navigationController else { return }
         let viewControllers: [UIViewController] = navi.viewControllers as [UIViewController]
         print(viewControllers.count)
-        if UtilsHelper.isIpad() && viewControllers.count < 2 {
+        if CommonHelper.isIpad() && viewControllers.count < 2 {
             let backButton = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
             navigationItem.leftBarButtonItem = backButton
         }

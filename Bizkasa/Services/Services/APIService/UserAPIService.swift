@@ -9,7 +9,7 @@
 import Foundation
 
 protocol UserAPIServiceProtocol {
-    func getSecretKey(success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func login(userName: String, password: String, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
 }
 
 class UserAPIService: UserAPIServiceProtocol {
@@ -20,9 +20,9 @@ class UserAPIService: UserAPIServiceProtocol {
         self.network = network
     }
 
-    func getSecretKey(success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
-        let endPoint = UserEndPoint.getSecretKey
-        network.requestSecretKey(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
+    func login(userName: String, password: String, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.login(userName: userName, password: password)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
 }
 

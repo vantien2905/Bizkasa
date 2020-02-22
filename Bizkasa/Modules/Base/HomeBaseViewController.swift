@@ -14,7 +14,7 @@ class HomeBaseViewController: BaseViewController {
     let btTitle: UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = UIColor.clear
-        button.setTitle("Trang Chủ".uppercased() + "  ▼", for: .normal)
+        button.setTitle("Trang Chủ".uppercased(), for: .normal)
         button.setTitleColor(AppColor.whiteColor, for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 225, height: 40)
         button.titleLabel?.font = .muliBold17
@@ -91,7 +91,7 @@ class HomeBaseViewController: BaseViewController {
         self.btTitle.sizeToFit()
         vTitleNaviMenu.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         //        btTitle.sizeToFit()
-        btTitle.addTarget(self, action: #selector(actionTitle), for: .touchUpInside)
+//        btTitle.addTarget(self, action: #selector(actionTitle), for: .touchUpInside)
     }
 
     func setUpView() {

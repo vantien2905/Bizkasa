@@ -17,7 +17,7 @@ enum FontType: String {
 
 extension UIFont {
     static func createFont(type: FontType, size: Int) -> UIFont {
-        return  UIFont.systemFont(ofSize: 14)
+        return  UIFont.systemFont(ofSize: 16)
     }
 
     static var muliSemiBold14: UIFont {

@@ -11,9 +11,8 @@ import ObjectMapper
 // Base
 class BaseResponse: Mappable {
     var status: Int?
-    var message: String?
+    var message: [String]?
     var data: Any?
-    var key: String?
 
     required init?(map: Map) {
         mapping(map: map)
@@ -21,25 +20,8 @@ class BaseResponse: Mappable {
 
     func mapping(map: Map) {
         status      <- map["Status"]
-        message     <- map["Message"]
+        message     <- map["Errors"]
         data        <- map["Data"]
-        key         <- map["d"]
-    }
-}
-
-class BaseResponseOld: Mappable {
-    var status: Int?
-    var message: String?
-    var key: String?
-
-    required init?(map: Map) {
-        mapping(map: map)
-    }
-
-    func mapping(map: Map) {
-        status      <- map["Status"]
-        message     <- map["Message"]
-        key         <- map["d"]
     }
 }
 

@@ -22,5 +22,6 @@ struct AppKey {
     static let moduleCodeSelected               = "ModuleCodeSelected"
     static let USER_LAST_ROOT_MENU_KEY          = "USER_LAST_ROOT_MENU_KEY"
     static let AUTHENTICATED_USER_DEPARTMENT    = "AuthenticatedUserDepartment"
+    static let tokenID  = "TokenId"
 
 }

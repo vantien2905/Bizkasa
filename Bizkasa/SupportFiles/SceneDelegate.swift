@@ -20,13 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let _ = (scene as? UIWindowScene) else { return }
 
-                if let windowScene = scene as? UIWindowScene {
-                    window = UIWindow(windowScene: windowScene)
-                    let flash = FlashRouter.createModule()
-        //            let navigation = UINavigationController(rootViewController: home)
-                    window?.rootViewController = flash
-                    window?.makeKeyAndVisible()
-                }
+        if let windowScene = scene as? UIWindowScene {
+            window = UIWindow(windowScene: windowScene)
+            let flash = FlashRouter.createModule()
+            UIApplication.shared.statusBarStyle = .lightContent
+            //            let navigation = UINavigationController(rootViewController: home)
+            window?.rootViewController = flash
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

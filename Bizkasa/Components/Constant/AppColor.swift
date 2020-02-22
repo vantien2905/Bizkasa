@@ -11,6 +11,7 @@ import UIKit
 struct AppColor {
     static let main                 = UIColor(named: "Main")!
     static let secondMain           = UIColor(named: "secondMain")!
+    static let line   = UIColor(hexString: "#81C784")
 
     static let btnEnable            = UIColor(named: "btnEnable")!
     static let btnDisable           = UIColor(named: "btnDisable")!
