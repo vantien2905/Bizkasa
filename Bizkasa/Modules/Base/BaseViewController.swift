@@ -37,7 +37,7 @@ class BaseViewController: UIViewController {
     let lbNoData: UILabel = {
         let lb = UILabel()
         lb.text = "KHÔNG CÓ DỮ LIỆU !"
-        lb.font = .muliRegular15
+        lb.font = .regular15
         lb.font = UIFont.boldSystemFont(ofSize: lb.font.pointSize)
         lb.textColor = .black
         
@@ -66,7 +66,7 @@ class BaseViewController: UIViewController {
         self.navigationBar?.shadowImage = UIImage()
         self.navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationBar?.isTranslucent = false
-        self.navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.muliSemiBold22]
+        self.navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.semiBold22]
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -353,7 +353,7 @@ extension BaseViewController {
         if style == .right {
             _title = title
         }
-        btnNavi.frame = CGRect(x: 0, y: 0, width: _title.widthOfString(usingFont: .muliRegular17) + 20, height: 44)
+        btnNavi.frame = CGRect(x: 0, y: 0, width: _title.widthOfString(usingFont: .regular17) + 20, height: 44)
         btnNavi.setTitle(_title, for: .normal)
         btnNavi.setTitleColor(textColor, for: .normal)
         btnNavi.titleLabel?.font = UIFont.systemFont(ofSize: 17)
@@ -409,7 +409,7 @@ extension BaseViewController {
                             textColor: UIColor = UIColor.white,
                             action: Selector? = nil ) {
         let lb = UILabel()
-        lb.font = CommonHelper.isIpad() ? .muliBold25 : .muliBold19
+        lb.font = CommonHelper.isIpad() ? .bold25 : .bold19
         lb.text             = title
         lb.textAlignment    = .center
         lb.numberOfLines    = 2

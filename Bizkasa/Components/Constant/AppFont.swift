@@ -9,74 +9,70 @@
 import UIKit
 
 enum FontType: String {
-    case muliSemiBold = "Muli-SemiBold"
-    case muliRegular = "Muli-Regular"
-    case muliBold = "Muli-Bold"
-    case muliItalic = "Muli-Italic"
+    case semiBold = "Roboto-Medium"
+    case regular = "Roboto-Regular"
+    case bold = "Roboto-Bold"
+    case italic = "Roboto-Italic"
 }
 
 extension UIFont {
     static func createFont(type: FontType, size: Int) -> UIFont {
-        return  UIFont.systemFont(ofSize: 16)
+        return  UIFont(name: type.rawValue, size: CGFloat(size))!
     }
 
-    static var muliSemiBold14: UIFont {
-        return createFont(type: .muliSemiBold, size: 14)
+    static var bold14: UIFont {
+        return createFont(type: .semiBold, size: 14)
     }
 
-    static var muliRegular15: UIFont {
-        return createFont(type: .muliRegular, size: 15)
+    static var regular15: UIFont {
+        return createFont(type: .regular, size: 15)
     }
 
-    static var muliRegular20: UIFont {
-        return createFont(type: .muliRegular, size: 20)
+    static var regular20: UIFont {
+        return createFont(type: .regular, size: 20)
     }
 
-    static var muliSemiBold15: UIFont {
-        return createFont(type: .muliSemiBold, size: 15)
+    static var semiBold15: UIFont {
+        return createFont(type: .semiBold, size: 15)
     }
 
-    static var muliSemiBold17: UIFont {
-        return createFont(type: .muliSemiBold, size: 17)
+    static var semiBold17: UIFont {
+        return createFont(type: .semiBold, size: 17)
     }
 
-    static var muliSemiBold22: UIFont {
-        return createFont(type: .muliSemiBold, size: 22)
+    static var semiBold22: UIFont {
+        return createFont(type: .semiBold, size: 22)
     }
 
-    static var muliRegular17: UIFont {
-        return createFont(type: .muliRegular, size: 17)
+    static var regular17: UIFont {
+        return createFont(type: .regular, size: 17)
     }
 
-    static var muliBold11: UIFont {
-        return createFont(type: .muliBold, size: 11)
+    static var bold11: UIFont {
+        return createFont(type: .bold, size: 11)
+    }
+    
+    static var bold17: UIFont {
+        return createFont(type: .bold, size: 17)
     }
 
-    static var muliBold14: UIFont {
-        return createFont(type: .muliBold, size: 14)
+    static var bold19: UIFont {
+        return createFont(type: .bold, size: 19)
     }
 
-    static var muliBold17: UIFont {
-        return createFont(type: .muliBold, size: 17)
+    static var bold25: UIFont {
+        return createFont(type: .bold, size: 25)
     }
 
-    static var muliBold19: UIFont {
-        return createFont(type: .muliBold, size: 19)
+    static var regular11: UIFont {
+        return createFont(type: .regular, size: 11)
     }
 
-    static var muliBold25: UIFont {
-        return createFont(type: .muliBold, size: 25)
+    static var italic11: UIFont {
+        return createFont(type: .italic, size: 11)
     }
 
-    static var muliRegular11: UIFont {
-        return createFont(type: .muliRegular, size: 11)
-    }
-
-    static var muliItalic11: UIFont {
-        return createFont(type: .muliItalic, size: 11)
-    }
-
-    static var muliItalic12: UIFont {
-        return createFont(type: .muliItalic, size: 12)
+    static var italic12: UIFont {
+        return createFont(type: .italic, size: 12)
     }
 }

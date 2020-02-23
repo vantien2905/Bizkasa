@@ -17,7 +17,7 @@ class HomeBaseViewController: BaseViewController {
         button.setTitle("Trang Chủ".uppercased(), for: .normal)
         button.setTitleColor(AppColor.whiteColor, for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 225, height: 40)
-        button.titleLabel?.font = .muliBold17
+        button.titleLabel?.font = .bold17
         button.titleLabel?.minimumScaleFactor = 0.7
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.showsTouchWhenHighlighted = true
