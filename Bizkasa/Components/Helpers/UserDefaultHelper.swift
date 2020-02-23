@@ -15,11 +15,20 @@ class UserDefaultHelper: NSObject {
 
     let userDefaultManager = UserDefaults.standard
 
+    func saveLogin(user: UserEntity) {
+            userDefaultManager.set(user.AuthToken&, forKey: AppKey.tokenID)
+
+            userDefaultManager.set(user.UserName&, forKey: AppKey.userName)
+            userDefaultManager.set(user.Logo&, forKey: AppKey.logo)
+    //        UserDefaultHelper.shared.saveToken()
+    //        userDefaultManager.synchronize
+        }
+
     func clearDataUser() {
-        userDefaultManager.removeObject(forKey: AppKey.userData)
-        userDefaultManager.removeObject(forKey: AppKey.authenticatedUserDepartment)
-        userDefaultManager.removeObject(forKey: AppKey.indexDepartment)
-        userDefaultManager.removeObject(forKey: AppKey.CalendarType)
+//        userDefaultManager.removeObject(forKey: AppKey.userData)
+        userDefaultManager.removeObject(forKey: AppKey.tokenID)
+        userDefaultManager.removeObject(forKey: AppKey.userName)
+        userDefaultManager.removeObject(forKey: AppKey.logo)
     }
 
     func save(_ value: Any?, key: String) {

@@ -67,6 +67,7 @@ extension LoginViewController: LoginViewProtocol {
 
         if let result = result {
             print(result)
+            UserDefaultHelper.shared.saveLogin(user: result)
             let home = HomeRouter.createModule().convertNavi()
             let menu = LeftMenuRouter.createModule()
             let vc = SideMenuController(contentViewController: home, menuViewController: menu)

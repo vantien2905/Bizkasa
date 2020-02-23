@@ -12,22 +12,31 @@ import UIKit
 
 class FlashViewController: UIViewController {
 
-	var presenter: FlashPresenterProtocol?
+    var presenter: FlashPresenterProtocol?
 
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-                if CommonHelper.isIpad() {
-                    SideMenuController.preferences.basic.menuWidth = 400
-                } else {
-                    SideMenuController.preferences.basic.menuWidth = 300
-                }
-                CATransaction.begin()
-                CATransaction.setCompletionBlock({
-                    self.gotoLogin()
-                })
-                CATransaction.commit()
+        if CommonHelper.isIpad() {
+            SideMenuController.preferences.basic.menuWidth = 400
+        } else {
+            SideMenuController.preferences.basic.menuWidth = 300
+        }
+
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            self.checkLogin()
+        })
+        CATransaction.commit()
+    }
+
+    private func checkLogin() {
+        if let _ = UserDefaultHelper.shared.get(key: AppKey.tokenID) {
+            gotoHome()
+        } else {
+            gotoLogin()
+        }
     }
 
     private func gotoHome() {
@@ -45,5 +54,5 @@ class FlashViewController: UIViewController {
 }
 
 extension FlashViewController: FlashViewProtocol {
-	
+
 }

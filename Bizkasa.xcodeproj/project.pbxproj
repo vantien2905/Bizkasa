@@ -18,6 +18,18 @@
 		B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E02401115300335639 /* AppTextFieldLogo.swift */; };
 		B30957E62401115300335639 /* AppTitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E22401115300335639 /* AppTitleLogo.swift */; };
 		B30957E72401115300335639 /* AppTitleLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957E32401115300335639 /* AppTitleLogo.xib */; };
+		B379541E24029722007768B8 /* HomeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B379541C24029722007768B8 /* HomeCVCell.swift */; };
+		B379541F24029722007768B8 /* HomeCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B379541D24029722007768B8 /* HomeCVCell.xib */; };
+		B37954282402A43F007768B8 /* ListRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37954222402A43F007768B8 /* ListRoomPresenter.swift */; };
+		B37954292402A43F007768B8 /* ListRoomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37954232402A43F007768B8 /* ListRoomRouter.swift */; };
+		B379542A2402A43F007768B8 /* ListRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37954242402A43F007768B8 /* ListRoomViewController.swift */; };
+		B379542B2402A43F007768B8 /* ListRoomProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37954252402A43F007768B8 /* ListRoomProtocols.swift */; };
+		B379542C2402A43F007768B8 /* ListRoomInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37954262402A43F007768B8 /* ListRoomInteractor.swift */; };
+		B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37954272402A43F007768B8 /* ListRoomViewController.xib */; };
+		B37954312402A48E007768B8 /* ListRoomCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B379542F2402A48E007768B8 /* ListRoomCVCell.swift */; };
+		B37954322402A48E007768B8 /* ListRoomCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37954302402A48E007768B8 /* ListRoomCVCell.xib */; };
+		B37954362402A8FA007768B8 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37954342402A8FA007768B8 /* LeftMenuCell.swift */; };
+		B37954372402A8FA007768B8 /* LeftMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37954352402A8FA007768B8 /* LeftMenuCell.xib */; };
 		B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97D23F9102E0088259F /* AppDelegate.swift */; };
 		B3E7B98023F9102E0088259F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97F23F9102E0088259F /* SceneDelegate.swift */; };
 		B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E7B98823F910310088259F /* LaunchScreen.storyboard */; };
@@ -145,7 +157,6 @@
 		B3E7BAAB23F9105F0088259F /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2923F9105F0088259F /* LocalizationManager.swift */; };
 		B3E7BAAC23F9105F0088259F /* PlayVideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2A23F9105F0088259F /* PlayVideoHelper.swift */; };
 		B3E7BAAD23F9105F0088259F /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2B23F9105F0088259F /* CommonHelper.swift */; };
-		B3E7BAAE23F9105F0088259F /* DecryptHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2C23F9105F0088259F /* DecryptHelper.swift */; };
 		B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2D23F9105F0088259F /* CheckVersionHelper.swift */; };
 		B3E7BAB023F9105F0088259F /* ShareNativeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2E23F9105F0088259F /* ShareNativeHelper.swift */; };
 		B3E7BAB123F9105F0088259F /* AttachFileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */; };
@@ -169,6 +180,18 @@
 		B30957E02401115300335639 /* AppTextFieldLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFieldLogo.swift; sourceTree = "<group>"; };
 		B30957E22401115300335639 /* AppTitleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleLogo.swift; sourceTree = "<group>"; };
 		B30957E32401115300335639 /* AppTitleLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTitleLogo.xib; sourceTree = "<group>"; };
+		B379541C24029722007768B8 /* HomeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCVCell.swift; sourceTree = "<group>"; };
+		B379541D24029722007768B8 /* HomeCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCVCell.xib; sourceTree = "<group>"; };
+		B37954222402A43F007768B8 /* ListRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomPresenter.swift; sourceTree = "<group>"; };
+		B37954232402A43F007768B8 /* ListRoomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomRouter.swift; sourceTree = "<group>"; };
+		B37954242402A43F007768B8 /* ListRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomViewController.swift; sourceTree = "<group>"; };
+		B37954252402A43F007768B8 /* ListRoomProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomProtocols.swift; sourceTree = "<group>"; };
+		B37954262402A43F007768B8 /* ListRoomInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomInteractor.swift; sourceTree = "<group>"; };
+		B37954272402A43F007768B8 /* ListRoomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListRoomViewController.xib; sourceTree = "<group>"; };
+		B379542F2402A48E007768B8 /* ListRoomCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomCVCell.swift; sourceTree = "<group>"; };
+		B37954302402A48E007768B8 /* ListRoomCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListRoomCVCell.xib; sourceTree = "<group>"; };
+		B37954342402A8FA007768B8 /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		B37954352402A8FA007768B8 /* LeftMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuCell.xib; sourceTree = "<group>"; };
 		B3E7B97A23F9102E0088259F /* Bizkasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizkasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B97D23F9102E0088259F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E7B97F23F9102E0088259F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,7 +321,6 @@
 		B3E7BA2923F9105F0088259F /* LocalizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		B3E7BA2A23F9105F0088259F /* PlayVideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2B23F9105F0088259F /* CommonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
-		B3E7BA2C23F9105F0088259F /* DecryptHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2D23F9105F0088259F /* CheckVersionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckVersionHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2E23F9105F0088259F /* ShareNativeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareNativeHelper.swift; sourceTree = "<group>"; };
 		B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachFileHelper.swift; sourceTree = "<group>"; };
@@ -363,6 +385,55 @@
 				B30957D724010B4400335639 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B379541B240296EC007768B8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B379541C24029722007768B8 /* HomeCVCell.swift */,
+				B379541D24029722007768B8 /* HomeCVCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B37954202402A3F0007768B8 /*  Receptionist */ = {
+			isa = PBXGroup;
+			children = (
+				B37954212402A42E007768B8 /* ListRoom */,
+			);
+			path = " Receptionist";
+			sourceTree = "<group>";
+		};
+		B37954212402A42E007768B8 /* ListRoom */ = {
+			isa = PBXGroup;
+			children = (
+				B379542E2402A47C007768B8 /* Cell */,
+				B37954222402A43F007768B8 /* ListRoomPresenter.swift */,
+				B37954232402A43F007768B8 /* ListRoomRouter.swift */,
+				B37954242402A43F007768B8 /* ListRoomViewController.swift */,
+				B37954252402A43F007768B8 /* ListRoomProtocols.swift */,
+				B37954262402A43F007768B8 /* ListRoomInteractor.swift */,
+				B37954272402A43F007768B8 /* ListRoomViewController.xib */,
+			);
+			path = ListRoom;
+			sourceTree = "<group>";
+		};
+		B379542E2402A47C007768B8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B379542F2402A48E007768B8 /* ListRoomCVCell.swift */,
+				B37954302402A48E007768B8 /* ListRoomCVCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B37954332402A8E2007768B8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B37954342402A8FA007768B8 /* LeftMenuCell.swift */,
+				B37954352402A8FA007768B8 /* LeftMenuCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B3E7B97123F9102E0088259F = {
@@ -496,6 +567,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B37954202402A3F0007768B8 /*  Receptionist */,
 				B30957D124010B3100335639 /* UserManager */,
 				B3E7B9A723F9105F0088259F /* Home */,
 				B3E7B9AE23F9105F0088259F /* LeftMenu */,
@@ -509,6 +581,7 @@
 		B3E7B9A723F9105F0088259F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B379541B240296EC007768B8 /* Cell */,
 				B3E7B9A823F9105F0088259F /* HomeInteractor.swift */,
 				B3E7B9A923F9105F0088259F /* HomeViewController.xib */,
 				B3E7B9AA23F9105F0088259F /* HomeViewController.swift */,
@@ -522,6 +595,7 @@
 		B3E7B9AE23F9105F0088259F /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
+				B37954332402A8E2007768B8 /* Cell */,
 				B3E7B9AF23F9105F0088259F /* LeftMenuViewController.xib */,
 				B3E7B9B023F9105F0088259F /* LeftMenuPresenter.swift */,
 				B3E7B9B123F9105F0088259F /* LeftMenuProtocols.swift */,
@@ -759,7 +833,6 @@
 				B3E7BA2923F9105F0088259F /* LocalizationManager.swift */,
 				B3E7BA2A23F9105F0088259F /* PlayVideoHelper.swift */,
 				B3E7BA2B23F9105F0088259F /* CommonHelper.swift */,
-				B3E7BA2C23F9105F0088259F /* DecryptHelper.swift */,
 				B3E7BA2D23F9105F0088259F /* CheckVersionHelper.swift */,
 				B3E7BA2E23F9105F0088259F /* ShareNativeHelper.swift */,
 				B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */,
@@ -839,13 +912,17 @@
 			files = (
 				B3E7BA5C23F9105F0088259F /* DatePickerViewController.xib in Resources */,
 				B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */,
+				B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
 				B30957E72401115300335639 /* AppTitleLogo.xib in Resources */,
 				B3E7BA4723F9105F0088259F /* FlashViewController.xib in Resources */,
+				B37954372402A8FA007768B8 /* LeftMenuCell.xib in Resources */,
+				B379541F24029722007768B8 /* HomeCVCell.xib in Resources */,
 				B30957E42401115300335639 /* AppTextFieldLogo.xib in Resources */,
 				B3E7BA4123F9105F0088259F /* LeftMenuViewController.xib in Resources */,
 				B3E7BA3C23F9105F0088259F /* HomeViewController.xib in Resources */,
 				B3E7BA5F23F9105F0088259F /* Assets.xcassets in Resources */,
+				B37954322402A48E007768B8 /* ListRoomCVCell.xib in Resources */,
 				B3E7BA5823F9105F0088259F /* DateTimePickerViewController.xib in Resources */,
 				B30957DD24010B4400335639 /* LoginViewController.xib in Resources */,
 			);
@@ -935,9 +1012,12 @@
 				B3E7BA4023F9105F0088259F /* HomeProtocols.swift in Sources */,
 				B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */,
 				B3E7BA9523F9105F0088259F /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
+				B37954362402A8FA007768B8 /* LeftMenuCell.swift in Sources */,
 				B3E7BAA623F9105F0088259F /* SlideInPresentationAnimator.swift in Sources */,
 				B3E7BAA523F9105F0088259F /* AppFont.swift in Sources */,
 				B3E7BA8823F9105F0088259F /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				B379542B2402A43F007768B8 /* ListRoomProtocols.swift in Sources */,
+				B37954282402A43F007768B8 /* ListRoomPresenter.swift in Sources */,
 				B3E7BA6D23F9105F0088259F /* UIDate+Extension.swift in Sources */,
 				B3E7BA6123F9105F0088259F /* UIApplication+Extension.swift in Sources */,
 				B3E7BAA923F9105F0088259F /* UserDefaultHelper.swift in Sources */,
@@ -945,7 +1025,9 @@
 				B3E7BA9F23F9105F0088259F /* NotificationName.swift in Sources */,
 				B3E7BA6E23F9105F0088259F /* WKWebView+Extension.swift in Sources */,
 				B3E7BA7223F9105F0088259F /* UILabel+Extensions.swift in Sources */,
+				B379541E24029722007768B8 /* HomeCVCell.swift in Sources */,
 				B3E7BA8723F9105F0088259F /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				B37954312402A48E007768B8 /* ListRoomCVCell.swift in Sources */,
 				B3E7BA3E23F9105F0088259F /* HomeRouter.swift in Sources */,
 				B3E7BA7423F9105F0088259F /* Array+Extension.swift in Sources */,
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
@@ -980,7 +1062,6 @@
 				B3E7BA7B23F9105F0088259F /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				B3E7BAA423F9105F0088259F /* AppKey.swift in Sources */,
 				B3E7BA4F23F9105F0088259F /* UIViewController+Container.swift in Sources */,
-				B3E7BAAE23F9105F0088259F /* DecryptHelper.swift in Sources */,
 				B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */,
 				B3E7BA8A23F9105F0088259F /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				B3E7BA3123F9105F0088259F /* APIError.swift in Sources */,
@@ -989,6 +1070,7 @@
 				B3E7BA7D23F9105F0088259F /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */,
 				B3E7BA9E23F9105F0088259F /* AppImage.swift in Sources */,
+				B379542A2402A43F007768B8 /* ListRoomViewController.swift in Sources */,
 				B3E7BA6F23F9105F0088259F /* UICollectionView+Extension.swift in Sources */,
 				B3E7BA9623F9105F0088259F /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				B3E7BA3F23F9105F0088259F /* HomePresenter.swift in Sources */,
@@ -1011,6 +1093,7 @@
 				B3E7BA7023F9105F0088259F /* UIViewExtensions.swift in Sources */,
 				B3E7BA7123F9105F0088259F /* Loading+Extension.swift in Sources */,
 				B3E7B98023F9102E0088259F /* SceneDelegate.swift in Sources */,
+				B37954292402A43F007768B8 /* ListRoomRouter.swift in Sources */,
 				B3E7BA7923F9105F0088259F /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B3E7BA8223F9105F0088259F /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				B3E7BA5523F9105F0088259F /* SideMenuController.swift in Sources */,
@@ -1018,6 +1101,7 @@
 				B3E7BA7623F9105F0088259F /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				B3E7BA8323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				B3E7BA6C23F9105F0088259F /* NSMutableAttributedString+Extension.swift in Sources */,
+				B379542C2402A43F007768B8 /* ListRoomInteractor.swift in Sources */,
 				B3E7BA6423F9105F0088259F /* UIColor+Extension.swift in Sources */,
 				B3E7BA7823F9105F0088259F /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				B3E7BA3723F9105F0088259F /* EndPointType.swift in Sources */,

@@ -20,6 +20,7 @@ class UserEntity: Mappable {
     var IsInShift: String?
     var HotelId: String?
     var OwnerHotels: String?
+    var AuthToken: String?
 
     required init?(map: Map) {
 
@@ -36,6 +37,7 @@ class UserEntity: Mappable {
         self.IsInShift <- map["IsInShift"]
         self.HotelId <- map["HotelId"]
         self.OwnerHotels <- map["OwnerHotels"]
+        self.AuthToken <- map["Token.AuthToken"]
     }
 
 }

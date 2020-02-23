@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListRoomViewController">
             <connections>
-                <outlet property="cvHome" destination="YX6-j3-jdc" id="G97-i4-VKb"/>
+                <outlet property="cvListRoom" destination="Ms8-hl-Ump" id="lk8-ky-fCI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,10 +19,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YX6-j3-jdc">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ms8-hl-Ump">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fCc-6d-itc">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HCy-XA-qff">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -32,10 +32,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="YX6-j3-jdc" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="4d2-4X-s01"/>
-                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="YX6-j3-jdc" secondAttribute="trailing" id="SbI-9J-Eup"/>
-                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="YX6-j3-jdc" secondAttribute="bottom" id="su8-CY-Ree"/>
-                <constraint firstItem="YX6-j3-jdc" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="x05-7I-yFg"/>
+                <constraint firstItem="Ms8-hl-Ump" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="Ic1-e4-45v"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="Ms8-hl-Ump" secondAttribute="bottom" id="NzN-31-sLq"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="Ms8-hl-Ump" secondAttribute="trailing" id="ezq-fd-bhs"/>
+                <constraint firstItem="Ms8-hl-Ump" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="fFW-lh-Aqv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <point key="canvasLocation" x="138" y="154"/>

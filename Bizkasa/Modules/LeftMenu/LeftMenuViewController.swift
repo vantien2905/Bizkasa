@@ -12,18 +12,51 @@ import UIKit
 
 class LeftMenuViewController: UIViewController {
 
-	var presenter: LeftMenuPresenterProtocol?
+    @IBOutlet weak var tbLeftMenu: UITableView!
 
-	override func viewDidLoad() {
+    var presenter: LeftMenuPresenterProtocol?
+
+    override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+    }
+
+    private func configureTableView() {
+        tbLeftMenu.registerTableCell(LeftMenuCell.self)
+        tbLeftMenu.delegate = self
+        tbLeftMenu.dataSource = self
+        tbLeftMenu.rowHeight = 50
     }
 
     @IBAction func btnLogoutTapped() {
-        let vc = LoginRouter.createModule().convertNavi()
-        self.view.window?.rootViewController = vc
+        self.showPopupAlert(title: "Đăng xuất", message: "Bạn có thực sự muốn đăng xuất?", actionTitles: ["Đồng ý", "Huỷ"], actions:  [{ (_) in
+            UserDefaultHelper.shared.clearDataUser()
+            let vc = LoginRouter.createModule().convertNavi()
+            self.view.window?.rootViewController = vc
+            }, { (_) in
+
+            }])
+
     }
 }
 
 extension LeftMenuViewController: LeftMenuViewProtocol {
-	
+
+}
+
+extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listTitle.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueTableCell(LeftMenuCell.self)
+        cell.lbTitle.text = listTitle[indexPath.row]
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ListRoomRouter.createModule().convertNavi()
+        sideMenuController?.setContentViewController(to: vc)
+    }
 }

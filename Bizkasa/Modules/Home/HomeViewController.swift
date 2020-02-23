@@ -10,17 +10,60 @@
 
 import UIKit
 
+let listTitle = ["Lễ tân",
+"Phiếu thu",
+"Phiếu chi",
+"Báo cáo thống kê",
+"Giao ca",
+"Cài đặt giá phòng",
+"Quản lý tầng/ lầu",
+"Dịch vụ",
+"Cấu hình hệ thống",
+"Thông tin khách sạn"]
+
+
 class HomeViewController: HomeBaseViewController {
+
+    @IBOutlet weak var cvHome: UICollectionView!
 
 	var presenter: HomePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        configureCollectionView()
+    }
+
+    private func configureCollectionView() {
+        cvHome.registerCollectionCell(HomeCVCell.self)
+        cvHome.delegate = self
+        cvHome.dataSource = self
+        let screen = UIScreen.main.bounds
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: screen.width/2, height: screen.width/2)
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        cvHome.collectionViewLayout = layout
     }
 
 }
 
 extension HomeViewController: HomeViewProtocol {
 	
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listTitle.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueCollectionCell(HomeCVCell.self, indexPath: indexPath)
+        cell.lbTitle.text = listTitle[indexPath.row]
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ListRoomRouter.createModule().convertNavi()
+        sideMenuController?.setContentViewController(to: vc)
+    }
 }

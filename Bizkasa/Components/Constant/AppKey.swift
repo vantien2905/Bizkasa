@@ -12,16 +12,8 @@ struct AppKey {
 
     static let domain                           = "Domain"
     static let userData                         = "UserData"
-    static let decryptKey                       = "DecryptKey"
-    static let secretKey                        = "SecretKey"
-    static let indexDepartment                  = "IndexDepartment"
-    static let authenticatedUserDepartment      = "AuthenticatedUserDepartment"
-    static let CalendarType                     = "CalenderType"
-    static let StartDate                        = "StartDate"
-    static let EndDate                          = "EndDate"
-    static let moduleCodeSelected               = "ModuleCodeSelected"
-    static let USER_LAST_ROOT_MENU_KEY          = "USER_LAST_ROOT_MENU_KEY"
-    static let AUTHENTICATED_USER_DEPARTMENT    = "AuthenticatedUserDepartment"
     static let tokenID  = "TokenId"
+    static let userName = "UserName"
+    static let logo = "Logo"
 
 }
