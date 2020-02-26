@@ -10,27 +10,32 @@
 
 import UIKit
 
-let listTitle = ["Lễ tân",
-"Phiếu thu",
-"Phiếu chi",
-"Báo cáo thống kê",
-"Giao ca",
-"Cài đặt giá phòng",
-"Quản lý tầng/ lầu",
-"Dịch vụ",
-"Cấu hình hệ thống",
-"Thông tin khách sạn"]
+let listTitle = ["Trang chủ",
+                 "Lễ tân",
+                 "Phiếu thu",
+                 "Phiếu chi",
+                 "Báo cáo thống kê",
+                 "Giao ca",
+                 "Cài đặt giá phòng",
+                 "Quản lý tầng/ lầu",
+                 "Dịch vụ",
+                 "Cấu hình hệ thống",
+                 "Thông tin khách sạn"]
 
 
 class HomeViewController: HomeBaseViewController {
 
     @IBOutlet weak var cvHome: UICollectionView!
 
-	var presenter: HomePresenterProtocol?
+    var presenter: HomePresenterProtocol?
 
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+    }
+
+    override func setUpNavigation() {
+        setTitleNavigation(title: "Trang chủ")
     }
 
     private func configureCollectionView() {
@@ -39,7 +44,7 @@ class HomeViewController: HomeBaseViewController {
         cvHome.dataSource = self
         let screen = UIScreen.main.bounds
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: screen.width/2, height: screen.width/2)
+        layout.itemSize = CGSize(width: screen.width/2, height: screen.width/4)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         cvHome.collectionViewLayout = layout
@@ -48,22 +53,25 @@ class HomeViewController: HomeBaseViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
-	
+
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listTitle.count
+        return listTitle.count - 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCollectionCell(HomeCVCell.self, indexPath: indexPath)
-        cell.lbTitle.text = listTitle[indexPath.row]
+        cell.lbTitle.text = listTitle[indexPath.row + 1]
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ListRoomRouter.createModule().convertNavi()
-        sideMenuController?.setContentViewController(to: vc)
+        if indexPath.row == 0 {
+            let vc = ListRoomRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
+        }
+
     }
 }

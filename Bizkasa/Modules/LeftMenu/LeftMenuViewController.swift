@@ -56,7 +56,13 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ListRoomRouter.createModule().convertNavi()
-        sideMenuController?.setContentViewController(to: vc)
+        sideMenuController?.hideMenu()
+        if indexPath.row == 0 {
+            let vc = HomeRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
+        } else {
+            let vc = TabbarReceptionistRouter.createModule()
+            sideMenuController?.setContentViewController(to: vc)
+        }
     }
 }

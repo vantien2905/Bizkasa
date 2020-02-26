@@ -49,7 +49,7 @@ class BaseViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    let btnNavi : UIButton = UIButton()
+    let btnNavi: UIButton = UIButton()
     
     func setUpViews() {
         if CommonHelper.isIpad() {
@@ -410,14 +410,12 @@ extension BaseViewController {
                             action: Selector? = nil ) {
         let lb = UILabel()
         lb.font = CommonHelper.isIpad() ? .bold25 : .bold19
-        lb.text             = title
+        lb.text             = title.uppercased()
         lb.textAlignment    = .center
         lb.numberOfLines    = 2
         lb.textColor        = textColor
         lb.sizeToFit()
         
-        //        let tap = UITapGestureRecognizer(target: self, action: action)
-        //        lb.addGestureRecognizer(tap)
         let vTest = UIView()
         vTest.frame = CGRect(x: 0, y: 0, width: 200, height: 44)
         vTest.addSubview(lb)

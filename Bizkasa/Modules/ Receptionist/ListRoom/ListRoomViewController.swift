@@ -21,6 +21,10 @@ class ListRoomViewController: HomeBaseViewController {
         configureCollectionView()
     }
 
+    override func setUpNavigation() {
+        setTitleNavigation(title: "Danh sách phòng")
+    }
+
     private func configureCollectionView() {
         cvListRoom.registerCollectionCell(ListRoomCVCell.self)
         cvListRoom.delegate = self
@@ -41,7 +45,7 @@ extension ListRoomViewController: ListRoomViewProtocol {
 
 extension ListRoomViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 40
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

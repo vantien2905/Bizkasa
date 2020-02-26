@@ -23,4 +23,8 @@ class HomeCVCell: UICollectionViewCell {
         super.draw(rect)
         vBackground.setShadow()
     }
+
+    func setData(index: Int) {
+        
+    }
 }
