@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.7.3)
   - CryptoSwift (0.7.2)
+  - DropDown (2.3.13)
   - ObjectMapper (3.3.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 4.7.3)
   - CryptoSwift (= 0.7.2)
+  - DropDown
   - ObjectMapper (= 3.3.0)
   - SDWebImage (= 4.4.2)
   - SwiftyJSON (= 4.2.0)
@@ -20,6 +22,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - CryptoSwift
+    - DropDown
     - ObjectMapper
     - SDWebImage
     - SwiftyJSON
@@ -28,11 +31,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: 7846b4514d5d7dd2808725e8ed33f94f7982a68d
+PODFILE CHECKSUM: 88631392c6edb7da1324e2db687b7ce66275226a
 
 COCOAPODS: 1.8.3

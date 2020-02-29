@@ -12,18 +12,47 @@ import UIKit
 
 class ListReceiptViewController: HomeBaseViewController {
 
+    @IBOutlet weak var tbReceipt: UITableView!
+
 	var presenter: ListReceiptPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
     }
 
     override func setUpNavigation() {
         setTitleNavigation(title: "Phiếu thu")
+        addButtonToNavigation(image: AppImage.imgAddNew, style: .right, action: #selector(btnAddNewTapped))
+    }
+
+    private func configureTableView() {
+        tbReceipt.registerTableCell(ListReceiptCell.self)
+        tbReceipt.delegate = self
+        tbReceipt.dataSource = self
+        tbReceipt.rowHeight = UITableView.automaticDimension
+    }
+
+    @objc func btnAddNewTapped() {
+        let vc = CreateNewReceiptRouter.createModule().convertNavi()
+        self.present(controller: vc)
     }
 
 }
 
 extension ListReceiptViewController: ListReceiptViewProtocol {
 	
+}
+
+extension ListReceiptViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueTableCell(ListReceiptCell.self)
+        return cell
+    }
+
+
 }

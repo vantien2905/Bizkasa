@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Italic.ttf">
+            <string>Roboto-Italic</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListReceiptViewController">
             <connections>
+                <outlet property="tbReceipt" destination="oRh-gW-glg" id="HiJ-VR-6XV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +23,53 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oRh-gW-glg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n54-NR-F0j">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-El-mn2">
+                            <rect key="frame" x="89.5" y="0.0" width="196.5" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng tiền:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-HG-zAT">
+                                    <rect key="frame" x="0.0" y="0.0" width="76" height="50"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250.000 VNĐ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-4A-jkb">
+                                    <rect key="frame" x="96" y="0.0" width="100.5" height="50"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="17"/>
+                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cJY-El-mn2" firstAttribute="centerX" secondItem="n54-NR-F0j" secondAttribute="centerX" id="Fpj-gE-XKp"/>
+                        <constraint firstAttribute="height" constant="50" id="eTm-3V-bpi"/>
+                        <constraint firstAttribute="bottom" secondItem="cJY-El-mn2" secondAttribute="bottom" id="f9b-89-B7E"/>
+                        <constraint firstItem="cJY-El-mn2" firstAttribute="top" secondItem="n54-NR-F0j" secondAttribute="top" id="uNB-Mh-uSm"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oRh-gW-glg" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="9Fs-oC-46s"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="n54-NR-F0j" secondAttribute="trailing" id="BEG-RE-Tvo"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="n54-NR-F0j" secondAttribute="bottom" id="CF0-6f-kw6"/>
+                <constraint firstItem="n54-NR-F0j" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="Mfe-xi-GTc"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="oRh-gW-glg" secondAttribute="bottom" id="Yth-V5-NqI"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="oRh-gW-glg" secondAttribute="trailing" id="nfK-U1-Oy9"/>
+                <constraint firstItem="oRh-gW-glg" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="v5A-xD-mOo"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
+            <point key="canvasLocation" x="140" y="121"/>
         </view>
     </objects>
 </document>

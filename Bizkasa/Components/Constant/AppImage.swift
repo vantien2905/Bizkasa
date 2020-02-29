@@ -24,5 +24,12 @@ struct AppImage {
     static let imgUser  = UIImage(named: "user")!
     static let imgPassword  = UIImage(named: "password")!
     static let imgSearchMore = UIImage(named: "imgSearchMore")!
+    static let imgReceipts = UIImage(named: "receipt")!
+    static let imgRoom = UIImage(named: "room")!
+    static let imgPayment = UIImage(named: "payment")!
+    static let imgAddNew = UIImage(named: "addNew")!
+    static let imgDropdown          = UIImage(named: "down")!.withRenderingMode(.alwaysTemplate)
+    static let selected             = UIImage(named: "selected")!
+    static let unselected           = UIImage(named: "unselected")!
 
 }

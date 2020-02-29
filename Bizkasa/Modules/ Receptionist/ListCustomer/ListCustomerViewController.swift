@@ -12,19 +12,40 @@ import UIKit
 
 class ListCustomerViewController: HomeBaseViewController {
 
+    @IBOutlet weak var tbCustomer: UITableView!
+
 	var presenter: ListCustomerPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+    }
+
+    private func configureTableView() {
+        tbCustomer.registerTableCell(ListCustomerCell.self)
+        tbCustomer.delegate = self
+        tbCustomer.dataSource = self
+        tbCustomer.rowHeight = UITableView.automaticDimension
     }
 
     override func setUpNavigation() {
         setTitleNavigation(title: "Khách đang ở")
     }
-
-
 }
 
 extension ListCustomerViewController: ListCustomerViewProtocol {
 	
+}
+
+extension ListCustomerViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueTableCell(ListCustomerCell.self)
+        return cell
+    }
+
+
 }

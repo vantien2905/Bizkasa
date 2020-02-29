@@ -50,8 +50,16 @@ extension ListRoomViewController: UICollectionViewDelegateFlowLayout, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCollectionCell(ListRoomCVCell.self, indexPath: indexPath)
+        cell.delegate = self
+        cell.isEmpty = true
         return cell
     }
+}
 
+extension ListRoomViewController: ListRoomCVCellDelegate {
+    func actionTapped(type: Int) {
+        let vc = CheckInRouter.createModule().convertNavi()
+        self.present(controller: vc)
+    }
 
 }

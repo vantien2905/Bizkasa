@@ -18,6 +18,32 @@
 		B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E02401115300335639 /* AppTextFieldLogo.swift */; };
 		B30957E62401115300335639 /* AppTitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E22401115300335639 /* AppTitleLogo.swift */; };
 		B30957E72401115300335639 /* AppTitleLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957E32401115300335639 /* AppTitleLogo.xib */; };
+		B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680990240A38FF002F8D00 /* ListCustomerCell.swift */; };
+		B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3680991240A38FF002F8D00 /* ListCustomerCell.xib */; };
+		B3680997240A452E002F8D00 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680995240A452E002F8D00 /* AppLabel.swift */; };
+		B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680996240A452E002F8D00 /* EdgeInsetLabel.swift */; };
+		B368099C240A4C61002F8D00 /* ListReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368099A240A4C61002F8D00 /* ListReceiptCell.swift */; };
+		B368099D240A4C61002F8D00 /* ListReceiptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B368099B240A4C61002F8D00 /* ListReceiptCell.xib */; };
+		B36809A5240A5777002F8D00 /* CreateNewReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B368099F240A5776002F8D00 /* CreateNewReceiptPresenter.swift */; };
+		B36809A6240A5777002F8D00 /* CreateNewReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809A0240A5776002F8D00 /* CreateNewReceiptRouter.swift */; };
+		B36809A7240A5777002F8D00 /* CreateNewReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809A1240A5776002F8D00 /* CreateNewReceiptViewController.swift */; };
+		B36809A8240A5777002F8D00 /* CreateNewReceiptProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809A2240A5776002F8D00 /* CreateNewReceiptProtocols.swift */; };
+		B36809A9240A5777002F8D00 /* CreateNewReceiptInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809A3240A5776002F8D00 /* CreateNewReceiptInteractor.swift */; };
+		B36809AA240A5777002F8D00 /* CreateNewReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36809A4240A5776002F8D00 /* CreateNewReceiptViewController.xib */; };
+		B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36809AC240A5AC4002F8D00 /* AppDropdown.xib */; };
+		B36809B2240A5AC5002F8D00 /* AppDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809AD240A5AC4002F8D00 /* AppDropdown.swift */; };
+		B36809B3240A5AC5002F8D00 /* AppDropdownBorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36809AF240A5AC4002F8D00 /* AppDropdownBorder.xib */; };
+		B36809B4240A5AC5002F8D00 /* AppDropdownBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809B0240A5AC4002F8D00 /* AppDropdownBorder.swift */; };
+		B36809BA240A5C8C002F8D00 /* ActionDropdownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36809B6240A5C8C002F8D00 /* ActionDropdownCell.xib */; };
+		B36809BB240A5C8C002F8D00 /* DropdownSelectedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809B7240A5C8C002F8D00 /* DropdownSelectedCell.swift */; };
+		B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36809B8240A5C8C002F8D00 /* DropdownSelectedCell.xib */; };
+		B36809BD240A5C8C002F8D00 /* ActionDropdownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809B9240A5C8C002F8D00 /* ActionDropdownCell.swift */; };
+		B36809C5240A6AC5002F8D00 /* CheckInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809BF240A6AC5002F8D00 /* CheckInPresenter.swift */; };
+		B36809C6240A6AC5002F8D00 /* CheckInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809C0240A6AC5002F8D00 /* CheckInRouter.swift */; };
+		B36809C7240A6AC5002F8D00 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809C1240A6AC5002F8D00 /* CheckInViewController.swift */; };
+		B36809C8240A6AC5002F8D00 /* CheckInProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809C2240A6AC5002F8D00 /* CheckInProtocols.swift */; };
+		B36809C9240A6AC5002F8D00 /* CheckInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36809C3240A6AC5002F8D00 /* CheckInInteractor.swift */; };
+		B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36809C4240A6AC5002F8D00 /* CheckInViewController.xib */; };
 		B379541E24029722007768B8 /* HomeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B379541C24029722007768B8 /* HomeCVCell.swift */; };
 		B379541F24029722007768B8 /* HomeCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B379541D24029722007768B8 /* HomeCVCell.xib */; };
 		B37954282402A43F007768B8 /* ListRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37954222402A43F007768B8 /* ListRoomPresenter.swift */; };
@@ -203,6 +229,32 @@
 		B30957E02401115300335639 /* AppTextFieldLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFieldLogo.swift; sourceTree = "<group>"; };
 		B30957E22401115300335639 /* AppTitleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleLogo.swift; sourceTree = "<group>"; };
 		B30957E32401115300335639 /* AppTitleLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTitleLogo.xib; sourceTree = "<group>"; };
+		B3680990240A38FF002F8D00 /* ListCustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCustomerCell.swift; sourceTree = "<group>"; };
+		B3680991240A38FF002F8D00 /* ListCustomerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCustomerCell.xib; sourceTree = "<group>"; };
+		B3680995240A452E002F8D00 /* AppLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
+		B3680996240A452E002F8D00 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
+		B368099A240A4C61002F8D00 /* ListReceiptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReceiptCell.swift; sourceTree = "<group>"; };
+		B368099B240A4C61002F8D00 /* ListReceiptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListReceiptCell.xib; sourceTree = "<group>"; };
+		B368099F240A5776002F8D00 /* CreateNewReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReceiptPresenter.swift; sourceTree = "<group>"; };
+		B36809A0240A5776002F8D00 /* CreateNewReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReceiptRouter.swift; sourceTree = "<group>"; };
+		B36809A1240A5776002F8D00 /* CreateNewReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReceiptViewController.swift; sourceTree = "<group>"; };
+		B36809A2240A5776002F8D00 /* CreateNewReceiptProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReceiptProtocols.swift; sourceTree = "<group>"; };
+		B36809A3240A5776002F8D00 /* CreateNewReceiptInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReceiptInteractor.swift; sourceTree = "<group>"; };
+		B36809A4240A5776002F8D00 /* CreateNewReceiptViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewReceiptViewController.xib; sourceTree = "<group>"; };
+		B36809AC240A5AC4002F8D00 /* AppDropdown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppDropdown.xib; sourceTree = "<group>"; };
+		B36809AD240A5AC4002F8D00 /* AppDropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDropdown.swift; sourceTree = "<group>"; };
+		B36809AF240A5AC4002F8D00 /* AppDropdownBorder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppDropdownBorder.xib; sourceTree = "<group>"; };
+		B36809B0240A5AC4002F8D00 /* AppDropdownBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDropdownBorder.swift; sourceTree = "<group>"; };
+		B36809B6240A5C8C002F8D00 /* ActionDropdownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionDropdownCell.xib; sourceTree = "<group>"; };
+		B36809B7240A5C8C002F8D00 /* DropdownSelectedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownSelectedCell.swift; sourceTree = "<group>"; };
+		B36809B8240A5C8C002F8D00 /* DropdownSelectedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownSelectedCell.xib; sourceTree = "<group>"; };
+		B36809B9240A5C8C002F8D00 /* ActionDropdownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDropdownCell.swift; sourceTree = "<group>"; };
+		B36809BF240A6AC5002F8D00 /* CheckInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInPresenter.swift; sourceTree = "<group>"; };
+		B36809C0240A6AC5002F8D00 /* CheckInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInRouter.swift; sourceTree = "<group>"; };
+		B36809C1240A6AC5002F8D00 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		B36809C2240A6AC5002F8D00 /* CheckInProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInProtocols.swift; sourceTree = "<group>"; };
+		B36809C3240A6AC5002F8D00 /* CheckInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInInteractor.swift; sourceTree = "<group>"; };
+		B36809C4240A6AC5002F8D00 /* CheckInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInViewController.xib; sourceTree = "<group>"; };
 		B379541C24029722007768B8 /* HomeCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCVCell.swift; sourceTree = "<group>"; };
 		B379541D24029722007768B8 /* HomeCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCVCell.xib; sourceTree = "<group>"; };
 		B37954222402A43F007768B8 /* ListRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRoomPresenter.swift; sourceTree = "<group>"; };
@@ -433,6 +485,89 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		B368098F240A38E7002F8D00 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3680990240A38FF002F8D00 /* ListCustomerCell.swift */,
+				B3680991240A38FF002F8D00 /* ListCustomerCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B3680994240A452E002F8D00 /* AppLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B3680995240A452E002F8D00 /* AppLabel.swift */,
+				B3680996240A452E002F8D00 /* EdgeInsetLabel.swift */,
+			);
+			path = AppLabel;
+			sourceTree = "<group>";
+		};
+		B3680999240A4C4E002F8D00 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B368099A240A4C61002F8D00 /* ListReceiptCell.swift */,
+				B368099B240A4C61002F8D00 /* ListReceiptCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B368099E240A5753002F8D00 /* CreateNewReceipt */ = {
+			isa = PBXGroup;
+			children = (
+				B368099F240A5776002F8D00 /* CreateNewReceiptPresenter.swift */,
+				B36809A0240A5776002F8D00 /* CreateNewReceiptRouter.swift */,
+				B36809A1240A5776002F8D00 /* CreateNewReceiptViewController.swift */,
+				B36809A2240A5776002F8D00 /* CreateNewReceiptProtocols.swift */,
+				B36809A3240A5776002F8D00 /* CreateNewReceiptInteractor.swift */,
+				B36809A4240A5776002F8D00 /* CreateNewReceiptViewController.xib */,
+			);
+			path = CreateNewReceipt;
+			sourceTree = "<group>";
+		};
+		B36809AB240A5AC4002F8D00 /* AppDropdown */ = {
+			isa = PBXGroup;
+			children = (
+				B36809AC240A5AC4002F8D00 /* AppDropdown.xib */,
+				B36809AD240A5AC4002F8D00 /* AppDropdown.swift */,
+				B36809AE240A5AC4002F8D00 /* AppDropdownBorder */,
+			);
+			path = AppDropdown;
+			sourceTree = "<group>";
+		};
+		B36809AE240A5AC4002F8D00 /* AppDropdownBorder */ = {
+			isa = PBXGroup;
+			children = (
+				B36809AF240A5AC4002F8D00 /* AppDropdownBorder.xib */,
+				B36809B0240A5AC4002F8D00 /* AppDropdownBorder.swift */,
+			);
+			path = AppDropdownBorder;
+			sourceTree = "<group>";
+		};
+		B36809B5240A5C8C002F8D00 /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				B36809B6240A5C8C002F8D00 /* ActionDropdownCell.xib */,
+				B36809B7240A5C8C002F8D00 /* DropdownSelectedCell.swift */,
+				B36809B8240A5C8C002F8D00 /* DropdownSelectedCell.xib */,
+				B36809B9240A5C8C002F8D00 /* ActionDropdownCell.swift */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		B36809BE240A6AB2002F8D00 /* ActionRoom */ = {
+			isa = PBXGroup;
+			children = (
+				B36809BF240A6AC5002F8D00 /* CheckInPresenter.swift */,
+				B36809C0240A6AC5002F8D00 /* CheckInRouter.swift */,
+				B36809C1240A6AC5002F8D00 /* CheckInViewController.swift */,
+				B36809C2240A6AC5002F8D00 /* CheckInProtocols.swift */,
+				B36809C3240A6AC5002F8D00 /* CheckInInteractor.swift */,
+				B36809C4240A6AC5002F8D00 /* CheckInViewController.xib */,
+			);
+			path = ActionRoom;
+			sourceTree = "<group>";
+		};
 		B379541B240296EC007768B8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +580,8 @@
 		B37954202402A3F0007768B8 /*  Receptionist */ = {
 			isa = PBXGroup;
 			children = (
+				B36809BE240A6AB2002F8D00 /* ActionRoom */,
+				B368099E240A5753002F8D00 /* CreateNewReceipt */,
 				B38B9D3D2406BD02006D69B0 /* ListReceipt */,
 				B38B9D302406BCDE006D69B0 /* ListCustomer */,
 				B38B9D222406B082006D69B0 /* Tabbar */,
@@ -513,6 +650,7 @@
 		B38B9D302406BCDE006D69B0 /* ListCustomer */ = {
 			isa = PBXGroup;
 			children = (
+				B368098F240A38E7002F8D00 /* Cell */,
 				B38B9D312406BCF7006D69B0 /* ListCustomerPresenter.swift */,
 				B38B9D322406BCF7006D69B0 /* ListCustomerRouter.swift */,
 				B38B9D332406BCF7006D69B0 /* ListCustomerViewController.swift */,
@@ -526,6 +664,7 @@
 		B38B9D3D2406BD02006D69B0 /* ListReceipt */ = {
 			isa = PBXGroup;
 			children = (
+				B3680999240A4C4E002F8D00 /* Cell */,
 				B38B9D3E2406BD27006D69B0 /* ListReceiptPresenter.swift */,
 				B38B9D3F2406BD27006D69B0 /* ListReceiptRouter.swift */,
 				B38B9D402406BD27006D69B0 /* ListReceiptViewController.swift */,
@@ -652,6 +791,7 @@
 		B3E7B9A423F9105F0088259F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B36809B5240A5C8C002F8D00 /* Dropdown */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -909,6 +1049,8 @@
 		B3E7BA2123F9105F0088259F /* CustomerViews */ = {
 			isa = PBXGroup;
 			children = (
+				B36809AB240A5AC4002F8D00 /* AppDropdown */,
+				B3680994240A452E002F8D00 /* AppLabel */,
 				B30957DE2401115300335639 /* AppTextFieldLogo */,
 				B30957E12401115300335639 /* AppTitleLogo */,
 				B3E7BA2223F9105F0088259F /* Presentation */,
@@ -1013,12 +1155,17 @@
 			files = (
 				B38B9D3C2406BCF7006D69B0 /* ListCustomerViewController.xib in Resources */,
 				B3E7BA5C23F9105F0088259F /* DatePickerViewController.xib in Resources */,
+				B368099D240A4C61002F8D00 /* ListReceiptCell.xib in Resources */,
 				B38B9D2F2406B0EC006D69B0 /* TabbarReceptionistViewController.xib in Resources */,
+				B36809BA240A5C8C002F8D00 /* ActionDropdownCell.xib in Resources */,
 				B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */,
 				B379544B2402C4F9007768B8 /* Roboto-Bold.ttf in Resources */,
+				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
+				B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */,
 				B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
+				B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */,
 				B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */,
 				B30957E72401115300335639 /* AppTitleLogo.xib in Resources */,
 				B37954502402C543007768B8 /* Roboto-BlackItalic.ttf in Resources */,
@@ -1030,7 +1177,10 @@
 				B3E7BA4123F9105F0088259F /* LeftMenuViewController.xib in Resources */,
 				B379544C2402C4F9007768B8 /* Roboto-Italic.ttf in Resources */,
 				B3E7BA3C23F9105F0088259F /* HomeViewController.xib in Resources */,
+				B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */,
+				B36809B3240A5AC5002F8D00 /* AppDropdownBorder.xib in Resources */,
 				B3E7BA5F23F9105F0088259F /* Assets.xcassets in Resources */,
+				B36809AA240A5777002F8D00 /* CreateNewReceiptViewController.xib in Resources */,
 				B37954322402A48E007768B8 /* ListRoomCVCell.xib in Resources */,
 				B3E7BA5823F9105F0088259F /* DateTimePickerViewController.xib in Resources */,
 				B30957DD24010B4400335639 /* LoginViewController.xib in Resources */,
@@ -1089,6 +1239,7 @@
 				B3E7BA8023F9105F0088259F /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				B3E7BAA223F9105F0088259F /* AppConstant.swift in Sources */,
 				B3E7BA6A23F9105F0088259F /* UIViewController+Extension.swift in Sources */,
+				B36809BB240A5C8C002F8D00 /* DropdownSelectedCell.swift in Sources */,
 				B38B9D452406BD27006D69B0 /* ListReceiptRouter.swift in Sources */,
 				B3E7BA5A23F9105F0088259F /* BaseViewXib.swift in Sources */,
 				B3E7BA9723F9105F0088259F /* KActivityIndicatorView.swift in Sources */,
@@ -1097,6 +1248,7 @@
 				B38B9D382406BCF7006D69B0 /* ListCustomerRouter.swift in Sources */,
 				B38B9D392406BCF7006D69B0 /* ListCustomerViewController.swift in Sources */,
 				B3E7BA3423F9105F0088259F /* MapperData.swift in Sources */,
+				B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */,
 				B3E7BA7A23F9105F0088259F /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				B3E7BA3A23F9105F0088259F /* UserAPIService.swift in Sources */,
 				B3E7BA5D23F9105F0088259F /* DateTimePickerViewController.swift in Sources */,
@@ -1105,6 +1257,7 @@
 				B3E7BA8623F9105F0088259F /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				B3E7BA3223F9105F0088259F /* BaseResponse.swift in Sources */,
 				B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */,
+				B36809A9240A5777002F8D00 /* CreateNewReceiptInteractor.swift in Sources */,
 				B3E7BA5B23F9105F0088259F /* HomeBaseViewController.swift in Sources */,
 				B3E7BA4823F9105F0088259F /* FlashRouter.swift in Sources */,
 				B3E7BA4323F9105F0088259F /* LeftMenuProtocols.swift in Sources */,
@@ -1120,12 +1273,14 @@
 				B3E7BA5423F9105F0088259F /* Segue.swift in Sources */,
 				B3E7BA5623F9105F0088259F /* BasicTransitionAnimator.swift in Sources */,
 				B3E7BA8D23F9105F0088259F /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				B36809C9240A6AC5002F8D00 /* CheckInInteractor.swift in Sources */,
 				B3E7BAAB23F9105F0088259F /* LocalizationManager.swift in Sources */,
 				B3E7BA4023F9105F0088259F /* HomeProtocols.swift in Sources */,
 				B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */,
 				B3E7BA9523F9105F0088259F /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				B38B9D2B2406B0EC006D69B0 /* TabbarReceptionistRouter.swift in Sources */,
 				B37954362402A8FA007768B8 /* LeftMenuCell.swift in Sources */,
+				B36809A6240A5777002F8D00 /* CreateNewReceiptRouter.swift in Sources */,
 				B3E7BAA623F9105F0088259F /* SlideInPresentationAnimator.swift in Sources */,
 				B3E7BAA523F9105F0088259F /* AppFont.swift in Sources */,
 				B38B9D482406BD27006D69B0 /* ListReceiptInteractor.swift in Sources */,
@@ -1136,9 +1291,11 @@
 				B3E7BA6123F9105F0088259F /* UIApplication+Extension.swift in Sources */,
 				B3E7BAA923F9105F0088259F /* UserDefaultHelper.swift in Sources */,
 				B3E7BAA823F9105F0088259F /* SlideInPresentationController.swift in Sources */,
+				B36809BD240A5C8C002F8D00 /* ActionDropdownCell.swift in Sources */,
 				B3E7BA9F23F9105F0088259F /* NotificationName.swift in Sources */,
 				B3E7BA6E23F9105F0088259F /* WKWebView+Extension.swift in Sources */,
 				B3E7BA7223F9105F0088259F /* UILabel+Extensions.swift in Sources */,
+				B36809C7240A6AC5002F8D00 /* CheckInViewController.swift in Sources */,
 				B379541E24029722007768B8 /* HomeCVCell.swift in Sources */,
 				B3E7BA8723F9105F0088259F /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				B37954312402A48E007768B8 /* ListRoomCVCell.swift in Sources */,
@@ -1146,7 +1303,9 @@
 				B3E7BA3E23F9105F0088259F /* HomeRouter.swift in Sources */,
 				B3E7BA7423F9105F0088259F /* Array+Extension.swift in Sources */,
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
+				B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */,
 				B3E7BA4923F9105F0088259F /* FlashViewController.swift in Sources */,
+				B36809A7240A5777002F8D00 /* CreateNewReceiptViewController.swift in Sources */,
 				B38B9D2A2406B0EC006D69B0 /* TabbarReceptionistPresenter.swift in Sources */,
 				B3E7BA7E23F9105F0088259F /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				B3E7BA9A23F9105F0088259F /* FadeInOutAnimation.swift in Sources */,
@@ -1165,6 +1324,8 @@
 				B3E7BA3923F9105F0088259F /* Provider.swift in Sources */,
 				B3E7BA4C23F9105F0088259F /* FlashProtocols.swift in Sources */,
 				B3E7BA8423F9105F0088259F /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				B3680997240A452E002F8D00 /* AppLabel.swift in Sources */,
+				B36809C5240A6AC5002F8D00 /* CheckInPresenter.swift in Sources */,
 				B38B9D442406BD27006D69B0 /* ListReceiptPresenter.swift in Sources */,
 				B3E7BA9923F9105F0088259F /* KActivityIndicatorShape.swift in Sources */,
 				B3E7BA9023F9105F0088259F /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
@@ -1187,6 +1348,7 @@
 				B3E7BA3123F9105F0088259F /* APIError.swift in Sources */,
 				B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */,
 				B3E7BAA123F9105F0088259F /* AppEnum.swift in Sources */,
+				B368099C240A4C61002F8D00 /* ListReceiptCell.swift in Sources */,
 				B38B9D372406BCF7006D69B0 /* ListCustomerPresenter.swift in Sources */,
 				B3E7BA7D23F9105F0088259F /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */,
@@ -1195,6 +1357,7 @@
 				B3E7BA6F23F9105F0088259F /* UICollectionView+Extension.swift in Sources */,
 				B3E7BA9623F9105F0088259F /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				B3E7BA3F23F9105F0088259F /* HomePresenter.swift in Sources */,
+				B36809B4240A5AC5002F8D00 /* AppDropdownBorder.swift in Sources */,
 				B3E7BA4A23F9105F0088259F /* FlashInteractor.swift in Sources */,
 				B3E7BA4D23F9105F0088259F /* UIViewController+SideMenu.swift in Sources */,
 				B3E7BA6323F9105F0088259F /* UIDevice+Extension.swift in Sources */,
@@ -1219,13 +1382,17 @@
 				B37954292402A43F007768B8 /* ListRoomRouter.swift in Sources */,
 				B3E7BA7923F9105F0088259F /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B3E7BA8223F9105F0088259F /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				B36809C6240A6AC5002F8D00 /* CheckInRouter.swift in Sources */,
 				B3E7BA5523F9105F0088259F /* SideMenuController.swift in Sources */,
+				B36809B2240A5AC5002F8D00 /* AppDropdown.swift in Sources */,
 				B3E7BA5223F9105F0088259F /* Delegate.swift in Sources */,
 				B3E7BA7623F9105F0088259F /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
+				B36809A8240A5777002F8D00 /* CreateNewReceiptProtocols.swift in Sources */,
 				B3E7BA8323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				B3E7BA6C23F9105F0088259F /* NSMutableAttributedString+Extension.swift in Sources */,
 				B379542C2402A43F007768B8 /* ListRoomInteractor.swift in Sources */,
 				B38B9D2E2406B0EC006D69B0 /* TabbarReceptionistInteractor.swift in Sources */,
+				B36809C8240A6AC5002F8D00 /* CheckInProtocols.swift in Sources */,
 				B3E7BA6423F9105F0088259F /* UIColor+Extension.swift in Sources */,
 				B3E7BA7823F9105F0088259F /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				B3E7BA3723F9105F0088259F /* EndPointType.swift in Sources */,
@@ -1238,6 +1405,7 @@
 				B3E7BA7723F9105F0088259F /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				B3E7BAA323F9105F0088259F /* AppColor.swift in Sources */,
 				B3E7BAB023F9105F0088259F /* ShareNativeHelper.swift in Sources */,
+				B36809A5240A5777002F8D00 /* CreateNewReceiptPresenter.swift in Sources */,
 				B3E7BA3823F9105F0088259F /* UserEndPoint.swift in Sources */,
 				B3E7BA3B23F9105F0088259F /* HomeInteractor.swift in Sources */,
 				B3E7BA4623F9105F0088259F /* LeftMenuRouter.swift in Sources */,

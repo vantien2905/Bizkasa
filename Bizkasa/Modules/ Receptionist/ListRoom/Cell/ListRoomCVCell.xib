@@ -37,14 +37,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0l-hx-mpd">
+                                <rect key="frame" x="0.0" y="76" width="268" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="eHU-fz-ie1"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeO-JD-qZS">
+                                <rect key="frame" x="0.0" y="0.0" width="268" height="77"/>
+                                <connections>
+                                    <action selector="btnShowActionTapped" destination="gTV-IL-0wX" eventType="touchUpInside" id="jbp-dt-KB1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="S0l-hx-mpd" secondAttribute="bottom" id="46k-d1-7qu"/>
+                            <constraint firstAttribute="bottom" secondItem="EeO-JD-qZS" secondAttribute="bottom" id="8eC-Ny-eyQ"/>
+                            <constraint firstItem="EeO-JD-qZS" firstAttribute="leading" secondItem="ZiA-x3-4cU" secondAttribute="leading" id="8lg-Fz-Zc9"/>
+                            <constraint firstItem="EeO-JD-qZS" firstAttribute="top" secondItem="ZiA-x3-4cU" secondAttribute="top" id="93g-2B-Mlh"/>
                             <constraint firstItem="3pP-ea-Tkb" firstAttribute="leading" secondItem="OEW-od-vwb" secondAttribute="trailing" constant="5" id="Cd1-pB-ebb"/>
+                            <constraint firstAttribute="trailing" secondItem="EeO-JD-qZS" secondAttribute="trailing" id="GLi-5g-k2a"/>
+                            <constraint firstAttribute="trailing" secondItem="S0l-hx-mpd" secondAttribute="trailing" id="LCP-PQ-vc0"/>
                             <constraint firstItem="3pP-ea-Tkb" firstAttribute="top" secondItem="ZiA-x3-4cU" secondAttribute="top" constant="5" id="ShR-Me-IcB"/>
                             <constraint firstAttribute="bottom" secondItem="OEW-od-vwb" secondAttribute="bottom" constant="5" id="dD6-Wf-yT0"/>
                             <constraint firstAttribute="trailing" secondItem="3pP-ea-Tkb" secondAttribute="trailing" constant="5" id="h80-OP-xjY"/>
                             <constraint firstAttribute="bottom" secondItem="3pP-ea-Tkb" secondAttribute="bottom" constant="5" id="nCX-Lq-86Y"/>
+                            <constraint firstItem="S0l-hx-mpd" firstAttribute="leading" secondItem="ZiA-x3-4cU" secondAttribute="leading" id="pPE-4E-bfl"/>
                             <constraint firstItem="OEW-od-vwb" firstAttribute="top" secondItem="ZiA-x3-4cU" secondAttribute="top" constant="5" id="pwj-MR-fGW"/>
                             <constraint firstItem="OEW-od-vwb" firstAttribute="leading" secondItem="ZiA-x3-4cU" secondAttribute="leading" constant="5" id="ybG-yq-VDw"/>
                         </constraints>
@@ -63,11 +83,12 @@
                 <outlet property="imgLogo" destination="OEW-od-vwb" id="ofU-sF-gUq"/>
                 <outlet property="lbTitle" destination="3pP-ea-Tkb" id="oy4-FS-ZMJ"/>
                 <outlet property="vBackground" destination="ZiA-x3-4cU" id="ltP-4W-ifK"/>
+                <outlet property="vDropdownLayout" destination="S0l-hx-mpd" id="tPm-5n-bIe"/>
             </connections>
             <point key="canvasLocation" x="-34.782608695652179" y="134.26339285714286"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="room" width="64" height="64"/>
+        <image name="room" width="48" height="48"/>
     </resources>
 </document>

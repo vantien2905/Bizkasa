@@ -69,7 +69,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let vc = ListRoomRouter.createModule().convertNavi()
+            let vc = TabbarReceptionistRouter.createModule()
             sideMenuController?.setContentViewController(to: vc)
         }
 

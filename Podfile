@@ -12,6 +12,6 @@ pod 'SwiftyJSON', '4.2.0'
     pod 'CryptoSwift', '0.7.2'
     pod 'Toast-Swift'
     pod 'SDWebImage', '4.4.2'
-
+    pod 'DropDown'
 
 end

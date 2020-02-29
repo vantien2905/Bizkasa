@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
             <connections>
+                <outlet property="heightTitle" destination="fhR-Co-UEd" id="JhF-oW-o00"/>
                 <outlet property="tfContent" destination="mr6-xB-ESw" id="jxN-UU-KGE"/>
                 <outlet property="vBottomLine" destination="QNI-7o-5dN" id="jU7-qS-D1W"/>
                 <outlet property="vTitle" destination="rfC-ON-9oo" id="bMB-vt-BDr"/>

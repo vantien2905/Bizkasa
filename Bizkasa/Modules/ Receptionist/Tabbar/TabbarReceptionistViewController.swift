@@ -18,7 +18,7 @@ class TabbarReceptionistViewController: UITabBarController {
         super.viewDidLoad()
 
         let listRoom = ListRoomRouter.createModule().convertNavi()
-        let iconRoom = UITabBarItem(title: "Phòng", image: AppImage.imgUser, selectedImage: AppImage.imgUser)
+        let iconRoom = UITabBarItem(title: "Phòng", image: AppImage.imgRoom, selectedImage: AppImage.imgRoom)
         listRoom.tabBarItem = iconRoom
 
         let listCustomer = ListCustomerRouter.createModule().convertNavi()
@@ -26,7 +26,7 @@ class TabbarReceptionistViewController: UITabBarController {
                listCustomer.tabBarItem = iconCustomer
 
         let listReceipt = ListReceiptRouter.createModule().convertNavi()
-               let iconReceipt = UITabBarItem(title: "Phiếu thu", image: AppImage.imgUser, selectedImage: AppImage.imgUser)
+               let iconReceipt = UITabBarItem(title: "Phiếu thu", image: AppImage.imgPayment, selectedImage: AppImage.imgPayment)
                listReceipt.tabBarItem = iconReceipt
         let controllers = [listRoom, listCustomer, listReceipt]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers

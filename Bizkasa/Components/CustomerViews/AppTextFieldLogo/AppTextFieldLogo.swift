@@ -13,6 +13,7 @@ class AppTextFieldLogo: BaseViewXib {
     @IBOutlet weak var vTitle: AppTitleLogo!
     @IBOutlet weak var tfContent: UITextField!
     @IBOutlet weak var vBottomLine: UIView!
+    @IBOutlet weak var heightTitle: NSLayoutConstraint!
     
     var textFieldCallBack: ((_ value: String) -> Void)?
     
@@ -23,6 +24,10 @@ class AppTextFieldLogo: BaseViewXib {
     override func setUpViews() {
         tfContent.delegate = self
         tfContent.tintColor = AppColor.line
+    }
+
+    func setHeightTitle(value: CGFloat) {
+        heightTitle.constant = value
     }
 
     func getText() -> String {
