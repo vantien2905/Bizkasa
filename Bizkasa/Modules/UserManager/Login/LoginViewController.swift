@@ -67,7 +67,7 @@ extension LoginViewController: LoginViewProtocol {
 
         if let result = result {
             print(result)
-            UserDefaultHelper.shared.saveLogin(user: result)
+            UserDefaultHelper.shared.saveUser(result)
             let home = HomeRouter.createModule().convertNavi()
             let menu = LeftMenuRouter.createModule()
             let vc = SideMenuController(contentViewController: home, menuViewController: menu)
@@ -75,6 +75,5 @@ extension LoginViewController: LoginViewProtocol {
         } else {
             self.view.makeToast(error?.message?.first)
         }
-
     }
 }

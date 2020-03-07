@@ -41,3 +41,25 @@ class UserEntity: Mappable {
     }
 
 }
+
+class HotelEntity: Mappable {
+
+    var HotelId: Int?
+    var HotelName: String?
+    var IsSelected: Bool = false
+    var DateExpired: String?
+
+    required init?(map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+        self.HotelId <- map["HotelId"]
+        self.HotelName <- map["HotelName"]
+        self.IsSelected <- map["IsSelected"]
+        self.DateExpired <- map["DateExpired"]
+    }
+
+}
+
+

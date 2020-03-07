@@ -9,9 +9,12 @@
 //
 
 import UIKit
+import SDWebImage
 
-class LeftMenuViewController: UIViewController {
+class LeftMenuViewController: BaseViewController {
 
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var tbLeftMenu: UITableView!
 
     var presenter: LeftMenuPresenterProtocol?
@@ -19,6 +22,12 @@ class LeftMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+    }
+
+    override func setUpViews() {
+        guard let user = UserDefaultHelper.shared.getUser() else { return }
+        lbName.text = user.HotelName
+        imgLogo.sd_setImage(with: user.Logo&.convertUrl(), placeholderImage: AppImage.imgPlaceholder)
     }
 
     private func configureTableView() {

@@ -16,16 +16,16 @@ class UserDefaultHelper: NSObject {
     let userDefaultManager = UserDefaults.standard
 
     func saveLogin(user: UserEntity) {
-            userDefaultManager.set(user.AuthToken&, forKey: AppKey.tokenID)
+        userDefaultManager.set(user.AuthToken&, forKey: AppKey.tokenID)
 
-            userDefaultManager.set(user.UserName&, forKey: AppKey.userName)
-            userDefaultManager.set(user.Logo&, forKey: AppKey.logo)
-    //        UserDefaultHelper.shared.saveToken()
-    //        userDefaultManager.synchronize
-        }
+        userDefaultManager.set(user.UserName&, forKey: AppKey.userName)
+        userDefaultManager.set(user.Logo&, forKey: AppKey.logo)
+        //        UserDefaultHelper.shared.saveToken()
+        //        userDefaultManager.synchronize
+    }
 
     func clearDataUser() {
-//        userDefaultManager.removeObject(forKey: AppKey.userData)
+        //        userDefaultManager.removeObject(forKey: AppKey.userData)
         userDefaultManager.removeObject(forKey: AppKey.tokenID)
         userDefaultManager.removeObject(forKey: AppKey.userName)
         userDefaultManager.removeObject(forKey: AppKey.logo)
@@ -68,5 +68,24 @@ class UserDefaultHelper: NSObject {
         } else {
             return false
         }
+    }
+
+    func saveUser(_ user: UserEntity) {
+        let data = NSKeyedArchiver.archivedData(withRootObject: user.toJSON())
+        UserDefaults.standard.set(data, forKey: AppKey.userData)
+        userDefaultManager.set(user.AuthToken&, forKey: AppKey.tokenID)
+//        if user.deptDbIds?.count != 0 {
+//            let index = UserDefaults.standard.integer(forKey: AppKey.indexDepartment)
+//            UserDefaults.standard.set(user.deptDbIds?[index], forKey: AppKey.authenticatedUserDepartment)
+//        }
+    }
+
+    func getUser() -> UserEntity? {
+        if let load = UserDefaults.standard.object(forKey: AppKey.userData) as? NSData {
+            if let userData = NSKeyedUnarchiver.unarchiveObject(with: load as Data) as? [String: Any] {
+                return UserEntity(JSON: userData)
+            }
+        }
+        return nil
     }
 }

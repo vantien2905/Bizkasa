@@ -12,6 +12,16 @@ import UIKit
 
 class CheckInViewController: BaseViewController {
 
+    @IBOutlet weak var tfCustomerName       : AppTextFieldLogo!
+    @IBOutlet weak var tfIndentifierNumber  : AppTextFieldLogo!
+    @IBOutlet weak var tfIndentifierDate    : TextFieldCalendar!
+    @IBOutlet weak var tfAdress             : AppTextFieldLogo!
+    @IBOutlet weak var tfCheckInTime        : TextFieldCalendar!
+    @IBOutlet weak var vTimeType            : AppDropdown!
+    @IBOutlet weak var vConfigurePrice      : AppDropdown!
+    @IBOutlet weak var vService             : AppDropdown!
+    @IBOutlet weak var tvNote               : AppTextViewLogo!
+
 	var presenter: CheckInPresenterProtocol?
 
 	override func viewDidLoad() {
@@ -22,6 +32,23 @@ class CheckInViewController: BaseViewController {
         setTitleNavigation(title: "Nhận phòng")
         addBackWhiteToNavigation()
         addButtonTextToNavigation(title: "Nhận", style: .right, action: #selector(btnAcceptTapped))
+    }
+
+    override func setUpViews() {
+        tfCustomerName.setTitleAndLogo(AppImage.imgPayment, title: "Khách hàng")
+        tfIndentifierNumber.setTitleAndLogo(AppImage.imgPayment, title: "CMT")
+        tfAdress.setTitleAndLogo(AppImage.imgPayment, title: "Địa chỉ")
+
+        vTimeType.setTitleAndLogo(AppImage.imgPayment, title: "Tính theo")
+        vConfigurePrice.setTitleAndLogo(AppImage.imgPayment, title: "Cấu hình giá")
+        vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
+
+        tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Ngày cấp")
+
+        tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Thời gian")
+
+        tvNote.setTitleAndLogo(AppImage.imgPayment, title: "Ghi chú")
+        
     }
 
     @objc func btnAcceptTapped() {

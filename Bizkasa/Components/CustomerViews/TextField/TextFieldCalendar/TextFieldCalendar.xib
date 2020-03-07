@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldCalendar" customModule="Bizkasa" customModuleProvider="target">
+            <connections>
+                <outlet property="heightTitle" destination="xzh-BU-9vu" id="nBa-nX-C2U"/>
+                <outlet property="tfContent" destination="rUt-5N-hBg" id="kdA-GL-g0N"/>
+                <outlet property="vBottomLine" destination="h9A-sK-kUq" id="LHY-Z4-G4m"/>
+                <outlet property="vTitle" destination="6jm-iS-LOu" id="rNG-h1-fCX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="789" height="236"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zyp-a8-iM1">
+                    <rect key="frame" x="0.0" y="0.0" width="789" height="236"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6jm-iS-LOu" customClass="AppTitleLogo" customModule="Bizkasa" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="789" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="xzh-BU-9vu"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kuk-lM-Lre">
+                            <rect key="frame" x="0.0" y="35" width="789" height="201"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUt-5N-hBg">
+                                    <rect key="frame" x="0.0" y="0.0" width="749" height="201"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6n7-uo-3Xd">
+                                    <rect key="frame" x="759" y="0.0" width="30" height="201"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DtO-ru-8Lb">
+                                            <rect key="frame" x="-5" y="80.5" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="DtO-ru-8Lb" secondAttribute="height" multiplier="1:1" id="fRq-eJ-ImM"/>
+                                            </constraints>
+                                            <state key="normal" image="receipts"/>
+                                            <connections>
+                                                <action selector="btnCalendarTapped" destination="-1" eventType="touchUpInside" id="iSk-NZ-GeY"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="2Nn-SP-PVE"/>
+                                        <constraint firstItem="DtO-ru-8Lb" firstAttribute="centerY" secondItem="6n7-uo-3Xd" secondAttribute="centerY" id="Mvl-Mb-acR"/>
+                                        <constraint firstItem="DtO-ru-8Lb" firstAttribute="centerX" secondItem="6n7-uo-3Xd" secondAttribute="centerX" id="ave-iw-PMI"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9A-sK-kUq">
+                    <rect key="frame" x="0.0" y="235" width="749" height="1"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ztn-DW-Vic"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="h9A-sK-kUq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3WZ-LM-pWG"/>
+                <constraint firstAttribute="bottom" secondItem="zyp-a8-iM1" secondAttribute="bottom" id="4qT-0K-IJy"/>
+                <constraint firstItem="zyp-a8-iM1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5OW-wh-EiB"/>
+                <constraint firstItem="zyp-a8-iM1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FB0-Wl-Es4"/>
+                <constraint firstAttribute="trailing" secondItem="zyp-a8-iM1" secondAttribute="trailing" id="K7R-kT-guW"/>
+                <constraint firstAttribute="bottom" secondItem="h9A-sK-kUq" secondAttribute="bottom" id="Ybb-lg-ibA"/>
+                <constraint firstItem="h9A-sK-kUq" firstAttribute="trailing" secondItem="rUt-5N-hBg" secondAttribute="trailing" id="oQK-Ju-ycv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-203.62318840579712" y="-88.392857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="receipts" width="40" height="40"/>
+    </resources>
+</document>

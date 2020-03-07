@@ -18,6 +18,11 @@
 		B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E02401115300335639 /* AppTextFieldLogo.swift */; };
 		B30957E62401115300335639 /* AppTitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E22401115300335639 /* AppTitleLogo.swift */; };
 		B30957E72401115300335639 /* AppTitleLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957E32401115300335639 /* AppTitleLogo.xib */; };
+		B32069D3241369070097D18B /* TextFieldCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D2241369070097D18B /* TextFieldCalendar.swift */; };
+		B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32069D4241369150097D18B /* TextFieldCalendar.xib */; };
+		B32069DB241394B80097D18B /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D7241394B80097D18B /* AppTextView.swift */; };
+		B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D9241394B80097D18B /* AppTextViewLogo.swift */; };
+		B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32069DA241394B80097D18B /* AppTextViewLogo.xib */; };
 		B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680990240A38FF002F8D00 /* ListCustomerCell.swift */; };
 		B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3680991240A38FF002F8D00 /* ListCustomerCell.xib */; };
 		B3680997240A452E002F8D00 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680995240A452E002F8D00 /* AppLabel.swift */; };
@@ -229,6 +234,11 @@
 		B30957E02401115300335639 /* AppTextFieldLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFieldLogo.swift; sourceTree = "<group>"; };
 		B30957E22401115300335639 /* AppTitleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleLogo.swift; sourceTree = "<group>"; };
 		B30957E32401115300335639 /* AppTitleLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTitleLogo.xib; sourceTree = "<group>"; };
+		B32069D2241369070097D18B /* TextFieldCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCalendar.swift; sourceTree = "<group>"; };
+		B32069D4241369150097D18B /* TextFieldCalendar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCalendar.xib; sourceTree = "<group>"; };
+		B32069D7241394B80097D18B /* AppTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextView.swift; sourceTree = "<group>"; };
+		B32069D9241394B80097D18B /* AppTextViewLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextViewLogo.swift; sourceTree = "<group>"; };
+		B32069DA241394B80097D18B /* AppTextViewLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTextViewLogo.xib; sourceTree = "<group>"; };
 		B3680990240A38FF002F8D00 /* ListCustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCustomerCell.swift; sourceTree = "<group>"; };
 		B3680991240A38FF002F8D00 /* ListCustomerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCustomerCell.xib; sourceTree = "<group>"; };
 		B3680995240A452E002F8D00 /* AppLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
@@ -483,6 +493,53 @@
 				B30957D724010B4400335639 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B32069CF241367330097D18B /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B3E7B9CA23F9105F0088259F /* DateTimePickerViewController.xib */,
+				B3E7B9CF23F9105F0088259F /* DateTimePickerViewController.swift */,
+				B3E7B9CE23F9105F0088259F /* DatePickerViewController.xib */,
+				B3E7B9CB23F9105F0088259F /* DatePickerViewController.swift */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		B32069D0241368DB0097D18B /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				B30957DE2401115300335639 /* AppTextFieldLogo */,
+				B32069D1241368E30097D18B /* TextFieldCalendar */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		B32069D1241368E30097D18B /* TextFieldCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				B32069D2241369070097D18B /* TextFieldCalendar.swift */,
+				B32069D4241369150097D18B /* TextFieldCalendar.xib */,
+			);
+			path = TextFieldCalendar;
+			sourceTree = "<group>";
+		};
+		B32069D6241394B80097D18B /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				B32069D7241394B80097D18B /* AppTextView.swift */,
+				B32069D8241394B80097D18B /* DXGTextView */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		B32069D8241394B80097D18B /* DXGTextView */ = {
+			isa = PBXGroup;
+			children = (
+				B32069D9241394B80097D18B /* AppTextViewLogo.swift */,
+				B32069DA241394B80097D18B /* AppTextViewLogo.xib */,
+			);
+			path = DXGTextView;
 			sourceTree = "<group>";
 		};
 		B368098F240A38E7002F8D00 /* Cell */ = {
@@ -807,6 +864,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B32069CF241367330097D18B /* DatePicker */,
 				B37954202402A3F0007768B8 /*  Receptionist */,
 				B30957D124010B3100335639 /* UserManager */,
 				B3E7B9A723F9105F0088259F /* Home */,
@@ -888,12 +946,8 @@
 			isa = PBXGroup;
 			children = (
 				B3E7B9C923F9105F0088259F /* BaseViewController.swift */,
-				B3E7B9CA23F9105F0088259F /* DateTimePickerViewController.xib */,
-				B3E7B9CB23F9105F0088259F /* DatePickerViewController.swift */,
 				B3E7B9CC23F9105F0088259F /* BaseViewXib.swift */,
 				B3E7B9CD23F9105F0088259F /* HomeBaseViewController.swift */,
-				B3E7B9CE23F9105F0088259F /* DatePickerViewController.xib */,
-				B3E7B9CF23F9105F0088259F /* DateTimePickerViewController.swift */,
 				B3E7B9D023F9105F0088259F /* BaseView.swift */,
 			);
 			path = Base;
@@ -1049,9 +1103,10 @@
 		B3E7BA2123F9105F0088259F /* CustomerViews */ = {
 			isa = PBXGroup;
 			children = (
+				B32069D6241394B80097D18B /* TextView */,
+				B32069D0241368DB0097D18B /* TextField */,
 				B36809AB240A5AC4002F8D00 /* AppDropdown */,
 				B3680994240A452E002F8D00 /* AppLabel */,
-				B30957DE2401115300335639 /* AppTextFieldLogo */,
 				B30957E12401115300335639 /* AppTitleLogo */,
 				B3E7BA2223F9105F0088259F /* Presentation */,
 			);
@@ -1157,11 +1212,13 @@
 				B3E7BA5C23F9105F0088259F /* DatePickerViewController.xib in Resources */,
 				B368099D240A4C61002F8D00 /* ListReceiptCell.xib in Resources */,
 				B38B9D2F2406B0EC006D69B0 /* TabbarReceptionistViewController.xib in Resources */,
+				B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */,
 				B36809BA240A5C8C002F8D00 /* ActionDropdownCell.xib in Resources */,
 				B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */,
 				B379544B2402C4F9007768B8 /* Roboto-Bold.ttf in Resources */,
 				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
+				B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */,
 				B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */,
 				B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
@@ -1283,6 +1340,7 @@
 				B36809A6240A5777002F8D00 /* CreateNewReceiptRouter.swift in Sources */,
 				B3E7BAA623F9105F0088259F /* SlideInPresentationAnimator.swift in Sources */,
 				B3E7BAA523F9105F0088259F /* AppFont.swift in Sources */,
+				B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */,
 				B38B9D482406BD27006D69B0 /* ListReceiptInteractor.swift in Sources */,
 				B3E7BA8823F9105F0088259F /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B379542B2402A43F007768B8 /* ListRoomProtocols.swift in Sources */,
@@ -1315,6 +1373,7 @@
 				B3E7BAAC23F9105F0088259F /* PlayVideoHelper.swift in Sources */,
 				B3E7BA6B23F9105F0088259F /* String+Extension.swift in Sources */,
 				B3E7BA9D23F9105F0088259F /* ProgressViewWhite.swift in Sources */,
+				B32069D3241369070097D18B /* TextFieldCalendar.swift in Sources */,
 				B3E7BAA023F9105F0088259F /* EnumParamSearch.swift in Sources */,
 				B3E7BA9B23F9105F0088259F /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				B3E7BAAD23F9105F0088259F /* CommonHelper.swift in Sources */,
@@ -1409,6 +1468,7 @@
 				B3E7BA3823F9105F0088259F /* UserEndPoint.swift in Sources */,
 				B3E7BA3B23F9105F0088259F /* HomeInteractor.swift in Sources */,
 				B3E7BA4623F9105F0088259F /* LeftMenuRouter.swift in Sources */,
+				B32069DB241394B80097D18B /* AppTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

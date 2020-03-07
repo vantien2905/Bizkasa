@@ -34,6 +34,15 @@ extension String {
         let toString = to.string(from: dateFrom)
         return toString
     }
+
+
+    func convertUrl() -> URL? {
+        let temp = self
+        let domain = UserDefaultHelper.shared.getDomain()&
+        let url = URL(string: domain)?.appendingPathComponent(temp)
+
+        return url
+    }
 }
 
 extension String {
