@@ -11,6 +11,10 @@
 import UIKit
 
 class ListReceiptPresenter: ListReceiptPresenterProtocol {
+    func getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool) {
+        interactor?.getInvoices(page: page, pageSize: pageSize, invoiceType: invoiceType, isInDay: isInDay)
+    }
+
 
     weak private var view: ListReceiptViewProtocol?
     var interactor: ListReceiptInteractorInputProtocol?
@@ -25,5 +29,9 @@ class ListReceiptPresenter: ListReceiptPresenterProtocol {
 }
 
 extension ListReceiptPresenter: ListReceiptInteractorOutputProtocol {
+    func didGetInvoices(result: InvoiceResponse?, error: APIError?) {
+        view?.didGetInvoices(result: result, error: error)
+    }
+
 	
 }

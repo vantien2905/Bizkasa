@@ -17,12 +17,14 @@ protocol ListCustomerWireframeProtocol: class {
 protocol ListCustomerPresenterProtocol: class {
 
     var interactor: ListCustomerInteractorInputProtocol? { get set }
+    func getListCustomerCheckIn()
 }
 
 //MARK: Interactor -
 protocol ListCustomerInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetListCustomerCheckIn(result: CustomerCheckInEntity?, error: APIError?)
 }
 
 protocol ListCustomerInteractorInputProtocol: class {
@@ -30,6 +32,7 @@ protocol ListCustomerInteractorInputProtocol: class {
     var presenter: ListCustomerInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getListCustomerCheckIn()
 }
 
 //MARK: View -
@@ -38,4 +41,5 @@ protocol ListCustomerViewProtocol: class {
     var presenter: ListCustomerPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetListCustomerCheckIn(result: CustomerCheckInEntity?, error: APIError?)
 }

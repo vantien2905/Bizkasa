@@ -13,12 +13,27 @@ import UIKit
 class ListReceiptViewController: HomeBaseViewController {
 
     @IBOutlet weak var tbReceipt: UITableView!
+    @IBOutlet weak var lbTotal: UILabel!
 
 	var presenter: ListReceiptPresenterProtocol?
+
+    var invoiceResponse: InvoiceResponse! {
+        didSet {
+            self.lbTotal.text = "\(self.invoiceResponse.totalAmount*.formattedWithSeparator) VNĐ"
+            self.listInvoice = self.invoiceResponse.dataPaging?.data ?? []
+        }
+    }
+
+    var listInvoice: [InvoiceEntity] = [] {
+        didSet {
+            self.tbReceipt.reloadData()
+        }
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        presenter?.getInvoices(page: 1, pageSize: 10, invoiceType: 1, isInDay: true)
     }
 
     override func setUpNavigation() {
@@ -41,18 +56,23 @@ class ListReceiptViewController: HomeBaseViewController {
 }
 
 extension ListReceiptViewController: ListReceiptViewProtocol {
-	
+    func didGetInvoices(result: InvoiceResponse?, error: APIError?) {
+        if let result = result {
+            self.invoiceResponse = result
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
 }
 
 extension ListReceiptViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return listInvoice.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(ListReceiptCell.self)
+        cell.invoice = listInvoice[indexPath.row]
         return cell
     }
-
-
 }

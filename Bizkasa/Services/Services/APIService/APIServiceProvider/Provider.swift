@@ -20,4 +20,8 @@ class Provider {
     var userAPIService: UserAPIServiceProtocol {
         return UserAPIService(network: networkManager)
     }
+
+    var receptionistAPIService: ReceptionistAPIServiceProtocol {
+        return ReceptionistAPIService(network: networkManager)
+    }
 }

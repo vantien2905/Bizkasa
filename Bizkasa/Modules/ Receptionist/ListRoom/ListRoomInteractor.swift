@@ -12,5 +12,16 @@ import UIKit
 
 class ListRoomInteractor: ListRoomInteractorInputProtocol {
 
+    let service = Provider.shared.receptionistAPIService
+
+    func getRoomsByClass() {
+        service.getRoomsByClass(success: { (result) in
+            self.presenter?.didGetRoomsByClass(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didGetRoomsByClass(result: nil, error: error)
+        }
+    }
+
+
     weak var presenter: ListRoomInteractorOutputProtocol?
 }

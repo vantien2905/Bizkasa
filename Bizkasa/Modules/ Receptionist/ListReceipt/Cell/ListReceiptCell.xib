@@ -102,6 +102,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="lbCreateDate" destination="id0-6l-co9" id="WQg-yc-2rF"/>
+                <outlet property="lbIndentifierNumber" destination="Fak-HW-u9X" id="Y2Q-Jl-4Qi"/>
+                <outlet property="lbName" destination="BY1-2f-foJ" id="ga3-xq-Hlk"/>
+                <outlet property="lbPrice" destination="HHW-iv-Aoj" id="eIM-Ol-WDY"/>
+                <outlet property="lbRoomType" destination="7v5-lO-7W3" id="mzK-Ag-1df"/>
                 <outlet property="lbStatus" destination="eW9-df-qDr" id="QeI-QQ-63D"/>
                 <outlet property="vBackground" destination="P9T-tm-Zj8" id="x1B-7C-LYi"/>
             </connections>

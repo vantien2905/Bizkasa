@@ -11,6 +11,10 @@
 import UIKit
 
 class ListCustomerPresenter: ListCustomerPresenterProtocol {
+    func getListCustomerCheckIn() {
+        interactor?.getListCustomerCheckIn()
+    }
+
 
     weak private var view: ListCustomerViewProtocol?
     var interactor: ListCustomerInteractorInputProtocol?
@@ -25,5 +29,9 @@ class ListCustomerPresenter: ListCustomerPresenterProtocol {
 }
 
 extension ListCustomerPresenter: ListCustomerInteractorOutputProtocol {
+    func didGetListCustomerCheckIn(result: CustomerCheckInEntity?, error: APIError?) {
+        view?.didGetListCustomerCheckIn(result: result, error: error)
+    }
+
 	
 }

@@ -11,6 +11,10 @@
 import UIKit
 
 class ListRoomPresenter: ListRoomPresenterProtocol {
+    func getRoomsByClass() {
+        interactor?.getRoomsByClass()
+    }
+
 
     weak private var view: ListRoomViewProtocol?
     var interactor: ListRoomInteractorInputProtocol?
@@ -25,5 +29,9 @@ class ListRoomPresenter: ListRoomPresenterProtocol {
 }
 
 extension ListRoomPresenter: ListRoomInteractorOutputProtocol {
+    func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?) {
+        view?.didGetRoomsByClass(result: result, error: error)
+    }
+
 	
 }

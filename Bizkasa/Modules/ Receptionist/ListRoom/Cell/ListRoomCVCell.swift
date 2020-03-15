@@ -22,11 +22,17 @@ class ListRoomCVCell: UICollectionViewCell {
 
     let dropdown = DropDown()
 
+    var room: RoomEntity? {
+        didSet {
+//            self.setData()
+        }
+    }
+
     weak var delegate: ListRoomCVCellDelegate?
 
-    var isEmpty = true {
+    var isAvailable = true {
         didSet {
-            if self.isEmpty {
+            if self.isAvailable {
                 self.dropdown.dataSource = ["Nhận phòng", "Nhận phòng theo đoàn"]
             } else {
                 self.dropdown.dataSource = ["Trả phòng/Cập nhật HĐ", "Trả phòng theo đoàn", "Gộp thanh toán"]
@@ -55,11 +61,25 @@ class ListRoomCVCell: UICollectionViewCell {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        vBackground.setShadow()
+//        vBackground.setShadow()
+        setData()
     }
 
     @IBAction func btnShowActionTapped() {
         dropdown.show()
+    }
+
+    private func setData() {
+        guard let room = room else { return }
+        lbTitle.text = "Phòng \(room.Name&)"
+        self.isAvailable = room.OrderRoom == nil
+        if let order = room.OrderRoom {
+            vBackground.setShadow(color: AppColor.normalLightGray)
+            lbTitle.textColor = .black
+        } else {
+            vBackground.setShadow(color: AppColor.normalGreen)
+            lbTitle.textColor = .white
+        }
     }
 
 }

@@ -17,12 +17,14 @@ protocol ListReceiptWireframeProtocol: class {
 protocol ListReceiptPresenterProtocol: class {
 
     var interactor: ListReceiptInteractorInputProtocol? { get set }
+    func getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool)
 }
 
 //MARK: Interactor -
 protocol ListReceiptInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetInvoices(result: InvoiceResponse?, error: APIError?)
 }
 
 protocol ListReceiptInteractorInputProtocol: class {
@@ -30,6 +32,7 @@ protocol ListReceiptInteractorInputProtocol: class {
     var presenter: ListReceiptInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool)
 }
 
 //MARK: View -
@@ -38,4 +41,5 @@ protocol ListReceiptViewProtocol: class {
     var presenter: ListReceiptPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetInvoices(result: InvoiceResponse?, error: APIError?)
 }

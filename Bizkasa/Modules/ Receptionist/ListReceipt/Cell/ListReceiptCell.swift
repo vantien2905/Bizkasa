@@ -12,6 +12,17 @@ class ListReceiptCell: UITableViewCell {
 
     @IBOutlet weak var vBackground: UIView!
     @IBOutlet weak var lbStatus: AppLabel!
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbIndentifierNumber: UILabel!
+    @IBOutlet weak var lbCreateDate: UILabel!
+    @IBOutlet weak var lbRoomType: UILabel!
+    @IBOutlet weak var lbPrice: UILabel!
+
+    var invoice: InvoiceEntity? {
+        didSet {
+            self.setData()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +40,14 @@ class ListReceiptCell: UITableViewCell {
         vBackground.setShadow()
         lbStatus.setShadow(color: .orange)
     }
-    
+
+    private func setData() {
+        guard let invoice = invoice else { return }
+        lbName.text = "Tên: \(invoice.CustomerName&)"
+        lbIndentifierNumber.text = "CMT: \(invoice.PassportId&)"
+        lbCreateDate.text = "Ngày tạo: \(invoice.CreatedDate&)"
+        lbRoomType.text = invoice.RoomClassName
+        lbPrice.text = invoice.TotalAmount*.formattedWithSeparator
+    }
+
 }

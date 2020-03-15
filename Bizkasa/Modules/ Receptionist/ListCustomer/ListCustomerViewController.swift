@@ -16,9 +16,16 @@ class ListCustomerViewController: HomeBaseViewController {
 
 	var presenter: ListCustomerPresenterProtocol?
 
+    var listCustomer: [CustomerEntity] = [] {
+        didSet {
+            self.tbCustomer.reloadData()
+        }
+    }
+
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        presenter?.getListCustomerCheckIn()
     }
 
     private func configureTableView() {
@@ -34,16 +41,23 @@ class ListCustomerViewController: HomeBaseViewController {
 }
 
 extension ListCustomerViewController: ListCustomerViewProtocol {
-	
+    func didGetListCustomerCheckIn(result: CustomerCheckInEntity?, error: APIError?) {
+        if let result = result {
+            self.listCustomer = result.data
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
 }
 
 extension ListCustomerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return listCustomer.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(ListCustomerCell.self)
+        cell.customer = listCustomer[indexPath.row]
         return cell
     }
 

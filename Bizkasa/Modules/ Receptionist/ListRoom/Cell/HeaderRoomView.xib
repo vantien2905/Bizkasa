@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HeaderRoomView" customModule="Bizkasa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="58"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYB-F5-Gyu">
+                    <rect key="frame" x="10" y="10" width="315" height="38"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="nZE-Hv-MdP">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="nZE-Hv-MdP" secondAttribute="height" multiplier="1:1" id="iKf-UP-Kiz"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUẢN LÝ VĂN BẢN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNy-6c-26x">
+                            <rect key="frame" x="48" y="0.0" width="267" height="38"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="PNy-6c-26x" firstAttribute="top" secondItem="vYB-F5-Gyu" secondAttribute="top" id="EOi-tX-T4U"/>
+                        <constraint firstAttribute="trailing" secondItem="PNy-6c-26x" secondAttribute="trailing" id="HrH-0U-pGr"/>
+                        <constraint firstItem="nZE-Hv-MdP" firstAttribute="leading" secondItem="vYB-F5-Gyu" secondAttribute="leading" id="XyV-D9-FJn"/>
+                        <constraint firstItem="nZE-Hv-MdP" firstAttribute="top" secondItem="vYB-F5-Gyu" secondAttribute="top" id="biX-SO-C1T"/>
+                        <constraint firstItem="PNy-6c-26x" firstAttribute="leading" secondItem="nZE-Hv-MdP" secondAttribute="trailing" constant="10" id="bsF-bz-MAa"/>
+                        <constraint firstAttribute="bottom" secondItem="PNy-6c-26x" secondAttribute="bottom" id="hcr-dF-e2j"/>
+                        <constraint firstAttribute="bottom" secondItem="nZE-Hv-MdP" secondAttribute="bottom" id="wmp-b0-D5W"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vYB-F5-Gyu" secondAttribute="bottom" constant="10" id="8Si-SO-zlu"/>
+                <constraint firstAttribute="trailing" secondItem="vYB-F5-Gyu" secondAttribute="trailing" constant="10" id="9f2-uP-HpZ"/>
+                <constraint firstItem="vYB-F5-Gyu" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="tQe-Pa-7Wi"/>
+                <constraint firstItem="vYB-F5-Gyu" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="10" id="uFz-6b-Vmx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="imgLogo" destination="nZE-Hv-MdP" id="2zH-i7-Cau"/>
+                <outlet property="lbTitle" destination="PNy-6c-26x" id="j6n-2Q-ZhH"/>
+            </connections>
+            <point key="canvasLocation" x="148.55072463768118" y="117.1875"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="facebook" width="64" height="64"/>
+    </resources>
+</document>

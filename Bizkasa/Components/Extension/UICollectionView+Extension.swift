@@ -23,6 +23,22 @@ extension UICollectionViewCell {
 // MARK: Table
 extension UICollectionView {
 
+    func register(header: UICollectionReusableView.Type, isNib: Bool = true) {
+            if !isNib {
+                self.register(header.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: header.identifier)
+            } else {
+                self.register(header.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: header.identifier)
+            }
+        }
+
+        func dequeue<T: UICollectionReusableView>(header: T.Type, indexPath: IndexPath) -> T {
+    //        if isNib {
+                return dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.identifier, for: indexPath) as! T
+    //        } else {
+    //            return dequeueReusableHeaderFooterView(withIdentifier: String(describing: T.self)) as! T
+    //        }
+        }
+
     // Cell
     func registerCollectionCell<T: UICollectionViewCell>(_: T.Type, fromNib: Bool = true) {
         if fromNib {

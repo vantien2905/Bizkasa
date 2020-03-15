@@ -12,6 +12,16 @@ class ListCustomerCell: UITableViewCell {
 
     @IBOutlet weak var vBackground: UIView!
     @IBOutlet weak var lbStatus: AppLabel!
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbIndentifierNumber: UILabel!
+    @IBOutlet weak var lbCreateDate: UILabel!
+    @IBOutlet weak var lbRoomType: UILabel!
+
+    var customer: CustomerEntity? {
+        didSet {
+            self.setData()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +38,15 @@ class ListCustomerCell: UITableViewCell {
         super.draw(rect)
         vBackground.setShadow()
         lbStatus.setShadow(color: .orange)
+    }
+
+    private func setData() {
+        guard let customer = customer else { return }
+        lbName.text = "Tên: \(customer.Name&)"
+        lbIndentifierNumber.text = "CMT: \(customer.PassportId&)"
+        lbCreateDate.text = "Ngày tạo: \(customer.CheckInDate&)"
+        lbRoomType.text = customer.RoomClassName
+//        lbStatus.text = customer.
     }
     
 }

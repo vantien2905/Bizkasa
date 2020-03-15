@@ -16,9 +16,18 @@ class ListRoomViewController: HomeBaseViewController {
 
 	var presenter: ListRoomPresenterProtocol?
 
+    var listRoomType: [RoomTypeEntity] = [] {
+        didSet {
+            cvListRoom.reloadData()
+        }
+    }
+
+    let heightHeader: CGFloat = 60
+
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        presenter?.getRoomsByClass()
     }
 
     override func setUpNavigation() {
@@ -27,6 +36,7 @@ class ListRoomViewController: HomeBaseViewController {
 
     private func configureCollectionView() {
         cvListRoom.registerCollectionCell(ListRoomCVCell.self)
+        cvListRoom.register(header: HeaderRoomView.self)
         cvListRoom.delegate = self
         cvListRoom.dataSource = self
         let screen = UIScreen.main.bounds
@@ -40,19 +50,47 @@ class ListRoomViewController: HomeBaseViewController {
 }
 
 extension ListRoomViewController: ListRoomViewProtocol {
+    func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?) {
+        if let result = result {
+            self.listRoomType = result
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
 	
 }
 
 extension ListRoomViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        self.listRoomType.count
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 40
+        return self.listRoomType[section].Rooms.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCollectionCell(ListRoomCVCell.self, indexPath: indexPath)
         cell.delegate = self
-        cell.isEmpty = true
+        cell.room = self.listRoomType[indexPath.section].Rooms[indexPath.row]
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeue(header: HeaderRoomView.self, indexPath: indexPath)
+            header.lbTitle.text = listRoomType[indexPath.section].Name
+            return header
+        default:  fatalError("Unexpected element kind")
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: heightHeader)
     }
 }
 

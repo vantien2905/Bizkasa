@@ -17,12 +17,15 @@ protocol ListRoomWireframeProtocol: class {
 protocol ListRoomPresenterProtocol: class {
 
     var interactor: ListRoomInteractorInputProtocol? { get set }
+
+    func getRoomsByClass()
 }
 
 //MARK: Interactor -
 protocol ListRoomInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?)
 }
 
 protocol ListRoomInteractorInputProtocol: class {
@@ -30,6 +33,7 @@ protocol ListRoomInteractorInputProtocol: class {
     var presenter: ListRoomInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getRoomsByClass()
 }
 
 //MARK: View -
@@ -38,4 +42,5 @@ protocol ListRoomViewProtocol: class {
     var presenter: ListRoomPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?)
 }

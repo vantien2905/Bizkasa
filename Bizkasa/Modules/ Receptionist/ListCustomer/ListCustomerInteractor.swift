@@ -12,5 +12,16 @@ import UIKit
 
 class ListCustomerInteractor: ListCustomerInteractorInputProtocol {
 
+    let service = Provider.shared.receptionistAPIService
+
+    func getListCustomerCheckIn() {
+        service.getListCustomerCheckIn(success: { (result) in
+            self.presenter?.didGetListCustomerCheckIn(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didGetListCustomerCheckIn(result: nil, error: error)
+        }
+    }
+
+
     weak var presenter: ListCustomerInteractorOutputProtocol?
 }
