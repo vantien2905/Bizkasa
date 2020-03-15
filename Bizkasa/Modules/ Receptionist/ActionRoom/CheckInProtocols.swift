@@ -17,12 +17,15 @@ protocol CheckInWireframeProtocol: class {
 protocol CheckInPresenterProtocol: class {
 
     var interactor: CheckInInteractorInputProtocol? { get set }
+
+    func getConfigPrice(roomId: Int)
 }
 
 //MARK: Interactor -
 protocol CheckInInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetConfigPrice(result: [ConfigPriceEntity]?, error: APIError?)
 }
 
 protocol CheckInInteractorInputProtocol: class {
@@ -30,6 +33,7 @@ protocol CheckInInteractorInputProtocol: class {
     var presenter: CheckInInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getConfigPrice(roomId: Int)
 }
 
 //MARK: View -
@@ -38,4 +42,5 @@ protocol CheckInViewProtocol: class {
     var presenter: CheckInPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetConfigPrice(result: [ConfigPriceEntity]?, error: APIError?)
 }

@@ -10,7 +10,7 @@ import UIKit
 import DropDown
 
 protocol ListRoomCVCellDelegate: class {
-    func actionTapped(type: Int)
+    func actionTapped(type: Int, room: RoomEntity?)
 }
 
 class ListRoomCVCell: UICollectionViewCell {
@@ -47,21 +47,15 @@ class ListRoomCVCell: UICollectionViewCell {
     }
 
     private func configureDropDown() {
-        // Top of drop down will be below the anchorView
         dropdown.anchorView = self.vDropdownLayout
-        dropdown.backgroundColor = .orange
-        dropdown.textColor = .white
-
-        //        dropdown.bottomOffset = CGPoint(x: 0, y:(dropdown.anchorView?.plainView.bounds.height)!)
-        //
         dropdown.selectionAction = { [weak self] (index: Int, item: String) in
-            self?.delegate?.actionTapped(type: index)
+            guard let self = self else { return }
+            self.delegate?.actionTapped(type: index, room: self.room)
         }
     }
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-//        vBackground.setShadow()
         setData()
     }
 
@@ -76,9 +70,18 @@ class ListRoomCVCell: UICollectionViewCell {
         if let order = room.OrderRoom {
             vBackground.setShadow(color: AppColor.normalLightGray)
             lbTitle.textColor = .black
+
+            dropdown.backgroundColor = AppColor.normalLightGray
+            dropdown.textColor = .black
+            dropdown.separatorColor = .black
+
         } else {
             vBackground.setShadow(color: AppColor.normalGreen)
             lbTitle.textColor = .white
+
+            dropdown.backgroundColor = .orange
+            dropdown.textColor = .white
+            dropdown.separatorColor = .white
         }
     }
 

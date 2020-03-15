@@ -19,13 +19,28 @@ class CheckInViewController: BaseViewController {
     @IBOutlet weak var tfCheckInTime        : TextFieldCalendar!
     @IBOutlet weak var vTimeType            : AppDropdown!
     @IBOutlet weak var vConfigurePrice      : AppDropdown!
-    @IBOutlet weak var vService             : AppDropdown!
+    @IBOutlet weak var vService             : AppDropdownBorder!
+    @IBOutlet weak var vTotalService        : AppDropdownBorder!
     @IBOutlet weak var tvNote               : AppTextViewLogo!
 
 	var presenter: CheckInPresenterProtocol?
 
+    var listPrice: [ConfigPriceEntity] = [] {
+        didSet {
+            self.vConfigurePrice.dataSource = self.listPrice.map({$0.Name&})
+        }
+    }
+
+    var room: RoomEntity?
+
 	override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+    }
+
+    private func getData() {
+        guard let room = room, let roomId = room.Id else { return }
+        presenter?.getConfigPrice(roomId: roomId)
     }
 
     override func setUpNavigation() {
@@ -43,12 +58,15 @@ class CheckInViewController: BaseViewController {
         vConfigurePrice.setTitleAndLogo(AppImage.imgPayment, title: "Cấu hình giá")
         vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
 
+
         tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Ngày cấp")
 
         tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Thời gian")
 
         tvNote.setTitleAndLogo(AppImage.imgPayment, title: "Ghi chú")
-        
+        vTotalService.dataSource = ["1", "2", "3", "4", "5"]
+        vService.dataSource = ["Dịch vụ"]
+
     }
 
     @objc func btnAcceptTapped() {
@@ -58,5 +76,13 @@ class CheckInViewController: BaseViewController {
 }
 
 extension CheckInViewController: CheckInViewProtocol {
+    func didGetConfigPrice(result: [ConfigPriceEntity]?, error: APIError?) {
+        if let result = result {
+            self.listPrice = result
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
 	
 }

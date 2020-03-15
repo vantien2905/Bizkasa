@@ -15,6 +15,7 @@ enum ReceptionistEndPoint {
     case getListCustomerCheckIn
     case getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool)
     case getRoomsByClass
+    case getConfigPrice(roomId: Int)
 }
 
 extension ReceptionistEndPoint: EndPointType {
@@ -26,6 +27,8 @@ extension ReceptionistEndPoint: EndPointType {
             return "/api/Invoice/GetInvoices"
         case .getRoomsByClass:
             return "/api/Room/GetRoomsByClass"
+        case .getConfigPrice:
+            return "api/Room/GetConfigPriceBy"
         }
     }
 
@@ -51,6 +54,8 @@ extension ReceptionistEndPoint: EndPointType {
                          "IsShowInDay": isInDay
                 ] as [String : Any]
             return param
+        case .getConfigPrice(let roomId):
+            return ["roomid": roomId]
         }
     }
 

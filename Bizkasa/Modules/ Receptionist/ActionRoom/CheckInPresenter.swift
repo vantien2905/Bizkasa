@@ -11,6 +11,10 @@
 import UIKit
 
 class CheckInPresenter: CheckInPresenterProtocol {
+    func getConfigPrice(roomId: Int) {
+        interactor?.getConfigPrice(roomId: roomId)
+    }
+
 
     weak private var view: CheckInViewProtocol?
     var interactor: CheckInInteractorInputProtocol?
@@ -25,5 +29,9 @@ class CheckInPresenter: CheckInPresenterProtocol {
 }
 
 extension CheckInPresenter: CheckInInteractorOutputProtocol {
+    func didGetConfigPrice(result: [ConfigPriceEntity]?, error: APIError?) {
+        view?.didGetConfigPrice(result: result, error: error)
+    }
+
 	
 }

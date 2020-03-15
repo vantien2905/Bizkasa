@@ -14,7 +14,7 @@ class CheckInRouter: CheckInWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(room: RoomEntity?) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = CheckInViewController(nibName: nil, bundle: nil)
         let interactor = CheckInInteractor()
@@ -24,6 +24,7 @@ class CheckInRouter: CheckInWireframeProtocol {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        view.room = room
 
         return view
     }

@@ -26,6 +26,7 @@
 		B350C433241DF5030005288B /* RoomEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C432241DF5030005288B /* RoomEntity.swift */; };
 		B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C434241DFD8E0005288B /* HeaderRoomView.swift */; };
 		B350C437241DFD8E0005288B /* HeaderRoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B350C435241DFD8E0005288B /* HeaderRoomView.xib */; };
+		B350C439241E04C20005288B /* ConfigPriceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C438241E04C20005288B /* ConfigPriceEntity.swift */; };
 		B35DCAEA241C97B9005B70FC /* CustomerCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DCAE9241C97B9005B70FC /* CustomerCheckIn.swift */; };
 		B35DCAEC241C9984005B70FC /* ReceptionistEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DCAEB241C9984005B70FC /* ReceptionistEndPoint.swift */; };
 		B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680990240A38FF002F8D00 /* ListCustomerCell.swift */; };
@@ -249,6 +250,7 @@
 		B350C432241DF5030005288B /* RoomEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEntity.swift; sourceTree = "<group>"; };
 		B350C434241DFD8E0005288B /* HeaderRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRoomView.swift; sourceTree = "<group>"; };
 		B350C435241DFD8E0005288B /* HeaderRoomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderRoomView.xib; sourceTree = "<group>"; };
+		B350C438241E04C20005288B /* ConfigPriceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigPriceEntity.swift; sourceTree = "<group>"; };
 		B35DCAE9241C97B9005B70FC /* CustomerCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCheckIn.swift; sourceTree = "<group>"; };
 		B35DCAEB241C9984005B70FC /* ReceptionistEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptionistEndPoint.swift; sourceTree = "<group>"; };
 		B3680990240A38FF002F8D00 /* ListCustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCustomerCell.swift; sourceTree = "<group>"; };
@@ -878,6 +880,7 @@
 				B35DCAE9241C97B9005B70FC /* CustomerCheckIn.swift */,
 				B3759661241DDFE600ACC208 /* InvoiceEntity.swift */,
 				B350C432241DF5030005288B /* RoomEntity.swift */,
+				B350C438241E04C20005288B /* ConfigPriceEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1497,6 +1500,7 @@
 				B3E7BA3B23F9105F0088259F /* HomeInteractor.swift in Sources */,
 				B3E7BA4623F9105F0088259F /* LeftMenuRouter.swift in Sources */,
 				B32069DB241394B80097D18B /* AppTextView.swift in Sources */,
+				B350C439241E04C20005288B /* ConfigPriceEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

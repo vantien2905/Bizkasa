@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,8 +18,9 @@
                 <outlet property="tfIndentifierNumber" destination="6EN-q3-VlQ" id="Mch-He-ihs"/>
                 <outlet property="tvNote" destination="Xdc-0R-371" id="Ei6-Bk-axe"/>
                 <outlet property="vConfigurePrice" destination="s0O-0Z-QHc" id="Xez-gn-5PJ"/>
-                <outlet property="vService" destination="c5Q-UK-Sdx" id="ah3-u7-cYE"/>
+                <outlet property="vService" destination="lgE-ZB-vZ9" id="C5N-8E-TmD"/>
                 <outlet property="vTimeType" destination="XeU-jB-Hs8" id="mFq-23-IfB"/>
+                <outlet property="vTotalService" destination="wLw-aW-ZPo" id="RKE-QG-fJg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,10 +33,10 @@
                     <rect key="frame" x="10" y="10" width="355" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3Y-4A-Dzt">
-                            <rect key="frame" x="0.0" y="0.0" width="355" height="660"/>
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="640"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6dm-me-kOC">
-                                    <rect key="frame" x="0.0" y="0.0" width="355" height="660"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="640"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-t6-8k0" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
@@ -67,12 +69,55 @@
                                             <rect key="frame" x="0.0" y="420" width="355" height="60"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5Q-UK-Sdx" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="490" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D43-9d-go6">
+                                            <rect key="frame" x="0.0" y="490" width="355" height="40"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgE-ZB-vZ9" customClass="AppDropdownBorder" customModule="Bizkasa" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="225" height="40"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLw-aW-ZPo" customClass="AppDropdownBorder" customModule="Bizkasa" customModuleProvider="target">
+                                                    <rect key="frame" x="235" y="0.0" width="60" height="40"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="jf2-6w-jsf"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJy-aX-8Hi">
+                                                    <rect key="frame" x="305" y="0.0" width="50" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTE-op-CAo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                            <color key="backgroundColor" name="Main"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="9oU-33-ivw"/>
+                                                                <constraint firstAttribute="width" constant="50" id="ZxQ-hY-RU8"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Thêm">
+                                                                <color key="titleColor" name="WhiteColor"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="3a4-hr-wXU"/>
+                                                        <constraint firstItem="yTE-op-CAo" firstAttribute="centerY" secondItem="hJy-aX-8Hi" secondAttribute="centerY" id="6Yt-70-KlH"/>
+                                                        <constraint firstItem="yTE-op-CAo" firstAttribute="centerX" secondItem="hJy-aX-8Hi" secondAttribute="centerX" id="K8y-a1-z4Z"/>
+                                                        <constraint firstItem="yTE-op-CAo" firstAttribute="width" secondItem="hJy-aX-8Hi" secondAttribute="width" id="eFE-fR-TS4"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="yOK-gW-psW"/>
+                                            </constraints>
+                                        </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-0R-371" customClass="AppTextViewLogo" customModule="Bizkasa" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="560" width="355" height="100"/>
+                                            <rect key="frame" x="0.0" y="540" width="355" height="100"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="hwI-PR-TOz"/>
@@ -80,7 +125,6 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="c5Q-UK-Sdx" firstAttribute="height" secondItem="s0O-0Z-QHc" secondAttribute="height" id="0ou-2N-7jL"/>
                                         <constraint firstItem="v9I-fH-kPi" firstAttribute="height" secondItem="ImR-cd-dic" secondAttribute="height" id="2Kx-Zb-VaM"/>
                                         <constraint firstItem="s0O-0Z-QHc" firstAttribute="height" secondItem="XeU-jB-Hs8" secondAttribute="height" id="Hfz-PB-J0c"/>
                                         <constraint firstItem="ImR-cd-dic" firstAttribute="height" secondItem="6EN-q3-VlQ" secondAttribute="height" id="Hih-65-549"/>
@@ -119,4 +163,12 @@
             <point key="canvasLocation" x="140" y="153"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.23137254901960785" green="0.52941176470588236" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -26,7 +26,7 @@ class LeftMenuViewController: BaseViewController {
 
     override func setUpViews() {
         guard let user = UserDefaultHelper.shared.getUser() else { return }
-        lbName.text = user.HotelName
+        lbName.text = "KHÁCH SẠN " + user.HotelName&.uppercased()
         imgLogo.sd_setImage(with: user.Logo&.convertUrl(), placeholderImage: AppImage.imgPlaceholder)
     }
 
