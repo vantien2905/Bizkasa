@@ -21,6 +21,7 @@ class UserEntity: Mappable {
     var HotelId: String?
     var OwnerHotels: String?
     var AuthToken: String?
+    var Email: String?
 
     required init?(map: Map) {
 
@@ -38,6 +39,7 @@ class UserEntity: Mappable {
         self.HotelId <- map["HotelId"]
         self.OwnerHotels <- map["OwnerHotels"]
         self.AuthToken <- map["Token.AuthToken"]
+        self.Email <- map["Email"]
     }
 
 }

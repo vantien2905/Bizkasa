@@ -16,6 +16,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateNewReceiptViewController">
             <connections>
+                <outlet property="lbCurrentTime" destination="SHv-a4-zAX" id="Z0h-G9-hOz"/>
+                <outlet property="lbEmployeeName" destination="1h1-eb-gja" id="6WL-I0-zc0"/>
                 <outlet property="vCustomerName" destination="sUK-7C-MPh" id="fsk-R7-gFy"/>
                 <outlet property="vNote" destination="aka-Sq-Vph" id="2eu-td-mhx"/>
                 <outlet property="vService" destination="stf-DL-4ve" id="Q9x-c5-Oft"/>

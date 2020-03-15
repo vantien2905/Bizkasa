@@ -57,15 +57,13 @@ class CheckInViewController: BaseViewController {
         vTimeType.setTitleAndLogo(AppImage.imgPayment, title: "Tính theo")
         vConfigurePrice.setTitleAndLogo(AppImage.imgPayment, title: "Cấu hình giá")
         vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
-
-
         tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Ngày cấp")
-
         tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Thời gian")
 
         tvNote.setTitleAndLogo(AppImage.imgPayment, title: "Ghi chú")
         vTotalService.dataSource = ["1", "2", "3", "4", "5"]
         vService.dataSource = ["Dịch vụ"]
+        vTimeType.dataSource = ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
 
     }
 

@@ -18,6 +18,9 @@ class CreateNewReceiptViewController: BaseViewController {
     @IBOutlet weak var vService: AppDropdownBorder!
     @IBOutlet weak var vTotal: AppDropdownBorder!
 
+    @IBOutlet weak var lbEmployeeName: UILabel!
+    @IBOutlet weak var lbCurrentTime: UILabel!
+
 	var presenter: CreateNewReceiptPresenterProtocol?
 
 	override func viewDidLoad() {
@@ -39,6 +42,10 @@ class CreateNewReceiptViewController: BaseViewController {
 
         vService.dataSource = ["Chọn dịch vụ"]
         vTotal.dataSource = ["1", "2", "3", "4", "5"]
+
+        guard let user = UserDefaultHelper.shared.getUser() else { return }
+        lbEmployeeName.text = "Nhân viên: \(user.Email&)"
+        lbCurrentTime.text = "Thời gian: \(Date().toDateFormatCurrentTime(DateFormat.SIMPLE_DATE))"
     }
 
     @objc func btnAcceptTapped() {
