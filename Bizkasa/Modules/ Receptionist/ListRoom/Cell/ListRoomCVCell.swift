@@ -10,7 +10,14 @@ import UIKit
 import DropDown
 
 protocol ListRoomCVCellDelegate: class {
-    func actionTapped(type: Int, room: RoomEntity?)
+    func actionTapped(type: String, room: RoomEntity?)
+}
+
+enum ActionRoom: String {
+    case checkIn = "Nhận phòng"
+    case checkInGroup = "Nhận phòng theo đoàn"
+    case checkOut = "Trả phòng/Cập nhật HĐ"
+    case checkOutGroup = "Trả phòng theo đoàn"
 }
 
 class ListRoomCVCell: UICollectionViewCell {
@@ -50,7 +57,7 @@ class ListRoomCVCell: UICollectionViewCell {
         dropdown.anchorView = self.vDropdownLayout
         dropdown.selectionAction = { [weak self] (index: Int, item: String) in
             guard let self = self else { return }
-            self.delegate?.actionTapped(type: index, room: self.room)
+            self.delegate?.actionTapped(type: item, room: self.room)
         }
     }
 

@@ -95,9 +95,18 @@ extension ListRoomViewController: UICollectionViewDelegateFlowLayout, UICollecti
 }
 
 extension ListRoomViewController: ListRoomCVCellDelegate {
-    func actionTapped(type: Int, room: RoomEntity?) {
-        let vc = CheckInRouter.createModule(room: room).convertNavi()
-        self.present(controller: vc)
+    func actionTapped(type: String, room: RoomEntity?) {
+        switch type {
+        case ActionRoom.checkIn.rawValue:
+            let vc = CheckInRouter.createModule(room: room).convertNavi()
+            self.present(controller: vc)
+        case ActionRoom.checkOut.rawValue:
+            let vc = CheckOutRouter.createModule().convertNavi()
+            self.present(controller: vc)
+        default:
+            break
+        }
+
     }
 
 }

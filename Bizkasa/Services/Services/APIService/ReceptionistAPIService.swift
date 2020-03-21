@@ -14,9 +14,15 @@ protocol ReceptionistAPIServiceProtocol {
     func getRoomsByClass(success: @escaping SuccessHandler<RoomTypeEntity>.array, failure: @escaping RequestFailure)
     func getConfigPrice(roomId: Int, success: @escaping SuccessHandler<ConfigPriceEntity>.array, failure: @escaping RequestFailure)
     func getWidget(success: @escaping SuccessHandler<WidgetTypeEntity>.array, failure: @escaping RequestFailure)
+    func getOrderForCheckOut(orderId: Int, mode: Int, success: @escaping SuccessHandler<OrderInfoEntity>.object, failure: @escaping RequestFailure)
 }
 
 class ReceptionistAPIService: ReceptionistAPIServiceProtocol {
+
+    func getOrderForCheckOut(orderId: Int, mode: Int, success: @escaping SuccessHandler<OrderInfoEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = ReceptionistEndPoint.getOrderForCheckOut(orderId: orderId, mode: mode)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
 
     func getWidget(success: @escaping SuccessHandler<WidgetTypeEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = ReceptionistEndPoint.getWidget

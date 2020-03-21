@@ -42,6 +42,13 @@
 		B35FE7D32425D3580072D223 /* WidgetTypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */; };
 		B35FE7D72425DCC00072D223 /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7D52425DCC00072D223 /* WidgetCell.swift */; };
 		B35FE7D82425DCC00072D223 /* WidgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35FE7D62425DCC00072D223 /* WidgetCell.xib */; };
+		B35FE7E22426174E0072D223 /* CheckOutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7DC2426174E0072D223 /* CheckOutPresenter.swift */; };
+		B35FE7E32426174E0072D223 /* CheckOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7DD2426174E0072D223 /* CheckOutRouter.swift */; };
+		B35FE7E42426174E0072D223 /* CheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7DE2426174E0072D223 /* CheckOutViewController.swift */; };
+		B35FE7E52426174E0072D223 /* CheckOutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7DF2426174E0072D223 /* CheckOutProtocols.swift */; };
+		B35FE7E62426174E0072D223 /* CheckOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7E02426174E0072D223 /* CheckOutInteractor.swift */; };
+		B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35FE7E12426174E0072D223 /* CheckOutViewController.xib */; };
+		B35FE7E924261A430072D223 /* OrderInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7E824261A430072D223 /* OrderInfoEntity.swift */; };
 		B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680990240A38FF002F8D00 /* ListCustomerCell.swift */; };
 		B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3680991240A38FF002F8D00 /* ListCustomerCell.xib */; };
 		B3680997240A452E002F8D00 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680995240A452E002F8D00 /* AppLabel.swift */; };
@@ -279,6 +286,13 @@
 		B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTypeEntity.swift; sourceTree = "<group>"; };
 		B35FE7D52425DCC00072D223 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
 		B35FE7D62425DCC00072D223 /* WidgetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
+		B35FE7DC2426174E0072D223 /* CheckOutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutPresenter.swift; sourceTree = "<group>"; };
+		B35FE7DD2426174E0072D223 /* CheckOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutRouter.swift; sourceTree = "<group>"; };
+		B35FE7DE2426174E0072D223 /* CheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutViewController.swift; sourceTree = "<group>"; };
+		B35FE7DF2426174E0072D223 /* CheckOutProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutProtocols.swift; sourceTree = "<group>"; };
+		B35FE7E02426174E0072D223 /* CheckOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutInteractor.swift; sourceTree = "<group>"; };
+		B35FE7E12426174E0072D223 /* CheckOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckOutViewController.xib; sourceTree = "<group>"; };
+		B35FE7E824261A430072D223 /* OrderInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoEntity.swift; sourceTree = "<group>"; };
 		B3680990240A38FF002F8D00 /* ListCustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCustomerCell.swift; sourceTree = "<group>"; };
 		B3680991240A38FF002F8D00 /* ListCustomerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCustomerCell.xib; sourceTree = "<group>"; };
 		B3680995240A452E002F8D00 /* AppLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
@@ -626,6 +640,7 @@
 				B350C432241DF5030005288B /* RoomEntity.swift */,
 				B350C438241E04C20005288B /* ConfigPriceEntity.swift */,
 				B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */,
+				B35FE7E824261A430072D223 /* OrderInfoEntity.swift */,
 			);
 			path = Receptionist;
 			sourceTree = "<group>";
@@ -650,6 +665,19 @@
 				B36809C4240A6AC5002F8D00 /* CheckInViewController.xib */,
 			);
 			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		B35FE7DB242617400072D223 /* CheckOut */ = {
+			isa = PBXGroup;
+			children = (
+				B35FE7DC2426174E0072D223 /* CheckOutPresenter.swift */,
+				B35FE7DD2426174E0072D223 /* CheckOutRouter.swift */,
+				B35FE7DE2426174E0072D223 /* CheckOutViewController.swift */,
+				B35FE7DF2426174E0072D223 /* CheckOutProtocols.swift */,
+				B35FE7E02426174E0072D223 /* CheckOutInteractor.swift */,
+				B35FE7E12426174E0072D223 /* CheckOutViewController.xib */,
+			);
+			path = CheckOut;
 			sourceTree = "<group>";
 		};
 		B368098F240A38E7002F8D00 /* Cell */ = {
@@ -725,6 +753,7 @@
 		B36809BE240A6AB2002F8D00 /* ActionRoom */ = {
 			isa = PBXGroup;
 			children = (
+				B35FE7DB242617400072D223 /* CheckOut */,
 				B35FE7DA2425F90C0072D223 /* CheckIn */,
 			);
 			path = ActionRoom;
@@ -1333,6 +1362,7 @@
 				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
 				B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */,
+				B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */,
 				B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */,
 				B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
@@ -1428,6 +1458,7 @@
 				B3E7BA8123F9105F0088259F /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				B3E7BA6223F9105F0088259F /* UIImageView+Extension.swift in Sources */,
 				B3E7BA8623F9105F0088259F /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				B35FE7E62426174E0072D223 /* CheckOutInteractor.swift in Sources */,
 				B3E7BA3223F9105F0088259F /* BaseResponse.swift in Sources */,
 				B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */,
 				B36809A9240A5777002F8D00 /* CreateNewReceiptInteractor.swift in Sources */,
@@ -1448,6 +1479,7 @@
 				B3E7BA8D23F9105F0088259F /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				B36809C9240A6AC5002F8D00 /* CheckInInteractor.swift in Sources */,
 				B3E7BAAB23F9105F0088259F /* LocalizationManager.swift in Sources */,
+				B35FE7E22426174E0072D223 /* CheckOutPresenter.swift in Sources */,
 				B3E7BA4023F9105F0088259F /* HomeProtocols.swift in Sources */,
 				B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */,
 				B3E7BA9523F9105F0088259F /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
@@ -1466,8 +1498,10 @@
 				B3E7BA6123F9105F0088259F /* UIApplication+Extension.swift in Sources */,
 				B3E7BAA923F9105F0088259F /* UserDefaultHelper.swift in Sources */,
 				B3E7BAA823F9105F0088259F /* SlideInPresentationController.swift in Sources */,
+				B35FE7E32426174E0072D223 /* CheckOutRouter.swift in Sources */,
 				B3759660241DCD3800ACC208 /* ReceptionistAPIService.swift in Sources */,
 				B36809BD240A5C8C002F8D00 /* ActionDropdownCell.swift in Sources */,
+				B35FE7E52426174E0072D223 /* CheckOutProtocols.swift in Sources */,
 				B3E7BA9F23F9105F0088259F /* NotificationName.swift in Sources */,
 				B3E7BA6E23F9105F0088259F /* WKWebView+Extension.swift in Sources */,
 				B3E7BA7223F9105F0088259F /* UILabel+Extensions.swift in Sources */,
@@ -1480,6 +1514,7 @@
 				B3E7BA3E23F9105F0088259F /* HomeRouter.swift in Sources */,
 				B3E7BA7423F9105F0088259F /* Array+Extension.swift in Sources */,
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
+				B35FE7E924261A430072D223 /* OrderInfoEntity.swift in Sources */,
 				B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */,
 				B3E7BA4923F9105F0088259F /* FlashViewController.swift in Sources */,
 				B36809A7240A5777002F8D00 /* CreateNewReceiptViewController.swift in Sources */,
@@ -1578,6 +1613,7 @@
 				B36809A8240A5777002F8D00 /* CreateNewReceiptProtocols.swift in Sources */,
 				B3E7BA8323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				B3E7BA6C23F9105F0088259F /* NSMutableAttributedString+Extension.swift in Sources */,
+				B35FE7E42426174E0072D223 /* CheckOutViewController.swift in Sources */,
 				B379542C2402A43F007768B8 /* ListRoomInteractor.swift in Sources */,
 				B38B9D2E2406B0EC006D69B0 /* TabbarReceptionistInteractor.swift in Sources */,
 				B36809C8240A6AC5002F8D00 /* CheckInProtocols.swift in Sources */,
