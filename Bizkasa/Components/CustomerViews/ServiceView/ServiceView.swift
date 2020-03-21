@@ -73,11 +73,26 @@ class ServiceView: BaseViewXib {
     @IBAction func btnAddNewTapped() {
         if let widget = widget, total != 0 {
 //            addNewCallBack?(widget, total)
-            self.listWidget.append((widget, total))
+            if checkDouplicate() {
+                tbListWidget.reloadData()
+            } else {
+                self.listWidget.append((widget, total))
+            }
         } else {
             UIApplication.topViewController()?.makeToast(message: "Bạn chưa chọn dịch vụ")
         }
 
+    }
+
+    private func checkDouplicate() -> Bool {
+        guard let widget = widget else { return false}
+        for (index, item) in listWidget.enumerated() {
+            if item.0.Id == widget.Id {
+                self.listWidget[index].1 += total
+                return true
+            }
+        }
+        return false
     }
 }
 

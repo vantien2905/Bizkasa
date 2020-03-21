@@ -83,7 +83,7 @@ extension ListRoomViewController: UICollectionViewDelegateFlowLayout, UICollecti
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeue(header: HeaderRoomView.self, indexPath: indexPath)
-            header.lbTitle.text = listRoomType[indexPath.section].Name
+            header.lbTitle.text = listRoomType[indexPath.section].Name&.uppercased()
             return header
         default:  fatalError("Unexpected element kind")
         }
