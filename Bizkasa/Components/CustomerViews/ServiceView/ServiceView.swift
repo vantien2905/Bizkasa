@@ -14,8 +14,27 @@ class ServiceView: BaseViewXib {
     @IBOutlet weak var vTotal: AppDropdownBorder!
     @IBOutlet weak var lbService: UILabel!
 
+    @IBOutlet weak var heightTableView: NSLayoutConstraint!
+
+    @IBOutlet weak var tbListWidget: UITableView!
+       @IBOutlet weak var lbTotalPrice: UILabel!
+       @IBOutlet weak var vTotalPrice: UIView!
+
     var widget: WidgetEntity?
     var total: Int = 1
+
+    var listWidget: [(WidgetEntity, Int)] = [] {
+        didSet {
+            let totalPrice = self.listWidget.reduce(Float(0)) { result, item in
+                return result + (item.0.Price ?? 0) * Float(item.1)
+            }
+            vTotalPrice.isHidden = totalPrice == Float(0)
+            lbTotalPrice.text = "\(totalPrice) VNĐ"
+            heightTableView.constant = CGFloat(self.listWidget.count * 40)
+            tbListWidget.reloadData()
+        }
+    }
+
 
     var addNewCallBack: ((_ widget: WidgetEntity, _ total: Int) -> Void)?
 
@@ -25,7 +44,19 @@ class ServiceView: BaseViewXib {
         vTotal.dropDownCallBack = { [weak self] (index, item) in
             self?.total = index + 1
         }
+
+        vTotalPrice.isHidden = true
+        heightTableView.constant = 0
+
+        configureTableView()
     }
+
+    private func configureTableView() {
+           tbListWidget.registerTableCell(WidgetCell.self)
+           tbListWidget.dataSource = self
+           tbListWidget.delegate = self
+           tbListWidget.rowHeight = 40
+       }
 
     @IBAction func btnServiceTapped() {
         let vc = ListServiceRouter.createModule()
@@ -41,10 +72,26 @@ class ServiceView: BaseViewXib {
 
     @IBAction func btnAddNewTapped() {
         if let widget = widget, total != 0 {
-            addNewCallBack?(widget, total)
+//            addNewCallBack?(widget, total)
+            self.listWidget.append((widget, total))
         } else {
             UIApplication.topViewController()?.makeToast(message: "Bạn chưa chọn dịch vụ")
         }
 
+    }
+}
+
+extension ServiceView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listWidget.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueTableCell(WidgetCell.self)
+        cell.setData(widget: listWidget[indexPath.row].0, total: listWidget[indexPath.row].1, indexPath: indexPath)
+        cell.deleteCallback = { indexPath in
+            self.listWidget.remove(at: indexPath.row)
+        }
+        return cell
     }
 }

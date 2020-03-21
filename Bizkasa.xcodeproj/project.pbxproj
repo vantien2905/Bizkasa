@@ -597,6 +597,7 @@
 		B35FE7BF2425CFCD0072D223 /* ServiceVC */ = {
 			isa = PBXGroup;
 			children = (
+				B35FE7D92425F8000072D223 /* WidgetCell */,
 				B35FE7CC2425D0460072D223 /* Cell */,
 				B35FE7C02425D0030072D223 /* ListServicePresenter.swift */,
 				B35FE7C12425D0030072D223 /* ListServiceRouter.swift */,
@@ -629,13 +630,13 @@
 			path = Receptionist;
 			sourceTree = "<group>";
 		};
-		B35FE7D42425DCAE0072D223 /* Cell */ = {
+		B35FE7D92425F8000072D223 /* WidgetCell */ = {
 			isa = PBXGroup;
 			children = (
 				B35FE7D52425DCC00072D223 /* WidgetCell.swift */,
 				B35FE7D62425DCC00072D223 /* WidgetCell.xib */,
 			);
-			path = Cell;
+			path = WidgetCell;
 			sourceTree = "<group>";
 		};
 		B368098F240A38E7002F8D00 /* Cell */ = {
@@ -668,7 +669,6 @@
 		B368099E240A5753002F8D00 /* CreateNewReceipt */ = {
 			isa = PBXGroup;
 			children = (
-				B35FE7D42425DCAE0072D223 /* Cell */,
 				B368099F240A5776002F8D00 /* CreateNewReceiptPresenter.swift */,
 				B36809A0240A5776002F8D00 /* CreateNewReceiptRouter.swift */,
 				B36809A1240A5776002F8D00 /* CreateNewReceiptViewController.swift */,

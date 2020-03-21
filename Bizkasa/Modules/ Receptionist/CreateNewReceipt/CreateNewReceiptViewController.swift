@@ -20,26 +20,10 @@ class CreateNewReceiptViewController: BaseViewController {
     @IBOutlet weak var lbEmployeeName: UILabel!
     @IBOutlet weak var lbCurrentTime: UILabel!
 
-    @IBOutlet weak var tbListWidget: UITableView!
-    @IBOutlet weak var lbTotalPrice: UILabel!
-    @IBOutlet weak var vTotalPrice: UIView!
-
-    var listWidget: [(WidgetEntity, Int)] = [] {
-        didSet {
-            let totalPrice = self.listWidget.reduce(Float(0)) { result, item in
-                return result + (item.0.Price ?? 0) * Float(item.1)
-            }
-            vTotalPrice.isHidden = totalPrice == Float(0)
-            lbTotalPrice.text = "\(totalPrice) VNĐ"
-            tbListWidget.reloadData()
-        }
-    }
-
 	var presenter: CreateNewReceiptPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
     }
 
     override func setUpNavigation() {
@@ -61,16 +45,10 @@ class CreateNewReceiptViewController: BaseViewController {
 
         vService.addNewCallBack = {[weak self] (widget, total) in
             guard let self = self else { return }
-            self.listWidget.append((widget, total))
+//            self.listWidget.append((widget, total))
         }
     }
 
-    private func configureTableView() {
-        tbListWidget.registerTableCell(WidgetCell.self)
-        tbListWidget.dataSource = self
-        tbListWidget.delegate = self
-        tbListWidget.rowHeight = UITableView.automaticDimension
-    }
 
     @objc func btnAcceptTapped() {
 
@@ -79,25 +57,5 @@ class CreateNewReceiptViewController: BaseViewController {
 
 extension CreateNewReceiptViewController: CreateNewReceiptViewProtocol {
 	
-}
-
-extension CreateNewReceiptViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if listWidget.count == 0 {
-            tableView.setEmptyView(title: "Chưa có dịch vụ")
-        } else {
-            tableView.restore()
-        }
-        return listWidget.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueTableCell(WidgetCell.self)
-        cell.setData(widget: listWidget[indexPath.row].0, total: listWidget[indexPath.row].1, indexPath: indexPath)
-        cell.deleteCallback = { indexPath in
-            self.listWidget.remove(at: indexPath.row)
-        }
-        return cell
-    }
 }
 
