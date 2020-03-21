@@ -19,8 +19,7 @@ class CheckInViewController: BaseViewController {
     @IBOutlet weak var tfCheckInTime        : TextFieldCalendar!
     @IBOutlet weak var vTimeType            : AppDropdown!
     @IBOutlet weak var vConfigurePrice      : AppDropdown!
-    @IBOutlet weak var vService             : AppDropdownBorder!
-    @IBOutlet weak var vTotalService        : AppDropdownBorder!
+    @IBOutlet weak var vService             : ServiceView!
     @IBOutlet weak var tvNote               : AppTextViewLogo!
 
 	var presenter: CheckInPresenterProtocol?
@@ -50,19 +49,17 @@ class CheckInViewController: BaseViewController {
     }
 
     override func setUpViews() {
-        tfCustomerName.setTitleAndLogo(AppImage.imgPayment, title: "Khách hàng")
-        tfIndentifierNumber.setTitleAndLogo(AppImage.imgPayment, title: "CMT")
-        tfAdress.setTitleAndLogo(AppImage.imgPayment, title: "Địa chỉ")
+        tfCustomerName.setTitleAndLogo(AppImage.imgUser, title: "Khách hàng")
+        tfIndentifierNumber.setTitleAndLogo(AppImage.imgReceipts, title: "CMT")
+        tfAdress.setTitleAndLogo(AppImage.imgAddress, title: "Địa chỉ")
 
-        vTimeType.setTitleAndLogo(AppImage.imgPayment, title: "Tính theo")
-        vConfigurePrice.setTitleAndLogo(AppImage.imgPayment, title: "Cấu hình giá")
-        vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
-        tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Ngày cấp")
-        tfIndentifierDate.setTitleAndLogo(AppImage.imgPayment, title: "Thời gian")
+        vTimeType.setTitleAndLogo(AppImage.imgTime, title: "Tính theo")
+        vConfigurePrice.setTitleAndLogo(AppImage.imgPrice, title: "Cấu hình giá")
+//        vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
+        tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Ngày cấp")
+        tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Thời gian")
 
-        tvNote.setTitleAndLogo(AppImage.imgPayment, title: "Ghi chú")
-        vTotalService.dataSource = ["1", "2", "3", "4", "5"]
-        vService.dataSource = ["Dịch vụ"]
+        tvNote.setTitleAndLogo(AppImage.imgAddress, title: "Ghi chú")
         vTimeType.dataSource = ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
 
     }

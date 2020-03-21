@@ -31,5 +31,8 @@ struct AppImage {
     static let imgDropdown          = UIImage(named: "down")!.withRenderingMode(.alwaysTemplate)
     static let selected             = UIImage(named: "selected")!
     static let unselected           = UIImage(named: "unselected")!
+    static let imgAddress           = UIImage(named: "address")!
+    static let imgTime           = UIImage(named: "time")!
+    static let imgPrice           = UIImage(named: "price")!
 
 }

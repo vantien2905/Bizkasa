@@ -639,6 +639,19 @@
 			path = WidgetCell;
 			sourceTree = "<group>";
 		};
+		B35FE7DA2425F90C0072D223 /* CheckIn */ = {
+			isa = PBXGroup;
+			children = (
+				B36809BF240A6AC5002F8D00 /* CheckInPresenter.swift */,
+				B36809C0240A6AC5002F8D00 /* CheckInRouter.swift */,
+				B36809C1240A6AC5002F8D00 /* CheckInViewController.swift */,
+				B36809C2240A6AC5002F8D00 /* CheckInProtocols.swift */,
+				B36809C3240A6AC5002F8D00 /* CheckInInteractor.swift */,
+				B36809C4240A6AC5002F8D00 /* CheckInViewController.xib */,
+			);
+			path = CheckIn;
+			sourceTree = "<group>";
+		};
 		B368098F240A38E7002F8D00 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -712,12 +725,7 @@
 		B36809BE240A6AB2002F8D00 /* ActionRoom */ = {
 			isa = PBXGroup;
 			children = (
-				B36809BF240A6AC5002F8D00 /* CheckInPresenter.swift */,
-				B36809C0240A6AC5002F8D00 /* CheckInRouter.swift */,
-				B36809C1240A6AC5002F8D00 /* CheckInViewController.swift */,
-				B36809C2240A6AC5002F8D00 /* CheckInProtocols.swift */,
-				B36809C3240A6AC5002F8D00 /* CheckInInteractor.swift */,
-				B36809C4240A6AC5002F8D00 /* CheckInViewController.xib */,
+				B35FE7DA2425F90C0072D223 /* CheckIn */,
 			);
 			path = ActionRoom;
 			sourceTree = "<group>";
