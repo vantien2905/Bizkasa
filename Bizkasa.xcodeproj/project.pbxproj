@@ -29,6 +29,19 @@
 		B350C439241E04C20005288B /* ConfigPriceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C438241E04C20005288B /* ConfigPriceEntity.swift */; };
 		B35DCAEA241C97B9005B70FC /* CustomerCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DCAE9241C97B9005B70FC /* CustomerCheckIn.swift */; };
 		B35DCAEC241C9984005B70FC /* ReceptionistEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35DCAEB241C9984005B70FC /* ReceptionistEndPoint.swift */; };
+		B35FE7BC2425CBA60072D223 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7BB2425CBA60072D223 /* ServiceView.swift */; };
+		B35FE7BE2425CBB40072D223 /* ServiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35FE7BD2425CBB40072D223 /* ServiceView.xib */; };
+		B35FE7C62425D0030072D223 /* ListServicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7C02425D0030072D223 /* ListServicePresenter.swift */; };
+		B35FE7C72425D0030072D223 /* ListServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7C12425D0030072D223 /* ListServiceRouter.swift */; };
+		B35FE7C82425D0030072D223 /* ListServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7C22425D0030072D223 /* ListServiceViewController.swift */; };
+		B35FE7C92425D0030072D223 /* ListServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7C32425D0030072D223 /* ListServiceProtocols.swift */; };
+		B35FE7CA2425D0030072D223 /* ListServiceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7C42425D0030072D223 /* ListServiceInteractor.swift */; };
+		B35FE7CB2425D0030072D223 /* ListServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35FE7C52425D0030072D223 /* ListServiceViewController.xib */; };
+		B35FE7CF2425D05D0072D223 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7CD2425D05D0072D223 /* ServiceCell.swift */; };
+		B35FE7D02425D05D0072D223 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35FE7CE2425D05D0072D223 /* ServiceCell.xib */; };
+		B35FE7D32425D3580072D223 /* WidgetTypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */; };
+		B35FE7D72425DCC00072D223 /* WidgetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7D52425DCC00072D223 /* WidgetCell.swift */; };
+		B35FE7D82425DCC00072D223 /* WidgetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35FE7D62425DCC00072D223 /* WidgetCell.xib */; };
 		B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680990240A38FF002F8D00 /* ListCustomerCell.swift */; };
 		B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3680991240A38FF002F8D00 /* ListCustomerCell.xib */; };
 		B3680997240A452E002F8D00 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680995240A452E002F8D00 /* AppLabel.swift */; };
@@ -253,6 +266,19 @@
 		B350C438241E04C20005288B /* ConfigPriceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigPriceEntity.swift; sourceTree = "<group>"; };
 		B35DCAE9241C97B9005B70FC /* CustomerCheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCheckIn.swift; sourceTree = "<group>"; };
 		B35DCAEB241C9984005B70FC /* ReceptionistEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceptionistEndPoint.swift; sourceTree = "<group>"; };
+		B35FE7BB2425CBA60072D223 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		B35FE7BD2425CBB40072D223 /* ServiceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceView.xib; sourceTree = "<group>"; };
+		B35FE7C02425D0030072D223 /* ListServicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServicePresenter.swift; sourceTree = "<group>"; };
+		B35FE7C12425D0030072D223 /* ListServiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceRouter.swift; sourceTree = "<group>"; };
+		B35FE7C22425D0030072D223 /* ListServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceViewController.swift; sourceTree = "<group>"; };
+		B35FE7C32425D0030072D223 /* ListServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceProtocols.swift; sourceTree = "<group>"; };
+		B35FE7C42425D0030072D223 /* ListServiceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListServiceInteractor.swift; sourceTree = "<group>"; };
+		B35FE7C52425D0030072D223 /* ListServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListServiceViewController.xib; sourceTree = "<group>"; };
+		B35FE7CD2425D05D0072D223 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		B35FE7CE2425D05D0072D223 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTypeEntity.swift; sourceTree = "<group>"; };
+		B35FE7D52425DCC00072D223 /* WidgetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCell.swift; sourceTree = "<group>"; };
+		B35FE7D62425DCC00072D223 /* WidgetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WidgetCell.xib; sourceTree = "<group>"; };
 		B3680990240A38FF002F8D00 /* ListCustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCustomerCell.swift; sourceTree = "<group>"; };
 		B3680991240A38FF002F8D00 /* ListCustomerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCustomerCell.xib; sourceTree = "<group>"; };
 		B3680995240A452E002F8D00 /* AppLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
@@ -558,6 +584,60 @@
 			path = DXGTextView;
 			sourceTree = "<group>";
 		};
+		B35FE7BA2425CB8C0072D223 /* ServiceView */ = {
+			isa = PBXGroup;
+			children = (
+				B35FE7BF2425CFCD0072D223 /* ServiceVC */,
+				B35FE7BB2425CBA60072D223 /* ServiceView.swift */,
+				B35FE7BD2425CBB40072D223 /* ServiceView.xib */,
+			);
+			path = ServiceView;
+			sourceTree = "<group>";
+		};
+		B35FE7BF2425CFCD0072D223 /* ServiceVC */ = {
+			isa = PBXGroup;
+			children = (
+				B35FE7CC2425D0460072D223 /* Cell */,
+				B35FE7C02425D0030072D223 /* ListServicePresenter.swift */,
+				B35FE7C12425D0030072D223 /* ListServiceRouter.swift */,
+				B35FE7C22425D0030072D223 /* ListServiceViewController.swift */,
+				B35FE7C32425D0030072D223 /* ListServiceProtocols.swift */,
+				B35FE7C42425D0030072D223 /* ListServiceInteractor.swift */,
+				B35FE7C52425D0030072D223 /* ListServiceViewController.xib */,
+			);
+			path = ServiceVC;
+			sourceTree = "<group>";
+		};
+		B35FE7CC2425D0460072D223 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B35FE7CD2425D05D0072D223 /* ServiceCell.swift */,
+				B35FE7CE2425D05D0072D223 /* ServiceCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B35FE7D12425D32D0072D223 /* Receptionist */ = {
+			isa = PBXGroup;
+			children = (
+				B35DCAE9241C97B9005B70FC /* CustomerCheckIn.swift */,
+				B3759661241DDFE600ACC208 /* InvoiceEntity.swift */,
+				B350C432241DF5030005288B /* RoomEntity.swift */,
+				B350C438241E04C20005288B /* ConfigPriceEntity.swift */,
+				B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */,
+			);
+			path = Receptionist;
+			sourceTree = "<group>";
+		};
+		B35FE7D42425DCAE0072D223 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B35FE7D52425DCC00072D223 /* WidgetCell.swift */,
+				B35FE7D62425DCC00072D223 /* WidgetCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B368098F240A38E7002F8D00 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +668,7 @@
 		B368099E240A5753002F8D00 /* CreateNewReceipt */ = {
 			isa = PBXGroup;
 			children = (
+				B35FE7D42425DCAE0072D223 /* Cell */,
 				B368099F240A5776002F8D00 /* CreateNewReceiptPresenter.swift */,
 				B36809A0240A5776002F8D00 /* CreateNewReceiptRouter.swift */,
 				B36809A1240A5776002F8D00 /* CreateNewReceiptViewController.swift */,
@@ -876,11 +957,8 @@
 		B3E7B9A523F9105F0088259F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				B35FE7D12425D32D0072D223 /* Receptionist */,
 				B30957CF2401084A00335639 /* UserEntity.swift */,
-				B35DCAE9241C97B9005B70FC /* CustomerCheckIn.swift */,
-				B3759661241DDFE600ACC208 /* InvoiceEntity.swift */,
-				B350C432241DF5030005288B /* RoomEntity.swift */,
-				B350C438241E04C20005288B /* ConfigPriceEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1127,6 +1205,7 @@
 		B3E7BA2123F9105F0088259F /* CustomerViews */ = {
 			isa = PBXGroup;
 			children = (
+				B35FE7BA2425CB8C0072D223 /* ServiceView */,
 				B32069D6241394B80097D18B /* TextView */,
 				B32069D0241368DB0097D18B /* TextField */,
 				B36809AB240A5AC4002F8D00 /* AppDropdown */,
@@ -1239,6 +1318,8 @@
 				B38B9D2F2406B0EC006D69B0 /* TabbarReceptionistViewController.xib in Resources */,
 				B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */,
 				B36809BA240A5C8C002F8D00 /* ActionDropdownCell.xib in Resources */,
+				B35FE7D82425DCC00072D223 /* WidgetCell.xib in Resources */,
+				B35FE7BE2425CBB40072D223 /* ServiceView.xib in Resources */,
 				B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */,
 				B379544B2402C4F9007768B8 /* Roboto-Bold.ttf in Resources */,
 				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
@@ -1249,6 +1330,7 @@
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
 				B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */,
 				B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */,
+				B35FE7D02425D05D0072D223 /* ServiceCell.xib in Resources */,
 				B30957E72401115300335639 /* AppTitleLogo.xib in Resources */,
 				B37954502402C543007768B8 /* Roboto-BlackItalic.ttf in Resources */,
 				B3E7BA4723F9105F0088259F /* FlashViewController.xib in Resources */,
@@ -1257,6 +1339,7 @@
 				B379541F24029722007768B8 /* HomeCVCell.xib in Resources */,
 				B30957E42401115300335639 /* AppTextFieldLogo.xib in Resources */,
 				B3E7BA4123F9105F0088259F /* LeftMenuViewController.xib in Resources */,
+				B35FE7CB2425D0030072D223 /* ListServiceViewController.xib in Resources */,
 				B379544C2402C4F9007768B8 /* Roboto-Italic.ttf in Resources */,
 				B3E7BA3C23F9105F0088259F /* HomeViewController.xib in Resources */,
 				B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */,
@@ -1369,6 +1452,7 @@
 				B38B9D482406BD27006D69B0 /* ListReceiptInteractor.swift in Sources */,
 				B3E7BA8823F9105F0088259F /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B379542B2402A43F007768B8 /* ListRoomProtocols.swift in Sources */,
+				B35FE7C92425D0030072D223 /* ListServiceProtocols.swift in Sources */,
 				B37954282402A43F007768B8 /* ListRoomPresenter.swift in Sources */,
 				B3E7BA6D23F9105F0088259F /* UIDate+Extension.swift in Sources */,
 				B3E7BA6123F9105F0088259F /* UIApplication+Extension.swift in Sources */,
@@ -1396,6 +1480,7 @@
 				B3E7BA9A23F9105F0088259F /* FadeInOutAnimation.swift in Sources */,
 				B38B9D2C2406B0EC006D69B0 /* TabbarReceptionistViewController.swift in Sources */,
 				B3E7BA6923F9105F0088259F /* UIViewPlaceholder+Extension.swift in Sources */,
+				B35FE7D72425DCC00072D223 /* WidgetCell.swift in Sources */,
 				B3E7BA3D23F9105F0088259F /* HomeViewController.swift in Sources */,
 				B3E7BAAC23F9105F0088259F /* PlayVideoHelper.swift in Sources */,
 				B3E7BA6B23F9105F0088259F /* String+Extension.swift in Sources */,
@@ -1452,9 +1537,11 @@
 				B3E7BA4223F9105F0088259F /* LeftMenuPresenter.swift in Sources */,
 				B3E7BA9823F9105F0088259F /* KActivityIndicatorType.swift in Sources */,
 				B30957DC24010B4400335639 /* LoginInteractor.swift in Sources */,
+				B35FE7C72425D0030072D223 /* ListServiceRouter.swift in Sources */,
 				B3E7BAAA23F9105F0088259F /* ValidateHelper.swift in Sources */,
 				B3E7BA6623F9105F0088259F /* UIButton+Extension.swift in Sources */,
 				B3E7BA5723F9105F0088259F /* BaseViewController.swift in Sources */,
+				B35FE7C62425D0030072D223 /* ListServicePresenter.swift in Sources */,
 				B3E7BA5323F9105F0088259F /* TransitionContext.swift in Sources */,
 				B3E7BA9C23F9105F0088259F /* ProgressView.swift in Sources */,
 				B3E7BA5E23F9105F0088259F /* BaseView.swift in Sources */,
@@ -1462,6 +1549,7 @@
 				B3E7BA5023F9105F0088259F /* UIView+Container.swift in Sources */,
 				B38B9D462406BD27006D69B0 /* ListReceiptViewController.swift in Sources */,
 				B3E7BA8523F9105F0088259F /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				B35FE7BC2425CBA60072D223 /* ServiceView.swift in Sources */,
 				B30957D924010B4400335639 /* LoginRouter.swift in Sources */,
 				B3E7BA6823F9105F0088259F /* UIImage+Extension.swift in Sources */,
 				B38B9D3A2406BCF7006D69B0 /* ListCustomerProtocols.swift in Sources */,
@@ -1471,8 +1559,11 @@
 				B37954292402A43F007768B8 /* ListRoomRouter.swift in Sources */,
 				B3E7BA7923F9105F0088259F /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B3E7BA8223F9105F0088259F /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				B35FE7CF2425D05D0072D223 /* ServiceCell.swift in Sources */,
 				B36809C6240A6AC5002F8D00 /* CheckInRouter.swift in Sources */,
+				B35FE7C82425D0030072D223 /* ListServiceViewController.swift in Sources */,
 				B3E7BA5523F9105F0088259F /* SideMenuController.swift in Sources */,
+				B35FE7D32425D3580072D223 /* WidgetTypeEntity.swift in Sources */,
 				B36809B2240A5AC5002F8D00 /* AppDropdown.swift in Sources */,
 				B3E7BA5223F9105F0088259F /* Delegate.swift in Sources */,
 				B3E7BA7623F9105F0088259F /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
@@ -1494,6 +1585,7 @@
 				B3E7BA7723F9105F0088259F /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				B350C433241DF5030005288B /* RoomEntity.swift in Sources */,
 				B3E7BAA323F9105F0088259F /* AppColor.swift in Sources */,
+				B35FE7CA2425D0030072D223 /* ListServiceInteractor.swift in Sources */,
 				B3E7BAB023F9105F0088259F /* ShareNativeHelper.swift in Sources */,
 				B36809A5240A5777002F8D00 /* CreateNewReceiptPresenter.swift in Sources */,
 				B3E7BA3823F9105F0088259F /* UserEndPoint.swift in Sources */,

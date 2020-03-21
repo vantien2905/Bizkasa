@@ -108,3 +108,72 @@ extension UITableView {
         case top, bottom
     }
 }
+
+extension UITableView {
+
+    func setEmptyView(title: String = "Chưa có dữ liệu", message: String = "", messageImage: UIImage = AppImage.imgEmptyData) {
+
+        let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
+
+        let messageImageView = UIImageView()
+        let titleLabel = UILabel()
+        let messageLabel = UILabel()
+
+        messageImageView.backgroundColor = .clear
+
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageImageView.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        titleLabel.textColor = UIColor.lightGray
+        titleLabel.font = .bold17
+
+        messageLabel.textColor = UIColor.lightGray
+        messageLabel.font = .regular15
+
+        emptyView.addSubview(titleLabel)
+        emptyView.addSubview(messageImageView)
+        emptyView.addSubview(messageLabel)
+
+        NSLayoutConstraint.activate([
+            messageImageView.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor),
+            messageImageView.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor, constant: -30),
+            messageImageView.widthAnchor.constraint(equalToConstant: 60),
+            messageImageView.heightAnchor.constraint(equalToConstant: 60),
+
+            titleLabel.topAnchor.constraint(equalTo: messageImageView.bottomAnchor, constant: 10),
+            titleLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor),
+
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            messageLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor)
+        ])
+
+
+
+        messageImageView.image = messageImage
+        titleLabel.text = title
+        messageLabel.text = message
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+
+
+        UIView.animate(withDuration: 1, animations: {
+            messageImageView.transform = CGAffineTransform(rotationAngle: .pi / 10)
+        }, completion: { (finish) in
+            UIView.animate(withDuration: 1, animations: {
+                messageImageView.transform = CGAffineTransform(rotationAngle: -1 * (.pi / 10))
+            }, completion: { (finishh) in
+                UIView.animate(withDuration: 1, animations: {
+                    messageImageView.transform = CGAffineTransform.identity
+                })
+            })
+        })
+
+        self.backgroundView = emptyView
+    }
+
+    func restore() {
+        self.backgroundView = nil
+    }
+
+}

@@ -16,6 +16,7 @@ enum ReceptionistEndPoint {
     case getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool)
     case getRoomsByClass
     case getConfigPrice(roomId: Int)
+    case getWidget
 }
 
 extension ReceptionistEndPoint: EndPointType {
@@ -29,12 +30,14 @@ extension ReceptionistEndPoint: EndPointType {
             return "/api/Room/GetRoomsByClass"
         case .getConfigPrice:
             return "api/Room/GetConfigPriceBy"
+        case .getWidget:
+            return "/api/Widget/GetWidget"
         }
     }
 
     var httpMethod: HTTPMethod {
         switch self {
-        case .getRoomsByClass:
+        case .getRoomsByClass, .getWidget:
             return .get
         default:
             return .post
@@ -43,7 +46,7 @@ extension ReceptionistEndPoint: EndPointType {
 
     var parameters: JSONDictionary {
         switch self {
-        case .getListCustomerCheckIn, .getRoomsByClass:
+        case .getListCustomerCheckIn, .getRoomsByClass, .getWidget:
             return [:]
         case .getInvoices(let page, let pageSize, let invoiceType, let isInDay):
             let param = ["Page": [
