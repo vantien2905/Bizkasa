@@ -38,7 +38,7 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhc-lQ-8p3">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhc-lQ-8p3">
                     <rect key="frame" x="0.0" y="577" width="375" height="90"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doanh thu hôm nay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pI-kP-eao">
@@ -152,7 +152,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="9pI-kP-eao" firstAttribute="leading" secondItem="yhc-lQ-8p3" secondAttribute="leading" constant="10" id="59W-uZ-2IE"/>
                         <constraint firstAttribute="trailing" secondItem="a15-o2-Hg5" secondAttribute="trailing" constant="5" id="NRX-1d-ngv"/>

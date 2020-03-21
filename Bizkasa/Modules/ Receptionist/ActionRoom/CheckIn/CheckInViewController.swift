@@ -59,7 +59,7 @@ class CheckInViewController: BaseViewController {
         tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Ngày cấp")
         tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Thời gian")
 
-        tvNote.setTitleAndLogo(AppImage.imgAddress, title: "Ghi chú")
+        tvNote.setTitleAndLogo(AppImage.imgNote, title: "Ghi chú")
         vTimeType.dataSource = ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
 
     }

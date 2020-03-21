@@ -34,5 +34,6 @@ struct AppImage {
     static let imgAddress           = UIImage(named: "address")!
     static let imgTime           = UIImage(named: "time")!
     static let imgPrice           = UIImage(named: "price")!
+    static let imgNote           = UIImage(named: "note")!
 
 }
