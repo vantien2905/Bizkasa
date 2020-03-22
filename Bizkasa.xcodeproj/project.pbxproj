@@ -18,6 +18,10 @@
 		B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E02401115300335639 /* AppTextFieldLogo.swift */; };
 		B30957E62401115300335639 /* AppTitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E22401115300335639 /* AppTitleLogo.swift */; };
 		B30957E72401115300335639 /* AppTitleLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957E32401115300335639 /* AppTitleLogo.xib */; };
+		B3142FE224272716003609DA /* HeaderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3142FE024272716003609DA /* HeaderInfoCell.swift */; };
+		B3142FE324272716003609DA /* HeaderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3142FE124272716003609DA /* HeaderInfoCell.xib */; };
+		B3142FEB24273E03003609DA /* HeaderCheckOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3142FE924273E03003609DA /* HeaderCheckOutCell.swift */; };
+		B3142FEC24273E03003609DA /* HeaderCheckOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3142FEA24273E03003609DA /* HeaderCheckOutCell.xib */; };
 		B32069D3241369070097D18B /* TextFieldCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D2241369070097D18B /* TextFieldCalendar.swift */; };
 		B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32069D4241369150097D18B /* TextFieldCalendar.xib */; };
 		B32069DB241394B80097D18B /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D7241394B80097D18B /* AppTextView.swift */; };
@@ -262,6 +266,10 @@
 		B30957E02401115300335639 /* AppTextFieldLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFieldLogo.swift; sourceTree = "<group>"; };
 		B30957E22401115300335639 /* AppTitleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleLogo.swift; sourceTree = "<group>"; };
 		B30957E32401115300335639 /* AppTitleLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTitleLogo.xib; sourceTree = "<group>"; };
+		B3142FE024272716003609DA /* HeaderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInfoCell.swift; sourceTree = "<group>"; };
+		B3142FE124272716003609DA /* HeaderInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderInfoCell.xib; sourceTree = "<group>"; };
+		B3142FE924273E03003609DA /* HeaderCheckOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCheckOutCell.swift; sourceTree = "<group>"; };
+		B3142FEA24273E03003609DA /* HeaderCheckOutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCheckOutCell.xib; sourceTree = "<group>"; };
 		B32069D2241369070097D18B /* TextFieldCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCalendar.swift; sourceTree = "<group>"; };
 		B32069D4241369150097D18B /* TextFieldCalendar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCalendar.xib; sourceTree = "<group>"; };
 		B32069D7241394B80097D18B /* AppTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextView.swift; sourceTree = "<group>"; };
@@ -551,6 +559,33 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		B3142FDE242726D0003609DA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3142FE4242734DF003609DA /* HeaderCheckOut */,
+				B3142FDF242726D7003609DA /* HeaderInfo */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B3142FDF242726D7003609DA /* HeaderInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B3142FE024272716003609DA /* HeaderInfoCell.swift */,
+				B3142FE124272716003609DA /* HeaderInfoCell.xib */,
+			);
+			path = HeaderInfo;
+			sourceTree = "<group>";
+		};
+		B3142FE4242734DF003609DA /* HeaderCheckOut */ = {
+			isa = PBXGroup;
+			children = (
+				B3142FE924273E03003609DA /* HeaderCheckOutCell.swift */,
+				B3142FEA24273E03003609DA /* HeaderCheckOutCell.xib */,
+			);
+			path = HeaderCheckOut;
+			sourceTree = "<group>";
+		};
 		B32069CF241367330097D18B /* DatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +705,7 @@
 		B35FE7DB242617400072D223 /* CheckOut */ = {
 			isa = PBXGroup;
 			children = (
+				B3142FDE242726D0003609DA /* Cell */,
 				B35FE7DC2426174E0072D223 /* CheckOutPresenter.swift */,
 				B35FE7DD2426174E0072D223 /* CheckOutRouter.swift */,
 				B35FE7DE2426174E0072D223 /* CheckOutViewController.swift */,
@@ -1350,12 +1386,14 @@
 			files = (
 				B38B9D3C2406BCF7006D69B0 /* ListCustomerViewController.xib in Resources */,
 				B3E7BA5C23F9105F0088259F /* DatePickerViewController.xib in Resources */,
+				B3142FEC24273E03003609DA /* HeaderCheckOutCell.xib in Resources */,
 				B350C437241DFD8E0005288B /* HeaderRoomView.xib in Resources */,
 				B368099D240A4C61002F8D00 /* ListReceiptCell.xib in Resources */,
 				B38B9D2F2406B0EC006D69B0 /* TabbarReceptionistViewController.xib in Resources */,
 				B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */,
 				B36809BA240A5C8C002F8D00 /* ActionDropdownCell.xib in Resources */,
 				B35FE7D82425DCC00072D223 /* WidgetCell.xib in Resources */,
+				B3142FE324272716003609DA /* HeaderInfoCell.xib in Resources */,
 				B35FE7BE2425CBB40072D223 /* ServiceView.xib in Resources */,
 				B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */,
 				B379544B2402C4F9007768B8 /* Roboto-Bold.ttf in Resources */,
@@ -1481,6 +1519,7 @@
 				B3E7BAAB23F9105F0088259F /* LocalizationManager.swift in Sources */,
 				B35FE7E22426174E0072D223 /* CheckOutPresenter.swift in Sources */,
 				B3E7BA4023F9105F0088259F /* HomeProtocols.swift in Sources */,
+				B3142FEB24273E03003609DA /* HeaderCheckOutCell.swift in Sources */,
 				B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */,
 				B3E7BA9523F9105F0088259F /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				B38B9D2B2406B0EC006D69B0 /* TabbarReceptionistRouter.swift in Sources */,
@@ -1582,6 +1621,7 @@
 				B30957DC24010B4400335639 /* LoginInteractor.swift in Sources */,
 				B35FE7C72425D0030072D223 /* ListServiceRouter.swift in Sources */,
 				B3E7BAAA23F9105F0088259F /* ValidateHelper.swift in Sources */,
+				B3142FE224272716003609DA /* HeaderInfoCell.swift in Sources */,
 				B3E7BA6623F9105F0088259F /* UIButton+Extension.swift in Sources */,
 				B3E7BA5723F9105F0088259F /* BaseViewController.swift in Sources */,
 				B35FE7C62425D0030072D223 /* ListServicePresenter.swift in Sources */,

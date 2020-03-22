@@ -13,9 +13,9 @@ extension UITableView {
     
     func register(header: UITableViewHeaderFooterView.Type, isNib: Bool = true) {
         if isNib {
-            self.register(header.self, forHeaderFooterViewReuseIdentifier: String(describing: header.self)) 
-        } else {
             self.register(header.nib, forHeaderFooterViewReuseIdentifier: header.identifier)
+        } else {
+            self.register(header.self, forHeaderFooterViewReuseIdentifier: String(describing: header.self))
         }
     }
     

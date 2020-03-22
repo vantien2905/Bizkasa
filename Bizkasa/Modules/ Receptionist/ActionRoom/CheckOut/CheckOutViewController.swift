@@ -10,6 +10,17 @@
 
 import UIKit
 
+class HeaderCheckOut {
+    var title: String?
+    var isCollapse = true
+
+    init(title: String, isCollapse: Bool = true) {
+        self.isCollapse = isCollapse
+        self.title = title
+    }
+}
+
+
 class CheckOutViewController: BaseViewController {
 
     @IBOutlet weak var tbCheckOut: UITableView!
@@ -22,13 +33,33 @@ class CheckOutViewController: BaseViewController {
         }
     }
 
+    let listCheckOutInfo = ["Khách hàng", "CMT", "Loại phòng", "Giá", "Vào lúc", "Trả lúc", "Tính theo", "Hình thức thanh toán", "Ghi chú"]
+    let listHeader = [HeaderCheckOut(title: "Thông tin chung"),
+                      HeaderCheckOut(title: "Tiền phòng"),
+                      HeaderCheckOut(title: "Hóa đơn gộp thanh toán"),
+                      HeaderCheckOut(title: "Tiền dịch vụ (ăn, uống,...)"),
+                      HeaderCheckOut(title: "Các khoản phụ thu"),
+                      HeaderCheckOut(title: "Khuyến mãi, giảm trừ"),
+                      HeaderCheckOut(title: "Trả trước"),
+                      HeaderCheckOut(title: "Danh sách đang ở"),
+                      HeaderCheckOut(title: "Tổng cộng")]
+
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getOrderForCheckOut(orderId: 12197, mode: 1)
+        configureTableView()
     }
 
     override func setUpNavigation() {
         addBackWhiteToNavigation()
+    }
+
+    private func configureTableView() {
+        tbCheckOut.registerTableCell(HeaderInfoCell.self)
+        tbCheckOut.registerTableCell(HeaderCheckOutCell.self)
+        tbCheckOut.delegate = self
+        tbCheckOut.dataSource = self
+//        tbCheckOut.rowHeight = UITableView.automaticDimension
     }
 
 }
@@ -43,4 +74,72 @@ extension CheckOutViewController: CheckOutViewProtocol {
     }
 
 	
+}
+
+extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return listHeader.count
+    }
+
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            if listHeader[0].isCollapse {
+                return 1
+            } else {
+                return listCheckOutInfo.count + 1
+            }
+        default:
+            return 1
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueTableCell(HeaderCheckOutCell.self)
+                cell.setData(header: self.listHeader[indexPath.section])
+                cell.selectCallback = {
+                    self.listHeader[indexPath.section].isCollapse = !self.listHeader[indexPath.section].isCollapse
+                    self.tbCheckOut.beginUpdates()
+                    self.tbCheckOut.reloadSections([indexPath.section], with: .automatic)
+                    self.tbCheckOut.endUpdates()
+                }
+               return cell
+            } else {
+                let cell = tableView.dequeueTableCell(HeaderInfoCell.self)
+                           cell.setData(info: orderInfo, indexPath: indexPath, title: listCheckOutInfo[indexPath.row - 1])
+                           return cell
+            }
+
+        default:
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueTableCell(HeaderCheckOutCell.self)
+                cell.setData(header: self.listHeader[indexPath.section])
+               return cell
+            } else {
+                let cell = tableView.dequeueTableCell(HeaderInfoCell.self)
+                return cell
+            }
+        }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row == 0 ? 40 : UITableView.automaticDimension
+    }
+
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header = tableView.dequeueTableCell(HeaderCheckOutCell.self)
+//        header.setTitle(listHeader[section].title)
+
+//        return header
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 40
+//    }
+
 }

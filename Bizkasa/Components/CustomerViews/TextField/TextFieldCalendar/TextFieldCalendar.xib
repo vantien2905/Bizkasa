@@ -42,7 +42,7 @@
                                     <rect key="frame" x="759" y="0.0" width="30" height="201"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DtO-ru-8Lb">
-                                            <rect key="frame" x="-5" y="80.5" width="40" height="40"/>
+                                            <rect key="frame" x="-25" y="60.5" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DtO-ru-8Lb" secondAttribute="height" multiplier="1:1" id="fRq-eJ-ImM"/>
                                             </constraints>
