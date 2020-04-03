@@ -18,6 +18,8 @@ enum ReceptionistEndPoint {
     case getConfigPrice(roomId: Int)
     case getWidget
     case getOrderForCheckOut(orderId: Int, mode: Int)
+    case addOrderDetail(param: SubFeeDetailEntity)
+    case deleteOrderDetail(param: SubFeeDetailEntity)
 }
 
 extension ReceptionistEndPoint: EndPointType {
@@ -35,6 +37,10 @@ extension ReceptionistEndPoint: EndPointType {
             return "/api/Widget/GetWidget"
         case .getOrderForCheckOut:
             return "/api/Order/GetOrderForCheckOut"
+        case .addOrderDetail:
+            return "/api/Order/AddOrderDetail"
+        case .deleteOrderDetail:
+            return "/api/Order/DeleteOrderDetail"
         }
     }
 
@@ -64,6 +70,10 @@ extension ReceptionistEndPoint: EndPointType {
             return ["roomid": roomId]
         case .getOrderForCheckOut(let orderId, let mode):
             return ["orderId": orderId, "mode": mode]
+        case .addOrderDetail(let param):
+            return param.toJSON()
+        case .deleteOrderDetail(let param):
+            return param.toJSON()
         }
     }
 

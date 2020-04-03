@@ -18,8 +18,8 @@
 		B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E02401115300335639 /* AppTextFieldLogo.swift */; };
 		B30957E62401115300335639 /* AppTitleLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30957E22401115300335639 /* AppTitleLogo.swift */; };
 		B30957E72401115300335639 /* AppTitleLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30957E32401115300335639 /* AppTitleLogo.xib */; };
-		B3142FE224272716003609DA /* HeaderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3142FE024272716003609DA /* HeaderInfoCell.swift */; };
-		B3142FE324272716003609DA /* HeaderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3142FE124272716003609DA /* HeaderInfoCell.xib */; };
+		B3142FE224272716003609DA /* TopInfoCheckOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3142FE024272716003609DA /* TopInfoCheckOutCell.swift */; };
+		B3142FE324272716003609DA /* TopInfoCheckOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3142FE124272716003609DA /* TopInfoCheckOutCell.xib */; };
 		B3142FEB24273E03003609DA /* HeaderCheckOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3142FE924273E03003609DA /* HeaderCheckOutCell.swift */; };
 		B3142FEC24273E03003609DA /* HeaderCheckOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3142FEA24273E03003609DA /* HeaderCheckOutCell.xib */; };
 		B32069D3241369070097D18B /* TextFieldCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D2241369070097D18B /* TextFieldCalendar.swift */; };
@@ -116,6 +116,10 @@
 		B38B9D472406BD27006D69B0 /* ListReceiptProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B9D412406BD27006D69B0 /* ListReceiptProtocols.swift */; };
 		B38B9D482406BD27006D69B0 /* ListReceiptInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B9D422406BD27006D69B0 /* ListReceiptInteractor.swift */; };
 		B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38B9D432406BD27006D69B0 /* ListReceiptViewController.xib */; };
+		B3DA710D2437494500B1C8AA /* RoomChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA710B2437494500B1C8AA /* RoomChargeCell.swift */; };
+		B3DA710E2437494500B1C8AA /* RoomChargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DA710C2437494500B1C8AA /* RoomChargeCell.xib */; };
+		B3DA711224374F1800B1C8AA /* ServiceChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711024374F1800B1C8AA /* ServiceChargeCell.swift */; };
+		B3DA711324374F1800B1C8AA /* ServiceChargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DA711124374F1800B1C8AA /* ServiceChargeCell.xib */; };
 		B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97D23F9102E0088259F /* AppDelegate.swift */; };
 		B3E7B98023F9102E0088259F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97F23F9102E0088259F /* SceneDelegate.swift */; };
 		B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E7B98823F910310088259F /* LaunchScreen.storyboard */; };
@@ -266,8 +270,8 @@
 		B30957E02401115300335639 /* AppTextFieldLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFieldLogo.swift; sourceTree = "<group>"; };
 		B30957E22401115300335639 /* AppTitleLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTitleLogo.swift; sourceTree = "<group>"; };
 		B30957E32401115300335639 /* AppTitleLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTitleLogo.xib; sourceTree = "<group>"; };
-		B3142FE024272716003609DA /* HeaderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderInfoCell.swift; sourceTree = "<group>"; };
-		B3142FE124272716003609DA /* HeaderInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderInfoCell.xib; sourceTree = "<group>"; };
+		B3142FE024272716003609DA /* TopInfoCheckOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInfoCheckOutCell.swift; sourceTree = "<group>"; };
+		B3142FE124272716003609DA /* TopInfoCheckOutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopInfoCheckOutCell.xib; sourceTree = "<group>"; };
 		B3142FE924273E03003609DA /* HeaderCheckOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCheckOutCell.swift; sourceTree = "<group>"; };
 		B3142FEA24273E03003609DA /* HeaderCheckOutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCheckOutCell.xib; sourceTree = "<group>"; };
 		B32069D2241369070097D18B /* TextFieldCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCalendar.swift; sourceTree = "<group>"; };
@@ -364,6 +368,10 @@
 		B38B9D412406BD27006D69B0 /* ListReceiptProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReceiptProtocols.swift; sourceTree = "<group>"; };
 		B38B9D422406BD27006D69B0 /* ListReceiptInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReceiptInteractor.swift; sourceTree = "<group>"; };
 		B38B9D432406BD27006D69B0 /* ListReceiptViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListReceiptViewController.xib; sourceTree = "<group>"; };
+		B3DA710B2437494500B1C8AA /* RoomChargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomChargeCell.swift; sourceTree = "<group>"; };
+		B3DA710C2437494500B1C8AA /* RoomChargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomChargeCell.xib; sourceTree = "<group>"; };
+		B3DA711024374F1800B1C8AA /* ServiceChargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceChargeCell.swift; sourceTree = "<group>"; };
+		B3DA711124374F1800B1C8AA /* ServiceChargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceChargeCell.xib; sourceTree = "<group>"; };
 		B3E7B97A23F9102E0088259F /* Bizkasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizkasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B97D23F9102E0088259F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E7B97F23F9102E0088259F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -562,6 +570,8 @@
 		B3142FDE242726D0003609DA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B3DA710F24374F0400B1C8AA /* ServiceCharge */,
+				B3DA710A2437490900B1C8AA /* RoomCharge */,
 				B3142FE4242734DF003609DA /* HeaderCheckOut */,
 				B3142FDF242726D7003609DA /* HeaderInfo */,
 			);
@@ -571,8 +581,8 @@
 		B3142FDF242726D7003609DA /* HeaderInfo */ = {
 			isa = PBXGroup;
 			children = (
-				B3142FE024272716003609DA /* HeaderInfoCell.swift */,
-				B3142FE124272716003609DA /* HeaderInfoCell.xib */,
+				B3142FE024272716003609DA /* TopInfoCheckOutCell.swift */,
+				B3142FE124272716003609DA /* TopInfoCheckOutCell.xib */,
 			);
 			path = HeaderInfo;
 			sourceTree = "<group>";
@@ -904,6 +914,24 @@
 			path = ListReceipt;
 			sourceTree = "<group>";
 		};
+		B3DA710A2437490900B1C8AA /* RoomCharge */ = {
+			isa = PBXGroup;
+			children = (
+				B3DA710B2437494500B1C8AA /* RoomChargeCell.swift */,
+				B3DA710C2437494500B1C8AA /* RoomChargeCell.xib */,
+			);
+			path = RoomCharge;
+			sourceTree = "<group>";
+		};
+		B3DA710F24374F0400B1C8AA /* ServiceCharge */ = {
+			isa = PBXGroup;
+			children = (
+				B3DA711024374F1800B1C8AA /* ServiceChargeCell.swift */,
+				B3DA711124374F1800B1C8AA /* ServiceChargeCell.xib */,
+			);
+			path = ServiceCharge;
+			sourceTree = "<group>";
+		};
 		B3E7B97123F9102E0088259F = {
 			isa = PBXGroup;
 			children = (
@@ -937,14 +965,6 @@
 			sourceTree = "<group>";
 		};
 		B3E7B99123F9105F0088259F /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				B3E7B99223F9105F0088259F /* Services */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		B3E7B99223F9105F0088259F /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B3E7B99323F9105F0088259F /* Network */,
@@ -1393,11 +1413,12 @@
 				B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */,
 				B36809BA240A5C8C002F8D00 /* ActionDropdownCell.xib in Resources */,
 				B35FE7D82425DCC00072D223 /* WidgetCell.xib in Resources */,
-				B3142FE324272716003609DA /* HeaderInfoCell.xib in Resources */,
+				B3142FE324272716003609DA /* TopInfoCheckOutCell.xib in Resources */,
 				B35FE7BE2425CBB40072D223 /* ServiceView.xib in Resources */,
 				B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */,
 				B379544B2402C4F9007768B8 /* Roboto-Bold.ttf in Resources */,
 				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
+				B3DA710E2437494500B1C8AA /* RoomChargeCell.xib in Resources */,
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
 				B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */,
 				B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */,
@@ -1407,6 +1428,7 @@
 				B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */,
 				B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */,
 				B35FE7D02425D05D0072D223 /* ServiceCell.xib in Resources */,
+				B3DA711324374F1800B1C8AA /* ServiceChargeCell.xib in Resources */,
 				B30957E72401115300335639 /* AppTitleLogo.xib in Resources */,
 				B37954502402C543007768B8 /* Roboto-BlackItalic.ttf in Resources */,
 				B3E7BA4723F9105F0088259F /* FlashViewController.xib in Resources */,
@@ -1554,6 +1576,7 @@
 				B3E7BA7423F9105F0088259F /* Array+Extension.swift in Sources */,
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
 				B35FE7E924261A430072D223 /* OrderInfoEntity.swift in Sources */,
+				B3DA711224374F1800B1C8AA /* ServiceChargeCell.swift in Sources */,
 				B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */,
 				B3E7BA4923F9105F0088259F /* FlashViewController.swift in Sources */,
 				B36809A7240A5777002F8D00 /* CreateNewReceiptViewController.swift in Sources */,
@@ -1618,10 +1641,11 @@
 				B3E7BA6323F9105F0088259F /* UIDevice+Extension.swift in Sources */,
 				B3E7BA4223F9105F0088259F /* LeftMenuPresenter.swift in Sources */,
 				B3E7BA9823F9105F0088259F /* KActivityIndicatorType.swift in Sources */,
+				B3DA710D2437494500B1C8AA /* RoomChargeCell.swift in Sources */,
 				B30957DC24010B4400335639 /* LoginInteractor.swift in Sources */,
 				B35FE7C72425D0030072D223 /* ListServiceRouter.swift in Sources */,
 				B3E7BAAA23F9105F0088259F /* ValidateHelper.swift in Sources */,
-				B3142FE224272716003609DA /* HeaderInfoCell.swift in Sources */,
+				B3142FE224272716003609DA /* TopInfoCheckOutCell.swift in Sources */,
 				B3E7BA6623F9105F0088259F /* UIButton+Extension.swift in Sources */,
 				B3E7BA5723F9105F0088259F /* BaseViewController.swift in Sources */,
 				B35FE7C62425D0030072D223 /* ListServicePresenter.swift in Sources */,
@@ -1813,7 +1837,8 @@
 			baseConfigurationReference = 9414DF4D33B12289940FA143 /* Pods-Bizkasa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1821,6 +1846,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = felixDinh.com.vn.Bizkasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1831,7 +1857,8 @@
 			baseConfigurationReference = 69C98898A87A52BB3D16E1F8 /* Pods-Bizkasa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1839,6 +1866,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = felixDinh.com.vn.Bizkasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

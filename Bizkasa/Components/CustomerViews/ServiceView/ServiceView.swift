@@ -17,19 +17,19 @@ class ServiceView: BaseViewXib {
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
 
     @IBOutlet weak var tbListWidget: UITableView!
-       @IBOutlet weak var lbTotalPrice: UILabel!
-       @IBOutlet weak var vTotalPrice: UIView!
+    @IBOutlet weak var lbTotalPrice: UILabel!
+    @IBOutlet weak var vTotalPrice: UIView!
 
     var widget: WidgetEntity?
     var total: Int = 1
 
     var listWidget: [(WidgetEntity, Int)] = [] {
         didSet {
-            let totalPrice = self.listWidget.reduce(Float(0)) { result, item in
-                return result + (item.0.Price ?? 0) * Float(item.1)
+            let totalPrice = self.listWidget.reduce(Int(0)) { result, item in
+                return result + ((item.0.Price*) * item.1)
             }
-            vTotalPrice.isHidden = totalPrice == Float(0)
-            lbTotalPrice.text = "\(totalPrice) VNĐ"
+            vTotalPrice.isHidden = totalPrice == 0
+            lbTotalPrice.text = "\(totalPrice.formattedWithSeparator) VNĐ"
             heightTableView.constant = CGFloat(self.listWidget.count * 40)
             tbListWidget.reloadData()
         }
@@ -52,11 +52,11 @@ class ServiceView: BaseViewXib {
     }
 
     private func configureTableView() {
-           tbListWidget.registerTableCell(WidgetCell.self)
-           tbListWidget.dataSource = self
-           tbListWidget.delegate = self
-           tbListWidget.rowHeight = 40
-       }
+        tbListWidget.registerTableCell(WidgetCell.self)
+        tbListWidget.dataSource = self
+        tbListWidget.delegate = self
+        tbListWidget.rowHeight = 40
+    }
 
     @IBAction func btnServiceTapped() {
         let vc = ListServiceRouter.createModule()
@@ -72,7 +72,7 @@ class ServiceView: BaseViewXib {
 
     @IBAction func btnAddNewTapped() {
         if let widget = widget, total != 0 {
-//            addNewCallBack?(widget, total)
+            //            addNewCallBack?(widget, total)
             if checkDouplicate() {
                 tbListWidget.reloadData()
             } else {

@@ -27,14 +27,22 @@ class CheckOutViewController: BaseViewController {
 
 	var presenter: CheckOutPresenterProtocol?
 
-    var orderInfo: OrderInfoEntity? {
+    var orderInfo: OrderInfoEntity! {
         didSet {
             tbCheckOut.reloadData()
         }
     }
 
-    let listCheckOutInfo = ["Khách hàng", "CMT", "Loại phòng", "Giá", "Vào lúc", "Trả lúc", "Tính theo", "Hình thức thanh toán", "Ghi chú"]
-    let listHeader = [HeaderCheckOut(title: "Thông tin chung"),
+    let listCheckOutInfo = ["Khách hàng",
+                            "CMT",
+                            "Loại phòng",
+                            "Giá",
+                            "Vào lúc",
+                            "Trả lúc",
+                            "Tính theo",
+                            "Hình thức thanh toán",
+                            "Ghi chú"]
+    let listHeader = [HeaderCheckOut(title: "Thông tin chung", isCollapse: false),
                       HeaderCheckOut(title: "Tiền phòng"),
                       HeaderCheckOut(title: "Hóa đơn gộp thanh toán"),
                       HeaderCheckOut(title: "Tiền dịch vụ (ăn, uống,...)"),
@@ -44,10 +52,19 @@ class CheckOutViewController: BaseViewController {
                       HeaderCheckOut(title: "Danh sách đang ở"),
                       HeaderCheckOut(title: "Tổng cộng")]
 
+    var room: RoomEntity!
+
 	override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.getOrderForCheckOut(orderId: 12197, mode: 1)
+
+        getDataDetail()
         configureTableView()
+    }
+
+    private func getDataDetail() {
+        if let orderRoom = self.room.OrderRoom, let orderID = orderRoom.OrderId {
+            presenter?.getOrderForCheckOut(orderId: orderID, mode: 1)
+        }
     }
 
     override func setUpNavigation() {
@@ -55,8 +72,10 @@ class CheckOutViewController: BaseViewController {
     }
 
     private func configureTableView() {
-        tbCheckOut.registerTableCell(HeaderInfoCell.self)
+        tbCheckOut.registerTableCell(TopInfoCheckOutCell.self)
         tbCheckOut.registerTableCell(HeaderCheckOutCell.self)
+        tbCheckOut.registerTableCell(RoomChargeCell.self)
+        tbCheckOut.registerTableCell(ServiceChargeCell.self)
         tbCheckOut.delegate = self
         tbCheckOut.dataSource = self
 //        tbCheckOut.rowHeight = UITableView.automaticDimension
@@ -65,6 +84,22 @@ class CheckOutViewController: BaseViewController {
 }
 
 extension CheckOutViewController: CheckOutViewProtocol {
+    func didDeleteOrderDetail(result: BaseResponse?, error: APIError?) {
+        if let _ = result {
+            getDataDetail()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
+    func didAddOrderDetail(result: BaseResponse?, error: APIError?) {
+        if let _ = result {
+            getDataDetail()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
     func didGetOrderForCheckOut(result: OrderInfoEntity?, error: APIError?) {
         if let result = result {
             self.orderInfo = result
@@ -84,62 +119,76 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            if listHeader[0].isCollapse {
-                return 1
-            } else {
-                return listCheckOutInfo.count + 1
-            }
-        default:
+        if listHeader[section].isCollapse {
             return 1
+        } else {
+            switch section {
+            case 0:
+                return listCheckOutInfo.count + 1
+            case 1:
+                return orderInfo.TimeUseds.count + 1
+            case 3:
+                return orderInfo.MiniBars.count + 1
+            case 4:
+                return orderInfo.Surcharges.count + 1
+            case 5:
+                return orderInfo.Deductibles.count + 1
+            case 6:
+                return orderInfo.Prepaids.count + 1
+
+            default:
+                return 1
+            }
         }
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueTableCell(HeaderCheckOutCell.self)
-                cell.setData(header: self.listHeader[indexPath.section])
+        let row = indexPath.row
+        let section = indexPath.section
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueTableCell(HeaderCheckOutCell.self)
+            if let orderInfo = orderInfo {
+                cell.setData(header: self.listHeader[section], indexPath: indexPath, info: orderInfo)
                 cell.selectCallback = {
-                    self.listHeader[indexPath.section].isCollapse = !self.listHeader[indexPath.section].isCollapse
+                    self.listHeader[section].isCollapse = !self.listHeader[section].isCollapse
                     self.tbCheckOut.beginUpdates()
-                    self.tbCheckOut.reloadSections([indexPath.section], with: .automatic)
+                    self.tbCheckOut.reloadSections([section], with: .automatic)
                     self.tbCheckOut.endUpdates()
                 }
-               return cell
-            } else {
-                let cell = tableView.dequeueTableCell(HeaderInfoCell.self)
-                           cell.setData(info: orderInfo, indexPath: indexPath, title: listCheckOutInfo[indexPath.row - 1])
-                           return cell
+            }
+           return cell
+        } else {
+            switch indexPath.section {
+            case 0:
+                let cell = tableView.dequeueTableCell(TopInfoCheckOutCell.self)
+                cell.setData(info: orderInfo, indexPath: indexPath, title: listCheckOutInfo[row - 1])
+                return cell
+            case 1:
+                let cell = tableView.dequeueTableCell(RoomChargeCell.self)
+                cell.setData(timeUsed: self.orderInfo.TimeUseds[row-1])
+                return cell
+            case 3,4,5,6:
+                let cell = tableView.dequeueTableCell(ServiceChargeCell.self)
+                cell.setData(info: orderInfo, indexPath: indexPath)
+                cell.delegate = self
+                return cell
+            default:
+                return UITableViewCell()
             }
 
-        default:
-            if indexPath.row == 0 {
-                let cell = tableView.dequeueTableCell(HeaderCheckOutCell.self)
-                cell.setData(header: self.listHeader[indexPath.section])
-               return cell
-            } else {
-                let cell = tableView.dequeueTableCell(HeaderInfoCell.self)
-                return cell
-            }
         }
+
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.row == 0 ? 40 : UITableView.automaticDimension
     }
 
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = tableView.dequeueTableCell(HeaderCheckOutCell.self)
-//        header.setTitle(listHeader[section].title)
+}
 
-//        return header
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 40
-//    }
-
+extension CheckOutViewController: ServiceChargeCellDelegate {
+    func deleteTapped(subCharge: SubFeeDetailEntity, indexPath: IndexPath) {
+        presenter?.deleteOrderDetail(param: subCharge)
+    }
 }

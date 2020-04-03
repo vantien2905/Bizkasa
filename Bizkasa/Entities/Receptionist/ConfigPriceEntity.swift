@@ -13,9 +13,9 @@ class ConfigPriceEntity: Mappable {
 
     var Id: Int?
     var Name: String?
-    var PriceByDay: Float?
-    var PriceByNight: Float?
-    var PriceByMonth: Float?
+    var PriceByDay: Int?
+    var PriceByNight: Int?
+    var PriceByMonth: Int?
     var RoomClassId: Int?
     var IsActive: Bool?
     var IsDefault: Bool?

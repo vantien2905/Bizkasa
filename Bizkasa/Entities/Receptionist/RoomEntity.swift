@@ -64,7 +64,7 @@ class OrderRoomEntity: Mappable {
 
     var OrderId: Int?
     var CustomerNum: Int?
-    var RoomPrice: Float?
+    var RoomPrice: Int?
     var CustomerName: String?
     var CustomerId: String?
     var CompanyName: String?

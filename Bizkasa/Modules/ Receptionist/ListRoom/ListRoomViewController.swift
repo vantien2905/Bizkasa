@@ -96,12 +96,13 @@ extension ListRoomViewController: UICollectionViewDelegateFlowLayout, UICollecti
 
 extension ListRoomViewController: ListRoomCVCellDelegate {
     func actionTapped(type: String, room: RoomEntity?) {
+        guard let room = room else { return }
         switch type {
         case ActionRoom.checkIn.rawValue:
             let vc = CheckInRouter.createModule(room: room).convertNavi()
             self.present(controller: vc)
         case ActionRoom.checkOut.rawValue:
-            let vc = CheckOutRouter.createModule().convertNavi()
+            let vc = CheckOutRouter.createModule(room: room).convertNavi()
             self.present(controller: vc)
         default:
             break

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeaderInfoCell: UITableViewCell {
+class TopInfoCheckOutCell: UITableViewCell {
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbContent: UILabel!
@@ -36,15 +36,15 @@ class HeaderInfoCell: UITableViewCell {
         case 0:
             setContentLabel(text: info.CustomerName)
         case 1:
-            setContentLabel(text: "\(info.Card*)")
+            setContentLabel(text: info.Card* != 0 ? "\(info.Card*)" : "-")
         case 2:
             setContentLabel(text: info.RoomClassName)
         case 3:
-            setContentLabel(text: "\(info.Price ?? 0)")
+            setContentLabel(text: "\(info.Price*.formattedWithSeparator)")
         case 4:
-            setContentLabel(text: info.CheckInDate)
+            setContentLabel(text:"\(info.CheckInTimeText&) - \(info.CheckInDateView&)")
         case 5:
-            setContentLabel(text: info.CheckOutDate)
+            setContentLabel(text: "\(info.CheckOutTimeText&) - \(info.CheckOutDateView&)")
         case 6:
             setContentDropdown()
             vDropdown.dataSource = ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]

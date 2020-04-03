@@ -14,7 +14,7 @@ class CheckOutRouter: CheckOutWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(room: RoomEntity) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = CheckOutViewController(nibName: nil, bundle: nil)
         let interactor = CheckOutInteractor()
@@ -24,6 +24,7 @@ class CheckOutRouter: CheckOutWireframeProtocol {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        view.room = room
 
         return view
     }

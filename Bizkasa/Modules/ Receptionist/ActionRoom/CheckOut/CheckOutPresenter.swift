@@ -11,6 +11,14 @@
 import UIKit
 
 class CheckOutPresenter: CheckOutPresenterProtocol {
+    func deleteOrderDetail(param: SubFeeDetailEntity) {
+        interactor?.deleteOrderDetail(param: param)
+    }
+
+    func addOrderDetail(param: SubFeeDetailEntity) {
+        interactor?.addOrderDetail(param: param)
+    }
+
     func getOrderForCheckOut(orderId: Int, mode: Int) {
         interactor?.getOrderForCheckOut(orderId: orderId, mode: mode)
     }
@@ -29,6 +37,14 @@ class CheckOutPresenter: CheckOutPresenterProtocol {
 }
 
 extension CheckOutPresenter: CheckOutInteractorOutputProtocol {
+    func didDeleteOrderDetail(result: BaseResponse?, error: APIError?) {
+        view?.didDeleteOrderDetail(result: result, error: error)
+    }
+
+    func didAddOrderDetail(result: BaseResponse?, error: APIError?) {
+        view?.didAddOrderDetail(result: result, error: error)
+    }
+
     func didGetOrderForCheckOut(result: OrderInfoEntity?, error: APIError?) {
         view?.didGetOrderForCheckOut(result: result, error: error)
     }

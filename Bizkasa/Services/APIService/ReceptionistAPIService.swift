@@ -15,9 +15,21 @@ protocol ReceptionistAPIServiceProtocol {
     func getConfigPrice(roomId: Int, success: @escaping SuccessHandler<ConfigPriceEntity>.array, failure: @escaping RequestFailure)
     func getWidget(success: @escaping SuccessHandler<WidgetTypeEntity>.array, failure: @escaping RequestFailure)
     func getOrderForCheckOut(orderId: Int, mode: Int, success: @escaping SuccessHandler<OrderInfoEntity>.object, failure: @escaping RequestFailure)
+    func addOrderDetail(param: SubFeeDetailEntity, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func deleteOrderDetail(param: SubFeeDetailEntity, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class ReceptionistAPIService: ReceptionistAPIServiceProtocol {
+
+    func addOrderDetail(param: SubFeeDetailEntity, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = ReceptionistEndPoint.addOrderDetail(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
+    }
+
+    func deleteOrderDetail(param: SubFeeDetailEntity, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)  {
+        let endPoint = ReceptionistEndPoint.deleteOrderDetail(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
+    }
 
     func getOrderForCheckOut(orderId: Int, mode: Int, success: @escaping SuccessHandler<OrderInfoEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = ReceptionistEndPoint.getOrderForCheckOut(orderId: orderId, mode: mode)

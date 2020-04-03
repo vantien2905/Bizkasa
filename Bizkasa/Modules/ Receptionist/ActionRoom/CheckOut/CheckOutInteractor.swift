@@ -11,6 +11,22 @@
 import UIKit
 
 class CheckOutInteractor: CheckOutInteractorInputProtocol {
+    func deleteOrderDetail(param: SubFeeDetailEntity) {
+        service.deleteOrderDetail(param: param, success: { (result) in
+            self.presenter?.didDeleteOrderDetail(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didDeleteOrderDetail(result: nil, error: error)
+        }
+    }
+
+    func addOrderDetail(param: SubFeeDetailEntity) {
+        service.addOrderDetail(param: param, success: { (result) in
+            self.presenter?.didAddOrderDetail(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didAddOrderDetail(result: nil, error: error)
+        }
+    }
+
     let service = Provider.shared.receptionistAPIService
 
     func getOrderForCheckOut(orderId: Int, mode: Int) {

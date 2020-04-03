@@ -37,8 +37,8 @@ class WidgetEntity: Mappable {
     var GroupName: String?
     var Name: String?
     var IsRecept: Bool?
-    var Price: Float?
-    var PricePaid: Float?
+    var Price: Int?
+    var PricePaid: Int?
     var NumImport: Int?
     var NumExport: Int?
     var Residual: Int?

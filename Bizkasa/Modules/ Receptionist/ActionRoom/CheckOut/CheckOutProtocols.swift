@@ -19,6 +19,9 @@ protocol CheckOutPresenterProtocol: class {
     var interactor: CheckOutInteractorInputProtocol? { get set }
 
     func getOrderForCheckOut(orderId: Int, mode: Int)
+    func addOrderDetail(param: SubFeeDetailEntity)
+    func deleteOrderDetail(param: SubFeeDetailEntity)
+
 }
 
 //MARK: Interactor -
@@ -26,6 +29,8 @@ protocol CheckOutInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetOrderForCheckOut(result: OrderInfoEntity?, error: APIError?)
+    func didAddOrderDetail(result: BaseResponse?, error: APIError?)
+    func didDeleteOrderDetail(result: BaseResponse?, error: APIError?)
 }
 
 protocol CheckOutInteractorInputProtocol: class {
@@ -34,6 +39,8 @@ protocol CheckOutInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getOrderForCheckOut(orderId: Int, mode: Int)
+    func addOrderDetail(param: SubFeeDetailEntity)
+    func deleteOrderDetail(param: SubFeeDetailEntity)
 }
 
 //MARK: View -
@@ -43,4 +50,6 @@ protocol CheckOutViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetOrderForCheckOut(result: OrderInfoEntity?, error: APIError?)
+    func didAddOrderDetail(result: BaseResponse?, error: APIError?)
+    func didDeleteOrderDetail(result: BaseResponse?, error: APIError?)
 }

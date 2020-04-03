@@ -33,7 +33,8 @@ class WidgetCell: UITableViewCell {
         self.indexPath = indexPath
         lbTitle.text = widget.Name
         lbTotal.text = "\(total)"
-        lbPrice.text = "\((widget.Price ?? 0) * Float(total))"
+        let price = (widget.Price*) * total
+        lbPrice.text = "\(price.formattedWithSeparator)"
     }
 
     @IBAction func btnDeleteWidgetTapped() {

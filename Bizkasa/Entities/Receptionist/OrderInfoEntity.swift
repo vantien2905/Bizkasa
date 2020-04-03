@@ -27,16 +27,16 @@ class OrderInfoEntity: Mappable {
     var Card:  Int?
     var NumberVehicle:  Int?
     var Notes:  String?
-    var TotalAmount:  Float?
-    var Price:  Float?
-    var PriceByDay:  Float?
-    var PriceOverNight:  Float?
-    var PriceByHour:  Float?
-    var SurchargeAmount:  Float?
-    var DeductibleAmount:  Float?
-    var PrepaidAmount:  Float?
-    var MiniBarAmount:  Float?
-    var Cashed:  Float?
+    var TotalAmount:  Int?
+    var Price:  Int?
+    var PriceByDay:  Int?
+    var PriceOverNight:  Int?
+    var PriceByHour:  Int?
+    var SurchargeAmount:  Int?
+    var DeductibleAmount:  Int?
+    var PrepaidAmount:  Int?
+    var MiniBarAmount:  Int?
+    var Cashed:  Int?
     var OrderStatus:  Int?
     var PaymentMethod:  Int?
     var CaculatorMode:  Int?
@@ -54,6 +54,11 @@ class OrderInfoEntity: Mappable {
     var Surcharges: [SubFeeDetailEntity] = []
     var Deductibles: [SubFeeDetailEntity] = []
     var Prepaids: [SubFeeDetailEntity] = []
+    var TimeUseds: [TimeUsed] = []
+
+    var RoomAmount: Int?
+    var SubAmount: Int?
+    var Customers: [CustomerEntity] = []
 
     required init?(map: Map) {
 
@@ -103,8 +108,11 @@ class OrderInfoEntity: Mappable {
         self.Surcharges <- map["Surcharges"]
         self.Deductibles <- map["Deductibles"]
         self.Prepaids <- map["Prepaids"]
+        self.TimeUseds <- map["TimeUseds"]
+        self.RoomAmount <- map["RoomAmount"]
+        self.SubAmount <- map["SubAmount"]
+        self.Customers <- map["Customers"]
     }
-
 }
 
 class SubFeeDetailEntity: Mappable {
@@ -113,8 +121,8 @@ class SubFeeDetailEntity: Mappable {
     var OrderId: Int?
     var DetailTypeId: Int?
     var Quantity: Int?
-    var Price: Float?
-    var SubAmount: Float?
+    var Price: Int?
+    var SubAmount: Int?
     var Title: String?
     var Note: String?
     var ShiftId: Int?
@@ -140,5 +148,26 @@ class SubFeeDetailEntity: Mappable {
         self.CreatedDate <- map["CreatedDate"]
         self.UpdatedDate <- map["UpdatedDate"]
     }
+
+}
+
+class TimeUsed: Mappable {
+
+    var UnitUsed: Int?
+    var Description: String?
+    var SumAmount: Int?
+
+    required init?(map: Map) {
+
+    }
+
+     func mapping(map: Map) {
+
+        self.UnitUsed <- map["UnitUsed"]
+        self.Description <- map["Description"]
+        self.SumAmount <- map["SumAmount"]
+
+    }
+
 
 }
