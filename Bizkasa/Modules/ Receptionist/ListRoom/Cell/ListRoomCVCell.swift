@@ -24,7 +24,9 @@ class ListRoomCVCell: UICollectionViewCell {
 
     @IBOutlet weak var vBackground: UIView!
     @IBOutlet weak var imgLogo: UIImageView!
-    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbRoomName: UILabel!
+    @IBOutlet weak var lbTime: UILabel!
+    @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var vDropdownLayout: UIView!
 
     let dropdown = DropDown()
@@ -72,12 +74,12 @@ class ListRoomCVCell: UICollectionViewCell {
 
     private func setData() {
         guard let room = room else { return }
-        lbTitle.text = "Phòng \(room.Name&)"
+        lbRoomName.text = "\(room.Name&)"
         self.isAvailable = room.OrderRoom == nil
         if let order = room.OrderRoom {
 
-
-
+            lbTime.text = order.TimeSpend
+            lbStatus.text = order.CaculatorModeView
             switch order.CaculatorMode {
             case 1:
                 setColor(background: AppColor.day, text: .white)
@@ -92,6 +94,7 @@ class ListRoomCVCell: UICollectionViewCell {
             }
 
         } else {
+            lbStatus.text = "Trống"
             setColor(background: AppColor.normalGreen, text: .white)
 
         }
@@ -99,7 +102,7 @@ class ListRoomCVCell: UICollectionViewCell {
 
     private func setColor(background: UIColor, text: UIColor) {
         vBackground.setShadow(color: background)
-        lbTitle.textColor = text
+        lbRoomName.textColor = text
 
         dropdown.backgroundColor = background
         dropdown.textColor = text

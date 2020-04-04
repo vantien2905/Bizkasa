@@ -41,7 +41,7 @@ class ListRoomViewController: HomeBaseViewController {
         cvListRoom.dataSource = self
         let screen = UIScreen.main.bounds
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: screen.width/2, height: 60)
+        layout.itemSize = CGSize(width: screen.width/2, height: 100)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         cvListRoom.collectionViewLayout = layout
