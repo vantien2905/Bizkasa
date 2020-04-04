@@ -16,7 +16,6 @@ class HeaderCheckOutCell: UITableViewCell {
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
-    @IBOutlet weak var imgCollapse: UIImageView!
     @IBOutlet weak var btnAddMore: UIButton!
     @IBOutlet weak var vTotal: UIView!
     @IBOutlet weak var vSpace: UIView!
