@@ -62,6 +62,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnDelete" destination="jwi-gH-mPQ" id="L8a-FB-iHg"/>
                 <outlet property="lbContent" destination="7O3-Ek-v0f" id="MBH-54-eB6"/>
                 <outlet property="lbTitle" destination="iYz-gy-Qhk" id="dAp-bc-FxZ"/>
             </connections>

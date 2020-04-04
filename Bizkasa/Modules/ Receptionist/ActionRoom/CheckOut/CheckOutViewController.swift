@@ -125,6 +125,8 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
             switch section {
             case 0:
                 return listCheckOutInfo.count + 1
+            case 2:
+                return orderInfo.OrderAttachments.count + 1
             case 1:
                 return orderInfo.TimeUseds.count + 1
             case 3:
@@ -140,7 +142,6 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
                 return 1
             }
         }
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -168,7 +169,7 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueTableCell(RoomChargeCell.self)
                 cell.setData(timeUsed: self.orderInfo.TimeUseds[row-1])
                 return cell
-            case 3,4,5,6:
+            case 2, 3,4,5,6:
                 let cell = tableView.dequeueTableCell(ServiceChargeCell.self)
                 cell.setData(info: orderInfo, indexPath: indexPath)
                 cell.delegate = self
@@ -190,5 +191,16 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
 extension CheckOutViewController: ServiceChargeCellDelegate {
     func deleteTapped(subCharge: SubFeeDetailEntity, indexPath: IndexPath) {
         presenter?.deleteOrderDetail(param: subCharge)
+    }
+}
+
+extension CheckOutViewController: HeaderCheckOutCellDelegate {
+    func btnAddMoreTapped(indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            break
+        default:
+            break
+        }
     }
 }

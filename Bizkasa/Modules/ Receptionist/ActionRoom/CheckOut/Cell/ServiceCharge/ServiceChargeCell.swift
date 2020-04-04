@@ -16,6 +16,7 @@ class ServiceChargeCell: UITableViewCell {
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbContent: UILabel!
+    @IBOutlet weak var btnDelete: UIButton!
 
     var indexPath: IndexPath!
     var subCharge: SubFeeDetailEntity!
@@ -34,9 +35,14 @@ class ServiceChargeCell: UITableViewCell {
     }
 
     func setData(info: OrderInfoEntity, indexPath: IndexPath) {
+        btnDelete.isHidden = false
         self.indexPath = indexPath
         let row = indexPath.row - 1
         switch indexPath.section {
+        case 2:
+            lbTitle.text = info.OrderAttachments[row].Note
+            lbContent.text = "\(info.OrderAttachments[row].TotalAmount*.formattedWithSeparator)"
+            btnDelete.isHidden = true
         case 3:
             setContent(subCharge: info.MiniBars[row])
         case 4:
@@ -52,8 +58,8 @@ class ServiceChargeCell: UITableViewCell {
 
     private func setContent(subCharge: SubFeeDetailEntity) {
         self.subCharge = subCharge
-        lbTitle.text = "\(subCharge.Title&), \(subCharge.Price*) x \(subCharge.Quantity*)"
-        lbContent.text = "\(subCharge.SubAmount*)"
+        lbTitle.text = "\(subCharge.Title&), \(subCharge.Price*.formattedWithSeparator) x \(subCharge.Quantity*)"
+        lbContent.text = "\(subCharge.SubAmount*.formattedWithSeparator)"
     }
 
     @IBAction func btnDeleteTapped() {

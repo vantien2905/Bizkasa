@@ -55,10 +55,12 @@ class OrderInfoEntity: Mappable {
     var Deductibles: [SubFeeDetailEntity] = []
     var Prepaids: [SubFeeDetailEntity] = []
     var TimeUseds: [TimeUsed] = []
+    var OrderAttachments: [OrderAttachment] = []
 
     var RoomAmount: Int?
     var SubAmount: Int?
     var Customers: [CustomerEntity] = []
+    var AttachmentAmount: Int?
 
     required init?(map: Map) {
 
@@ -112,6 +114,8 @@ class OrderInfoEntity: Mappable {
         self.RoomAmount <- map["RoomAmount"]
         self.SubAmount <- map["SubAmount"]
         self.Customers <- map["Customers"]
+        self.OrderAttachments <- map["OrderAttachments"]
+        self.AttachmentAmount <- map["AttachmentAmount"]
     }
 }
 
@@ -168,6 +172,26 @@ class TimeUsed: Mappable {
         self.SumAmount <- map["SumAmount"]
 
     }
+}
 
+class OrderAttachment: Mappable {
 
+    var OrderId: Int?
+    var RoomId: Int?
+    var RoomName: String?
+    var Note: String?
+    var TotalAmount: Int?
+
+    required init?(map: Map) {
+
+    }
+
+     func mapping(map: Map) {
+
+        self.OrderId <- map["OrderId"]
+        self.RoomId <- map["RoomId"]
+        self.RoomName <- map["RoomName"]
+        self.Note <- map["Note"]
+        self.TotalAmount <- map["TotalAmount"]
+    }
 }

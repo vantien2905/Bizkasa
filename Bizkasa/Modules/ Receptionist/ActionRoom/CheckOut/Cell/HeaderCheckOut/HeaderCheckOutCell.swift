@@ -8,19 +8,22 @@
 
 import UIKit
 
+protocol HeaderCheckOutCellDelegate: class {
+    func btnAddMoreTapped(indexPath: IndexPath)
+}
+
 class HeaderCheckOutCell: UITableViewCell {
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var imgCollapse: UIImageView!
+    @IBOutlet weak var btnAddMore: UIButton!
 
     var selectCallback: (()->Void)?
 
-//    var headerCheckout: HeaderCheckOut? {
-//        didSet {
-//            self.setData()
-//        }
-//    }
+    var indexPath: IndexPath!
+
+    weak var delegate: HeaderCheckOutCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,13 +38,19 @@ class HeaderCheckOutCell: UITableViewCell {
 
     func setData(header: HeaderCheckOut, indexPath: IndexPath, info: OrderInfoEntity) {
         lbTitle.text = header.title
-//        imgCollapse.rotate(header.isCollapse ? .pi : 0)
+        self.indexPath = indexPath
+        
+        if indexPath.section == 0 || indexPath.section == 8 {
+            btnAddMore.isHidden = true
+        } else {
+            btnAddMore.isHidden = false
+        }
 
         switch indexPath.section {
         case 1:
             lbTotal.text = "\(info.RoomAmount*.formattedWithSeparator)"
         case 2:
-            lbTotal.text = "\(info.PaymentMethod*.formattedWithSeparator)"
+            lbTotal.text = "\(info.AttachmentAmount*.formattedWithSeparator)"
         case 3:
             lbTotal.text = "\(info.MiniBarAmount*.formattedWithSeparator)"
         case 4:
@@ -72,6 +81,10 @@ class HeaderCheckOutCell: UITableViewCell {
 //        imgCollapse.rotate(.pi)
         selectCallback?()
 
+    }
+
+    @IBAction func btnAddMoreTapped() {
+        delegate?.btnAddMoreTapped(indexPath: indexPath)
     }
     
 }
