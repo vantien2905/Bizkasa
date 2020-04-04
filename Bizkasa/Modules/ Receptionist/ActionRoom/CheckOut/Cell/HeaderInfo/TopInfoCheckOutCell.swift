@@ -12,13 +12,12 @@ class TopInfoCheckOutCell: UITableViewCell {
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbContent: UILabel!
-    @IBOutlet weak var vCalendar: TextFieldCalendar!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var vDropdown: AppDropdownBorder!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        vCalendar.hideTitle()
         vDropdown.hideTextAndLogo()
     }
 
@@ -52,7 +51,8 @@ class TopInfoCheckOutCell: UITableViewCell {
             setContentDropdown()
             vDropdown.dataSource = ["Tiền mặt", "Chuyển khoản", "Thanh toán online", "Khác"]
         case 8:
-            setContentCalendar()
+            textField.text = info.Notes
+            setContentTextField()
         default:
             break
         }
@@ -61,19 +61,19 @@ class TopInfoCheckOutCell: UITableViewCell {
     private func setContentLabel(text: String?) {
         lbContent.text = text
         lbContent.isHidden = false
-        vCalendar.isHidden = true
+        textField.isHidden = true
         vDropdown.isHidden = true
     }
 
-    private func setContentCalendar() {
+    private func setContentTextField() {
         lbContent.isHidden = true
-        vCalendar.isHidden = false
+        textField.isHidden = false
         vDropdown.isHidden = true
     }
 
     private func setContentDropdown() {
         lbContent.isHidden = true
-        vCalendar.isHidden = true
+        textField.isHidden = true
         vDropdown.isHidden = false
     }
 }

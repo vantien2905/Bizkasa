@@ -13,5 +13,6 @@ pod 'SwiftyJSON', '4.2.0'
     pod 'Toast-Swift'
     pod 'SDWebImage', '4.4.2'
     pod 'DropDown'
+    pod 'IQKeyboardManagerSwift'
 
 end

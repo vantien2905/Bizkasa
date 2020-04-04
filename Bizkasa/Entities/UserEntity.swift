@@ -16,7 +16,7 @@ class UserEntity: Mappable {
     var Logo: String?
     var UserType: String?
     var Id: String?
-    var ShiftId: String?
+    var ShiftId: Int?
     var IsInShift: String?
     var HotelId: String?
     var OwnerHotels: String?

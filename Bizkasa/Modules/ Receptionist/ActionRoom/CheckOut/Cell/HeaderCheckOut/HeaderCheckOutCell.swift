@@ -18,6 +18,8 @@ class HeaderCheckOutCell: UITableViewCell {
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var imgCollapse: UIImageView!
     @IBOutlet weak var btnAddMore: UIButton!
+    @IBOutlet weak var vTotal: UIView!
+    @IBOutlet weak var vSpace: UIView!
 
     var selectCallback: (()->Void)?
 
@@ -39,7 +41,9 @@ class HeaderCheckOutCell: UITableViewCell {
     func setData(header: HeaderCheckOut, indexPath: IndexPath, info: OrderInfoEntity) {
         lbTitle.text = header.title
         self.indexPath = indexPath
-        
+        vTotal.isHidden = false
+        vSpace.isHidden = false
+
         if indexPath.section == 0 || indexPath.section == 8 {
             btnAddMore.isHidden = true
         } else {
@@ -64,13 +68,14 @@ class HeaderCheckOutCell: UITableViewCell {
         case 8:
             lbTotal.text = "\(info.TotalAmount*.formattedWithSeparator)"
         default:
-            lbTotal.text = ""
+            vTotal.isHidden = true
+            vSpace.isHidden = true
         }
 
         if indexPath.section == 8 {
-            lbTotal.backgroundColor = AppColor.secondMain
+            vTotal.backgroundColor = AppColor.secondMain
         } else {
-            lbTotal.backgroundColor = AppColor.normalOrange
+            vTotal.backgroundColor = AppColor.normalOrange
         }
     }
 

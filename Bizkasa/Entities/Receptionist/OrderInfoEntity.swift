@@ -138,6 +138,10 @@ class SubFeeDetailEntity: Mappable {
 
     }
 
+    init() {
+        
+    }
+
     func mapping(map: Map) {
         self.Id <- map["Id"]
         self.OrderId <- map["OrderId"]

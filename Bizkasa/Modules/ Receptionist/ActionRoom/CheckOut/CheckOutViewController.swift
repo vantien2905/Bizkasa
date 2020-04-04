@@ -10,6 +10,13 @@
 
 import UIKit
 
+enum CaculatorMode: Int {
+    case day = 1
+    case overNight = 2
+    case hour = 3
+    case month = 4
+}
+
 class HeaderCheckOut {
     var title: String?
     var isCollapse = true
@@ -20,6 +27,9 @@ class HeaderCheckOut {
     }
 }
 
+protocol CheckOutViewControllerDelegate: class {
+    func checkOutSuccess()
+}
 
 class CheckOutViewController: BaseViewController {
 
@@ -54,6 +64,8 @@ class CheckOutViewController: BaseViewController {
 
     var room: RoomEntity!
 
+    weak var delegate: CheckOutViewControllerDelegate?
+
 	override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,6 +81,7 @@ class CheckOutViewController: BaseViewController {
 
     override func setUpNavigation() {
         addBackWhiteToNavigation()
+        addRightButtonNavigationBar(titles: ["Trả phòng","Lưu", "Chưa thanh toán"], actions: [#selector(btnCheckOutTapped), #selector(btnSaveTapped), #selector(btnUnPaidTapped)])
     }
 
     private func configureTableView() {
@@ -81,9 +94,34 @@ class CheckOutViewController: BaseViewController {
 //        tbCheckOut.rowHeight = UITableView.automaticDimension
     }
 
+    @objc func btnCheckOutTapped() {
+        orderInfo.OrderStatus = 7
+        presenter?.updateOrder(param: orderInfo)
+    }
+
+    @objc func btnSaveTapped() {
+        orderInfo.OrderStatus = 4
+        presenter?.updateOrder(param: orderInfo)
+    }
+
+    @objc func btnUnPaidTapped() {
+        orderInfo.OrderStatus = 1
+        presenter?.updateOrder(param: orderInfo)
+    }
+
 }
 
 extension CheckOutViewController: CheckOutViewProtocol {
+    func didUpdateOrder(result: BaseResponse?, error: APIError?) {
+        if let _ = result {
+            self.makeToast(message: "Trả phòng thành công!")
+            delegate?.checkOutSuccess()
+            self.closePage()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
     func didDeleteOrderDetail(result: BaseResponse?, error: APIError?) {
         if let _ = result {
             getDataDetail()
@@ -93,8 +131,9 @@ extension CheckOutViewController: CheckOutViewProtocol {
     }
 
     func didAddOrderDetail(result: BaseResponse?, error: APIError?) {
+
         if let _ = result {
-            getDataDetail()
+             getDataDetail()
         } else {
             self.makeToast(message: error?.message?.first ?? "")
         }
@@ -149,6 +188,7 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
         let section = indexPath.section
         if indexPath.row == 0 {
             let cell = tableView.dequeueTableCell(HeaderCheckOutCell.self)
+            cell.delegate = self
             if let orderInfo = orderInfo {
                 cell.setData(header: self.listHeader[section], indexPath: indexPath, info: orderInfo)
                 cell.selectCallback = {
@@ -197,10 +237,46 @@ extension CheckOutViewController: ServiceChargeCellDelegate {
 extension CheckOutViewController: HeaderCheckOutCellDelegate {
     func btnAddMoreTapped(indexPath: IndexPath) {
         switch indexPath.section {
-        case 1:
-            break
+        case 3:
+            let vc = PopUpCheckOutViewController.initFromNib()
+            vc.indexPath = indexPath
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
+            present(vc, animated: false, completion: nil)
+        default:
+            let vc = PopUpCheckOutViewController.initFromNib()
+            vc.indexPath = indexPath
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
+            present(vc, animated: false, completion: nil)
+
+        }
+    }
+}
+
+extension CheckOutViewController: PopUpCheckOutViewControllerDelegate {
+    func btnAcceptTapped(content: String, price: Int, indexPath: IndexPath) {
+        guard let currentUser = UserDefaultHelper.shared.getUser() else { return }
+        let param = SubFeeDetailEntity()
+        param.OrderId = orderInfo.Id
+        param.Quantity = 1
+
+        param.Title = content
+        param.Price = price
+        param.ShiftId = currentUser.ShiftId
+        switch indexPath.section {
+        case 4:
+             param.DetailTypeId = 10
+        case 5:
+            param.DetailTypeId = 11
+        case 6:
+            param.DetailTypeId = 12
+
         default:
             break
         }
+        presenter?.addOrderDetail(param: param)
     }
 }

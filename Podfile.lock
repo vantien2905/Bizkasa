@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.3)
   - CryptoSwift (0.7.2)
   - DropDown (2.3.13)
+  - IQKeyboardManagerSwift (6.5.4)
   - ObjectMapper (3.3.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - Alamofire (= 4.7.3)
   - CryptoSwift (= 0.7.2)
   - DropDown
+  - IQKeyboardManagerSwift
   - ObjectMapper (= 3.3.0)
   - SDWebImage (= 4.4.2)
   - SwiftyJSON (= 4.2.0)
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Alamofire
     - CryptoSwift
     - DropDown
+    - IQKeyboardManagerSwift
     - ObjectMapper
     - SDWebImage
     - SwiftyJSON
@@ -32,11 +35,12 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: 88631392c6edb7da1324e2db687b7ce66275226a
+PODFILE CHECKSUM: 230ca048652179ae2ca3f67b3041370765fadf03
 
 COCOAPODS: 1.8.3

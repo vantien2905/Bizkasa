@@ -97,7 +97,7 @@ struct APINetwork: APINetworkProtocol {
 // handle base response
 extension APINetwork {
     private func handleResponse(response: BaseResponse, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
-        if response.data != nil {
+        if response.data != nil || response.message == nil {
             success(response)
         } else {
             // handle error with message from API

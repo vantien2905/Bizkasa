@@ -75,21 +75,36 @@ class ListRoomCVCell: UICollectionViewCell {
         lbTitle.text = "Phòng \(room.Name&)"
         self.isAvailable = room.OrderRoom == nil
         if let order = room.OrderRoom {
-            vBackground.setShadow(color: AppColor.normalLightGray)
-            lbTitle.textColor = .black
 
-            dropdown.backgroundColor = AppColor.normalLightGray
-            dropdown.textColor = .black
-            dropdown.separatorColor = .black
+
+
+            switch order.CaculatorMode {
+            case 1:
+                setColor(background: AppColor.day, text: .white)
+            case 2:
+                setColor(background: AppColor.overNight, text: .white)
+            case 3:
+                setColor(background: AppColor.hour, text: .white)
+            case 4:
+                setColor(background: AppColor.month, text: .white)
+            default:
+                break
+            }
 
         } else {
-            vBackground.setShadow(color: AppColor.normalGreen)
-            lbTitle.textColor = .white
+            setColor(background: AppColor.normalGreen, text: .white)
 
-            dropdown.backgroundColor = .orange
-            dropdown.textColor = .white
-            dropdown.separatorColor = .white
         }
+    }
+
+    private func setColor(background: UIColor, text: UIColor) {
+        vBackground.setShadow(color: background)
+        lbTitle.textColor = text
+
+        dropdown.backgroundColor = background
+        dropdown.textColor = text
+        dropdown.separatorColor = text
+
     }
 
 }

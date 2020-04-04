@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpCheckOutViewController" customModule="Bizkasa" customModuleProvider="target">
+            <connections>
+                <outlet property="btnAccept" destination="ftj-QI-4ko" id="PDg-zP-tv0"/>
+                <outlet property="vCharge" destination="AZJ-cp-LCi" id="ciU-xI-aXH"/>
+                <outlet property="vContent" destination="raQ-i5-hTr" id="jfY-hf-eLq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PO6-WS-HOj">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <connections>
+                        <action selector="btnCloseTapped" destination="-1" eventType="touchUpInside" id="fBH-or-qGQ"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDy-L6-doz">
+                    <rect key="frame" x="0.0" y="656" width="414" height="240"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="59h-g0-YIa">
+                            <rect key="frame" x="20" y="10" width="374" height="150"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-i5-hTr" customClass="AppTextViewLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="ln2-l1-anG"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZJ-cp-LCi" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="90" width="374" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="QvT-zj-5X1"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftj-QI-4ko">
+                            <rect key="frame" x="167" y="180" width="80" height="30"/>
+                            <color key="backgroundColor" name="Main"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="ECf-3x-Ur3"/>
+                                <constraint firstAttribute="height" constant="30" id="Zcb-Vu-fe2"/>
+                            </constraints>
+                            <state key="normal" title="Thêm">
+                                <color key="titleColor" name="WhiteColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAcceptTapped" destination="-1" eventType="touchUpInside" id="6DM-NC-Aee"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="WhiteColor"/>
+                    <constraints>
+                        <constraint firstItem="59h-g0-YIa" firstAttribute="leading" secondItem="WDy-L6-doz" secondAttribute="leading" constant="20" id="3N4-km-Jns"/>
+                        <constraint firstItem="ftj-QI-4ko" firstAttribute="centerX" secondItem="WDy-L6-doz" secondAttribute="centerX" id="9r5-fT-c1R"/>
+                        <constraint firstItem="59h-g0-YIa" firstAttribute="top" secondItem="WDy-L6-doz" secondAttribute="top" constant="10" id="M9C-KR-rFb"/>
+                        <constraint firstItem="ftj-QI-4ko" firstAttribute="top" secondItem="59h-g0-YIa" secondAttribute="bottom" constant="20" id="WBn-fd-voA"/>
+                        <constraint firstAttribute="bottom" secondItem="ftj-QI-4ko" secondAttribute="bottom" constant="30" id="hVq-A7-Djz"/>
+                        <constraint firstAttribute="trailing" secondItem="59h-g0-YIa" secondAttribute="trailing" constant="20" id="v4o-8h-Agq"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WDy-L6-doz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2I8-t7-hxL"/>
+                <constraint firstItem="PO6-WS-HOj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8cl-qB-WB5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PO6-WS-HOj" secondAttribute="trailing" id="FEI-96-wn4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WDy-L6-doz" secondAttribute="trailing" id="NLy-Ah-fWr"/>
+                <constraint firstItem="PO6-WS-HOj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="POO-Kq-FUw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PO6-WS-HOj" secondAttribute="bottom" id="cIn-4q-yNE"/>
+                <constraint firstAttribute="bottom" secondItem="WDy-L6-doz" secondAttribute="bottom" id="x8z-Ls-e1n"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.23137254901960785" green="0.52941176470588236" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

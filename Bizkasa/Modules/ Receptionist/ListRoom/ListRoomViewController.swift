@@ -102,12 +102,17 @@ extension ListRoomViewController: ListRoomCVCellDelegate {
             let vc = CheckInRouter.createModule(room: room).convertNavi()
             self.present(controller: vc)
         case ActionRoom.checkOut.rawValue:
-            let vc = CheckOutRouter.createModule(room: room).convertNavi()
-            self.present(controller: vc)
+            let vc = CheckOutRouter.createModule(room: room)
+            vc.delegate = self
+            self.present(controller: vc.convertNavi())
         default:
             break
         }
-
     }
+}
 
+extension ListRoomViewController: CheckOutViewControllerDelegate {
+    func checkOutSuccess() {
+        presenter?.getRoomsByClass()
+    }
 }

@@ -120,6 +120,10 @@
 		B3DA710E2437494500B1C8AA /* RoomChargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DA710C2437494500B1C8AA /* RoomChargeCell.xib */; };
 		B3DA711224374F1800B1C8AA /* ServiceChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711024374F1800B1C8AA /* ServiceChargeCell.swift */; };
 		B3DA711324374F1800B1C8AA /* ServiceChargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DA711124374F1800B1C8AA /* ServiceChargeCell.xib */; };
+		B3DA711624389C4600B1C8AA /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711524389C4600B1C8AA /* BasePopUpView.swift */; };
+		B3DA711824389C8E00B1C8AA /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711724389C8E00B1C8AA /* AnimationHelper.swift */; };
+		B3DA711C24389D1C00B1C8AA /* PopUpCheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711A24389D1C00B1C8AA /* PopUpCheckOutViewController.swift */; };
+		B3DA711D24389D1C00B1C8AA /* PopUpCheckOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DA711B24389D1C00B1C8AA /* PopUpCheckOutViewController.xib */; };
 		B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97D23F9102E0088259F /* AppDelegate.swift */; };
 		B3E7B98023F9102E0088259F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97F23F9102E0088259F /* SceneDelegate.swift */; };
 		B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E7B98823F910310088259F /* LaunchScreen.storyboard */; };
@@ -372,6 +376,10 @@
 		B3DA710C2437494500B1C8AA /* RoomChargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomChargeCell.xib; sourceTree = "<group>"; };
 		B3DA711024374F1800B1C8AA /* ServiceChargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceChargeCell.swift; sourceTree = "<group>"; };
 		B3DA711124374F1800B1C8AA /* ServiceChargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceChargeCell.xib; sourceTree = "<group>"; };
+		B3DA711524389C4600B1C8AA /* BasePopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
+		B3DA711724389C8E00B1C8AA /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
+		B3DA711A24389D1C00B1C8AA /* PopUpCheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCheckOutViewController.swift; sourceTree = "<group>"; };
+		B3DA711B24389D1C00B1C8AA /* PopUpCheckOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpCheckOutViewController.xib; sourceTree = "<group>"; };
 		B3E7B97A23F9102E0088259F /* Bizkasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizkasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B97D23F9102E0088259F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E7B97F23F9102E0088259F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -715,6 +723,7 @@
 		B35FE7DB242617400072D223 /* CheckOut */ = {
 			isa = PBXGroup;
 			children = (
+				B3DA711924389CFB00B1C8AA /* PopUp */,
 				B3142FDE242726D0003609DA /* Cell */,
 				B35FE7DC2426174E0072D223 /* CheckOutPresenter.swift */,
 				B35FE7DD2426174E0072D223 /* CheckOutRouter.swift */,
@@ -932,6 +941,15 @@
 			path = ServiceCharge;
 			sourceTree = "<group>";
 		};
+		B3DA711924389CFB00B1C8AA /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				B3DA711A24389D1C00B1C8AA /* PopUpCheckOutViewController.swift */,
+				B3DA711B24389D1C00B1C8AA /* PopUpCheckOutViewController.xib */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
 		B3E7B97123F9102E0088259F = {
 			isa = PBXGroup;
 			children = (
@@ -1066,7 +1084,6 @@
 				B3E7B9AE23F9105F0088259F /* LeftMenu */,
 				B3E7B9B523F9105F0088259F /* Flash */,
 				B3E7B9BC23F9105F0088259F /* SideMenu */,
-				B3E7B9C823F9105F0088259F /* Base */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1140,6 +1157,7 @@
 		B3E7B9C823F9105F0088259F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				B3DA711524389C4600B1C8AA /* BasePopUpView.swift */,
 				B3E7B9C923F9105F0088259F /* BaseViewController.swift */,
 				B3E7B9CC23F9105F0088259F /* BaseViewXib.swift */,
 				B3E7B9CD23F9105F0088259F /* HomeBaseViewController.swift */,
@@ -1164,6 +1182,7 @@
 		B3E7B9D423F9105F0088259F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B3E7B9C823F9105F0088259F /* Base */,
 				B3E7B9D523F9105F0088259F /* Extension */,
 				B3E7B9EB23F9105F0088259F /* Indicator */,
 				B3E7BA1723F9105F0088259F /* Constant */,
@@ -1322,6 +1341,7 @@
 		B3E7BA2623F9105F0088259F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B3DA711724389C8E00B1C8AA /* AnimationHelper.swift */,
 				B3E7BA2723F9105F0088259F /* UserDefaultHelper.swift */,
 				B3E7BA2823F9105F0088259F /* ValidateHelper.swift */,
 				B3E7BA2923F9105F0088259F /* LocalizationManager.swift */,
@@ -1429,6 +1449,7 @@
 				B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */,
 				B35FE7D02425D05D0072D223 /* ServiceCell.xib in Resources */,
 				B3DA711324374F1800B1C8AA /* ServiceChargeCell.xib in Resources */,
+				B3DA711D24389D1C00B1C8AA /* PopUpCheckOutViewController.xib in Resources */,
 				B30957E72401115300335639 /* AppTitleLogo.xib in Resources */,
 				B37954502402C543007768B8 /* Roboto-BlackItalic.ttf in Resources */,
 				B3E7BA4723F9105F0088259F /* FlashViewController.xib in Resources */,
@@ -1542,6 +1563,7 @@
 				B35FE7E22426174E0072D223 /* CheckOutPresenter.swift in Sources */,
 				B3E7BA4023F9105F0088259F /* HomeProtocols.swift in Sources */,
 				B3142FEB24273E03003609DA /* HeaderCheckOutCell.swift in Sources */,
+				B3DA711C24389D1C00B1C8AA /* PopUpCheckOutViewController.swift in Sources */,
 				B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */,
 				B3E7BA9523F9105F0088259F /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				B38B9D2B2406B0EC006D69B0 /* TabbarReceptionistRouter.swift in Sources */,
@@ -1628,6 +1650,7 @@
 				B368099C240A4C61002F8D00 /* ListReceiptCell.swift in Sources */,
 				B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */,
 				B38B9D372406BCF7006D69B0 /* ListCustomerPresenter.swift in Sources */,
+				B3DA711624389C4600B1C8AA /* BasePopUpView.swift in Sources */,
 				B3E7BA7D23F9105F0088259F /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */,
 				B3E7BA9E23F9105F0088259F /* AppImage.swift in Sources */,
@@ -1686,6 +1709,7 @@
 				B3E7BA3723F9105F0088259F /* EndPointType.swift in Sources */,
 				B3E7BA4523F9105F0088259F /* LeftMenuInteractor.swift in Sources */,
 				B3E7BA3623F9105F0088259F /* DeviceParam.swift in Sources */,
+				B3DA711824389C8E00B1C8AA /* AnimationHelper.swift in Sources */,
 				B3E7BA5123F9105F0088259F /* Preferences.swift in Sources */,
 				B30957DA24010B4400335639 /* LoginViewController.swift in Sources */,
 				B3E7BA8E23F9105F0088259F /* KActivityIndicatorAnimationBallBeat.swift in Sources */,

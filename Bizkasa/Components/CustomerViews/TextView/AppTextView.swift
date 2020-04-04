@@ -12,7 +12,7 @@ class AppTextView: BaseView {
     
     let textview: UITextView = {
         let tv = UITextView()
-        tv.font = UIFont(name: "Muli-SemiBold", size: 16)
+        tv.font = UIFont.regular17
         return tv
     }()
     
