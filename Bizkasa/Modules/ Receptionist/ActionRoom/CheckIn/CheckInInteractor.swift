@@ -11,6 +11,14 @@
 import UIKit
 
 class CheckInInteractor: CheckInInteractorInputProtocol {
+    func addOrder(param: CheckInParam) {
+        service.addOrder(param: param, success: { (result) in
+            self.presenter?.didAddOrder(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didAddOrder(result: nil, error: error)
+        }
+    }
+
     let service = Provider.shared.receptionistAPIService
 
     func getConfigPrice(roomId: Int) {

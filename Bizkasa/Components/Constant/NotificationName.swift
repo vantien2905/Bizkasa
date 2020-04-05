@@ -11,5 +11,6 @@ import UIKit
 
 extension Notification.Name {
     static let changeSelecRootMenu = Notification.Name(rawValue: "ChangeSelecRootMenu")
+    static let refreshReceptionist = Notification.Name(rawValue: "refreshReceptionist")
 }
 

@@ -8,6 +8,14 @@
 
 import UIKit
 
+
+enum CaculatorMode: Int {
+    case day = 1
+    case overNight = 2
+    case hour = 3
+    case month = 4
+}
+
 enum CalendarDetailType: String {
     case personal = "CÁ NHÂN"
     case department = "PHÒNG BAN"

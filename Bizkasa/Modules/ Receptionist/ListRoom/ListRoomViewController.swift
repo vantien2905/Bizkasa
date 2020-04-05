@@ -28,6 +28,14 @@ class ListRoomViewController: HomeBaseViewController {
         super.viewDidLoad()
         configureCollectionView()
         presenter?.getRoomsByClass()
+
+        NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
+            self.presenter?.getRoomsByClass()
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func setUpNavigation() {

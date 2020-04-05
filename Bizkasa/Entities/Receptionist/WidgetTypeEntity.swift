@@ -45,6 +45,8 @@ class WidgetEntity: Mappable {
     var Note: String?
     var NamePrice: String?
 
+    var Quantity: Int?
+
     required init?(map: Map) {
 
     }
@@ -63,6 +65,7 @@ class WidgetEntity: Mappable {
         self.Residual <- map["Residual"]
         self.Note <- map["Note"]
         self.NamePrice = "\(self.Name&) (\(self.Price ?? 0))"
+        self.Quantity <- map["Quantity"]
     }
 
 }

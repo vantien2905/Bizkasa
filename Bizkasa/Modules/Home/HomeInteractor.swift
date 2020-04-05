@@ -12,5 +12,16 @@ import UIKit
 
 class HomeInteractor: HomeInteractorInputProtocol {
 
+    let service = Provider.shared.userAPIService
+
+    func getReceiptReport(period: Int) {
+        service.getReceiptReport(period: period, success: { (result) in
+            self.presenter?.didGetReceiptReport(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didGetReceiptReport(result: nil, error: error)
+        }
+    }
+
+
     weak var presenter: HomeInteractorOutputProtocol?
 }

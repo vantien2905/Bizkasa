@@ -10,12 +10,6 @@
 
 import UIKit
 
-enum CaculatorMode: Int {
-    case day = 1
-    case overNight = 2
-    case hour = 3
-    case month = 4
-}
 
 class HeaderCheckOut {
     var title: String?
@@ -115,7 +109,8 @@ extension CheckOutViewController: CheckOutViewProtocol {
     func didUpdateOrder(result: BaseResponse?, error: APIError?) {
         if let _ = result {
             self.makeToast(message: "Trả phòng thành công!")
-            delegate?.checkOutSuccess()
+//            delegate?.checkOutSuccess()
+            NotificationCenter.default.post(name: .refreshReceptionist, object: nil)
             self.closePage()
         } else {
             self.makeToast(message: error?.message?.first ?? "")

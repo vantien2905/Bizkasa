@@ -11,6 +11,10 @@
 import UIKit
 
 class HomePresenter: HomePresenterProtocol {
+    func getReceiptReport(period: Int) {
+        interactor?.getReceiptReport(period: period)
+    }
+
 
     weak private var view: HomeViewProtocol?
     var interactor: HomeInteractorInputProtocol?
@@ -25,5 +29,9 @@ class HomePresenter: HomePresenterProtocol {
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
+    func didGetReceiptReport(result: [ReceipReportEntity]?, error: APIError?) {
+        view?.didGetReceiptReport(result: result, error: error)
+    }
+
 	
 }

@@ -33,7 +33,16 @@ class ListReceiptViewController: HomeBaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+
         presenter?.getInvoices(page: 1, pageSize: 10, invoiceType: 1, isInDay: true)
+
+        NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
+            self.presenter?.getInvoices(page: 1, pageSize: 10, invoiceType: 1, isInDay: true)
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func setUpNavigation() {

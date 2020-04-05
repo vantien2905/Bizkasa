@@ -10,6 +10,7 @@ import Alamofire
 
 enum UserEndPoint {
     case login(userName: String, password: String)
+    case getReceiptReport(period: Int)
 }
 
 extension UserEndPoint: EndPointType {
@@ -17,6 +18,8 @@ extension UserEndPoint: EndPointType {
         switch self {
         case .login:
             return "api/Account/login"
+        case .getReceiptReport:
+            return "api/Report/GetReceiptReport"
         }
     }
 
@@ -32,6 +35,8 @@ extension UserEndPoint: EndPointType {
         case .login(let userName, let password):
             return ["UserName": userName,
                     "Password": password]
+        case .getReceiptReport(let period):
+            return ["Period": period]
         }
     }
 

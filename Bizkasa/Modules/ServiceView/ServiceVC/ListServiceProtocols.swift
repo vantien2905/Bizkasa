@@ -18,7 +18,7 @@ protocol ListServicePresenterProtocol: class {
 
     var interactor: ListServiceInteractorInputProtocol? { get set }
 
-    func getWidget()
+    func getWidget(type: Int)
 }
 
 //MARK: Interactor -
@@ -33,7 +33,7 @@ protocol ListServiceInteractorInputProtocol: class {
     var presenter: ListServiceInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
-    func getWidget()
+    func getWidget(type: Int)
 }
 
 //MARK: View -

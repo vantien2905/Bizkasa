@@ -11,8 +11,8 @@
 import UIKit
 
 class ListServiceInteractor: ListServiceInteractorInputProtocol {
-    func getWidget() {
-        Provider.shared.receptionistAPIService.getWidget(success: { (result) in
+    func getWidget(type: Int) {
+        Provider.shared.receptionistAPIService.getWidget(type: type, success: { (result) in
             self.presenter?.didGetWidget(result: result, error: nil)
         }) { (error) in
             self.presenter?.didGetWidget(result: nil, error: error)

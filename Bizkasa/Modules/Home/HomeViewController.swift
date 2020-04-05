@@ -26,12 +26,16 @@ let listTitle = ["Trang chủ",
 class HomeViewController: HomeBaseViewController {
 
     @IBOutlet weak var cvHome: UICollectionView!
+    @IBOutlet weak var lbService: UILabel!
+    @IBOutlet weak var lbRoom: UILabel!
+    @IBOutlet weak var lbTotal: UILabel!
 
     var presenter: HomePresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        presenter?.getReceiptReport(period: 1)
     }
 
     override func setUpNavigation() {
@@ -53,6 +57,15 @@ class HomeViewController: HomeBaseViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    func didGetReceiptReport(result: [ReceipReportEntity]?, error: APIError?) {
+        if let result = result, result.count > 7 {
+//            lbRoom.text = "\(result[0].Amount*.formattedWithSeparator)"
+            lbService.text = "\(result[6].Amount*.formattedWithSeparator)"
+            lbTotal.text = "\(result[6].Amount*.formattedWithSeparator)"
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
 
 }
 

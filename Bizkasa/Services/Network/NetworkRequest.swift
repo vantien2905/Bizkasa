@@ -41,7 +41,13 @@ protocol NetworkRequestProtocol {
 struct NetworkRequest: NetworkRequestProtocol {
     func requestData(endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
 
-        let url = makeUrl(path: endPoint.path)
+        var url: URL!
+        if endPoint.path.contains("?") {
+            let urlString = AppConstant.BASE_URL + endPoint.path
+            url = URL(string: urlString)
+        } else {
+            url = makeUrl(path: endPoint.path)
+        }
         let encoding = getAlamofireEncoding(httpMethod: endPoint.httpMethod)
         //let manager = Alamofire.SessionManager.default
         let request = Alamofire.request(url,
@@ -173,14 +179,13 @@ extension NetworkRequest {
     }
 
     private func makeUrl(path: String) -> URL {
-        let BASE_URL = "http://test.api.bizkasa.com"
-        if let baseUrl = URL(string: BASE_URL) {
+        if let baseUrl = URL(string: AppConstant.BASE_URL) {
             let url = baseUrl.appendingPathComponent(path)
             print("\n---------------------- URL -------------------------------\n")
             print("\(url)")
             return url
         } else {
-            return URL(string: BASE_URL)!
+            return URL(string: AppConstant.BASE_URL)!
         }
     }
 }

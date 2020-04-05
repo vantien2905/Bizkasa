@@ -17,6 +17,7 @@
                 <outlet property="tfIndentifierNumber" destination="6EN-q3-VlQ" id="Mch-He-ihs"/>
                 <outlet property="tvNote" destination="Xdc-0R-371" id="Ei6-Bk-axe"/>
                 <outlet property="vConfigurePrice" destination="s0O-0Z-QHc" id="Xez-gn-5PJ"/>
+                <outlet property="vService" destination="0Gu-Pm-xfp" id="ifc-pA-mAh"/>
                 <outlet property="vTimeType" destination="XeU-jB-Hs8" id="mFq-23-IfB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -17,12 +17,15 @@ protocol HomeWireframeProtocol: class {
 protocol HomePresenterProtocol: class {
 
     var interactor: HomeInteractorInputProtocol? { get set }
+
+    func getReceiptReport(period: Int)
 }
 
 //MARK: Interactor -
 protocol HomeInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetReceiptReport(result: [ReceipReportEntity]?, error: APIError?)
 }
 
 protocol HomeInteractorInputProtocol: class {
@@ -30,6 +33,7 @@ protocol HomeInteractorInputProtocol: class {
     var presenter: HomeInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getReceiptReport(period: Int)
 }
 
 //MARK: View -
@@ -38,4 +42,5 @@ protocol HomeViewProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetReceiptReport(result: [ReceipReportEntity]?, error: APIError?)
 }

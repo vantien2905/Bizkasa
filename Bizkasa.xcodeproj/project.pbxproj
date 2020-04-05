@@ -124,6 +124,8 @@
 		B3DA711824389C8E00B1C8AA /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711724389C8E00B1C8AA /* AnimationHelper.swift */; };
 		B3DA711C24389D1C00B1C8AA /* PopUpCheckOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711A24389D1C00B1C8AA /* PopUpCheckOutViewController.swift */; };
 		B3DA711D24389D1C00B1C8AA /* PopUpCheckOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DA711B24389D1C00B1C8AA /* PopUpCheckOutViewController.xib */; };
+		B3DA711F2439730E00B1C8AA /* ReceipReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711E2439730E00B1C8AA /* ReceipReportEntity.swift */; };
+		B3DA712124398EAD00B1C8AA /* CheckInParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA712024398EAD00B1C8AA /* CheckInParam.swift */; };
 		B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97D23F9102E0088259F /* AppDelegate.swift */; };
 		B3E7B98023F9102E0088259F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B97F23F9102E0088259F /* SceneDelegate.swift */; };
 		B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3E7B98823F910310088259F /* LaunchScreen.storyboard */; };
@@ -380,6 +382,8 @@
 		B3DA711724389C8E00B1C8AA /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		B3DA711A24389D1C00B1C8AA /* PopUpCheckOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpCheckOutViewController.swift; sourceTree = "<group>"; };
 		B3DA711B24389D1C00B1C8AA /* PopUpCheckOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpCheckOutViewController.xib; sourceTree = "<group>"; };
+		B3DA711E2439730E00B1C8AA /* ReceipReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceipReportEntity.swift; sourceTree = "<group>"; };
+		B3DA712024398EAD00B1C8AA /* CheckInParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInParam.swift; sourceTree = "<group>"; };
 		B3E7B97A23F9102E0088259F /* Bizkasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bizkasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B97D23F9102E0088259F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E7B97F23F9102E0088259F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1017,6 +1021,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E7B99B23F9105F0088259F /* DeviceParam.swift */,
+				B3DA712024398EAD00B1C8AA /* CheckInParam.swift */,
 			);
 			path = APIParam;
 			sourceTree = "<group>";
@@ -1070,6 +1075,7 @@
 			children = (
 				B35FE7D12425D32D0072D223 /* Receptionist */,
 				B30957CF2401084A00335639 /* UserEntity.swift */,
+				B3DA711E2439730E00B1C8AA /* ReceipReportEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1077,6 +1083,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B35FE7BA2425CB8C0072D223 /* ServiceView */,
 				B32069CF241367330097D18B /* DatePicker */,
 				B37954202402A3F0007768B8 /*  Receptionist */,
 				B30957D124010B3100335639 /* UserManager */,
@@ -1317,7 +1324,6 @@
 		B3E7BA2123F9105F0088259F /* CustomerViews */ = {
 			isa = PBXGroup;
 			children = (
-				B35FE7BA2425CB8C0072D223 /* ServiceView */,
 				B32069D6241394B80097D18B /* TextView */,
 				B32069D0241368DB0097D18B /* TextField */,
 				B36809AB240A5AC4002F8D00 /* AppDropdown */,
@@ -1667,6 +1673,7 @@
 				B3DA710D2437494500B1C8AA /* RoomChargeCell.swift in Sources */,
 				B30957DC24010B4400335639 /* LoginInteractor.swift in Sources */,
 				B35FE7C72425D0030072D223 /* ListServiceRouter.swift in Sources */,
+				B3DA712124398EAD00B1C8AA /* CheckInParam.swift in Sources */,
 				B3E7BAAA23F9105F0088259F /* ValidateHelper.swift in Sources */,
 				B3142FE224272716003609DA /* TopInfoCheckOutCell.swift in Sources */,
 				B3E7BA6623F9105F0088259F /* UIButton+Extension.swift in Sources */,
@@ -1714,6 +1721,7 @@
 				B30957DA24010B4400335639 /* LoginViewController.swift in Sources */,
 				B3E7BA8E23F9105F0088259F /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				B3E7BA5923F9105F0088259F /* DatePickerViewController.swift in Sources */,
+				B3DA711F2439730E00B1C8AA /* ReceipReportEntity.swift in Sources */,
 				B3E7BA7723F9105F0088259F /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				B350C433241DF5030005288B /* RoomEntity.swift in Sources */,
 				B3E7BAA323F9105F0088259F /* AppColor.swift in Sources */,

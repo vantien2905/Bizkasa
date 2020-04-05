@@ -27,7 +27,7 @@ class ListServiceViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        presenter?.getWidget()
+        presenter?.getWidget(type: 1)
     }
 
     override func setUpNavigation() {

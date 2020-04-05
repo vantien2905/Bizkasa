@@ -27,18 +27,33 @@ class CheckInViewController: BaseViewController {
     var listPrice: [ConfigPriceEntity] = [] {
         didSet {
             self.vConfigurePrice.dataSource = self.listPrice.map({$0.Name&})
+            self.configPrice = self.listPrice.first
         }
     }
 
-    var room: RoomEntity?
+    var configPrice: ConfigPriceEntity! {
+        didSet {
+            price = self.configPrice.PriceByDay*
+        }
+    }
+
+    var room: RoomEntity!
+
+    var price = 0
+
+    var calculatorMode = 3
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         getData()
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     private func getData() {
-        guard let room = room, let roomId = room.Id else { return }
+        guard let roomId = room.Id else { return }
         presenter?.getConfigPrice(roomId: roomId)
     }
 
@@ -62,15 +77,53 @@ class CheckInViewController: BaseViewController {
         tvNote.setTitleAndLogo(AppImage.imgNote, title: "Ghi chú")
         vTimeType.dataSource = ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
 
+        vTimeType.dropDownCallBack = {[weak self] (index, item) in
+            guard let self = self else { return }
+            switch index {
+            case 0:
+                self.calculatorMode = CaculatorMode.hour.rawValue
+            case 1:
+                self.calculatorMode = CaculatorMode.day.rawValue
+            case 2:
+                self.calculatorMode = CaculatorMode.overNight.rawValue
+            case 3:
+                self.calculatorMode = CaculatorMode.month.rawValue
+            default:
+                break
+            }
+        }
     }
 
     @objc func btnAcceptTapped() {
-
+        let param = CheckInParam()
+        param.RoomId = room.Id
+        param.RoomClassName = room.RoomClassName
+        param.RoomName = room.Name
+        param.CustomerName = "Khách không CMT"
+        param.Price = self.price
+        param.OrderStatus = 4
+        param.CaculatorMode = calculatorMode
+        let list = vService.listWidget.map { (item, total) -> WidgetEntity in
+            item.Quantity = total
+            return item
+        }
+        param.Services = list
+        param.Notes = tvNote.getText()
+        presenter?.addOrder(param: param)
     }
 
 }
 
 extension CheckInViewController: CheckInViewProtocol {
+    func didAddOrder(result: BaseResponse?, error: APIError?) {
+        if let _ = result {
+            NotificationCenter.default.post(name: .refreshReceptionist, object: nil)
+            self.closePage()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
     func didGetConfigPrice(result: [ConfigPriceEntity]?, error: APIError?) {
         if let result = result {
             self.listPrice = result

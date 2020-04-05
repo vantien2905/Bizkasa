@@ -77,7 +77,6 @@ class ListRoomCVCell: UICollectionViewCell {
         lbRoomName.text = "\(room.Name&)"
         self.isAvailable = room.OrderRoom == nil
         if let order = room.OrderRoom {
-
             lbTime.text = order.TimeSpend
             lbStatus.text = order.CaculatorModeView
             switch order.CaculatorMode {
@@ -94,6 +93,7 @@ class ListRoomCVCell: UICollectionViewCell {
             }
 
         } else {
+            lbTime.text = ""
             lbStatus.text = "Trống"
             setColor(background: AppColor.normalGreen, text: .white)
 

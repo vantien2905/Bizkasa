@@ -11,8 +11,8 @@
 import UIKit
 
 class ListServicePresenter: ListServicePresenterProtocol {
-    func getWidget() {
-        interactor?.getWidget()
+    func getWidget(type: Int) {
+        interactor?.getWidget(type: type)
     }
 
 

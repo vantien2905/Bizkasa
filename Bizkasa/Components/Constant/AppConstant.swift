@@ -24,6 +24,8 @@ struct AppConstant {
     static let logoLink = "/mobileapis/images/logo.png"
     static let more_tag = 99999
 
+    static let BASE_URL = "http://test.api.bizkasa.com"
+
 }
 
 struct DateFormat {

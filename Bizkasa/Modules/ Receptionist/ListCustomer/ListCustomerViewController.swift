@@ -26,6 +26,14 @@ class ListCustomerViewController: HomeBaseViewController {
         super.viewDidLoad()
         configureTableView()
         presenter?.getListCustomerCheckIn()
+
+        NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
+            self.presenter?.getListCustomerCheckIn()
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     private func configureTableView() {

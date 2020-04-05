@@ -10,10 +10,10 @@ import UIKit
 //-- Userdefault
 struct AppKey {
 
-    static let domain                           = "Domain"
-    static let userData                         = "UserData"
-    static let tokenID  = "TokenId"
-    static let userName = "UserName"
-    static let logo = "Logo"
+    static let domain               = "Domain"
+    static let userData             = "UserData"
+    static let tokenID              = "TokenId"
+    static let userName             = "UserName"
+    static let logo                 = "Logo"
 
 }

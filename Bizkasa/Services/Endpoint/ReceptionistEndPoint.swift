@@ -16,11 +16,12 @@ enum ReceptionistEndPoint {
     case getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool)
     case getRoomsByClass
     case getConfigPrice(roomId: Int)
-    case getWidget
+    case getWidget(type: Int)
     case getOrderForCheckOut(orderId: Int, mode: Int)
     case addOrderDetail(param: SubFeeDetailEntity)
     case deleteOrderDetail(param: SubFeeDetailEntity)
     case updateOrder(param: OrderInfoEntity)
+    case addOrder(param: CheckInParam)
 }
 
 extension ReceptionistEndPoint: EndPointType {
@@ -34,8 +35,8 @@ extension ReceptionistEndPoint: EndPointType {
             return "/api/Room/GetRoomsByClass"
         case .getConfigPrice:
             return "api/Room/GetConfigPriceBy"
-        case .getWidget:
-            return "/api/Widget/GetWidget"
+        case .getWidget(let type):
+            return "/api/Widget/GetWidget?WidgetType=\(type)"
         case .getOrderForCheckOut:
             return "/api/Order/GetOrderForCheckOut"
         case .addOrderDetail:
@@ -44,6 +45,8 @@ extension ReceptionistEndPoint: EndPointType {
             return "/api/Order/DeleteOrderDetail"
         case .updateOrder:
             return "/api/Order/UpdateOrder"
+        case .addOrder:
+            return "/api/Order/AddOrder"
         }
     }
 
@@ -78,6 +81,8 @@ extension ReceptionistEndPoint: EndPointType {
         case .deleteOrderDetail(let param):
             return param.toJSON()
         case .updateOrder(let param):
+            return param.toJSON()
+        case .addOrder(let param):
             return param.toJSON()
         }
     }
