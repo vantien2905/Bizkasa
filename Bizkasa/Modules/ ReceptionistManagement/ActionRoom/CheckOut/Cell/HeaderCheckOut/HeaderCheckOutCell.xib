@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -96,7 +96,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-IL-OJR">
-                        <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="267" height="40"/>
                         <connections>
                             <action selector="btnSelectTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ymI-po-6R5"/>
                         </connections>
@@ -115,6 +115,7 @@
                     <constraint firstItem="KmQ-JE-8bp" firstAttribute="top" secondItem="1Vu-j5-d3g" secondAttribute="top" id="eEM-EM-x9m"/>
                     <constraint firstItem="KmQ-JE-8bp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Vu-j5-d3g" secondAttribute="trailing" constant="10" id="mCn-By-WaJ"/>
                     <constraint firstAttribute="trailing" secondItem="6Ug-3o-tib" secondAttribute="trailing" constant="10" id="nUz-V9-wrD"/>
+                    <constraint firstAttribute="trailing" secondItem="GeH-IL-OJR" secondAttribute="trailing" constant="65" id="ph1-cO-6se"/>
                     <constraint firstItem="6Ug-3o-tib" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sWQ-xc-acm"/>
                     <constraint firstAttribute="bottom" secondItem="GeH-IL-OJR" secondAttribute="bottom" id="x5e-jA-yWw"/>
                 </constraints>

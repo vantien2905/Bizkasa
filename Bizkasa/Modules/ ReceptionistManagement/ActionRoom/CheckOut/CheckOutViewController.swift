@@ -235,6 +235,7 @@ extension CheckOutViewController: HeaderCheckOutCellDelegate {
         case 3:
             let vc = PopUpCheckOutViewController.initFromNib()
             vc.indexPath = indexPath
+            vc.isService = true
             vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
             vc.delegate = self
@@ -252,6 +253,20 @@ extension CheckOutViewController: HeaderCheckOutCellDelegate {
 }
 
 extension CheckOutViewController: PopUpCheckOutViewControllerDelegate {
+    func btnAcceptServiceTapped(widget: WidgetEntity, total: Int) {
+        guard let currentUser = UserDefaultHelper.shared.getUser() else { return }
+        let param = SubFeeDetailEntity()
+        param.Title = widget.Name
+        param.RelatedId = widget.Id
+        param.Price = widget.Price
+        param.OrderId = orderInfo.Id
+        param.Quantity = total
+        param.DetailTypeId = 2
+        param.ShiftId = currentUser.ShiftId
+
+        presenter?.addOrderDetail(param: param)
+    }
+
     func btnAcceptTapped(content: String, price: Int, indexPath: IndexPath) {
         guard let currentUser = UserDefaultHelper.shared.getUser() else { return }
         let param = SubFeeDetailEntity()

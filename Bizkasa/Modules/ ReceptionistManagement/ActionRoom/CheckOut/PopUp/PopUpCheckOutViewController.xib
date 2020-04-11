@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,6 +14,7 @@
                 <outlet property="btnAccept" destination="ftj-QI-4ko" id="PDg-zP-tv0"/>
                 <outlet property="vCharge" destination="AZJ-cp-LCi" id="ciU-xI-aXH"/>
                 <outlet property="vContent" destination="raQ-i5-hTr" id="jfY-hf-eLq"/>
+                <outlet property="vService" destination="j5d-JQ-ncn" id="Ohh-1W-13V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,20 +30,27 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDy-L6-doz">
-                    <rect key="frame" x="0.0" y="656" width="414" height="240"/>
+                    <rect key="frame" x="0.0" y="596" width="414" height="300"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="59h-g0-YIa">
-                            <rect key="frame" x="20" y="10" width="374" height="150"/>
+                            <rect key="frame" x="20" y="10" width="374" height="210"/>
                             <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5d-JQ-ncn" customClass="ServiceViewSingle" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="vxN-oo-hrV"/>
+                                    </constraints>
+                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-i5-hTr" customClass="AppTextViewLogo" customModule="Bizkasa" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                    <rect key="frame" x="0.0" y="60" width="374" height="80"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="ln2-l1-anG"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZJ-cp-LCi" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="90" width="374" height="60"/>
+                                    <rect key="frame" x="0.0" y="150" width="374" height="60"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="QvT-zj-5X1"/>
@@ -51,7 +59,7 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftj-QI-4ko">
-                            <rect key="frame" x="167" y="180" width="80" height="30"/>
+                            <rect key="frame" x="167" y="240" width="80" height="30"/>
                             <color key="backgroundColor" name="Main"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="ECf-3x-Ur3"/>

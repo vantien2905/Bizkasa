@@ -10,6 +10,7 @@ import UIKit
 
 protocol PopUpCheckOutViewControllerDelegate: class {
     func btnAcceptTapped(content: String, price: Int, indexPath: IndexPath)
+    func btnAcceptServiceTapped(widget: WidgetEntity, total: Int)
 }
 
 class PopUpCheckOutViewController: BaseViewController {
@@ -18,9 +19,13 @@ class PopUpCheckOutViewController: BaseViewController {
     @IBOutlet weak var vCharge: AppTextFieldLogo!
     @IBOutlet weak var btnAccept: UIButton!
 
+    @IBOutlet weak var vService: ServiceViewSingle!
+
     weak var delegate: PopUpCheckOutViewControllerDelegate?
 
     var indexPath: IndexPath!
+
+    var isService = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,17 @@ class PopUpCheckOutViewController: BaseViewController {
         vCharge.setTitleAndLogo(AppImage.imgPrice, title: "Số tiền")
         vCharge.setPlaceHolder(title: "Nhập số tiền")
         vCharge.tfContent.keyboardType = .numberPad
+
+        vService.isHidden = !isService
+        vContent.isHidden = isService
+        vCharge.isHidden = isService
+        btnAccept.isHidden = isService
+
+        vService.addNewCallBack = { widget, total in
+            self.delegate?.btnAcceptServiceTapped(widget: widget, total: total)
+            self.dismiss(animated: false)
+        }
+
     }
 
     @IBAction func btnCloseTapped() {

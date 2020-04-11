@@ -45,7 +45,7 @@ class ListReceiptCell: UITableViewCell {
         guard let invoice = invoice else { return }
         lbName.text = "Tên: \(invoice.CustomerName&)"
         lbIndentifierNumber.text = "CMT: \(invoice.PassportId&)"
-        lbCreateDate.text = "Ngày tạo: \(invoice.CreatedDate&)"
+        lbCreateDate.text = "Ngày tạo: \(invoice.CreatedDateView&)"
         lbRoomType.text = invoice.RoomClassName
         lbPrice.text = invoice.TotalAmount*.formattedWithSeparator
     }

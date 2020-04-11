@@ -55,6 +55,7 @@ class ListReceiptViewController: HomeBaseViewController {
         tbReceipt.delegate = self
         tbReceipt.dataSource = self
         tbReceipt.rowHeight = UITableView.automaticDimension
+        tbReceipt.contentInset.bottom = 40
     }
 
     @objc func btnAddNewTapped() {

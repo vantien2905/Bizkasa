@@ -66,6 +66,8 @@ class WidgetEntity: Mappable {
         self.Note <- map["Note"]
         self.NamePrice = "\(self.Name&) (\(self.Price ?? 0))"
         self.Quantity <- map["Quantity"]
+
+
     }
 
 }

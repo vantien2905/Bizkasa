@@ -27,6 +27,7 @@
 		B32069DB241394B80097D18B /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D7241394B80097D18B /* AppTextView.swift */; };
 		B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D9241394B80097D18B /* AppTextViewLogo.swift */; };
 		B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32069DA241394B80097D18B /* AppTextViewLogo.xib */; };
+		B337D36C2439EA97005B4EDA /* InsertInvoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */; };
 		B350C433241DF5030005288B /* RoomEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C432241DF5030005288B /* RoomEntity.swift */; };
 		B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C434241DFD8E0005288B /* HeaderRoomView.swift */; };
 		B350C437241DFD8E0005288B /* HeaderRoomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B350C435241DFD8E0005288B /* HeaderRoomView.xib */; };
@@ -98,6 +99,8 @@
 		B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B37954492402C4F8007768B8 /* Roboto-Medium.ttf */; };
 		B379544E2402C4F9007768B8 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B379544A2402C4F9007768B8 /* Roboto-Regular.ttf */; };
 		B37954502402C543007768B8 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B379544F2402C543007768B8 /* Roboto-BlackItalic.ttf */; };
+		B389C3B9244190C800106320 /* ServiceViewSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389C3B8244190C800106320 /* ServiceViewSingle.swift */; };
+		B389C3BB244190D000106320 /* ServiceViewSingle.xib in Resources */ = {isa = PBXBuildFile; fileRef = B389C3BA244190D000106320 /* ServiceViewSingle.xib */; };
 		B38B9D2A2406B0EC006D69B0 /* TabbarReceptionistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B9D242406B0EC006D69B0 /* TabbarReceptionistPresenter.swift */; };
 		B38B9D2B2406B0EC006D69B0 /* TabbarReceptionistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B9D252406B0EC006D69B0 /* TabbarReceptionistRouter.swift */; };
 		B38B9D2C2406B0EC006D69B0 /* TabbarReceptionistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B9D262406B0EC006D69B0 /* TabbarReceptionistViewController.swift */; };
@@ -285,6 +288,7 @@
 		B32069D7241394B80097D18B /* AppTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextView.swift; sourceTree = "<group>"; };
 		B32069D9241394B80097D18B /* AppTextViewLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextViewLogo.swift; sourceTree = "<group>"; };
 		B32069DA241394B80097D18B /* AppTextViewLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTextViewLogo.xib; sourceTree = "<group>"; };
+		B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertInvoiceParam.swift; sourceTree = "<group>"; };
 		B350C432241DF5030005288B /* RoomEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEntity.swift; sourceTree = "<group>"; };
 		B350C434241DFD8E0005288B /* HeaderRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRoomView.swift; sourceTree = "<group>"; };
 		B350C435241DFD8E0005288B /* HeaderRoomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderRoomView.xib; sourceTree = "<group>"; };
@@ -356,6 +360,8 @@
 		B37954492402C4F8007768B8 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		B379544A2402C4F9007768B8 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		B379544F2402C543007768B8 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		B389C3B8244190C800106320 /* ServiceViewSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewSingle.swift; sourceTree = "<group>"; };
+		B389C3BA244190D000106320 /* ServiceViewSingle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceViewSingle.xib; sourceTree = "<group>"; };
 		B38B9D242406B0EC006D69B0 /* TabbarReceptionistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarReceptionistPresenter.swift; sourceTree = "<group>"; };
 		B38B9D252406B0EC006D69B0 /* TabbarReceptionistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarReceptionistRouter.swift; sourceTree = "<group>"; };
 		B38B9D262406B0EC006D69B0 /* TabbarReceptionistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarReceptionistViewController.swift; sourceTree = "<group>"; };
@@ -658,6 +664,7 @@
 		B35FE7BA2425CB8C0072D223 /* ServiceView */ = {
 			isa = PBXGroup;
 			children = (
+				B389C3B7244190A800106320 /* Single */,
 				B35FE7BF2425CFCD0072D223 /* ServiceVC */,
 				B35FE7BB2425CBA60072D223 /* ServiceView.swift */,
 				B35FE7BD2425CBB40072D223 /* ServiceView.xib */,
@@ -827,7 +834,7 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		B37954202402A3F0007768B8 /*  Receptionist */ = {
+		B37954202402A3F0007768B8 /*  ReceptionistManagement */ = {
 			isa = PBXGroup;
 			children = (
 				B36809BE240A6AB2002F8D00 /* ActionRoom */,
@@ -837,7 +844,7 @@
 				B38B9D222406B082006D69B0 /* Tabbar */,
 				B37954212402A42E007768B8 /* ListRoom */,
 			);
-			path = " Receptionist";
+			path = " ReceptionistManagement";
 			sourceTree = "<group>";
 		};
 		B37954212402A42E007768B8 /* ListRoom */ = {
@@ -884,6 +891,15 @@
 				B379544A2402C4F9007768B8 /* Roboto-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		B389C3B7244190A800106320 /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				B389C3B8244190C800106320 /* ServiceViewSingle.swift */,
+				B389C3BA244190D000106320 /* ServiceViewSingle.xib */,
+			);
+			path = Single;
 			sourceTree = "<group>";
 		};
 		B38B9D222406B082006D69B0 /* Tabbar */ = {
@@ -1022,6 +1038,7 @@
 			children = (
 				B3E7B99B23F9105F0088259F /* DeviceParam.swift */,
 				B3DA712024398EAD00B1C8AA /* CheckInParam.swift */,
+				B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */,
 			);
 			path = APIParam;
 			sourceTree = "<group>";
@@ -1085,7 +1102,7 @@
 			children = (
 				B35FE7BA2425CB8C0072D223 /* ServiceView */,
 				B32069CF241367330097D18B /* DatePicker */,
-				B37954202402A3F0007768B8 /*  Receptionist */,
+				B37954202402A3F0007768B8 /*  ReceptionistManagement */,
 				B30957D124010B3100335639 /* UserManager */,
 				B3E7B9A723F9105F0088259F /* Home */,
 				B3E7B9AE23F9105F0088259F /* LeftMenu */,
@@ -1448,6 +1465,7 @@
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
 				B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */,
 				B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */,
+				B389C3BB244190D000106320 /* ServiceViewSingle.xib in Resources */,
 				B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */,
 				B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
@@ -1636,6 +1654,7 @@
 				B30957E62401115300335639 /* AppTitleLogo.swift in Sources */,
 				B30957D02401084A00335639 /* UserEntity.swift in Sources */,
 				B3E7BA4E23F9105F0088259F /* StatusBar.swift in Sources */,
+				B389C3B9244190C800106320 /* ServiceViewSingle.swift in Sources */,
 				B38B9D472406BD27006D69B0 /* ListReceiptProtocols.swift in Sources */,
 				B3E7BA7F23F9105F0088259F /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				B3E7BA6723F9105F0088259F /* UIView+Extension.swift in Sources */,
@@ -1644,6 +1663,7 @@
 				B3E7BA9423F9105F0088259F /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				B3E7BA9323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				B30957D824010B4400335639 /* LoginPresenter.swift in Sources */,
+				B337D36C2439EA97005B4EDA /* InsertInvoiceParam.swift in Sources */,
 				B3E7BA7B23F9105F0088259F /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				B3E7BAA423F9105F0088259F /* AppKey.swift in Sources */,
 				B3E7BA4F23F9105F0088259F /* UIViewController+Container.swift in Sources */,

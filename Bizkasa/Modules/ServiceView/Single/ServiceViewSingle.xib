@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServiceViewSingle" customModule="Bizkasa" customModuleProvider="target">
+            <connections>
+                <outlet property="lbService" destination="Ad5-aW-OXy" id="NU2-PP-4pQ"/>
+                <outlet property="vTotal" destination="jsS-Tc-uAQ" id="QUC-O6-MBa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="454" height="69"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pOZ-th-Ny2">
+                    <rect key="frame" x="0.0" y="0.0" width="454" height="69"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hT-MZ-F1d">
+                            <rect key="frame" x="0.0" y="0.0" width="324" height="69"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn dịch vụ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-aW-OXy">
+                                    <rect key="frame" x="5" y="5" width="314" height="59"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Ad5-aW-OXy" secondAttribute="bottom" constant="5" id="Q4h-pT-GWe"/>
+                                <constraint firstItem="Ad5-aW-OXy" firstAttribute="top" secondItem="7hT-MZ-F1d" secondAttribute="top" constant="5" id="mVW-36-3Fx"/>
+                                <constraint firstItem="Ad5-aW-OXy" firstAttribute="leading" secondItem="7hT-MZ-F1d" secondAttribute="leading" constant="5" id="p5Y-Eh-gtu"/>
+                                <constraint firstAttribute="trailing" secondItem="Ad5-aW-OXy" secondAttribute="trailing" constant="5" id="uzg-x9-0KS"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jsS-Tc-uAQ" customClass="AppDropdownBorder" customModule="Bizkasa" customModuleProvider="target">
+                            <rect key="frame" x="334" y="0.0" width="60" height="69"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="eRQ-Ei-cnn"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7Q-2P-JI1">
+                            <rect key="frame" x="404" y="0.0" width="50" height="69"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJY-bm-gQH">
+                                    <rect key="frame" x="0.0" y="14.5" width="50" height="40"/>
+                                    <color key="backgroundColor" name="Main"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="8Nc-Wc-S1u"/>
+                                        <constraint firstAttribute="width" constant="50" id="Qzq-eP-ySZ"/>
+                                    </constraints>
+                                    <state key="normal" title="Thêm">
+                                        <color key="titleColor" name="WhiteColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="btnAddNewTapped" destination="-1" eventType="touchUpInside" id="b7q-6j-24r"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="DJY-bm-gQH" firstAttribute="width" secondItem="s7Q-2P-JI1" secondAttribute="width" id="5mh-2W-nLN"/>
+                                <constraint firstItem="DJY-bm-gQH" firstAttribute="centerX" secondItem="s7Q-2P-JI1" secondAttribute="centerX" id="Zec-qU-ep3"/>
+                                <constraint firstAttribute="width" constant="50" id="eDG-X2-C7d"/>
+                                <constraint firstItem="DJY-bm-gQH" firstAttribute="centerY" secondItem="s7Q-2P-JI1" secondAttribute="centerY" id="nOA-U2-v6D"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtY-6r-JCV">
+                    <rect key="frame" x="0.0" y="0.0" width="324" height="69"/>
+                    <connections>
+                        <action selector="btnServiceTapped" destination="-1" eventType="touchUpInside" id="Rr9-YP-p4r"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="jtY-6r-JCV" firstAttribute="centerY" secondItem="7hT-MZ-F1d" secondAttribute="centerY" id="PJ1-Rd-4au"/>
+                <constraint firstAttribute="trailing" secondItem="pOZ-th-Ny2" secondAttribute="trailing" id="PbH-Fl-gxV"/>
+                <constraint firstItem="pOZ-th-Ny2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wpk-Qm-Ldi"/>
+                <constraint firstItem="jtY-6r-JCV" firstAttribute="centerX" secondItem="7hT-MZ-F1d" secondAttribute="centerX" id="Ypx-xD-Mgt"/>
+                <constraint firstItem="jtY-6r-JCV" firstAttribute="height" secondItem="7hT-MZ-F1d" secondAttribute="height" multiplier="1:1" id="Z4M-a5-4uO"/>
+                <constraint firstAttribute="bottom" secondItem="pOZ-th-Ny2" secondAttribute="bottom" id="cNK-Mm-XoF"/>
+                <constraint firstItem="jtY-6r-JCV" firstAttribute="width" secondItem="7hT-MZ-F1d" secondAttribute="width" multiplier="1:1" id="krf-3A-ub7"/>
+                <constraint firstItem="pOZ-th-Ny2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m1J-LV-H5x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="127.53623188405798" y="252.12053571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.23137254901960785" green="0.52941176470588236" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

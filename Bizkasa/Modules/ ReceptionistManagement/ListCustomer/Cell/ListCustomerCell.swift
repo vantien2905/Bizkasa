@@ -42,9 +42,21 @@ class ListCustomerCell: UITableViewCell {
 
     private func setData() {
         guard let customer = customer else { return }
-        lbName.text = "Tên: \(customer.Name&)"
+
+        let attrs1 = [NSAttributedString.Key.font : UIFont.regular15, NSAttributedString.Key.foregroundColor : UIColor.lightGray]
+
+        let attrs2 = [NSAttributedString.Key.font : UIFont.bold14, NSAttributedString.Key.foregroundColor : UIColor.black]
+
+        let attributedString1 = NSMutableAttributedString(string:"Tên: ", attributes:attrs1)
+
+        let attributedString2 = NSMutableAttributedString(string:"\(customer.Name&)", attributes:attrs2)
+
+        attributedString1.append(attributedString2)
+        self.lbName.attributedText = attributedString1
+
+//        lbName.text = "Tên: \(customer.Name&)"
         lbIndentifierNumber.text = "CMT: \(customer.PassportId&)"
-        lbCreateDate.text = "Ngày tạo: \(customer.CheckInDate&)"
+        lbCreateDate.text = "Ngày tạo: \(customer.CheckInDateView&)"
         lbRoomType.text = customer.RoomClassName
 //        lbStatus.text = customer.
     }

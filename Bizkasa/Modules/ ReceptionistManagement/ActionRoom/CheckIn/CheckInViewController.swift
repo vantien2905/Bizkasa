@@ -99,7 +99,7 @@ class CheckInViewController: BaseViewController {
         param.RoomId = room.Id
         param.RoomClassName = room.RoomClassName
         param.RoomName = room.Name
-        param.CustomerName = "Khách không CMT"
+        param.CustomerName = tfCustomerName.getText().isEmpty ? "Khách không CMT" : tfCustomerName.getText()
         param.Price = self.price
         param.OrderStatus = 4
         param.CaculatorMode = calculatorMode
