@@ -16,6 +16,7 @@ class ListCustomerCell: UITableViewCell {
     @IBOutlet weak var lbIndentifierNumber: UILabel!
     @IBOutlet weak var lbCreateDate: UILabel!
     @IBOutlet weak var lbRoomType: UILabel!
+    @IBOutlet weak var lbRoomName: UILabel!
 
     var customer: CustomerEntity? {
         didSet {
@@ -37,7 +38,7 @@ class ListCustomerCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         vBackground.setShadow()
-        lbStatus.setShadow(color: .orange)
+        lbStatus.setShadow(color: AppColor.secondMain)
     }
 
     private func setData() {
@@ -58,6 +59,8 @@ class ListCustomerCell: UITableViewCell {
         lbIndentifierNumber.text = "CMT: \(customer.PassportId&)"
         lbCreateDate.text = "Ngày tạo: \(customer.CheckInDateView&)"
         lbRoomType.text = customer.RoomClassName
+        lbRoomName.text = customer.RoomName
+
 //        lbStatus.text = customer.
     }
     

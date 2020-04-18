@@ -9,7 +9,7 @@
 import Foundation
 
 class DateHelper {
-    static func getDateTime(input:String) ->String {
+    static func getDateTime(input: String ) -> String {
         let formatDate = DateFormatter()
         formatDate.dateFormat = DateFormat.DEFAULT
         if input.isEmpty {
@@ -23,8 +23,20 @@ class DateHelper {
             }
         }
     }
+
+    static func getDate(input: String, format: String = DateFormat.DEFAULT) -> String {
+        let formatDate = DateFormatter()
+        formatDate.dateFormat = format
+        if !input.isEmpty, let date:Date = formatDate.date(from: input)  {
+            formatDate.dateFormat = "dd/MM/yyyy"
+            return formatDate.string(from: date)
+        } else{
+            return "#"
+        }
+    }
+
     
-    static func getFullDateTime(input:String) ->String {
+    static func getFullDateTime(input: String) ->String {
         var dateTime  = input
         let formatDate = DateFormatter()
         if input.contains(".") {

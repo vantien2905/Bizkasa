@@ -18,9 +18,13 @@ class TextFieldCalendar: BaseViewXib {
 
     var textFieldCallBack: ((_ value: String) -> Void)?
 
-    //    var fromTime = DateHelper.getDateTimeISO(), toTime = DateHelper.getNextDateTimeISO()
+    var dateTime = DateHelper.getDateTimeISO() {
+        didSet {
+             tfContent.text = DateHelper.getDate(input: dateTime, format: dateFormmat)
+        }
+    }
 
-    var dateTime = DateHelper.getDateTimeISO()
+    var dateFormmat = DateFormat.DEFAULT
 
     override func draw(_ rect: CGRect) {
         tfContent.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
@@ -29,7 +33,7 @@ class TextFieldCalendar: BaseViewXib {
     override func setUpViews() {
         tfContent.delegate = self
         tfContent.tintColor = AppColor.line
-        tfContent.text = DateHelper.getDateTime(input: dateTime)
+        tfContent.text = DateHelper.getDate(input: dateTime, format: dateFormmat)
     }
 
     func setHeightTitle(value: CGFloat) {
@@ -44,7 +48,9 @@ class TextFieldCalendar: BaseViewXib {
         tfContent.text = text
     }
 
-    func setTitleAndLogo(_ image: UIImage, title: String, isSecurity: Bool = false) {
+    func setTitleAndLogo(_ image: UIImage,
+                         title: String,
+                         isSecurity: Bool = false) {
         vTitle.setTitleAndLogo(image, title: title)
         tfContent.isSecureTextEntry = isSecurity
     }
@@ -67,7 +73,9 @@ class TextFieldCalendar: BaseViewXib {
 
     @IBAction func btnCalendarTapped() {
 
-        let vc = DateTimePickerViewController.createModule(dateTime: dateTime, delegate: self)
+        let vc = DateTimePickerViewController.createModule(dateTime: dateTime,
+                                                           format: self.dateFormmat,
+                                                           delegate: self)
         UIApplication.topViewController()?.present(controller: vc)
     }
 }
@@ -85,10 +93,6 @@ extension TextFieldCalendar: UITextFieldDelegate {
 extension TextFieldCalendar : DateTimePickerViewControllerDelegate {
     func getDateTimeSelected(dateTime: String) {
         self.dateTime = dateTime
-        self.tfContent.text = DateHelper.getDateTime(input: dateTime)
-        //
-        //        lbDate.text = DateHelper.getShortDateTime(input: dateTime)
-        //        lbTime.text = DateHelper.getTime(input: dateTime)
-        //        getDateTime?(dateTime)
+        self.tfContent.text = DateHelper.getDate(input: dateTime, format: dateFormmat)
     }
 }

@@ -28,10 +28,9 @@ class TabbarReceptionistViewController: UITabBarController {
         let listReceipt = ListReceiptRouter.createModule().convertNavi()
                let iconReceipt = UITabBarItem(title: "Phiếu thu", image: AppImage.imgPayment, selectedImage: AppImage.imgPayment)
                listReceipt.tabBarItem = iconReceipt
-        let controllers = [listRoom, listCustomer, listReceipt]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [listRoom, listReceipt, listCustomer]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
     }
-
 }
 
 extension TabbarReceptionistViewController: TabbarReceptionistViewProtocol {

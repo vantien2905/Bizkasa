@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol TopInfoCheckOutCellDelegate: class {
+    func changeCalculatorMode(index: Int)
+}
+
 class TopInfoCheckOutCell: UITableViewCell {
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var vDropdown: AppDropdownBorder!
+
+    weak var delegate: TopInfoCheckOutCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,7 +52,11 @@ class TopInfoCheckOutCell: UITableViewCell {
             setContentLabel(text: "\(info.CheckOutTimeText&) - \(info.CheckOutDateView&)")
         case 6:
             setContentDropdown()
-            vDropdown.dataSource = ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
+            vDropdown.itemSelected = info.CaculatorMode* - 1
+            vDropdown.dataSource = CaculatorMode.allValues.map({$0.title&})
+            vDropdown.dropDownCallBack = {[weak self] (index, item) in
+                self?.delegate?.changeCalculatorMode(index: index)
+            }
         case 7:
             setContentDropdown()
             vDropdown.dataSource = ["Tiền mặt", "Chuyển khoản", "Thanh toán online", "Khác"]

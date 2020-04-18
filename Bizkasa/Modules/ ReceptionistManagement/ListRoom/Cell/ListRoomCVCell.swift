@@ -76,26 +76,13 @@ class ListRoomCVCell: UICollectionViewCell {
         guard let room = room else { return }
         lbRoomName.text = "\(room.Name&)"
         self.isAvailable = room.OrderRoom == nil
+        setColor(background:  UIColor(hexString: room.ColorStatus&), text: .white)
         if let order = room.OrderRoom {
             lbTime.text = order.TimeSpend
             lbStatus.text = order.CaculatorModeView
-            switch order.CaculatorMode {
-            case 1:
-                setColor(background: AppColor.day, text: .white)
-            case 2:
-                setColor(background: AppColor.overNight, text: .white)
-            case 3:
-                setColor(background: AppColor.hour, text: .white)
-            case 4:
-                setColor(background: AppColor.month, text: .white)
-            default:
-                break
-            }
-
         } else {
             lbTime.text = ""
             lbStatus.text = "Trống"
-            setColor(background: AppColor.normalGreen, text: .white)
 
         }
     }

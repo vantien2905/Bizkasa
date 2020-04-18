@@ -43,29 +43,29 @@ class HeaderCheckOutCell: UITableViewCell {
         vTotal.isHidden = false
         vSpace.isHidden = false
 
-        if indexPath.section == 0 || indexPath.section == 8 {
+        if indexPath.section == 0 || indexPath.section == 8 || indexPath.section == 1 {
             btnAddMore.isHidden = true
         } else {
             btnAddMore.isHidden = false
         }
 
         switch indexPath.section {
-        case 1:
-            lbTotal.text = "\(info.RoomAmount*.formattedWithSeparator)"
-        case 2:
-            lbTotal.text = "\(info.AttachmentAmount*.formattedWithSeparator)"
-        case 3:
-            lbTotal.text = "\(info.MiniBarAmount*.formattedWithSeparator)"
-        case 4:
-            lbTotal.text = "\(info.SurchargeAmount*.formattedWithSeparator)"
-        case 5:
-            lbTotal.text = "-\(info.DeductibleAmount*.formattedWithSeparator)"
-        case 6:
-            lbTotal.text = "-\(info.PrepaidAmount*.formattedWithSeparator)"
-        case 7:
-            lbTotal.text = "\(info.Customers.count.formattedWithSeparator)"
         case 8:
             lbTotal.text = "\(info.TotalAmount*.formattedWithSeparator)"
+        case 2:
+            lbTotal.text = "\(info.RoomAmount*.formattedWithSeparator)"
+        case 3:
+            lbTotal.text = "\(info.AttachmentAmount*.formattedWithSeparator)"
+        case 4:
+            lbTotal.text = "\(info.MiniBarAmount*.formattedWithSeparator)"
+        case 5:
+            lbTotal.text = "\(info.SurchargeAmount*.formattedWithSeparator)"
+        case 6:
+            lbTotal.text = "-\(info.DeductibleAmount*.formattedWithSeparator)"
+        case 7:
+            lbTotal.text = "-\(info.PrepaidAmount*.formattedWithSeparator)"
+        case 1:
+            lbTotal.text = "\(info.Customers.count.formattedWithSeparator)"
         default:
             vTotal.isHidden = true
             vSpace.isHidden = true

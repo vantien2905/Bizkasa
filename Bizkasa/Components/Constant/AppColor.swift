@@ -38,10 +38,6 @@ struct AppColor {
     static let normalBlue           : UIColor = #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1)
     static let normalOrange         : UIColor = #colorLiteral(red: 0.968627451, green: 0.6666666667, blue: 0.2431372549, alpha: 1)
     static let normalLightGray      : UIColor = #colorLiteral(red: 0.8619655967, green: 0.8815796971, blue: 0.9313835502, alpha: 1)
-    static let day      : UIColor = #colorLiteral(red: 0.631372549, green: 0.7803921569, blue: 0.2039215686, alpha: 1)
-    static let hour      : UIColor = #colorLiteral(red: 0.8509803922, green: 0.09019607843, blue: 0.1254901961, alpha: 1)
-    static let month      : UIColor = #colorLiteral(red: 0.3960784314, green: 0.1568627451, blue: 0.7647058824, alpha: 1)
-    static let overNight      : UIColor = #colorLiteral(red: 0.1333333333, green: 0.1058823529, blue: 0.1058823529, alpha: 1)
 
 
 }

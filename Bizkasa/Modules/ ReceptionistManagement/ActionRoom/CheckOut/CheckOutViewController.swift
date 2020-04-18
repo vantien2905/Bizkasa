@@ -47,13 +47,13 @@ class CheckOutViewController: BaseViewController {
                             "Hình thức thanh toán",
                             "Ghi chú"]
     let listHeader = [HeaderCheckOut(title: "Thông tin chung", isCollapse: false),
+                      HeaderCheckOut(title: "Danh sách đang ở"),
                       HeaderCheckOut(title: "Tiền phòng"),
                       HeaderCheckOut(title: "Hóa đơn gộp thanh toán"),
                       HeaderCheckOut(title: "Tiền dịch vụ (ăn, uống,...)"),
                       HeaderCheckOut(title: "Các khoản phụ thu"),
                       HeaderCheckOut(title: "Khuyến mãi, giảm trừ"),
                       HeaderCheckOut(title: "Trả trước"),
-                      HeaderCheckOut(title: "Danh sách đang ở"),
                       HeaderCheckOut(title: "Tổng cộng")]
 
     var room: RoomEntity!
@@ -69,7 +69,7 @@ class CheckOutViewController: BaseViewController {
 
     private func getDataDetail() {
         if let orderRoom = self.room.OrderRoom, let orderID = orderRoom.OrderId {
-            presenter?.getOrderForCheckOut(orderId: orderID, mode: 1)
+            presenter?.getOrderForCheckOut(orderId: orderID, mode: orderRoom.CaculatorMode*)
         }
     }
 
@@ -106,6 +106,16 @@ class CheckOutViewController: BaseViewController {
 }
 
 extension CheckOutViewController: CheckOutViewProtocol {
+
+    func didChangCalculatorMode(result: OrderInfoEntity?, error: APIError?) {
+        if let result = result {
+            self.orderInfo = result
+            NotificationCenter.default.post(name: .refreshReceptionist, object: nil)
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
     func didUpdateOrder(result: BaseResponse?, error: APIError?) {
         if let _ = result {
             self.makeToast(message: "Trả phòng thành công!")
@@ -159,17 +169,17 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
             switch section {
             case 0:
                 return listCheckOutInfo.count + 1
-            case 2:
-                return orderInfo.OrderAttachments.count + 1
-            case 1:
-                return orderInfo.TimeUseds.count + 1
             case 3:
-                return orderInfo.MiniBars.count + 1
+                return orderInfo.OrderAttachments.count + 1
+            case 2:
+                return orderInfo.TimeUseds.count + 1
             case 4:
-                return orderInfo.Surcharges.count + 1
+                return orderInfo.MiniBars.count + 1
             case 5:
-                return orderInfo.Deductibles.count + 1
+                return orderInfo.Surcharges.count + 1
             case 6:
+                return orderInfo.Deductibles.count + 1
+            case 7:
                 return orderInfo.Prepaids.count + 1
 
             default:
@@ -198,13 +208,14 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.section {
             case 0:
                 let cell = tableView.dequeueTableCell(TopInfoCheckOutCell.self)
+                cell.delegate = self
                 cell.setData(info: orderInfo, indexPath: indexPath, title: listCheckOutInfo[row - 1])
                 return cell
-            case 1:
+            case 2:
                 let cell = tableView.dequeueTableCell(RoomChargeCell.self)
                 cell.setData(timeUsed: self.orderInfo.TimeUseds[row-1])
                 return cell
-            case 2, 3,4,5,6:
+            case 3,4,5,6,7:
                 let cell = tableView.dequeueTableCell(ServiceChargeCell.self)
                 cell.setData(info: orderInfo, indexPath: indexPath)
                 cell.delegate = self
@@ -232,7 +243,7 @@ extension CheckOutViewController: ServiceChargeCellDelegate {
 extension CheckOutViewController: HeaderCheckOutCellDelegate {
     func btnAddMoreTapped(indexPath: IndexPath) {
         switch indexPath.section {
-        case 3:
+        case 4:
             let vc = PopUpCheckOutViewController.initFromNib()
             vc.indexPath = indexPath
             vc.isService = true
@@ -277,16 +288,25 @@ extension CheckOutViewController: PopUpCheckOutViewControllerDelegate {
         param.Price = price
         param.ShiftId = currentUser.ShiftId
         switch indexPath.section {
-        case 4:
-             param.DetailTypeId = 10
         case 5:
-            param.DetailTypeId = 11
+             param.DetailTypeId = 10
         case 6:
+            param.DetailTypeId = 11
+        case 7:
             param.DetailTypeId = 12
 
         default:
             break
         }
         presenter?.addOrderDetail(param: param)
+    }
+}
+
+extension CheckOutViewController: TopInfoCheckOutCellDelegate {
+    func changeCalculatorMode(index: Int) {
+        if let orderRoom = self.room.OrderRoom, let orderID = orderRoom.OrderId {
+            let hotelID = room.HotelId*
+            presenter?.changCalculatorMode(orderID: orderID, mode: CaculatorMode.allValues[index].value*, hotelID: hotelID)
+        }
     }
 }

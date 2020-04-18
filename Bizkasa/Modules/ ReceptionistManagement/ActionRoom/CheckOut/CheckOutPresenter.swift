@@ -11,6 +11,11 @@
 import UIKit
 
 class CheckOutPresenter: CheckOutPresenterProtocol {
+
+    func changCalculatorMode(orderID: Int, mode: Int, hotelID: Int) {
+        interactor?.changCalculatorMode(orderID: orderID, mode: mode, hotelID: hotelID)
+    }
+
     func updateOrder(param: OrderInfoEntity) {
         interactor?.updateOrder(param: param)
     }
@@ -57,5 +62,8 @@ extension CheckOutPresenter: CheckOutInteractorOutputProtocol {
         view?.didGetOrderForCheckOut(result: result, error: error)
     }
 
+    func didChangCalculatorMode(result: OrderInfoEntity?, error: APIError?) {
+        view?.didChangCalculatorMode(result: result, error: error)
+    }
 	
 }

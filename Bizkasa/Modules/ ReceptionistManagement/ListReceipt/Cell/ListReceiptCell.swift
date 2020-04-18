@@ -16,6 +16,7 @@ class ListReceiptCell: UITableViewCell {
     @IBOutlet weak var lbIndentifierNumber: UILabel!
     @IBOutlet weak var lbCreateDate: UILabel!
     @IBOutlet weak var lbRoomType: UILabel!
+    @IBOutlet weak var lbRoomName: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
 
     var invoice: InvoiceEntity? {
@@ -38,7 +39,7 @@ class ListReceiptCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         vBackground.setShadow()
-        lbStatus.setShadow(color: .orange)
+        lbStatus.setShadow(color: AppColor.secondMain)
     }
 
     private func setData() {
@@ -48,6 +49,8 @@ class ListReceiptCell: UITableViewCell {
         lbCreateDate.text = "Ngày tạo: \(invoice.CreatedDateView&)"
         lbRoomType.text = invoice.RoomClassName
         lbPrice.text = invoice.TotalAmount*.formattedWithSeparator
+        lbRoomName.text = invoice.RoomName
+        lbStatus.text = OrderStatus.getTitle(invoice.InvoiceStatus*).title
     }
 
 }

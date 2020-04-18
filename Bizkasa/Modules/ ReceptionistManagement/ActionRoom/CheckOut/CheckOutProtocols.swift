@@ -23,6 +23,8 @@ protocol CheckOutPresenterProtocol: class {
     func deleteOrderDetail(param: SubFeeDetailEntity)
     func updateOrder(param: OrderInfoEntity)
 
+    func changCalculatorMode(orderID: Int, mode: Int, hotelID: Int)
+
 }
 
 //MARK: Interactor -
@@ -33,6 +35,7 @@ protocol CheckOutInteractorOutputProtocol: class {
     func didAddOrderDetail(result: BaseResponse?, error: APIError?)
     func didDeleteOrderDetail(result: BaseResponse?, error: APIError?)
     func didUpdateOrder(result: BaseResponse?, error: APIError?)
+    func didChangCalculatorMode(result: OrderInfoEntity?, error: APIError?)
 }
 
 protocol CheckOutInteractorInputProtocol: class {
@@ -44,6 +47,8 @@ protocol CheckOutInteractorInputProtocol: class {
     func addOrderDetail(param: SubFeeDetailEntity)
     func deleteOrderDetail(param: SubFeeDetailEntity)
     func updateOrder(param: OrderInfoEntity)
+
+    func changCalculatorMode(orderID: Int, mode: Int, hotelID: Int)
 }
 
 //MARK: View -
@@ -56,4 +61,5 @@ protocol CheckOutViewProtocol: class {
     func didAddOrderDetail(result: BaseResponse?, error: APIError?)
     func didDeleteOrderDetail(result: BaseResponse?, error: APIError?)
     func didUpdateOrder(result: BaseResponse?, error: APIError?)
+    func didChangCalculatorMode(result: OrderInfoEntity?, error: APIError?)
 }

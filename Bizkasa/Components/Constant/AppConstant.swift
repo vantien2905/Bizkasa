@@ -26,6 +26,11 @@ struct AppConstant {
 
     static let BASE_URL = "http://test.api.bizkasa.com"
 
+//    static let calculatorModeAll: [Calculator] = [CaculatorMode.day.value,
+//                                              CaculatorMode.overNight.value,
+//                                              CaculatorMode.hour.value,
+//                                              CaculatorMode.month.value]
+
 }
 
 struct DateFormat {

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DateTimePickerViewControllerDelegate: class {
+    func getDateTimeSelected(dateTime:String)
+}
+
 class DateTimePickerViewController: UIViewController {
     
     @IBOutlet weak var vMain:UIView!
@@ -15,15 +19,18 @@ class DateTimePickerViewController: UIViewController {
     @IBOutlet weak var timePicker:UIDatePicker!
     
     let dateFormat = DateFormatter()
+    
     var dateTime = ""
+//    var format = DateFormat.DEFAULT
     
     weak var delegate: DateTimePickerViewControllerDelegate?
     
     let calendar = Calendar.current
     
-    class open func createModule(dateTime: String, delegate: DateTimePickerViewControllerDelegate, isToTime: Bool = false, modalPresent: UIModalPresentationStyle = .overCurrentContext, modalTransition: UIModalTransitionStyle = .crossDissolve) -> DateTimePickerViewController {
+    class open func createModule(dateTime: String, format: String, delegate: DateTimePickerViewControllerDelegate, isToTime: Bool = false, modalPresent: UIModalPresentationStyle = .overCurrentContext, modalTransition: UIModalTransitionStyle = .crossDissolve) -> DateTimePickerViewController {
         let vc = DateTimePickerViewController.initFromNib()
         vc.dateTime = dateTime
+        vc.dateFormat.dateFormat = format
         vc.delegate = delegate
         vc.modalPresentationStyle = modalPresent
         vc.modalTransitionStyle = modalTransition
@@ -38,8 +45,7 @@ class DateTimePickerViewController: UIViewController {
         setupDateFormat()
     }
     
-    func setupDateFormat(){
-        dateFormat.dateFormat = DateFormat.DEFAULT
+    func setupDateFormat() {
         datePicker.datePickerMode = .date
         timePicker.datePickerMode = .time
         datePicker.locale = Locale(identifier: "vi_VN")
@@ -47,9 +53,10 @@ class DateTimePickerViewController: UIViewController {
         
         datePicker.date = dateFormat.date(from: dateTime)!
         timePicker.date = dateFormat.date(from: dateTime)!
+
     }
     
-    func getTime() ->String {
+    func getTime() -> String {
         let dateComponent = calendar.dateComponents([.year, .month, .day], from: datePicker.date)
         let timeComponent = calendar.dateComponents([.hour, .minute, .second], from: timePicker.date)
 
@@ -77,8 +84,4 @@ class DateTimePickerViewController: UIViewController {
         dismiss()
     }
 
-}
-
-protocol DateTimePickerViewControllerDelegate: class {
-    func getDateTimeSelected(dateTime:String)
 }

@@ -11,6 +11,15 @@
 import UIKit
 
 class CheckOutInteractor: CheckOutInteractorInputProtocol {
+
+    func changCalculatorMode(orderID: Int, mode: Int, hotelID: Int) {
+        service.changCalculatorMode(orderID: orderID, mode: mode, hotelID: hotelID, success: { (result) in
+            self.presenter?.didChangCalculatorMode(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didChangCalculatorMode(result: nil, error: error)
+        }
+    }
+
     func updateOrder(param: OrderInfoEntity) {
         service.updateOrder(param: param, success: { (result) in
             self.presenter?.didUpdateOrder(result: result, error: nil)

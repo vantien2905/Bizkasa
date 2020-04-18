@@ -72,22 +72,24 @@ class CheckInViewController: BaseViewController {
         vConfigurePrice.setTitleAndLogo(AppImage.imgPrice, title: "Cấu hình giá")
 //        vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
         tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Ngày cấp")
-        tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Thời gian")
+        tfCheckInTime.setTitleAndLogo(AppImage.imgTime, title: "Thời gian")
 
         tvNote.setTitleAndLogo(AppImage.imgNote, title: "Ghi chú")
-        vTimeType.dataSource = ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
+        vTimeType.dataSource = CaculatorMode.allValues.map({$0.title&})// ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
+
+        tfCheckInTime.dateTime = "2020-04-06T05:02:00"
 
         vTimeType.dropDownCallBack = {[weak self] (index, item) in
             guard let self = self else { return }
             switch index {
             case 0:
-                self.calculatorMode = CaculatorMode.hour.rawValue
+                self.calculatorMode = CaculatorMode.day.value.value*
             case 1:
-                self.calculatorMode = CaculatorMode.day.rawValue
+                self.calculatorMode = CaculatorMode.overNight.value.value*
             case 2:
-                self.calculatorMode = CaculatorMode.overNight.rawValue
+                self.calculatorMode = CaculatorMode.hour.value.value*
             case 3:
-                self.calculatorMode = CaculatorMode.month.rawValue
+                self.calculatorMode = CaculatorMode.month.value.value*
             default:
                 break
             }
