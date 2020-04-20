@@ -54,6 +54,10 @@
 		B35FE7E62426174E0072D223 /* CheckOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7E02426174E0072D223 /* CheckOutInteractor.swift */; };
 		B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35FE7E12426174E0072D223 /* CheckOutViewController.xib */; };
 		B35FE7E924261A430072D223 /* OrderInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35FE7E824261A430072D223 /* OrderInfoEntity.swift */; };
+		B3616854244D82EF0067359B /* AppDateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3616850244D82EE0067359B /* AppDateTime.swift */; };
+		B3616855244D82EF0067359B /* AppChooseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3616851244D82EE0067359B /* AppChooseTime.swift */; };
+		B3616856244D82EF0067359B /* AppChooseTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3616852244D82EE0067359B /* AppChooseTime.xib */; };
+		B3616857244D82EF0067359B /* AppDateTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3616853244D82EE0067359B /* AppDateTime.xib */; };
 		B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680990240A38FF002F8D00 /* ListCustomerCell.swift */; };
 		B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3680991240A38FF002F8D00 /* ListCustomerCell.xib */; };
 		B3680997240A452E002F8D00 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3680995240A452E002F8D00 /* AppLabel.swift */; };
@@ -315,6 +319,10 @@
 		B35FE7E02426174E0072D223 /* CheckOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutInteractor.swift; sourceTree = "<group>"; };
 		B35FE7E12426174E0072D223 /* CheckOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckOutViewController.xib; sourceTree = "<group>"; };
 		B35FE7E824261A430072D223 /* OrderInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoEntity.swift; sourceTree = "<group>"; };
+		B3616850244D82EE0067359B /* AppDateTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDateTime.swift; sourceTree = "<group>"; };
+		B3616851244D82EE0067359B /* AppChooseTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppChooseTime.swift; sourceTree = "<group>"; };
+		B3616852244D82EE0067359B /* AppChooseTime.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppChooseTime.xib; sourceTree = "<group>"; };
+		B3616853244D82EE0067359B /* AppDateTime.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppDateTime.xib; sourceTree = "<group>"; };
 		B3680990240A38FF002F8D00 /* ListCustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCustomerCell.swift; sourceTree = "<group>"; };
 		B3680991240A38FF002F8D00 /* ListCustomerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCustomerCell.xib; sourceTree = "<group>"; };
 		B3680995240A452E002F8D00 /* AppLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
@@ -744,6 +752,17 @@
 				B35FE7E12426174E0072D223 /* CheckOutViewController.xib */,
 			);
 			path = CheckOut;
+			sourceTree = "<group>";
+		};
+		B361684F244D82EE0067359B /* AppTime */ = {
+			isa = PBXGroup;
+			children = (
+				B3616850244D82EE0067359B /* AppDateTime.swift */,
+				B3616853244D82EE0067359B /* AppDateTime.xib */,
+				B3616851244D82EE0067359B /* AppChooseTime.swift */,
+				B3616852244D82EE0067359B /* AppChooseTime.xib */,
+			);
+			path = AppTime;
 			sourceTree = "<group>";
 		};
 		B368098F240A38E7002F8D00 /* Cell */ = {
@@ -1341,6 +1360,7 @@
 		B3E7BA2123F9105F0088259F /* CustomerViews */ = {
 			isa = PBXGroup;
 			children = (
+				B361684F244D82EE0067359B /* AppTime */,
 				B32069D6241394B80097D18B /* TextView */,
 				B32069D0241368DB0097D18B /* TextField */,
 				B36809AB240A5AC4002F8D00 /* AppDropdown */,
@@ -1448,6 +1468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B38B9D3C2406BCF7006D69B0 /* ListCustomerViewController.xib in Resources */,
+				B3616857244D82EF0067359B /* AppDateTime.xib in Resources */,
 				B3E7BA5C23F9105F0088259F /* DatePickerViewController.xib in Resources */,
 				B3142FEC24273E03003609DA /* HeaderCheckOutCell.xib in Resources */,
 				B350C437241DFD8E0005288B /* HeaderRoomView.xib in Resources */,
@@ -1490,6 +1511,7 @@
 				B3E7BA5F23F9105F0088259F /* Assets.xcassets in Resources */,
 				B36809AA240A5777002F8D00 /* CreateNewReceiptViewController.xib in Resources */,
 				B37954322402A48E007768B8 /* ListRoomCVCell.xib in Resources */,
+				B3616856244D82EF0067359B /* AppChooseTime.xib in Resources */,
 				B3E7BA5823F9105F0088259F /* DateTimePickerViewController.xib in Resources */,
 				B30957DD24010B4400335639 /* LoginViewController.xib in Resources */,
 			);
@@ -1546,6 +1568,7 @@
 			files = (
 				B3E7BA8023F9105F0088259F /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				B3E7BAA223F9105F0088259F /* AppConstant.swift in Sources */,
+				B3616854244D82EF0067359B /* AppDateTime.swift in Sources */,
 				B3E7BA6A23F9105F0088259F /* UIViewController+Extension.swift in Sources */,
 				B36809BB240A5C8C002F8D00 /* DropdownSelectedCell.swift in Sources */,
 				B38B9D452406BD27006D69B0 /* ListReceiptRouter.swift in Sources */,
@@ -1698,6 +1721,7 @@
 				B3142FE224272716003609DA /* TopInfoCheckOutCell.swift in Sources */,
 				B3E7BA6623F9105F0088259F /* UIButton+Extension.swift in Sources */,
 				B3E7BA5723F9105F0088259F /* BaseViewController.swift in Sources */,
+				B3616855244D82EF0067359B /* AppChooseTime.swift in Sources */,
 				B35FE7C62425D0030072D223 /* ListServicePresenter.swift in Sources */,
 				B3E7BA5323F9105F0088259F /* TransitionContext.swift in Sources */,
 				B3E7BA9C23F9105F0088259F /* ProgressView.swift in Sources */,

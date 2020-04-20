@@ -16,7 +16,7 @@ class CheckInViewController: BaseViewController {
     @IBOutlet weak var tfIndentifierNumber  : AppTextFieldLogo!
     @IBOutlet weak var tfIndentifierDate    : TextFieldCalendar!
     @IBOutlet weak var tfAdress             : AppTextFieldLogo!
-    @IBOutlet weak var tfCheckInTime        : TextFieldCalendar!
+    @IBOutlet weak var tfCheckInTime        : AppDateTime!
     @IBOutlet weak var vTimeType            : AppDropdown!
     @IBOutlet weak var vConfigurePrice      : AppDropdown!
     @IBOutlet weak var vService             : ServiceView!
@@ -58,7 +58,7 @@ class CheckInViewController: BaseViewController {
     }
 
     override func setUpNavigation() {
-        setTitleNavigation(title: "Nhận phòng")
+        setTitleNavigation(title: "Phòng \(room.Name&)")
         addBackWhiteToNavigation()
         addButtonTextToNavigation(title: "Nhận", style: .right, action: #selector(btnAcceptTapped))
     }
@@ -77,7 +77,7 @@ class CheckInViewController: BaseViewController {
         tvNote.setTitleAndLogo(AppImage.imgNote, title: "Ghi chú")
         vTimeType.dataSource = CaculatorMode.allValues.map({$0.title&})// ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
 
-        tfCheckInTime.dateTime = "2020-04-06T05:02:00"
+//        tfCheckInTime.dateTime = "2020-04-06T05:02:00"
 
         vTimeType.dropDownCallBack = {[weak self] (index, item) in
             guard let self = self else { return }

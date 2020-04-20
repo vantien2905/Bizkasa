@@ -162,6 +162,24 @@ extension BaseViewController {
         }
         self.addRightButtonNavigationBar(buttons: rightButtons)
     }
+
+    public func addRightButtonNavigation(titles: [String], actions: [Selector], color: [UIColor]) {
+        var rightButtons: [UIBarButtonItem] = [UIBarButtonItem]()
+        for (index, title) in titles.enumerated() {
+            let btnApprove = UIButton(type: .custom)
+            btnApprove.setTitle(title, for: .normal)
+            btnApprove.contentEdgeInsets = UIEdgeInsets(top: 5.0, left: 5.0, bottom: 5.0, right: 5.0)
+            btnApprove.tintColor = AppColor.whiteColor
+            if actions.count > index {
+                btnApprove.addTarget(self, action: actions[index], for: .touchUpInside)
+            }
+            btnApprove.backgroundColor = color[index] //AppColor.secondMain
+            btnApprove.cornerRadius = 5.0
+            let approveRightButton: UIBarButtonItem = UIBarButtonItem(customView: btnApprove)
+            rightButtons.append(approveRightButton)
+        }
+        self.addRightButtonNavigationBar(buttons: rightButtons)
+    }
     
     public func addRightButtonNavigationBar(buttons: [UIBarButtonItem]?) {
         if buttons == nil || (buttons?.isEmpty)! {

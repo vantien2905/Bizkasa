@@ -10,6 +10,8 @@ import UIKit
 
 protocol TopInfoCheckOutCellDelegate: class {
     func changeCalculatorMode(index: Int)
+    func changeCustomerName(text: String)
+    func changeNote(text: String)
 }
 
 class TopInfoCheckOutCell: UITableViewCell {
@@ -21,10 +23,14 @@ class TopInfoCheckOutCell: UITableViewCell {
 
     weak var delegate: TopInfoCheckOutCellDelegate?
 
+    var indexType = 0
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        textField.addTarget(self, action: #selector(changeTextValue), for: .editingChanged)
         vDropdown.hideTextAndLogo()
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,9 +43,10 @@ class TopInfoCheckOutCell: UITableViewCell {
     func setData(info: OrderInfoEntity?, indexPath: IndexPath, title: String) {
         lbTitle.text = title
         guard let info = info else { return }
+        indexType = indexPath.row - 1
         switch indexPath.row - 1 {
         case 0:
-            setContentLabel(text: info.CustomerName)
+            setContentTextField(text: info.CustomerName)
         case 1:
             setContentLabel(text: info.Card* != 0 ? "\(info.Card*)" : "-")
         case 2:
@@ -61,8 +68,7 @@ class TopInfoCheckOutCell: UITableViewCell {
             setContentDropdown()
             vDropdown.dataSource = ["Tiền mặt", "Chuyển khoản", "Thanh toán online", "Khác"]
         case 8:
-            textField.text = info.Notes
-            setContentTextField()
+            setContentTextField(text:  info.Notes)
         default:
             break
         }
@@ -75,7 +81,8 @@ class TopInfoCheckOutCell: UITableViewCell {
         vDropdown.isHidden = true
     }
 
-    private func setContentTextField() {
+    private func setContentTextField(text: String?) {
+        textField.text = text
         lbContent.isHidden = true
         textField.isHidden = false
         vDropdown.isHidden = true
@@ -85,5 +92,14 @@ class TopInfoCheckOutCell: UITableViewCell {
         lbContent.isHidden = true
         textField.isHidden = true
         vDropdown.isHidden = false
+    }
+
+    @objc func changeTextValue() {
+        if indexType == 0 {
+            delegate?.changeCustomerName(text: textField.text&)
+        } else {
+            delegate?.changeNote(text: textField.text&)
+        }
+
     }
 }

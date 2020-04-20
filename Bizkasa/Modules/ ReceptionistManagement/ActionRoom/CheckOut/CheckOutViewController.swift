@@ -75,7 +75,15 @@ class CheckOutViewController: BaseViewController {
 
     override func setUpNavigation() {
         addBackWhiteToNavigation()
-        addRightButtonNavigationBar(titles: ["Trả phòng","Lưu", "Chưa thanh toán"], actions: [#selector(btnCheckOutTapped), #selector(btnSaveTapped), #selector(btnUnPaidTapped)])
+        addRightButtonNavigation(titles: ["Trả phòng",
+                                          "Lưu",
+                                          "Chưa thanh toán"],
+                                 actions: [#selector(btnCheckOutTapped),
+                                           #selector(btnSaveTapped),
+                                           #selector(btnUnPaidTapped)],
+                                 color: [AppColor.normalOrange,
+                                         AppColor.normalGreen,
+                                         AppColor.secondMain])
     }
 
     private func configureTableView() {
@@ -303,6 +311,14 @@ extension CheckOutViewController: PopUpCheckOutViewControllerDelegate {
 }
 
 extension CheckOutViewController: TopInfoCheckOutCellDelegate {
+    func changeNote(text: String) {
+        orderInfo.Notes = text
+    }
+
+    func changeCustomerName(text: String) {
+        orderInfo.CustomerName = text
+    }
+
     func changeCalculatorMode(index: Int) {
         if let orderRoom = self.room.OrderRoom, let orderID = orderRoom.OrderId {
             let hotelID = room.HotelId*

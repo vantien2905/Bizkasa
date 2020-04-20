@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppDateTime" customModule="Bizkasa" customModuleProvider="target">
+            <connections>
+                <outlet property="heightTitle" destination="ekK-dy-tpL" id="Svh-XN-clh"/>
+                <outlet property="tfContent" destination="OC8-NB-eRl" id="LlT-jW-0Fr"/>
+                <outlet property="vBottomLine" destination="fdE-j9-pcN" id="DC8-mm-vh7"/>
+                <outlet property="vTitle" destination="EuH-FX-i6y" id="smG-Hz-l10"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="681" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Lpa-Sm-AtD">
+                    <rect key="frame" x="0.0" y="0.0" width="681" height="160"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EuH-FX-i6y" customClass="AppTitleLogo" customModule="Bizkasa" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="681" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="ekK-dy-tpL"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A1N-rL-1KE">
+                            <rect key="frame" x="0.0" y="35" width="681" height="125"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OC8-NB-eRl">
+                                    <rect key="frame" x="0.0" y="0.0" width="641" height="125"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvl-1T-iXi">
+                                    <rect key="frame" x="651" y="0.0" width="30" height="125"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yed-W2-YaY">
+                                            <rect key="frame" x="-5" y="42.5" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="yed-W2-YaY" secondAttribute="height" multiplier="1:1" id="Z7z-kd-4RH"/>
+                                            </constraints>
+                                            <state key="normal" image="receipts"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="yed-W2-YaY" firstAttribute="centerY" secondItem="Hvl-1T-iXi" secondAttribute="centerY" id="Ypm-nw-Ca1"/>
+                                        <constraint firstItem="yed-W2-YaY" firstAttribute="centerX" secondItem="Hvl-1T-iXi" secondAttribute="centerX" id="eel-5Q-7LL"/>
+                                        <constraint firstAttribute="width" constant="30" id="pQj-8C-JBL"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdE-j9-pcN">
+                    <rect key="frame" x="0.0" y="159" width="641" height="1"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="9Nr-Cw-hxH"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgo-23-94X">
+                    <rect key="frame" x="0.0" y="0.0" width="681" height="160"/>
+                    <connections>
+                        <action selector="btnCalendarTapped" destination="-1" eventType="touchUpInside" id="CUX-K9-aHR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xgo-23-94X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4Ox-8f-3Dh"/>
+                <constraint firstAttribute="leading" secondItem="fdE-j9-pcN" secondAttribute="leading" id="7FX-9X-24P"/>
+                <constraint firstItem="Lpa-Sm-AtD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DkI-Nw-XWn"/>
+                <constraint firstItem="Hvl-1T-iXi" firstAttribute="leading" secondItem="fdE-j9-pcN" secondAttribute="trailing" constant="10" id="Gts-Ig-xr1"/>
+                <constraint firstItem="xgo-23-94X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OSU-QT-HN9"/>
+                <constraint firstAttribute="bottom" secondItem="fdE-j9-pcN" secondAttribute="bottom" id="S98-cb-q0a"/>
+                <constraint firstItem="Lpa-Sm-AtD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UqN-db-WEK"/>
+                <constraint firstAttribute="bottom" secondItem="Lpa-Sm-AtD" secondAttribute="bottom" id="bIm-az-Lko"/>
+                <constraint firstAttribute="bottom" secondItem="xgo-23-94X" secondAttribute="bottom" id="osT-N7-KEU"/>
+                <constraint firstAttribute="trailing" secondItem="xgo-23-94X" secondAttribute="trailing" id="q38-0v-sQU"/>
+                <constraint firstAttribute="trailing" secondItem="Lpa-Sm-AtD" secondAttribute="trailing" id="wte-AG-kw2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="154.34782608695653" y="-133.25892857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="receipts" width="40" height="40"/>
+    </resources>
+</document>

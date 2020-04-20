@@ -57,14 +57,14 @@ class DateHelper {
         }
     }
     
-    static func getShortDateTime(input:String) ->String {
+    static func getSimpleDate(input:String) ->String {
         let formatDate = DateFormatter()
         formatDate.dateFormat = DateFormat.DEFAULT
         if input.isEmpty {
             return "#"
         }else{
             if let date:Date = formatDate.date(from: input) {
-                formatDate.dateFormat = "dd' Th'MM"
+                formatDate.dateFormat = DateFormat.SIMPLE_DATE
                 return formatDate.string(from: date)
             } else {
                 return "#"
@@ -90,7 +90,7 @@ class DateHelper {
     static func getCurrentDateWithDayAndMonth() ->String{
         let date = Date()
         let formatDate = DateFormatter()
-        formatDate.dateFormat = "dd' Th'MM"
+        formatDate.dateFormat = DateFormat.SIMPLE_DATE
         
         return formatDate.string(from: date)
     }
@@ -136,7 +136,7 @@ class DateHelper {
     static func getNextDate() -> String{
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd' Th'MM"
+        dateFormatter.dateFormat = DateFormat.SIMPLE_DATE
         guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: date) else { return "" }
         return dateFormatter.string(from: tomorrow)
     }
