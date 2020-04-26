@@ -16,6 +16,7 @@ class LeftMenuViewController: BaseViewController {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var tbLeftMenu: UITableView!
+    @IBOutlet weak var lbVersion: UILabel!
 
     var presenter: LeftMenuPresenterProtocol?
 
@@ -28,6 +29,16 @@ class LeftMenuViewController: BaseViewController {
         guard let user = UserDefaultHelper.shared.getUser() else { return }
         lbName.text = "KHÁCH SẠN " + user.HotelName&.uppercased()
         imgLogo.sd_setImage(with: user.Logo&.convertUrl(), placeholderImage: AppImage.imgPlaceholder)
+
+        lbVersion.text = "Bizkasa @ version \(self.getVersionName()) \n build (\(self.getVersionBuild()))"
+    }
+
+    private func getVersionBuild() -> String{
+      return Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+    }
+
+    private func getVersionName() -> String{
+      return Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     }
 
     private func configureTableView() {
@@ -61,6 +72,11 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(LeftMenuCell.self)
         cell.lbTitle.text = listTitle[indexPath.row]
+        if indexPath.row == 0 {
+            cell.imgLogo.image = AppImage.home
+        } else {
+            cell.imgLogo.image = listImageTitle[indexPath.row - 1]
+        }
         return cell
     }
 
@@ -69,9 +85,11 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let vc = HomeRouter.createModule().convertNavi()
             sideMenuController?.setContentViewController(to: vc)
-        } else {
+        } else if indexPath.row == 1 {
             let vc = TabbarReceptionistRouter.createModule()
             sideMenuController?.setContentViewController(to: vc)
+        } else {
+            self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
         }
     }
 }

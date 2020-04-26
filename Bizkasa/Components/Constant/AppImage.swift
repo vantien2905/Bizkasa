@@ -36,4 +36,16 @@ struct AppImage {
     static let imgPrice           = UIImage(named: "price")!
     static let imgNote           = UIImage(named: "note")!
 
+    static let receptionist    = UIImage(named: "receptionist")!
+    static let receipts           = UIImage(named: "receipts")!
+    static let payment          = UIImage(named: "payment")!
+    static let shift           = UIImage(named: "shift")!
+    static let service         = UIImage(named: "service")!
+    static let setting         = UIImage(named: "setting")!
+    static let statistic       = UIImage(named: "statistic")!
+    static let info            = UIImage(named: "info")!
+    static let manage          = UIImage(named: "manage")!
+    static let home            = UIImage(named: "home")!
+    static let settingSystem  = UIImage(named: "setting_system")!
+
 }

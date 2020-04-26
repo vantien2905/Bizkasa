@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3S-7v-kOg">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bizkasa_logo" translatesAutoresizingMaskIntoConstraints="NO" id="snz-uM-t05">
                                     <rect key="frame" x="112.5" y="50" width="150" height="80"/>
@@ -38,11 +38,10 @@
                                         <constraint firstAttribute="width" constant="150" id="f1S-O3-bzg"/>
                                     </constraints>
                                 </imageView>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vky-Uc-MCP">
-                                    <rect key="frame" x="92.5" y="160" width="190" height="50"/>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vky-Uc-MCP">
+                                    <rect key="frame" x="167.5" y="160" width="40" height="0.0"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmV-dV-4sy">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="lmV-dV-4sy" secondAttribute="height" multiplier="1:1" id="bE9-DS-Wmi"/>
                                             </constraints>
@@ -60,7 +59,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bH-V4-63I">
-                                            <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="20" y="0.0" width="0.0" height="0.0"/>
                                             <state key="normal" image="google"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -75,7 +74,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfL-a1-QZY">
-                                            <rect key="frame" x="140" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="40" y="0.0" width="0.0" height="0.0"/>
                                             <state key="normal" image="zalo"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -91,11 +90,11 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="zUg-Kx-aCJ"/>
+                                        <constraint firstAttribute="height" id="zUg-Kx-aCJ"/>
                                     </constraints>
                                 </stackView>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNq-ga-N0U">
-                                    <rect key="frame" x="35" y="249" width="305" height="162"/>
+                                    <rect key="frame" x="35" y="199" width="305" height="162"/>
                                     <subviews>
                                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n5c-3r-gbK">
                                             <rect key="frame" x="10" y="1" width="285" height="160"/>
@@ -123,7 +122,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXf-rT-qMl">
-                                    <rect key="frame" x="94" y="464" width="187.5" height="40"/>
+                                    <rect key="frame" x="94" y="414" width="187.5" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="OJd-UY-W0Q"/>
                                     </constraints>
@@ -146,8 +145,8 @@
                                         <action selector="btnLoginTapped" destination="-1" eventType="touchUpInside" id="Umc-DM-DHZ"/>
                                     </connections>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Whm-a9-Txs">
-                                    <rect key="frame" x="77.5" y="514" width="220" height="30"/>
+                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Whm-a9-Txs">
+                                    <rect key="frame" x="77.5" y="464" width="220" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn chưa có tài khoản?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBK-Xf-dR8">
                                             <rect key="frame" x="0.0" y="0.0" width="159" height="30"/>

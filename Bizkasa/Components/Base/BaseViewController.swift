@@ -120,6 +120,18 @@ class BaseViewController: UIViewController {
         alert.addAction(actionCancel)
         UIApplication.topViewController()?.present(controller: alert)
     }
+
+    func showAlert(title: String?, message: String?) {
+        self.view.isUserInteractionEnabled = true
+        let alert = UIAlertController(title: title ?? "THÔNG BÁO", message: message, preferredStyle: .alert)
+        let actionOK = UIAlertAction(title: "Đồng ý", style: .cancel) { (_) in
+
+        }
+//        let actionCancel = UIAlertAction(title: "Hủy", style: .default, handler: nil)
+        alert.addAction(actionOK)
+//        alert.addAction(actionCancel)
+        UIApplication.topViewController()?.present(controller: alert)
+    }
     
     func checkVCInMain(isVC: MainVisible) -> Bool {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false}

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +23,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="receptionist" translatesAutoresizingMaskIntoConstraints="NO" id="S8n-9G-Tjp">
-                        <rect key="frame" x="5" y="5" width="63" height="63"/>
+                        <rect key="frame" x="10" y="10" width="53" height="53"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="S8n-9G-Tjp" secondAttribute="height" multiplier="1:1" id="FVG-Ec-cb4"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-YD-dv8">
-                        <rect key="frame" x="73" y="5" width="265" height="63"/>
+                        <rect key="frame" x="78" y="5" width="260" height="63"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,16 +43,16 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="S8n-9G-Tjp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="0qc-Es-Rgn"/>
-                    <constraint firstItem="S8n-9G-Tjp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="1U9-oJ-t5P"/>
+                    <constraint firstItem="S8n-9G-Tjp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0qc-Es-Rgn"/>
+                    <constraint firstItem="S8n-9G-Tjp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="1U9-oJ-t5P"/>
                     <constraint firstAttribute="trailing" secondItem="RbH-YD-dv8" secondAttribute="trailing" constant="5" id="IOk-hY-ZAp"/>
                     <constraint firstAttribute="trailing" secondItem="5H4-FA-3us" secondAttribute="trailing" constant="5" id="IVR-QW-Keo"/>
                     <constraint firstAttribute="bottom" secondItem="5H4-FA-3us" secondAttribute="bottom" id="NqL-TL-01U"/>
-                    <constraint firstItem="RbH-YD-dv8" firstAttribute="leading" secondItem="S8n-9G-Tjp" secondAttribute="trailing" constant="5" id="PDw-SE-QVG"/>
+                    <constraint firstItem="RbH-YD-dv8" firstAttribute="leading" secondItem="S8n-9G-Tjp" secondAttribute="trailing" constant="15" id="PDw-SE-QVG"/>
                     <constraint firstItem="RbH-YD-dv8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Td8-Dz-0QW"/>
                     <constraint firstAttribute="bottom" secondItem="RbH-YD-dv8" secondAttribute="bottom" constant="5" id="c4R-SS-CF4"/>
                     <constraint firstItem="5H4-FA-3us" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="hhB-hv-03p"/>
-                    <constraint firstAttribute="bottom" secondItem="S8n-9G-Tjp" secondAttribute="bottom" constant="5" id="sQz-Xd-M1t"/>
+                    <constraint firstAttribute="bottom" secondItem="S8n-9G-Tjp" secondAttribute="bottom" constant="10" id="sQz-Xd-M1t"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

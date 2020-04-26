@@ -21,6 +21,16 @@ let listTitle = ["Trang chủ",
                  "Dịch vụ",
                  "Cấu hình hệ thống",
                  "Thông tin khách sạn"]
+let listImageTitle = [AppImage.receptionist,
+                     AppImage.receipts,
+                     AppImage.payment,
+                     AppImage.statistic,
+                     AppImage.shift,
+                     AppImage.setting,
+                     AppImage.manage,
+                     AppImage.service,
+                     AppImage.settingSystem,
+                     AppImage.info]
 
 
 class HomeViewController: HomeBaseViewController {
@@ -59,7 +69,6 @@ class HomeViewController: HomeBaseViewController {
 extension HomeViewController: HomeViewProtocol {
     func didGetReceiptReport(result: [ReceipReportEntity]?, error: APIError?) {
         if let result = result, result.count > 7 {
-//            lbRoom.text = "\(result[0].Amount*.formattedWithSeparator)"
             lbService.text = "\(result[6].Amount*.formattedWithSeparator)"
             lbTotal.text = "\(result[6].Amount*.formattedWithSeparator)"
         } else {
@@ -77,6 +86,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCollectionCell(HomeCVCell.self, indexPath: indexPath)
         cell.lbTitle.text = listTitle[indexPath.row + 1]
+        cell.imgLogo.image = listImageTitle[indexPath.row]
         return cell
     }
 
@@ -84,6 +94,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         if indexPath.row == 0 {
             let vc = TabbarReceptionistRouter.createModule()
             sideMenuController?.setContentViewController(to: vc)
+        } else {
+            self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
         }
 
     }
