@@ -20,6 +20,7 @@ class TopInfoCheckOutCell: UITableViewCell {
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var vDropdown: AppDropdownBorder!
+    @IBOutlet weak var vCalendar: TextFieldCalendar!
 
     weak var delegate: TopInfoCheckOutCellDelegate?
 
@@ -30,6 +31,7 @@ class TopInfoCheckOutCell: UITableViewCell {
         // Initialization code
         textField.addTarget(self, action: #selector(changeTextValue), for: .editingChanged)
         vDropdown.hideTextAndLogo()
+        vCalendar.hideTitle()
 
     }
 
@@ -54,9 +56,9 @@ class TopInfoCheckOutCell: UITableViewCell {
         case 3:
             setContentLabel(text: "\(info.Price*.formattedWithSeparator)")
         case 4:
-            setContentLabel(text:"\(info.CheckInTimeText&) - \(info.CheckInDateView&)")
+            setCalendar(text:"\(info.CheckInTimeText&) - \(info.CheckInDateView&)")
         case 5:
-            setContentLabel(text: "\(info.CheckOutTimeText&) - \(info.CheckOutDateView&)")
+            setCalendar(text: "\(info.CheckOutTimeText&) - \(info.CheckOutDateView&)")
         case 6:
             setContentDropdown()
             vDropdown.itemSelected = info.CaculatorMode* - 1
@@ -79,6 +81,7 @@ class TopInfoCheckOutCell: UITableViewCell {
         lbContent.isHidden = false
         textField.isHidden = true
         vDropdown.isHidden = true
+        vCalendar.isHidden = true
     }
 
     private func setContentTextField(text: String?) {
@@ -86,12 +89,23 @@ class TopInfoCheckOutCell: UITableViewCell {
         lbContent.isHidden = true
         textField.isHidden = false
         vDropdown.isHidden = true
+        vCalendar.isHidden = true
     }
 
     private func setContentDropdown() {
         lbContent.isHidden = true
         textField.isHidden = true
         vDropdown.isHidden = false
+        vCalendar.isHidden = true
+    }
+
+    private func setCalendar(text: String?) {
+        vCalendar.setText(text&)
+        vCalendar.isHidden = false
+        lbContent.isHidden = true
+        textField.isHidden = true
+        vDropdown.isHidden = true
+
     }
 
     @objc func changeTextValue() {

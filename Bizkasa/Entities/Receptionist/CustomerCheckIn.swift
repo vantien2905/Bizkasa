@@ -41,9 +41,15 @@ class CustomerEntity: Mappable {
     var CheckInDateView: String?
     var CheckOutDate: String?
     var PassportCreatedDate: String?
+    var PassportCreatedDateView: String?
     var PassportAgency: String?
-    var CustomerType: String?
+    var CustomerType: Int?
     var National: String?
+
+    var HotelId: Int?
+    var Description: String?
+    var IsHasCheckin: Bool = false
+    var IsPrimary: Bool = false
 
     required init?(map: Map) {
 
@@ -67,6 +73,12 @@ class CustomerEntity: Mappable {
         self.PassportAgency <- map["PassportAgency"]
         self.CustomerType <- map["CustomerType"]
         self.National <- map["National"]
+        self.PassportCreatedDateView <- map["PassportCreatedDateView"]
+
+        self.HotelId <- map["HotelId"]
+        self.Description <- map["Description"]
+        self.IsHasCheckin <- map["IsHasCheckin"]
+        self.IsPrimary <- map["IsPrimary"]
     }
 
 }

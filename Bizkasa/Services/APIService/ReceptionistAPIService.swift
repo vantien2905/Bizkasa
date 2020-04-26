@@ -20,9 +20,15 @@ protocol ReceptionistAPIServiceProtocol {
     func updateOrder(param: OrderInfoEntity, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func addOrder(param: CheckInParam, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func changCalculatorMode(orderID: Int, mode: Int, hotelID: Int, success: @escaping SuccessHandler<OrderInfoEntity>.object, failure: @escaping RequestFailure)
+    func addCustomer(param: AddCustomerParam, success: @escaping SuccessHandler<CustomerEntity>.object, failure: @escaping RequestFailure)
 }
 
 class ReceptionistAPIService: ReceptionistAPIServiceProtocol {
+
+    func addCustomer(param: AddCustomerParam, success: @escaping SuccessHandler<CustomerEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = ReceptionistEndPoint.addCustomer(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
 
     func changCalculatorMode(orderID: Int, mode: Int, hotelID: Int, success: @escaping SuccessHandler<OrderInfoEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = ReceptionistEndPoint.changCalculatorMode(orderID: orderID, mode: mode, hotelID: hotelID)

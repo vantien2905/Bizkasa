@@ -27,6 +27,7 @@
 		B32069DB241394B80097D18B /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D7241394B80097D18B /* AppTextView.swift */; };
 		B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32069D9241394B80097D18B /* AppTextViewLogo.swift */; };
 		B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32069DA241394B80097D18B /* AppTextViewLogo.xib */; };
+		B326A87B245528DB00C4BC0D /* AddCustomerParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B326A87A245528DB00C4BC0D /* AddCustomerParam.swift */; };
 		B337D36C2439EA97005B4EDA /* InsertInvoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */; };
 		B350C433241DF5030005288B /* RoomEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C432241DF5030005288B /* RoomEntity.swift */; };
 		B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B350C434241DFD8E0005288B /* HeaderRoomView.swift */; };
@@ -292,6 +293,7 @@
 		B32069D7241394B80097D18B /* AppTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextView.swift; sourceTree = "<group>"; };
 		B32069D9241394B80097D18B /* AppTextViewLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextViewLogo.swift; sourceTree = "<group>"; };
 		B32069DA241394B80097D18B /* AppTextViewLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppTextViewLogo.xib; sourceTree = "<group>"; };
+		B326A87A245528DB00C4BC0D /* AddCustomerParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerParam.swift; sourceTree = "<group>"; };
 		B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertInvoiceParam.swift; sourceTree = "<group>"; };
 		B350C432241DF5030005288B /* RoomEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEntity.swift; sourceTree = "<group>"; };
 		B350C434241DFD8E0005288B /* HeaderRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRoomView.swift; sourceTree = "<group>"; };
@@ -1058,6 +1060,7 @@
 				B3E7B99B23F9105F0088259F /* DeviceParam.swift */,
 				B3DA712024398EAD00B1C8AA /* CheckInParam.swift */,
 				B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */,
+				B326A87A245528DB00C4BC0D /* AddCustomerParam.swift */,
 			);
 			path = APIParam;
 			sourceTree = "<group>";
@@ -1567,6 +1570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E7BA8023F9105F0088259F /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				B326A87B245528DB00C4BC0D /* AddCustomerParam.swift in Sources */,
 				B3E7BAA223F9105F0088259F /* AppConstant.swift in Sources */,
 				B3616854244D82EF0067359B /* AppDateTime.swift in Sources */,
 				B3E7BA6A23F9105F0088259F /* UIViewController+Extension.swift in Sources */,
@@ -1915,7 +1919,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020041221;
+				CURRENT_PROJECT_VERSION = 2020042219;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1938,7 +1942,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020041221;
+				CURRENT_PROJECT_VERSION = 2020042219;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1948,7 +1952,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hms.com.Bizkasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Bizkasa_PRO;
+				PROVISIONING_PROFILE_SPECIFIER = Bizkasa_Production;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -43,6 +43,8 @@ class CheckInViewController: BaseViewController {
 
     var calculatorMode = 3
 
+    var customer: [CustomerEntity] = []
+
 	override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -97,26 +99,64 @@ class CheckInViewController: BaseViewController {
     }
 
     @objc func btnAcceptTapped() {
-        let param = CheckInParam()
-        param.RoomId = room.Id
-        param.RoomClassName = room.RoomClassName
-        param.RoomName = room.Name
-        param.CustomerName = tfCustomerName.getText().isEmpty ? "Khách không CMT" : tfCustomerName.getText()
-        param.Price = self.price
-        param.OrderStatus = 4
-        param.CaculatorMode = calculatorMode
-        let list = vService.listWidget.map { (item, total) -> WidgetEntity in
-            item.Quantity = total
-            return item
+
+        if tfCustomerName.getText().isEmpty {
+            let param = CheckInParam()
+            param.RoomId = room.Id
+            param.RoomClassName = room.RoomClassName
+            param.RoomName = room.Name
+            param.CustomerName = "Khách không CMT"
+            param.Price = self.price
+            param.OrderStatus = 4
+            param.CaculatorMode = calculatorMode
+            let list = vService.listWidget.map { (item, total) -> WidgetEntity in
+                item.Quantity = total
+                return item
+            }
+            param.Services = list
+            param.Notes = tvNote.getText()
+            presenter?.addOrder(param: param)
+        } else {
+            let addCustomerParam = AddCustomerParam()
+            addCustomerParam.Address = tfAdress.getText()
+            addCustomerParam.Name = tfCustomerName.getText()
+            addCustomerParam.PassportId = tfIndentifierNumber.getText()
+            addCustomerParam.PassportCreatedDate = tfIndentifierDate.dateTime
+            addCustomerParam.OrderId = 0
+            presenter?.addCustomer(param: addCustomerParam)
         }
-        param.Services = list
-        param.Notes = tvNote.getText()
-        presenter?.addOrder(param: param)
+
+
+
     }
 
 }
 
 extension CheckInViewController: CheckInViewProtocol {
+    func didAddCustomer(result: CustomerEntity?, error: APIError?) {
+        if let result = result {
+//            self.customer.append(result)
+            let param = CheckInParam()
+            param.RoomId = room.Id
+            param.RoomClassName = room.RoomClassName
+            param.RoomName = room.Name
+            param.CustomerName = tfCustomerName.getText().isEmpty ? "Khách không CMT" : tfCustomerName.getText()
+            param.Price = self.price
+            param.OrderStatus = 4
+            param.CaculatorMode = calculatorMode
+            let list = vService.listWidget.map { (item, total) -> WidgetEntity in
+                item.Quantity = total
+                return item
+            }
+            param.Services = list
+            param.Notes = tvNote.getText()
+            param.Customers = [result]
+            presenter?.addOrder(param: param)
+        } else {
+             self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
     func didAddOrder(result: BaseResponse?, error: APIError?) {
         if let _ = result {
             NotificationCenter.default.post(name: .refreshReceptionist, object: nil)

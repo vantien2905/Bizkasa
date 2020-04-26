@@ -11,6 +11,10 @@
 import UIKit
 
 class CheckInPresenter: CheckInPresenterProtocol {
+    func addCustomer(param: AddCustomerParam) {
+        interactor?.addCustomer(param: param)
+    }
+
     func addOrder(param: CheckInParam) {
         interactor?.addOrder(param: param)
     }
@@ -33,6 +37,10 @@ class CheckInPresenter: CheckInPresenterProtocol {
 }
 
 extension CheckInPresenter: CheckInInteractorOutputProtocol {
+    func didAddCustomer(result: CustomerEntity?, error: APIError?) {
+        view?.didAddCustomer(result: result, error: error)
+    }
+
     func didAddOrder(result: BaseResponse?, error: APIError?) {
         view?.didAddOrder(result: result, error: error)
     }

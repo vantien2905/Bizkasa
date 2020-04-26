@@ -11,6 +11,14 @@
 import UIKit
 
 class CheckInInteractor: CheckInInteractorInputProtocol {
+    func addCustomer(param: AddCustomerParam) {
+        service.addCustomer(param: param, success: { (result) in
+            self.presenter?.didAddCustomer(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didAddCustomer(result: nil, error: error)
+        }
+    }
+
     func addOrder(param: CheckInParam) {
         service.addOrder(param: param, success: { (result) in
             self.presenter?.didAddOrder(result: result, error: nil)

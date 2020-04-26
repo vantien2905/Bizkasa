@@ -20,6 +20,7 @@ protocol CheckInPresenterProtocol: class {
 
     func getConfigPrice(roomId: Int)
     func addOrder(param: CheckInParam)
+    func addCustomer(param: AddCustomerParam)
 }
 
 //MARK: Interactor -
@@ -28,6 +29,7 @@ protocol CheckInInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func didGetConfigPrice(result: [ConfigPriceEntity]?, error: APIError?)
     func didAddOrder(result: BaseResponse?, error: APIError?)
+    func didAddCustomer(result: CustomerEntity?, error: APIError?)
 }
 
 protocol CheckInInteractorInputProtocol: class {
@@ -37,6 +39,7 @@ protocol CheckInInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getConfigPrice(roomId: Int)
     func addOrder(param: CheckInParam)
+    func addCustomer(param: AddCustomerParam)
 }
 
 //MARK: View -
@@ -47,4 +50,5 @@ protocol CheckInViewProtocol: class {
     /* Presenter -> ViewController */
     func didGetConfigPrice(result: [ConfigPriceEntity]?, error: APIError?)
     func didAddOrder(result: BaseResponse?, error: APIError?)
+    func didAddCustomer(result: CustomerEntity?, error: APIError?)
 }

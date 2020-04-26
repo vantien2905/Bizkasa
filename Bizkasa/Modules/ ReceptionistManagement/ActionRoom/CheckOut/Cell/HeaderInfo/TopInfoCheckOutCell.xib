@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,18 +53,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2N-YO-goj" customClass="TextFieldCalendar" customModule="Bizkasa" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="225" height="77"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="u2N-YO-goj" secondAttribute="bottom" id="11d-0n-5EU"/>
                                     <constraint firstAttribute="bottom" secondItem="1Gm-Nw-79E" secondAttribute="bottom" id="AhI-cv-9JZ"/>
                                     <constraint firstItem="1Gm-Nw-79E" firstAttribute="leading" secondItem="Tv6-E1-Wrk" secondAttribute="leading" id="Biw-y7-kfI"/>
                                     <constraint firstAttribute="trailing" secondItem="jCd-1c-L7g" secondAttribute="trailing" id="GAV-25-CSM"/>
+                                    <constraint firstAttribute="trailing" secondItem="u2N-YO-goj" secondAttribute="trailing" id="JB7-my-FRL"/>
+                                    <constraint firstItem="u2N-YO-goj" firstAttribute="top" secondItem="Tv6-E1-Wrk" secondAttribute="top" id="OOf-z8-2pY"/>
                                     <constraint firstAttribute="bottom" secondItem="jCd-1c-L7g" secondAttribute="bottom" id="PP1-tH-wNR"/>
                                     <constraint firstAttribute="trailing" secondItem="EC7-M1-pKg" secondAttribute="trailing" id="QdE-03-wtE"/>
                                     <constraint firstAttribute="bottom" secondItem="EC7-M1-pKg" secondAttribute="bottom" id="S9w-H3-FDX"/>
                                     <constraint firstItem="EC7-M1-pKg" firstAttribute="top" secondItem="Tv6-E1-Wrk" secondAttribute="top" id="Wxo-qB-dKX"/>
                                     <constraint firstItem="jCd-1c-L7g" firstAttribute="top" secondItem="Tv6-E1-Wrk" secondAttribute="top" id="hei-Pi-boK"/>
                                     <constraint firstAttribute="trailing" secondItem="1Gm-Nw-79E" secondAttribute="trailing" id="kCM-aW-bGL"/>
+                                    <constraint firstItem="u2N-YO-goj" firstAttribute="leading" secondItem="Tv6-E1-Wrk" secondAttribute="leading" constant="10" id="noH-ue-jgs"/>
                                     <constraint firstItem="jCd-1c-L7g" firstAttribute="leading" secondItem="Tv6-E1-Wrk" secondAttribute="leading" id="tGE-2b-Xzv"/>
                                     <constraint firstItem="1Gm-Nw-79E" firstAttribute="top" secondItem="Tv6-E1-Wrk" secondAttribute="top" id="tWs-uo-mZl"/>
                                     <constraint firstItem="EC7-M1-pKg" firstAttribute="leading" secondItem="Tv6-E1-Wrk" secondAttribute="leading" constant="10" id="vgP-9W-UVb"/>
@@ -92,6 +100,7 @@
                 <outlet property="lbContent" destination="EC7-M1-pKg" id="OoR-1X-Qgb"/>
                 <outlet property="lbTitle" destination="CWD-po-EeV" id="nKO-Kh-6dI"/>
                 <outlet property="textField" destination="1Gm-Nw-79E" id="ltQ-fg-YNa"/>
+                <outlet property="vCalendar" destination="u2N-YO-goj" id="FSm-Zc-Oe5"/>
                 <outlet property="vDropdown" destination="jCd-1c-L7g" id="iLU-id-QUr"/>
             </connections>
             <point key="canvasLocation" x="131" y="-6"/>
