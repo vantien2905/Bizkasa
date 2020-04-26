@@ -45,12 +45,21 @@ class PopUpCheckOutViewController: BaseViewController {
         vContent.isHidden = isService
         vCharge.isHidden = isService
         btnAccept.isHidden = isService
+        
+//        vCharge.tfContent.delegate = self
+        vCharge.tfContent.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
 
         vService.addNewCallBack = { widget, total in
             self.delegate?.btnAcceptServiceTapped(widget: widget, total: total)
             self.dismiss(animated: false)
         }
 
+    }
+
+    @objc func myTextFieldDidChange(_ textField: UITextField) {
+        if let amountString = vCharge.tfContent.text?.currencyInputFormatting() {
+            vCharge.tfContent.text = amountString
+        }
     }
 
     @IBAction func btnCloseTapped() {
@@ -60,7 +69,7 @@ class PopUpCheckOutViewController: BaseViewController {
     @IBAction func btnAcceptTapped() {
         if validate() {
             let content = vContent.getText()&
-            if let price = Int(vCharge.getText()) {
+            if let price = Int(vCharge.getText().replacingOccurrences(of: ",", with: "")) {
                 delegate?.btnAcceptTapped(content: content, price: price, indexPath: indexPath)
                 self.dismiss(animated: false)
             }
@@ -82,3 +91,33 @@ class PopUpCheckOutViewController: BaseViewController {
     }
 
 }
+
+ extension String {
+
+     // formatting text for currency textField
+     func currencyInputFormatting() -> String {
+
+         var number: NSNumber!
+         let formatter = NumberFormatter()
+         formatter.numberStyle = .currencyAccounting
+         formatter.currencySymbol = "$"
+         formatter.maximumFractionDigits = 0
+         formatter.minimumFractionDigits = 0
+
+         var amountWithPrefix = self
+
+         // remove from String: "$", ".", ","
+         let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+         amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
+
+         let double = (amountWithPrefix as NSString).doubleValue
+         number = NSNumber(value: (double))
+
+         // if first number is 0 or all numbers were deleted
+         guard number != 0 as NSNumber else {
+             return ""
+         }
+
+        return String(formatter.string(from: number)!.dropFirst())
+     }
+ }
