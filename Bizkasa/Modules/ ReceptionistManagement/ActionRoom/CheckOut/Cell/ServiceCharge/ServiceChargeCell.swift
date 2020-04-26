@@ -43,13 +43,13 @@ class ServiceChargeCell: UITableViewCell {
             lbTitle.text = info.OrderAttachments[row].Note
             lbContent.text = "\(info.OrderAttachments[row].TotalAmount*.formattedWithSeparator)"
             btnDelete.isHidden = true
-        case 3:
-            setContent(subCharge: info.MiniBars[row])
         case 4:
-            setContent(subCharge: info.Surcharges[row])
+            setContent(subCharge: info.MiniBars[row])
         case 5:
-            setContent(subCharge: info.Deductibles[row])
+            setContent(subCharge: info.Surcharges[row])
         case 6:
+            setContent(subCharge: info.Deductibles[row])
+        case 7:
             setContent(subCharge: info.Prepaids[row])
         default:
             break
