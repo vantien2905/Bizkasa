@@ -67,11 +67,11 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdJ-gZ-soV">
-                    <rect key="frame" x="0.0" y="588" width="375" height="79"/>
+                    <rect key="frame" x="0.0" y="591.5" width="375" height="75.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1 build 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOd-zu-c9c">
-                            <rect key="frame" x="10" y="50" width="355" height="19"/>
-                            <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="16"/>
+                            <rect key="frame" x="10" y="50" width="355" height="15.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -96,7 +96,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Ns-yz-Rhx">
-                    <rect key="frame" x="0.0" y="78" width="375" height="502"/>
+                    <rect key="frame" x="0.0" y="78" width="375" height="505.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>

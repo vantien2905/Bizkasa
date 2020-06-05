@@ -13,7 +13,7 @@ import Alamofire
 
 enum ReceptionistEndPoint {
     case getListCustomerCheckIn
-    case getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool)
+    case getInvoices(page: Int, pageSize: Int, invoiceType: [Int], isInDay: Bool)
     case getRoomsByClass
     case getConfigPrice(roomId: Int)
     case getWidget(type: Int)
@@ -24,6 +24,7 @@ enum ReceptionistEndPoint {
     case addOrder(param: CheckInParam)
     case changCalculatorMode(orderID: Int, mode: Int, hotelID: Int)
     case addCustomer(param: AddCustomerParam)
+   
 }
 
 extension ReceptionistEndPoint: EndPointType {

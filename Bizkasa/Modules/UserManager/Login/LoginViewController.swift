@@ -21,9 +21,9 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var btnLogin: UIButton!
 
 
-	var presenter: LoginPresenterProtocol?
+    var presenter: LoginPresenterProtocol?
 
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
 
@@ -32,8 +32,8 @@ class LoginViewController: BaseViewController {
         vUser.setPlaceHolder(title: "Nhập email")
         vPassword.setTitleAndLogo(AppImage.imgPassword, title: "Mật khầu", isSecurity: true)
         vPassword.setPlaceHolder(title: "Nhập mật khẩu")
-        vUser.setText("haichay88@gmail.com")
-        vPassword.setText("123456")
+//        vUser.setText("haichay88@gmail.com")
+//        vPassword.setText("123456")
     }
 
     override func viewDidLayoutSubviews() {
@@ -48,17 +48,33 @@ class LoginViewController: BaseViewController {
     }
 
     private func validate() -> Bool {
+        if vUser.getText().isEmpty {
+            self.view.makeToast("Bạn chưa nhập email")
+            return false
+        }
+
         if !vUser.getText().isValidEmail() {
             self.view.makeToast("Không đúng định dạng email")
+            return false
+        }
+
+        if vPassword.getText().isEmpty {
+            self.view.makeToast("Bạn chưa nhập mật khẩu")
             return false
         }
         return true
     }
 
     @IBAction func btnLoginTapped() {
+        view.endEditing(true)
         if validate() {
             presenter?.login(userName: vUser.getText(), password: vPassword.getText().md5())
         }
+    }
+
+    @IBAction func btnSignUpTapped() {
+        let vc = SignUpRouter.createModule()
+        self.push(controller: vc)
     }
 }
 

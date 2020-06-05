@@ -11,7 +11,7 @@
 import UIKit
 
 class ListReceiptPresenter: ListReceiptPresenterProtocol {
-    func getInvoices(page: Int, pageSize: Int, invoiceType: Int, isInDay: Bool) {
+    func getInvoices(page: Int, pageSize: Int, invoiceType: [Int], isInDay: Bool) {
         interactor?.getInvoices(page: page, pageSize: pageSize, invoiceType: invoiceType, isInDay: isInDay)
     }
 

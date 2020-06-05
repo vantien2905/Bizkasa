@@ -11,6 +11,9 @@ import Alamofire
 enum UserEndPoint {
     case login(userName: String, password: String)
     case getReceiptReport(period: Int)
+    case reportRevenue(shiftID: Int)
+    case register(param: RegisterParam)
+    case completedRegiser(param: CompleteRegisterParam)
 }
 
 extension UserEndPoint: EndPointType {
@@ -20,6 +23,12 @@ extension UserEndPoint: EndPointType {
             return "api/Account/login"
         case .getReceiptReport:
             return "api/Report/GetReceiptReport"
+        case .reportRevenue:
+            return "api/Report/Revenue"
+        case .register:
+            return "/api/Account/RegisterHotel"
+        case .completedRegiser:
+            return "/api/Hotel/CompletedRegiser"
         }
     }
 
@@ -37,6 +46,12 @@ extension UserEndPoint: EndPointType {
                     "Password": password]
         case .getReceiptReport(let period):
             return ["Period": period]
+        case .reportRevenue(let shiftID):
+            return ["ShiftId": shiftID]
+        case .register(let param):
+            return param.toJSON()
+        case .completedRegiser(let param):
+            return param.toJSON()
         }
     }
 

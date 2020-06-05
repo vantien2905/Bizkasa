@@ -48,4 +48,7 @@ struct AppImage {
     static let home            = UIImage(named: "home")!
     static let settingSystem  = UIImage(named: "setting_system")!
 
+    static let imgPhone  = UIImage(named: "phone")!
+    static let imgHotel  = UIImage(named: "hotel")!
+
 }

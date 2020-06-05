@@ -43,7 +43,7 @@ class HeaderCheckOutCell: UITableViewCell {
         vTotal.isHidden = false
         vSpace.isHidden = false
 
-        if indexPath.section == 0 || indexPath.section == 8 || indexPath.section == 1 {
+        if indexPath.section == 0 || indexPath.section == 8 || indexPath.section == 1 || indexPath.section == 2 {
             btnAddMore.isHidden = true
         } else {
             btnAddMore.isHidden = false

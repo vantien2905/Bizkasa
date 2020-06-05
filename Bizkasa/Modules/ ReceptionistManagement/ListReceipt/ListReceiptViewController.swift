@@ -34,11 +34,14 @@ class ListReceiptViewController: HomeBaseViewController {
         super.viewDidLoad()
         configureTableView()
 
-        presenter?.getInvoices(page: 1, pageSize: 10, invoiceType: 1, isInDay: true)
-
         NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
-            self.presenter?.getInvoices(page: 1, pageSize: 10, invoiceType: 1, isInDay: true)
+            self.presenter?.getInvoices(page: 1, pageSize: 20, invoiceType: [1], isInDay: true)
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.getInvoices(page: 1, pageSize: 20, invoiceType: [1], isInDay: true)
     }
 
     deinit {

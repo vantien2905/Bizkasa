@@ -45,7 +45,11 @@ class HomeViewController: HomeBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        presenter?.getReceiptReport(period: 1)
+//        presenter?.getReceiptReport(period: 1)
+        if let user = UserDefaultHelper.shared.getUser(), let shiftID = user.ShiftId {
+            presenter?.reportRevenue(shiftID: shiftID)
+        }
+
     }
 
     override func setUpNavigation() {
@@ -67,6 +71,16 @@ class HomeViewController: HomeBaseViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    func didReportRevenue(result: RevenueEntity?, error: APIError?) {
+        if let result = result, let today = result.Today {
+            lbService.text = "\(today.ServiceAmount*.formattedWithSeparator)"
+            lbRoom.text = "\(today.RoomAmount*.formattedWithSeparator)"
+            lbTotal.text = "\(today.Cashed*.formattedWithSeparator)"
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+
     func didGetReceiptReport(result: [ReceipReportEntity]?, error: APIError?) {
         if let result = result, result.count > 7 {
             lbService.text = "\(result[6].Amount*.formattedWithSeparator)"

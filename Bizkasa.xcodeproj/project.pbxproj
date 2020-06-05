@@ -124,6 +124,14 @@
 		B38B9D472406BD27006D69B0 /* ListReceiptProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B9D412406BD27006D69B0 /* ListReceiptProtocols.swift */; };
 		B38B9D482406BD27006D69B0 /* ListReceiptInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B9D422406BD27006D69B0 /* ListReceiptInteractor.swift */; };
 		B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B38B9D432406BD27006D69B0 /* ListReceiptViewController.xib */; };
+		B3C97976245A8E7100F23F59 /* RevenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C97975245A8E7100F23F59 /* RevenueDetail.swift */; };
+		B3C9797E245A99E800F23F59 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C97978245A99E800F23F59 /* SignUpPresenter.swift */; };
+		B3C9797F245A99E800F23F59 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C97979245A99E800F23F59 /* SignUpRouter.swift */; };
+		B3C97980245A99E800F23F59 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9797A245A99E800F23F59 /* SignUpViewController.swift */; };
+		B3C97981245A99E800F23F59 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9797B245A99E800F23F59 /* SignUpProtocols.swift */; };
+		B3C97982245A99E800F23F59 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9797C245A99E800F23F59 /* SignUpInteractor.swift */; };
+		B3C97983245A99E800F23F59 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C9797D245A99E800F23F59 /* SignUpViewController.xib */; };
+		B3C97986245A9E8600F23F59 /* RegisterParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C97985245A9E8600F23F59 /* RegisterParam.swift */; };
 		B3DA710D2437494500B1C8AA /* RoomChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA710B2437494500B1C8AA /* RoomChargeCell.swift */; };
 		B3DA710E2437494500B1C8AA /* RoomChargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3DA710C2437494500B1C8AA /* RoomChargeCell.xib */; };
 		B3DA711224374F1800B1C8AA /* ServiceChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DA711024374F1800B1C8AA /* ServiceChargeCell.swift */; };
@@ -390,6 +398,14 @@
 		B38B9D412406BD27006D69B0 /* ListReceiptProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReceiptProtocols.swift; sourceTree = "<group>"; };
 		B38B9D422406BD27006D69B0 /* ListReceiptInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReceiptInteractor.swift; sourceTree = "<group>"; };
 		B38B9D432406BD27006D69B0 /* ListReceiptViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListReceiptViewController.xib; sourceTree = "<group>"; };
+		B3C97975245A8E7100F23F59 /* RevenueDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueDetail.swift; sourceTree = "<group>"; };
+		B3C97978245A99E800F23F59 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		B3C97979245A99E800F23F59 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		B3C9797A245A99E800F23F59 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B3C9797B245A99E800F23F59 /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
+		B3C9797C245A99E800F23F59 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		B3C9797D245A99E800F23F59 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		B3C97985245A9E8600F23F59 /* RegisterParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParam.swift; sourceTree = "<group>"; };
 		B3DA710B2437494500B1C8AA /* RoomChargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomChargeCell.swift; sourceTree = "<group>"; };
 		B3DA710C2437494500B1C8AA /* RoomChargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomChargeCell.xib; sourceTree = "<group>"; };
 		B3DA711024374F1800B1C8AA /* ServiceChargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceChargeCell.swift; sourceTree = "<group>"; };
@@ -559,6 +575,7 @@
 		B30957D124010B3100335639 /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
+				B3C97977245A98F300F23F59 /* SignUp */,
 				B30957E824012BAF00335639 /* Login */,
 			);
 			path = UserManager;
@@ -715,6 +732,7 @@
 				B350C438241E04C20005288B /* ConfigPriceEntity.swift */,
 				B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */,
 				B35FE7E824261A430072D223 /* OrderInfoEntity.swift */,
+				B3C97975245A8E7100F23F59 /* RevenueDetail.swift */,
 			);
 			path = Receptionist;
 			sourceTree = "<group>";
@@ -964,6 +982,19 @@
 			path = ListReceipt;
 			sourceTree = "<group>";
 		};
+		B3C97977245A98F300F23F59 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				B3C97978245A99E800F23F59 /* SignUpPresenter.swift */,
+				B3C97979245A99E800F23F59 /* SignUpRouter.swift */,
+				B3C9797A245A99E800F23F59 /* SignUpViewController.swift */,
+				B3C9797B245A99E800F23F59 /* SignUpProtocols.swift */,
+				B3C9797C245A99E800F23F59 /* SignUpInteractor.swift */,
+				B3C9797D245A99E800F23F59 /* SignUpViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		B3DA710A2437490900B1C8AA /* RoomCharge */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,6 +1092,7 @@
 				B3DA712024398EAD00B1C8AA /* CheckInParam.swift */,
 				B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */,
 				B326A87A245528DB00C4BC0D /* AddCustomerParam.swift */,
+				B3C97985245A9E8600F23F59 /* RegisterParam.swift */,
 			);
 			path = APIParam;
 			sourceTree = "<group>";
@@ -1516,6 +1548,7 @@
 				B37954322402A48E007768B8 /* ListRoomCVCell.xib in Resources */,
 				B3616856244D82EF0067359B /* AppChooseTime.xib in Resources */,
 				B3E7BA5823F9105F0088259F /* DateTimePickerViewController.xib in Resources */,
+				B3C97983245A99E800F23F59 /* SignUpViewController.xib in Resources */,
 				B30957DD24010B4400335639 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1612,7 +1645,9 @@
 				B36809C9240A6AC5002F8D00 /* CheckInInteractor.swift in Sources */,
 				B3E7BAAB23F9105F0088259F /* LocalizationManager.swift in Sources */,
 				B35FE7E22426174E0072D223 /* CheckOutPresenter.swift in Sources */,
+				B3C97976245A8E7100F23F59 /* RevenueDetail.swift in Sources */,
 				B3E7BA4023F9105F0088259F /* HomeProtocols.swift in Sources */,
+				B3C9797F245A99E800F23F59 /* SignUpRouter.swift in Sources */,
 				B3142FEB24273E03003609DA /* HeaderCheckOutCell.swift in Sources */,
 				B3DA711C24389D1C00B1C8AA /* PopUpCheckOutViewController.swift in Sources */,
 				B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */,
@@ -1628,6 +1663,7 @@
 				B379542B2402A43F007768B8 /* ListRoomProtocols.swift in Sources */,
 				B35FE7C92425D0030072D223 /* ListServiceProtocols.swift in Sources */,
 				B37954282402A43F007768B8 /* ListRoomPresenter.swift in Sources */,
+				B3C9797E245A99E800F23F59 /* SignUpPresenter.swift in Sources */,
 				B3E7BA6D23F9105F0088259F /* UIDate+Extension.swift in Sources */,
 				B3E7BA6123F9105F0088259F /* UIApplication+Extension.swift in Sources */,
 				B3E7BAA923F9105F0088259F /* UserDefaultHelper.swift in Sources */,
@@ -1650,6 +1686,7 @@
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
 				B35FE7E924261A430072D223 /* OrderInfoEntity.swift in Sources */,
 				B3DA711224374F1800B1C8AA /* ServiceChargeCell.swift in Sources */,
+				B3C97981245A99E800F23F59 /* SignUpProtocols.swift in Sources */,
 				B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */,
 				B3E7BA4923F9105F0088259F /* FlashViewController.swift in Sources */,
 				B36809A7240A5777002F8D00 /* CreateNewReceiptViewController.swift in Sources */,
@@ -1680,6 +1717,7 @@
 				B3E7BA9023F9105F0088259F /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				B30957E62401115300335639 /* AppTitleLogo.swift in Sources */,
 				B30957D02401084A00335639 /* UserEntity.swift in Sources */,
+				B3C97980245A99E800F23F59 /* SignUpViewController.swift in Sources */,
 				B3E7BA4E23F9105F0088259F /* StatusBar.swift in Sources */,
 				B389C3B9244190C800106320 /* ServiceViewSingle.swift in Sources */,
 				B38B9D472406BD27006D69B0 /* ListReceiptProtocols.swift in Sources */,
@@ -1742,6 +1780,7 @@
 				B3E7BA7123F9105F0088259F /* Loading+Extension.swift in Sources */,
 				B3E7B98023F9102E0088259F /* SceneDelegate.swift in Sources */,
 				B37954292402A43F007768B8 /* ListRoomRouter.swift in Sources */,
+				B3C97982245A99E800F23F59 /* SignUpInteractor.swift in Sources */,
 				B3E7BA7923F9105F0088259F /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B3E7BA8223F9105F0088259F /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				B35FE7CF2425D05D0072D223 /* ServiceCell.swift in Sources */,
@@ -1781,6 +1820,7 @@
 				B3E7BA4623F9105F0088259F /* LeftMenuRouter.swift in Sources */,
 				B32069DB241394B80097D18B /* AppTextView.swift in Sources */,
 				B350C439241E04C20005288B /* ConfigPriceEntity.swift in Sources */,
+				B3C97986245A9E8600F23F59 /* RegisterParam.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1919,7 +1959,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020042219;
+				CURRENT_PROJECT_VERSION = 2020050115;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1931,7 +1971,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Bizkasa-DEV";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1942,7 +1982,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020042219;
+				CURRENT_PROJECT_VERSION = 2020050115;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1954,7 +1994,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Bizkasa_Production;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

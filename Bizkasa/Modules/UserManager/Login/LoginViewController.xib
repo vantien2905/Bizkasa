@@ -145,7 +145,7 @@
                                         <action selector="btnLoginTapped" destination="-1" eventType="touchUpInside" id="Umc-DM-DHZ"/>
                                     </connections>
                                 </button>
-                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Whm-a9-Txs">
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Whm-a9-Txs">
                                     <rect key="frame" x="77.5" y="464" width="220" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn chưa có tài khoản?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBK-Xf-dR8">
@@ -162,6 +162,12 @@
                                         </button>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-cf-Xbe">
+                                    <rect key="frame" x="77.5" y="464" width="220" height="30"/>
+                                    <connections>
+                                        <action selector="btnSignUpTapped" destination="-1" eventType="touchUpInside" id="Mrv-FY-QFz"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
@@ -169,8 +175,11 @@
                                 <constraint firstItem="NNq-ga-N0U" firstAttribute="leading" secondItem="d3S-7v-kOg" secondAttribute="leading" constant="35" id="4AN-BT-IqX"/>
                                 <constraint firstItem="Vky-Uc-MCP" firstAttribute="centerX" secondItem="snz-uM-t05" secondAttribute="centerX" id="5JN-Ua-ANp"/>
                                 <constraint firstItem="snz-uM-t05" firstAttribute="top" secondItem="d3S-7v-kOg" secondAttribute="top" constant="50" id="8Kf-gO-J4p"/>
+                                <constraint firstItem="FbC-cf-Xbe" firstAttribute="centerY" secondItem="Whm-a9-Txs" secondAttribute="centerY" id="8wf-fC-5c3"/>
                                 <constraint firstAttribute="bottom" secondItem="Whm-a9-Txs" secondAttribute="bottom" constant="10" id="B9p-iL-21t"/>
                                 <constraint firstItem="NNq-ga-N0U" firstAttribute="top" secondItem="Vky-Uc-MCP" secondAttribute="bottom" constant="39" id="CU3-ie-ekN"/>
+                                <constraint firstItem="FbC-cf-Xbe" firstAttribute="centerX" secondItem="Whm-a9-Txs" secondAttribute="centerX" id="EeD-dm-wjE"/>
+                                <constraint firstItem="FbC-cf-Xbe" firstAttribute="width" secondItem="Whm-a9-Txs" secondAttribute="width" id="Jl1-Hr-1Yt"/>
                                 <constraint firstItem="MXf-rT-qMl" firstAttribute="centerX" secondItem="NNq-ga-N0U" secondAttribute="centerX" id="KUl-dS-8pB"/>
                                 <constraint firstItem="Vky-Uc-MCP" firstAttribute="top" secondItem="snz-uM-t05" secondAttribute="bottom" constant="30" id="WjS-dr-McW"/>
                                 <constraint firstItem="Whm-a9-Txs" firstAttribute="centerX" secondItem="MXf-rT-qMl" secondAttribute="centerX" id="bOb-wh-HIr"/>
@@ -178,6 +187,7 @@
                                 <constraint firstItem="snz-uM-t05" firstAttribute="centerX" secondItem="d3S-7v-kOg" secondAttribute="centerX" id="eUg-f7-8sY"/>
                                 <constraint firstAttribute="trailing" secondItem="NNq-ga-N0U" secondAttribute="trailing" constant="35" id="hKy-CV-W0Y"/>
                                 <constraint firstItem="MXf-rT-qMl" firstAttribute="width" secondItem="d3S-7v-kOg" secondAttribute="width" multiplier="1:2" id="xxW-JP-FZk"/>
+                                <constraint firstItem="FbC-cf-Xbe" firstAttribute="height" secondItem="Whm-a9-Txs" secondAttribute="height" id="zD7-5e-ckl"/>
                             </constraints>
                         </view>
                     </subviews>

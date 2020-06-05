@@ -11,6 +11,10 @@
 import UIKit
 
 class HomePresenter: HomePresenterProtocol {
+    func reportRevenue(shiftID: Int) {
+        interactor?.reportRevenue(shiftID: shiftID)
+    }
+
     func getReceiptReport(period: Int) {
         interactor?.getReceiptReport(period: period)
     }
@@ -29,6 +33,10 @@ class HomePresenter: HomePresenterProtocol {
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {
+    func didReportRevenue(result: RevenueEntity?, error: APIError?) {
+        view?.didReportRevenue(result: result, error: error)
+    }
+
     func didGetReceiptReport(result: [ReceipReportEntity]?, error: APIError?) {
         view?.didGetReceiptReport(result: result, error: error)
     }

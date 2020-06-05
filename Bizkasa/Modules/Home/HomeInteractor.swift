@@ -11,6 +11,14 @@
 import UIKit
 
 class HomeInteractor: HomeInteractorInputProtocol {
+    func reportRevenue(shiftID: Int) {
+        service.reportRevenue(shiftID: shiftID, success: { (result) in
+            self.presenter?.didReportRevenue(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didReportRevenue(result: nil, error: error)
+        }
+    }
+
 
     let service = Provider.shared.userAPIService
 
