@@ -81,15 +81,6 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        sideMenuController?.hideMenu()
-        if indexPath.row == 0 {
-            let vc = HomeRouter.createModule().convertNavi()
-            sideMenuController?.setContentViewController(to: vc)
-        } else if indexPath.row == 1 {
-            let vc = TabbarReceptionistRouter.createModule()
-            sideMenuController?.setContentViewController(to: vc)
-        } else {
-            self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
-        }
+        setContentVC(index: indexPath.row)
     }
 }

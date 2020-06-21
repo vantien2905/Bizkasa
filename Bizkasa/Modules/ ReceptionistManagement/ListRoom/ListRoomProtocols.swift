@@ -19,6 +19,7 @@ protocol ListRoomPresenterProtocol: class {
     var interactor: ListRoomInteractorInputProtocol? { get set }
 
     func getRoomsByClass()
+    func changeStatusRoom(roomID: Int, status: String)
 }
 
 //MARK: Interactor -
@@ -26,6 +27,7 @@ protocol ListRoomInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?)
+    func didChangeStatusRoom(result: BaseResponse?, error: APIError?)
 }
 
 protocol ListRoomInteractorInputProtocol: class {
@@ -34,6 +36,7 @@ protocol ListRoomInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getRoomsByClass()
+    func changeStatusRoom(roomID: Int, status: String)
 }
 
 //MARK: View -
@@ -43,4 +46,5 @@ protocol ListRoomViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?)
+    func didChangeStatusRoom(result: BaseResponse?, error: APIError?)
 }

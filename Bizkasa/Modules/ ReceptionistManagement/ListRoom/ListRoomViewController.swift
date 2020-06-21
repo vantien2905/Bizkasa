@@ -23,11 +23,17 @@ class ListRoomViewController: HomeBaseViewController {
     }
 
     let heightHeader: CGFloat = 60
+    
+    var refreshControl = UIRefreshControl()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         presenter?.getRoomsByClass()
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        cvListRoom.addSubview(refreshControl)
 
         NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
             self.presenter?.getRoomsByClass()
@@ -54,11 +60,26 @@ class ListRoomViewController: HomeBaseViewController {
         layout.minimumInteritemSpacing = 0
         cvListRoom.collectionViewLayout = layout
     }
+    
+    @objc private func refreshData() {
+        presenter?.getRoomsByClass()
+    }
 
 }
 
 extension ListRoomViewController: ListRoomViewProtocol {
+    func didChangeStatusRoom(result: BaseResponse?, error: APIError?) {
+        if let result = result {
+            if let data = result.data as? Bool, data {
+                self.presenter?.getRoomsByClass()
+            }
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
     func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?) {
+        refreshControl.endRefreshing()
         if let result = result {
             self.listRoomType = result
         } else {
@@ -113,6 +134,8 @@ extension ListRoomViewController: ListRoomCVCellDelegate {
             let vc = CheckOutRouter.createModule(room: room)
             vc.delegate = self
             self.present(controller: vc.convertNavi())
+        case ActionRoom.clean.rawValue:
+            presenter?.changeStatusRoom(roomID: room.Id*, status: "InActive")
         default:
             break
         }

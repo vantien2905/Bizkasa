@@ -152,6 +152,23 @@ class BaseViewController: UIViewController {
         let vc = HomeRouter.createModule().convertNavi()
         sideMenuController?.setContentViewController(to: vc)
     }
+    
+    func setContentVC(index: Int) {
+        sideMenuController?.hideMenu()
+        switch index {
+        case 0:
+            let vc = HomeRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
+        case 1:
+            let vc = TabbarReceptionistRouter.createModule()
+            sideMenuController?.setContentViewController(to: vc)
+        case 2:
+            let vc = ReceiptRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
+        default:
+            self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
+        }
+    }
 }
 
 // MARK: Add button left, right, title

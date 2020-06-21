@@ -21,11 +21,17 @@ class ListCustomerViewController: HomeBaseViewController {
             self.tbCustomer.reloadData()
         }
     }
+    
+    var refreshControl = UIRefreshControl()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         presenter?.getListCustomerCheckIn()
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tbCustomer.addSubview(refreshControl)
 
         NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
             self.presenter?.getListCustomerCheckIn()
@@ -34,6 +40,10 @@ class ListCustomerViewController: HomeBaseViewController {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func refreshData() {
+        self.presenter?.getListCustomerCheckIn()
     }
 
     private func configureTableView() {
@@ -50,6 +60,7 @@ class ListCustomerViewController: HomeBaseViewController {
 
 extension ListCustomerViewController: ListCustomerViewProtocol {
     func didGetListCustomerCheckIn(result: CustomerCheckInEntity?, error: APIError?) {
+        refreshControl.endRefreshing()
         if let result = result {
             self.listCustomer = result.data
         } else {

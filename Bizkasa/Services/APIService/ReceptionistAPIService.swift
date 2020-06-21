@@ -21,9 +21,15 @@ protocol ReceptionistAPIServiceProtocol {
     func addOrder(param: CheckInParam, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func changCalculatorMode(orderID: Int, mode: Int, hotelID: Int, success: @escaping SuccessHandler<OrderInfoEntity>.object, failure: @escaping RequestFailure)
     func addCustomer(param: AddCustomerParam, success: @escaping SuccessHandler<CustomerEntity>.object, failure: @escaping RequestFailure)
+    func changeStatusRoom(roomID: Int, status: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class ReceptionistAPIService: ReceptionistAPIServiceProtocol {
+    
+    func changeStatusRoom(roomID: Int, status: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = ReceptionistEndPoint.changeStatusRoom(roomID: roomID, status: status)
+        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
+    }
 
     func addCustomer(param: AddCustomerParam, success: @escaping SuccessHandler<CustomerEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = ReceptionistEndPoint.addCustomer(param: param)

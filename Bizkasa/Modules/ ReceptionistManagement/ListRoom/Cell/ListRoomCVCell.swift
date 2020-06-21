@@ -18,6 +18,7 @@ enum ActionRoom: String {
     case checkInGroup = "Nhận phòng theo đoàn"
     case checkOut = "Trả phòng/Cập nhật HĐ"
     case checkOutGroup = "Trả phòng theo đoàn"
+    case clean = "Đã dọn dẹp"
 }
 
 class ListRoomCVCell: UICollectionViewCell {
@@ -39,12 +40,17 @@ class ListRoomCVCell: UICollectionViewCell {
 
     weak var delegate: ListRoomCVCellDelegate?
 
-    var isAvailable = true {
+    var isAvailable: Int = 0 {
         didSet {
-            if self.isAvailable {
-                self.dropdown.dataSource = ["Nhận phòng", "Nhận phòng theo đoàn"]
-            } else {
+            switch self.isAvailable {
+            case 1:
                 self.dropdown.dataSource = ["Trả phòng/Cập nhật HĐ", "Trả phòng theo đoàn", "Gộp thanh toán"]
+            case 2:
+                self.dropdown.dataSource = ["Nhận phòng", "Nhận phòng theo đoàn"]
+            case 3:
+                self.dropdown.dataSource = ["Đã dọn dẹp"]
+            default:
+                break
             }
         }
     }
@@ -75,15 +81,18 @@ class ListRoomCVCell: UICollectionViewCell {
     private func setData() {
         guard let room = room else { return }
         lbRoomName.text = "\(room.Name&)"
-        self.isAvailable = room.OrderRoom == nil
+        self.isAvailable = room.RoomStatus*
         setColor(background:  UIColor(hexString: room.ColorStatus&), text: .white)
         if let order = room.OrderRoom {
             lbTime.text = order.TimeSpend
             lbStatus.text = order.CaculatorModeView
         } else {
             lbTime.text = ""
-            lbStatus.text = "Trống"
-
+            if room.RoomStatus == 3 {
+                lbStatus.text = "Dọn dẹp..."
+            } else {
+                lbStatus.text = "Trống"
+            }
         }
     }
 

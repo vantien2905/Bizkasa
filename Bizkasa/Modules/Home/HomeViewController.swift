@@ -105,12 +105,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let vc = TabbarReceptionistRouter.createModule()
-            sideMenuController?.setContentViewController(to: vc)
-        } else {
-            self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
-        }
+        setContentVC(index: indexPath.row + 1)
 
     }
 }

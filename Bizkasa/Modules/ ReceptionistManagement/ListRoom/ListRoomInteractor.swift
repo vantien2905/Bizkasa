@@ -11,6 +11,14 @@
 import UIKit
 
 class ListRoomInteractor: ListRoomInteractorInputProtocol {
+    func changeStatusRoom(roomID: Int, status: String) {
+        service.changeStatusRoom(roomID: roomID, status: status, success: { (result) in
+            self.presenter?.didChangeStatusRoom(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didChangeStatusRoom(result: nil, error: error)
+        }
+    }
+    
 
     let service = Provider.shared.receptionistAPIService
 

@@ -11,6 +11,10 @@
 import UIKit
 
 class ListRoomPresenter: ListRoomPresenterProtocol {
+    func changeStatusRoom(roomID: Int, status: String) {
+        interactor?.changeStatusRoom(roomID: roomID, status: status)
+    }
+    
     func getRoomsByClass() {
         interactor?.getRoomsByClass()
     }
@@ -29,6 +33,10 @@ class ListRoomPresenter: ListRoomPresenterProtocol {
 }
 
 extension ListRoomPresenter: ListRoomInteractorOutputProtocol {
+    func didChangeStatusRoom(result: BaseResponse?, error: APIError?) {
+        view?.didChangeStatusRoom(result: result, error: error)
+    }
+    
     func didGetRoomsByClass(result: [RoomTypeEntity]?, error: APIError?) {
         view?.didGetRoomsByClass(result: result, error: error)
     }

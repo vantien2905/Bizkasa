@@ -275,6 +275,12 @@
 		B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA3023F9105F0088259F /* DateHelper.swift */; };
 		B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E7BAB323F9167D0088259F /* Color.xcassets */; };
 		CB75D13F49ACBEDE5A2C4818 /* Pods_Bizkasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C1EF7F6741F2BF9CEC0E32 /* Pods_Bizkasa.framework */; };
+		FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */; };
+		FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */; };
+		FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */; };
+		FD82CE65249745AE0075C1AC /* ReceiptProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5F249745AE0075C1AC /* ReceiptProtocols.swift */; };
+		FD82CE66249745AE0075C1AC /* ReceiptInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE60249745AE0075C1AC /* ReceiptInteractor.swift */; };
+		FD82CE67249745AE0075C1AC /* ReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD82CE61249745AE0075C1AC /* ReceiptViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -550,6 +556,12 @@
 		B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachFileHelper.swift; sourceTree = "<group>"; };
 		B3E7BA3023F9105F0088259F /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B3E7BAB323F9167D0088259F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPresenter.swift; sourceTree = "<group>"; };
+		FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
+		FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
+		FD82CE5F249745AE0075C1AC /* ReceiptProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptProtocols.swift; sourceTree = "<group>"; };
+		FD82CE60249745AE0075C1AC /* ReceiptInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInteractor.swift; sourceTree = "<group>"; };
+		FD82CE61249745AE0075C1AC /* ReceiptViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1154,6 +1166,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FD4F3C1E2497398C0023974E /* ReceiptManagement */,
 				B35FE7BA2425CB8C0072D223 /* ServiceView */,
 				B32069CF241367330097D18B /* DatePicker */,
 				B37954202402A3F0007768B8 /*  ReceptionistManagement */,
@@ -1442,6 +1455,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		FD4F3C1E2497398C0023974E /* ReceiptManagement */ = {
+			isa = PBXGroup;
+			children = (
+				FD82CE5B24973DC80075C1AC /* List */,
+			);
+			path = ReceiptManagement;
+			sourceTree = "<group>";
+		};
+		FD82CE5B24973DC80075C1AC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */,
+				FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */,
+				FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */,
+				FD82CE5F249745AE0075C1AC /* ReceiptProtocols.swift */,
+				FD82CE60249745AE0075C1AC /* ReceiptInteractor.swift */,
+				FD82CE61249745AE0075C1AC /* ReceiptViewController.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1518,6 +1552,7 @@
 				B379544B2402C4F9007768B8 /* Roboto-Bold.ttf in Resources */,
 				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
 				B3DA710E2437494500B1C8AA /* RoomChargeCell.xib in Resources */,
+				FD82CE67249745AE0075C1AC /* ReceiptViewController.xib in Resources */,
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
 				B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */,
 				B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */,
@@ -1618,6 +1653,7 @@
 				B3E7BA3423F9105F0088259F /* MapperData.swift in Sources */,
 				B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */,
 				B3E7BA7A23F9105F0088259F /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */,
 				B3E7BA3A23F9105F0088259F /* UserAPIService.swift in Sources */,
 				B3E7BA5D23F9105F0088259F /* DateTimePickerViewController.swift in Sources */,
 				B3E7BA8123F9105F0088259F /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -1655,6 +1691,7 @@
 				B38B9D2B2406B0EC006D69B0 /* TabbarReceptionistRouter.swift in Sources */,
 				B37954362402A8FA007768B8 /* LeftMenuCell.swift in Sources */,
 				B36809A6240A5777002F8D00 /* CreateNewReceiptRouter.swift in Sources */,
+				FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */,
 				B3E7BAA623F9105F0088259F /* SlideInPresentationAnimator.swift in Sources */,
 				B3E7BAA523F9105F0088259F /* AppFont.swift in Sources */,
 				B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */,
@@ -1689,6 +1726,7 @@
 				B3C97981245A99E800F23F59 /* SignUpProtocols.swift in Sources */,
 				B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */,
 				B3E7BA4923F9105F0088259F /* FlashViewController.swift in Sources */,
+				FD82CE66249745AE0075C1AC /* ReceiptInteractor.swift in Sources */,
 				B36809A7240A5777002F8D00 /* CreateNewReceiptViewController.swift in Sources */,
 				B38B9D2A2406B0EC006D69B0 /* TabbarReceptionistPresenter.swift in Sources */,
 				B3E7BA7E23F9105F0088259F /* KActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -1699,6 +1737,7 @@
 				B3E7BA3D23F9105F0088259F /* HomeViewController.swift in Sources */,
 				B3E7BAAC23F9105F0088259F /* PlayVideoHelper.swift in Sources */,
 				B3E7BA6B23F9105F0088259F /* String+Extension.swift in Sources */,
+				FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */,
 				B3E7BA9D23F9105F0088259F /* ProgressViewWhite.swift in Sources */,
 				B32069D3241369070097D18B /* TextFieldCalendar.swift in Sources */,
 				B3E7BAA023F9105F0088259F /* EnumParamSearch.swift in Sources */,
@@ -1717,6 +1756,7 @@
 				B3E7BA9023F9105F0088259F /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				B30957E62401115300335639 /* AppTitleLogo.swift in Sources */,
 				B30957D02401084A00335639 /* UserEntity.swift in Sources */,
+				FD82CE65249745AE0075C1AC /* ReceiptProtocols.swift in Sources */,
 				B3C97980245A99E800F23F59 /* SignUpViewController.swift in Sources */,
 				B3E7BA4E23F9105F0088259F /* StatusBar.swift in Sources */,
 				B389C3B9244190C800106320 /* ServiceViewSingle.swift in Sources */,

@@ -24,6 +24,7 @@ enum ReceptionistEndPoint {
     case addOrder(param: CheckInParam)
     case changCalculatorMode(orderID: Int, mode: Int, hotelID: Int)
     case addCustomer(param: AddCustomerParam)
+    case changeStatusRoom(roomID: Int, status: String)
    
 }
 
@@ -54,6 +55,8 @@ extension ReceptionistEndPoint: EndPointType {
             return "/api/Order/ChangCalculatorMode"
         case .addCustomer:
             return "api/customer/AddCustomer"
+        case .changeStatusRoom:
+            return "api/Room/ChangeStatusRoom"
         }
     }
 
@@ -97,6 +100,8 @@ extension ReceptionistEndPoint: EndPointType {
                     "HotelId": hotelID]
         case .addCustomer(let param):
             return param.toJSON()
+        case .changeStatusRoom(roomID: let roomID, status: let status):
+            return ["roomId": roomID, "status": status]
         }
     }
 
