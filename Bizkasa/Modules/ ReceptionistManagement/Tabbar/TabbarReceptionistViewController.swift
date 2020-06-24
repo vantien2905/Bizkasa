@@ -9,30 +9,90 @@
 //
 
 import UIKit
+import BATabBarController
 
 class TabbarReceptionistViewController: UITabBarController {
 
 	var presenter: TabbarReceptionistPresenterProtocol?
+    
+    private var bounceAnimation: CAKeyframeAnimation = {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = [1.0, 1.4, 0.9, 1.02, 1.0]
+        bounceAnimation.duration = TimeInterval(0.3)
+        bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic
+        return bounceAnimation
+    }()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-        let listRoom = ListRoomRouter.createModule().convertNavi()
-        let iconRoom = UITabBarItem(title: "Phòng", image: AppImage.imgRoom, selectedImage: AppImage.imgRoom)
-        listRoom.tabBarItem = iconRoom
+//        let listRoom = ListRoomRouter.createModule().convertNavi()
+//        let iconRoom = UITabBarItem(title: "Phòng", image: AppImage.imgRoom, selectedImage: AppImage.imgRoom)
+//        listRoom.tabBarItem = iconRoom
+//
+//        let listCustomer = ListCustomerRouter.createModule().convertNavi()
+//               let iconCustomer = UITabBarItem(title: "Khách", image: AppImage.imgUser, selectedImage: AppImage.imgUser)
+//               listCustomer.tabBarItem = iconCustomer
+//
+//        let listReceipt = ListReceiptRouter.createModule().convertNavi()
+//               let iconReceipt = UITabBarItem(title: "Phiếu thu", image: AppImage.imgPayment, selectedImage: AppImage.imgPayment)
+//               listReceipt.tabBarItem = iconReceipt
+//        let controllers = [listRoom, listReceipt, listCustomer]  //array of the root view controllers displayed by the tab bar interface
+//        self.viewControllers = controllers
+        
+        
+        
+        let vc1 = ListRoomRouter.createModule().convertNavi()
+        let vc2 = ListReceiptRouter.createModule().convertNavi()
+        let vc3 = ListCustomerRouter.createModule().convertNavi()
+        
+        let option1 = NSMutableAttributedString(string: "Phòng")
+        option1.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option1.length))
+        
+        let option2 = NSMutableAttributedString(string: "Khách")
+        option2.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option2.length))
+        
+        let option3 = NSMutableAttributedString(string: "Phiếu thu")
+        option3.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option3.length))
 
-        let listCustomer = ListCustomerRouter.createModule().convertNavi()
-               let iconCustomer = UITabBarItem(title: "Khách", image: AppImage.imgUser, selectedImage: AppImage.imgUser)
-               listCustomer.tabBarItem = iconCustomer
+        let tabBarItem  = BATabBarItem(image: AppImage.imgRoom.filled(withColor: .gray), selectedImage: AppImage.imgRoom.filled(withColor: .systemBlue), title: option1)
+        let tabBarItem2 = BATabBarItem(image: AppImage.imgPayment.filled(withColor: .gray), selectedImage: AppImage.imgPayment.filled(withColor: .systemBlue),title: option2)
+        let tabBarItem3 = BATabBarItem(image: AppImage.imgUser.filled(withColor: .gray), selectedImage: AppImage.imgUser.filled(withColor: .systemBlue), title: option3)
+        
 
-        let listReceipt = ListReceiptRouter.createModule().convertNavi()
-               let iconReceipt = UITabBarItem(title: "Phiếu thu", image: AppImage.imgPayment, selectedImage: AppImage.imgPayment)
-               listReceipt.tabBarItem = iconReceipt
-        let controllers = [listRoom, listReceipt, listCustomer]  //array of the root view controllers displayed by the tab bar interface
-        self.viewControllers = controllers
+        let baTabBarController = BATabBarController()
+        baTabBarController.viewControllers = [vc1, vc2, vc3]
+        baTabBarController.tabBarItems = [tabBarItem, tabBarItem2, tabBarItem3]
+        
+        baTabBarController.delegate = self
+        baTabBarController.tabBarBackgroundColor = AppColor.normalLightGray
+        baTabBarController.tabBarItemStrokeColor = .systemBlue
+        
+        self.view.addSubview(baTabBarController.view)
     }
+}
+
+extension TabbarReceptionistViewController: BATabBarControllerDelegate {
+    func tabBarController(_ tabBarController: BATabBarController, didSelect: UIViewController) {
+
+    }
+    
+    
+    
 }
 
 extension TabbarReceptionistViewController: TabbarReceptionistViewProtocol {
 	
+}
+
+extension TabbarReceptionistViewController {
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        // find index if the selected tab bar item, then find the corresponding view and get its image, the view position is offset by 1 because the first item is the background (at least in this case)
+        guard let idx = tabBar.items?.firstIndex(of: item), tabBar.subviews.count > idx + 1, let imageView = tabBar.subviews[idx + 1].subviews.compactMap({ $0 as? UIImageView }).first else {
+            return
+        }
+
+        imageView.layer.add(bounceAnimation, forKey: nil)
+    }
 }
