@@ -21,6 +21,8 @@ class CreateNewReceiptViewController: BaseViewController {
     @IBOutlet weak var lbCurrentTime: UILabel!
 
 	var presenter: CreateNewReceiptPresenterProtocol?
+    
+    let param = InsertInvoiceParam()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +46,34 @@ class CreateNewReceiptViewController: BaseViewController {
         lbCurrentTime.text = "Thời gian: \(Date().toDateFormatCurrentTime(DateFormat.SIMPLE_DATE))"
 
         vService.addNewCallBack = {[weak self] (widget, total) in
-            guard let self = self else { return }
+            guard self != nil else { return }
 //            self.listWidget.append((widget, total))
+            
         }
     }
 
 
     @objc func btnAcceptTapped() {
-
+        param.CustomerName = vCustomerName.getText()
+        param.Note = vNote.getText()
+        param.invoiceDetails = vService.listWidget.map({$0.0})
+        param.InvoiceStatus = 7
+        param.InvoiceType = 1
+        param.TotalAmount = vService.totalAmount
+        param.Cashed = vService.totalAmount
+        presenter?.insertOrUpdateInvoice(param: param)
     }
 }
 
 extension CreateNewReceiptViewController: CreateNewReceiptViewProtocol {
-	
+    func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?) {
+        if let _ = result {
+            self.makeToast(message: "Thêm hoá đơn thành công!")
+            NotificationCenter.default.post(name: .refreshReceptionist, object: nil)
+            self.closePage()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
 }
 

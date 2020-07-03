@@ -11,10 +11,10 @@ import UIKit
 
 class TextFieldCalendar: BaseViewXib {
 
-    @IBOutlet weak var vTitle: AppTitleLogo!
-    @IBOutlet weak var tfContent: UITextField!
-    @IBOutlet weak var vBottomLine: UIView!
-    @IBOutlet weak var heightTitle: NSLayoutConstraint!
+    @IBOutlet weak var vTitle       : AppTitleLogo!
+    @IBOutlet weak var tfContent    : UITextField!
+    @IBOutlet weak var vBottomLine  : UIView!
+    @IBOutlet weak var heightTitle  : NSLayoutConstraint!
 
     var textFieldCallBack: ((_ value: String) -> Void)?
 
@@ -34,6 +34,10 @@ class TextFieldCalendar: BaseViewXib {
         tfContent.delegate = self
         tfContent.tintColor = AppColor.line
         tfContent.text = DateHelper.getDate(input: dateTime, format: dateFormmat)
+    }
+    
+    func isChangeDate(_ isChange: Bool) {
+        self.isUserInteractionEnabled = isChange
     }
 
     func setHeightTitle(value: CGFloat) {

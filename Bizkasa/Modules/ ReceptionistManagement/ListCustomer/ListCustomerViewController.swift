@@ -51,6 +51,7 @@ class ListCustomerViewController: HomeBaseViewController {
         tbCustomer.delegate = self
         tbCustomer.dataSource = self
         tbCustomer.rowHeight = UITableView.automaticDimension
+        tbCustomer.contentInset.bottom = 50
     }
 
     override func setUpNavigation() {

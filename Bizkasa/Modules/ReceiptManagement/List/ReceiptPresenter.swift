@@ -12,8 +12,8 @@ import UIKit
 
 class ReceiptPresenter: ReceiptPresenterProtocol {
     
-    func getInvoices(page: Int, pageSize: Int, invoiceType: [Int], isInDay: Bool) {
-        interactor?.getInvoices(page: page, pageSize: pageSize, invoiceType: invoiceType, isInDay: isInDay)
+    func getInvoices(param: GetInvoiceParam) {
+        interactor?.getInvoices(param: param)
     }
 
     weak private var view: ReceiptViewProtocol?

@@ -59,6 +59,7 @@ class ListRoomViewController: HomeBaseViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         cvListRoom.collectionViewLayout = layout
+        cvListRoom.contentInset.bottom = 50
     }
     
     @objc private func refreshData() {

@@ -4,6 +4,8 @@ PODS:
     - SnapKit
   - CryptoSwift (0.7.2)
   - DropDown (2.3.13)
+  - ESTabBarController-swift (2.8.0)
+  - ExpandingMenu (0.4.0)
   - IQKeyboardManagerSwift (6.5.5)
   - ObjectMapper (3.3.0)
   - SDWebImage (4.4.2):
@@ -18,6 +20,8 @@ DEPENDENCIES:
   - BATabBarController (~> 2.0.0)
   - CryptoSwift (= 0.7.2)
   - DropDown
+  - ESTabBarController-swift
+  - ExpandingMenu (~> 0.4)
   - IQKeyboardManagerSwift
   - ObjectMapper (= 3.3.0)
   - SDWebImage (= 4.4.2)
@@ -30,6 +34,8 @@ SPEC REPOS:
     - BATabBarController
     - CryptoSwift
     - DropDown
+    - ESTabBarController-swift
+    - ExpandingMenu
     - IQKeyboardManagerSwift
     - ObjectMapper
     - SDWebImage
@@ -42,6 +48,8 @@ SPEC CHECKSUMS:
   BATabBarController: 7f50519b3743b4e779c71a8e147ac9e8c50e0c7d
   CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  ExpandingMenu: 3187a4ed1aa1aea85418e444c213e4cd6063c122
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
@@ -49,6 +57,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: ec8c1d7b37eb3e1bb937b7587e61a22e50c01bcd
+PODFILE CHECKSUM: b8813053db470e492251bf040e95f5455b91076b
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.8.4

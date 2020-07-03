@@ -17,7 +17,7 @@ protocol ReceiptWireframeProtocol: class {
 protocol ReceiptPresenterProtocol: class {
 
     var interactor: ReceiptInteractorInputProtocol? { get set }
-    func getInvoices(page: Int, pageSize: Int, invoiceType: [Int], isInDay: Bool)
+    func getInvoices(param: GetInvoiceParam)
 }
 
 //MARK: Interactor -
@@ -32,7 +32,7 @@ protocol ReceiptInteractorInputProtocol: class {
     var presenter: ReceiptInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
-    func getInvoices(page: Int, pageSize: Int, invoiceType: [Int], isInDay: Bool)
+    func getInvoices(param: GetInvoiceParam)
 }
 
 //MARK: View -

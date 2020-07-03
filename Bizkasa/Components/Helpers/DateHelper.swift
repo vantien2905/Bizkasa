@@ -95,7 +95,7 @@ class DateHelper {
         return formatDate.string(from: date)
     }
     
-    static func getCurrentTime() ->String{
+    static func getCurrentTime() -> String {
         let date = Date()
         let formatDate = DateFormatter()
         formatDate.dateFormat = "HH':'mm"

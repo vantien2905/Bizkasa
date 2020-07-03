@@ -55,7 +55,8 @@ class ListReceiptViewController: HomeBaseViewController {
     }
     
     @objc private func refreshData() {
-        presenter?.getInvoices(page: 1, pageSize: 20, invoiceType: [1], isInDay: true)
+        let param = GetInvoiceParam.setDefaultParam()
+        presenter?.getInvoices(param: param)
     }
 
     override func setUpNavigation() {
@@ -68,7 +69,7 @@ class ListReceiptViewController: HomeBaseViewController {
         tbReceipt.delegate = self
         tbReceipt.dataSource = self
         tbReceipt.rowHeight = UITableView.automaticDimension
-        tbReceipt.contentInset.bottom = 40
+        tbReceipt.contentInset.bottom = 50
     }
 
     @objc func btnAddNewTapped() {

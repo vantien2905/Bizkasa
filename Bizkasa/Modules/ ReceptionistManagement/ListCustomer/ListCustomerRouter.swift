@@ -14,9 +14,9 @@ class ListCustomerRouter: ListCustomerWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> ListCustomerViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ListCustomerViewController(nibName: nil, bundle: nil)
+        let view = ListCustomerViewController.initFromNib()
         let interactor = ListCustomerInteractor()
         let router = ListCustomerRouter()
         let presenter = ListCustomerPresenter(interface: view, interactor: interactor, router: router)

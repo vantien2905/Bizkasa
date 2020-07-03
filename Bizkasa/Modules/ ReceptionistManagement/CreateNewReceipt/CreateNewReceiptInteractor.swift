@@ -11,6 +11,14 @@
 import UIKit
 
 class CreateNewReceiptInteractor: CreateNewReceiptInteractorInputProtocol {
+    func insertOrUpdateInvoice(param: InsertInvoiceParam) {
+        Provider.shared.receptionistAPIService.insertOrUpdateInvoice(param: param, success: { (result) in
+            self.presenter?.didInsertOrUpdateInvoice(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didInsertOrUpdateInvoice(result: nil, error: error)
+        }
+    }
+    
 
     weak var presenter: CreateNewReceiptInteractorOutputProtocol?
 }

@@ -9,11 +9,19 @@
 //
 
 import UIKit
+import ExpandingMenu
 
 class ReceiptViewController: HomeBaseViewController {
     
-    @IBOutlet weak var tbReceipt: UITableView!
-    @IBOutlet weak var lbTotal: UILabel!
+    @IBOutlet weak var tbReceipt        : UITableView!
+//    @IBOutlet weak var menuButton: ExpandingMenuButton!
+    @IBOutlet weak var lbTotal          : UILabel!
+    @IBOutlet weak var tfName           : UITextField!
+    @IBOutlet weak var vPaymentStatus   : AppDropdownBorder!
+    @IBOutlet weak var vPaymentType     : AppDropdownBorder!
+    @IBOutlet weak var vTime            : AppDateTime!
+    @IBOutlet weak var hightFilterView  : NSLayoutConstraint!
+    @IBOutlet weak var btnHideFilter    : UIButton!
     
     var refreshControl = UIRefreshControl()
     
@@ -32,6 +40,8 @@ class ReceiptViewController: HomeBaseViewController {
     
     var presenter: ReceiptPresenterProtocol?
     
+    let param = GetInvoiceParam.setDefaultParam()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +54,8 @@ class ReceiptViewController: HomeBaseViewController {
         NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
             self.refreshData()
         }
+        
+//        configureExpandingMenuButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,8 +67,44 @@ class ReceiptViewController: HomeBaseViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    override func setUpView() {
+        vPaymentStatus.dataSource = ["Trạng thái thanh toán",
+                                     "Chưa thanh toán",
+                                     "Công nợ",
+                                     "Đã thanh toán"]
+        vPaymentType.dataSource = ["Hình thức thanh toán",
+                                   "Tiền mặt",
+                                   "Chuyển khoản",
+                                   "Khác",
+                                   "Thanh toán online"]
+        vTime.setTitleAndLogo(AppImage.imgTime, title: "Khoảng thời gian")
+        btnHideFilterTapped()
+        
+        vTime.setDateAndTime(fromTime: DateHelper.getDateTimeISO(), toTime: DateHelper.getDateTimeISO())
+        
+        vPaymentStatus.dropDownCallBack = {[weak self] (index, item) in
+            switch index {
+            case 1:
+                self?.param.InvoiceStatus = 1
+            case 2:
+                self?.param.InvoiceStatus = 2
+            case 3:
+                self?.param.InvoiceStatus = 7
+            default:
+                break
+            }
+        }
+        
+        vPaymentType.dropDownCallBack = {[weak self] (index, item) in
+            if index != 0 {
+                self?.param.PaymentMethod = index - 1
+            }
+        }
+    }
+    
     @objc private func refreshData() {
-        presenter?.getInvoices(page: 1, pageSize: 20, invoiceType: [1], isInDay: true)
+        let param = GetInvoiceParam.setDefaultParam()
+        presenter?.getInvoices(param: param)
     }
     
     override func setUpNavigation() {
@@ -72,10 +120,38 @@ class ReceiptViewController: HomeBaseViewController {
         tbReceipt.contentInset.bottom = 40
     }
     
-//    @objc func btnAddNewTapped() {
-//        let vc = CreateNewReceiptRouter.createModule().convertNavi()
-//        self.present(controller: vc)
-//    }
+    var isShowFilter = false
+    @IBAction func btnFilterTapped() {
+        isShowFilter = !isShowFilter
+        btnHideFilter.isHidden = !isShowFilter
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.2) {
+            self.hightFilterView.constant = self.isShowFilter ? 295 : 0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func btnHideFilterTapped() {
+        view.layoutIfNeeded()
+        isShowFilter = false
+        btnHideFilter.isHidden = true
+        UIView.animate(withDuration: 0.2) {
+            self.hightFilterView.constant = self.isShowFilter ? 295 : 0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func btnFiltterTapped() {
+        param.Page?.currentPage = 1
+        param.Page?.pageSize = 20
+        param.FromDate = vTime.fromTime
+        param.ToDate = vTime.toTime
+        param.Keyword = tfName.text
+        presenter?.getInvoices(param: param)
+        btnHideFilterTapped()
+    }
+    
+
     
 }
 

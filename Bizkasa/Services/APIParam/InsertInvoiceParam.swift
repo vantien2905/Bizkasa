@@ -12,11 +12,12 @@ import ObjectMapper
 class InsertInvoiceParam: Mappable {
 
     var TotalAmount: Int?
-    var invoiceDetails: [WidgetParam] = []
+    var invoiceDetails: [WidgetEntity] = []
     var InvoiceType: Int?
     var InvoiceStatus: Int?
     var CustomerName: String?
     var Cashed: Int?
+    var Note: String?
 
     required init?(map: Map) {
     }
@@ -31,6 +32,7 @@ class InsertInvoiceParam: Mappable {
         self.InvoiceStatus <- map["InvoiceStatus"]
         self.CustomerName <- map["CustomerName"]
         self.Cashed <- map["Cashed"]
+        self.Note <- map["Note"]
     }
 
 }

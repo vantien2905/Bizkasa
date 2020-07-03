@@ -275,6 +275,7 @@
 		B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA3023F9105F0088259F /* DateHelper.swift */; };
 		B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E7BAB323F9167D0088259F /* Color.xcassets */; };
 		CB75D13F49ACBEDE5A2C4818 /* Pods_Bizkasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C1EF7F6741F2BF9CEC0E32 /* Pods_Bizkasa.framework */; };
+		DF59B92024AEFC200087BFD4 /* GetInvoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */; };
 		FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */; };
 		FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */; };
 		FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */; };
@@ -556,6 +557,7 @@
 		B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachFileHelper.swift; sourceTree = "<group>"; };
 		B3E7BA3023F9105F0088259F /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B3E7BAB323F9167D0088259F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInvoiceParam.swift; sourceTree = "<group>"; };
 		FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPresenter.swift; sourceTree = "<group>"; };
 		FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
 		FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
@@ -1055,12 +1057,12 @@
 		B3E7B97C23F9102E0088259F /* Bizkasa */ = {
 			isa = PBXGroup;
 			children = (
+				B3E7B9D123F9105F0088259F /* SupportFiles */,
 				B3E7B9A423F9105F0088259F /* Cells */,
 				B3E7B9D423F9105F0088259F /* Components */,
 				B3E7B9A523F9105F0088259F /* Entities */,
 				B3E7B99123F9105F0088259F /* Services */,
 				B3E7B9A623F9105F0088259F /* Modules */,
-				B3E7B9D123F9105F0088259F /* SupportFiles */,
 				B3E7B98823F910310088259F /* LaunchScreen.storyboard */,
 			);
 			path = Bizkasa;
@@ -1105,6 +1107,7 @@
 				B337D36B2439EA97005B4EDA /* InsertInvoiceParam.swift */,
 				B326A87A245528DB00C4BC0D /* AddCustomerParam.swift */,
 				B3C97985245A9E8600F23F59 /* RegisterParam.swift */,
+				DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */,
 			);
 			path = APIParam;
 			sourceTree = "<group>";
@@ -1832,6 +1835,7 @@
 				B3E7BA5223F9105F0088259F /* Delegate.swift in Sources */,
 				B3E7BA7623F9105F0088259F /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				B36809A8240A5777002F8D00 /* CreateNewReceiptProtocols.swift in Sources */,
+				DF59B92024AEFC200087BFD4 /* GetInvoiceParam.swift in Sources */,
 				B3E7BA8323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				B3E7BA6C23F9105F0088259F /* NSMutableAttributedString+Extension.swift in Sources */,
 				B35FE7E42426174E0072D223 /* CheckOutViewController.swift in Sources */,

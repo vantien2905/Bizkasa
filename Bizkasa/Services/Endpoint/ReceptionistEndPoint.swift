@@ -13,7 +13,7 @@ import Alamofire
 
 enum ReceptionistEndPoint {
     case getListCustomerCheckIn
-    case getInvoices(page: Int, pageSize: Int, invoiceType: [Int], isInDay: Bool)
+    case getInvoices(param: GetInvoiceParam)
     case getRoomsByClass
     case getConfigPrice(roomId: Int)
     case getWidget(type: Int)
@@ -25,6 +25,7 @@ enum ReceptionistEndPoint {
     case changCalculatorMode(orderID: Int, mode: Int, hotelID: Int)
     case addCustomer(param: AddCustomerParam)
     case changeStatusRoom(roomID: Int, status: String)
+    case insertOrUpdateInvoice(param: InsertInvoiceParam)
    
 }
 
@@ -57,6 +58,8 @@ extension ReceptionistEndPoint: EndPointType {
             return "api/customer/AddCustomer"
         case .changeStatusRoom:
             return "api/Room/ChangeStatusRoom"
+        case .insertOrUpdateInvoice:
+            return "/api/invoice/InsertOrUpdateInvoice"
         }
     }
 
@@ -73,15 +76,8 @@ extension ReceptionistEndPoint: EndPointType {
         switch self {
         case .getListCustomerCheckIn, .getRoomsByClass, .getWidget:
             return [:]
-        case .getInvoices(let page, let pageSize, let invoiceType, let isInDay):
-            let param = ["Page": [
-                "currentPage": page,
-                "pageSize": pageSize
-                ] ,
-                         "InvoiceType": invoiceType,
-                         "IsShowInDay": isInDay
-                ] as [String : Any]
-            return param
+        case .getInvoices(let param):
+            return param.toJSON()
         case .getConfigPrice(let roomId):
             return ["roomid": roomId]
         case .getOrderForCheckOut(let orderId, let mode):
@@ -102,6 +98,8 @@ extension ReceptionistEndPoint: EndPointType {
             return param.toJSON()
         case .changeStatusRoom(roomID: let roomID, status: let status):
             return ["roomId": roomID, "status": status]
+        case .insertOrUpdateInvoice(param: let param):
+            return param.toJSON()
         }
     }
 

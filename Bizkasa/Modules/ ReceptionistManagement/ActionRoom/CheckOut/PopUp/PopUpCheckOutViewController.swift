@@ -37,7 +37,7 @@ class PopUpCheckOutViewController: BaseViewController {
     override func setUpViews() {
         vContent.setTitleAndLogo(AppImage.imgNote, title: "Nội dung")
         vContent.setPlaceholder("Nhập nội dung")
-        vCharge.setTitleAndLogo(AppImage.imgPrice, title: "Số tiền")
+        vCharge.setTitleAndLogo(AppImage.price, title: "Số tiền")
         vCharge.setPlaceHolder(title: "Nhập số tiền")
         vCharge.tfContent.keyboardType = .numberPad
 

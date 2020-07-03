@@ -22,12 +22,15 @@ class ServiceView: BaseViewXib {
 
     var widget: WidgetEntity?
     var total: Int = 1
+    
+    var totalAmount = 0
 
     var listWidget: [(WidgetEntity, Int)] = [] {
         didSet {
             let totalPrice = self.listWidget.reduce(Int(0)) { result, item in
                 return result + ((item.0.Price*) * item.1)
             }
+            self.totalAmount = totalPrice
             vTotalPrice.isHidden = totalPrice == 0
             lbTotalPrice.text = "\(totalPrice.formattedWithSeparator) VNĐ"
             heightTableView.constant = CGFloat(self.listWidget.count * 40)

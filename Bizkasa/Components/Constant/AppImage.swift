@@ -33,7 +33,7 @@ struct AppImage {
     static let unselected           = UIImage(named: "unselected")!
     static let imgAddress           = UIImage(named: "address")!
     static let imgTime           = UIImage(named: "time")!
-    static let imgPrice           = UIImage(named: "price")!
+    static let price           = UIImage(named: "price")!
     static let imgNote           = UIImage(named: "note")!
 
     static let receptionist    = UIImage(named: "receptionist")!
@@ -50,5 +50,7 @@ struct AppImage {
 
     static let imgPhone  = UIImage(named: "phone")!
     static let imgHotel  = UIImage(named: "hotel")!
-
+    static let menuHightlight = UIImage(named: "chooser-moment-button-highlighted")!
+    static let filter = UIImage(named: "filter")!
+    static let moment = UIImage(named: "chooser-moment-button")!
 }

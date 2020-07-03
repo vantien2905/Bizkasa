@@ -15,5 +15,7 @@ pod 'SwiftyJSON', '4.2.0'
     pod 'DropDown'
     pod 'IQKeyboardManagerSwift'
     pod 'BATabBarController', '~> 2.0.0'
+    pod "ESTabBarController-swift"
+    pod 'ExpandingMenu', '~> 0.4'
 
 end

@@ -17,12 +17,14 @@ protocol CreateNewReceiptWireframeProtocol: class {
 protocol CreateNewReceiptPresenterProtocol: class {
 
     var interactor: CreateNewReceiptInteractorInputProtocol? { get set }
+    func insertOrUpdateInvoice(param: InsertInvoiceParam)
 }
 
 //MARK: Interactor -
 protocol CreateNewReceiptInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?)
 }
 
 protocol CreateNewReceiptInteractorInputProtocol: class {
@@ -30,6 +32,7 @@ protocol CreateNewReceiptInteractorInputProtocol: class {
     var presenter: CreateNewReceiptInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func insertOrUpdateInvoice(param: InsertInvoiceParam)
 }
 
 //MARK: View -
@@ -38,4 +41,5 @@ protocol CreateNewReceiptViewProtocol: class {
     var presenter: CreateNewReceiptPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?)
 }

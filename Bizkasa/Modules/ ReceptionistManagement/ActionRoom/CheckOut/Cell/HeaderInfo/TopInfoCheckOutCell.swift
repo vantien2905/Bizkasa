@@ -32,6 +32,7 @@ class TopInfoCheckOutCell: UITableViewCell {
         textField.addTarget(self, action: #selector(changeTextValue), for: .editingChanged)
         vDropdown.hideTextAndLogo()
         vCalendar.hideTitle()
+        vCalendar.isChangeDate(false)
 
     }
 

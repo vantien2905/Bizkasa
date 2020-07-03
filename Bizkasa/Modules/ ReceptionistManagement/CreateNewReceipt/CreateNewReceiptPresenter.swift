@@ -11,6 +11,10 @@
 import UIKit
 
 class CreateNewReceiptPresenter: CreateNewReceiptPresenterProtocol {
+    func insertOrUpdateInvoice(param: InsertInvoiceParam) {
+        interactor?.insertOrUpdateInvoice(param: param)
+    }
+    
 
     weak private var view: CreateNewReceiptViewProtocol?
     var interactor: CreateNewReceiptInteractorInputProtocol?
@@ -25,5 +29,9 @@ class CreateNewReceiptPresenter: CreateNewReceiptPresenterProtocol {
 }
 
 extension CreateNewReceiptPresenter: CreateNewReceiptInteractorOutputProtocol {
+    func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?) {
+        view?.didInsertOrUpdateInvoice(result: result, error: error)
+    }
+    
 	
 }

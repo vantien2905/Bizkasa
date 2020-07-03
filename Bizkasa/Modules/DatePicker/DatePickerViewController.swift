@@ -10,14 +10,16 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
     
-    @IBOutlet weak var vMain:UIView!
-    @IBOutlet weak var datePicker:UIDatePicker!
-    @IBOutlet weak var timePicker:UIDatePicker!
-    @IBOutlet weak var btFromTime:UIButton!
-    @IBOutlet weak var btToTime:UIButton!
+    @IBOutlet weak var vMain        : UIView!
+    @IBOutlet weak var datePicker   : UIDatePicker!
+    @IBOutlet weak var timePicker   : UIDatePicker!
+    @IBOutlet weak var btFromTime   : UIButton!
+    @IBOutlet weak var btToTime     : UIButton!
+    @IBOutlet weak var vFromTime    : UIView!
+    @IBOutlet weak var vToTime      : UIView!
     
-    @IBOutlet weak var vFromTime:UIView!
-    @IBOutlet weak var vToTime:UIView!
+//    @IBOutlet weak var lbFromTitle  : UILabel!
+//    @IBOutlet weak var lbToTitle    : UILabel!
     
     let dateFormat = DateFormatter()
     var date = Date()
@@ -70,6 +72,11 @@ class DatePickerViewController: UIViewController {
             datePicker.date = dateFormat.date(from: fromTime)!
             timePicker.date = dateFormat.date(from: fromTime)!
         }
+    }
+    
+    func setTitle(from: String, to: String) {
+        btFromTime.setTitle(text: from)
+        btToTime.setTitle(text: to)
     }
     
     @IBAction func chooseFromTime(){

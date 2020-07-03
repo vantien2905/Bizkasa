@@ -14,9 +14,9 @@ class ListReceiptRouter: ListReceiptWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> ListReceiptViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ListReceiptViewController(nibName: nil, bundle: nil)
+        let view = ListReceiptViewController.initFromNib()
         let interactor = ListReceiptInteractor()
         let router = ListReceiptRouter()
         let presenter = ListReceiptPresenter(interface: view, interactor: interactor, router: router)

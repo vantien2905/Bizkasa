@@ -71,7 +71,7 @@ class CheckInViewController: BaseViewController {
         tfAdress.setTitleAndLogo(AppImage.imgAddress, title: "Địa chỉ")
 
         vTimeType.setTitleAndLogo(AppImage.imgTime, title: "Tính theo")
-        vConfigurePrice.setTitleAndLogo(AppImage.imgPrice, title: "Cấu hình giá")
+        vConfigurePrice.setTitleAndLogo(AppImage.price, title: "Cấu hình giá")
 //        vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
         tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Ngày cấp")
         tfCheckInTime.setTitleAndLogo(AppImage.imgTime, title: "Thời gian")
@@ -79,6 +79,7 @@ class CheckInViewController: BaseViewController {
         tvNote.setTitleAndLogo(AppImage.imgNote, title: "Ghi chú")
         vTimeType.dataSource = CaculatorMode.allValues.map({$0.title&})// ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
 
+        tfCheckInTime.titleDatePicker = ("NHẬN PHÒNG", "TRẢ PHÒNG")
 //        tfCheckInTime.dateTime = "2020-04-06T05:02:00"
 
         vTimeType.dropDownCallBack = {[weak self] (index, item) in

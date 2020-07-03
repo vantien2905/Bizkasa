@@ -70,6 +70,18 @@ extension UIView {
         self.layer.shadowOpacity = 0.4
         self.layer.shadowRadius = 3.0
     }
+    
+    func setShadowCircle(bgColor: UIColor) {
+        self.backgroundColor = bgColor
+        self.layer.masksToBounds = false
+        self.layer.cornerRadius = self.frame.height/2
+
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowRadius = 3.0
+    }
 }
 
 extension UIView {

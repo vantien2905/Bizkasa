@@ -14,9 +14,9 @@ class ListRoomRouter: ListRoomWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> ListRoomViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ListRoomViewController(nibName: nil, bundle: nil)
+        let view = ListRoomViewController.initFromNib()
         let interactor = ListRoomInteractor()
         let router = ListRoomRouter()
         let presenter = ListRoomPresenter(interface: view, interactor: interactor, router: router)
