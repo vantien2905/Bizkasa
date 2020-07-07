@@ -275,6 +275,17 @@
 		B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA3023F9105F0088259F /* DateHelper.swift */; };
 		B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E7BAB323F9167D0088259F /* Color.xcassets */; };
 		CB75D13F49ACBEDE5A2C4818 /* Pods_Bizkasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C1EF7F6741F2BF9CEC0E32 /* Pods_Bizkasa.framework */; };
+		DF1DD90C24B4A0B1006F41E4 /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90624B4A0B1006F41E4 /* PaymentPresenter.swift */; };
+		DF1DD90D24B4A0B1006F41E4 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90724B4A0B1006F41E4 /* PaymentRouter.swift */; };
+		DF1DD90E24B4A0B1006F41E4 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90824B4A0B1006F41E4 /* PaymentViewController.swift */; };
+		DF1DD90F24B4A0B1006F41E4 /* PaymentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90924B4A0B1006F41E4 /* PaymentProtocols.swift */; };
+		DF1DD91024B4A0B1006F41E4 /* PaymentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90A24B4A0B1006F41E4 /* PaymentInteractor.swift */; };
+		DF1DD91124B4A0B1006F41E4 /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1DD90B24B4A0B1006F41E4 /* PaymentViewController.xib */; };
+		DF1DD91524B4A224006F41E4 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91324B4A224006F41E4 /* PaymentCell.swift */; };
+		DF1DD91624B4A224006F41E4 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1DD91424B4A224006F41E4 /* PaymentCell.xib */; };
+		DF1DD91824B4A553006F41E4 /* PaymentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */; };
+		DF1DD91A24B4A8E7006F41E4 /* PaymentEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */; };
+		DF1DD91C24B4A9E2006F41E4 /* PaymentAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */; };
 		DF59B92024AEFC200087BFD4 /* GetInvoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */; };
 		FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */; };
 		FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */; };
@@ -557,6 +568,17 @@
 		B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachFileHelper.swift; sourceTree = "<group>"; };
 		B3E7BA3023F9105F0088259F /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B3E7BAB323F9167D0088259F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		DF1DD90624B4A0B1006F41E4 /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
+		DF1DD90724B4A0B1006F41E4 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
+		DF1DD90824B4A0B1006F41E4 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		DF1DD90924B4A0B1006F41E4 /* PaymentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProtocols.swift; sourceTree = "<group>"; };
+		DF1DD90A24B4A0B1006F41E4 /* PaymentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInteractor.swift; sourceTree = "<group>"; };
+		DF1DD90B24B4A0B1006F41E4 /* PaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
+		DF1DD91324B4A224006F41E4 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		DF1DD91424B4A224006F41E4 /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
+		DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentEntity.swift; sourceTree = "<group>"; };
+		DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentEndPoint.swift; sourceTree = "<group>"; };
+		DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIService.swift; sourceTree = "<group>"; };
 		DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInvoiceParam.swift; sourceTree = "<group>"; };
 		FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPresenter.swift; sourceTree = "<group>"; };
 		FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
@@ -747,6 +769,7 @@
 				B35FE7D22425D3580072D223 /* WidgetTypeEntity.swift */,
 				B35FE7E824261A430072D223 /* OrderInfoEntity.swift */,
 				B3C97975245A8E7100F23F59 /* RevenueDetail.swift */,
+				DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */,
 			);
 			path = Receptionist;
 			sourceTree = "<group>";
@@ -1118,6 +1141,7 @@
 				B3E7B99D23F9105F0088259F /* Base */,
 				B3E7B99F23F9105F0088259F /* UserEndPoint.swift */,
 				B35DCAEB241C9984005B70FC /* ReceptionistEndPoint.swift */,
+				DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -1136,6 +1160,7 @@
 				B3E7B9A123F9105F0088259F /* APIServiceProvider */,
 				B3E7B9A323F9105F0088259F /* UserAPIService.swift */,
 				B375965F241DCD3800ACC208 /* ReceptionistAPIService.swift */,
+				DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -1169,6 +1194,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DF1DD90324B49FF6006F41E4 /* PaymentManagement */,
 				FD4F3C1E2497398C0023974E /* ReceiptManagement */,
 				B35FE7BA2425CB8C0072D223 /* ServiceView */,
 				B32069CF241367330097D18B /* DatePicker */,
@@ -1458,6 +1484,37 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DF1DD90324B49FF6006F41E4 /* PaymentManagement */ = {
+			isa = PBXGroup;
+			children = (
+				DF1DD90424B4A09B006F41E4 /* List */,
+			);
+			path = PaymentManagement;
+			sourceTree = "<group>";
+		};
+		DF1DD90424B4A09B006F41E4 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DF1DD91224B4A20D006F41E4 /* Cell */,
+				DF1DD90624B4A0B1006F41E4 /* PaymentPresenter.swift */,
+				DF1DD90724B4A0B1006F41E4 /* PaymentRouter.swift */,
+				DF1DD90824B4A0B1006F41E4 /* PaymentViewController.swift */,
+				DF1DD90924B4A0B1006F41E4 /* PaymentProtocols.swift */,
+				DF1DD90A24B4A0B1006F41E4 /* PaymentInteractor.swift */,
+				DF1DD90B24B4A0B1006F41E4 /* PaymentViewController.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		DF1DD91224B4A20D006F41E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF1DD91324B4A224006F41E4 /* PaymentCell.swift */,
+				DF1DD91424B4A224006F41E4 /* PaymentCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FD4F3C1E2497398C0023974E /* ReceiptManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -1556,12 +1613,14 @@
 				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
 				B3DA710E2437494500B1C8AA /* RoomChargeCell.xib in Resources */,
 				FD82CE67249745AE0075C1AC /* ReceiptViewController.xib in Resources */,
+				DF1DD91624B4A224006F41E4 /* PaymentCell.xib in Resources */,
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
 				B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */,
 				B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */,
 				B389C3BB244190D000106320 /* ServiceViewSingle.xib in Resources */,
 				B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */,
 				B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */,
+				DF1DD91124B4A0B1006F41E4 /* PaymentViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
 				B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */,
 				B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */,
@@ -1667,6 +1726,7 @@
 				B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */,
 				B36809A9240A5777002F8D00 /* CreateNewReceiptInteractor.swift in Sources */,
 				B3E7BA5B23F9105F0088259F /* HomeBaseViewController.swift in Sources */,
+				DF1DD91024B4A0B1006F41E4 /* PaymentInteractor.swift in Sources */,
 				B3E7BA4823F9105F0088259F /* FlashRouter.swift in Sources */,
 				B3E7BA4323F9105F0088259F /* LeftMenuProtocols.swift in Sources */,
 				B3E7BA3523F9105F0088259F /* NetworkRequest.swift in Sources */,
@@ -1678,6 +1738,7 @@
 				B3E7BA9123F9105F0088259F /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				B3E7BA7523F9105F0088259F /* UITextField+Extensions.swift in Sources */,
 				B3E7BA4423F9105F0088259F /* LeftMenuViewController.swift in Sources */,
+				DF1DD91524B4A224006F41E4 /* PaymentCell.swift in Sources */,
 				B3E7BA5423F9105F0088259F /* Segue.swift in Sources */,
 				B3E7BA5623F9105F0088259F /* BasicTransitionAnimator.swift in Sources */,
 				B3E7BA8D23F9105F0088259F /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
@@ -1685,6 +1746,7 @@
 				B3E7BAAB23F9105F0088259F /* LocalizationManager.swift in Sources */,
 				B35FE7E22426174E0072D223 /* CheckOutPresenter.swift in Sources */,
 				B3C97976245A8E7100F23F59 /* RevenueDetail.swift in Sources */,
+				DF1DD90C24B4A0B1006F41E4 /* PaymentPresenter.swift in Sources */,
 				B3E7BA4023F9105F0088259F /* HomeProtocols.swift in Sources */,
 				B3C9797F245A99E800F23F59 /* SignUpRouter.swift in Sources */,
 				B3142FEB24273E03003609DA /* HeaderCheckOutCell.swift in Sources */,
@@ -1709,6 +1771,7 @@
 				B3E7BAA923F9105F0088259F /* UserDefaultHelper.swift in Sources */,
 				B3E7BAA823F9105F0088259F /* SlideInPresentationController.swift in Sources */,
 				B35FE7E32426174E0072D223 /* CheckOutRouter.swift in Sources */,
+				DF1DD91A24B4A8E7006F41E4 /* PaymentEndPoint.swift in Sources */,
 				B3759660241DCD3800ACC208 /* ReceptionistAPIService.swift in Sources */,
 				B36809BD240A5C8C002F8D00 /* ActionDropdownCell.swift in Sources */,
 				B35FE7E52426174E0072D223 /* CheckOutProtocols.swift in Sources */,
@@ -1751,6 +1814,7 @@
 				B3E7BA8C23F9105F0088259F /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				B3E7BA3923F9105F0088259F /* Provider.swift in Sources */,
 				B3E7BA4C23F9105F0088259F /* FlashProtocols.swift in Sources */,
+				DF1DD90F24B4A0B1006F41E4 /* PaymentProtocols.swift in Sources */,
 				B3E7BA8423F9105F0088259F /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				B3680997240A452E002F8D00 /* AppLabel.swift in Sources */,
 				B36809C5240A6AC5002F8D00 /* CheckInPresenter.swift in Sources */,
@@ -1773,6 +1837,7 @@
 				B30957D824010B4400335639 /* LoginPresenter.swift in Sources */,
 				B337D36C2439EA97005B4EDA /* InsertInvoiceParam.swift in Sources */,
 				B3E7BA7B23F9105F0088259F /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				DF1DD91824B4A553006F41E4 /* PaymentEntity.swift in Sources */,
 				B3E7BAA423F9105F0088259F /* AppKey.swift in Sources */,
 				B3E7BA4F23F9105F0088259F /* UIViewController+Container.swift in Sources */,
 				B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */,
@@ -1785,6 +1850,7 @@
 				B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */,
 				B38B9D372406BCF7006D69B0 /* ListCustomerPresenter.swift in Sources */,
 				B3DA711624389C4600B1C8AA /* BasePopUpView.swift in Sources */,
+				DF1DD90D24B4A0B1006F41E4 /* PaymentRouter.swift in Sources */,
 				B3E7BA7D23F9105F0088259F /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				B3E7B97E23F9102E0088259F /* AppDelegate.swift in Sources */,
 				B3E7BA9E23F9105F0088259F /* AppImage.swift in Sources */,
@@ -1804,6 +1870,7 @@
 				B3DA712124398EAD00B1C8AA /* CheckInParam.swift in Sources */,
 				B3E7BAAA23F9105F0088259F /* ValidateHelper.swift in Sources */,
 				B3142FE224272716003609DA /* TopInfoCheckOutCell.swift in Sources */,
+				DF1DD91C24B4A9E2006F41E4 /* PaymentAPIService.swift in Sources */,
 				B3E7BA6623F9105F0088259F /* UIButton+Extension.swift in Sources */,
 				B3E7BA5723F9105F0088259F /* BaseViewController.swift in Sources */,
 				B3616855244D82EF0067359B /* AppChooseTime.swift in Sources */,
@@ -1849,6 +1916,7 @@
 				B3E7BA3623F9105F0088259F /* DeviceParam.swift in Sources */,
 				B3DA711824389C8E00B1C8AA /* AnimationHelper.swift in Sources */,
 				B3E7BA5123F9105F0088259F /* Preferences.swift in Sources */,
+				DF1DD90E24B4A0B1006F41E4 /* PaymentViewController.swift in Sources */,
 				B30957DA24010B4400335639 /* LoginViewController.swift in Sources */,
 				B3E7BA8E23F9105F0088259F /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				B3E7BA5923F9105F0088259F /* DatePickerViewController.swift in Sources */,

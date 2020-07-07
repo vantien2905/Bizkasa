@@ -165,6 +165,9 @@ class BaseViewController: UIViewController {
         case 2:
             let vc = ReceiptRouter.createModule().convertNavi()
             sideMenuController?.setContentViewController(to: vc)
+        case 3:
+            let vc = PaymentRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
         default:
             self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
         }

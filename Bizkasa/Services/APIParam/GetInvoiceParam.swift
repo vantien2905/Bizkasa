@@ -47,6 +47,17 @@ class GetInvoiceParam: Mappable {
         param.IsShowInDay = true
         return param
     }
+    
+    static func setDefaultPaymentParam() -> GetInvoiceParam {
+        let page = PageParam()
+        page.pageSize = 20
+        page.currentPage = 1
+        let param = GetInvoiceParam()
+        param.InvoiceType = [2, 3]
+        param.Page = page
+        param.IsShowInDay = true
+        return param
+    }
 }
 
 class PageParam: Mappable {
