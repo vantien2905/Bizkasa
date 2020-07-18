@@ -81,6 +81,7 @@ class CheckInViewController: BaseViewController {
 
         tfCheckInTime.titleDatePicker = ("NHẬN PHÒNG", "TRẢ PHÒNG")
 //        tfCheckInTime.dateTime = "2020-04-06T05:02:00"
+        tfCheckInTime.haveSetTime = true
 
         vTimeType.dropDownCallBack = {[weak self] (index, item) in
             guard let self = self else { return }

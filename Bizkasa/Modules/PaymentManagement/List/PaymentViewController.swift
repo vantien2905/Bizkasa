@@ -13,8 +13,12 @@ import UIKit
 class PaymentViewController: HomeBaseViewController {
     
     @IBOutlet weak var tbPayment: UITableView!
-
-	var presenter: PaymentPresenterProtocol?
+    @IBOutlet weak var vPaymentType     : AppDropdownBorder!
+    @IBOutlet weak var vTime            : AppDateTime!
+    @IBOutlet weak var hightFilterView  : NSLayoutConstraint!
+    @IBOutlet weak var btnHideFilter    : UIButton!
+    
+    var presenter: PaymentPresenterProtocol?
     
     var listPayment: [PaymentEntity] = [] {
         didSet {
@@ -23,8 +27,10 @@ class PaymentViewController: HomeBaseViewController {
     }
     
     var refreshControl = UIRefreshControl()
-
-	override func viewDidLoad() {
+    
+    let param = GetInvoiceParam.setDefaultPaymentParam()
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         
@@ -37,20 +43,20 @@ class PaymentViewController: HomeBaseViewController {
         super.viewWillAppear(animated)
         refreshData()
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func refreshData() {
-        let param = GetInvoiceParam.setDefaultPaymentParam()
+        param.Page?.currentPage = 1
         presenter?.getInvoiceByPayment(param: param)
     }
     
     override func setUpNavigation() {
         setTitleNavigation(title: "Phiếu chi")
     }
-
+    
     private func configureTableView() {
         tbPayment.registerTableCell(PaymentCell.self)
         tbPayment.delegate = self
@@ -58,26 +64,83 @@ class PaymentViewController: HomeBaseViewController {
         tbPayment.rowHeight = UITableView.automaticDimension
         tbPayment.contentInset.bottom = 50
     }
-
+    
+    override func setUpView() {
+        vPaymentType.dataSource = ["Chọn loại chi",
+                                   "Tiền phòng",
+                                   "Tiền dịch vụ",
+                                   "Tiền điện",
+                                   "Tiền nước",
+                                   "Tiền internet",
+                                   "Tiền sửa chữa",
+                                   "Tiền tiếp khách",
+                                   "Tiền nhập kho",
+                                   "Tiền chi khác",
+                                   "Phụ thu",
+                                   "Giảm trừ",
+                                   "Trả trước"
+        ]
+        vTime.setTitleAndLogo(AppImage.imgTime, title: "Khoảng thời gian")
+        btnHideFilterTapped()
+        
+        vTime.setDateAndTime(fromTime: DateHelper.getDateTimeISO(), toTime: DateHelper.getDateTimeISO())
+        
+        vPaymentType.dropDownCallBack = {[weak self] (index, item) in
+            self?.param.InvoiceCategory = index != 0 ? index : nil
+        }
+    }
+    
+    var isShowFilter = false
+    @IBAction func btnFilterTapped() {
+        isShowFilter = !isShowFilter
+        btnHideFilter.isHidden = !isShowFilter
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.2) {
+            self.hightFilterView.constant = self.isShowFilter ? 195 : 0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func btnHideFilterTapped() {
+        view.layoutIfNeeded()
+        isShowFilter = false
+        btnHideFilter.isHidden = true
+        UIView.animate(withDuration: 0.2) {
+            self.hightFilterView.constant = self.isShowFilter ? 195 : 0
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func btnFiltterTapped() {
+        param.Page?.currentPage = 1
+        param.Page?.pageSize = 20
+        param.FromDate = vTime.fromTime
+        param.ToDate = vTime.toTime
+        presenter?.getInvoiceByPayment(param: param)
+        btnHideFilterTapped()
+    }
+    
 }
 
 extension PaymentViewController: PaymentViewProtocol {
     func didGetInvoiceByPayment(result: PaymentEntityResponse?, error: APIError?) {
+        refreshControl.endRefreshing()
         if let result = result {
+            result.payment.isEmpty ? self.tbPayment.setEmptyView() : self.tbPayment.restore()
             self.listPayment = result.payment
         } else {
             self.makeToast(message: error?.message?.first ?? "")
         }
     }
     
-	
+    
 }
 
 extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listPayment.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(PaymentCell.self)
         cell.invoice = listPayment[indexPath.row]

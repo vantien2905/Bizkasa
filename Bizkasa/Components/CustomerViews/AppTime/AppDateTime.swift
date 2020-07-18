@@ -27,6 +27,8 @@ class AppDateTime: BaseViewXib {
     
     var titleDatePicker = ("Từ", "Đến")
     
+    var haveSetTime = false
+    
     override func draw(_ rect: CGRect) {
         //        vFromTime.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fromTimeAction)))
         //        vToTime.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toTimeAction)))
@@ -78,7 +80,7 @@ class AppDateTime: BaseViewXib {
         let timeFrom = DateHelper.getCurrentTime()
         let timeTo = DateHelper.getCurrentTime()
         
-        tfContent.text = "\(dateFrom) \(timeFrom) - \(dateTo) \(timeTo)"
+        tfContent.text =  "\(dateFrom) \(timeFrom) - \(dateTo) \(timeTo)"
     }
     
     func setDateAndTime(fromTime: String, toTime: String) {
@@ -95,7 +97,7 @@ class AppDateTime: BaseViewXib {
     
     @IBAction func btnCalendarTapped() {
         
-        let vc = DatePickerViewController.createModule(fromTime: self.fromTime, toTime: self.toTime, delegate: self)
+        let vc = DatePickerViewController.createModule(fromTime: self.fromTime, toTime: self.toTime, delegate: self, haveSetTime: haveSetTime)
         vc.view.layoutIfNeeded()
         vc.setTitle(from: titleDatePicker.0, to: titleDatePicker.1)
         UIApplication.topViewController()?.present(controller: vc)
@@ -113,7 +115,7 @@ extension AppDateTime : DatePickerViewControllerDelegate {
         let timeFrom = DateHelper.getTime(input: fromTime)
         let timeTo = DateHelper.getTime(input: toTime)
         
-        tfContent.text = "\(dateFrom) \(timeFrom) - \(dateTo) \(timeTo)"
+        tfContent.text = haveSetTime ? "\(dateFrom) \(timeFrom) - \(dateTo) \(timeTo)" : "\(dateFrom) - \(dateTo)"
         
         getDateTime?(fromTime , toTime)
     }

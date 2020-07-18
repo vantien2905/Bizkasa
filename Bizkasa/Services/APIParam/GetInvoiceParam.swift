@@ -19,6 +19,7 @@ class GetInvoiceParam: Mappable {
     var Keyword         : String?
     var PaymentMethod   : Int?
     var InvoiceStatus   : Int?
+    var InvoiceCategory : Int?
 
     required init?(map: Map) {
     }
@@ -35,6 +36,7 @@ class GetInvoiceParam: Mappable {
         self.Keyword        <- map["Keyword"]
         self.PaymentMethod <- map["PaymentMethod"]
         self.InvoiceStatus <- map["InvoiceStatus"]
+        self.InvoiceCategory <- map["InvoiceCategory"]
     }
     
     static func setDefaultParam() -> GetInvoiceParam {
@@ -55,7 +57,8 @@ class GetInvoiceParam: Mappable {
         let param = GetInvoiceParam()
         param.InvoiceType = [2, 3]
         param.Page = page
-        param.IsShowInDay = true
+        param.FromDate = DateHelper.getDateTimeISO()
+        param.ToDate = DateHelper.getDateTimeISO()
         return param
     }
 }

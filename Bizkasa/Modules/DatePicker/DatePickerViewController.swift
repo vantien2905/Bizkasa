@@ -33,12 +33,15 @@ class DatePickerViewController: UIViewController {
     
     let calendar = Calendar.current
     
-    class open func createModule(fromTime:String, toTime:String, delegate:DatePickerViewControllerDelegate, isToTime:Bool = false, modalPresent:UIModalPresentationStyle = .overCurrentContext, modalTransition:UIModalTransitionStyle = .crossDissolve ) -> DatePickerViewController {
+    var haveSetTime = false
+    
+    class open func createModule(fromTime:String, toTime:String, delegate:DatePickerViewControllerDelegate, isToTime:Bool = false, modalPresent:UIModalPresentationStyle = .overCurrentContext, modalTransition:UIModalTransitionStyle = .crossDissolve, haveSetTime: Bool = false) -> DatePickerViewController {
         let vc = DatePickerViewController.initFromNib()
         vc.fromTime = fromTime
         vc.toTime = toTime
         vc.delegate = delegate
         vc.isToTime = isToTime
+        vc.haveSetTime = haveSetTime
         vc.modalPresentationStyle = modalPresent
         vc.modalTransitionStyle = modalTransition
         return vc
@@ -58,6 +61,8 @@ class DatePickerViewController: UIViewController {
         timePicker.datePickerMode = .time
         datePicker.locale = Locale(identifier: "vi_VN")
         timePicker.locale = Locale(identifier: "en_GB")
+        
+        timePicker.isHidden = !haveSetTime
         
         if isToTime {
             vFromTime.backgroundColor = AppColor.whiteColor

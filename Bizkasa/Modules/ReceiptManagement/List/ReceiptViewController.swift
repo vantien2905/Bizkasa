@@ -91,14 +91,12 @@ class ReceiptViewController: HomeBaseViewController {
             case 3:
                 self?.param.InvoiceStatus = 7
             default:
-                break
+                self?.param.InvoiceStatus = nil
             }
         }
         
         vPaymentType.dropDownCallBack = {[weak self] (index, item) in
-            if index != 0 {
-                self?.param.PaymentMethod = index - 1
-            }
+            self?.param.PaymentMethod = index != 0 ? index - 1 : nil
         }
     }
     
@@ -159,6 +157,7 @@ extension ReceiptViewController: ReceiptViewProtocol {
     func didGetInvoices(result: InvoiceResponse?, error: APIError?) {
         refreshControl.endRefreshing()
         if let result = result {
+            result.dataPaging?.data.isEmpty ?? true ? self.tbReceipt.setEmptyView() : self.tbReceipt.restore()
             self.invoiceResponse = result
         } else {
             self.makeToast(message: error?.message?.first ?? "")

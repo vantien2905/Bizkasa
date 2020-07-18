@@ -4,13 +4,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController">
             <connections>
+                <outlet property="btnHideFilter" destination="Q2y-DW-sg8" id="sUQ-jY-Dta"/>
+                <outlet property="hightFilterView" destination="6Vu-kB-MgD" id="owp-dg-ewQ"/>
                 <outlet property="tbPayment" destination="PQN-uo-D5q" id="2BK-2k-0QP"/>
+                <outlet property="vPaymentType" destination="cML-az-90a" id="DBX-GO-S6S"/>
+                <outlet property="vTime" destination="UQC-hm-Z5j" id="eYF-p6-WY2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,16 +28,145 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <button opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2y-DW-sg8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="btnHideFilterTapped" destination="-1" eventType="touchUpInside" id="2H8-KZ-CfC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgg-FE-ojb">
+                    <rect key="frame" x="325" y="617" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="dVH-JG-2h2"/>
+                        <constraint firstAttribute="width" constant="40" id="nEJ-qG-6s3"/>
+                    </constraints>
+                    <state key="normal" image="filter"/>
+                    <connections>
+                        <action selector="btnFilterTapped" destination="-1" eventType="touchUpInside" id="zqV-lR-el7"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1l-ej-9mQ">
+                    <rect key="frame" x="0.0" y="472" width="375" height="195"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jvK-id-5NQ">
+                            <rect key="frame" x="10" y="10" width="355" height="165"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cML-az-90a" customClass="AppDropdownBorder" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="WPw-kr-8B7"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-hm-Z5j" customClass="AppDateTime" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="50" width="355" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="4nI-zK-WJh"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoE-dl-I5k">
+                                    <rect key="frame" x="0.0" y="120" width="355" height="45"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-8V-jG9">
+                                            <rect key="frame" x="77.5" y="10" width="200" height="35"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypv-1j-g7N">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="35"/>
+                                                    <color key="backgroundColor" name="secondMain"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="MuP-AW-w1D"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Tìm">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="btnFiltterTapped" destination="-1" eventType="touchUpInside" id="QBc-vH-OGH"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4f-tE-6AQ">
+                                                    <rect key="frame" x="120" y="0.0" width="80" height="35"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Huỷ">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="btnHideFilterTapped" destination="-1" eventType="touchUpInside" id="EBx-2m-5Rx"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="QEl-2d-Nl0"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Ihr-8V-jG9" secondAttribute="bottom" id="5NX-un-7zh"/>
+                                        <constraint firstItem="Ihr-8V-jG9" firstAttribute="centerX" secondItem="LoE-dl-I5k" secondAttribute="centerX" id="SOO-0Q-YP5"/>
+                                        <constraint firstItem="Ihr-8V-jG9" firstAttribute="top" secondItem="LoE-dl-I5k" secondAttribute="top" constant="10" id="yoW-H6-FYu"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="195" id="6Vu-kB-MgD"/>
+                        <constraint firstAttribute="trailing" secondItem="jvK-id-5NQ" secondAttribute="trailing" constant="10" id="Bj7-Cr-WFn"/>
+                        <constraint firstAttribute="bottom" secondItem="jvK-id-5NQ" secondAttribute="bottom" constant="20" id="Bvt-Hn-IC7"/>
+                        <constraint firstItem="jvK-id-5NQ" firstAttribute="leading" secondItem="i1l-ej-9mQ" secondAttribute="leading" constant="10" id="mLX-k6-wpo"/>
+                        <constraint firstItem="jvK-id-5NQ" firstAttribute="top" secondItem="i1l-ej-9mQ" secondAttribute="top" constant="10" id="qwI-a3-6jl"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="i1l-ej-9mQ" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="20I-OB-9yB"/>
+                <constraint firstItem="i1l-ej-9mQ" firstAttribute="trailing" secondItem="zIn-FR-UZl" secondAttribute="trailing" id="7YN-2W-LeI"/>
                 <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="PQN-uo-D5q" secondAttribute="bottom" id="9ON-rc-L8v"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="Q2y-DW-sg8" secondAttribute="bottom" id="GLl-rz-hcu"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="Bgg-FE-ojb" secondAttribute="bottom" constant="10" id="IQa-4Y-HEM"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="Bgg-FE-ojb" secondAttribute="trailing" constant="10" id="IqG-3u-ScO"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="i1l-ej-9mQ" secondAttribute="bottom" id="SFj-c7-o2x"/>
                 <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="PQN-uo-D5q" secondAttribute="trailing" id="Vnh-wb-Vrr"/>
                 <constraint firstItem="PQN-uo-D5q" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="a2L-Wy-KGU"/>
                 <constraint firstItem="PQN-uo-D5q" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="elV-R7-if0"/>
+                <constraint firstItem="Q2y-DW-sg8" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="m7z-nc-sQ3"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="Q2y-DW-sg8" secondAttribute="trailing" id="uKe-tI-wV8"/>
+                <constraint firstItem="Q2y-DW-sg8" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="yEY-qq-tJp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <point key="canvasLocation" x="138" y="153"/>
         </view>
     </objects>
+    <resources>
+        <image name="filter" width="80" height="80"/>
+        <namedColor name="secondMain">
+            <color red="0.58431372549019611" green="0.80784313725490198" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

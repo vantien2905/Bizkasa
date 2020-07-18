@@ -17,7 +17,7 @@ class TabbarReceptionistViewController: UITabBarController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.delegate = self
         let listRoom = ListRoomRouter.createModule().convertNavi()
         let iconRoom = UITabBarItem(title: "Phòng", image: AppImage.imgRoom, selectedImage: AppImage.imgRoom)
         listRoom.tabBarItem = iconRoom
@@ -32,7 +32,10 @@ class TabbarReceptionistViewController: UITabBarController {
         let controllers = [listRoom, listReceipt, listCustomer]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
         
-        
+        for tabBarItem in tabBar.items! {
+            
+            tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+        }
         
 //        let vc1 = ListRoomRouter.createModule()
 //        vc1.menuTapped = { [weak self] in
@@ -80,11 +83,23 @@ class TabbarReceptionistViewController: UITabBarController {
     }
 }
 
-extension TabbarReceptionistViewController: BATabBarControllerDelegate {
+extension TabbarReceptionistViewController: BATabBarControllerDelegate, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: BATabBarController, didSelect: UIViewController) {
 
     }
     
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
+        guard let fromView = selectedViewController?.view, let toView = viewController.view else {
+          return false // Make sure you want this as false
+        }
+
+        if fromView != toView {
+          UIView.transition(from: fromView, to: toView, duration: 0.3, options: [.transitionCrossDissolve], completion: nil)
+        }
+
+        return true
+    }
     
     
 }
