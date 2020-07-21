@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 protocol PaymentAPIServiceProtocol {
     func getInvoiceByPayment(param: GetInvoiceParam, success: @escaping SuccessHandler<PaymentEntityResponse>.object, failure: @escaping RequestFailure)
 }

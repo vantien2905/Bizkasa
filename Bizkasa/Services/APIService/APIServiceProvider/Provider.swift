@@ -28,4 +28,8 @@ class Provider {
     var paymentAPIService: PaymentAPIServiceProtocol {
         return PaymentAPIService(network: networkManager)
     }
+    
+    var roomManagementAPIService: RoomManagementAPIServiceProtocol {
+        return RoomManagementAPIService(network: networkManager)
+    }
 }

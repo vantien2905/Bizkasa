@@ -286,7 +286,21 @@
 		DF1DD91824B4A553006F41E4 /* PaymentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */; };
 		DF1DD91A24B4A8E7006F41E4 /* PaymentEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */; };
 		DF1DD91C24B4A9E2006F41E4 /* PaymentAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */; };
+		DF446BA724C69D6D00B46EB5 /* SwipeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF446BA624C69D6D00B46EB5 /* SwipeHelper.swift */; };
 		DF59B92024AEFC200087BFD4 /* GetInvoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */; };
+		DF6571F424C4168A00D20DA5 /* RoomManagementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6571EE24C4168A00D20DA5 /* RoomManagementPresenter.swift */; };
+		DF6571F524C4168A00D20DA5 /* RoomManagementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6571EF24C4168A00D20DA5 /* RoomManagementRouter.swift */; };
+		DF6571F624C4168A00D20DA5 /* RoomManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6571F024C4168A00D20DA5 /* RoomManagementViewController.swift */; };
+		DF6571F724C4168A00D20DA5 /* RoomManagementProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6571F124C4168A00D20DA5 /* RoomManagementProtocols.swift */; };
+		DF6571F824C4168A00D20DA5 /* RoomManagementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6571F224C4168A00D20DA5 /* RoomManagementInteractor.swift */; };
+		DF6571F924C4168A00D20DA5 /* RoomManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF6571F324C4168A00D20DA5 /* RoomManagementViewController.xib */; };
+		DF6571FE24C4178B00D20DA5 /* FloorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6571FC24C4178B00D20DA5 /* FloorCell.swift */; };
+		DF6571FF24C4178B00D20DA5 /* FloorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF6571FD24C4178B00D20DA5 /* FloorCell.xib */; };
+		DF65720324C4179E00D20DA5 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720124C4179E00D20DA5 /* RoomCell.swift */; };
+		DF65720424C4179E00D20DA5 /* RoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF65720224C4179E00D20DA5 /* RoomCell.xib */; };
+		DF65720624C42B2800D20DA5 /* RoomManagementEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720524C42B2800D20DA5 /* RoomManagementEndPoint.swift */; };
+		DF65720824C42BDC00D20DA5 /* FloorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720724C42BDC00D20DA5 /* FloorEntity.swift */; };
+		DF65720A24C42C8000D20DA5 /* RoomManagementAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */; };
 		FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */; };
 		FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */; };
 		FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */; };
@@ -579,7 +593,21 @@
 		DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentEntity.swift; sourceTree = "<group>"; };
 		DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentEndPoint.swift; sourceTree = "<group>"; };
 		DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIService.swift; sourceTree = "<group>"; };
+		DF446BA624C69D6D00B46EB5 /* SwipeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeHelper.swift; sourceTree = "<group>"; };
 		DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInvoiceParam.swift; sourceTree = "<group>"; };
+		DF6571EE24C4168A00D20DA5 /* RoomManagementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementPresenter.swift; sourceTree = "<group>"; };
+		DF6571EF24C4168A00D20DA5 /* RoomManagementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementRouter.swift; sourceTree = "<group>"; };
+		DF6571F024C4168A00D20DA5 /* RoomManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementViewController.swift; sourceTree = "<group>"; };
+		DF6571F124C4168A00D20DA5 /* RoomManagementProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementProtocols.swift; sourceTree = "<group>"; };
+		DF6571F224C4168A00D20DA5 /* RoomManagementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementInteractor.swift; sourceTree = "<group>"; };
+		DF6571F324C4168A00D20DA5 /* RoomManagementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomManagementViewController.xib; sourceTree = "<group>"; };
+		DF6571FC24C4178B00D20DA5 /* FloorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorCell.swift; sourceTree = "<group>"; };
+		DF6571FD24C4178B00D20DA5 /* FloorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloorCell.xib; sourceTree = "<group>"; };
+		DF65720124C4179E00D20DA5 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
+		DF65720224C4179E00D20DA5 /* RoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCell.xib; sourceTree = "<group>"; };
+		DF65720524C42B2800D20DA5 /* RoomManagementEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementEndPoint.swift; sourceTree = "<group>"; };
+		DF65720724C42BDC00D20DA5 /* FloorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorEntity.swift; sourceTree = "<group>"; };
+		DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementAPIService.swift; sourceTree = "<group>"; };
 		FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPresenter.swift; sourceTree = "<group>"; };
 		FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
 		FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
@@ -770,6 +798,7 @@
 				B35FE7E824261A430072D223 /* OrderInfoEntity.swift */,
 				B3C97975245A8E7100F23F59 /* RevenueDetail.swift */,
 				DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */,
+				DF65720724C42BDC00D20DA5 /* FloorEntity.swift */,
 			);
 			path = Receptionist;
 			sourceTree = "<group>";
@@ -1142,6 +1171,7 @@
 				B3E7B99F23F9105F0088259F /* UserEndPoint.swift */,
 				B35DCAEB241C9984005B70FC /* ReceptionistEndPoint.swift */,
 				DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */,
+				DF65720524C42B2800D20DA5 /* RoomManagementEndPoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -1161,6 +1191,7 @@
 				B3E7B9A323F9105F0088259F /* UserAPIService.swift */,
 				B375965F241DCD3800ACC208 /* ReceptionistAPIService.swift */,
 				DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */,
+				DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -1194,6 +1225,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DF6571ED24C4165700D20DA5 /* RoomManagement */,
 				DF1DD90324B49FF6006F41E4 /* PaymentManagement */,
 				FD4F3C1E2497398C0023974E /* ReceiptManagement */,
 				B37954202402A3F0007768B8 /*  ReceptionistManagement */,
@@ -1471,6 +1503,7 @@
 				B3E7BA2E23F9105F0088259F /* ShareNativeHelper.swift */,
 				B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */,
 				B3E7BA3023F9105F0088259F /* DateHelper.swift */,
+				DF446BA624C69D6D00B46EB5 /* SwipeHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1513,6 +1546,47 @@
 				DF1DD91424B4A224006F41E4 /* PaymentCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DF6571ED24C4165700D20DA5 /* RoomManagement */ = {
+			isa = PBXGroup;
+			children = (
+				DF6571FA24C4176200D20DA5 /* Cell */,
+				DF6571EE24C4168A00D20DA5 /* RoomManagementPresenter.swift */,
+				DF6571EF24C4168A00D20DA5 /* RoomManagementRouter.swift */,
+				DF6571F024C4168A00D20DA5 /* RoomManagementViewController.swift */,
+				DF6571F124C4168A00D20DA5 /* RoomManagementProtocols.swift */,
+				DF6571F224C4168A00D20DA5 /* RoomManagementInteractor.swift */,
+				DF6571F324C4168A00D20DA5 /* RoomManagementViewController.xib */,
+			);
+			path = RoomManagement;
+			sourceTree = "<group>";
+		};
+		DF6571FA24C4176200D20DA5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF65720024C4178F00D20DA5 /* Room */,
+				DF6571FB24C4176800D20DA5 /* Floor */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DF6571FB24C4176800D20DA5 /* Floor */ = {
+			isa = PBXGroup;
+			children = (
+				DF6571FC24C4178B00D20DA5 /* FloorCell.swift */,
+				DF6571FD24C4178B00D20DA5 /* FloorCell.xib */,
+			);
+			path = Floor;
+			sourceTree = "<group>";
+		};
+		DF65720024C4178F00D20DA5 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				DF65720124C4179E00D20DA5 /* RoomCell.swift */,
+				DF65720224C4179E00D20DA5 /* RoomCell.xib */,
+			);
+			path = Room;
 			sourceTree = "<group>";
 		};
 		FD4F3C1E2497398C0023974E /* ReceiptManagement */ = {
@@ -1616,6 +1690,7 @@
 				DF1DD91624B4A224006F41E4 /* PaymentCell.xib in Resources */,
 				B38B9D492406BD27006D69B0 /* ListReceiptViewController.xib in Resources */,
 				B32069D5241369150097D18B /* TextFieldCalendar.xib in Resources */,
+				DF6571F924C4168A00D20DA5 /* RoomManagementViewController.xib in Resources */,
 				B35FE7E72426174E0072D223 /* CheckOutViewController.xib in Resources */,
 				B389C3BB244190D000106320 /* ServiceViewSingle.xib in Resources */,
 				B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */,
@@ -1639,6 +1714,7 @@
 				B379544C2402C4F9007768B8 /* Roboto-Italic.ttf in Resources */,
 				B3E7BA3C23F9105F0088259F /* HomeViewController.xib in Resources */,
 				B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */,
+				DF65720424C4179E00D20DA5 /* RoomCell.xib in Resources */,
 				B36809B3240A5AC5002F8D00 /* AppDropdownBorder.xib in Resources */,
 				B3E7BA5F23F9105F0088259F /* Assets.xcassets in Resources */,
 				B36809AA240A5777002F8D00 /* CreateNewReceiptViewController.xib in Resources */,
@@ -1647,6 +1723,7 @@
 				B3E7BA5823F9105F0088259F /* DateTimePickerViewController.xib in Resources */,
 				B3C97983245A99E800F23F59 /* SignUpViewController.xib in Resources */,
 				B30957DD24010B4400335639 /* LoginViewController.xib in Resources */,
+				DF6571FF24C4178B00D20DA5 /* FloorCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1759,12 +1836,14 @@
 				FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */,
 				B3E7BAA623F9105F0088259F /* SlideInPresentationAnimator.swift in Sources */,
 				B3E7BAA523F9105F0088259F /* AppFont.swift in Sources */,
+				DF6571FE24C4178B00D20DA5 /* FloorCell.swift in Sources */,
 				B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */,
 				B38B9D482406BD27006D69B0 /* ListReceiptInteractor.swift in Sources */,
 				B3E7BA8823F9105F0088259F /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B379542B2402A43F007768B8 /* ListRoomProtocols.swift in Sources */,
 				B35FE7C92425D0030072D223 /* ListServiceProtocols.swift in Sources */,
 				B37954282402A43F007768B8 /* ListRoomPresenter.swift in Sources */,
+				DF446BA724C69D6D00B46EB5 /* SwipeHelper.swift in Sources */,
 				B3C9797E245A99E800F23F59 /* SignUpPresenter.swift in Sources */,
 				B3E7BA6D23F9105F0088259F /* UIDate+Extension.swift in Sources */,
 				B3E7BA6123F9105F0088259F /* UIApplication+Extension.swift in Sources */,
@@ -1784,9 +1863,11 @@
 				B3759662241DDFE600ACC208 /* InvoiceEntity.swift in Sources */,
 				B37954312402A48E007768B8 /* ListRoomCVCell.swift in Sources */,
 				B38B9D3B2406BCF7006D69B0 /* ListCustomerInteractor.swift in Sources */,
+				DF6571F824C4168A00D20DA5 /* RoomManagementInteractor.swift in Sources */,
 				B3E7BA3E23F9105F0088259F /* HomeRouter.swift in Sources */,
 				B3E7BA7423F9105F0088259F /* Array+Extension.swift in Sources */,
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
+				DF6571F524C4168A00D20DA5 /* RoomManagementRouter.swift in Sources */,
 				B35FE7E924261A430072D223 /* OrderInfoEntity.swift in Sources */,
 				B3DA711224374F1800B1C8AA /* ServiceChargeCell.swift in Sources */,
 				B3C97981245A99E800F23F59 /* SignUpProtocols.swift in Sources */,
@@ -1817,19 +1898,23 @@
 				DF1DD90F24B4A0B1006F41E4 /* PaymentProtocols.swift in Sources */,
 				B3E7BA8423F9105F0088259F /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				B3680997240A452E002F8D00 /* AppLabel.swift in Sources */,
+				DF6571F424C4168A00D20DA5 /* RoomManagementPresenter.swift in Sources */,
 				B36809C5240A6AC5002F8D00 /* CheckInPresenter.swift in Sources */,
 				B38B9D442406BD27006D69B0 /* ListReceiptPresenter.swift in Sources */,
 				B3E7BA9923F9105F0088259F /* KActivityIndicatorShape.swift in Sources */,
 				B3E7BA9023F9105F0088259F /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DF65720324C4179E00D20DA5 /* RoomCell.swift in Sources */,
 				B30957E62401115300335639 /* AppTitleLogo.swift in Sources */,
 				B30957D02401084A00335639 /* UserEntity.swift in Sources */,
 				FD82CE65249745AE0075C1AC /* ReceiptProtocols.swift in Sources */,
 				B3C97980245A99E800F23F59 /* SignUpViewController.swift in Sources */,
 				B3E7BA4E23F9105F0088259F /* StatusBar.swift in Sources */,
 				B389C3B9244190C800106320 /* ServiceViewSingle.swift in Sources */,
+				DF65720824C42BDC00D20DA5 /* FloorEntity.swift in Sources */,
 				B38B9D472406BD27006D69B0 /* ListReceiptProtocols.swift in Sources */,
 				B3E7BA7F23F9105F0088259F /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				B3E7BA6723F9105F0088259F /* UIView+Extension.swift in Sources */,
+				DF6571F724C4168A00D20DA5 /* RoomManagementProtocols.swift in Sources */,
 				B3E7BA3323F9105F0088259F /* Network.swift in Sources */,
 				B38B9D2D2406B0EC006D69B0 /* TabbarReceptionistProtocols.swift in Sources */,
 				B3E7BA9423F9105F0088259F /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
@@ -1845,6 +1930,7 @@
 				B35DCAEC241C9984005B70FC /* ReceptionistEndPoint.swift in Sources */,
 				B3E7BA3123F9105F0088259F /* APIError.swift in Sources */,
 				B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */,
+				DF6571F624C4168A00D20DA5 /* RoomManagementViewController.swift in Sources */,
 				B3E7BAA123F9105F0088259F /* AppEnum.swift in Sources */,
 				B368099C240A4C61002F8D00 /* ListReceiptCell.swift in Sources */,
 				B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */,
@@ -1856,6 +1942,7 @@
 				B3E7BA9E23F9105F0088259F /* AppImage.swift in Sources */,
 				B379542A2402A43F007768B8 /* ListRoomViewController.swift in Sources */,
 				B3E7BA6F23F9105F0088259F /* UICollectionView+Extension.swift in Sources */,
+				DF65720624C42B2800D20DA5 /* RoomManagementEndPoint.swift in Sources */,
 				B3E7BA9623F9105F0088259F /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				B3E7BA3F23F9105F0088259F /* HomePresenter.swift in Sources */,
 				B36809B4240A5AC5002F8D00 /* AppDropdownBorder.swift in Sources */,
@@ -1876,6 +1963,7 @@
 				B3616855244D82EF0067359B /* AppChooseTime.swift in Sources */,
 				B35FE7C62425D0030072D223 /* ListServicePresenter.swift in Sources */,
 				B3E7BA5323F9105F0088259F /* TransitionContext.swift in Sources */,
+				DF65720A24C42C8000D20DA5 /* RoomManagementAPIService.swift in Sources */,
 				B3E7BA9C23F9105F0088259F /* ProgressView.swift in Sources */,
 				B3E7BA5E23F9105F0088259F /* BaseView.swift in Sources */,
 				B35DCAEA241C97B9005B70FC /* CustomerCheckIn.swift in Sources */,

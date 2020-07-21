@@ -120,16 +120,16 @@ class BaseViewController: UIViewController {
         alert.addAction(actionCancel)
         UIApplication.topViewController()?.present(controller: alert)
     }
-
+    
     func showAlert(title: String?, message: String?) {
         self.view.isUserInteractionEnabled = true
         let alert = UIAlertController(title: title ?? "THÔNG BÁO", message: message, preferredStyle: .alert)
         let actionOK = UIAlertAction(title: "Đồng ý", style: .cancel) { (_) in
-
+            
         }
-//        let actionCancel = UIAlertAction(title: "Hủy", style: .default, handler: nil)
+        //        let actionCancel = UIAlertAction(title: "Hủy", style: .default, handler: nil)
         alert.addAction(actionOK)
-//        alert.addAction(actionCancel)
+        //        alert.addAction(actionCancel)
         UIApplication.topViewController()?.present(controller: alert)
     }
     
@@ -168,6 +168,9 @@ class BaseViewController: UIViewController {
         case 3:
             let vc = PaymentRouter.createModule().convertNavi()
             sideMenuController?.setContentViewController(to: vc)
+        case 7:
+            let vc = RoomManagementRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
         default:
             self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
         }
@@ -194,7 +197,7 @@ extension BaseViewController {
         }
         self.addRightButtonNavigationBar(buttons: rightButtons)
     }
-
+    
     public func addRightButtonNavigation(titles: [String], actions: [Selector], color: [UIColor]) {
         var rightButtons: [UIBarButtonItem] = [UIBarButtonItem]()
         for (index, title) in titles.enumerated() {
