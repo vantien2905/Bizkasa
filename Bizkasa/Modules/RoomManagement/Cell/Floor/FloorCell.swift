@@ -12,6 +12,8 @@ import SwipeCellKit
 class FloorCell: SwipeTableViewCell {
     
     @IBOutlet weak var lbTitle: UILabel!
+    
+    var indexPath: IndexPath!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +25,4 @@ class FloorCell: SwipeTableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

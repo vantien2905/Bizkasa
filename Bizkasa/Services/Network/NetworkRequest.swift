@@ -179,7 +179,7 @@ extension NetworkRequest {
     }
 
     private func makeUrl(path: String) -> URL {
-        if let baseUrl = URL(string: AppConstant.BASE_URL) {
+        if let baseUrl = URL(string: AppConstant.BASE_URL + AppConstant.firstPath) {
             let url = baseUrl.appendingPathComponent(path)
             print("\n---------------------- URL -------------------------------\n")
             print("\(url)")

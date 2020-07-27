@@ -17,7 +17,7 @@ extension PaymentEndPoint: EndPointType {
     var path: String {
         switch self {
         case .getInvoiceByPayment:
-            return "api/Invoice/GetInvoiceByPayment"
+            return "Invoice/GetInvoiceByPayment"
         
         }
     }

@@ -33,33 +33,33 @@ extension ReceptionistEndPoint: EndPointType {
     var path: String {
         switch self {
         case .getListCustomerCheckIn:
-            return "api/Customer/GetListCustomerCheckIn"
+            return "Customer/GetListCustomerCheckIn"
         case .getInvoices:
-            return "/api/Invoice/GetInvoices"
+            return "Invoice/GetInvoices"
         case .getRoomsByClass:
-            return "/api/Room/GetRoomsByClass"
+            return "Room/GetRoomsByClass"
         case .getConfigPrice:
-            return "api/Room/GetConfigPriceBy"
+            return "Room/GetConfigPriceBy"
         case .getWidget(let type):
-            return "/api/Widget/GetWidget?WidgetType=\(type)"
+            return "Widget/GetWidget?WidgetType=\(type)"
         case .getOrderForCheckOut:
-            return "/api/Order/GetOrderForCheckOut"
+            return "Order/GetOrderForCheckOut"
         case .addOrderDetail:
-            return "/api/Order/AddOrderDetail"
+            return "Order/AddOrderDetail"
         case .deleteOrderDetail:
-            return "/api/Order/DeleteOrderDetail"
+            return "Order/DeleteOrderDetail"
         case .updateOrder:
-            return "/api/Order/UpdateOrder"
+            return "Order/UpdateOrder"
         case .addOrder:
-            return "/api/Order/AddOrder"
+            return "Order/AddOrder"
         case .changCalculatorMode:
-            return "/api/Order/ChangCalculatorMode"
+            return "Order/ChangCalculatorMode"
         case .addCustomer:
-            return "api/customer/AddCustomer"
+            return "customer/AddCustomer"
         case .changeStatusRoom:
-            return "api/Room/ChangeStatusRoom"
+            return "Room/ChangeStatusRoom"
         case .insertOrUpdateInvoice:
-            return "/api/invoice/InsertOrUpdateInvoice"
+            return "invoice/InsertOrUpdateInvoice"
         }
     }
 

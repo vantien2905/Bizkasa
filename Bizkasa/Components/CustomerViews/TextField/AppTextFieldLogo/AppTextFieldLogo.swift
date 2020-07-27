@@ -34,7 +34,7 @@ class AppTextFieldLogo: BaseViewXib {
         return tfContent.text&
     }
 
-    func setText(_ text: String) {
+    func setText(_ text: String?) {
         tfContent.text = text
     }
     

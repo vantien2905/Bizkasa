@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertPopUpViewController">
+            <connections>
+                <outlet property="tfName" destination="a3e-7r-Hu3" id="LMV-af-G6V"/>
+                <outlet property="vFloor" destination="Mat-qF-yoI" id="7fy-ux-lCO"/>
+                <outlet property="vRoomType" destination="ZNu-QU-Ixu" id="Wh1-sk-GKc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krl-9m-4p4">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <action selector="btnCloseTapped" destination="-1" eventType="touchUpInside" id="zzQ-GF-8XM"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-iw-Cl4">
+                    <rect key="frame" x="0.0" y="377" width="375" height="290"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-f6-qhj">
+                            <rect key="frame" x="20" y="10" width="335" height="200"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3e-7r-Hu3" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="kjw-L2-DZh"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mat-qF-yoI" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="70" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="901-R8-uua"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNu-QU-Ixu" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="140" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="6PA-JD-Vh7"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzP-ZS-Tga">
+                            <rect key="frame" x="147.5" y="230" width="80" height="30"/>
+                            <color key="backgroundColor" name="Main"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="gvd-J5-94l"/>
+                                <constraint firstAttribute="height" constant="30" id="wLx-bN-MZK"/>
+                            </constraints>
+                            <state key="normal" title="Cập nhật">
+                                <color key="titleColor" name="WhiteColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btnAcceptTapped" destination="-1" eventType="touchUpInside" id="2GR-we-C0m"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="WhiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="gh4-f6-qhj" secondAttribute="trailing" constant="20" id="0lq-Fh-rdc"/>
+                        <constraint firstItem="gh4-f6-qhj" firstAttribute="leading" secondItem="1yB-iw-Cl4" secondAttribute="leading" constant="20" id="HdX-yX-aCW"/>
+                        <constraint firstItem="RzP-ZS-Tga" firstAttribute="centerX" secondItem="1yB-iw-Cl4" secondAttribute="centerX" id="NMd-TK-vd7"/>
+                        <constraint firstAttribute="bottom" secondItem="RzP-ZS-Tga" secondAttribute="bottom" constant="30" id="YQo-Z8-GHI"/>
+                        <constraint firstItem="RzP-ZS-Tga" firstAttribute="top" secondItem="gh4-f6-qhj" secondAttribute="bottom" constant="20" id="fLN-fw-qc4"/>
+                        <constraint firstItem="gh4-f6-qhj" firstAttribute="top" secondItem="1yB-iw-Cl4" secondAttribute="top" constant="10" id="pS5-rn-OTw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="1yB-iw-Cl4" secondAttribute="bottom" id="9Fv-9L-7Za"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="leading" secondItem="krl-9m-4p4" secondAttribute="leading" id="M8K-8M-AST"/>
+                <constraint firstItem="krl-9m-4p4" firstAttribute="trailing" secondItem="zIn-FR-UZl" secondAttribute="trailing" id="aO7-CZ-adq"/>
+                <constraint firstItem="1yB-iw-Cl4" firstAttribute="trailing" secondItem="zIn-FR-UZl" secondAttribute="trailing" id="e5t-3H-S54"/>
+                <constraint firstItem="krl-9m-4p4" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="e6D-X9-aF4"/>
+                <constraint firstItem="krl-9m-4p4" firstAttribute="bottom" secondItem="zIn-FR-UZl" secondAttribute="bottom" id="h8I-Wf-Aqn"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="leading" secondItem="1yB-iw-Cl4" secondAttribute="leading" id="iKF-VK-uE4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
+            <point key="canvasLocation" x="138" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.23137254901960785" green="0.52941176470588236" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

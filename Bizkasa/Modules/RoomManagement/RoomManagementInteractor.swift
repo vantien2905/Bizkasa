@@ -11,6 +11,38 @@
 import UIKit
 
 class RoomManagementInteractor: RoomManagementInteractorInputProtocol {
+    func deleteFloor(id: Int) {
+        service.deleteFloor(id: id, success: { (result) in
+            self.presenter?.didDeleteFloor(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didDeleteFloor(result: nil, error: error)
+        }
+    }
+    
+    func insertOrUpdateFloor(param: InsertOrUpdateFloorParam) {
+        service.insertOrUpdateFloor(param: param, success: { (result) in
+            self.presenter?.didInsertOrUpdateFloor(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didInsertOrUpdateFloor(result: nil, error: error)
+        }
+    }
+    
+    func editRoom(param: EditRoomParam) {
+        service.editRoom(param: param, success: { (result) in
+            self.presenter?.didEditRoom(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didEditRoom(result: nil, error: error)
+        }
+    }
+    
+    func deleteRoom(id: Int) {
+        service.deleteRoom(id: id, success: { (result) in
+            self.presenter?.didDeleteRoom(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didDeleteRoom(result: nil, error: error)
+        }
+    }
+    
     
     let service = Provider.shared.roomManagementAPIService
     func getFloorWithRoom(token: String) {

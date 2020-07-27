@@ -301,6 +301,15 @@
 		DF65720624C42B2800D20DA5 /* RoomManagementEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720524C42B2800D20DA5 /* RoomManagementEndPoint.swift */; };
 		DF65720824C42BDC00D20DA5 /* FloorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720724C42BDC00D20DA5 /* FloorEntity.swift */; };
 		DF65720A24C42C8000D20DA5 /* RoomManagementAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */; };
+		DFC7C79E24CE75BA001271C6 /* InsertRoomParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C79D24CE75BA001271C6 /* InsertRoomParam.swift */; };
+		DFC7C7A024CE7C48001271C6 /* InsertOrUpdateFloorParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C79F24CE7C48001271C6 /* InsertOrUpdateFloorParam.swift */; };
+		DFC7C7A224CE7D0D001271C6 /* EditRoomParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A124CE7D0D001271C6 /* EditRoomParam.swift */; };
+		DFC7C7AA24CE8B36001271C6 /* InsertPopUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A424CE8B36001271C6 /* InsertPopUpPresenter.swift */; };
+		DFC7C7AB24CE8B36001271C6 /* InsertPopUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A524CE8B36001271C6 /* InsertPopUpRouter.swift */; };
+		DFC7C7AC24CE8B36001271C6 /* InsertPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A624CE8B36001271C6 /* InsertPopUpViewController.swift */; };
+		DFC7C7AD24CE8B36001271C6 /* InsertPopUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A724CE8B36001271C6 /* InsertPopUpProtocols.swift */; };
+		DFC7C7AE24CE8B36001271C6 /* InsertPopUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A824CE8B36001271C6 /* InsertPopUpInteractor.swift */; };
+		DFC7C7AF24CE8B36001271C6 /* InsertPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFC7C7A924CE8B36001271C6 /* InsertPopUpViewController.xib */; };
 		FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */; };
 		FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */; };
 		FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */; };
@@ -608,6 +617,15 @@
 		DF65720524C42B2800D20DA5 /* RoomManagementEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementEndPoint.swift; sourceTree = "<group>"; };
 		DF65720724C42BDC00D20DA5 /* FloorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorEntity.swift; sourceTree = "<group>"; };
 		DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementAPIService.swift; sourceTree = "<group>"; };
+		DFC7C79D24CE75BA001271C6 /* InsertRoomParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertRoomParam.swift; sourceTree = "<group>"; };
+		DFC7C79F24CE7C48001271C6 /* InsertOrUpdateFloorParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertOrUpdateFloorParam.swift; sourceTree = "<group>"; };
+		DFC7C7A124CE7D0D001271C6 /* EditRoomParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoomParam.swift; sourceTree = "<group>"; };
+		DFC7C7A424CE8B36001271C6 /* InsertPopUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpPresenter.swift; sourceTree = "<group>"; };
+		DFC7C7A524CE8B36001271C6 /* InsertPopUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpRouter.swift; sourceTree = "<group>"; };
+		DFC7C7A624CE8B36001271C6 /* InsertPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpViewController.swift; sourceTree = "<group>"; };
+		DFC7C7A724CE8B36001271C6 /* InsertPopUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpProtocols.swift; sourceTree = "<group>"; };
+		DFC7C7A824CE8B36001271C6 /* InsertPopUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpInteractor.swift; sourceTree = "<group>"; };
+		DFC7C7A924CE8B36001271C6 /* InsertPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertPopUpViewController.xib; sourceTree = "<group>"; };
 		FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPresenter.swift; sourceTree = "<group>"; };
 		FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
 		FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
@@ -1160,6 +1178,9 @@
 				B326A87A245528DB00C4BC0D /* AddCustomerParam.swift */,
 				B3C97985245A9E8600F23F59 /* RegisterParam.swift */,
 				DF59B91F24AEFC200087BFD4 /* GetInvoiceParam.swift */,
+				DFC7C79D24CE75BA001271C6 /* InsertRoomParam.swift */,
+				DFC7C79F24CE7C48001271C6 /* InsertOrUpdateFloorParam.swift */,
+				DFC7C7A124CE7D0D001271C6 /* EditRoomParam.swift */,
 			);
 			path = APIParam;
 			sourceTree = "<group>";
@@ -1551,6 +1572,7 @@
 		DF6571ED24C4165700D20DA5 /* RoomManagement */ = {
 			isa = PBXGroup;
 			children = (
+				DFC7C7A324CE89E0001271C6 /* InsertPopUp */,
 				DF6571FA24C4176200D20DA5 /* Cell */,
 				DF6571EE24C4168A00D20DA5 /* RoomManagementPresenter.swift */,
 				DF6571EF24C4168A00D20DA5 /* RoomManagementRouter.swift */,
@@ -1587,6 +1609,19 @@
 				DF65720224C4179E00D20DA5 /* RoomCell.xib */,
 			);
 			path = Room;
+			sourceTree = "<group>";
+		};
+		DFC7C7A324CE89E0001271C6 /* InsertPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				DFC7C7A424CE8B36001271C6 /* InsertPopUpPresenter.swift */,
+				DFC7C7A524CE8B36001271C6 /* InsertPopUpRouter.swift */,
+				DFC7C7A624CE8B36001271C6 /* InsertPopUpViewController.swift */,
+				DFC7C7A724CE8B36001271C6 /* InsertPopUpProtocols.swift */,
+				DFC7C7A824CE8B36001271C6 /* InsertPopUpInteractor.swift */,
+				DFC7C7A924CE8B36001271C6 /* InsertPopUpViewController.xib */,
+			);
+			path = InsertPopUp;
 			sourceTree = "<group>";
 		};
 		FD4F3C1E2497398C0023974E /* ReceiptManagement */ = {
@@ -1671,6 +1706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B38B9D3C2406BCF7006D69B0 /* ListCustomerViewController.xib in Resources */,
+				DFC7C7AF24CE8B36001271C6 /* InsertPopUpViewController.xib in Resources */,
 				B3616857244D82EF0067359B /* AppDateTime.xib in Resources */,
 				B3E7BA5C23F9105F0088259F /* DatePickerViewController.xib in Resources */,
 				B3142FEC24273E03003609DA /* HeaderCheckOutCell.xib in Resources */,
@@ -1778,6 +1814,7 @@
 			files = (
 				B3E7BA8023F9105F0088259F /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				B326A87B245528DB00C4BC0D /* AddCustomerParam.swift in Sources */,
+				DFC7C7AC24CE8B36001271C6 /* InsertPopUpViewController.swift in Sources */,
 				B3E7BAA223F9105F0088259F /* AppConstant.swift in Sources */,
 				B3616854244D82EF0067359B /* AppDateTime.swift in Sources */,
 				B3E7BA6A23F9105F0088259F /* UIViewController+Extension.swift in Sources */,
@@ -1802,6 +1839,7 @@
 				B3E7BA3223F9105F0088259F /* BaseResponse.swift in Sources */,
 				B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */,
 				B36809A9240A5777002F8D00 /* CreateNewReceiptInteractor.swift in Sources */,
+				DFC7C7A024CE7C48001271C6 /* InsertOrUpdateFloorParam.swift in Sources */,
 				B3E7BA5B23F9105F0088259F /* HomeBaseViewController.swift in Sources */,
 				DF1DD91024B4A0B1006F41E4 /* PaymentInteractor.swift in Sources */,
 				B3E7BA4823F9105F0088259F /* FlashRouter.swift in Sources */,
@@ -1867,8 +1905,10 @@
 				B3E7BA3E23F9105F0088259F /* HomeRouter.swift in Sources */,
 				B3E7BA7423F9105F0088259F /* Array+Extension.swift in Sources */,
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
+				DFC7C7AB24CE8B36001271C6 /* InsertPopUpRouter.swift in Sources */,
 				DF6571F524C4168A00D20DA5 /* RoomManagementRouter.swift in Sources */,
 				B35FE7E924261A430072D223 /* OrderInfoEntity.swift in Sources */,
+				DFC7C7AA24CE8B36001271C6 /* InsertPopUpPresenter.swift in Sources */,
 				B3DA711224374F1800B1C8AA /* ServiceChargeCell.swift in Sources */,
 				B3C97981245A99E800F23F59 /* SignUpProtocols.swift in Sources */,
 				B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */,
@@ -1923,12 +1963,14 @@
 				B337D36C2439EA97005B4EDA /* InsertInvoiceParam.swift in Sources */,
 				B3E7BA7B23F9105F0088259F /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				DF1DD91824B4A553006F41E4 /* PaymentEntity.swift in Sources */,
+				DFC7C7AD24CE8B36001271C6 /* InsertPopUpProtocols.swift in Sources */,
 				B3E7BAA423F9105F0088259F /* AppKey.swift in Sources */,
 				B3E7BA4F23F9105F0088259F /* UIViewController+Container.swift in Sources */,
 				B30957E52401115300335639 /* AppTextFieldLogo.swift in Sources */,
 				B3E7BA8A23F9105F0088259F /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				B35DCAEC241C9984005B70FC /* ReceptionistEndPoint.swift in Sources */,
 				B3E7BA3123F9105F0088259F /* APIError.swift in Sources */,
+				DFC7C7A224CE7D0D001271C6 /* EditRoomParam.swift in Sources */,
 				B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */,
 				DF6571F624C4168A00D20DA5 /* RoomManagementViewController.swift in Sources */,
 				B3E7BAA123F9105F0088259F /* AppEnum.swift in Sources */,
@@ -1981,6 +2023,8 @@
 				B3C97982245A99E800F23F59 /* SignUpInteractor.swift in Sources */,
 				B3E7BA7923F9105F0088259F /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B3E7BA8223F9105F0088259F /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				DFC7C7AE24CE8B36001271C6 /* InsertPopUpInteractor.swift in Sources */,
+				DFC7C79E24CE75BA001271C6 /* InsertRoomParam.swift in Sources */,
 				B35FE7CF2425D05D0072D223 /* ServiceCell.swift in Sources */,
 				B36809C6240A6AC5002F8D00 /* CheckInRouter.swift in Sources */,
 				B35FE7C82425D0030072D223 /* ListServiceViewController.swift in Sources */,

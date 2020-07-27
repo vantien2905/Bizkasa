@@ -11,14 +11,31 @@ import Alamofire
 
 enum RoomManagementEndPoint {
     case getFloorWithRoom(token: String)
+    case deleteFloor(id: Int)
+    case insertOrUpdateFloor(param: InsertOrUpdateFloorParam)
+    case editRoom(param: EditRoomParam)
+    case deleteRoom(id: Int)
+    case getListRoomClass
+    case getListFloor
 }
 
 extension RoomManagementEndPoint: EndPointType {
     var path: String {
         switch self {
         case .getFloorWithRoom:
-            return "api/Floor/GetFloorWithRoom"
-        
+            return "Floor/GetFloorWithRoom"
+        case .deleteFloor:
+            return "Floor/DeleteFloor"
+        case .insertOrUpdateFloor:
+            return "Floor/InsertOrUpdateFloor"
+        case .editRoom:
+            return "Room/EditRoom"
+        case .deleteRoom:
+            return "Room/DeleteRoom"
+        case .getListRoomClass:
+            return "Room/GetListRoomClass"
+        case .getListFloor:
+            return "Room/GetListFloor"
         }
     }
 
@@ -35,6 +52,18 @@ extension RoomManagementEndPoint: EndPointType {
         switch self {
         case .getFloorWithRoom(let token):
             return ["Token": token]
+        case .deleteFloor(let id):
+            return ["Ids": id]
+        case .insertOrUpdateFloor(let param):
+            return param.toJSON()
+        case .editRoom(let param):
+            return param.toJSON()
+        case .deleteRoom(let id):
+            return ["roomId": id]
+        case .getListRoomClass:
+            return [:]
+        case .getListFloor:
+            return [:]
         }
     }
 

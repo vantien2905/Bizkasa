@@ -11,6 +11,22 @@
 import UIKit
 
 class RoomManagementPresenter: RoomManagementPresenterProtocol {
+    func deleteFloor(id: Int) {
+        interactor?.deleteFloor(id: id)
+    }
+    
+    func insertOrUpdateFloor(param: InsertOrUpdateFloorParam) {
+        interactor?.insertOrUpdateFloor(param: param)
+    }
+    
+    func editRoom(param: EditRoomParam) {
+        interactor?.editRoom(param: param)
+    }
+    
+    func deleteRoom(id: Int) {
+        interactor?.deleteRoom(id: id)
+    }
+    
     func getFloorWithRoom(token: String) {
         interactor?.getFloorWithRoom(token: token)
     }
@@ -29,6 +45,22 @@ class RoomManagementPresenter: RoomManagementPresenterProtocol {
 }
 
 extension RoomManagementPresenter: RoomManagementInteractorOutputProtocol {
+    func didDeleteFloor(result: BaseResponse?, error: APIError?) {
+        view?.didDeleteFloor(result: result, error: error)
+    }
+    
+    func didInsertOrUpdateFloor(result: BaseResponse?, error: APIError?) {
+        view?.didInsertOrUpdateFloor(result: result, error: error)
+    }
+    
+    func didEditRoom(result: BaseResponse?, error: APIError?) {
+        view?.didEditRoom(result: result, error: error)
+    }
+    
+    func didDeleteRoom(result: BaseResponse?, error: APIError?) {
+        view?.didDeleteRoom(result: result, error: error)
+    }
+    
     func didGetFloorWithRoom(result: [FloorEntity]?, error: APIError?) {
         view?.didGetFloorWithRoom(result: result, error: error)
     }

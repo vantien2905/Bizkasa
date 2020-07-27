@@ -20,15 +20,15 @@ extension UserEndPoint: EndPointType {
     var path: String {
         switch self {
         case .login:
-            return "api/Account/login"
+            return "Account/login"
         case .getReceiptReport:
-            return "api/Report/GetReceiptReport"
+            return "Report/GetReceiptReport"
         case .reportRevenue:
-            return "api/Report/Revenue"
+            return "Report/Revenue"
         case .register:
-            return "/api/Account/RegisterHotel"
+            return "Account/RegisterHotel"
         case .completedRegiser:
-            return "/api/Hotel/CompletedRegiser"
+            return "Hotel/CompletedRegiser"
         }
     }
 

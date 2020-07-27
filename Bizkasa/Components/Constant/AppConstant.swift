@@ -23,7 +23,8 @@ struct AppConstant {
 
     static let logoLink = "/mobileapis/images/logo.png"
     static let more_tag = 99999
-
+    
+    static let firstPath = "/api/"
     static let BASE_URL = "http://test.api.bizkasa.com"
 
 //    static let calculatorModeAll: [Calculator] = [CaculatorMode.day.value,

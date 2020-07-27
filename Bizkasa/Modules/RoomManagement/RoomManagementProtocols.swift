@@ -19,6 +19,11 @@ protocol RoomManagementPresenterProtocol: class {
     var interactor: RoomManagementInteractorInputProtocol? { get set }
     
     func getFloorWithRoom(token: String)
+    
+    func deleteFloor(id: Int)
+    func insertOrUpdateFloor(param: InsertOrUpdateFloorParam)
+    func editRoom(param: EditRoomParam)
+    func deleteRoom(id: Int)
 }
 
 //MARK: Interactor -
@@ -26,6 +31,11 @@ protocol RoomManagementInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetFloorWithRoom(result: [FloorEntity]?, error: APIError?)
+    
+    func didDeleteFloor(result: BaseResponse?, error: APIError?)
+    func didInsertOrUpdateFloor(result: BaseResponse?, error: APIError?)
+    func didEditRoom(result: BaseResponse?, error: APIError?)
+    func didDeleteRoom(result: BaseResponse?, error: APIError?)
 }
 
 protocol RoomManagementInteractorInputProtocol: class {
@@ -34,6 +44,11 @@ protocol RoomManagementInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getFloorWithRoom(token: String)
+    
+    func deleteFloor(id: Int)
+    func insertOrUpdateFloor(param: InsertOrUpdateFloorParam)
+    func editRoom(param: EditRoomParam)
+    func deleteRoom(id: Int)
 }
 
 //MARK: View -
@@ -43,4 +58,9 @@ protocol RoomManagementViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetFloorWithRoom(result: [FloorEntity]?, error: APIError?)
+    
+    func didDeleteFloor(result: BaseResponse?, error: APIError?)
+    func didInsertOrUpdateFloor(result: BaseResponse?, error: APIError?)
+    func didEditRoom(result: BaseResponse?, error: APIError?)
+    func didDeleteRoom(result: BaseResponse?, error: APIError?)
 }

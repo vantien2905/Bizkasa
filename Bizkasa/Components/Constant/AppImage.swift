@@ -53,4 +53,5 @@ struct AppImage {
     static let menuHightlight = UIImage(named: "chooser-moment-button-highlighted")!
     static let filter = UIImage(named: "filter")!
     static let moment = UIImage(named: "chooser-moment-button")!
+    static let coupleRoom = UIImage(named: "coupleRoom")!
 }

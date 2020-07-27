@@ -14,8 +14,8 @@ import SwipeCellKit
 class RoomManagementViewController: HomeBaseViewController {
     
     @IBOutlet weak var tbRoomManagement: UITableView!
-
-	var presenter: RoomManagementPresenterProtocol?
+    
+    var presenter: RoomManagementPresenterProtocol?
     
     var listFloor: [FloorEntity] = [] {
         didSet {
@@ -25,10 +25,10 @@ class RoomManagementViewController: HomeBaseViewController {
     
     var buttonDisplayMode: ButtonDisplayMode = .imageOnly
     var buttonStyle: ButtonStyle = .backgroundColor
-
+    
     var refreshControl = UIRefreshControl()
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         configureTableview()
         presenter?.getFloorWithRoom(token: UserDefaultHelper.shared.get(key: AppKey.tokenID)&)
@@ -39,13 +39,13 @@ class RoomManagementViewController: HomeBaseViewController {
     }
     
     @objc private func refreshData() {
-       presenter?.getFloorWithRoom(token: UserDefaultHelper.shared.get(key: AppKey.tokenID)&)
+        presenter?.getFloorWithRoom(token: UserDefaultHelper.shared.get(key: AppKey.tokenID)&)
     }
     
     override func setUpView() {
         setTitleNavigation(title: "Quản lý tầng/ lầu")
     }
-
+    
     private func configureTableview() {
         tbRoomManagement.registerTableCell(RoomCell.self)
         tbRoomManagement.registerTableCell(FloorCell.self)
@@ -56,6 +56,38 @@ class RoomManagementViewController: HomeBaseViewController {
 }
 
 extension RoomManagementViewController: RoomManagementViewProtocol {
+    func didDeleteFloor(result: BaseResponse?, error: APIError?) {
+        if let result = result, let data = result.data as? Bool, data {
+            refreshData()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
+    func didInsertOrUpdateFloor(result: BaseResponse?, error: APIError?) {
+        if let result = result, let data = result.data as? Bool, data {
+            refreshData()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
+    func didEditRoom(result: BaseResponse?, error: APIError?) {
+        if let result = result, let data = result.data as? Bool, data {
+            refreshData()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
+    func didDeleteRoom(result: BaseResponse?, error: APIError?) {
+        if let result = result, let data = result.data as? Bool, data {
+            refreshData()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
     func didGetFloorWithRoom(result: [FloorEntity]?, error: APIError?) {
         refreshControl.endRefreshing()
         if let result = result {
@@ -65,7 +97,7 @@ extension RoomManagementViewController: RoomManagementViewProtocol {
             self.makeToast(message: error?.message?.first ?? "")
         }
     }
-	
+    
 }
 
 extension RoomManagementViewController: UITableViewDelegate, UITableViewDataSource {
@@ -96,37 +128,24 @@ extension RoomManagementViewController: UITableViewDelegate, UITableViewDataSour
 extension RoomManagementViewController: SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
-
+        
         let edit = SwipeAction(style: .default, title: nil) { action, indexPath in
             print("Edit")
-            
+            self.editActionTapped(indexPath: indexPath)
         }
         configure(action: edit, with: .edit)
         
         let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
             print("Delete")
+            self.deleteActionTapped(indexPath: indexPath)
         }
         configure(action: delete, with: .trash)
-        
-//        let cell = tableView.cellForRow(at: indexPath) as! RoomCell
-//        let closure: (UIAlertAction) -> Void = { _ in cell.hideSwipe(animated: true) }
-//        let more = SwipeAction(style: .default, title: nil) { action, indexPath in
-//            let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//            controller.addAction(UIAlertAction(title: "Reply", style: .default, handler: closure))
-//            controller.addAction(UIAlertAction(title: "Forward", style: .default, handler: closure))
-//            controller.addAction(UIAlertAction(title: "Mark...", style: .default, handler: closure))
-//            controller.addAction(UIAlertAction(title: "Notify Me...", style: .default, handler: closure))
-//            controller.addAction(UIAlertAction(title: "Move Message...", style: .default, handler: closure))
-//            controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
-//            self.present(controller, animated: true, completion: nil)
-//        }
-//        configure(action: more, with: .more)
         
         return [delete, edit]
     }
     
     func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
-//        action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
+        //        action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
         action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
         
         switch buttonStyle {
@@ -134,9 +153,64 @@ extension RoomManagementViewController: SwipeTableViewCellDelegate {
             action.backgroundColor = descriptor.color(forStyle: buttonStyle)
         case .circular:
             action.backgroundColor = .clear
-//            action.textColor = descriptor.color(forStyle: buttonStyle)
-//            action.font = .systemFont(ofSize: 13)
             action.transitionDelegate = ScaleTransition.default
         }
     }
+    
+    private func editActionTapped(indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let floor = listFloor[indexPath.section]
+            let vc = InsertPopUpRouter.createModule(actionType: .editFloor, indexPath: indexPath, room: nil, floor: floor)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
+            present(vc, animated: false, completion: nil)
+        } else {
+            let floor = listFloor[indexPath.section]
+            let room = listFloor[indexPath.section].Rooms[indexPath.row - 1]
+            let vc = InsertPopUpRouter.createModule(actionType: .editRoom, indexPath: indexPath, room: room, floor: floor)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
+            present(vc, animated: false, completion: nil)
+        }
+    }
+    
+    private func deleteActionTapped(indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let floor = listFloor[indexPath.section]
+            self.showAlert(title: "Xoá phòng", message: "Bạn có chắc chắn muốn xoá tầng \(floor.Name&) ?") {
+                if let idFloor = floor.Id {
+                    self.presenter?.deleteFloor(id: idFloor)
+                }
+            }
+            
+            
+        } else {
+            let room = listFloor[indexPath.section].Rooms[indexPath.row - 1]
+            self.showAlert(title: "Xoá phòng", message: "Bạn có chắc chắn muốn xoá phòng \(room.Name&) ?") {
+                if let idRoom = room.Id {
+                    self.presenter?.deleteRoom(id: idRoom)
+                }
+            }
+            
+        }
+    }
+}
+
+extension RoomManagementViewController: InsertPopUpViewControllerDelegate {
+    func acceptTapped(action: FloorAndRoomAction, floorParam: InsertOrUpdateFloorParam?, roomParam: EditRoomParam?) {
+        switch action {
+        case .editFloor, .addFloor:
+            guard let param = floorParam else { return }
+            presenter?.insertOrUpdateFloor(param: param)
+        case .editRoom:
+            guard let param = roomParam else { return }
+            presenter?.editRoom(param: param)
+        default:
+            break
+        }
+    }
+    
+    
 }
