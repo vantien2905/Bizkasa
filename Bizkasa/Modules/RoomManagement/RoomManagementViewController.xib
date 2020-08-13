@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomManagementViewController">
             <connections>
+                <outlet property="btnAdd" destination="8do-gI-MOA" id="ayH-xQ-G0F"/>
+                <outlet property="btnAddFloor" destination="dVc-8A-XkR" id="JtX-wH-gp0"/>
+                <outlet property="btnAddRoom" destination="U9B-DD-1xv" id="Nfz-eD-UOl"/>
                 <outlet property="tbRoomManagement" destination="LwC-tC-g5Q" id="SpQ-3F-Ibb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,16 +32,70 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CNP-Hh-pf2">
+                    <rect key="frame" x="210" y="537" width="150" height="70"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-8A-XkR">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Thêm tầng" image="room">
+                                <color key="titleColor" name="WhiteColor"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAddTapped:" destination="-1" eventType="touchUpInside" id="erV-9R-WtO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9B-DD-1xv">
+                            <rect key="frame" x="0.0" y="40" width="150" height="30"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="Thêm phòng" image="room">
+                                <color key="titleColor" name="WhiteColor"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAddTapped:" destination="-1" eventType="touchUpInside" id="A81-mR-Lw3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="2qJ-ZL-1Rf"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8do-gI-MOA">
+                    <rect key="frame" x="325" y="617" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="R5K-QZ-zEF"/>
+                        <constraint firstAttribute="width" constant="40" id="xSK-BZ-StC"/>
+                    </constraints>
+                    <state key="normal" image="addNew_black"/>
+                    <connections>
+                        <action selector="btnAddTapped:" destination="-1" eventType="touchUpInside" id="6SC-5a-I7d"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8do-gI-MOA" firstAttribute="top" secondItem="CNP-Hh-pf2" secondAttribute="bottom" constant="10" id="Dxm-OT-Kw1"/>
                 <constraint firstItem="LwC-tC-g5Q" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="GJZ-k6-sOB"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="8do-gI-MOA" secondAttribute="trailing" constant="10" id="MLP-w1-Eyf"/>
                 <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="LwC-tC-g5Q" secondAttribute="trailing" id="QZL-vx-rpi"/>
                 <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="LwC-tC-g5Q" secondAttribute="bottom" id="Tws-yT-TC2"/>
                 <constraint firstItem="LwC-tC-g5Q" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="cSc-HK-SFx"/>
+                <constraint firstItem="CNP-Hh-pf2" firstAttribute="trailing" secondItem="8do-gI-MOA" secondAttribute="trailing" constant="-5" id="iwj-9B-UEK"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="8do-gI-MOA" secondAttribute="bottom" constant="10" id="nMA-Hi-o0D"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <point key="canvasLocation" x="138" y="153"/>
         </view>
     </objects>
+    <resources>
+        <image name="addNew_black" width="100" height="100"/>
+        <image name="room" width="30" height="30"/>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

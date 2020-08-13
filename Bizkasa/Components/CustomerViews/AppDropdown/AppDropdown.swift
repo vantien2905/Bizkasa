@@ -28,7 +28,7 @@ class AppDropdown: BaseViewXib {
             if !self.dataSource.isEmpty {
                 imgArrow.isHidden = false
                 dropdown.dataSource = self.dataSource
-                self.lbContent.text = self.dataSource.first
+                self.lbContent.text = itemSelected == -1 ? self.dataSource.first : self.dataSource[self.itemSelected]
                 if itemSelected == -1 {
                     self.itemSelected = 0
                 }

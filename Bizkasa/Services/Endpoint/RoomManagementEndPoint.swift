@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 enum RoomManagementEndPoint {
     case getFloorWithRoom(token: String)
@@ -17,6 +18,8 @@ enum RoomManagementEndPoint {
     case deleteRoom(id: Int)
     case getListRoomClass
     case getListFloor
+//    case insertRoom(param: [EditRoomParam])
+    case getRoomForEdit(roomID: Int)
 }
 
 extension RoomManagementEndPoint: EndPointType {
@@ -35,7 +38,11 @@ extension RoomManagementEndPoint: EndPointType {
         case .getListRoomClass:
             return "Room/GetListRoomClass"
         case .getListFloor:
-            return "Room/GetListFloor"
+            return "Floor/GetListFloor"
+        case .getRoomForEdit:
+            return "Room/GetRoomForEdit"
+//        case .insertRoom:
+//            return "Floor/InsertRoom"
         }
     }
 
@@ -43,6 +50,8 @@ extension RoomManagementEndPoint: EndPointType {
         switch self {
         case .getFloorWithRoom:
             return .post
+        case .getListFloor, .getListRoomClass:
+            return .get
         default:
             return .post
         }
@@ -64,6 +73,10 @@ extension RoomManagementEndPoint: EndPointType {
             return [:]
         case .getListFloor:
             return [:]
+//        case .insertRoom(let param):
+//            return param.toJSON()
+        case .getRoomForEdit(let roomID):
+            return ["roomid": roomID]
         }
     }
 

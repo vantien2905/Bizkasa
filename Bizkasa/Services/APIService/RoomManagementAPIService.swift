@@ -14,9 +14,28 @@ protocol RoomManagementAPIServiceProtocol {
     func insertOrUpdateFloor(param: InsertOrUpdateFloorParam, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func editRoom(param: EditRoomParam, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func deleteRoom(id: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func getListFloor(success: @escaping SuccessHandler<FloorEntity>.array, failure: @escaping RequestFailure)
+    func getListRoomClass(success: @escaping SuccessHandler<RoomTypeEntity>.array, failure: @escaping RequestFailure)
+    func getRoomForEdit(roomID: Int, success: @escaping SuccessHandler<EditRoomParam>.object, failure: @escaping RequestFailure)
 }
 
 class RoomManagementAPIService: RoomManagementAPIServiceProtocol {
+    
+    func getRoomForEdit(roomID: Int, success: @escaping SuccessHandler<EditRoomParam>.object, failure: @escaping RequestFailure) {
+        let endPoint = RoomManagementEndPoint.getRoomForEdit(roomID: roomID)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getListFloor(success: @escaping SuccessHandler<FloorEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = RoomManagementEndPoint.getListFloor
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func getListRoomClass(success: @escaping SuccessHandler<RoomTypeEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = RoomManagementEndPoint.getListRoomClass
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
     func deleteFloor(id: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = RoomManagementEndPoint.deleteFloor(id: id)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)

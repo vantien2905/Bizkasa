@@ -11,7 +11,19 @@
 import UIKit
 
 class InsertPopUpPresenter: InsertPopUpPresenterProtocol {
-
+    func getRoomForEdit(roomID: Int) {
+        interactor?.getRoomForEdit(roomID: roomID)
+    }
+    
+    
+    func getListFloor() {
+        interactor?.getListFloor()
+    }
+    
+    func getListRoomClass() {
+        interactor?.getListRoomClass()
+    }
+    
     weak private var view: InsertPopUpViewProtocol?
     var interactor: InsertPopUpInteractorInputProtocol?
     private let router: InsertPopUpWireframeProtocol
@@ -25,5 +37,17 @@ class InsertPopUpPresenter: InsertPopUpPresenterProtocol {
 }
 
 extension InsertPopUpPresenter: InsertPopUpInteractorOutputProtocol {
+    func didGetRoomForEdit(result: EditRoomParam?, error: APIError?) {
+        view?.didGetRoomForEdit(result: result, error: error)
+    }
+    
+    
+    func didGetListFloor(result: [FloorEntity]?, error: APIError?) {
+        view?.didGetListFloor(result: result, error: error)
+    }
+    
+    func didGetListRoomClass(result: [RoomTypeEntity]?, error: APIError?) {
+        view?.didGetListRoomClass(result: result, error: error)
+    }
 	
 }

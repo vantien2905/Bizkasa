@@ -17,12 +17,19 @@ protocol InsertPopUpWireframeProtocol: class {
 protocol InsertPopUpPresenterProtocol: class {
 
     var interactor: InsertPopUpInteractorInputProtocol? { get set }
+    
+    func getListRoomClass()
+    func getListFloor()
+    func getRoomForEdit(roomID: Int)
 }
 
 //MARK: Interactor -
 protocol InsertPopUpInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetListRoomClass(result: [RoomTypeEntity]?, error: APIError?)
+    func didGetListFloor(result: [FloorEntity]?, error: APIError?)
+    func didGetRoomForEdit(result: EditRoomParam?, error: APIError?)
 }
 
 protocol InsertPopUpInteractorInputProtocol: class {
@@ -30,6 +37,9 @@ protocol InsertPopUpInteractorInputProtocol: class {
     var presenter: InsertPopUpInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getListRoomClass()
+    func getListFloor()
+    func getRoomForEdit(roomID: Int)
 }
 
 //MARK: View -
@@ -38,4 +48,7 @@ protocol InsertPopUpViewProtocol: class {
     var presenter: InsertPopUpPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetListRoomClass(result: [RoomTypeEntity]?, error: APIError?)
+    func didGetListFloor(result: [FloorEntity]?, error: APIError?)
+    func didGetRoomForEdit(result: EditRoomParam?, error: APIError?)
 }

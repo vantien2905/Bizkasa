@@ -14,7 +14,7 @@ class InsertPopUpRouter: InsertPopUpWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(actionType: FloorAndRoomAction, indexPath: IndexPath, room: RoomEntity?, floor: FloorEntity?) -> InsertPopUpViewController {
+    static func createModule(actionType: FloorAndRoomAction, indexPath: IndexPath?, room: RoomEntity?, floor: FloorEntity?) -> InsertPopUpViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = InsertPopUpViewController.initFromNib()
         let interactor = InsertPopUpInteractor()

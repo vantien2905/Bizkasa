@@ -15,6 +15,10 @@ class RoomTypeEntity: Mappable {
     var Name: String?
     var HotelId: Int?
     var Rooms: [RoomEntity] = []
+    
+    var NumBed: Int?
+    var NumCustomer: Int?
+    var UserId: Int?
 
 
     required init?(map: Map) {
@@ -26,6 +30,9 @@ class RoomTypeEntity: Mappable {
         self.Name <- map["Name"]
         self.HotelId <- map["HotelId"]
         self.Rooms <- map["Rooms"]
+        self.NumBed <- map["NumBed"]
+        self.NumCustomer <- map["NumCustomer"]
+        self.UserId <- map["UserId"]
     }
 
 }

@@ -25,7 +25,7 @@ struct AppConstant {
     static let more_tag = 99999
     
     static let firstPath = "/api/"
-    static let BASE_URL = "http://test.api.bizkasa.com"
+    static let BASE_URL = "http://media.bizkasa.com" //"http://test.api.bizkasa.com"
 
 //    static let calculatorModeAll: [Calculator] = [CaculatorMode.day.value,
 //                                              CaculatorMode.overNight.value,

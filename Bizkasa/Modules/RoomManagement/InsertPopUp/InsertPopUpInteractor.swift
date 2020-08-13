@@ -11,6 +11,32 @@
 import UIKit
 
 class InsertPopUpInteractor: InsertPopUpInteractorInputProtocol {
+    func getRoomForEdit(roomID: Int) {
+        service.getRoomForEdit(roomID: roomID, success: { (result) in
+            self.presenter?.didGetRoomForEdit(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didGetRoomForEdit(result: nil, error: error)
+        }
+    }
+    
+    
+    let service = Provider.shared.roomManagementAPIService
+    
+    func getListFloor() {
+        service.getListFloor(success: { (result) in
+            self.presenter?.didGetListFloor(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didGetListFloor(result: nil, error: error)
+        }
+    }
+    
+    func getListRoomClass() {
+        service.getListRoomClass(success: { (result) in
+            self.presenter?.didGetListRoomClass(result: result, error: nil)
+        }) { (error) in
+            self.presenter?.didGetListRoomClass(result: nil, error: error)
+        }
+    }
 
     weak var presenter: InsertPopUpInteractorOutputProtocol?
 }

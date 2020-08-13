@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsertPopUpViewController">
             <connections>
+                <outlet property="btnAccept" destination="RzP-ZS-Tga" id="8Dv-x9-HQS"/>
                 <outlet property="tfName" destination="a3e-7r-Hu3" id="LMV-af-G6V"/>
                 <outlet property="vFloor" destination="Mat-qF-yoI" id="7fy-ux-lCO"/>
                 <outlet property="vRoomType" destination="ZNu-QU-Ixu" id="Wh1-sk-GKc"/>

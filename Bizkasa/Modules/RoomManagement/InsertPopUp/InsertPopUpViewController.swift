@@ -26,58 +26,118 @@ class InsertPopUpViewController: BaseViewController {
     @IBOutlet weak var tfName   : AppTextFieldLogo!
     @IBOutlet weak var vFloor   : AppDropdown!
     @IBOutlet weak var vRoomType: AppDropdown!
-
-	var presenter: InsertPopUpPresenterProtocol?
+    @IBOutlet weak var btnAccept: UIButton!
+    
+    var presenter: InsertPopUpPresenterProtocol?
     
     var actionType: FloorAndRoomAction!
     
     var floor: FloorEntity?
     var room: RoomEntity?
-    var indexPath: IndexPath!
+    var indexPath: IndexPath?
     
     let floorParam = InsertOrUpdateFloorParam()
-    let roomParam = EditRoomParam()
+    var roomParam = EditRoomParam()
     
     weak var delegate: InsertPopUpViewControllerDelegate?
-
-	override func viewDidLoad() {
+    
+    var listRoomType: [RoomTypeEntity] = [] {
+        didSet {
+            for (index, item) in self.listRoomType.enumerated() {
+                if self.roomParam.RoomClassId == item.Id {
+                    vRoomType.itemSelected = index
+                }
+            }
+            vRoomType.dataSource = self.listRoomType.map({$0.Name&})
+        }
+    }
+    
+    var listFloor: [FloorEntity] = [] {
+        didSet {
+            for (index, item) in self.listFloor.enumerated() {
+                if self.roomParam.FloorId == item.Id {
+                    vFloor.itemSelected = index
+                }
+            }
+            vFloor.dataSource = self.listFloor.map({$0.Name&})
+        }
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.definesPresentationContext = true
         self.view.backgroundColor = AppColor.normalBlack.withAlphaComponent(0.3)
+        getData()
+        self.setHideView(true)
+        self.tfName.isHidden = true
     }
     
-    @IBAction func btnCloseTapped() {
-           self.dismiss(animated: false)
-       }
-    
-    override func setUpViews() {
-        vFloor.dataSource = ["Tang 1", "Tang 2", "tang 3"]
-        vRoomType.dataSource = ["Phong don", "Phong doi"]
-        
+    override func viewDidAppear(_ animated: Bool) {
         vFloor.setTitleAndLogo(AppImage.imgHotel, title: "Thuộc tầng")
         vRoomType.setTitleAndLogo(AppImage.coupleRoom, title: "Loại phòng")
         
         switch actionType {
         case .editFloor, .addFloor:
-            tfName.setTitleAndLogo(AppImage.imgRoom, title: "Tên tầng")
-            vFloor.isHidden = true
-            vRoomType.isHidden = true
-            if actionType == .editFloor {
-                self.tfName.setText(floor?.Name)
+            UIView.animate(withDuration: 0.3) {
+                self.tfName.setTitleAndLogo(AppImage.imgRoom, title: "Tên tầng")
+                self.setHideView(true)
+                self.tfName.isHidden = false
+                if self.actionType == .editFloor {
+                    self.tfName.setText(self.floor?.Name)
+                } else {
+                    self.btnAccept.setTitle(text: "Thêm")
+                }
+                self.view.layoutIfNeeded()
             }
-        default:
-            tfName.setTitleAndLogo(AppImage.imgRoom, title: "Tên phòng")
-            vFloor.isHidden = false
-            vRoomType.isHidden = false
-            roomParam.RoomClassId = room?.RoomClassId
-            roomParam.RoomId =  room?.Id
             
-            if actionType == .editRoom {
-                roomParam.FloorId = floor?.Id
-                tfName.setText(room?.Name)
+        default:
+            UIView.animate(withDuration: 0.3) {
+                self.tfName.setTitleAndLogo(AppImage.imgRoom, title: "Tên phòng")
+                self.setHideView(false)
+                self.tfName.isHidden = false
+                self.roomParam.RoomClassId = self.room?.RoomClassId
+                self.roomParam.RoomId =  self.room?.Id
+                
+                if self.actionType == .editRoom {
+                    self.roomParam.FloorId = self.floor?.Id
+                    self.tfName.setText(self.room?.Name)
+                } else {
+                    self.btnAccept.setTitle(text: "Thêm")
+                }
+                self.view.layoutIfNeeded()
             }
         }
+    }
+    
+    private func setHideView(_ isHide: Bool) {
+        self.vFloor.isHidden = isHide
+        self.vRoomType.isHidden = isHide
+    }
+    
+    private func getData() {
+        switch actionType {
+        case .addRoom, .editRoom:
+            presenter?.getListFloor()
+            presenter?.getListRoomClass()
+        default:
+            break
+        }
+    }
+    
+    @IBAction func btnCloseTapped() {
+        self.dismiss(animated: false)
+    }
+    
+    override func setUpViews() {
+        //        vFloor.dataSource = ["Tang 1", "Tang 2", "tang 3"]
+        //        vRoomType.dataSource = ["Phong don", "Phong doi"]
+        vFloor.dropDownCallBack = { index, item in
+            self.roomParam.FloorId = self.listFloor[index].Id
+        }
         
+        vRoomType.dropDownCallBack = { index, item in
+            self.roomParam.RoomClassId = self.listRoomType[index].Id
+        }
     }
     
     @IBAction func btnAcceptTapped() {
@@ -98,9 +158,31 @@ class InsertPopUpViewController: BaseViewController {
         
         btnCloseTapped()
     }
-
+    
 }
 
 extension InsertPopUpViewController: InsertPopUpViewProtocol {
-	
+    func didGetRoomForEdit(result: EditRoomParam?, error: APIError?) {
+//        if let result = result {
+//            self.roomParam = result
+//        } else {
+//            self.makeToast(message: error?.message?.first ?? "")
+//        }
+    }
+    
+    func didGetListRoomClass(result: [RoomTypeEntity]?, error: APIError?) {
+        if let result = result {
+            self.listRoomType = result
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
+    func didGetListFloor(result: [FloorEntity]?, error: APIError?) {
+        if let result = result {
+            self.listFloor = result
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
 }

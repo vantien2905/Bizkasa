@@ -14,6 +14,9 @@ import SwipeCellKit
 class RoomManagementViewController: HomeBaseViewController {
     
     @IBOutlet weak var tbRoomManagement: UITableView!
+    @IBOutlet weak var btnAdd: UIButton!
+    @IBOutlet weak var btnAddRoom: UIButton!
+    @IBOutlet weak var btnAddFloor: UIButton!
     
     var presenter: RoomManagementPresenterProtocol?
     
@@ -28,6 +31,8 @@ class RoomManagementViewController: HomeBaseViewController {
     
     var refreshControl = UIRefreshControl()
     
+    var isHideAddAction = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableview()
@@ -36,6 +41,8 @@ class RoomManagementViewController: HomeBaseViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         tbRoomManagement.addSubview(refreshControl)
+        
+        showHideAction(true)
     }
     
     @objc private func refreshData() {
@@ -53,39 +60,55 @@ class RoomManagementViewController: HomeBaseViewController {
         tbRoomManagement.dataSource = self
         tbRoomManagement.rowHeight = UITableView.automaticDimension
     }
+    
+    private func showHideAction(_ show: Bool) {
+        btnAddRoom.isHidden = show
+        btnAddFloor.isHidden = show
+    }
+    
+    @IBAction func btnAddTapped(_ sender: UIButton) {
+        switch sender {
+        case btnAdd:
+            isHideAddAction = !isHideAddAction
+            btnAdd.rotate(isHideAddAction ? 0 : .pi)
+            UIView.animate(withDuration: 0.3) {
+                self.showHideAction(self.isHideAddAction)
+                self.view.layoutIfNeeded()
+            }
+        case btnAddRoom:
+            let vc = InsertPopUpRouter.createModule(actionType: .addRoom, indexPath: nil, room: nil, floor: nil)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
+            present(vc, animated: false, completion: nil)
+        case btnAddFloor:
+            let vc = InsertPopUpRouter.createModule(actionType: .addFloor, indexPath: nil, room: nil, floor: nil)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            vc.delegate = self
+            present(vc, animated: false, completion: nil)
+        default:
+            break
+        }
+        
+    }
 }
 
 extension RoomManagementViewController: RoomManagementViewProtocol {
     func didDeleteFloor(result: BaseResponse?, error: APIError?) {
-        if let result = result, let data = result.data as? Bool, data {
-            refreshData()
-        } else {
-            self.makeToast(message: error?.message?.first ?? "")
-        }
+        handleDidReceiveData(result: result, error: error)
     }
     
     func didInsertOrUpdateFloor(result: BaseResponse?, error: APIError?) {
-        if let result = result, let data = result.data as? Bool, data {
-            refreshData()
-        } else {
-            self.makeToast(message: error?.message?.first ?? "")
-        }
+        handleDidReceiveData(result: result, error: error)
     }
     
     func didEditRoom(result: BaseResponse?, error: APIError?) {
-        if let result = result, let data = result.data as? Bool, data {
-            refreshData()
-        } else {
-            self.makeToast(message: error?.message?.first ?? "")
-        }
+        handleDidReceiveData(result: result, error: error)
     }
     
     func didDeleteRoom(result: BaseResponse?, error: APIError?) {
-        if let result = result, let data = result.data as? Bool, data {
-            refreshData()
-        } else {
-            self.makeToast(message: error?.message?.first ?? "")
-        }
+        handleDidReceiveData(result: result, error: error)
     }
     
     func didGetFloorWithRoom(result: [FloorEntity]?, error: APIError?) {
@@ -93,6 +116,18 @@ extension RoomManagementViewController: RoomManagementViewProtocol {
         if let result = result {
             result.isEmpty ? tbRoomManagement.setEmptyView() : tbRoomManagement.restore()
             self.listFloor = result
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
+    private func handleDidReceiveData(result: BaseResponse?, error: APIError?) {
+        if let result = result {
+            if let data = result.data as? Bool, data {
+                refreshData()
+            } else {
+                self.makeToast(message: result.message?.first ?? "")
+            }
         } else {
             self.makeToast(message: error?.message?.first ?? "")
         }
@@ -184,8 +219,6 @@ extension RoomManagementViewController: SwipeTableViewCellDelegate {
                     self.presenter?.deleteFloor(id: idFloor)
                 }
             }
-            
-            
         } else {
             let room = listFloor[indexPath.section].Rooms[indexPath.row - 1]
             self.showAlert(title: "Xoá phòng", message: "Bạn có chắc chắn muốn xoá phòng \(room.Name&) ?") {
@@ -211,6 +244,4 @@ extension RoomManagementViewController: InsertPopUpViewControllerDelegate {
             break
         }
     }
-    
-    
 }
