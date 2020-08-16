@@ -10,13 +10,14 @@
 
 import UIKit
 import SwipeCellKit
+import Alamofire
 
 class RoomManagementViewController: HomeBaseViewController {
     
-    @IBOutlet weak var tbRoomManagement: UITableView!
-    @IBOutlet weak var btnAdd: UIButton!
-    @IBOutlet weak var btnAddRoom: UIButton!
-    @IBOutlet weak var btnAddFloor: UIButton!
+    @IBOutlet weak var tbRoomManagement : UITableView!
+    @IBOutlet weak var btnAdd           : UIButton!
+    @IBOutlet weak var btnAddRoom       : UIButton!
+    @IBOutlet weak var btnAddFloor      : UIButton!
     
     var presenter: RoomManagementPresenterProtocol?
     
@@ -59,6 +60,7 @@ class RoomManagementViewController: HomeBaseViewController {
         tbRoomManagement.delegate = self
         tbRoomManagement.dataSource = self
         tbRoomManagement.rowHeight = UITableView.automaticDimension
+        tbRoomManagement.contentInset.bottom = 60
     }
     
     private func showHideAction(_ show: Bool) {
@@ -92,6 +94,7 @@ class RoomManagementViewController: HomeBaseViewController {
         }
         
     }
+    
 }
 
 extension RoomManagementViewController: RoomManagementViewProtocol {
@@ -240,8 +243,46 @@ extension RoomManagementViewController: InsertPopUpViewControllerDelegate {
         case .editRoom:
             guard let param = roomParam else { return }
             presenter?.editRoom(param: param)
+        case .addRoom:
+            guard let param = roomParam else { return }
+            let paramJson = [param.toJSON()]
+            addRoom(paramJson)
         default:
             break
         }
+    }
+    
+    private func addRoom(_ json: [[String: Any]]) {
+//        let json: [[String: Any]] = [EditRoomParam(FloorId: 4680, RoomClassId: 589, RoomName: "519").toJSON(),
+//                EditRoomParam(FloorId: 4680, RoomClassId: 589, RoomName: "520").toJSON()]
+//
+                let jsonData = try? JSONSerialization.data(withJSONObject: json)
+
+                // create post request
+                let url = URL(string: "http://media.bizkasa.com/api/Room/InsertRoom")!
+
+                var request = try! URLRequest(url: url, method: .post, headers: DefaultHeader().addAuthHeader())
+        //        request.httpMethod = "POST"
+                
+
+                // insert json data to the request
+                request.httpBody = jsonData
+
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data, error == nil else {
+                        print(error?.localizedDescription ?? "No data")
+                        return
+                    }
+                    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                    if let responseJSON = responseJSON as? [String: Any] {
+                        print(responseJSON)
+                        if let _ = responseJSON["Data"] as? Bool {
+                            self.refreshData()
+                        }
+                        
+                    }
+                }
+
+                task.resume()
     }
 }

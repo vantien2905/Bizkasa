@@ -23,6 +23,12 @@ class EditRoomParam: Mappable {
     init() {
 
     }
+    
+    init(FloorId: Int, RoomClassId: Int, RoomName: String) {
+        self.FloorId = FloorId
+        self.RoomClassId = RoomClassId
+        self.RoomName = RoomName
+    }
 
     func mapping(map: Map) {
         self.FloorId <- map["FloorId"]

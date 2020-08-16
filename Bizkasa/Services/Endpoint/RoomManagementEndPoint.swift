@@ -62,7 +62,7 @@ extension RoomManagementEndPoint: EndPointType {
         case .getFloorWithRoom(let token):
             return ["Token": token]
         case .deleteFloor(let id):
-            return ["Ids": id]
+            return ["Ids": [id]]
         case .insertOrUpdateFloor(let param):
             return param.toJSON()
         case .editRoom(let param):

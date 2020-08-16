@@ -43,10 +43,14 @@ class InsertPopUpViewController: BaseViewController {
     
     var listRoomType: [RoomTypeEntity] = [] {
         didSet {
+            
             for (index, item) in self.listRoomType.enumerated() {
                 if self.roomParam.RoomClassId == item.Id {
                     vRoomType.itemSelected = index
                 }
+            }
+            if vRoomType.itemSelected == -1 {
+                self.roomParam.RoomClassId = self.listRoomType[0].Id
             }
             vRoomType.dataSource = self.listRoomType.map({$0.Name&})
         }
@@ -54,10 +58,14 @@ class InsertPopUpViewController: BaseViewController {
     
     var listFloor: [FloorEntity] = [] {
         didSet {
+            
             for (index, item) in self.listFloor.enumerated() {
                 if self.roomParam.FloorId == item.Id {
                     vFloor.itemSelected = index
                 }
+            }
+            if vFloor.itemSelected == -1 {
+                self.roomParam.FloorId = self.listFloor[0].Id
             }
             vFloor.dataSource = self.listFloor.map({$0.Name&})
         }
