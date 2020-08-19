@@ -19,6 +19,7 @@ protocol PaymentPresenterProtocol: class {
     var interactor: PaymentInteractorInputProtocol? { get set }
     
     func getInvoiceByPayment(param: GetInvoiceParam)
+    func insertOrUpdateInvoice(param: InsertInvoiceParam)
 }
 
 //MARK: Interactor -
@@ -26,6 +27,7 @@ protocol PaymentInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetInvoiceByPayment(result: PaymentEntityResponse?, error: APIError?)
+    func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?)
 }
 
 protocol PaymentInteractorInputProtocol: class {
@@ -34,6 +36,7 @@ protocol PaymentInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getInvoiceByPayment(param: GetInvoiceParam)
+    func insertOrUpdateInvoice(param: InsertInvoiceParam)
 }
 
 //MARK: View -
@@ -43,4 +46,5 @@ protocol PaymentViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetInvoiceByPayment(result: PaymentEntityResponse?, error: APIError?)
+    func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?)
 }

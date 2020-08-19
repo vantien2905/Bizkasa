@@ -57,6 +57,10 @@ class AppDropdownBorder: BaseViewXib {
     func setTitleAndLogo(_ image: UIImage, title: String) {
         vTitle.setTitleAndLogo(image, title: title)
     }
+    
+    func isSelected() -> Bool {
+        return itemSelected != -1
+    }
 
     private func configureDropDown() {
         // Top of drop down will be below the anchorView

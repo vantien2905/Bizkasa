@@ -17,6 +17,11 @@ class PaymentViewController: HomeBaseViewController {
     @IBOutlet weak var vTime            : AppDateTime!
     @IBOutlet weak var hightFilterView  : NSLayoutConstraint!
     @IBOutlet weak var btnHideFilter    : UIButton!
+    @IBOutlet weak var hightAddPaymentView  : NSLayoutConstraint!
+    
+    @IBOutlet weak var vContent: AppTextViewLogo!
+    @IBOutlet weak var vCharge: AppTextFieldLogo!
+    @IBOutlet weak var vService: AppDropdownBorder!
     
     var presenter: PaymentPresenterProtocol?
     
@@ -29,6 +34,23 @@ class PaymentViewController: HomeBaseViewController {
     var refreshControl = UIRefreshControl()
     
     let param = GetInvoiceParam.setDefaultPaymentParam()
+    
+    let paymentType = ["Chọn loại chi",
+                       "Tiền phòng",
+                       "Tiền dịch vụ",
+                       "Tiền điện",
+                       "Tiền nước",
+                       "Tiền internet",
+                       "Tiền sửa chữa",
+                       "Tiền tiếp khách",
+                       "Tiền nhập kho",
+                       "Tiền chi khác",
+                       "Phụ thu",
+                       "Giảm trừ",
+                       "Trả trước"
+    ]
+    
+    var invoiceType: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +77,7 @@ class PaymentViewController: HomeBaseViewController {
     
     override func setUpNavigation() {
         setTitleNavigation(title: "Phiếu chi")
+        addButtonImageToNavigation(image: AppImage.imgAddNew, style: .right, action: #selector(btnAddNewPaymentTapped))
     }
     
     private func configureTableView() {
@@ -66,20 +89,7 @@ class PaymentViewController: HomeBaseViewController {
     }
     
     override func setUpView() {
-        vPaymentType.dataSource = ["Chọn loại chi",
-                                   "Tiền phòng",
-                                   "Tiền dịch vụ",
-                                   "Tiền điện",
-                                   "Tiền nước",
-                                   "Tiền internet",
-                                   "Tiền sửa chữa",
-                                   "Tiền tiếp khách",
-                                   "Tiền nhập kho",
-                                   "Tiền chi khác",
-                                   "Phụ thu",
-                                   "Giảm trừ",
-                                   "Trả trước"
-        ]
+        vPaymentType.dataSource = paymentType
         vTime.setTitleAndLogo(AppImage.imgTime, title: "Khoảng thời gian")
         btnHideFilterTapped()
         
@@ -88,7 +98,76 @@ class PaymentViewController: HomeBaseViewController {
         vPaymentType.dropDownCallBack = {[weak self] (index, item) in
             self?.param.InvoiceCategory = index != 0 ? index : nil
         }
+        
+        //----
+        vContent.setTitleAndLogo(AppImage.imgNote, title: "Nội dung")
+        vContent.setPlaceholder("Nhập nội dung")
+        vCharge.setTitleAndLogo(AppImage.price, title: "Số tiền")
+        vCharge.setPlaceHolder(title: "Nhập số tiền")
+        vCharge.tfContent.keyboardType = .numberPad
+        
+        vCharge.tfContent.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
+        
+        vService.dataSource = paymentType
+        hightAddPaymentView.constant = 0
+        
+        vService.dropDownCallBack = {index, item in
+            self.invoiceType = index
+        }
+    
     }
+    
+    @objc func btnAddNewPaymentTapped() {
+        UIView.animate(withDuration: 0.3) {
+            self.btnHideFilter.isHidden = false
+            self.hightAddPaymentView.constant = 300
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func myTextFieldDidChange(_ textField: UITextField) {
+           if let amountString = vCharge.tfContent.text?.currencyInputFormatting() {
+               vCharge.tfContent.text = amountString
+           }
+       }
+    
+    @IBAction func btnAcceptTapped() {
+        if validate() {
+            let content = vContent.getText()&
+            if let price = Int(vCharge.getText().replacingOccurrences(of: ",", with: "")) {
+                let param = InsertInvoiceParam()
+//                param.Note = content
+                param.TotalAmount = price
+                param.InvoiceType = invoiceType
+                
+                let detail = WidgetEntity()
+                
+                
+//                self.dismiss(animated: false)
+            }
+        }
+    }
+
+    func validate() -> Bool {
+        
+        if !vService.isSelected() {
+            self.makeToast(message: "Bạn chưa chọn dịch vụ")
+            return false
+        }
+        
+        if vContent.getText()&.isEmpty {
+            self.makeToast(message: "Bạn chưa nhập nội dung")
+            return false
+        }
+
+        if vCharge.getText().isEmpty {
+            self.makeToast(message: "Bạn chưa nhập số tiền")
+            return false
+        }
+
+        return true
+    }
+
     
     var isShowFilter = false
     @IBAction func btnFilterTapped() {
@@ -107,7 +186,9 @@ class PaymentViewController: HomeBaseViewController {
         btnHideFilter.isHidden = true
         UIView.animate(withDuration: 0.2) {
             self.hightFilterView.constant = self.isShowFilter ? 195 : 0
+            self.hightAddPaymentView.constant = 0
             self.view.layoutIfNeeded()
+            
         }
     }
     
@@ -133,7 +214,16 @@ extension PaymentViewController: PaymentViewProtocol {
         }
     }
     
-    
+    func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?) {
+        if let _ = result {
+            self.makeToast(message: "Thêm hoá đơn thành công!")
+//            NotificationCenter.default.post(name: .refreshReceptionist, object: nil)
+//            self.closePage()
+            refreshData()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
 }
 
 extension PaymentViewController: UITableViewDelegate, UITableViewDataSource {

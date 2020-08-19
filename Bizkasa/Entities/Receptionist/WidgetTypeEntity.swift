@@ -50,6 +50,9 @@ class WidgetEntity: Mappable {
     required init?(map: Map) {
 
     }
+    
+    init() {
+    }
 
     func mapping(map: Map) {
         self.Id <- map["Id"]

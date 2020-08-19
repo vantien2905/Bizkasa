@@ -235,17 +235,17 @@ extension RoomManagementViewController: SwipeTableViewCellDelegate {
 }
 
 extension RoomManagementViewController: InsertPopUpViewControllerDelegate {
-    func acceptTapped(action: FloorAndRoomAction, floorParam: InsertOrUpdateFloorParam?, roomParam: EditRoomParam?) {
+    func acceptTapped(action: FloorAndRoomAction, floorParam: InsertOrUpdateFloorParam?, roomParam: [EditRoomParam]?) {
         switch action {
         case .editFloor, .addFloor:
             guard let param = floorParam else { return }
             presenter?.insertOrUpdateFloor(param: param)
         case .editRoom:
-            guard let param = roomParam else { return }
+            guard let param = roomParam?.first else { return }
             presenter?.editRoom(param: param)
         case .addRoom:
             guard let param = roomParam else { return }
-            let paramJson = [param.toJSON()]
+            let paramJson = param.map({$0.toJSON()})
             addRoom(paramJson)
         default:
             break

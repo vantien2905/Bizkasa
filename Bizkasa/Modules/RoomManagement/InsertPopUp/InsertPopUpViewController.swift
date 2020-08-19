@@ -18,7 +18,7 @@ enum FloorAndRoomAction {
 }
 
 protocol InsertPopUpViewControllerDelegate: class {
-    func acceptTapped(action: FloorAndRoomAction, floorParam: InsertOrUpdateFloorParam?, roomParam: EditRoomParam?)
+    func acceptTapped(action: FloorAndRoomAction, floorParam: InsertOrUpdateFloorParam?, roomParam: [EditRoomParam]?)
 }
 
 class InsertPopUpViewController: BaseViewController {
@@ -161,7 +161,8 @@ class InsertPopUpViewController: BaseViewController {
             delegate?.acceptTapped(action: actionType, floorParam: floorParam, roomParam: nil)
         default:
             roomParam.RoomName = tfName.getText()
-            delegate?.acceptTapped(action: actionType, floorParam: nil, roomParam: roomParam)
+            let list = tfName.getText().splitted(by: ";").map({return EditRoomParam(FloorId: roomParam.FloorId*, RoomClassId: roomParam.RoomClassId*, RoomName: $0)})
+            delegate?.acceptTapped(action: actionType, floorParam: nil, roomParam: list)
         }
         
         btnCloseTapped()

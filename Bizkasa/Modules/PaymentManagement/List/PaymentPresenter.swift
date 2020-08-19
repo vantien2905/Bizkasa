@@ -11,6 +11,11 @@
 import UIKit
 
 class PaymentPresenter: PaymentPresenterProtocol {
+    
+    func insertOrUpdateInvoice(param: InsertInvoiceParam) {
+        interactor?.insertOrUpdateInvoice(param: param)
+    }
+    
     func getInvoiceByPayment(param: GetInvoiceParam) {
         interactor?.getInvoiceByPayment(param: param)
     }
@@ -33,5 +38,7 @@ extension PaymentPresenter: PaymentInteractorOutputProtocol {
         view?.didGetInvoiceByPayment(result: result, error: error)
     }
     
-	
+	func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?) {
+        view?.didInsertOrUpdateInvoice(result: result, error: error)
+    }
 }
