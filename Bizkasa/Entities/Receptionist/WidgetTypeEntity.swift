@@ -46,6 +46,9 @@ class WidgetEntity: Mappable {
     var NamePrice: String?
 
     var Quantity: Int?
+    var Descriptions: String?
+    var CategoryInvoice: Int?
+    var SubAmount: String?
 
     required init?(map: Map) {
 
@@ -70,6 +73,9 @@ class WidgetEntity: Mappable {
         self.NamePrice = "\(self.Name&) (\(self.Price ?? 0))"
         self.Quantity <- map["Quantity"]
 
+        self.Descriptions <- map["Descriptions"]
+        self.CategoryInvoice <- map["CategoryInvoice"]
+        self.SubAmount <- map["SubAmount"]
 
     }
 

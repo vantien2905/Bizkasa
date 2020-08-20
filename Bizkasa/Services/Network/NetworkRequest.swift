@@ -43,7 +43,7 @@ struct NetworkRequest: NetworkRequestProtocol {
 
         var url: URL!
         if endPoint.path.contains("?") {
-            let urlString = AppConstant.BASE_URL + endPoint.path
+            let urlString = AppConstant.BASE_URL + AppConstant.firstPath + endPoint.path
             url = URL(string: urlString)
         } else {
             url = makeUrl(path: endPoint.path)

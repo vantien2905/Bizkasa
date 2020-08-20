@@ -136,14 +136,19 @@ class PaymentViewController: HomeBaseViewController {
             let content = vContent.getText()&
             if let price = Int(vCharge.getText().replacingOccurrences(of: ",", with: "")) {
                 let param = InsertInvoiceParam()
-//                param.Note = content
                 param.TotalAmount = price
-                param.InvoiceType = invoiceType
+                param.InvoiceType = 2
                 
                 let detail = WidgetEntity()
+                detail.Descriptions = content
+                detail.CategoryInvoice = invoiceType
+                detail.Quantity = 1
+                detail.Price = price
+                detail.SubAmount = "\(price)"
                 
-                
-//                self.dismiss(animated: false)
+                param.invoiceDetails = [detail]
+                self.presenter?.insertOrUpdateInvoice(param: param)
+                btnHideFilterTapped()
             }
         }
     }

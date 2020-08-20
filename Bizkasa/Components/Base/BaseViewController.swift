@@ -168,7 +168,7 @@ class BaseViewController: UIViewController {
         case 3:
             let vc = PaymentRouter.createModule().convertNavi()
             sideMenuController?.setContentViewController(to: vc)
-        case 7:
+        case 4:
             let vc = RoomManagementRouter.createModule().convertNavi()
             sideMenuController?.setContentViewController(to: vc)
         default:
