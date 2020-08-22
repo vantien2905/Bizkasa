@@ -253,36 +253,36 @@ extension RoomManagementViewController: InsertPopUpViewControllerDelegate {
     }
     
     private func addRoom(_ json: [[String: Any]]) {
-//        let json: [[String: Any]] = [EditRoomParam(FloorId: 4680, RoomClassId: 589, RoomName: "519").toJSON(),
-//                EditRoomParam(FloorId: 4680, RoomClassId: 589, RoomName: "520").toJSON()]
-//
-                let jsonData = try? JSONSerialization.data(withJSONObject: json)
-
-                // create post request
-                let url = URL(string: "http://media.bizkasa.com/api/Room/InsertRoom")!
-
-                var request = try! URLRequest(url: url, method: .post, headers: DefaultHeader().addAuthHeader())
+        //        let json: [[String: Any]] = [EditRoomParam(FloorId: 4680, RoomClassId: 589, RoomName: "519").toJSON(),
+        //                EditRoomParam(FloorId: 4680, RoomClassId: 589, RoomName: "520").toJSON()]
+        //
+        let jsonData = try? JSONSerialization.data(withJSONObject: json)
+        
+        // create post request
+        let url = URL(string: "http://media.bizkasa.com/api/Room/InsertRoom")!
+        
+        var request = try! URLRequest(url: url, method: .post, headers: DefaultHeader().addAuthHeader())
         //        request.httpMethod = "POST"
-                
-
-                // insert json data to the request
-                request.httpBody = jsonData
-
-                let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                    guard let data = data, error == nil else {
-                        print(error?.localizedDescription ?? "No data")
-                        return
-                    }
-                    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                    if let responseJSON = responseJSON as? [String: Any] {
-                        print(responseJSON)
-                        if let _ = responseJSON["Data"] as? Bool {
-                            self.refreshData()
-                        }
-                        
-                    }
+        
+        
+        // insert json data to the request
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+                if let _ = responseJSON["Data"] as? Bool {
+                    self.refreshData()
                 }
-
-                task.resume()
+                
+            }
+        }
+        
+        task.resume()
     }
 }

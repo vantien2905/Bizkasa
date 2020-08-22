@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,6 +12,9 @@
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
+        <array key="Roboto-Italic.ttf">
+            <string>Roboto-Italic</string>
+        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -19,15 +22,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="94" id="KGk-i7-Jjw" customClass="ListReceiptCell" customModule="Bizkasa" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="388" height="94"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="KGk-i7-Jjw" customClass="ListReceiptCell" customModule="Bizkasa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="388" height="132"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="388" height="94"/>
+                <rect key="frame" x="0.0" y="0.0" width="388" height="132"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9T-tm-Zj8">
-                        <rect key="frame" x="10" y="5" width="368" height="79"/>
+                        <rect key="frame" x="10" y="5" width="368" height="117"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxy-DE-xgg">
                                 <rect key="frame" x="10" y="5" width="40" height="40"/>
@@ -84,13 +87,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Khách đang ở" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW9-df-qDr" customClass="AppLabel" customModule="Bizkasa" customModuleProvider="target">
-                                <rect key="frame" x="275" y="5" width="83" height="15.5"/>
+                                <rect key="frame" x="255" y="5" width="103" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                 <color key="textColor" name="WhiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHW-iv-Aoj">
-                                <rect key="frame" x="293.5" y="30.5" width="46" height="17.5"/>
+                                <rect key="frame" x="283.5" y="40.5" width="46" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -101,19 +104,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dịch vụ: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpo-3V-NZS">
+                                <rect key="frame" x="5.5" y="69" width="324" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eW9-df-qDr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d9q-ou-9Ak" secondAttribute="trailing" constant="10" id="3rf-qS-D7b"/>
+                            <constraint firstItem="Gpo-3V-NZS" firstAttribute="top" secondItem="d9q-ou-9Ak" secondAttribute="bottom" constant="10" id="3t7-ko-neH"/>
                             <constraint firstItem="HHW-iv-Aoj" firstAttribute="top" secondItem="eW9-df-qDr" secondAttribute="bottom" constant="10" id="746-CZ-bP6"/>
                             <constraint firstItem="d9q-ou-9Ak" firstAttribute="top" secondItem="dxy-DE-xgg" secondAttribute="top" id="7Uz-po-cXh"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gpo-3V-NZS" secondAttribute="bottom" constant="10" id="8q8-kf-XFT"/>
                             <constraint firstItem="HHW-iv-Aoj" firstAttribute="centerX" secondItem="eW9-df-qDr" secondAttribute="centerX" id="B7d-Ik-QQr"/>
                             <constraint firstItem="7v5-lO-7W3" firstAttribute="centerX" secondItem="dxy-DE-xgg" secondAttribute="centerX" id="FQk-KG-s9c"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="d9q-ou-9Ak" secondAttribute="bottom" constant="10" id="K8r-rv-tC7"/>
                             <constraint firstAttribute="trailing" secondItem="eW9-df-qDr" secondAttribute="trailing" constant="10" id="We8-st-Hb6"/>
                             <constraint firstItem="eW9-df-qDr" firstAttribute="top" secondItem="P9T-tm-Zj8" secondAttribute="top" constant="5" id="Wp0-2d-hkc"/>
                             <constraint firstItem="dxy-DE-xgg" firstAttribute="leading" secondItem="P9T-tm-Zj8" secondAttribute="leading" constant="10" id="ab8-a6-ic2"/>
                             <constraint firstItem="7v5-lO-7W3" firstAttribute="top" secondItem="dxy-DE-xgg" secondAttribute="bottom" constant="5" id="cvc-xE-Aet"/>
+                            <constraint firstItem="Gpo-3V-NZS" firstAttribute="trailing" secondItem="HHW-iv-Aoj" secondAttribute="trailing" id="hVg-Dc-LYx"/>
+                            <constraint firstItem="Gpo-3V-NZS" firstAttribute="leading" secondItem="7v5-lO-7W3" secondAttribute="leading" id="qOu-fB-0lA"/>
                             <constraint firstItem="dxy-DE-xgg" firstAttribute="top" secondItem="P9T-tm-Zj8" secondAttribute="top" constant="5" id="siP-Er-Wtc"/>
                             <constraint firstItem="d9q-ou-9Ak" firstAttribute="leading" secondItem="dxy-DE-xgg" secondAttribute="trailing" constant="10" id="voo-3R-C5r"/>
                         </constraints>
@@ -134,10 +146,11 @@
                 <outlet property="lbPrice" destination="HHW-iv-Aoj" id="eIM-Ol-WDY"/>
                 <outlet property="lbRoomName" destination="jZr-Kr-3B3" id="Od9-g8-X3d"/>
                 <outlet property="lbRoomType" destination="7v5-lO-7W3" id="mzK-Ag-1df"/>
+                <outlet property="lbService" destination="Gpo-3V-NZS" id="QAf-jq-8WB"/>
                 <outlet property="lbStatus" destination="eW9-df-qDr" id="QeI-QQ-63D"/>
                 <outlet property="vBackground" destination="P9T-tm-Zj8" id="x1B-7C-LYi"/>
             </connections>
-            <point key="canvasLocation" x="114.49275362318842" y="32.142857142857139"/>
+            <point key="canvasLocation" x="114.49275362318842" y="44.196428571428569"/>
         </tableViewCell>
     </objects>
     <resources>

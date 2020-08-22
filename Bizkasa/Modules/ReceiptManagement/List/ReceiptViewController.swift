@@ -148,9 +148,6 @@ class ReceiptViewController: HomeBaseViewController {
         presenter?.getInvoices(param: param)
         btnHideFilterTapped()
     }
-    
-
-    
 }
 
 extension ReceiptViewController: ReceiptViewProtocol {

@@ -81,7 +81,7 @@ class InvoiceEntity: Mappable {
     var CreatedDate: String?
     var CreatedDateView: String?
     var UpdatedDate: String?
-    var InvoiceService: InvoiceServiceEntity?
+    var InvoiceService: [InvoiceServiceEntity] = []
 
     required init?(map: Map) {
 

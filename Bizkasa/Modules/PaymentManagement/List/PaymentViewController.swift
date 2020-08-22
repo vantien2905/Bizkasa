@@ -222,8 +222,6 @@ extension PaymentViewController: PaymentViewProtocol {
     func didInsertOrUpdateInvoice(result: BaseResponse?, error: APIError?) {
         if let _ = result {
             self.makeToast(message: "Thêm hoá đơn thành công!")
-//            NotificationCenter.default.post(name: .refreshReceptionist, object: nil)
-//            self.closePage()
             refreshData()
         } else {
             self.makeToast(message: error?.message?.first ?? "")
