@@ -42,6 +42,8 @@ class ReceiptViewController: HomeBaseViewController {
     
     let param = GetInvoiceParam.setDefaultParam()
     
+    var canLoadMore = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -112,10 +114,12 @@ class ReceiptViewController: HomeBaseViewController {
     
     private func configureTableView() {
         tbReceipt.registerTableCell(ListReceiptCell.self)
+        tbReceipt.registerTableCell(ReceiptDetailCell.self)
         tbReceipt.delegate = self
         tbReceipt.dataSource = self
         tbReceipt.rowHeight = UITableView.automaticDimension
         tbReceipt.contentInset.bottom = 40
+        
     }
     
     var isShowFilter = false
@@ -142,6 +146,7 @@ class ReceiptViewController: HomeBaseViewController {
     @IBAction func btnFiltterTapped() {
         param.Page?.currentPage = 1
         param.Page?.pageSize = 20
+        canLoadMore = true
         param.FromDate = vTime.fromTime
         param.ToDate = vTime.toTime
         param.Keyword = tfName.text
@@ -154,22 +159,57 @@ extension ReceiptViewController: ReceiptViewProtocol {
     func didGetInvoices(result: InvoiceResponse?, error: APIError?) {
         refreshControl.endRefreshing()
         if let result = result {
-            result.dataPaging?.data.isEmpty ?? true ? self.tbReceipt.setEmptyView() : self.tbReceipt.restore()
-            self.invoiceResponse = result
+            if result.dataPaging?.data.count ?? 0 < 20 {
+                self.canLoadMore = false
+            }
+            if self.param.Page?.currentPage == 1 {
+                result.dataPaging?.data.isEmpty ?? true ? self.tbReceipt.setEmptyView() : self.tbReceipt.restore()
+                self.invoiceResponse = result
+            } else {
+                self.listInvoice.append(contentsOf: result.dataPaging!.data)
+            }
+            
         } else {
+            
             self.makeToast(message: error?.message?.first ?? "")
         }
     }
 }
 
 extension ReceiptViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return listInvoice.count
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listInvoice[section].isCollapse ? 1 : listInvoice[section].InvoiceService.count + 1
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueTableCell(ListReceiptCell.self)
-        cell.invoice = listInvoice[indexPath.row]
-        return cell
+        if indexPath.section == listInvoice.count - 3
+            && listInvoice.count < invoiceResponse.dataPaging!.totalRecord ?? 0
+            && canLoadMore {
+            self.param.Page?.currentPage += 1
+            self.presenter?.getInvoices(param: self.param)
+        }
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueTableCell(ListReceiptCell.self)
+            cell.invoice = listInvoice[indexPath.section]
+            return cell
+        } else {
+            let cell = tableView.dequeueTableCell(ReceiptDetailCell.self)
+            cell.setData(detail: listInvoice[indexPath.section].InvoiceService[indexPath.row - 1])
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            listInvoice[indexPath.section].isCollapse = !listInvoice[indexPath.section].isCollapse
+            self.tbReceipt.beginUpdates()
+            self.tbReceipt.reloadSections([indexPath.section], with: .none)
+            self.tbReceipt.endUpdates()
+        }
     }
 }

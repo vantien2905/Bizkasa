@@ -18,5 +18,4 @@ pod 'SwiftyJSON', '4.2.0'
     pod "ESTabBarController-swift"
     pod 'ExpandingMenu', '~> 0.4'
     pod 'SwipeCellKit'
-
 end

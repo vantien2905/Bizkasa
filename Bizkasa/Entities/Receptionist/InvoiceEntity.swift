@@ -82,6 +82,8 @@ class InvoiceEntity: Mappable {
     var CreatedDateView: String?
     var UpdatedDate: String?
     var InvoiceService: [InvoiceServiceEntity] = []
+    
+    var isCollapse = true
 
     required init?(map: Map) {
 

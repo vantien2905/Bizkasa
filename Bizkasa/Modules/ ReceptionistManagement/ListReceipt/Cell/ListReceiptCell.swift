@@ -18,7 +18,6 @@ class ListReceiptCell: UITableViewCell {
     @IBOutlet weak var lbRoomType: UILabel!
     @IBOutlet weak var lbRoomName: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
-    @IBOutlet weak var lbService: UILabel!
 
     var invoice: InvoiceEntity? {
         didSet {
@@ -37,6 +36,11 @@ class ListReceiptCell: UITableViewCell {
         // Configure the view for the selected state
         selectionStyle = .none
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        lbStatus.setShadow(color: AppColor.secondMain)
+    }
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -53,7 +57,6 @@ class ListReceiptCell: UITableViewCell {
         lbPrice.text = invoice.TotalAmount*.formattedWithSeparator
         lbRoomName.text = invoice.RoomName
         lbStatus.text = OrderStatus.getTitle(invoice.InvoiceStatus*).title
-        lbService.text = "Nội dung: \(invoice.InvoiceService.first?.Descriptions ?? "")"
     }
 
 }

@@ -275,6 +275,8 @@
 		B3E7BAB223F9105F0088259F /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7BA3023F9105F0088259F /* DateHelper.swift */; };
 		B3E7BAB423F9167D0088259F /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E7BAB323F9167D0088259F /* Color.xcassets */; };
 		CB75D13F49ACBEDE5A2C4818 /* Pods_Bizkasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C1EF7F6741F2BF9CEC0E32 /* Pods_Bizkasa.framework */; };
+		DF04786024F1514C007037BD /* ReceiptDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04785E24F1514C007037BD /* ReceiptDetailCell.swift */; };
+		DF04786124F1514C007037BD /* ReceiptDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF04785F24F1514C007037BD /* ReceiptDetailCell.xib */; };
 		DF1DD90C24B4A0B1006F41E4 /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90624B4A0B1006F41E4 /* PaymentPresenter.swift */; };
 		DF1DD90D24B4A0B1006F41E4 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90724B4A0B1006F41E4 /* PaymentRouter.swift */; };
 		DF1DD90E24B4A0B1006F41E4 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90824B4A0B1006F41E4 /* PaymentViewController.swift */; };
@@ -591,6 +593,8 @@
 		B3E7BA2F23F9105F0088259F /* AttachFileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachFileHelper.swift; sourceTree = "<group>"; };
 		B3E7BA3023F9105F0088259F /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B3E7BAB323F9167D0088259F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		DF04785E24F1514C007037BD /* ReceiptDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailCell.swift; sourceTree = "<group>"; };
+		DF04785F24F1514C007037BD /* ReceiptDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptDetailCell.xib; sourceTree = "<group>"; };
 		DF1DD90624B4A0B1006F41E4 /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
 		DF1DD90724B4A0B1006F41E4 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
 		DF1DD90824B4A0B1006F41E4 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
@@ -1538,6 +1542,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DF04785D24F15131007037BD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF04785E24F1514C007037BD /* ReceiptDetailCell.swift */,
+				DF04785F24F1514C007037BD /* ReceiptDetailCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DF1DD90324B49FF6006F41E4 /* PaymentManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -1635,6 +1648,7 @@
 		FD82CE5B24973DC80075C1AC /* List */ = {
 			isa = PBXGroup;
 			children = (
+				DF04785D24F15131007037BD /* Cell */,
 				FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */,
 				FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */,
 				FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */,
@@ -1734,6 +1748,7 @@
 				DF1DD91124B4A0B1006F41E4 /* PaymentViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
 				B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */,
+				DF04786124F1514C007037BD /* ReceiptDetailCell.xib in Resources */,
 				B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */,
 				B35FE7D02425D05D0072D223 /* ServiceCell.xib in Resources */,
 				B3DA711324374F1800B1C8AA /* ServiceChargeCell.xib in Resources */,
@@ -1877,6 +1892,7 @@
 				DF6571FE24C4178B00D20DA5 /* FloorCell.swift in Sources */,
 				B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */,
 				B38B9D482406BD27006D69B0 /* ListReceiptInteractor.swift in Sources */,
+				DF04786024F1514C007037BD /* ReceiptDetailCell.swift in Sources */,
 				B3E7BA8823F9105F0088259F /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B379542B2402A43F007768B8 /* ListRoomProtocols.swift in Sources */,
 				B35FE7C92425D0030072D223 /* ListServiceProtocols.swift in Sources */,
