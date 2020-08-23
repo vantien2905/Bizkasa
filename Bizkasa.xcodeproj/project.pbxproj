@@ -277,6 +277,14 @@
 		CB75D13F49ACBEDE5A2C4818 /* Pods_Bizkasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C1EF7F6741F2BF9CEC0E32 /* Pods_Bizkasa.framework */; };
 		DF04786024F1514C007037BD /* ReceiptDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04785E24F1514C007037BD /* ReceiptDetailCell.swift */; };
 		DF04786124F1514C007037BD /* ReceiptDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF04785F24F1514C007037BD /* ReceiptDetailCell.xib */; };
+		DF04787724F25074007037BD /* ServiceManagementPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04787124F25074007037BD /* ServiceManagementPresenter.swift */; };
+		DF04787824F25074007037BD /* ServiceManagementRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04787224F25074007037BD /* ServiceManagementRouter.swift */; };
+		DF04787924F25074007037BD /* ServiceManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04787324F25074007037BD /* ServiceManagementViewController.swift */; };
+		DF04787A24F25074007037BD /* ServiceManagementProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04787424F25074007037BD /* ServiceManagementProtocols.swift */; };
+		DF04787B24F25074007037BD /* ServiceManagementInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04787524F25074007037BD /* ServiceManagementInteractor.swift */; };
+		DF04787C24F25074007037BD /* ServiceManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF04787624F25074007037BD /* ServiceManagementViewController.xib */; };
+		DF04787E24F25306007037BD /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04787D24F25306007037BD /* ServiceEndpoint.swift */; };
+		DF04788024F253B2007037BD /* ServiceAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF04787F24F253B2007037BD /* ServiceAPIService.swift */; };
 		DF1DD90C24B4A0B1006F41E4 /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90624B4A0B1006F41E4 /* PaymentPresenter.swift */; };
 		DF1DD90D24B4A0B1006F41E4 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90724B4A0B1006F41E4 /* PaymentRouter.swift */; };
 		DF1DD90E24B4A0B1006F41E4 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD90824B4A0B1006F41E4 /* PaymentViewController.swift */; };
@@ -595,6 +603,14 @@
 		B3E7BAB323F9167D0088259F /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		DF04785E24F1514C007037BD /* ReceiptDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailCell.swift; sourceTree = "<group>"; };
 		DF04785F24F1514C007037BD /* ReceiptDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiptDetailCell.xib; sourceTree = "<group>"; };
+		DF04787124F25074007037BD /* ServiceManagementPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagementPresenter.swift; sourceTree = "<group>"; };
+		DF04787224F25074007037BD /* ServiceManagementRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagementRouter.swift; sourceTree = "<group>"; };
+		DF04787324F25074007037BD /* ServiceManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagementViewController.swift; sourceTree = "<group>"; };
+		DF04787424F25074007037BD /* ServiceManagementProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagementProtocols.swift; sourceTree = "<group>"; };
+		DF04787524F25074007037BD /* ServiceManagementInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagementInteractor.swift; sourceTree = "<group>"; };
+		DF04787624F25074007037BD /* ServiceManagementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceManagementViewController.xib; sourceTree = "<group>"; };
+		DF04787D24F25306007037BD /* ServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEndpoint.swift; sourceTree = "<group>"; };
+		DF04787F24F253B2007037BD /* ServiceAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIService.swift; sourceTree = "<group>"; };
 		DF1DD90624B4A0B1006F41E4 /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
 		DF1DD90724B4A0B1006F41E4 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
 		DF1DD90824B4A0B1006F41E4 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
@@ -1197,6 +1213,7 @@
 				B35DCAEB241C9984005B70FC /* ReceptionistEndPoint.swift */,
 				DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */,
 				DF65720524C42B2800D20DA5 /* RoomManagementEndPoint.swift */,
+				DF04787D24F25306007037BD /* ServiceEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -1217,6 +1234,7 @@
 				B375965F241DCD3800ACC208 /* ReceptionistAPIService.swift */,
 				DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */,
 				DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */,
+				DF04787F24F253B2007037BD /* ServiceAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -1250,6 +1268,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DF04786224F24FBB007037BD /* ServiceManagement */,
 				DF6571ED24C4165700D20DA5 /* RoomManagement */,
 				DF1DD90324B49FF6006F41E4 /* PaymentManagement */,
 				FD4F3C1E2497398C0023974E /* ReceiptManagement */,
@@ -1551,6 +1570,35 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		DF04786224F24FBB007037BD /* ServiceManagement */ = {
+			isa = PBXGroup;
+			children = (
+				DF04786324F24FCA007037BD /* List */,
+			);
+			path = ServiceManagement;
+			sourceTree = "<group>";
+		};
+		DF04786324F24FCA007037BD /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DF04787024F25028007037BD /* Cell */,
+				DF04787124F25074007037BD /* ServiceManagementPresenter.swift */,
+				DF04787224F25074007037BD /* ServiceManagementRouter.swift */,
+				DF04787324F25074007037BD /* ServiceManagementViewController.swift */,
+				DF04787424F25074007037BD /* ServiceManagementProtocols.swift */,
+				DF04787524F25074007037BD /* ServiceManagementInteractor.swift */,
+				DF04787624F25074007037BD /* ServiceManagementViewController.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		DF04787024F25028007037BD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DF1DD90324B49FF6006F41E4 /* PaymentManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -1749,6 +1797,7 @@
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
 				B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */,
 				DF04786124F1514C007037BD /* ReceiptDetailCell.xib in Resources */,
+				DF04787C24F25074007037BD /* ServiceManagementViewController.xib in Resources */,
 				B379544D2402C4F9007768B8 /* Roboto-Medium.ttf in Resources */,
 				B35FE7D02425D05D0072D223 /* ServiceCell.xib in Resources */,
 				B3DA711324374F1800B1C8AA /* ServiceChargeCell.xib in Resources */,
@@ -1852,6 +1901,7 @@
 				B3E7BA8623F9105F0088259F /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				B35FE7E62426174E0072D223 /* CheckOutInteractor.swift in Sources */,
 				B3E7BA3223F9105F0088259F /* BaseResponse.swift in Sources */,
+				DF04788024F253B2007037BD /* ServiceAPIService.swift in Sources */,
 				B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */,
 				B36809A9240A5777002F8D00 /* CreateNewReceiptInteractor.swift in Sources */,
 				DFC7C7A024CE7C48001271C6 /* InsertOrUpdateFloorParam.swift in Sources */,
@@ -1888,6 +1938,7 @@
 				B36809A6240A5777002F8D00 /* CreateNewReceiptRouter.swift in Sources */,
 				FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */,
 				B3E7BAA623F9105F0088259F /* SlideInPresentationAnimator.swift in Sources */,
+				DF04787724F25074007037BD /* ServiceManagementPresenter.swift in Sources */,
 				B3E7BAA523F9105F0088259F /* AppFont.swift in Sources */,
 				DF6571FE24C4178B00D20DA5 /* FloorCell.swift in Sources */,
 				B32069DC241394B80097D18B /* AppTextViewLogo.swift in Sources */,
@@ -2008,6 +2059,7 @@
 				B3E7BA4D23F9105F0088259F /* UIViewController+SideMenu.swift in Sources */,
 				B3E7BA6323F9105F0088259F /* UIDevice+Extension.swift in Sources */,
 				B3E7BA4223F9105F0088259F /* LeftMenuPresenter.swift in Sources */,
+				DF04787E24F25306007037BD /* ServiceEndpoint.swift in Sources */,
 				B3E7BA9823F9105F0088259F /* KActivityIndicatorType.swift in Sources */,
 				B3DA710D2437494500B1C8AA /* RoomChargeCell.swift in Sources */,
 				B30957DC24010B4400335639 /* LoginInteractor.swift in Sources */,
@@ -2025,6 +2077,7 @@
 				B3E7BA9C23F9105F0088259F /* ProgressView.swift in Sources */,
 				B3E7BA5E23F9105F0088259F /* BaseView.swift in Sources */,
 				B35DCAEA241C97B9005B70FC /* CustomerCheckIn.swift in Sources */,
+				DF04787824F25074007037BD /* ServiceManagementRouter.swift in Sources */,
 				B3E7BA5023F9105F0088259F /* UIView+Container.swift in Sources */,
 				B38B9D462406BD27006D69B0 /* ListReceiptViewController.swift in Sources */,
 				B3E7BA8523F9105F0088259F /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -2038,11 +2091,13 @@
 				B37954292402A43F007768B8 /* ListRoomRouter.swift in Sources */,
 				B3C97982245A99E800F23F59 /* SignUpInteractor.swift in Sources */,
 				B3E7BA7923F9105F0088259F /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				DF04787B24F25074007037BD /* ServiceManagementInteractor.swift in Sources */,
 				B3E7BA8223F9105F0088259F /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DFC7C7AE24CE8B36001271C6 /* InsertPopUpInteractor.swift in Sources */,
 				DFC7C79E24CE75BA001271C6 /* InsertRoomParam.swift in Sources */,
 				B35FE7CF2425D05D0072D223 /* ServiceCell.swift in Sources */,
 				B36809C6240A6AC5002F8D00 /* CheckInRouter.swift in Sources */,
+				DF04787A24F25074007037BD /* ServiceManagementProtocols.swift in Sources */,
 				B35FE7C82425D0030072D223 /* ListServiceViewController.swift in Sources */,
 				B3E7BA5523F9105F0088259F /* SideMenuController.swift in Sources */,
 				B35FE7D32425D3580072D223 /* WidgetTypeEntity.swift in Sources */,
@@ -2074,6 +2129,7 @@
 				B3E7BAA323F9105F0088259F /* AppColor.swift in Sources */,
 				B35FE7CA2425D0030072D223 /* ListServiceInteractor.swift in Sources */,
 				B3E7BAB023F9105F0088259F /* ShareNativeHelper.swift in Sources */,
+				DF04787924F25074007037BD /* ServiceManagementViewController.swift in Sources */,
 				B36809A5240A5777002F8D00 /* CreateNewReceiptPresenter.swift in Sources */,
 				B3E7BA3823F9105F0088259F /* UserEndPoint.swift in Sources */,
 				B3E7BA3B23F9105F0088259F /* HomeInteractor.swift in Sources */,
@@ -2219,7 +2275,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020082014;
+				CURRENT_PROJECT_VERSION = 2020082315;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2242,7 +2298,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020082014;
+				CURRENT_PROJECT_VERSION = 2020082315;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

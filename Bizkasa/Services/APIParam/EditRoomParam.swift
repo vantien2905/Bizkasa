@@ -24,10 +24,11 @@ class EditRoomParam: Mappable {
 
     }
     
-    init(FloorId: Int, RoomClassId: Int, RoomName: String) {
+    init(FloorId: Int, RoomClassId: Int, RoomName: String, roomID: Int) {
         self.FloorId = FloorId
         self.RoomClassId = RoomClassId
         self.RoomName = RoomName
+        self.RoomId = roomID
     }
 
     func mapping(map: Map) {

@@ -32,4 +32,8 @@ class Provider {
     var roomManagementAPIService: RoomManagementAPIServiceProtocol {
         return RoomManagementAPIService(network: networkManager)
     }
+    
+    var serviceAPIService: ServiceAPIServiceProtocol {
+        return ServiceAPIService(network: networkManager)
+    }
 }

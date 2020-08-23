@@ -76,9 +76,14 @@ class ServiceView: BaseViewXib {
     @IBAction func btnAddNewTapped() {
         if let widget = widget, total != 0 {
             //            addNewCallBack?(widget, total)
+            
+            
             if checkDouplicate() {
                 tbListWidget.reloadData()
             } else {
+                widget.Quantity = total
+                widget.SubAmount = "\(widget.Price* * total)"
+                widget.Descriptions = widget.Name
                 self.listWidget.append((widget, total))
             }
         } else {
@@ -91,7 +96,10 @@ class ServiceView: BaseViewXib {
         guard let widget = widget else { return false}
         for (index, item) in listWidget.enumerated() {
             if item.0.Id == widget.Id {
+                
                 self.listWidget[index].1 += total
+                self.listWidget[index].0.Quantity = self.listWidget[index].1
+                self.listWidget[index].0.SubAmount = "\(self.listWidget[index].0.Price*) * \(self.listWidget[index].1)"
                 return true
             }
         }

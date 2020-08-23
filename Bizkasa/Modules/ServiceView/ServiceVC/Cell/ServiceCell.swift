@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class ServiceCell: UITableViewCell {
+class ServiceCell: SwipeTableViewCell {
 
     @IBOutlet weak var lbTitle: UILabel!
 
@@ -21,6 +22,7 @@ class ServiceCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        selectionStyle = .none
     }
     
 }

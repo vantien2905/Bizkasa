@@ -26,13 +26,13 @@
                         <rect key="frame" x="20" y="0.0" width="319" height="69"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyi-Wr-9Nh">
-                                <rect key="frame" x="5" y="10" width="37" height="54"/>
+                                <rect key="frame" x="5" y="10" width="37" height="49"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRv-g0-iES">
-                                <rect key="frame" x="277" y="28" width="37" height="18"/>
+                                <rect key="frame" x="277" y="25.5" width="37" height="18"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.12929137323943662" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="uyi-Wr-9Nh" secondAttribute="bottom" constant="5" id="T3j-OX-AiC"/>
+                            <constraint firstAttribute="bottom" secondItem="uyi-Wr-9Nh" secondAttribute="bottom" constant="10" id="T3j-OX-AiC"/>
                             <constraint firstItem="uyi-Wr-9Nh" firstAttribute="leading" secondItem="0Qp-qL-qoM" secondAttribute="leading" constant="5" id="anO-MM-uUO"/>
                             <constraint firstAttribute="trailing" secondItem="nRv-g0-iES" secondAttribute="trailing" constant="5" id="f6N-iQ-UiM"/>
                             <constraint firstItem="nRv-g0-iES" firstAttribute="centerY" secondItem="uyi-Wr-9Nh" secondAttribute="centerY" id="lmG-gN-FCf"/>
@@ -49,7 +49,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5I-S4-Icl">
-                        <rect key="frame" x="20" y="68" width="319" height="1"/>
+                        <rect key="frame" x="20" y="63" width="319" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="XtW-wm-uys"/>
@@ -58,7 +58,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="H5I-S4-Icl" firstAttribute="trailing" secondItem="0Qp-qL-qoM" secondAttribute="trailing" id="3bO-Q0-51I"/>
-                    <constraint firstAttribute="bottom" secondItem="H5I-S4-Icl" secondAttribute="bottom" id="Aok-wy-RkH"/>
+                    <constraint firstAttribute="bottom" secondItem="H5I-S4-Icl" secondAttribute="bottom" constant="5" id="Aok-wy-RkH"/>
                     <constraint firstItem="0Qp-qL-qoM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Hvk-SJ-lJp"/>
                     <constraint firstAttribute="trailing" secondItem="0Qp-qL-qoM" secondAttribute="trailing" constant="10" id="NbT-9T-cCj"/>
                     <constraint firstItem="H5I-S4-Icl" firstAttribute="leading" secondItem="0Qp-qL-qoM" secondAttribute="leading" id="SMX-1u-an9"/>

@@ -161,7 +161,7 @@ class InsertPopUpViewController: BaseViewController {
             delegate?.acceptTapped(action: actionType, floorParam: floorParam, roomParam: nil)
         default:
             roomParam.RoomName = tfName.getText()
-            let list = tfName.getText().splitted(by: ";").map({return EditRoomParam(FloorId: roomParam.FloorId*, RoomClassId: roomParam.RoomClassId*, RoomName: $0)})
+            let list = tfName.getText().splitted(by: ";").map({return EditRoomParam(FloorId: roomParam.FloorId*, RoomClassId: roomParam.RoomClassId*, RoomName: $0, roomID: roomParam.RoomId*)})
             delegate?.acceptTapped(action: actionType, floorParam: nil, roomParam: list)
         }
         

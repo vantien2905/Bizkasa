@@ -171,6 +171,9 @@ class BaseViewController: UIViewController {
         case 4:
             let vc = RoomManagementRouter.createModule().convertNavi()
             sideMenuController?.setContentViewController(to: vc)
+        case 5:
+            let vc = ServiceManagementRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
         default:
             self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
         }
