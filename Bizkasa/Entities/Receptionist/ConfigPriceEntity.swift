@@ -19,11 +19,11 @@ class ConfigPriceEntity: Mappable {
     var RoomClassId: Int?
     var IsActive: Bool?
     var IsDefault: Bool?
-    var CheckoutDayList: String?
-    var CheckoutNightList: String?
-    var CheckinDayList: String?
-    var CheckinNightList: String?
-    var PriceByDayList: String?
+    var CheckoutDayList: [CheckoutEntity] = []
+    var CheckoutNightList: [CheckoutEntity] = []
+    var CheckinDayList: [CheckoutEntity] = []
+    var CheckinNightList: [CheckoutEntity] = []
+    var PriceByDayList: [CheckoutEntity] = []
     var AddtionCustomerList: String?
     var ConfigTime: String?
 
@@ -48,5 +48,25 @@ class ConfigPriceEntity: Mappable {
         self.AddtionCustomerList <- map["AddtionCustomerList"]
         self.ConfigTime <- map["ConfigTime"]
     }
+}
 
+class CheckoutEntity: Mappable {
+
+    var Id: Int?
+    var ConfigPriceId: Int?
+    var Key: Int?
+    var Value: Int?
+    var Additional: Int?
+
+    required init?(map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+        self.Id <- map["Id"]
+        self.ConfigPriceId <- map["ConfigPriceId"]
+        self.Key <- map["Key"]
+        self.Value <- map["Value"]
+        self.Additional <- map["Additional"]
+    }
 }

@@ -174,6 +174,9 @@ class BaseViewController: UIViewController {
         case 5:
             let vc = ServiceManagementRouter.createModule().convertNavi()
             sideMenuController?.setContentViewController(to: vc)
+        case 6:
+            let vc = RateSettingListRouter.createModule().convertNavi()
+            sideMenuController?.setContentViewController(to: vc)
         default:
             self.showAlert(title: "Đang cập nhật", message: "Chức năng đang được cập nhật")
         }

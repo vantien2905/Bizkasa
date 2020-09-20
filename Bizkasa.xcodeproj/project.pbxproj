@@ -320,6 +320,19 @@
 		DFC7C7AD24CE8B36001271C6 /* InsertPopUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A724CE8B36001271C6 /* InsertPopUpProtocols.swift */; };
 		DFC7C7AE24CE8B36001271C6 /* InsertPopUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A824CE8B36001271C6 /* InsertPopUpInteractor.swift */; };
 		DFC7C7AF24CE8B36001271C6 /* InsertPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFC7C7A924CE8B36001271C6 /* InsertPopUpViewController.xib */; };
+		DFD0888F251720DD00B48905 /* RateSettingListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD08889251720DD00B48905 /* RateSettingListPresenter.swift */; };
+		DFD08890251720DD00B48905 /* RateSettingListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0888A251720DD00B48905 /* RateSettingListRouter.swift */; };
+		DFD08891251720DD00B48905 /* RateSettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0888B251720DD00B48905 /* RateSettingListViewController.swift */; };
+		DFD08892251720DD00B48905 /* RateSettingListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0888C251720DD00B48905 /* RateSettingListProtocols.swift */; };
+		DFD08893251720DD00B48905 /* RateSettingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0888D251720DD00B48905 /* RateSettingListInteractor.swift */; };
+		DFD08894251720DD00B48905 /* RateSettingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD0888E251720DD00B48905 /* RateSettingListViewController.xib */; };
+		DFD088982517455000B48905 /* RateSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD088962517455000B48905 /* RateSettingCell.swift */; };
+		DFD088992517455000B48905 /* RateSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD088972517455000B48905 /* RateSettingCell.xib */; };
+		DFD0889B2517484D00B48905 /* RateSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0889A2517484D00B48905 /* RateSettingEntity.swift */; };
+		DFD0889D25174B4200B48905 /* RateSettingEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0889C25174B4200B48905 /* RateSettingEndPoint.swift */; };
+		DFD0889F25174BB200B48905 /* RateSettingAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0889E25174BB200B48905 /* RateSettingAPIService.swift */; };
+		DFD088A32517547B00B48905 /* HeaderRateSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD088A12517547B00B48905 /* HeaderRateSettingCell.swift */; };
+		DFD088A42517547B00B48905 /* HeaderRateSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD088A22517547B00B48905 /* HeaderRateSettingCell.xib */; };
 		FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */; };
 		FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */; };
 		FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */; };
@@ -646,6 +659,19 @@
 		DFC7C7A724CE8B36001271C6 /* InsertPopUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpProtocols.swift; sourceTree = "<group>"; };
 		DFC7C7A824CE8B36001271C6 /* InsertPopUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpInteractor.swift; sourceTree = "<group>"; };
 		DFC7C7A924CE8B36001271C6 /* InsertPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertPopUpViewController.xib; sourceTree = "<group>"; };
+		DFD08889251720DD00B48905 /* RateSettingListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListPresenter.swift; sourceTree = "<group>"; };
+		DFD0888A251720DD00B48905 /* RateSettingListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListRouter.swift; sourceTree = "<group>"; };
+		DFD0888B251720DD00B48905 /* RateSettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListViewController.swift; sourceTree = "<group>"; };
+		DFD0888C251720DD00B48905 /* RateSettingListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListProtocols.swift; sourceTree = "<group>"; };
+		DFD0888D251720DD00B48905 /* RateSettingListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListInteractor.swift; sourceTree = "<group>"; };
+		DFD0888E251720DD00B48905 /* RateSettingListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateSettingListViewController.xib; sourceTree = "<group>"; };
+		DFD088962517455000B48905 /* RateSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingCell.swift; sourceTree = "<group>"; };
+		DFD088972517455000B48905 /* RateSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateSettingCell.xib; sourceTree = "<group>"; };
+		DFD0889A2517484D00B48905 /* RateSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingEntity.swift; sourceTree = "<group>"; };
+		DFD0889C25174B4200B48905 /* RateSettingEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingEndPoint.swift; sourceTree = "<group>"; };
+		DFD0889E25174BB200B48905 /* RateSettingAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingAPIService.swift; sourceTree = "<group>"; };
+		DFD088A12517547B00B48905 /* HeaderRateSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderRateSettingCell.swift; sourceTree = "<group>"; };
+		DFD088A22517547B00B48905 /* HeaderRateSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderRateSettingCell.xib; sourceTree = "<group>"; };
 		FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPresenter.swift; sourceTree = "<group>"; };
 		FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
 		FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
@@ -1214,6 +1240,7 @@
 				DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */,
 				DF65720524C42B2800D20DA5 /* RoomManagementEndPoint.swift */,
 				DF04787D24F25306007037BD /* ServiceEndpoint.swift */,
+				DFD0889C25174B4200B48905 /* RateSettingEndPoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -1235,6 +1262,7 @@
 				DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */,
 				DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */,
 				DF04787F24F253B2007037BD /* ServiceAPIService.swift */,
+				DFD0889E25174BB200B48905 /* RateSettingAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -1261,6 +1289,7 @@
 				B35FE7D12425D32D0072D223 /* Receptionist */,
 				B30957CF2401084A00335639 /* UserEntity.swift */,
 				B3DA711E2439730E00B1C8AA /* ReceipReportEntity.swift */,
+				DFD0889A2517484D00B48905 /* RateSettingEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1268,6 +1297,7 @@
 		B3E7B9A623F9105F0088259F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DFD0888725171F3100B48905 /* RateSettingManagement */,
 				DF04786224F24FBB007037BD /* ServiceManagement */,
 				DF6571ED24C4165700D20DA5 /* RoomManagement */,
 				DF1DD90324B49FF6006F41E4 /* PaymentManagement */,
@@ -1685,6 +1715,47 @@
 			path = InsertPopUp;
 			sourceTree = "<group>";
 		};
+		DFD0888725171F3100B48905 /* RateSettingManagement */ = {
+			isa = PBXGroup;
+			children = (
+				DFD0888825171F5D00B48905 /* List */,
+			);
+			path = RateSettingManagement;
+			sourceTree = "<group>";
+		};
+		DFD0888825171F5D00B48905 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				DFD088952517453700B48905 /* Cell */,
+				DFD08889251720DD00B48905 /* RateSettingListPresenter.swift */,
+				DFD0888A251720DD00B48905 /* RateSettingListRouter.swift */,
+				DFD0888B251720DD00B48905 /* RateSettingListViewController.swift */,
+				DFD0888C251720DD00B48905 /* RateSettingListProtocols.swift */,
+				DFD0888D251720DD00B48905 /* RateSettingListInteractor.swift */,
+				DFD0888E251720DD00B48905 /* RateSettingListViewController.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		DFD088952517453700B48905 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DFD088A02517545D00B48905 /* Header */,
+				DFD088962517455000B48905 /* RateSettingCell.swift */,
+				DFD088972517455000B48905 /* RateSettingCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DFD088A02517545D00B48905 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				DFD088A12517547B00B48905 /* HeaderRateSettingCell.swift */,
+				DFD088A22517547B00B48905 /* HeaderRateSettingCell.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		FD4F3C1E2497398C0023974E /* ReceiptManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -1793,8 +1864,10 @@
 				B389C3BB244190D000106320 /* ServiceViewSingle.xib in Resources */,
 				B36809CA240A6AC5002F8D00 /* CheckInViewController.xib in Resources */,
 				B379542D2402A43F007768B8 /* ListRoomViewController.xib in Resources */,
+				DFD088992517455000B48905 /* RateSettingCell.xib in Resources */,
 				DF1DD91124B4A0B1006F41E4 /* PaymentViewController.xib in Resources */,
 				B3E7B98A23F910310088259F /* LaunchScreen.storyboard in Resources */,
+				DFD088A42517547B00B48905 /* HeaderRateSettingCell.xib in Resources */,
 				B36809BC240A5C8C002F8D00 /* DropdownSelectedCell.xib in Resources */,
 				DF04786124F1514C007037BD /* ReceiptDetailCell.xib in Resources */,
 				DF04787C24F25074007037BD /* ServiceManagementViewController.xib in Resources */,
@@ -1812,6 +1885,7 @@
 				B3E7BA4123F9105F0088259F /* LeftMenuViewController.xib in Resources */,
 				B35FE7CB2425D0030072D223 /* ListServiceViewController.xib in Resources */,
 				B379544C2402C4F9007768B8 /* Roboto-Italic.ttf in Resources */,
+				DFD08894251720DD00B48905 /* RateSettingListViewController.xib in Resources */,
 				B3E7BA3C23F9105F0088259F /* HomeViewController.xib in Resources */,
 				B3680993240A38FF002F8D00 /* ListCustomerCell.xib in Resources */,
 				DF65720424C4179E00D20DA5 /* RoomCell.xib in Resources */,
@@ -1878,6 +1952,7 @@
 			files = (
 				B3E7BA8023F9105F0088259F /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				B326A87B245528DB00C4BC0D /* AddCustomerParam.swift in Sources */,
+				DFD088982517455000B48905 /* RateSettingCell.swift in Sources */,
 				DFC7C7AC24CE8B36001271C6 /* InsertPopUpViewController.swift in Sources */,
 				B3E7BAA223F9105F0088259F /* AppConstant.swift in Sources */,
 				B3616854244D82EF0067359B /* AppDateTime.swift in Sources */,
@@ -1893,6 +1968,7 @@
 				B3E7BA3423F9105F0088259F /* MapperData.swift in Sources */,
 				B3680992240A38FF002F8D00 /* ListCustomerCell.swift in Sources */,
 				B3E7BA7A23F9105F0088259F /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				DFD08892251720DD00B48905 /* RateSettingListProtocols.swift in Sources */,
 				FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */,
 				B3E7BA3A23F9105F0088259F /* UserAPIService.swift in Sources */,
 				B3E7BA5D23F9105F0088259F /* DateTimePickerViewController.swift in Sources */,
@@ -1900,6 +1976,7 @@
 				B3E7BA6223F9105F0088259F /* UIImageView+Extension.swift in Sources */,
 				B3E7BA8623F9105F0088259F /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				B35FE7E62426174E0072D223 /* CheckOutInteractor.swift in Sources */,
+				DFD0889D25174B4200B48905 /* RateSettingEndPoint.swift in Sources */,
 				B3E7BA3223F9105F0088259F /* BaseResponse.swift in Sources */,
 				DF04788024F253B2007037BD /* ServiceAPIService.swift in Sources */,
 				B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */,
@@ -1990,8 +2067,10 @@
 				B35FE7D72425DCC00072D223 /* WidgetCell.swift in Sources */,
 				B3E7BA3D23F9105F0088259F /* HomeViewController.swift in Sources */,
 				B3E7BAAC23F9105F0088259F /* PlayVideoHelper.swift in Sources */,
+				DFD088A32517547B00B48905 /* HeaderRateSettingCell.swift in Sources */,
 				B3E7BA6B23F9105F0088259F /* String+Extension.swift in Sources */,
 				FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */,
+				DFD08893251720DD00B48905 /* RateSettingListInteractor.swift in Sources */,
 				B3E7BA9D23F9105F0088259F /* ProgressViewWhite.swift in Sources */,
 				B32069D3241369070097D18B /* TextFieldCalendar.swift in Sources */,
 				B3E7BAA023F9105F0088259F /* EnumParamSearch.swift in Sources */,
@@ -2003,10 +2082,12 @@
 				B3E7BA3923F9105F0088259F /* Provider.swift in Sources */,
 				B3E7BA4C23F9105F0088259F /* FlashProtocols.swift in Sources */,
 				DF1DD90F24B4A0B1006F41E4 /* PaymentProtocols.swift in Sources */,
+				DFD0889F25174BB200B48905 /* RateSettingAPIService.swift in Sources */,
 				B3E7BA8423F9105F0088259F /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				B3680997240A452E002F8D00 /* AppLabel.swift in Sources */,
 				DF6571F424C4168A00D20DA5 /* RoomManagementPresenter.swift in Sources */,
 				B36809C5240A6AC5002F8D00 /* CheckInPresenter.swift in Sources */,
+				DFD08891251720DD00B48905 /* RateSettingListViewController.swift in Sources */,
 				B38B9D442406BD27006D69B0 /* ListReceiptPresenter.swift in Sources */,
 				B3E7BA9923F9105F0088259F /* KActivityIndicatorShape.swift in Sources */,
 				B3E7BA9023F9105F0088259F /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
@@ -2103,18 +2184,21 @@
 				B35FE7D32425D3580072D223 /* WidgetTypeEntity.swift in Sources */,
 				B36809B2240A5AC5002F8D00 /* AppDropdown.swift in Sources */,
 				B3E7BA5223F9105F0088259F /* Delegate.swift in Sources */,
+				DFD0888F251720DD00B48905 /* RateSettingListPresenter.swift in Sources */,
 				B3E7BA7623F9105F0088259F /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				B36809A8240A5777002F8D00 /* CreateNewReceiptProtocols.swift in Sources */,
 				DF59B92024AEFC200087BFD4 /* GetInvoiceParam.swift in Sources */,
 				B3E7BA8323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				B3E7BA6C23F9105F0088259F /* NSMutableAttributedString+Extension.swift in Sources */,
 				B35FE7E42426174E0072D223 /* CheckOutViewController.swift in Sources */,
+				DFD08890251720DD00B48905 /* RateSettingListRouter.swift in Sources */,
 				B379542C2402A43F007768B8 /* ListRoomInteractor.swift in Sources */,
 				B38B9D2E2406B0EC006D69B0 /* TabbarReceptionistInteractor.swift in Sources */,
 				B36809C8240A6AC5002F8D00 /* CheckInProtocols.swift in Sources */,
 				B3E7BA6423F9105F0088259F /* UIColor+Extension.swift in Sources */,
 				B3E7BA7823F9105F0088259F /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				B3E7BA3723F9105F0088259F /* EndPointType.swift in Sources */,
+				DFD0889B2517484D00B48905 /* RateSettingEntity.swift in Sources */,
 				B3E7BA4523F9105F0088259F /* LeftMenuInteractor.swift in Sources */,
 				B3E7BA3623F9105F0088259F /* DeviceParam.swift in Sources */,
 				B3DA711824389C8E00B1C8AA /* AnimationHelper.swift in Sources */,
@@ -2275,7 +2359,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020082315;
+				CURRENT_PROJECT_VERSION = 2020090410;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2298,7 +2382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020082315;
+				CURRENT_PROJECT_VERSION = 2020090410;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

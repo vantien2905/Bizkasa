@@ -26,13 +26,25 @@ extension UIView {
         return nil
     }
     
-    func setAnimationTouch() {
-        UIView.animate(withDuration: 0.2,animations: {
-            self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        }, completion: { finish in
-            UIView.animate(withDuration: 0.1, animations: {
-                self.transform = CGAffineTransform.identity
-            })
+    public func setAnimationTouch(_ scale: CGFloat = 1.15) {
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.5,
+                       options: .curveEaseInOut,
+                       animations: {
+                        self.transform = CGAffineTransform.init(scaleX: scale, y: scale)
+                        //reducing the size
+                        UIView.animate(withDuration: 0.5,
+                                       delay: 0.2,
+                                       usingSpringWithDamping: 0.5,
+                                       initialSpringVelocity: 2,
+                                       options: .curveEaseInOut,
+                                       animations: {
+                                        self.transform = CGAffineTransform.identity
+                                        
+                        })
         })
     }
 

@@ -36,4 +36,8 @@ class Provider {
     var serviceAPIService: ServiceAPIServiceProtocol {
         return ServiceAPIService(network: networkManager)
     }
+    
+    var rateSettingAPIService: RateSettingAPIServiceProtocol {
+        return RateSettingAPIService(network: networkManager)
+    }
 }
