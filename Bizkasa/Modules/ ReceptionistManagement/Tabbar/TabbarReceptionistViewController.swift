@@ -11,37 +11,74 @@
 import UIKit
 import BATabBarController
 
-class TabbarReceptionistViewController: UITabBarController {
+extension UIImage {
+    func customTint(_ tintColor: UIColor = AppColor.normalOrange) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        context.translateBy(x: 0, y: self.size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        context.setBlendMode(CGBlendMode.normal)
+        let rect: CGRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
 
-	var presenter: TabbarReceptionistPresenterProtocol?
+        context.clip(to: rect, mask: self.cgImage!)
+
+        tintColor.setFill()
+        context.fill(rect)
+
+        var newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        newImage = newImage.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        return newImage
+    }
+}
+
+class TabbarReceptionistViewController: UITabBarController {
     
-	override func viewDidLoad() {
+    var presenter: TabbarReceptionistPresenterProtocol?
+    
+    let selectColor = AppColor.main
+    let unselectColor = AppColor.normalGray
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         let listRoom = ListRoomRouter.createModule().convertNavi()
-        let iconRoom = UITabBarItem(title: "Phòng", image: AppImage.imgRoom, selectedImage: AppImage.imgRoom)
+        let iconRoom = UITabBarItem(title: "Phòng",
+                                    image: AppImage.imgRoom.customTint(unselectColor),
+                                    selectedImage: AppImage.imgRoom.customTint(selectColor))
         listRoom.tabBarItem = iconRoom
-
+        
         let listCustomer = ListCustomerRouter.createModule().convertNavi()
-               let iconCustomer = UITabBarItem(title: "Khách", image: AppImage.imgUser, selectedImage: AppImage.imgUser)
-               listCustomer.tabBarItem = iconCustomer
-
+        let iconCustomer = UITabBarItem(
+            title: "Khách",
+            image: AppImage.imgUser.customTint(unselectColor),
+            selectedImage: AppImage.imgUser.customTint(selectColor))
+        listCustomer.tabBarItem = iconCustomer
+        
         let listReceipt = ListReceiptRouter.createModule().convertNavi()
-               let iconReceipt = UITabBarItem(title: "Phiếu thu", image: AppImage.imgPayment, selectedImage: AppImage.imgPayment)
-               listReceipt.tabBarItem = iconReceipt
+        let iconReceipt = UITabBarItem(
+            title: "Phiếu thu",
+            image: AppImage.imgPayment.customTint(unselectColor),
+            selectedImage: AppImage.imgPayment.customTint(selectColor))
+        listReceipt.tabBarItem = iconReceipt
         let controllers = [listRoom, listReceipt, listCustomer]  //array of the root view controllers displayed by the tab bar interface
         self.viewControllers = controllers
         
         for tabBarItem in tabBar.items! {
-            
-            tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+            tabBarItem.imageInsets = UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0)
         }
+        
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectColor], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectColor], for: .selected)
+        
     }
 }
 
 extension TabbarReceptionistViewController: BATabBarControllerDelegate, UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: BATabBarController, didSelect: UIViewController) {
-
+        
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -51,7 +88,7 @@ extension TabbarReceptionistViewController: BATabBarControllerDelegate, UITabBar
 }
 
 extension TabbarReceptionistViewController: TabbarReceptionistViewProtocol {
-	
+    
 }
 
 extension TabbarReceptionistViewController {

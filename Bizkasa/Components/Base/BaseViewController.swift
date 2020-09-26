@@ -416,7 +416,7 @@ extension BaseViewController {
         btnNavi.setTitle(_title, for: .normal)
         btnNavi.setTitleColor(textColor, for: .normal)
         btnNavi.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        btnNavi.backgroundColor = AppColor.secondMain
+        btnNavi.backgroundColor = AppColor.normalOrange
         btnNavi.contentEdgeInsets =  UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         btnNavi.setBorder(cornerRadius: 10)
         btnNavi.clipsToBounds = true

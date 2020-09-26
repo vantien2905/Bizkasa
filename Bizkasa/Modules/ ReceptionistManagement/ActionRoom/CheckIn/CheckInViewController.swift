@@ -98,6 +98,11 @@ class CheckInViewController: BaseViewController {
                 break
             }
         }
+        
+        vConfigurePrice.dropDownCallBack = {[weak self] (index, item) in
+            guard let self = self else { return }
+            self.configPrice = self.listPrice[index]
+        }
     }
 
     @objc func btnAcceptTapped() {
@@ -127,9 +132,6 @@ class CheckInViewController: BaseViewController {
             addCustomerParam.OrderId = 0
             presenter?.addCustomer(param: addCustomerParam)
         }
-
-
-
     }
 
 }
@@ -175,6 +177,4 @@ extension CheckInViewController: CheckInViewProtocol {
             self.makeToast(message: error?.message?.first ?? "")
         }
     }
-
-	
 }

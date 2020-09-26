@@ -28,9 +28,9 @@ class LoginViewController: BaseViewController {
     }
 
     override func setUpViews() {
-        vUser.setTitleAndLogo(AppImage.imgUser, title: "Email")
-        vUser.setPlaceHolder(title: "Nhập email")
-        vPassword.setTitleAndLogo(AppImage.imgPassword, title: "Mật khầu", isSecurity: true)
+        vUser.setTitleAndLogo(AppImage.imgUser, title: "Tên đăng nhập")
+        vUser.setPlaceHolder(title: "Nhập tên đăng nhập")
+        vPassword.setTitleAndLogo(AppImage.imgPassword, title: "Mật khẩu", isSecurity: true)
         vPassword.setPlaceHolder(title: "Nhập mật khẩu")
 //        vUser.setText("haichay88@gmail.com")
 //        vPassword.setText("123456")
@@ -49,12 +49,7 @@ class LoginViewController: BaseViewController {
 
     private func validate() -> Bool {
         if vUser.getText().isEmpty {
-            self.view.makeToast("Bạn chưa nhập email")
-            return false
-        }
-
-        if !vUser.getText().isValidEmail() {
-            self.view.makeToast("Không đúng định dạng email")
+            self.view.makeToast("Bạn chưa nhập tên đăng nhập")
             return false
         }
 
