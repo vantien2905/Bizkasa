@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,30 +28,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bfq-wg-DtU">
-                    <rect key="frame" x="0.0" y="0.0" width="722" height="141"/>
+                    <rect key="frame" x="0.0" y="0.0" width="722" height="75"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfC-ON-9oo" customClass="AppTitleLogo" customModule="Bizkasa" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="722" height="30"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="fhR-Co-UEd"/>
                             </constraints>
                         </view>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mr6-xB-ESw">
-                            <rect key="frame" x="0.0" y="35" width="722" height="106"/>
+                            <rect key="frame" x="0.0" y="35" width="722" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="EVy-CN-W5B"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-7o-5dN">
-                    <rect key="frame" x="0.0" y="140" width="722" height="1"/>
+                    <rect key="frame" x="0.0" y="74" width="722" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="eEB-mY-CPB"/>
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="QNI-7o-5dN" firstAttribute="leading" secondItem="Bfq-wg-DtU" secondAttribute="leading" id="Nbc-Vt-PHy"/>
@@ -58,12 +63,16 @@
                 <constraint firstItem="QNI-7o-5dN" firstAttribute="trailing" secondItem="Bfq-wg-DtU" secondAttribute="trailing" id="UCv-sU-MlK"/>
                 <constraint firstItem="QNI-7o-5dN" firstAttribute="bottom" secondItem="Bfq-wg-DtU" secondAttribute="bottom" id="bsH-cz-Q5f"/>
                 <constraint firstItem="Bfq-wg-DtU" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="pAi-S8-5QL"/>
-                <constraint firstAttribute="bottom" secondItem="Bfq-wg-DtU" secondAttribute="bottom" id="qxn-bP-4mQ"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bfq-wg-DtU" secondAttribute="bottom" id="qxn-bP-4mQ"/>
                 <constraint firstItem="Bfq-wg-DtU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rZ2-Zu-HIU"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="130.43478260869566" y="-140.29017857142856"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

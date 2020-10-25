@@ -26,6 +26,15 @@ extension UIView {
         return nil
     }
     
+    public func setRoundCorners(_ corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds,
+                                byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+    
     public func setAnimationTouch(_ scale: CGFloat = 1.15) {
         
         UIView.animate(withDuration: 0.5,
@@ -70,6 +79,12 @@ extension UIView {
         self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)
         self.layer.shadowOpacity = 0.4
         self.layer.shadowRadius = 3.0
+    }
+    
+    func setShadawHeader() {
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowRadius = 1
     }
 
     func setShadowCircle() {

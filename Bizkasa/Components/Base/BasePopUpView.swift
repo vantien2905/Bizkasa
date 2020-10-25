@@ -6,192 +6,166 @@
 //  Copyright © 2018 Engma. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-typealias CompletionClosure = (() -> Void)
-typealias CompletionMessage = ((_ message: String?) -> Void)
-typealias CompletionAny = ((_ item: Any?) -> Void)
+public protocol ComponentBuilder {}
 
-enum BasePopUpViewType {
-    case fromLeftToCenter
-    case fromRightToCenter
-    case fromBottomToCenter
-    case fromTopToCenter
-    case zoomOut
+public extension ComponentBuilder where Self: Any {
+    /// Calls the parameter block in order to update the receiver properties and then returns the object.
+    func build(_ block: (Self) -> Void) -> Self {
+        block(self)
+
+        return self
+    }
 }
 
-class BasePopUpView: UIView {
-    let vBackGround: UIView = {
-        let view                = UIView()
-        view.backgroundColor    = UIColor.black.withAlphaComponent(0.2)
-        return view
-    }()
-    
-    let vContent: UIView = {
-        let view                = UIView()
-        view.backgroundColor    = UIColor.black.withAlphaComponent(0.9)
-        view.setBorder(borderWidth: 1, borderColor: AppColor.whiteColor.withAlphaComponent(0.7), cornerRadius: 5)
-        return view
-    }()
-    
-    lazy var btnOver: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(self.btnOverTapped), for: .touchUpInside)
-        
-        return button
-    }()
-    
-    var completionNo: CompletionClosure?
-    var completionYes: CompletionClosure?
-    
-    private var widthContent: CGFloat = 0
-    private var heightContent: CGFloat = 0
-    private var minXContent: CGFloat = 0
-    private var minYContent: CGFloat = 0
-    private var widthWindow: CGFloat = 0
-    private var heightWindow: CGFloat = 0
-    private var type: BasePopUpViewType = .fromLeftToCenter
-    
-    //
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
+extension NSObject: ComponentBuilder {}
+
+extension UIView {
+    public func addSubviews(_ views: [UIView]) {
+        views.forEach {
+            addSubview($0)
+        }
+    }
+}
+
+public typealias CompletionClosure = (() -> Void)
+
+public enum BasePopUpViewType {
+    case fromLeft
+    case fromRight
+    case fromBottom
+    case fromTop
+    case zoomOut
+    case none
+}
+
+import UIKit
+
+open class BasePopUpView: BaseView {
+    private lazy var vBackGround = UIView().build {
+        $0.backgroundColor = UIColor.black.withAlphaComponent(0.2)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupView()
+    open lazy var vContent = UIView().build {
+        $0.backgroundColor = UIColor.white
     }
     
-    func setupView() {
+    open lazy var btnOver = UIButton().build {
+        $0.addTarget(self,
+                     action: #selector(self.btnOverTapped),
+                     for: .touchUpInside)
+    }
+    
+    open var completionNo: CompletionClosure?
+    open var completionYes: CompletionClosure?
+    
+    private var type: BasePopUpViewType = .fromBottom
+    
+    open override func setUpViews() {
         addSubview(vBackGround)
-        vBackGround.fillSuperview()
+        vBackGround.fillSuperviewNotSafe()
         vBackGround.addSubview(btnOver)
-        btnOver.fillSuperview()
+        btnOver.fillSuperviewNotSafe()
         vBackGround.addSubview(vContent)
+        vContent.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(1000)
+        }
+    }
+    
+    open override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        vContent.setRoundCorners([.topLeft, .topRight], radius: 10)
     }
     
     @objc func btnOverTapped() {
         hidePopUp()
     }
     
-    func showPopUp(width: CGFloat = 250 , height: CGFloat = 250, type: BasePopUpViewType = BasePopUpViewType.zoomOut) {
+    open func showPopUp(type: BasePopUpViewType = BasePopUpViewType.zoomOut,
+                        accept completeYes: CompletionClosure? = nil,
+                        cancel completeNo: CompletionClosure? = nil) {
         
         if let window = UIApplication.shared.keyWindow {
-            if #available(iOS 11.0, *) {
-                widthWindow = window.safeAreaLayoutGuide.layoutFrame.width
-                heightWindow = window.safeAreaLayoutGuide.layoutFrame.height
-            } else {
-                widthWindow = window.frame.width
-                heightWindow = window.frame.height
-            }
-            
-            //---
-            minXContent = (widthWindow - width) / 2
-            minYContent = (heightWindow - height) / 2
-            widthContent = width
-            heightContent = height
             self.type = type
-            
-            //---
             window.addSubview(self)
-            self.fillSuperview()
+            self.fillSuperviewNotSafe()
             self.vBackGround.alpha = 0
+            self.completionYes = completeYes
+            self.completionNo = completeNo
             
-            //---
-            showPopWithAnimation(type: type)
+            showPopUpBeforeAnimation(type: type)
         }
     }
     
-    func hidePopUp(success: ((Bool) -> Void)? = nil) {
-        
-        self.hidePopUpWithAnimation()
-        
+    open func hidePopUp(success: ((Bool) -> Void)? = nil) {
         //-- FIX ME
         if type == .zoomOut {
-            
-//            AnimationHelper.shared.animationScaleOpacity(view: self.vContent, fromScale: 1, toScale: 0, fromOpacity: 1, toOpacity: 0, duration: 0.1) {
-//                
-//            }
-            
             self.vContent.frame = CGRect.zero
             self.vContent.alpha = 0
             self.removeFromSuperview()
             success?(true)
         } else {
             self.vBackGround.alpha = 1
-            UIView.animate(withDuration: 0.3, animations: { [unowned self] in
-                self.hidePopUpWithAnimation()
-                }, completion: { [weak self] _ in
-                    guard let strongSelf = self else {
-                        success?(false)
-                        return }
-                    
-                    strongSelf.vBackGround.alpha = 0
-                    strongSelf.removeFromSuperview()
-                    success?(true)
+            UIView.animate(withDuration: 0.3,
+                           animations: {
+            }, completion: { [weak self] _ in
+                guard let self = self else {
+                    success?(false)
+                    return
+                }
+                self.vBackGround.alpha = 0
+                self.removeFromSuperview()
+                success?(true)
             })
-            
-        }
-        
-    }
-    
-    private func hidePopUpWithAnimation() {
-        switch type {
-        case .fromBottomToCenter:
-            self.vContent.frame = CGRect(x: minXContent, y: 0 - heightContent, width: widthContent, height: heightContent)
-            break
-        case .fromLeftToCenter:
-            self.vContent.frame = CGRect(x: widthWindow + widthContent, y: minYContent, width: widthContent, height: heightContent)
-            break
-        case .fromRightToCenter:
-            self.vContent.frame = CGRect(x: -widthContent, y: minYContent, width: widthContent, height: heightContent)
-            break
-        case .fromTopToCenter:
-            
-            
-            self.vContent.frame = CGRect(x: minXContent, y: heightWindow + heightContent, width: widthContent, height: heightContent)
-            break
-        case .zoomOut:
-            break
         }
     }
     
     private func showPopUpBeforeAnimation(type: BasePopUpViewType) {
-        self.vBackGround.alpha = 0
-        switch type {
-        case .fromBottomToCenter:
-            self.vContent.frame = CGRect(x: minXContent, y: 1000, width: widthContent, height: heightContent)
-            break
-        case .fromLeftToCenter:
-            self.vContent.frame = CGRect(x: -1000, y: minYContent, width: widthContent, height: heightContent)
-            break
-        case .fromRightToCenter:
-            self.vContent.frame = CGRect(x: 1000, y: minYContent, width: widthContent, height: heightContent)
-            break
-        case .fromTopToCenter:
-            self.vContent.frame = CGRect(x: minXContent, y: -1000, width: widthContent, height: heightContent)
-            break
-        case .zoomOut:
+        if type == .none {
+            self.layoutIfNeeded()
             self.vBackGround.alpha = 1
-            self.vContent.frame = CGRect(x: minXContent, y: minYContent, width: widthContent, height: heightContent)
+            self.vContent.snp.updateConstraints {
+                $0.bottom.equalToSuperview().offset(0)
+            }
+        } else {
+            self.vContent.snp.updateConstraints {
+                $0.bottom.equalToSuperview().offset(1000)
+            }
+            self.showPopWithAnimation(type: type)
         }
     }
     
     private func showPopWithAnimation(type: BasePopUpViewType) {
-        showPopUpBeforeAnimation(type: type)
-        
-        switch type {
-        case .fromBottomToCenter, .fromLeftToCenter, .fromRightToCenter, .fromTopToCenter:
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: { [unowned self] in
-                self.vBackGround.alpha = 1
-                self.vContent.frame = CGRect(x: self.minXContent, y: self.minYContent, width: self.widthContent, height: self.heightContent)
-                }, completion: nil)
-            
-        case .zoomOut:
-            AnimationHelper.shared.animationScale(view: self.vContent, fromScale: 0.1, toScale: 1)
-            
-        }
+        self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       usingSpringWithDamping: 0.7,
+                       initialSpringVelocity: 1,
+                       options: .curveEaseIn,
+                       animations: { [unowned self] in
+                        self.vBackGround.alpha = 1
+                        self.vContent.snp.updateConstraints {
+                            switch type {
+                            case .fromBottom:
+                                $0.bottom.equalToSuperview().offset(0)
+                            case .fromLeft:
+                                $0.leading.equalToSuperview()
+                            case .fromRight:
+                                $0.trailing.equalToSuperview()
+                            case.fromTop:
+                                $0.top.equalToSuperview()
+                            case.zoomOut:
+                                AnimationHelper.shared.animationScale(view: self.vContent,
+                                                                      fromScale: 0.1,
+                                                                      toScale: 1)
+                            case .none:
+                                break
+                            }
+                        }
+                        self.layoutIfNeeded()
+        })
     }
-    
 }

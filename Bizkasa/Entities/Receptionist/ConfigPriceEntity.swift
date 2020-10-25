@@ -24,8 +24,11 @@ class ConfigPriceEntity: Mappable {
     var CheckinDayList: [CheckoutEntity] = []
     var CheckinNightList: [CheckoutEntity] = []
     var PriceByDayList: [CheckoutEntity] = []
-    var AddtionCustomerList: String?
+    var AddtionCustomerList: [CheckoutEntity] = []
     var ConfigTime: String?
+    
+    init() {
+    }
 
     required init?(map: Map) {
 
@@ -57,6 +60,9 @@ class CheckoutEntity: Mappable {
     var Key: Int?
     var Value: Int?
     var Additional: Int?
+    
+    init() {
+    }
 
     required init?(map: Map) {
 

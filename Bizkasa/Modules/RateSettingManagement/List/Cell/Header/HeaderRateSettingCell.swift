@@ -8,24 +8,48 @@
 
 import UIKit
 
+enum RateSettingAction {
+    case edit
+    case delete
+}
+
+protocol HeaderRateSettingCellDelegate: class {
+    func rateSettingAction(type: RateSettingAction, rateSetting: RateSettingEntity)
+}
+
 class HeaderRateSettingCell: UITableViewHeaderFooterView {
     
     @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbContent: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    weak var delegate: HeaderRateSettingCellDelegate?
+    
+    var rateSetting: RateSettingEntity!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        backgroundColor = .lightGray
-    }
-
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-//    
-    func setData(detail: RateSettingEntity) {
-        lbTitle.text = detail.RoomClass?.Name
+        editButton.imageView?.contentMode = .scaleToFill
+        deleteButton.imageView?.contentMode = .scaleToFill
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+    }
+
+    func setData(detail: RateSettingEntity) {
+        self.rateSetting = detail
+        guard let room = detail.RoomClass else { return }
+        lbTitle.text = "\(room.Name&)"
+        lbContent.text = "(\(room.NumCustomer*) người - \(room.NumBed*) giường)"
+    }
+    
+    @IBAction func deleteButtonTapped() {
+        delegate?.rateSettingAction(type: .delete, rateSetting: rateSetting)
+    }
+    
+    @IBAction func editButtonTapped() {
+        delegate?.rateSettingAction(type: .edit, rateSetting: rateSetting)
+    }
 }

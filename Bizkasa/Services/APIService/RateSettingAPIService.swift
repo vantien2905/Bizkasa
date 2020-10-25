@@ -9,9 +9,21 @@
 import Foundation
 protocol RateSettingAPIServiceProtocol {
     func getRoomClass(success: @escaping SuccessHandler<RateSettingEntity>.array, failure: @escaping RequestFailure)
+    func addRoomClass(param: RateSettingEntity, success: @escaping SuccessHandler<RateSettingEntity>.array, failure: @escaping RequestFailure)
+    func deleteRoomClass(listID: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class RateSettingAPIService: RateSettingAPIServiceProtocol {
+    
+    func deleteRoomClass(listID: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = RateSettingEndPoint.deleteRoomClass(listID: listID)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func addRoomClass(param: RateSettingEntity, success: @escaping SuccessHandler<RateSettingEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = RateSettingEndPoint.addRoomClass(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
     
     func getRoomClass(success: @escaping SuccessHandler<RateSettingEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = RateSettingEndPoint.getRoomClass

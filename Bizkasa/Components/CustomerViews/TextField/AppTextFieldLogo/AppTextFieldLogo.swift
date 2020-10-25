@@ -38,9 +38,17 @@ class AppTextFieldLogo: BaseViewXib {
         tfContent.text = text
     }
     
-    func setTitleAndLogo(_ image: UIImage, title: String, isSecurity: Bool = false) {
+    func setTitleAndLogo(_ image: UIImage,
+                         title: String,
+                         isSecurity: Bool = false,
+                         placeholder: String? = nil) {
         vTitle.setTitleAndLogo(image, title: title)
         tfContent.isSecureTextEntry = isSecurity
+        if placeholder&.isEmpty {
+            tfContent.placeholder = "Nhập \(title.lowercased())"
+        } else {
+            tfContent.placeholder = placeholder
+        }
     }
     
     func hideTitle(){
@@ -57,6 +65,14 @@ class AppTextFieldLogo: BaseViewXib {
     
     func setPlaceHolderColor(color:UIColor){
         tfContent.setPlaceHolderTextColor(color)
+    }
+    
+    func setKeyboardNumber() {
+        tfContent.keyboardType = .numberPad
+    }
+    
+    func setKeyboardDecimal() {
+        tfContent.keyboardType = .decimalPad
     }
 }
 

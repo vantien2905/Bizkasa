@@ -55,18 +55,13 @@ class BaseViewController: UIViewController {
         if CommonHelper.isIpad() {
             SlideInPresentationManager.shared.direction = .center
             SlideInPresentationManager.shared.sizePercent = 4/5
-            //            SlideInPresentationManager.shared.direction = .center
-            //            SlideInPresentationManager.shared.sizePercent = 4/5
         }
     }
     
     func setColorNavigation() {
-        self.navigationBar?.barTintColor = AppColor.main
-        self.navigationBar?.tintColor = AppColor.main
-        self.navigationBar?.shadowImage = UIImage()
-        self.navigationBar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationBar?.isTranslucent = false
-        self.navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.semiBold22]
+        UINavigationBar.appearance().barTintColor = AppColor.main
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.semiBold22]
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

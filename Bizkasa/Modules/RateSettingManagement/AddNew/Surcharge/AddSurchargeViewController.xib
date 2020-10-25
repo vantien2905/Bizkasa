@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSurchargeViewController">
+            <connections>
+                <outlet property="tableView" destination="AlQ-fX-P2a" id="zLo-mI-55e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AlQ-fX-P2a">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMk-3D-oGT">
+                    <rect key="frame" x="112.5" y="607" width="150" height="40"/>
+                    <color key="backgroundColor" name="secondMain"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="9Ta-aE-SiT"/>
+                        <constraint firstAttribute="width" constant="150" id="cDI-gl-P7X"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <state key="normal" title="Xác nhận">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="acceptButtonTapped" destination="-1" eventType="touchUpInside" id="gUE-1n-iVK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AlQ-fX-P2a" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="15b-u2-QKi"/>
+                <constraint firstItem="EMk-3D-oGT" firstAttribute="centerX" secondItem="zIn-FR-UZl" secondAttribute="centerX" id="CQi-iR-XAl"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="EMk-3D-oGT" secondAttribute="bottom" constant="20" id="T7j-aF-83u"/>
+                <constraint firstItem="EMk-3D-oGT" firstAttribute="top" secondItem="AlQ-fX-P2a" secondAttribute="bottom" constant="30" id="i5C-SI-Y55"/>
+                <constraint firstItem="AlQ-fX-P2a" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="iUX-vd-8tS"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="AlQ-fX-P2a" secondAttribute="trailing" id="xte-oj-5eJ"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="secondMain">
+            <color red="0.58431372549019611" green="0.80784313725490198" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

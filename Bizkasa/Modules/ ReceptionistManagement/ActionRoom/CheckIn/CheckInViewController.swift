@@ -34,12 +34,14 @@ class CheckInViewController: BaseViewController {
     var configPrice: ConfigPriceEntity! {
         didSet {
             price = self.configPrice.PriceByDay*
+            priceID = self.configPrice.Id*
         }
     }
 
     var room: RoomEntity!
 
     var price = 0
+    var priceID: Int?
 
     var calculatorMode = 3
 
@@ -77,6 +79,7 @@ class CheckInViewController: BaseViewController {
         tfCheckInTime.setTitleAndLogo(AppImage.imgTime, title: "Thời gian")
 
         tvNote.setTitleAndLogo(AppImage.imgNote, title: "Ghi chú")
+        vTimeType.itemSelected = 2
         vTimeType.dataSource = CaculatorMode.allValues.map({$0.title&})// ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
 
         tfCheckInTime.titleDatePicker = ("NHẬN PHÒNG", "TRẢ PHÒNG")
@@ -114,6 +117,7 @@ class CheckInViewController: BaseViewController {
             param.RoomName = room.Name
             param.CustomerName = "Khách không CMT"
             param.Price = self.price
+            param.ConfigPriceId = priceID
             param.OrderStatus = 4
             param.CaculatorMode = calculatorMode
             let list = vService.listWidget.map { (item, total) -> WidgetEntity in
@@ -148,6 +152,7 @@ extension CheckInViewController: CheckInViewProtocol {
             param.Price = self.price
             param.OrderStatus = 4
             param.CaculatorMode = calculatorMode
+            param.ConfigPriceId = priceID
             let list = vService.listWidget.map { (item, total) -> WidgetEntity in
                 item.Quantity = total
                 return item

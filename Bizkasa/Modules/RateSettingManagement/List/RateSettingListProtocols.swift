@@ -19,6 +19,8 @@ protocol RateSettingListPresenterProtocol: class {
     var interactor: RateSettingListInteractorInputProtocol? { get set }
     
     func getRoomClass()
+    func addRoomClass(param: RateSettingEntity)
+    func deleteRoomClass(listID: [Int])
 }
 
 //MARK: Interactor -
@@ -26,6 +28,8 @@ protocol RateSettingListInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetRoomClass(result: [RateSettingEntity]?, error: APIError?)
+    func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?)
+    func didDeleteRoomClass(result: BaseResponse?, error: APIError?)
 }
 
 protocol RateSettingListInteractorInputProtocol: class {
@@ -34,6 +38,8 @@ protocol RateSettingListInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getRoomClass()
+    func addRoomClass(param: RateSettingEntity)
+    func deleteRoomClass(listID: [Int])
 }
 
 //MARK: View -
@@ -43,4 +49,6 @@ protocol RateSettingListViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetRoomClass(result: [RateSettingEntity]?, error: APIError?)
+    func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?)
+    func didDeleteRoomClass(result: BaseResponse?, error: APIError?)
 }

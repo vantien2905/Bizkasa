@@ -11,6 +11,23 @@
 import UIKit
 
 class RateSettingListInteractor: RateSettingListInteractorInputProtocol {
+    func deleteRoomClass(listID: [Int]) {
+        service.deleteRoomClass(listID: listID) { (result) in
+            self.presenter?.didDeleteRoomClass(result: result, error: nil)
+        } failure: { (error) in
+            self.presenter?.didDeleteRoomClass(result: nil, error: error)
+        }
+    }
+    
+    func addRoomClass(param: RateSettingEntity) {
+        service.addRoomClass(param: param) { (result) in
+            self.presenter?.didGetRoomClass(result: result, error: nil)
+        } failure: { (error) in
+            self.presenter?.didGetRoomClass(result: nil, error: error)
+        }
+
+    }
+    
     let service = Provider.shared.rateSettingAPIService
     
     func getRoomClass() {

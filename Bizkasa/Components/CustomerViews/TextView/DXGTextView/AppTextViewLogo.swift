@@ -33,8 +33,15 @@ class AppTextViewLogo: BaseViewXib {
         return vTextView.textview.text
     }
 
-    func setTitleAndLogo(_ image: UIImage = AppImage.imgPayment, title: String) {
+    func setTitleAndLogo(_ image: UIImage = AppImage.imgPayment,
+                         title: String,
+                         placeHolder: String? = nil) {
         vTitle.setTitleAndLogo(image, title: title)
+        if !placeHolder&.isEmpty {
+            vTextView.TEXTVIEW_PLACE_HOLDER = placeHolder&
+        } else {
+            vTextView.TEXTVIEW_PLACE_HOLDER = "Nhập \(title.lowercased())"
+        }
     }
 
     func setPlaceholder(_ placeholder: String) {

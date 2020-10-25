@@ -22,6 +22,7 @@ class CheckInParam: Mappable {
     var OrderStatus: Int?
     var CustomerName: String?
     var Notes: String?
+    var ConfigPriceId: Int?
 
     required init?(map: Map) {
 
@@ -43,6 +44,7 @@ class CheckInParam: Mappable {
         self.OrderStatus <- map["OrderStatus"]
         self.CustomerName <- map["CustomerName"]
         self.Notes <- map["Notes"]
+        self.ConfigPriceId <- map["ConfigPriceId"]
     }
 
 

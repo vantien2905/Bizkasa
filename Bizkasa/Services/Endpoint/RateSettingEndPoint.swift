@@ -11,6 +11,8 @@ import Alamofire
 
 enum RateSettingEndPoint {
     case getRoomClass
+    case addRoomClass(param: RateSettingEntity)
+    case deleteRoomClass(listID: [Int])
 }
 
 extension RateSettingEndPoint: EndPointType {
@@ -18,6 +20,10 @@ extension RateSettingEndPoint: EndPointType {
         switch self {
         case .getRoomClass:
             return "Room/GetRoomClass"
+        case .addRoomClass:
+            return "Room/AddRoomClass"
+        case .deleteRoomClass:
+            return "Room/DeleteRoomClass"
         
         }
     }
@@ -35,6 +41,10 @@ extension RateSettingEndPoint: EndPointType {
         switch self {
         case .getRoomClass:
             return [:]
+        case .addRoomClass(let param):
+            return param.toJSON()
+        case .deleteRoomClass(let listID):
+            return ["Ids": listID]
         }
     }
 

@@ -35,21 +35,19 @@ let listImageTitle = [AppImage.receptionist,
 
 class HomeViewController: HomeBaseViewController {
 
-    @IBOutlet weak var cvHome: UICollectionView!
-    @IBOutlet weak var lbService: UILabel!
-    @IBOutlet weak var lbRoom: UILabel!
-    @IBOutlet weak var lbTotal: UILabel!
+    @IBOutlet weak var cvHome       : UICollectionView!
+    @IBOutlet weak var lbService    : UILabel!
+    @IBOutlet weak var lbRoom       : UILabel!
+    @IBOutlet weak var lbTotal      : UILabel!
 
     var presenter: HomePresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-//        presenter?.getReceiptReport(period: 1)
         if let user = UserDefaultHelper.shared.getUser(), let shiftID = user.ShiftId {
             presenter?.reportRevenue(shiftID: shiftID)
         }
-
     }
 
     override func setUpNavigation() {
