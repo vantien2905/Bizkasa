@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 class RateSettingListViewController: HomeBaseViewController {
     
@@ -21,6 +22,9 @@ class RateSettingListViewController: HomeBaseViewController {
             tbRateSetting.reloadData()
         }
     }
+    
+    var buttonDisplayMode: ButtonDisplayMode = .imageOnly
+    var buttonStyle: ButtonStyle = .backgroundColor
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,7 @@ class RateSettingListViewController: HomeBaseViewController {
         tbRateSetting.dataSource = self
         tbRateSetting.rowHeight = UITableView.automaticDimension
         tbRateSetting.tableFooterView = UIView()
+        tbRateSetting.contentInset.bottom = 50
     }
     
     @IBAction func addNewTapped() {
@@ -48,6 +53,14 @@ class RateSettingListViewController: HomeBaseViewController {
 }
 
 extension RateSettingListViewController: RateSettingListViewProtocol {
+    func didDeleteConfigPrice(result: BaseResponse?, error: APIError?) {
+        if let result = result, let data = result.data as? Bool, data {
+            presenter?.getRoomClass()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
     func didDeleteRoomClass(result: BaseResponse?, error: APIError?) {
         if let result = result, let data = result.data as? Bool, data {
             presenter?.getRoomClass()
@@ -86,6 +99,7 @@ extension RateSettingListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(RateSettingCell.self)
         cell.setData(detail: listRateSetting[indexPath.section].ConfigPrices[indexPath.row], indexPath: indexPath)
+        cell.rateDelegate = self
         cell.delegate = self
         return cell
     }
@@ -138,5 +152,49 @@ extension RateSettingListViewController: RateSettingCellDelegate {
     func moreButtonTapped(indexPath: IndexPath) {
         let moreRateVC = MoreRateSettingRouter.createModule(priceConfigure: listRateSetting[indexPath.section].ConfigPrices[indexPath.row].ConfigPriceRow).convertNavi()
         self.present(controller: moreRateVC)
+    }
+}
+
+extension RateSettingListViewController: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let edit = SwipeAction(style: .default, title: nil) { action, indexPath in
+            print("Edit")
+            self.editActionTapped(indexPath: indexPath)
+        }
+        configure(action: edit, with: .edit)
+        
+        let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+            print("Delete")
+            self.deleteActionTapped(indexPath: indexPath)
+        }
+        configure(action: delete, with: .trash)
+        
+        return [delete, edit]
+    }
+    
+    func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
+        action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
+        
+        switch buttonStyle {
+        case .backgroundColor:
+            action.backgroundColor = descriptor.color(forStyle: buttonStyle)
+        case .circular:
+            action.backgroundColor = .clear
+            action.transitionDelegate = ScaleTransition.default
+        }
+    }
+    
+    private func editActionTapped(indexPath: IndexPath) {
+        
+    }
+    
+    private func deleteActionTapped(indexPath: IndexPath) {
+            
+        self.showAlert(title: "Xoá", message: "Bạn có chắc chắn muốn xoá?") {
+            guard let id = self.listRateSetting[indexPath.section].ConfigPrices[indexPath.row].ConfigPriceRow?.Id else { return }
+            self.presenter?.deleteConfigPrice(listID: [id])
+        }
     }
 }

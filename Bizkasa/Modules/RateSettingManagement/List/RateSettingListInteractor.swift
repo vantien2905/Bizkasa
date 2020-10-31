@@ -11,6 +11,14 @@
 import UIKit
 
 class RateSettingListInteractor: RateSettingListInteractorInputProtocol {
+    func deleteConfigPrice(listID: [Int]) {
+        service.deleteConfigPrice(listID: listID) { (result) in
+            self.presenter?.didDeleteConfigPrice(result: result, error: nil)
+        } failure: { (error) in
+            self.presenter?.didDeleteConfigPrice(result: nil, error: error)
+        }
+    }
+    
     func deleteRoomClass(listID: [Int]) {
         service.deleteRoomClass(listID: listID) { (result) in
             self.presenter?.didDeleteRoomClass(result: result, error: nil)

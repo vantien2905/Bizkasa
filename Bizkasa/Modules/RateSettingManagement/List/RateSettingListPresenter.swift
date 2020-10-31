@@ -11,6 +11,10 @@
 import UIKit
 
 class RateSettingListPresenter: RateSettingListPresenterProtocol {
+    func deleteConfigPrice(listID: [Int]) {
+        interactor?.deleteConfigPrice(listID: listID)
+    }
+    
     func deleteRoomClass(listID: [Int]) {
         interactor?.deleteRoomClass(listID: listID)
     }
@@ -37,6 +41,10 @@ class RateSettingListPresenter: RateSettingListPresenterProtocol {
 }
 
 extension RateSettingListPresenter: RateSettingListInteractorOutputProtocol {
+    func didDeleteConfigPrice(result: BaseResponse?, error: APIError?) {
+        view?.didDeleteConfigPrice(result: result, error: error)
+    }
+    
     func didDeleteRoomClass(result: BaseResponse?, error: APIError?) {
         view?.didDeleteRoomClass(result: result, error: error)
     }

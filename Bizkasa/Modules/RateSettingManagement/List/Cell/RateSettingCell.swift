@@ -7,20 +7,21 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 protocol RateSettingCellDelegate: class {
     func hourButtonTapped(indexPath: IndexPath)
     func moreButtonTapped(indexPath: IndexPath)
 }
 
-class RateSettingCell: UITableViewCell {
+class RateSettingCell: SwipeTableViewCell {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbDayRate: UILabel!
     @IBOutlet weak var lbNightRate: UILabel!
     @IBOutlet weak var lbMonthRate: UILabel!
     
-    weak var delegate: RateSettingCellDelegate?
+    weak var rateDelegate: RateSettingCellDelegate?
 
     var indexPath: IndexPath = .init(row: 0, section: 0)
     
@@ -46,11 +47,11 @@ class RateSettingCell: UITableViewCell {
     }
     
     @IBAction func hourButtonTapped() {
-        delegate?.hourButtonTapped(indexPath: indexPath)
+        rateDelegate?.hourButtonTapped(indexPath: indexPath)
     }
     
     @IBAction func moreButtonTapped() {
-        delegate?.moreButtonTapped(indexPath: indexPath)
+        rateDelegate?.moreButtonTapped(indexPath: indexPath)
     }
     
 }

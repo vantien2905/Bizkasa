@@ -13,6 +13,7 @@ enum RateSettingEndPoint {
     case getRoomClass
     case addRoomClass(param: RateSettingEntity)
     case deleteRoomClass(listID: [Int])
+    case deleteConfigPrice(listID: [Int])
 }
 
 extension RateSettingEndPoint: EndPointType {
@@ -24,6 +25,8 @@ extension RateSettingEndPoint: EndPointType {
             return "Room/AddRoomClass"
         case .deleteRoomClass:
             return "Room/DeleteRoomClass"
+        case .deleteConfigPrice:
+            return "Room/DeleteConfigPrice"
         
         }
     }
@@ -44,6 +47,8 @@ extension RateSettingEndPoint: EndPointType {
         case .addRoomClass(let param):
             return param.toJSON()
         case .deleteRoomClass(let listID):
+            return ["Ids": listID]
+        case .deleteConfigPrice(let listID):
             return ["Ids": listID]
         }
     }
