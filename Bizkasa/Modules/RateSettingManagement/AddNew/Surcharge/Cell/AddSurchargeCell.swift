@@ -49,10 +49,10 @@ class AddSurchargeCell: UITableViewCell {
         if let amountString = priceTextField.text?.currencyInputFormatting() {
             priceTextField.text = amountString
         }
-//        let surchange = CheckoutEntity()
-//        surchange.Key = indexPath.row + 1
-//        surchange.Value = Int(priceTextField.text&)
-//        delegate?.updateSurcharge(indexPath: indexPath, surcharge: surchange)
+        let surchange = CheckoutEntity()
+        surchange.Key = timeDropdown.itemSelected + 1
+        surchange.Value = Int(priceTextField.text&.removeCommaDecimal())
+        delegate?.updateSurcharge(indexPath: indexPath, surcharge: surchange)
     }
     
     func setData(indexPath: IndexPath) {

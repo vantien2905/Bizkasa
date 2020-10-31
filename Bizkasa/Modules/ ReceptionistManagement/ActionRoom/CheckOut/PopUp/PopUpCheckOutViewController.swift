@@ -69,7 +69,7 @@ class PopUpCheckOutViewController: BaseViewController {
     @IBAction func btnAcceptTapped() {
         if validate() {
             let content = vContent.getText()&
-            if let price = Int(vCharge.getText().replacingOccurrences(of: ",", with: "")) {
+            if let price = Int(vCharge.getText().removeCommaDecimal()) {
                 delegate?.btnAcceptTapped(content: content, price: price, indexPath: indexPath)
                 self.dismiss(animated: false)
             }

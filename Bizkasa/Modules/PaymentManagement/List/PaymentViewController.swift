@@ -134,7 +134,7 @@ class PaymentViewController: HomeBaseViewController {
     @IBAction func btnAcceptTapped() {
         if validate() {
             let content = vContent.getText()&
-            if let price = Int(vCharge.getText().replacingOccurrences(of: ",", with: "")) {
+            if let price = Int(vCharge.getText().removeCommaDecimal()) {
                 let param = InsertInvoiceParam()
                 param.TotalAmount = price
                 param.InvoiceType = 2
