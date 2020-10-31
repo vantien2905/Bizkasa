@@ -32,8 +32,8 @@ class MoreRateSettingCell: UITableViewCell {
             setText(config.CheckoutDayList[row], row: row)
         case Surchanrge.checkoutNightList.rawValue:
             setText(config.CheckoutNightList[row], row: row)
-        case Surchanrge.checkoutDayList.rawValue:
-            setText(config.CheckoutDayList[row], row: row)
+        case Surchanrge.checkinDayList.rawValue:
+            setText(config.CheckinDayList[row], row: row)
         case Surchanrge.checkinNightList.rawValue:
             setText(config.CheckinNightList[row], row: row)
         case Surchanrge.addtionCustomerList.rawValue:

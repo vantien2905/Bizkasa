@@ -14,7 +14,7 @@ class AddSurchargeRouter: AddSurchargeWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(param: RateSettingEntity) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = AddSurchargeViewController(nibName: nil, bundle: nil)
         let interactor = AddSurchargeInteractor()
@@ -24,6 +24,7 @@ class AddSurchargeRouter: AddSurchargeWireframeProtocol {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        view.param = param
 
         return view
     }

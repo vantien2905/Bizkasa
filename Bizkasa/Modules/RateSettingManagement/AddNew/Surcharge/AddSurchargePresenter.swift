@@ -11,6 +11,10 @@
 import UIKit
 
 class AddSurchargePresenter: AddSurchargePresenterProtocol {
+    func addRoomClass(param: RateSettingEntity) {
+        interactor?.addRoomClass(param: param)
+    }
+    
 
     weak private var view: AddSurchargeViewProtocol?
     var interactor: AddSurchargeInteractorInputProtocol?
@@ -25,5 +29,9 @@ class AddSurchargePresenter: AddSurchargePresenterProtocol {
 }
 
 extension AddSurchargePresenter: AddSurchargeInteractorOutputProtocol {
+    func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?) {
+        view?.didAddRoomClass(result: result, error: error)
+    }
+    
 	
 }

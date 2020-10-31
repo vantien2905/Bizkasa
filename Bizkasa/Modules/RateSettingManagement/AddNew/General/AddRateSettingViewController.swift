@@ -24,6 +24,12 @@ class AddRateSettingViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
 
 	var presenter: AddRateSettingPresenterProtocol?
+    
+    let param = RateSettingEntity()
+    
+    let roomClass = RoomTypeEntity()
+    
+    let configPriceRow = ConfigPriceEntity()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +49,7 @@ class AddRateSettingViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped() {
-        let vc = AddSurchargeRouter.createModule()
+        let vc = AddSurchargeRouter.createModule(param: param)
         self.push(controller: vc)
     }
 }
@@ -61,10 +67,31 @@ extension AddRateSettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(GeneralInfoCell.self)
         cell.setData(index: indexPath.row)
+        cell.textfieldDidChangeCallback = {[weak self] text in
+            guard let self = self else { return }
+            self.setParam(index: indexPath.row, text: text)
+        }
         return cell
     }
     
-    
+    private func setParam(index: Int, text: String) {
+        switch index {
+        case GeneralInfo.roomType.rawValue:
+            param.RoomClass?.Name = text
+        case GeneralInfo.bedNum.rawValue:
+            param.RoomClass?.NumBed = Int(text)
+        case GeneralInfo.customerNum.rawValue:
+            param.RoomClass?.NumCustomer = Int(text)
+        case GeneralInfo.priceByDay.rawValue:
+            param.ConfigPrices.first?.ConfigPriceRow?.PriceByDay = Int(text)
+        case GeneralInfo.priceByNight.rawValue:
+            param.ConfigPrices.first?.ConfigPriceRow?.PriceByNight = Int(text)
+        case GeneralInfo.priceByMonth.rawValue:
+            param.ConfigPrices.first?.ConfigPriceRow?.PriceByMonth = Int(text)
+        default:
+            break
+        }
+    }
 }
 
 extension AddRateSettingViewController: UITableViewDelegate {

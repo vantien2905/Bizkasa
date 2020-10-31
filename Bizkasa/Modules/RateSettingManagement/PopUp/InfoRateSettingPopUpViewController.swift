@@ -19,14 +19,14 @@ class InfoRateSettingPopUpViewController: UIViewController {
     }
     
     private lazy var roomTypeTextField = AppTextViewLogo().build {
-        $0.setTitleAndLogo(title: "Loại phòng")
+        $0.setTitleAndLogo(AppImage.imgRoom, title: "Loại phòng")
         $0.snp.makeConstraints {
             $0.height.equalTo(70)
         }
     }
     
     private lazy var bedTotalTextField = AppTextViewLogo().build {
-        $0.setTitleAndLogo(title: "Số giường")
+        $0.setTitleAndLogo(AppImage.coupleRoom, title: "Số giường")
         $0.vTextView.textview.keyboardType = .numberPad
         $0.snp.makeConstraints {
             $0.height.equalTo(70)
@@ -35,7 +35,7 @@ class InfoRateSettingPopUpViewController: UIViewController {
     }
     
     private lazy var customerTotalTextField = AppTextViewLogo().build {
-        $0.setTitleAndLogo(title: "Số người")
+        $0.setTitleAndLogo(AppImage.imgUser, title: "Số người")
         $0.vTextView.textview.keyboardType = .numberPad
         $0.snp.makeConstraints {
             $0.height.equalTo(70)

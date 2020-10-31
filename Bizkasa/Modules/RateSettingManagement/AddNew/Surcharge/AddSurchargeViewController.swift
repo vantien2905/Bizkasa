@@ -30,14 +30,20 @@ class AddSurchargeViewController: BaseViewController {
             tableView.reloadData()
         }
     }
+    
+    var param: RateSettingEntity!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        if let config = param.ConfigPrices.first?.ConfigPriceRow {
+            configPrice = config
+        }
+        
     }
     
     override func setUpNavigation() {
-        setTitleNavigation(title: "Thêm mới loại phòng")
+        setTitleNavigation(title: "Thêm phụ thu")
         addBackWhiteToNavigation()
     }
 
@@ -52,12 +58,15 @@ class AddSurchargeViewController: BaseViewController {
     }
 
     @IBAction func acceptButtonTapped() {
-        self.navigationController?.dismiss()
+        param.ConfigPrices.first?.ConfigPriceRow = configPrice
+        presenter?.addRoomClass(param: param)
     }
 }
 
 extension AddSurchargeViewController: AddSurchargeViewProtocol {
-	
+    func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?) {
+        self.navigationController?.dismiss()
+    }
 }
 
 extension AddSurchargeViewController: UITableViewDataSource {
@@ -92,6 +101,7 @@ extension AddSurchargeViewController: UITableViewDataSource {
             guard let self = self else { return }
             self.removeSurcharge(indexpath: indexpath)
         }
+        cell.delegate = self
         return cell
     }
     
@@ -150,4 +160,25 @@ extension AddSurchargeViewController: UITableViewDataSource {
 
 extension AddSurchargeViewController: UITableViewDelegate {
     
+}
+
+extension AddSurchargeViewController: AddSurchargeCellDelegate {
+    func updateSurcharge(indexPath: IndexPath, surcharge: CheckoutEntity) {
+        switch indexPath.section {
+        case SurchanrgeType.checkinDayList.rawValue:
+            self.configPrice.CheckinDayList[indexPath.row] = surcharge
+        case SurchanrgeType.checkoutDayList.rawValue:
+            self.configPrice.CheckoutDayList[indexPath.row] = surcharge
+        case SurchanrgeType.checkinNightList.rawValue:
+            self.configPrice.CheckinNightList[indexPath.row] = surcharge
+        case SurchanrgeType.checkoutNightList.rawValue:
+            self.configPrice.CheckoutNightList[indexPath.row] = surcharge
+        case SurchanrgeType.priceByHour.rawValue:
+            self.configPrice.PriceByDayList[indexPath.row] = surcharge
+        case SurchanrgeType.addtionCustomerList.rawValue:
+            self.configPrice.AddtionCustomerList[indexPath.row] = surcharge
+        default:
+            break
+        }
+    }
 }

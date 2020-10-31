@@ -96,9 +96,9 @@ class AppDropdown: BaseViewXib {
         }
     }
     
-    func setItemSelected(item: Int, text: String) {
-        lbContent.text = text
-        self.itemSelected = item
+    func setItemSelected(index: Int) {
+        lbContent.text = dataSource[index]
+        self.itemSelected = index
     }
 
     private func setColor(_ color: UIColor) {

@@ -35,8 +35,7 @@ class HourRateSettingCell: UITableViewCell {
         if row == 0 {
             titleLabel.text = PriceHourSetting.onehour.rawValue
         } else {
-            titleLabel.text = "Giờ thứ \(row):"
+            titleLabel.text = "Giờ thứ \(row + 1):"
         }
     }
-    
 }

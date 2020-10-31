@@ -39,9 +39,9 @@ class RateSettingCell: UITableViewCell {
         self.indexPath = indexPath
         guard let configureRow = detail.ConfigPriceRow else { return }
         lbTitle.text = configureRow.Name
-        lbDayRate.text = "\(configureRow.PriceByDay*.formattedWithSeparator)"
-        lbNightRate.text = "\(configureRow.PriceByNight*.formattedWithSeparator)"
-        lbMonthRate.text = "\(configureRow.PriceByMonth*.formattedWithSeparator)"
+        lbDayRate.text = "\(configureRow.PriceByDay*.formattedWithSeparator)đ"
+        lbNightRate.text = "\(configureRow.PriceByNight*.formattedWithSeparator)đ"
+        lbMonthRate.text = "\(configureRow.PriceByMonth*.formattedWithSeparator)đ"
         self.layoutIfNeeded()
     }
     

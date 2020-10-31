@@ -89,7 +89,7 @@ extension String {
       }
 
     // formatting text for currency textField
-    func currencyInputFormatting(digit: Int) -> String {
+    func currencyInputFormatting(digit: Int = 0) -> String {
 
         var number: NSNumber!
         let formatter = NumberFormatter()

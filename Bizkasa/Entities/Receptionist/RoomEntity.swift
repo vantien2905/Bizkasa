@@ -20,6 +20,8 @@ class RoomTypeEntity: Mappable {
     var NumCustomer: Int?
     var UserId: Int?
 
+    init() {
+    }
 
     required init?(map: Map) {
 

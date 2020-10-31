@@ -11,10 +11,16 @@ import UIKit
 class GeneralInfoCell: UITableViewCell {
     
     @IBOutlet weak var textField: AppTextFieldLogo!
+    
+    var textfieldDidChangeCallback: ((_ text: String) -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        textField.textFieldCallBack = {[weak self] text in
+            guard let self = self else { return }
+            self.textfieldDidChangeCallback?(text)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

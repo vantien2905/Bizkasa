@@ -11,6 +11,17 @@
 import UIKit
 
 class AddSurchargeInteractor: AddSurchargeInteractorInputProtocol {
+    let service = Provider.shared.rateSettingAPIService
+    
+    func addRoomClass(param: RateSettingEntity) {
+        service.addRoomClass(param: param) { (result) in
+            self.presenter?.didAddRoomClass(result: result, error: nil)
+        } failure: { (error) in
+            self.presenter?.didAddRoomClass(result: nil, error: error)
+        }
+
+    }
+    
 
     weak var presenter: AddSurchargeInteractorOutputProtocol?
 }

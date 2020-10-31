@@ -70,7 +70,7 @@ extension MoreRateSettingViewController: UITableViewDataSource {
         case Surchanrge.checkinNightList.rawValue:
             return configure.CheckinNightList.count
         case Surchanrge.addtionCustomerList.rawValue:
-            return 0
+            return configure.AddtionCustomerList.count
         default:
             return 0
         }
@@ -84,6 +84,7 @@ extension MoreRateSettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeue(header: HeaderMoreRateSettingCell.self)
+        header.setShadawHeader()
         header.setData(section: section)
         return header
     }

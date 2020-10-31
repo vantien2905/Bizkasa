@@ -15,6 +15,11 @@ class RateSettingEntity: Mappable {
     var ConfigPrices: [PriceEntity] = []
     var RoomTypeFeatureIds: String?
     var Images: String?
+    
+    init() {
+        self.ConfigPrices = [PriceEntity()]
+        self.RoomClass = RoomTypeEntity()
+    }
 
     required init?(map: Map) {
 
@@ -33,6 +38,10 @@ class PriceEntity: Mappable {
     var ConfigPriceRow: ConfigPriceEntity?
     var ConfigType: Int?
     var IsDefault: Bool?
+    
+    init() {
+        self.ConfigPriceRow = ConfigPriceEntity()
+    }
 
     required init?(map: Map) {
 
