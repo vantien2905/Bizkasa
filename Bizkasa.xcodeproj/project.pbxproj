@@ -374,6 +374,20 @@
 		DFD088A42517547B00B48905 /* HeaderRateSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD088A22517547B00B48905 /* HeaderRateSettingCell.xib */; };
 		DFDBE0B0254587AE007C8F07 /* AddSurchargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDBE0AE254587AE007C8F07 /* AddSurchargeCell.swift */; };
 		DFDBE0B1254587AE007C8F07 /* AddSurchargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDBE0AF254587AE007C8F07 /* AddSurchargeCell.xib */; };
+		DFFBEE92254EB423005EDBE9 /* FooterRateSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEE90254EB423005EDBE9 /* FooterRateSettingCell.swift */; };
+		DFFBEE93254EB423005EDBE9 /* FooterRateSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFBEE91254EB423005EDBE9 /* FooterRateSettingCell.xib */; };
+		DFFBEE9B254EC11F005EDBE9 /* EditGeneralRateSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEE95254EC11F005EDBE9 /* EditGeneralRateSettingPresenter.swift */; };
+		DFFBEE9C254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEE96254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift */; };
+		DFFBEE9D254EC11F005EDBE9 /* EditGeneralRateSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEE97254EC11F005EDBE9 /* EditGeneralRateSettingViewController.swift */; };
+		DFFBEE9E254EC11F005EDBE9 /* EditGeneralRateSettingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEE98254EC11F005EDBE9 /* EditGeneralRateSettingProtocols.swift */; };
+		DFFBEE9F254EC11F005EDBE9 /* EditGeneralRateSettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEE99254EC11F005EDBE9 /* EditGeneralRateSettingInteractor.swift */; };
+		DFFBEEA0254EC11F005EDBE9 /* EditGeneralRateSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFBEE9A254EC11F005EDBE9 /* EditGeneralRateSettingViewController.xib */; };
+		DFFBEEA9254ED03E005EDBE9 /* AddGeneralConfigurePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEEA3254ED03E005EDBE9 /* AddGeneralConfigurePresenter.swift */; };
+		DFFBEEAA254ED03E005EDBE9 /* AddGeneralConfigureRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEEA4254ED03E005EDBE9 /* AddGeneralConfigureRouter.swift */; };
+		DFFBEEAB254ED03E005EDBE9 /* AddGeneralConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEEA5254ED03E005EDBE9 /* AddGeneralConfigureViewController.swift */; };
+		DFFBEEAC254ED03E005EDBE9 /* AddGeneralConfigureProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEEA6254ED03E005EDBE9 /* AddGeneralConfigureProtocols.swift */; };
+		DFFBEEAD254ED03E005EDBE9 /* AddGeneralConfigureInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFBEEA7254ED03E005EDBE9 /* AddGeneralConfigureInteractor.swift */; };
+		DFFBEEAE254ED03E005EDBE9 /* AddGeneralConfigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFBEEA8254ED03E005EDBE9 /* AddGeneralConfigureViewController.xib */; };
 		FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */; };
 		FD82CE63249745AE0075C1AC /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */; };
 		FD82CE64249745AE0075C1AC /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */; };
@@ -754,6 +768,20 @@
 		DFD088A22517547B00B48905 /* HeaderRateSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderRateSettingCell.xib; sourceTree = "<group>"; };
 		DFDBE0AE254587AE007C8F07 /* AddSurchargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSurchargeCell.swift; sourceTree = "<group>"; };
 		DFDBE0AF254587AE007C8F07 /* AddSurchargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSurchargeCell.xib; sourceTree = "<group>"; };
+		DFFBEE90254EB423005EDBE9 /* FooterRateSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterRateSettingCell.swift; sourceTree = "<group>"; };
+		DFFBEE91254EB423005EDBE9 /* FooterRateSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterRateSettingCell.xib; sourceTree = "<group>"; };
+		DFFBEE95254EC11F005EDBE9 /* EditGeneralRateSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGeneralRateSettingPresenter.swift; sourceTree = "<group>"; };
+		DFFBEE96254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGeneralRateSettingRouter.swift; sourceTree = "<group>"; };
+		DFFBEE97254EC11F005EDBE9 /* EditGeneralRateSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGeneralRateSettingViewController.swift; sourceTree = "<group>"; };
+		DFFBEE98254EC11F005EDBE9 /* EditGeneralRateSettingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGeneralRateSettingProtocols.swift; sourceTree = "<group>"; };
+		DFFBEE99254EC11F005EDBE9 /* EditGeneralRateSettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGeneralRateSettingInteractor.swift; sourceTree = "<group>"; };
+		DFFBEE9A254EC11F005EDBE9 /* EditGeneralRateSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditGeneralRateSettingViewController.xib; sourceTree = "<group>"; };
+		DFFBEEA3254ED03E005EDBE9 /* AddGeneralConfigurePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGeneralConfigurePresenter.swift; sourceTree = "<group>"; };
+		DFFBEEA4254ED03E005EDBE9 /* AddGeneralConfigureRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGeneralConfigureRouter.swift; sourceTree = "<group>"; };
+		DFFBEEA5254ED03E005EDBE9 /* AddGeneralConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGeneralConfigureViewController.swift; sourceTree = "<group>"; };
+		DFFBEEA6254ED03E005EDBE9 /* AddGeneralConfigureProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGeneralConfigureProtocols.swift; sourceTree = "<group>"; };
+		DFFBEEA7254ED03E005EDBE9 /* AddGeneralConfigureInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGeneralConfigureInteractor.swift; sourceTree = "<group>"; };
+		DFFBEEA8254ED03E005EDBE9 /* AddGeneralConfigureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddGeneralConfigureViewController.xib; sourceTree = "<group>"; };
 		FD82CE5C249745AE0075C1AC /* ReceiptPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptPresenter.swift; sourceTree = "<group>"; };
 		FD82CE5D249745AE0075C1AC /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
 		FD82CE5E249745AE0075C1AC /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
@@ -1796,6 +1824,12 @@
 			isa = PBXGroup;
 			children = (
 				DF46B9A62545694B00D8BE5B /* InfoRateSettingPopUpViewController.swift */,
+				DFFBEE95254EC11F005EDBE9 /* EditGeneralRateSettingPresenter.swift */,
+				DFFBEE96254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift */,
+				DFFBEE97254EC11F005EDBE9 /* EditGeneralRateSettingViewController.swift */,
+				DFFBEE98254EC11F005EDBE9 /* EditGeneralRateSettingProtocols.swift */,
+				DFFBEE99254EC11F005EDBE9 /* EditGeneralRateSettingInteractor.swift */,
+				DFFBEE9A254EC11F005EDBE9 /* EditGeneralRateSettingViewController.xib */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -1803,6 +1837,7 @@
 		DF46B9AA254576C800D8BE5B /* AddNew */ = {
 			isa = PBXGroup;
 			children = (
+				DFFBEEA2254ED021005EDBE9 /* Configure */,
 				DF46B9C62545805700D8BE5B /* Surcharge */,
 				DF46B9C52545804C00D8BE5B /* General */,
 			);
@@ -1967,6 +2002,7 @@
 		DFD088952517453700B48905 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				DFFBEE8F254EB408005EDBE9 /* Footer */,
 				DFD088A02517545D00B48905 /* Header */,
 				DFD088962517455000B48905 /* RateSettingCell.swift */,
 				DFD088972517455000B48905 /* RateSettingCell.xib */,
@@ -1981,6 +2017,28 @@
 				DFD088A22517547B00B48905 /* HeaderRateSettingCell.xib */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		DFFBEE8F254EB408005EDBE9 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				DFFBEE90254EB423005EDBE9 /* FooterRateSettingCell.swift */,
+				DFFBEE91254EB423005EDBE9 /* FooterRateSettingCell.xib */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		DFFBEEA2254ED021005EDBE9 /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				DFFBEEA3254ED03E005EDBE9 /* AddGeneralConfigurePresenter.swift */,
+				DFFBEEA4254ED03E005EDBE9 /* AddGeneralConfigureRouter.swift */,
+				DFFBEEA5254ED03E005EDBE9 /* AddGeneralConfigureViewController.swift */,
+				DFFBEEA6254ED03E005EDBE9 /* AddGeneralConfigureProtocols.swift */,
+				DFFBEEA7254ED03E005EDBE9 /* AddGeneralConfigureInteractor.swift */,
+				DFFBEEA8254ED03E005EDBE9 /* AddGeneralConfigureViewController.xib */,
+			);
+			path = Configure;
 			sourceTree = "<group>";
 		};
 		FD4F3C1E2497398C0023974E /* ReceiptManagement */ = {
@@ -2076,6 +2134,7 @@
 				B38B9D2F2406B0EC006D69B0 /* TabbarReceptionistViewController.xib in Resources */,
 				DF46B9D8254580A600D8BE5B /* AddSurchargeViewController.xib in Resources */,
 				B32069DD241394B80097D18B /* AppTextViewLogo.xib in Resources */,
+				DFFBEE93254EB423005EDBE9 /* FooterRateSettingCell.xib in Resources */,
 				B36809BA240A5C8C002F8D00 /* ActionDropdownCell.xib in Resources */,
 				B35FE7D82425DCC00072D223 /* WidgetCell.xib in Resources */,
 				B3142FE324272716003609DA /* TopInfoCheckOutCell.xib in Resources */,
@@ -2113,6 +2172,7 @@
 				B3DA711324374F1800B1C8AA /* ServiceChargeCell.xib in Resources */,
 				B3DA711D24389D1C00B1C8AA /* PopUpCheckOutViewController.xib in Resources */,
 				B30957E72401115300335639 /* AppTitleLogo.xib in Resources */,
+				DFFBEEA0254EC11F005EDBE9 /* EditGeneralRateSettingViewController.xib in Resources */,
 				B37954502402C543007768B8 /* Roboto-BlackItalic.ttf in Resources */,
 				B3E7BA4723F9105F0088259F /* FlashViewController.xib in Resources */,
 				B379544E2402C4F9007768B8 /* Roboto-Regular.ttf in Resources */,
@@ -2129,6 +2189,7 @@
 				DF65720424C4179E00D20DA5 /* RoomCell.xib in Resources */,
 				B36809B3240A5AC5002F8D00 /* AppDropdownBorder.xib in Resources */,
 				B3E7BA5F23F9105F0088259F /* Assets.xcassets in Resources */,
+				DFFBEEAE254ED03E005EDBE9 /* AddGeneralConfigureViewController.xib in Resources */,
 				B36809AA240A5777002F8D00 /* CreateNewReceiptViewController.xib in Resources */,
 				B37954322402A48E007768B8 /* ListRoomCVCell.xib in Resources */,
 				B3616856244D82EF0067359B /* AppChooseTime.xib in Resources */,
@@ -2216,6 +2277,7 @@
 				B3E7BA5D23F9105F0088259F /* DateTimePickerViewController.swift in Sources */,
 				DF46B9D3254580A600D8BE5B /* AddSurchargePresenter.swift in Sources */,
 				B3E7BA8123F9105F0088259F /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				DFFBEEAB254ED03E005EDBE9 /* AddGeneralConfigureViewController.swift in Sources */,
 				B3E7BA6223F9105F0088259F /* UIImageView+Extension.swift in Sources */,
 				B3E7BA8623F9105F0088259F /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				B35FE7E62426174E0072D223 /* CheckOutInteractor.swift in Sources */,
@@ -2225,12 +2287,14 @@
 				B3E7BAA723F9105F0088259F /* SlideInPresentationManager.swift in Sources */,
 				B36809A9240A5777002F8D00 /* CreateNewReceiptInteractor.swift in Sources */,
 				DF46B9B3254576DF00D8BE5B /* AddRateSettingViewController.swift in Sources */,
+				DFFBEE9E254EC11F005EDBE9 /* EditGeneralRateSettingProtocols.swift in Sources */,
 				DFC7C7A024CE7C48001271C6 /* InsertOrUpdateFloorParam.swift in Sources */,
 				B3E7BA5B23F9105F0088259F /* HomeBaseViewController.swift in Sources */,
 				DF1DD91024B4A0B1006F41E4 /* PaymentInteractor.swift in Sources */,
 				B3E7BA4823F9105F0088259F /* FlashRouter.swift in Sources */,
 				B3E7BA4323F9105F0088259F /* LeftMenuProtocols.swift in Sources */,
 				DF2A9DA32543CEC500388975 /* MoreRateSettingProtocols.swift in Sources */,
+				DFFBEE92254EB423005EDBE9 /* FooterRateSettingCell.swift in Sources */,
 				B3E7BA3523F9105F0088259F /* NetworkRequest.swift in Sources */,
 				B3E7BA9223F9105F0088259F /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				B3E7BA6523F9105F0088259F /* Int+Extension.swift in Sources */,
@@ -2262,6 +2326,7 @@
 				DF46B9D7254580A600D8BE5B /* AddSurchargeInteractor.swift in Sources */,
 				B36809A6240A5777002F8D00 /* CreateNewReceiptRouter.swift in Sources */,
 				FD82CE62249745AE0075C1AC /* ReceiptPresenter.swift in Sources */,
+				DFFBEE9D254EC11F005EDBE9 /* EditGeneralRateSettingViewController.swift in Sources */,
 				B3E7BAA623F9105F0088259F /* SlideInPresentationAnimator.swift in Sources */,
 				DF04787724F25074007037BD /* ServiceManagementPresenter.swift in Sources */,
 				B3E7BAA523F9105F0088259F /* AppFont.swift in Sources */,
@@ -2299,6 +2364,7 @@
 				DF6571F824C4168A00D20DA5 /* RoomManagementInteractor.swift in Sources */,
 				B3E7BA3E23F9105F0088259F /* HomeRouter.swift in Sources */,
 				B3E7BA7423F9105F0088259F /* Array+Extension.swift in Sources */,
+				DFFBEEAC254ED03E005EDBE9 /* AddGeneralConfigureProtocols.swift in Sources */,
 				B3E7BA4B23F9105F0088259F /* FlashPresenter.swift in Sources */,
 				DFC7C7AB24CE8B36001271C6 /* InsertPopUpRouter.swift in Sources */,
 				DF6571F524C4168A00D20DA5 /* RoomManagementRouter.swift in Sources */,
@@ -2368,6 +2434,7 @@
 				B3E7BA9423F9105F0088259F /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				B3E7BA9323F9105F0088259F /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				B30957D824010B4400335639 /* LoginPresenter.swift in Sources */,
+				DFFBEEAA254ED03E005EDBE9 /* AddGeneralConfigureRouter.swift in Sources */,
 				B337D36C2439EA97005B4EDA /* InsertInvoiceParam.swift in Sources */,
 				B3E7BA7B23F9105F0088259F /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				DF1DD91824B4A553006F41E4 /* PaymentEntity.swift in Sources */,
@@ -2392,6 +2459,7 @@
 				B3E7BA9E23F9105F0088259F /* AppImage.swift in Sources */,
 				B379542A2402A43F007768B8 /* ListRoomViewController.swift in Sources */,
 				B3E7BA6F23F9105F0088259F /* UICollectionView+Extension.swift in Sources */,
+				DFFBEE9B254EC11F005EDBE9 /* EditGeneralRateSettingPresenter.swift in Sources */,
 				DF65720624C42B2800D20DA5 /* RoomManagementEndPoint.swift in Sources */,
 				B3E7BA9623F9105F0088259F /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DF46B9D4254580A600D8BE5B /* AddSurchargeRouter.swift in Sources */,
@@ -2422,12 +2490,15 @@
 				B3E7BA5E23F9105F0088259F /* BaseView.swift in Sources */,
 				B35DCAEA241C97B9005B70FC /* CustomerCheckIn.swift in Sources */,
 				DF04787824F25074007037BD /* ServiceManagementRouter.swift in Sources */,
+				DFFBEE9F254EC11F005EDBE9 /* EditGeneralRateSettingInteractor.swift in Sources */,
+				DFFBEE9C254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift in Sources */,
 				B3E7BA5023F9105F0088259F /* UIView+Container.swift in Sources */,
 				B38B9D462406BD27006D69B0 /* ListReceiptViewController.swift in Sources */,
 				B3E7BA8523F9105F0088259F /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				B35FE7BC2425CBA60072D223 /* ServiceView.swift in Sources */,
 				B30957D924010B4400335639 /* LoginRouter.swift in Sources */,
 				B3E7BA6823F9105F0088259F /* UIImage+Extension.swift in Sources */,
+				DFFBEEA9254ED03E005EDBE9 /* AddGeneralConfigurePresenter.swift in Sources */,
 				B38B9D3A2406BCF7006D69B0 /* ListCustomerProtocols.swift in Sources */,
 				B3E7BA7023F9105F0088259F /* UIViewExtensions.swift in Sources */,
 				B3E7BA7123F9105F0088259F /* Loading+Extension.swift in Sources */,
@@ -2468,6 +2539,7 @@
 				B3E7BA3623F9105F0088259F /* DeviceParam.swift in Sources */,
 				B3DA711824389C8E00B1C8AA /* AnimationHelper.swift in Sources */,
 				B3E7BA5123F9105F0088259F /* Preferences.swift in Sources */,
+				DFFBEEAD254ED03E005EDBE9 /* AddGeneralConfigureInteractor.swift in Sources */,
 				DF1DD90E24B4A0B1006F41E4 /* PaymentViewController.swift in Sources */,
 				DF46B9C2254578A700D8BE5B /* SurchargeCell.swift in Sources */,
 				B30957DA24010B4400335639 /* LoginViewController.swift in Sources */,
@@ -2627,7 +2699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020102610;
+				CURRENT_PROJECT_VERSION = 2020110119;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2650,7 +2722,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020102610;
+				CURRENT_PROJECT_VERSION = 2020110119;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

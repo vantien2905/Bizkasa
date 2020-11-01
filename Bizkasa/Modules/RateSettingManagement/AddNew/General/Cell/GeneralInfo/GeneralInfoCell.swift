@@ -30,6 +30,28 @@ class GeneralInfoCell: UITableViewCell {
         selectionStyle = .none
     }
     
+    func setDataConfigure(index: Int) {
+        switch index {
+        case GeneralConfigure.configureName.rawValue:
+            textField.setTitleAndLogo(AppImage.imgRoom,
+                                      title: "Tên cấu hình")
+        case GeneralConfigure.priceByDay.rawValue:
+            textField.setTitleAndLogo(AppImage.payment,
+                                      title: "Giá theo ngày")
+            textField.setKeyboardDecimal()
+        case GeneralConfigure.priceByNight.rawValue:
+            textField.setTitleAndLogo(AppImage.payment,
+                                      title: "Giá qua đêm")
+            textField.setKeyboardDecimal()
+        case GeneralConfigure.priceByMonth.rawValue:
+            textField.setTitleAndLogo(AppImage.payment,
+                                      title: "Giá theo tháng")
+            textField.setKeyboardDecimal()
+        default:
+            break
+        }
+    }
+    
     func setData(index: Int) {
         switch index {
         case GeneralInfo.roomType.rawValue:

@@ -32,6 +32,8 @@ class AddSurchargeViewController: BaseViewController {
     }
     
     var param: RateSettingEntity!
+    
+    weak var delegate: RateSettingDelegate?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +67,7 @@ class AddSurchargeViewController: BaseViewController {
 
 extension AddSurchargeViewController: AddSurchargeViewProtocol {
     func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?) {
+        delegate?.updateDataRateSettingList()
         self.navigationController?.dismiss()
     }
 }

@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSurchargeViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddGeneralConfigureViewController">
             <connections>
-                <outlet property="tableView" destination="AlQ-fX-P2a" id="zLo-mI-55e"/>
+                <outlet property="tableView" destination="rdp-TU-dI7" id="wzB-aa-uDp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,19 +21,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AlQ-fX-P2a">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdp-TU-dI7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMk-3D-oGT">
-                    <rect key="frame" x="112.5" y="607" width="150" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyl-iE-xD1">
+                    <rect key="frame" x="112.5" y="577" width="150" height="40"/>
                     <color key="backgroundColor" name="secondMain"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="9Ta-aE-SiT"/>
-                        <constraint firstAttribute="width" constant="150" id="cDI-gl-P7X"/>
+                        <constraint firstAttribute="width" constant="150" id="BC9-pK-hfP"/>
+                        <constraint firstAttribute="height" constant="40" id="dPI-Bx-mGE"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Xác nhận">
+                    <state key="normal" title="Tiếp theo">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -51,21 +51,21 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="acceptButtonTapped" destination="-1" eventType="touchUpInside" id="gUE-1n-iVK"/>
+                        <action selector="nextButtonTapped" destination="-1" eventType="touchUpInside" id="tYD-Ml-LRU"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="AlQ-fX-P2a" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="15b-u2-QKi"/>
-                <constraint firstItem="EMk-3D-oGT" firstAttribute="centerX" secondItem="zIn-FR-UZl" secondAttribute="centerX" id="CQi-iR-XAl"/>
-                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="EMk-3D-oGT" secondAttribute="bottom" constant="20" id="T7j-aF-83u"/>
-                <constraint firstItem="EMk-3D-oGT" firstAttribute="top" secondItem="AlQ-fX-P2a" secondAttribute="bottom" constant="30" id="i5C-SI-Y55"/>
-                <constraint firstItem="AlQ-fX-P2a" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="iUX-vd-8tS"/>
-                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="AlQ-fX-P2a" secondAttribute="trailing" id="xte-oj-5eJ"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="rdp-TU-dI7" secondAttribute="trailing" id="Bjw-TW-Dd1"/>
+                <constraint firstItem="Gyl-iE-xD1" firstAttribute="top" secondItem="rdp-TU-dI7" secondAttribute="bottom" constant="20" id="Cml-hn-gN2"/>
+                <constraint firstItem="rdp-TU-dI7" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="E2f-Vd-LLq"/>
+                <constraint firstItem="rdp-TU-dI7" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="IWS-hv-oDY"/>
+                <constraint firstItem="Gyl-iE-xD1" firstAttribute="centerX" secondItem="zIn-FR-UZl" secondAttribute="centerX" id="f2t-X9-MDC"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="Gyl-iE-xD1" secondAttribute="bottom" constant="50" id="hao-iR-MlR"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="94"/>
+            <point key="canvasLocation" x="140" y="114"/>
         </view>
     </objects>
     <resources>

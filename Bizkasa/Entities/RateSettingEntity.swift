@@ -13,7 +13,7 @@ class RateSettingEntity: Mappable {
 
     var RoomClass: RoomTypeEntity?
     var ConfigPrices: [PriceEntity] = []
-    var RoomTypeFeatureIds: String?
+    var RoomTypeFeatureIds: [Int] = []
     var Images: String?
     
     init() {

@@ -38,6 +38,7 @@ class RateSettingListViewController: HomeBaseViewController {
 
     private func configureTableView() {
         tbRateSetting.registerTableCell(RateSettingCell.self)
+        tbRateSetting.registerTableCell(FooterRateSettingCell.self)
         tbRateSetting.register(header: HeaderRateSettingCell.self)
         tbRateSetting.delegate = self
         tbRateSetting.dataSource = self
@@ -93,15 +94,22 @@ extension RateSettingListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listRateSetting[section].ConfigPrices.count
+        return listRateSetting[section].ConfigPrices.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueTableCell(RateSettingCell.self)
-        cell.setData(detail: listRateSetting[indexPath.section].ConfigPrices[indexPath.row], indexPath: indexPath)
-        cell.rateDelegate = self
-        cell.delegate = self
-        return cell
+        if indexPath.row == listRateSetting[indexPath.section].ConfigPrices.count {
+            let cell = tableView.dequeueTableCell(FooterRateSettingCell.self)
+            cell.delegate = self
+            return cell
+        } else {
+            let cell = tableView.dequeueTableCell(RateSettingCell.self)
+            cell.setData(detail: listRateSetting[indexPath.section].ConfigPrices[indexPath.row], indexPath: indexPath)
+            cell.rateDelegate = self
+            cell.delegate = self
+            return cell
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -121,7 +129,8 @@ extension RateSettingListViewController: UITableViewDelegate {
     
 }
 
-extension RateSettingListViewController: HeaderRateSettingCellDelegate {
+extension RateSettingListViewController: HeaderRateSettingCellDelegate, FooterRateSettingCellDelegate {
+    //--Header
     func rateSettingAction(type: RateSettingAction, rateSetting: RateSettingEntity) {
         if type == .delete {
             self.showAlert(title: "Xoá", message: "Bạn có chắc chắn muốn xoá?") {
@@ -129,16 +138,17 @@ extension RateSettingListViewController: HeaderRateSettingCellDelegate {
                 self.presenter?.deleteRoomClass(listID: [id])
             }
         } else {
-            let popUp = InfoRateSettingPopUpViewController()
-            popUp.rateSetting = rateSetting
-            popUp.modalPresentationStyle = .overCurrentContext
-            popUp.modalTransitionStyle = .crossDissolve
-            popUp.completionYes = {
-                guard let param = popUp.getData() else { return }
-                self.presenter?.addRoomClass(param: param)
-            }
-            self.present(controller: popUp)
+            let editGeneralVC = EditGeneralRateSettingRouter.createModule(rateSetting: rateSetting)
+            editGeneralVC.modalPresentationStyle = .overCurrentContext
+            editGeneralVC.modalTransitionStyle = .crossDissolve
+            editGeneralVC.delegate = self
+            self.present(controller: editGeneralVC)
         }
+    }
+    //--Footer
+    func btnAddConfigureTapped() {
+        let vc = AddGeneralConfigureRouter.createModule().convertNavi()
+        self.present(controller: vc)
     }
 }
 
@@ -187,7 +197,8 @@ extension RateSettingListViewController: SwipeTableViewCellDelegate {
     }
     
     private func editActionTapped(indexPath: IndexPath) {
-        
+        let vc = AddGeneralConfigureRouter.createModule().convertNavi()
+        self.present(controller: vc)
     }
     
     private func deleteActionTapped(indexPath: IndexPath) {
@@ -196,5 +207,11 @@ extension RateSettingListViewController: SwipeTableViewCellDelegate {
             guard let id = self.listRateSetting[indexPath.section].ConfigPrices[indexPath.row].ConfigPriceRow?.Id else { return }
             self.presenter?.deleteConfigPrice(listID: [id])
         }
+    }
+}
+
+extension RateSettingListViewController: RateSettingDelegate {
+    func updateDataRateSettingList() {
+        presenter?.getRoomClass()
     }
 }

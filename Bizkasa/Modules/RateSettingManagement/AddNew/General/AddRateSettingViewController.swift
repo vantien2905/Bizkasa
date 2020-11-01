@@ -26,10 +26,6 @@ class AddRateSettingViewController: BaseViewController {
 	var presenter: AddRateSettingPresenterProtocol?
     
     let param = RateSettingEntity()
-    
-    let roomClass = RoomTypeEntity()
-    
-    let configPriceRow = ConfigPriceEntity()
 
 	override func viewDidLoad() {
         super.viewDidLoad()

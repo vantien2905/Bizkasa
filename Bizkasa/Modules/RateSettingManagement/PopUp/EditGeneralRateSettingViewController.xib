@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditGeneralRateSettingViewController">
+            <connections>
+                <outlet property="bedNumView" destination="3oO-7a-jae" id="OdY-c3-t6I"/>
+                <outlet property="customerNumView" destination="iIt-hy-xey" id="5aJ-27-n7n"/>
+                <outlet property="roomTypeView" destination="4iv-AO-aK3" id="nyo-u7-9le"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62x-2m-aoK">
+                    <rect key="frame" x="0.0" y="350.5" width="375" height="316.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a4R-4F-YCf">
+                            <rect key="frame" x="10" y="10" width="355" height="296.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin chung" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu9-aY-7LB">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="31.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iv-AO-aK3" userLabel="room_type" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="41.5" width="355" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="uFl-cq-IaR"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oO-7a-jae" userLabel="bed_num" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="111.5" width="355" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="yKk-cL-5Kg"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIt-hy-xey" userLabel="customer_num" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="181.5" width="355" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="tld-lT-nK6"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzp-Gf-xj4">
+                                    <rect key="frame" x="0.0" y="251.5" width="355" height="45"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="3qh-wa-0Zr">
+                                            <rect key="frame" x="77.5" y="10" width="200" height="35"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPB-hZ-juJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="35"/>
+                                                    <color key="backgroundColor" name="secondMain"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="Zhk-gV-JId"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Cập nhật">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="updateButtonTapped" destination="-1" eventType="touchUpInside" id="baQ-Ub-X6i"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2m-Ex-Lck">
+                                                    <rect key="frame" x="120" y="0.0" width="80" height="35"/>
+                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                    <state key="normal" title="Huỷ">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="cancelButtonTapped" destination="-1" eventType="touchUpInside" id="x8Z-NB-mJ9"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="uFG-Wt-kED"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="3qh-wa-0Zr" firstAttribute="top" secondItem="zzp-Gf-xj4" secondAttribute="top" constant="10" id="1Ar-pg-FVV"/>
+                                        <constraint firstAttribute="bottom" secondItem="3qh-wa-0Zr" secondAttribute="bottom" id="aeA-fb-sD5"/>
+                                        <constraint firstItem="3qh-wa-0Zr" firstAttribute="centerX" secondItem="zzp-Gf-xj4" secondAttribute="centerX" id="uV8-hG-RIt"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="a4R-4F-YCf" secondAttribute="trailing" constant="10" id="H6Y-sT-m4D"/>
+                        <constraint firstItem="a4R-4F-YCf" firstAttribute="top" secondItem="62x-2m-aoK" secondAttribute="top" constant="10" id="IFo-6R-ADe"/>
+                        <constraint firstItem="a4R-4F-YCf" firstAttribute="leading" secondItem="62x-2m-aoK" secondAttribute="leading" constant="10" id="T76-WE-4n4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="a4R-4F-YCf" secondAttribute="bottom" constant="10" id="HSd-IF-gvX"/>
+                <constraint firstAttribute="bottom" secondItem="62x-2m-aoK" secondAttribute="bottom" id="Vlu-AR-y79"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="62x-2m-aoK" secondAttribute="trailing" id="oUp-yt-OkU"/>
+                <constraint firstItem="62x-2m-aoK" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="xIQ-tW-B7x"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="136"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="secondMain">
+            <color red="0.58431372549019611" green="0.80784313725490198" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
