@@ -34,7 +34,7 @@ class ListRoomCVCell: UICollectionViewCell {
 
     var room: RoomEntity? {
         didSet {
-//            self.setData()
+            self.setData()
         }
     }
 

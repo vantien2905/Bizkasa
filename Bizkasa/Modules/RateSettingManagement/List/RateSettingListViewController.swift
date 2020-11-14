@@ -25,6 +25,8 @@ class RateSettingListViewController: HomeBaseViewController {
     
     var buttonDisplayMode: ButtonDisplayMode = .imageOnly
     var buttonStyle: ButtonStyle = .backgroundColor
+    
+    let refreshView = UIRefreshControl()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +47,19 @@ class RateSettingListViewController: HomeBaseViewController {
         tbRateSetting.rowHeight = UITableView.automaticDimension
         tbRateSetting.tableFooterView = UIView()
         tbRateSetting.contentInset.bottom = 50
+        tbRateSetting.addSubview(refreshView)
+        refreshView.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
+    @objc func refreshData() {
+        presenter?.getRoomClass()
+    }
+    
+    //--Add Room
     @IBAction func addNewTapped() {
-        let vc = AddRateSettingRouter.createModule().convertNavi()
-        self.present(controller: vc)
+        let vc = AddRateSettingRouter.createModule()
+        vc.delegate = self
+        self.present(controller: vc.convertNavi())
     }
 }
 
@@ -79,6 +89,7 @@ extension RateSettingListViewController: RateSettingListViewProtocol {
     }
     
     func didGetRoomClass(result: [RateSettingEntity]?, error: APIError?) {
+        refreshView.endRefreshing()
         if let result = result {
             self.listRateSetting = result
         } else {
@@ -100,6 +111,7 @@ extension RateSettingListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == listRateSetting[indexPath.section].ConfigPrices.count {
             let cell = tableView.dequeueTableCell(FooterRateSettingCell.self)
+            cell.indexPath = indexPath
             cell.delegate = self
             return cell
         } else {
@@ -145,10 +157,11 @@ extension RateSettingListViewController: HeaderRateSettingCellDelegate, FooterRa
             self.present(controller: editGeneralVC)
         }
     }
-    //--Footer
-    func btnAddConfigureTapped() {
-        let vc = AddGeneralConfigureRouter.createModule().convertNavi()
-        self.present(controller: vc)
+    //--Footer: add config price
+    func btnAddConfigureTapped(indexPath: IndexPath) {
+        let vc = AddGeneralConfigureRouter.createModule(rateSetting: listRateSetting[indexPath.section])
+        vc.delegate = self
+        self.present(controller: vc.convertNavi())
     }
 }
 
@@ -197,8 +210,9 @@ extension RateSettingListViewController: SwipeTableViewCellDelegate {
     }
     
     private func editActionTapped(indexPath: IndexPath) {
-        let vc = AddGeneralConfigureRouter.createModule().convertNavi()
-        self.present(controller: vc)
+        let vc = AddGeneralConfigureRouter.createModule(rateSetting: listRateSetting[indexPath.section])
+        vc.delegate = self
+        self.present(controller: vc.convertNavi())
     }
     
     private func deleteActionTapped(indexPath: IndexPath) {

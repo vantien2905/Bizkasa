@@ -26,6 +26,8 @@ class AddRateSettingViewController: BaseViewController {
 	var presenter: AddRateSettingPresenterProtocol?
     
     let param = RateSettingEntity()
+    
+    weak var delegate: RateSettingDelegate?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,8 @@ class AddRateSettingViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped() {
-        let vc = AddSurchargeRouter.createModule(param: param)
+        let vc = AddSurchargeRouter.createModule(param: param, type: .AddRoom)
+        vc.delegate = self
         self.push(controller: vc)
     }
 }
@@ -92,4 +95,10 @@ extension AddRateSettingViewController: UITableViewDataSource {
 
 extension AddRateSettingViewController: UITableViewDelegate {
     
+}
+
+extension AddRateSettingViewController: RateSettingDelegate {
+    func updateDataRateSettingList() {
+        delegate?.updateDataRateSettingList()
+    }
 }

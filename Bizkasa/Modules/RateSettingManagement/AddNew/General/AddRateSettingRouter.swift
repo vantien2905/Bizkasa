@@ -14,9 +14,9 @@ class AddRateSettingRouter: AddRateSettingWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> AddRateSettingViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = AddRateSettingViewController(nibName: nil, bundle: nil)
+        let view = AddRateSettingViewController.initFromNib()
         let interactor = AddRateSettingInteractor()
         let router = AddRateSettingRouter()
         let presenter = AddRateSettingPresenter(interface: view, interactor: interactor, router: router)

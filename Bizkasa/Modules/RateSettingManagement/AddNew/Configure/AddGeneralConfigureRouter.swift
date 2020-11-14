@@ -14,9 +14,9 @@ class AddGeneralConfigureRouter: AddGeneralConfigureWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(rateSetting: RateSettingEntity) -> AddGeneralConfigureViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = AddGeneralConfigureViewController(nibName: nil, bundle: nil)
+        let view = AddGeneralConfigureViewController.initFromNib()
         let interactor = AddGeneralConfigureInteractor()
         let router = AddGeneralConfigureRouter()
         let presenter = AddGeneralConfigurePresenter(interface: view, interactor: interactor, router: router)
@@ -24,6 +24,7 @@ class AddGeneralConfigureRouter: AddGeneralConfigureWireframeProtocol {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
+        view.addOrUpdateConfigParam.roomClassId = rateSetting.RoomClass?.Id
 
         return view
     }

@@ -18,6 +18,7 @@ protocol AddSurchargePresenterProtocol: class {
 
     var interactor: AddSurchargeInteractorInputProtocol? { get set }
     func addRoomClass(param: RateSettingEntity)
+    func addOrUpdateConfigPrice(param: AddOrUpdateConfigPriceParam)
 }
 
 //MARK: Interactor -
@@ -25,6 +26,7 @@ protocol AddSurchargeInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?)
+    func didAddOrUpdateConfigPrice(result: [RateSettingEntity]?, error: APIError?)
 }
 
 protocol AddSurchargeInteractorInputProtocol: class {
@@ -33,6 +35,7 @@ protocol AddSurchargeInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func addRoomClass(param: RateSettingEntity)
+    func addOrUpdateConfigPrice(param: AddOrUpdateConfigPriceParam)
 }
 
 //MARK: View -
@@ -42,4 +45,5 @@ protocol AddSurchargeViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?)
+    func didAddOrUpdateConfigPrice(result: [RateSettingEntity]?, error: APIError?)
 }

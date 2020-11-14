@@ -19,6 +19,12 @@ enum SurchanrgeType: Int, CaseIterable {
     case addtionCustomerList
 }
 
+enum ConfigPriceType {
+    case AddRoom
+    case AddConfigPrice
+    case EditConfigPrice
+}
+
 class AddSurchargeViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -33,13 +39,24 @@ class AddSurchargeViewController: BaseViewController {
     
     var param: RateSettingEntity!
     
+    var addOrUpdateConfigPriceParam: AddOrUpdateConfigPriceParam!
+    
+    var type: ConfigPriceType!
+    
     weak var delegate: RateSettingDelegate?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        if let config = param.ConfigPrices.first?.ConfigPriceRow {
-            configPrice = config
+        switch type {
+        case .AddRoom:
+            if let config = param.ConfigPrices.first?.ConfigPriceRow {
+                configPrice = config
+            }
+        default:
+            if let config = addOrUpdateConfigPriceParam.ConfigPrice?.ConfigPriceRow {
+                configPrice = config
+            }
         }
         
     }
@@ -60,15 +77,38 @@ class AddSurchargeViewController: BaseViewController {
     }
 
     @IBAction func acceptButtonTapped() {
-        param.ConfigPrices.first?.ConfigPriceRow = configPrice
-        presenter?.addRoomClass(param: param)
+        switch type {
+        case .AddRoom:
+            param.ConfigPrices.first?.ConfigPriceRow = configPrice
+            presenter?.addRoomClass(param: param)
+        case .AddConfigPrice:
+            addOrUpdateConfigPriceParam.ConfigPrice?.ConfigPriceRow = configPrice
+            presenter?.addOrUpdateConfigPrice(param: addOrUpdateConfigPriceParam)
+        default:
+            break
+        }
+        
     }
 }
 
 extension AddSurchargeViewController: AddSurchargeViewProtocol {
+    func didAddOrUpdateConfigPrice(result: [RateSettingEntity]?, error: APIError?) {
+        if let _ = result {
+            delegate?.updateDataRateSettingList()
+            self.navigationController?.dismiss()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
+    }
+    
     func didAddRoomClass(result: [RateSettingEntity]?, error: APIError?) {
-        delegate?.updateDataRateSettingList()
-        self.navigationController?.dismiss()
+        
+        if let _ = result {
+            delegate?.updateDataRateSettingList()
+            self.navigationController?.dismiss()
+        } else {
+            self.makeToast(message: error?.message?.first ?? "")
+        }
     }
 }
 

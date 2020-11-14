@@ -9,12 +9,14 @@
 import UIKit
 
 protocol FooterRateSettingCellDelegate: class {
-    func btnAddConfigureTapped()
+    func btnAddConfigureTapped(indexPath: IndexPath)
 }
 
 class FooterRateSettingCell: UITableViewCell {
     
     weak var delegate: FooterRateSettingCellDelegate?
+    
+    var indexPath: IndexPath!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +30,7 @@ class FooterRateSettingCell: UITableViewCell {
     }
     
     @IBAction func btnAddConfigureTapped() {
-        delegate?.btnAddConfigureTapped()
+        delegate?.btnAddConfigureTapped(indexPath: indexPath)
     }
     
 }

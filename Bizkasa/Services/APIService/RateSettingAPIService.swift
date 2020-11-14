@@ -12,9 +12,15 @@ protocol RateSettingAPIServiceProtocol {
     func addRoomClass(param: RateSettingEntity, success: @escaping SuccessHandler<RateSettingEntity>.array, failure: @escaping RequestFailure)
     func deleteRoomClass(listID: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func deleteConfigPrice(listID: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func addOrUpdateConfigPrice(param: AddOrUpdateConfigPriceParam, success: @escaping SuccessHandler<RateSettingEntity>.array, failure: @escaping RequestFailure)
 }
 
 class RateSettingAPIService: RateSettingAPIServiceProtocol {
+    
+    func addOrUpdateConfigPrice(param: AddOrUpdateConfigPriceParam, success: @escaping SuccessHandler<RateSettingEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = RateSettingEndPoint.addOrUpdateConfigPrice(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
     
     func deleteConfigPrice(listID: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = RateSettingEndPoint.deleteConfigPrice(listID: listID)

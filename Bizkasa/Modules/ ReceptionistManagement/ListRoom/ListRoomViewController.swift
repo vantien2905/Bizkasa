@@ -32,7 +32,9 @@ class ListRoomViewController: HomeBaseViewController {
         presenter?.getRoomsByClass()
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshData),
+                                 for: .valueChanged)
         cvListRoom.addSubview(refreshControl)
 
         NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in

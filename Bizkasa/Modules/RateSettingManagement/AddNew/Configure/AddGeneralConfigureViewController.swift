@@ -24,6 +24,10 @@ class AddGeneralConfigureViewController: BaseViewController {
 	var presenter: AddGeneralConfigurePresenterProtocol?
     
     let param = RateSettingEntity()
+    
+    let addOrUpdateConfigParam = AddOrUpdateConfigPriceParam()
+    
+    weak var delegate: RateSettingDelegate?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +47,8 @@ class AddGeneralConfigureViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped() {
-        let vc = AddSurchargeRouter.createModule(param: param)
+        let vc = AddSurchargeRouter.createModule(type: .AddConfigPrice, addOrUpdateConfigParam: addOrUpdateConfigParam)
+        vc.delegate = self
         self.push(controller: vc)
     }
 
@@ -64,31 +69,33 @@ extension AddGeneralConfigureViewController: UITableViewDataSource {
         cell.setDataConfigure(index: indexPath.row)
         cell.textfieldDidChangeCallback = {[weak self] text in
             guard let self = self else { return }
-//            self.setParam(index: indexPath.row, text: text)
+            self.setParam(index: indexPath.row, text: text)
         }
         return cell
     }
     
-//    private func setParam(index: Int, text: String) {
-//        switch index {
-//        case GeneralInfo.roomType.rawValue:
-//            param.RoomClass?.Name = text
-//        case GeneralInfo.bedNum.rawValue:
-//            param.RoomClass?.NumBed = Int(text)
-//        case GeneralInfo.customerNum.rawValue:
-//            param.RoomClass?.NumCustomer = Int(text)
-//        case GeneralInfo.priceByDay.rawValue:
-//            param.ConfigPrices.first?.ConfigPriceRow?.PriceByDay = Int(text)
-//        case GeneralInfo.priceByNight.rawValue:
-//            param.ConfigPrices.first?.ConfigPriceRow?.PriceByNight = Int(text)
-//        case GeneralInfo.priceByMonth.rawValue:
-//            param.ConfigPrices.first?.ConfigPriceRow?.PriceByMonth = Int(text)
-//        default:
-//            break
-//        }
-//    }
+    private func setParam(index: Int, text: String) {
+        switch index {
+        case GeneralConfigure.configureName.rawValue:
+            addOrUpdateConfigParam.ConfigPrice?.ConfigPriceRow?.Name = text
+        case GeneralConfigure.priceByDay.rawValue:
+            addOrUpdateConfigParam.ConfigPrice?.ConfigPriceRow?.PriceByDay = Int(text)
+        case GeneralConfigure.priceByNight.rawValue:
+            addOrUpdateConfigParam.ConfigPrice?.ConfigPriceRow?.PriceByNight = Int(text)
+        case GeneralConfigure.priceByMonth.rawValue:
+            addOrUpdateConfigParam.ConfigPrice?.ConfigPriceRow?.PriceByMonth = Int(text)
+        default:
+            break
+        }
+    }
 }
 
 extension AddGeneralConfigureViewController: UITableViewDelegate {
     
+}
+
+extension AddGeneralConfigureViewController: RateSettingDelegate {
+    func updateDataRateSettingList() {
+        delegate?.updateDataRateSettingList()
+    }
 }

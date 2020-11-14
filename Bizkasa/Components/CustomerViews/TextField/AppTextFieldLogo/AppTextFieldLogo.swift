@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 
 class AppTextFieldLogo: BaseViewXib {
-    @IBOutlet weak var vTitle: AppTitleLogo!
-    @IBOutlet weak var tfContent: UITextField!
-    @IBOutlet weak var vBottomLine: UIView!
-    @IBOutlet weak var heightTitle: NSLayoutConstraint!
+    @IBOutlet weak var vTitle       : AppTitleLogo!
+    @IBOutlet weak var tfContent    : UITextField!
+    @IBOutlet weak var vBottomLine  : UIView!
+    @IBOutlet weak var heightTitle  : NSLayoutConstraint!
     
     var textFieldCallBack: ((_ value: String) -> Void)?
+    
+    var formatNumber = false
     
     override func draw(_ rect: CGRect) {
         tfContent.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
@@ -35,7 +37,7 @@ class AppTextFieldLogo: BaseViewXib {
     }
 
     func setText(_ text: String?) {
-        tfContent.text = text
+        tfContent.text = text?.removeCommaDecimal()
     }
     
     func setTitleAndLogo(_ image: UIImage,
@@ -56,7 +58,13 @@ class AppTextFieldLogo: BaseViewXib {
     }
     
     @objc func textFieldChanged(){
-        self.textFieldCallBack?(tfContent.text&)
+        self.textFieldCallBack?(tfContent.text&.removeCommaDecimal())
+        
+        if formatNumber {
+            if let amountString = tfContent.text?.currencyInputFormatting() {
+                tfContent.text = amountString
+            }
+        }
     }
     
     func setPlaceHolder(title:String){
@@ -68,10 +76,12 @@ class AppTextFieldLogo: BaseViewXib {
     }
     
     func setKeyboardNumber() {
+        formatNumber = true
         tfContent.keyboardType = .numberPad
     }
     
     func setKeyboardDecimal() {
+        formatNumber = true
         tfContent.keyboardType = .decimalPad
     }
 }
