@@ -360,6 +360,8 @@
 		DFC7C7AD24CE8B36001271C6 /* InsertPopUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A724CE8B36001271C6 /* InsertPopUpProtocols.swift */; };
 		DFC7C7AE24CE8B36001271C6 /* InsertPopUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A824CE8B36001271C6 /* InsertPopUpInteractor.swift */; };
 		DFC7C7AF24CE8B36001271C6 /* InsertPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFC7C7A924CE8B36001271C6 /* InsertPopUpViewController.xib */; };
+		DFCBD0FF2560F3540071EEE7 /* FooterAddConfigureGeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCBD0FD2560F3540071EEE7 /* FooterAddConfigureGeneralCell.swift */; };
+		DFCBD1002560F3540071EEE7 /* FooterAddConfigureGeneralCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFCBD0FE2560F3540071EEE7 /* FooterAddConfigureGeneralCell.xib */; };
 		DFD0888F251720DD00B48905 /* RateSettingListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD08889251720DD00B48905 /* RateSettingListPresenter.swift */; };
 		DFD08890251720DD00B48905 /* RateSettingListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0888A251720DD00B48905 /* RateSettingListRouter.swift */; };
 		DFD08891251720DD00B48905 /* RateSettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0888B251720DD00B48905 /* RateSettingListViewController.swift */; };
@@ -755,6 +757,8 @@
 		DFC7C7A724CE8B36001271C6 /* InsertPopUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpProtocols.swift; sourceTree = "<group>"; };
 		DFC7C7A824CE8B36001271C6 /* InsertPopUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopUpInteractor.swift; sourceTree = "<group>"; };
 		DFC7C7A924CE8B36001271C6 /* InsertPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertPopUpViewController.xib; sourceTree = "<group>"; };
+		DFCBD0FD2560F3540071EEE7 /* FooterAddConfigureGeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterAddConfigureGeneralCell.swift; sourceTree = "<group>"; };
+		DFCBD0FE2560F3540071EEE7 /* FooterAddConfigureGeneralCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterAddConfigureGeneralCell.xib; sourceTree = "<group>"; };
 		DFD08889251720DD00B48905 /* RateSettingListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListPresenter.swift; sourceTree = "<group>"; };
 		DFD0888A251720DD00B48905 /* RateSettingListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListRouter.swift; sourceTree = "<group>"; };
 		DFD0888B251720DD00B48905 /* RateSettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSettingListViewController.swift; sourceTree = "<group>"; };
@@ -1823,18 +1827,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		DF46B9A52545690900D8BE5B /* PopUp */ = {
+		DF46B9A52545690900D8BE5B /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				DF46B9A62545694B00D8BE5B /* InfoRateSettingPopUpViewController.swift */,
-				DFFBEE95254EC11F005EDBE9 /* EditGeneralRateSettingPresenter.swift */,
-				DFFBEE96254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift */,
-				DFFBEE97254EC11F005EDBE9 /* EditGeneralRateSettingViewController.swift */,
-				DFFBEE98254EC11F005EDBE9 /* EditGeneralRateSettingProtocols.swift */,
-				DFFBEE99254EC11F005EDBE9 /* EditGeneralRateSettingInteractor.swift */,
-				DFFBEE9A254EC11F005EDBE9 /* EditGeneralRateSettingViewController.xib */,
+				DFCBD0FA2560F1F40071EEE7 /* EditRoom */,
+				DFCBD0F92560F1EA0071EEE7 /* EditConfig */,
 			);
-			path = PopUp;
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		DF46B9AA254576C800D8BE5B /* AddNew */ = {
@@ -1842,7 +1841,7 @@
 			children = (
 				DFFBEEA2254ED021005EDBE9 /* Configure */,
 				DF46B9C62545805700D8BE5B /* Surcharge */,
-				DF46B9C52545804C00D8BE5B /* General */,
+				DF46B9C52545804C00D8BE5B /* Room */,
 			);
 			path = AddNew;
 			sourceTree = "<group>";
@@ -1874,7 +1873,7 @@
 			path = Surcharge;
 			sourceTree = "<group>";
 		};
-		DF46B9C52545804C00D8BE5B /* General */ = {
+		DF46B9C52545804C00D8BE5B /* Room */ = {
 			isa = PBXGroup;
 			children = (
 				DF46B9B82545773500D8BE5B /* Cell */,
@@ -1885,7 +1884,7 @@
 				DF46B9AF254576DE00D8BE5B /* AddRateSettingInteractor.swift */,
 				DF46B9B0254576DF00D8BE5B /* AddRateSettingViewController.xib */,
 			);
-			path = General;
+			path = Room;
 			sourceTree = "<group>";
 		};
 		DF46B9C62545805700D8BE5B /* Surcharge */ = {
@@ -1976,11 +1975,41 @@
 			path = InsertPopUp;
 			sourceTree = "<group>";
 		};
+		DFCBD0F92560F1EA0071EEE7 /* EditConfig */ = {
+			isa = PBXGroup;
+			children = (
+				DFFBEE95254EC11F005EDBE9 /* EditGeneralRateSettingPresenter.swift */,
+				DFFBEE96254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift */,
+				DFFBEE97254EC11F005EDBE9 /* EditGeneralRateSettingViewController.swift */,
+				DFFBEE98254EC11F005EDBE9 /* EditGeneralRateSettingProtocols.swift */,
+				DFFBEE99254EC11F005EDBE9 /* EditGeneralRateSettingInteractor.swift */,
+				DFFBEE9A254EC11F005EDBE9 /* EditGeneralRateSettingViewController.xib */,
+			);
+			path = EditConfig;
+			sourceTree = "<group>";
+		};
+		DFCBD0FA2560F1F40071EEE7 /* EditRoom */ = {
+			isa = PBXGroup;
+			children = (
+				DF46B9A62545694B00D8BE5B /* InfoRateSettingPopUpViewController.swift */,
+			);
+			path = EditRoom;
+			sourceTree = "<group>";
+		};
+		DFCBD0FC2560F3220071EEE7 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				DFCBD0FD2560F3540071EEE7 /* FooterAddConfigureGeneralCell.swift */,
+				DFCBD0FE2560F3540071EEE7 /* FooterAddConfigureGeneralCell.xib */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
 		DFD0888725171F3100B48905 /* RateSettingManagement */ = {
 			isa = PBXGroup;
 			children = (
 				DF46B9AA254576C800D8BE5B /* AddNew */,
-				DF46B9A52545690900D8BE5B /* PopUp */,
+				DF46B9A52545690900D8BE5B /* Edit */,
 				DF2A9DA72543CECB00388975 /* More */,
 				DF310CEE2533127F00A1DFC8 /* Detail */,
 				DFD0888825171F5D00B48905 /* List */,
@@ -2034,6 +2063,7 @@
 		DFFBEEA2254ED021005EDBE9 /* Configure */ = {
 			isa = PBXGroup;
 			children = (
+				DFCBD0FC2560F3220071EEE7 /* Footer */,
 				DFFBEEA3254ED03E005EDBE9 /* AddGeneralConfigurePresenter.swift */,
 				DFFBEEA4254ED03E005EDBE9 /* AddGeneralConfigureRouter.swift */,
 				DFFBEEA5254ED03E005EDBE9 /* AddGeneralConfigureViewController.swift */,
@@ -2195,6 +2225,7 @@
 				DFFBEEAE254ED03E005EDBE9 /* AddGeneralConfigureViewController.xib in Resources */,
 				B36809AA240A5777002F8D00 /* CreateNewReceiptViewController.xib in Resources */,
 				B37954322402A48E007768B8 /* ListRoomCVCell.xib in Resources */,
+				DFCBD1002560F3540071EEE7 /* FooterAddConfigureGeneralCell.xib in Resources */,
 				B3616856244D82EF0067359B /* AppChooseTime.xib in Resources */,
 				B3E7BA5823F9105F0088259F /* DateTimePickerViewController.xib in Resources */,
 				B3C97983245A99E800F23F59 /* SignUpViewController.xib in Resources */,
@@ -2452,6 +2483,7 @@
 				DFC7C7A224CE7D0D001271C6 /* EditRoomParam.swift in Sources */,
 				B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */,
 				DF6571F624C4168A00D20DA5 /* RoomManagementViewController.swift in Sources */,
+				DFCBD0FF2560F3540071EEE7 /* FooterAddConfigureGeneralCell.swift in Sources */,
 				B3E7BAA123F9105F0088259F /* AppEnum.swift in Sources */,
 				B368099C240A4C61002F8D00 /* ListReceiptCell.swift in Sources */,
 				B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */,

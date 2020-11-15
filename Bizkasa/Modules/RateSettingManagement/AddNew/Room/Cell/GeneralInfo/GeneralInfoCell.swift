@@ -52,6 +52,25 @@ class GeneralInfoCell: UITableViewCell {
         }
     }
     
+    func setDataConfigureEdit(index: Int, price: PriceEntity?) {
+        guard let price = price?.ConfigPriceRow else { return }
+        switch index {
+        case GeneralConfigure.configureName.rawValue:
+            textField.setText(price.Name)
+        case GeneralConfigure.priceByDay.rawValue:
+            textField.setText("\(price.PriceByDay*)")
+            textField.setKeyboardDecimal()
+        case GeneralConfigure.priceByNight.rawValue:
+            textField.setText("\(price.PriceByNight*)")
+            textField.setKeyboardDecimal()
+        case GeneralConfigure.priceByMonth.rawValue:
+            textField.setText("\(price.PriceByMonth*)")
+            textField.setKeyboardDecimal()
+        default:
+            break
+        }
+    }
+    
     func setData(index: Int) {
         switch index {
         case GeneralInfo.roomType.rawValue:

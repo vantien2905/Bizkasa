@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
             <connections>
+                <outlet property="actionButton" destination="PNd-Xa-uUa" id="1QL-a9-zO2"/>
                 <outlet property="imgArrow" destination="B29-T1-fJf" id="86X-YN-Rxb"/>
                 <outlet property="lbContent" destination="KmX-x5-c2B" id="NtO-Ux-lxN"/>
                 <outlet property="vBottom" destination="0Mf-X2-YaZ" id="qmZ-il-8wI"/>
@@ -30,7 +32,7 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ai1-gm-t1I" customClass="AppTitleLogo" customModule="Bizkasa" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="449" height="20"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="sTe-2b-X2P"/>
                             </constraints>
@@ -72,7 +74,7 @@
                         <constraint firstAttribute="height" constant="1" id="FBY-wJ-GFz"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNd-Xa-uUa">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNd-Xa-uUa">
                     <rect key="frame" x="0.0" y="0.0" width="449" height="101"/>
                     <connections>
                         <action selector="btnDropdownTapped" destination="-1" eventType="touchUpInside" id="SdV-sv-F9k"/>
@@ -97,4 +99,9 @@
             <point key="canvasLocation" x="163.04347826086959" y="271.54017857142856"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

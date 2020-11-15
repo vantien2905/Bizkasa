@@ -62,7 +62,7 @@ class TabbarReceptionistViewController: UITabBarController {
             image: AppImage.imgPayment.customTint(unselectColor),
             selectedImage: AppImage.imgPayment.customTint(selectColor))
         listReceipt.tabBarItem = iconReceipt
-        let controllers = [listRoom, listReceipt, listCustomer]  //array of the root view controllers displayed by the tab bar interface
+        let controllers = [listRoom, listReceipt, listCustomer]
         self.viewControllers = controllers
         
         for tabBarItem in tabBar.items! {
@@ -72,6 +72,15 @@ class TabbarReceptionistViewController: UITabBarController {
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectColor], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectColor], for: .selected)
+        
+        tabBar.isTranslucent = false
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tabBar.layer.shadowRadius = 3
+        tabBar.layer.shadowColor = UIColor.black.cgColor
+        tabBar.layer.shadowOpacity = 0.3
+        
+        tabBar.shadowImage = UIImage()
+        tabBar.backgroundImage = UIImage()
         
     }
 }

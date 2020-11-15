@@ -37,7 +37,7 @@ class PriceEntity: Mappable {
 
     var ConfigPriceRow: ConfigPriceEntity?
     var ConfigType: Int?
-    var IsDefault: Bool?
+    var IsDefault: Bool = false
     
     init() {
         self.ConfigPriceRow = ConfigPriceEntity()

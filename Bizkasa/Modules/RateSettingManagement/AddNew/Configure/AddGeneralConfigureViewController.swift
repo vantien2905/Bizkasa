@@ -27,6 +27,8 @@ class AddGeneralConfigureViewController: BaseViewController {
     
     let addOrUpdateConfigParam = AddOrUpdateConfigPriceParam()
     
+    var type: ConfigPriceType!
+    
     weak var delegate: RateSettingDelegate?
 
 	override func viewDidLoad() {
@@ -35,19 +37,20 @@ class AddGeneralConfigureViewController: BaseViewController {
     }
     
     override func setUpNavigation() {
-        setTitleNavigation(title: "Thêm cấu hình")
+        setTitleNavigation(title: type == .AddConfigPrice ? "Thêm cấu hình" : "Cập nhật cấu hình")
         addBackWhiteToNavigation()
     }
 
     private func configureTableView() {
         tableView.registerTableCell(GeneralInfoCell.self)
+        tableView.registerTableCell(FooterAddConfigureGeneralCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
     }
     
     @IBAction func nextButtonTapped() {
-        let vc = AddSurchargeRouter.createModule(type: .AddConfigPrice, addOrUpdateConfigParam: addOrUpdateConfigParam)
+        let vc = AddSurchargeRouter.createModule(type: type, addOrUpdateConfigParam: addOrUpdateConfigParam)
         vc.delegate = self
         self.push(controller: vc)
     }
@@ -61,17 +64,35 @@ extension AddGeneralConfigureViewController: AddGeneralConfigureViewProtocol {
 extension AddGeneralConfigureViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return GeneralConfigure.allCases.count
+        return GeneralConfigure.allCases.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueTableCell(GeneralInfoCell.self)
-        cell.setDataConfigure(index: indexPath.row)
-        cell.textfieldDidChangeCallback = {[weak self] text in
-            guard let self = self else { return }
-            self.setParam(index: indexPath.row, text: text)
+        if indexPath.row == GeneralConfigure.allCases.count {
+            let footerCell = tableView.dequeueTableCell(FooterAddConfigureGeneralCell.self)
+            
+            if self.type == .EditConfigPrice {
+                footerCell.setData(config: self.addOrUpdateConfigParam.ConfigPrice?.ConfigPriceRow)
+            }
+            
+            footerCell.actionCallBack = {[weak self] isDefault, isActive in
+                self?.addOrUpdateConfigParam.ConfigPrice?.ConfigPriceRow?.IsActive = isActive
+                self?.addOrUpdateConfigParam.ConfigPrice?.ConfigPriceRow?.IsDefault = isDefault
+            }
+            
+            return footerCell
+        } else {
+            let cell = tableView.dequeueTableCell(GeneralInfoCell.self)
+            cell.setDataConfigure(index: indexPath.row)
+            if self.type == .EditConfigPrice {
+                cell.setDataConfigureEdit(index: indexPath.row, price: self.addOrUpdateConfigParam.ConfigPrice)
+            }
+            cell.textfieldDidChangeCallback = {[weak self] text in
+                guard let self = self else { return }
+                self.setParam(index: indexPath.row, text: text)
+            }
+            return cell
         }
-        return cell
     }
     
     private func setParam(index: Int, text: String) {

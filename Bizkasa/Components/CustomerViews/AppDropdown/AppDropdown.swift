@@ -16,6 +16,7 @@ class AppDropdown: BaseViewXib {
     @IBOutlet weak var lbContent    : UILabel!
     @IBOutlet weak var imgArrow     : UIImageView!
     @IBOutlet weak var vBottom      : UIView!
+    @IBOutlet weak var actionButton : UIButton!
 
     let dropdown = DropDown()
     

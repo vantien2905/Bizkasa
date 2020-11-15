@@ -53,16 +53,18 @@ class AddSurchargeViewController: BaseViewController {
             if let config = param.ConfigPrices.first?.ConfigPriceRow {
                 configPrice = config
             }
-        default:
+        case .AddConfigPrice, .EditConfigPrice:
             if let config = addOrUpdateConfigPriceParam.ConfigPrice?.ConfigPriceRow {
                 configPrice = config
             }
+        default:
+            break
         }
         
     }
     
     override func setUpNavigation() {
-        setTitleNavigation(title: "Thêm phụ thu")
+        setTitleNavigation(title: type == .AddConfigPrice ? "Thêm phụ thu" : "Cập nhật phụ thu")
         addBackWhiteToNavigation()
     }
 
@@ -81,7 +83,7 @@ class AddSurchargeViewController: BaseViewController {
         case .AddRoom:
             param.ConfigPrices.first?.ConfigPriceRow = configPrice
             presenter?.addRoomClass(param: param)
-        case .AddConfigPrice:
+        case .AddConfigPrice, .EditConfigPrice:
             addOrUpdateConfigPriceParam.ConfigPrice?.ConfigPriceRow = configPrice
             presenter?.addOrUpdateConfigPrice(param: addOrUpdateConfigPriceParam)
         default:
@@ -139,6 +141,9 @@ extension AddSurchargeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(AddSurchargeCell.self)
         cell.setData(indexPath: indexPath)
+        if type == .EditConfigPrice {
+            cell.setPrice(price: configPrice, indexPath: indexPath)
+        }
         cell.removeSurchargeCallback = { [weak self] indexpath in
             guard let self = self else { return }
             self.removeSurcharge(indexpath: indexpath)

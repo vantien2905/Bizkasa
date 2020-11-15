@@ -23,6 +23,8 @@ class PaymentViewController: HomeBaseViewController {
     @IBOutlet weak var vCharge: AppTextFieldLogo!
     @IBOutlet weak var vService: AppDropdownBorder!
     
+    @IBOutlet weak var filterButton    : UIButton!
+    
     var presenter: PaymentPresenterProtocol?
     
     var listPayment: [PaymentEntity] = [] {
@@ -58,7 +60,8 @@ class PaymentViewController: HomeBaseViewController {
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        tbPayment.addSubview(refreshControl) // not required when using UITableViewController
+        tbPayment.addSubview(refreshControl)
+        filterButton.setShadowCircle()
     }
     
     override func viewWillAppear(_ animated: Bool) {

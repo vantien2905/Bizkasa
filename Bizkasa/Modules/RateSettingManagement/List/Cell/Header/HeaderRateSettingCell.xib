@@ -42,7 +42,6 @@
                                             <constraint firstAttribute="width" constant="30" id="9t8-UE-YkQ"/>
                                             <constraint firstAttribute="width" secondItem="l2E-Tn-7tQ" secondAttribute="height" id="KuH-Xw-TVJ"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
                                         <state key="normal" image="addNew_black"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">

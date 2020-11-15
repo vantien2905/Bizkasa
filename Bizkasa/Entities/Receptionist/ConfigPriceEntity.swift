@@ -17,8 +17,8 @@ class ConfigPriceEntity: Mappable {
     var PriceByNight: Int?
     var PriceByMonth: Int?
     var RoomClassId: Int?
-    var IsActive: Bool?
-    var IsDefault: Bool?
+    var IsActive: Bool = false
+    var IsDefault: Bool = false
     var CheckoutDayList: [CheckoutEntity] = []
     var CheckoutNightList: [CheckoutEntity] = []
     var CheckinDayList: [CheckoutEntity] = []

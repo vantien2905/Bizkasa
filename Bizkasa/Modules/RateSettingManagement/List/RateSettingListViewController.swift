@@ -14,6 +14,7 @@ import SwipeCellKit
 class RateSettingListViewController: HomeBaseViewController {
     
     @IBOutlet weak var tbRateSetting: UITableView!
+    @IBOutlet weak var addMoreButton: UIButton!
     
     var presenter: RateSettingListPresenterProtocol?
     
@@ -32,6 +33,7 @@ class RateSettingListViewController: HomeBaseViewController {
         super.viewDidLoad()
         configureTableView()
         presenter?.getRoomClass()
+        addMoreButton.setShadowCircle()
     }
     
     override func setUpNavigation() {
@@ -154,7 +156,7 @@ extension RateSettingListViewController: HeaderRateSettingCellDelegate {
     }
     //--: add config price
     private func btnAddConfigureTapped(rateSetting: RateSettingEntity) {
-        let vc = AddGeneralConfigureRouter.createModule(rateSetting: rateSetting)
+        let vc = AddGeneralConfigureRouter.createModule(rateSetting: rateSetting, type: .AddConfigPrice, configEdit: nil)
         vc.delegate = self
         self.present(controller: vc.convertNavi())
     }
@@ -205,7 +207,10 @@ extension RateSettingListViewController: SwipeTableViewCellDelegate {
     }
     
     private func editActionTapped(indexPath: IndexPath) {
-        let vc = AddGeneralConfigureRouter.createModule(rateSetting: listRateSetting[indexPath.section])
+        let vc = AddGeneralConfigureRouter.createModule(
+            rateSetting: listRateSetting[indexPath.section],
+            type: .EditConfigPrice,
+            configEdit: listRateSetting[indexPath.section].ConfigPrices[indexPath.row])
         vc.delegate = self
         self.present(controller: vc.convertNavi())
     }

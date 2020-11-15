@@ -22,6 +22,7 @@ class ReceiptViewController: HomeBaseViewController {
     @IBOutlet weak var vTime            : AppDateTime!
     @IBOutlet weak var hightFilterView  : NSLayoutConstraint!
     @IBOutlet weak var btnHideFilter    : UIButton!
+    @IBOutlet weak var filterButton    : UIButton!
     
     var refreshControl = UIRefreshControl()
     
@@ -70,6 +71,8 @@ class ReceiptViewController: HomeBaseViewController {
     }
     
     override func setUpView() {
+        filterButton.setShadowCircle()
+        
         vPaymentStatus.dataSource = ["Trạng thái thanh toán",
                                      "Chưa thanh toán",
                                      "Công nợ",

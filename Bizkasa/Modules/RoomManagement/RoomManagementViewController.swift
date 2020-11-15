@@ -52,6 +52,7 @@ class RoomManagementViewController: HomeBaseViewController {
     
     override func setUpView() {
         setTitleNavigation(title: "Quản lý tầng/ lầu")
+        btnAdd.setShadowCircle()
     }
     
     private func configureTableview() {
