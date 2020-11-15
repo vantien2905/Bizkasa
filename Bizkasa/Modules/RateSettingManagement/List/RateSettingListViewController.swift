@@ -14,8 +14,8 @@ import SwipeCellKit
 class RateSettingListViewController: HomeBaseViewController {
     
     @IBOutlet weak var tbRateSetting: UITableView!
-
-	var presenter: RateSettingListPresenterProtocol?
+    
+    var presenter: RateSettingListPresenterProtocol?
     
     var listRateSetting: [RateSettingEntity] = [] {
         didSet {
@@ -27,8 +27,8 @@ class RateSettingListViewController: HomeBaseViewController {
     var buttonStyle: ButtonStyle = .backgroundColor
     
     let refreshView = UIRefreshControl()
-
-	override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         presenter?.getRoomClass()
@@ -37,7 +37,7 @@ class RateSettingListViewController: HomeBaseViewController {
     override func setUpNavigation() {
         setTitleNavigation(title: "Cài đặt giá phòng")
     }
-
+    
     private func configureTableView() {
         tbRateSetting.registerTableCell(RateSettingCell.self)
         tbRateSetting.registerTableCell(FooterRateSettingCell.self)
@@ -105,23 +105,15 @@ extension RateSettingListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listRateSetting[section].ConfigPrices.count + 1
+        return listRateSetting[section].ConfigPrices.count// + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == listRateSetting[indexPath.section].ConfigPrices.count {
-            let cell = tableView.dequeueTableCell(FooterRateSettingCell.self)
-            cell.indexPath = indexPath
-            cell.delegate = self
-            return cell
-        } else {
-            let cell = tableView.dequeueTableCell(RateSettingCell.self)
-            cell.setData(detail: listRateSetting[indexPath.section].ConfigPrices[indexPath.row], indexPath: indexPath)
-            cell.rateDelegate = self
-            cell.delegate = self
-            return cell
-        }
-        
+        let cell = tableView.dequeueTableCell(RateSettingCell.self)
+        cell.setData(detail: listRateSetting[indexPath.section].ConfigPrices[indexPath.row], indexPath: indexPath)
+        cell.rateDelegate = self
+        cell.delegate = self
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -141,25 +133,28 @@ extension RateSettingListViewController: UITableViewDelegate {
     
 }
 
-extension RateSettingListViewController: HeaderRateSettingCellDelegate, FooterRateSettingCellDelegate {
-    //--Header
+extension RateSettingListViewController: HeaderRateSettingCellDelegate {
+    //--Header action
     func rateSettingAction(type: RateSettingAction, rateSetting: RateSettingEntity) {
-        if type == .delete {
+        switch type {
+        case .delete:
             self.showAlert(title: "Xoá", message: "Bạn có chắc chắn muốn xoá?") {
                 guard let id = rateSetting.RoomClass?.Id else { return }
                 self.presenter?.deleteRoomClass(listID: [id])
             }
-        } else {
+        case .edit:
             let editGeneralVC = EditGeneralRateSettingRouter.createModule(rateSetting: rateSetting)
             editGeneralVC.modalPresentationStyle = .overCurrentContext
             editGeneralVC.modalTransitionStyle = .crossDissolve
             editGeneralVC.delegate = self
             self.present(controller: editGeneralVC)
+        case .addConfigure:
+            btnAddConfigureTapped(rateSetting: rateSetting)
         }
     }
-    //--Footer: add config price
-    func btnAddConfigureTapped(indexPath: IndexPath) {
-        let vc = AddGeneralConfigureRouter.createModule(rateSetting: listRateSetting[indexPath.section])
+    //--: add config price
+    private func btnAddConfigureTapped(rateSetting: RateSettingEntity) {
+        let vc = AddGeneralConfigureRouter.createModule(rateSetting: rateSetting)
         vc.delegate = self
         self.present(controller: vc.convertNavi())
     }
@@ -216,7 +211,7 @@ extension RateSettingListViewController: SwipeTableViewCellDelegate {
     }
     
     private func deleteActionTapped(indexPath: IndexPath) {
-            
+        
         self.showAlert(title: "Xoá", message: "Bạn có chắc chắn muốn xoá?") {
             guard let id = self.listRateSetting[indexPath.section].ConfigPrices[indexPath.row].ConfigPriceRow?.Id else { return }
             self.presenter?.deleteConfigPrice(listID: [id])

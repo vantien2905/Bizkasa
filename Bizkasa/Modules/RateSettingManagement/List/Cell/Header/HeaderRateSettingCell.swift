@@ -11,6 +11,7 @@ import UIKit
 enum RateSettingAction {
     case edit
     case delete
+    case addConfigure
 }
 
 protocol HeaderRateSettingCellDelegate: class {
@@ -51,5 +52,9 @@ class HeaderRateSettingCell: UITableViewHeaderFooterView {
     
     @IBAction func editButtonTapped() {
         delegate?.rateSettingAction(type: .edit, rateSetting: rateSetting)
+    }
+    
+    @IBAction func addButtonTapped() {
+        delegate?.rateSettingAction(type: .addConfigure, rateSetting: rateSetting)
     }
 }
