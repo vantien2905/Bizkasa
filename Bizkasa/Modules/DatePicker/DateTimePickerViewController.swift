@@ -53,7 +53,13 @@ class DateTimePickerViewController: UIViewController {
         
         datePicker.date = dateFormat.date(from: dateTime)!
         timePicker.date = dateFormat.date(from: dateTime)!
-
+        
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+            timePicker.preferredDatePickerStyle = .wheels
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     func getTime() -> String {

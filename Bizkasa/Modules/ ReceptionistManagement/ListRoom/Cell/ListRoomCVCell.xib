@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -58,13 +58,13 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0l-hx-mpd">
-                                <rect key="frame" x="0.0" y="132" width="307" height="1"/>
+                                <rect key="frame" x="0.0" y="131" width="307" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="eHU-fz-ie1"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeO-JD-qZS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeO-JD-qZS">
                                 <rect key="frame" x="0.0" y="0.0" width="307" height="128"/>
                                 <connections>
                                     <action selector="btnShowActionTapped" destination="gTV-IL-0wX" eventType="touchUpInside" id="jbp-dt-KB1"/>
@@ -73,7 +73,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.65297413699999995" blue="0.28649782779999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="S0l-hx-mpd" secondAttribute="bottom" constant="-5" id="46k-d1-7qu"/>
+                            <constraint firstAttribute="bottom" secondItem="S0l-hx-mpd" secondAttribute="bottom" constant="-4" id="46k-d1-7qu"/>
                             <constraint firstAttribute="bottom" secondItem="n9P-PC-eEw" secondAttribute="bottom" constant="5" id="5GK-Z6-mBN"/>
                             <constraint firstAttribute="bottom" secondItem="EeO-JD-qZS" secondAttribute="bottom" id="8eC-Ny-eyQ"/>
                             <constraint firstItem="EeO-JD-qZS" firstAttribute="leading" secondItem="ZiA-x3-4cU" secondAttribute="leading" id="8lg-Fz-Zc9"/>
@@ -88,13 +88,13 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="ZiA-x3-4cU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="HS1-Y3-nJd"/>
                 <constraint firstAttribute="trailing" secondItem="ZiA-x3-4cU" secondAttribute="trailing" constant="10" id="II4-gm-jDx"/>
                 <constraint firstItem="ZiA-x3-4cU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="LN9-mT-s6b"/>
                 <constraint firstAttribute="bottom" secondItem="ZiA-x3-4cU" secondAttribute="bottom" constant="10" id="vyO-9X-tVL"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="327" height="148"/>
             <connections>
                 <outlet property="lbRoomName" destination="3pP-ea-Tkb" id="oy4-FS-ZMJ"/>

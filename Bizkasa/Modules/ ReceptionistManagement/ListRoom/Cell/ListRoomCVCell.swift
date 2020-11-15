@@ -44,9 +44,9 @@ class ListRoomCVCell: UICollectionViewCell {
         didSet {
             switch self.isAvailable {
             case 1:
-                self.dropdown.dataSource = ["Trả phòng/Cập nhật HĐ", "Trả phòng theo đoàn", "Gộp thanh toán"]
+                self.dropdown.dataSource = ["Trả phòng/Cập nhật HĐ"]//, "Trả phòng theo đoàn", "Gộp thanh toán"]
             case 2:
-                self.dropdown.dataSource = ["Nhận phòng", "Nhận phòng theo đoàn"]
+                self.dropdown.dataSource = ["Nhận phòng"]//, "Nhận phòng theo đoàn"]
             case 3:
                 self.dropdown.dataSource = ["Đã dọn dẹp"]
             default:
@@ -99,10 +99,11 @@ class ListRoomCVCell: UICollectionViewCell {
     private func setColor(background: UIColor, text: UIColor) {
         vBackground.setShadow(color: background)
         lbRoomName.textColor = text
-
-        dropdown.backgroundColor = background
-        dropdown.textColor = text
-        dropdown.separatorColor = text
+        
+        dropdown.shadowColor = .black
+//        dropdown.backgroundColor = background
+//        dropdown.textColor = text
+//        dropdown.separatorColor = text
 
     }
 
