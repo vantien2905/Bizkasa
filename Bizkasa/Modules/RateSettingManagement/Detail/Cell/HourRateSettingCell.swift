@@ -30,7 +30,8 @@ class HourRateSettingCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(detail: CheckoutEntity, row: Int) {
+    func setData(detail: CheckoutEntity?, row: Int) {
+        guard let detail = detail else { return }
         contentLabel.text = detail.Value*.formattedWithSeparator
         if row == 0 {
             titleLabel.text = PriceHourSetting.onehour.rawValue
