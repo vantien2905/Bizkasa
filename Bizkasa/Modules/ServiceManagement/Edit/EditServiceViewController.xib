@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditServiceViewController">
+            <connections>
+                <outlet property="btnAccept" destination="P55-3v-Obt" id="mi2-hx-gOq"/>
+                <outlet property="noteTextField" destination="TWX-p7-Cl2" id="6UP-ui-x2E"/>
+                <outlet property="priceBuyTextField" destination="ZuT-QW-rlq" id="KHl-8p-JOs"/>
+                <outlet property="priceSellTextField" destination="4av-0R-Ib2" id="Nvu-uj-N27"/>
+                <outlet property="serviceNameTextField" destination="YKl-Nd-5D1" id="7XT-Rc-koC"/>
+                <outlet property="serviceTypeDropdown" destination="jd4-Ya-MOD" id="T4m-Wh-6OV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="el3-pP-5Gp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <action selector="btnCloseTapped" destination="-1" eventType="touchUpInside" id="dAh-0j-hzr"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhM-NA-Bo6">
+                    <rect key="frame" x="0.0" y="199.5" width="375" height="467.5"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wng-Kx-COg">
+                            <rect key="frame" x="20" y="10" width="335" height="371.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHỈNH SỬA DỊCH VỤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFg-oT-QNc">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-Nd-5D1" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.5" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="jr3-MV-f8W"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jd4-Ya-MOD" userLabel="serviceType" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="101.5" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="pJc-MQ-tQS"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuT-QW-rlq" userLabel="priceBuy" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="171.5" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="kA7-VM-g8I"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4av-0R-Ib2" userLabel="priceSell" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="241.5" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="GNL-qv-m9O"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWX-p7-Cl2" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="311.5" width="335" height="60"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="vXU-VW-uM9"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A6B-H9-Gqm">
+                            <rect key="frame" x="92.5" y="401.5" width="190" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P55-3v-Obt">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="36"/>
+                                    <color key="backgroundColor" name="Main"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="cAH-XO-9zH"/>
+                                    </constraints>
+                                    <state key="normal" title="Cập nhật">
+                                        <color key="titleColor" name="WhiteColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="acceptButtonTapped" destination="-1" eventType="touchUpInside" id="hMh-t0-VEe"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcn-L6-O3P">
+                                    <rect key="frame" x="110" y="0.0" width="80" height="36"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="LPz-0z-gfI"/>
+                                    </constraints>
+                                    <state key="normal" title="Huỷ">
+                                        <color key="titleColor" name="WhiteColor"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="btnCloseTapped" destination="-1" eventType="touchUpInside" id="DQH-vp-REM"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="anf-ed-vYA"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="WhiteColor"/>
+                    <constraints>
+                        <constraint firstItem="wng-Kx-COg" firstAttribute="top" secondItem="hhM-NA-Bo6" secondAttribute="top" constant="10" id="CRQ-fj-57R"/>
+                        <constraint firstItem="A6B-H9-Gqm" firstAttribute="centerX" secondItem="hhM-NA-Bo6" secondAttribute="centerX" id="Da5-hG-yZr"/>
+                        <constraint firstAttribute="bottom" secondItem="A6B-H9-Gqm" secondAttribute="bottom" constant="30" id="ODy-mP-gcc"/>
+                        <constraint firstItem="wng-Kx-COg" firstAttribute="leading" secondItem="hhM-NA-Bo6" secondAttribute="leading" constant="20" id="VB0-sM-UR5"/>
+                        <constraint firstItem="A6B-H9-Gqm" firstAttribute="top" secondItem="wng-Kx-COg" secondAttribute="bottom" constant="20" id="rk8-pT-exp"/>
+                        <constraint firstAttribute="trailing" secondItem="wng-Kx-COg" secondAttribute="trailing" constant="20" id="xY7-5W-rdY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hhM-NA-Bo6" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="4X1-F2-MCC"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="hhM-NA-Bo6" secondAttribute="bottom" id="5W9-fu-wEU"/>
+                <constraint firstAttribute="trailing" secondItem="hhM-NA-Bo6" secondAttribute="trailing" id="8xy-Qb-Xwo"/>
+                <constraint firstItem="el3-pP-5Gp" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="ESF-6b-oVQ"/>
+                <constraint firstItem="el3-pP-5Gp" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="ejH-AA-cxO"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="bottom" secondItem="el3-pP-5Gp" secondAttribute="bottom" id="gE7-F9-Y6a"/>
+                <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="el3-pP-5Gp" secondAttribute="trailing" id="uSH-6B-VDZ"/>
+            </constraints>
+            <point key="canvasLocation" x="193" y="167"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Main">
+            <color red="0.23137254901960785" green="0.52941176470588236" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

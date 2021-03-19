@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -101,19 +102,19 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXM-pq-HSq" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="285" height="70"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="JaZ-Gc-W2q"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOg-RE-hzh" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="90" width="285" height="70"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="n5c-3r-gbK" secondAttribute="bottom" constant="1" id="aZq-D6-342"/>
                                         <constraint firstAttribute="trailing" secondItem="n5c-3r-gbK" secondAttribute="trailing" constant="10" id="dey-eO-OJz"/>
@@ -121,7 +122,7 @@
                                         <constraint firstItem="n5c-3r-gbK" firstAttribute="top" secondItem="NNq-ga-N0U" secondAttribute="top" constant="1" id="zzD-rl-8Py"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXf-rT-qMl">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXf-rT-qMl">
                                     <rect key="frame" x="94" y="414" width="187.5" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="OJd-UY-W0Q"/>
@@ -146,30 +147,30 @@
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Whm-a9-Txs">
-                                    <rect key="frame" x="77.5" y="464" width="220" height="30"/>
+                                    <rect key="frame" x="77.5" y="464" width="220.5" height="30"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn chưa có tài khoản?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBK-Xf-dR8">
-                                            <rect key="frame" x="0.0" y="0.0" width="159" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="158.5" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="All-ny-VmH">
-                                            <rect key="frame" x="164" y="0.0" width="56" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="All-ny-VmH">
+                                            <rect key="frame" x="163.5" y="0.0" width="57" height="30"/>
                                             <state key="normal" title="Đăng ký">
-                                                <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" systemColor="systemRedColor"/>
                                             </state>
                                         </button>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-cf-Xbe">
-                                    <rect key="frame" x="77.5" y="464" width="220" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-cf-Xbe">
+                                    <rect key="frame" x="77.5" y="464" width="220.5" height="30"/>
                                     <connections>
                                         <action selector="btnSignUpTapped" destination="-1" eventType="touchUpInside" id="Mrv-FY-QFz"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="Whm-a9-Txs" firstAttribute="top" secondItem="MXf-rT-qMl" secondAttribute="bottom" constant="10" id="2le-AP-Hnf"/>
                                 <constraint firstItem="NNq-ga-N0U" firstAttribute="leading" secondItem="d3S-7v-kOg" secondAttribute="leading" constant="35" id="4AN-BT-IqX"/>
@@ -200,6 +201,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="8bS-yX-hE4" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" id="83e-0W-9Uq"/>
@@ -207,7 +209,6 @@
                 <constraint firstItem="8bS-yX-hE4" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" id="FVf-fn-6av"/>
                 <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="8bS-yX-hE4" secondAttribute="trailing" id="McA-bA-l1Z"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <point key="canvasLocation" x="136.80000000000001" y="153.37331334332833"/>
         </view>
     </objects>
@@ -219,5 +220,11 @@
         <namedColor name="Main">
             <color red="0.23137254901960785" green="0.52941176470588236" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

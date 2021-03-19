@@ -130,7 +130,15 @@ extension ServiceManagementViewController: SwipeTableViewCellDelegate {
     }
     
     private func editActionTapped(indexPath: IndexPath) {
-        
+        let vc = EditServiceRouter.createModule(listType: listWidgetType, widget: listWidgetType[indexPath.section].Widgets[indexPath.row], indexType: indexPath.section)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.reloadListPage = { [weak self] in
+            guard let self = self else { return }
+            self.presenter?.getWidget(type: 1)
+            self.makeToast(message: "Cập nhật thành công")
+        }
+        present(vc, animated: false, completion: nil)
     }
     
     private func deleteActionTapped(indexPath: IndexPath) {

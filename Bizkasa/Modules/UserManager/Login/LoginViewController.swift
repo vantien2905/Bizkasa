@@ -45,6 +45,7 @@ class LoginViewController: BaseViewController {
 
     override func setUpNavigation() {
         setTitleNavigation(title: "Đăng nhập")
+        navigationController?.navigationBar.barTintColor = AppColor.main
     }
 
     private func validate() -> Bool {

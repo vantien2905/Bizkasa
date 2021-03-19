@@ -26,6 +26,7 @@ enum ReceptionistEndPoint {
     case addCustomer(param: AddCustomerParam)
     case changeStatusRoom(roomID: Int, status: String)
     case insertOrUpdateInvoice(param: InsertInvoiceParam)
+    case addWidget(param: WidgetEntity)
    
 }
 
@@ -60,6 +61,8 @@ extension ReceptionistEndPoint: EndPointType {
             return "Room/ChangeStatusRoom"
         case .insertOrUpdateInvoice:
             return "invoice/InsertOrUpdateInvoice"
+        case .addWidget:
+            return "Widget/AddWidget"
         }
     }
 
@@ -99,6 +102,8 @@ extension ReceptionistEndPoint: EndPointType {
         case .changeStatusRoom(roomID: let roomID, status: let status):
             return ["roomId": roomID, "status": status]
         case .insertOrUpdateInvoice(param: let param):
+            return param.toJSON()
+        case .addWidget(let param):
             return param.toJSON()
         }
     }

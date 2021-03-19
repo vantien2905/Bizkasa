@@ -23,6 +23,7 @@ protocol ReceptionistAPIServiceProtocol {
     func addCustomer(param: AddCustomerParam, success: @escaping SuccessHandler<CustomerEntity>.object, failure: @escaping RequestFailure)
     func changeStatusRoom(roomID: Int, status: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func insertOrUpdateInvoice(param: InsertInvoiceParam, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func addWidget(param: WidgetEntity, success: @escaping SuccessHandler<WidgetTypeEntity>.array, failure: @escaping RequestFailure)
 }
 
 class ReceptionistAPIService: ReceptionistAPIServiceProtocol {
@@ -95,6 +96,11 @@ class ReceptionistAPIService: ReceptionistAPIServiceProtocol {
     func getListCustomerCheckIn(success: @escaping SuccessHandler<CustomerCheckInEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = ReceptionistEndPoint.getListCustomerCheckIn
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func addWidget(param: WidgetEntity, success: @escaping SuccessHandler<WidgetTypeEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = ReceptionistEndPoint.addWidget(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
 
     private let network: APINetworkProtocol

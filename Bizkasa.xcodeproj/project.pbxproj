@@ -296,6 +296,12 @@
 		DF1DD91824B4A553006F41E4 /* PaymentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */; };
 		DF1DD91A24B4A8E7006F41E4 /* PaymentEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */; };
 		DF1DD91C24B4A9E2006F41E4 /* PaymentAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */; };
+		DF1F77082604B9EA00DA0B94 /* EditServicePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F77022604B9EA00DA0B94 /* EditServicePresenter.swift */; };
+		DF1F77092604B9EA00DA0B94 /* EditServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F77032604B9EA00DA0B94 /* EditServiceRouter.swift */; };
+		DF1F770A2604B9EA00DA0B94 /* EditServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F77042604B9EA00DA0B94 /* EditServiceViewController.swift */; };
+		DF1F770B2604B9EA00DA0B94 /* EditServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F77052604B9EA00DA0B94 /* EditServiceProtocols.swift */; };
+		DF1F770C2604B9EA00DA0B94 /* EditServiceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1F77062604B9EA00DA0B94 /* EditServiceInteractor.swift */; };
+		DF1F770D2604B9EA00DA0B94 /* EditServiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF1F77072604B9EA00DA0B94 /* EditServiceViewController.xib */; };
 		DF2A9DA02543CEC500388975 /* MoreRateSettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A9D9A2543CEC500388975 /* MoreRateSettingPresenter.swift */; };
 		DF2A9DA12543CEC500388975 /* MoreRateSettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A9D9B2543CEC500388975 /* MoreRateSettingRouter.swift */; };
 		DF2A9DA22543CEC500388975 /* MoreRateSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A9D9C2543CEC500388975 /* MoreRateSettingViewController.swift */; };
@@ -693,6 +699,12 @@
 		DF1DD91724B4A553006F41E4 /* PaymentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentEntity.swift; sourceTree = "<group>"; };
 		DF1DD91924B4A8E7006F41E4 /* PaymentEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentEndPoint.swift; sourceTree = "<group>"; };
 		DF1DD91B24B4A9E2006F41E4 /* PaymentAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAPIService.swift; sourceTree = "<group>"; };
+		DF1F77022604B9EA00DA0B94 /* EditServicePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServicePresenter.swift; sourceTree = "<group>"; };
+		DF1F77032604B9EA00DA0B94 /* EditServiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServiceRouter.swift; sourceTree = "<group>"; };
+		DF1F77042604B9EA00DA0B94 /* EditServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServiceViewController.swift; sourceTree = "<group>"; };
+		DF1F77052604B9EA00DA0B94 /* EditServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServiceProtocols.swift; sourceTree = "<group>"; };
+		DF1F77062604B9EA00DA0B94 /* EditServiceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditServiceInteractor.swift; sourceTree = "<group>"; };
+		DF1F77072604B9EA00DA0B94 /* EditServiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditServiceViewController.xib; sourceTree = "<group>"; };
 		DF2A9D9A2543CEC500388975 /* MoreRateSettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRateSettingPresenter.swift; sourceTree = "<group>"; };
 		DF2A9D9B2543CEC500388975 /* MoreRateSettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRateSettingRouter.swift; sourceTree = "<group>"; };
 		DF2A9D9C2543CEC500388975 /* MoreRateSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRateSettingViewController.swift; sourceTree = "<group>"; };
@@ -1722,6 +1734,7 @@
 		DF04786224F24FBB007037BD /* ServiceManagement */ = {
 			isa = PBXGroup;
 			children = (
+				DF1F77012604B90400DA0B94 /* Edit */,
 				DF04786324F24FCA007037BD /* List */,
 			);
 			path = ServiceManagement;
@@ -1777,6 +1790,19 @@
 				DF1DD91424B4A224006F41E4 /* PaymentCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DF1F77012604B90400DA0B94 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				DF1F77022604B9EA00DA0B94 /* EditServicePresenter.swift */,
+				DF1F77032604B9EA00DA0B94 /* EditServiceRouter.swift */,
+				DF1F77042604B9EA00DA0B94 /* EditServiceViewController.swift */,
+				DF1F77052604B9EA00DA0B94 /* EditServiceProtocols.swift */,
+				DF1F77062604B9EA00DA0B94 /* EditServiceInteractor.swift */,
+				DF1F77072604B9EA00DA0B94 /* EditServiceViewController.xib */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		DF2A9DA72543CECB00388975 /* More */ = {
@@ -2176,6 +2202,7 @@
 				DF46B9C3254578A700D8BE5B /* SurchargeCell.xib in Resources */,
 				B379544B2402C4F9007768B8 /* Roboto-Bold.ttf in Resources */,
 				B36809B1240A5AC5002F8D00 /* AppDropdown.xib in Resources */,
+				DF1F770D2604B9EA00DA0B94 /* EditServiceViewController.xib in Resources */,
 				B3DA710E2437494500B1C8AA /* RoomChargeCell.xib in Resources */,
 				FD82CE67249745AE0075C1AC /* ReceiptViewController.xib in Resources */,
 				DF1DD91624B4A224006F41E4 /* PaymentCell.xib in Resources */,
@@ -2342,6 +2369,7 @@
 				B3E7BA4423F9105F0088259F /* LeftMenuViewController.swift in Sources */,
 				DF1DD91524B4A224006F41E4 /* PaymentCell.swift in Sources */,
 				B3E7BA5423F9105F0088259F /* Segue.swift in Sources */,
+				DF1F770B2604B9EA00DA0B94 /* EditServiceProtocols.swift in Sources */,
 				B3E7BA5623F9105F0088259F /* BasicTransitionAnimator.swift in Sources */,
 				B3E7BA8D23F9105F0088259F /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				B36809C9240A6AC5002F8D00 /* CheckInInteractor.swift in Sources */,
@@ -2411,6 +2439,7 @@
 				DF2A9DA12543CEC500388975 /* MoreRateSettingRouter.swift in Sources */,
 				B3680998240A452E002F8D00 /* EdgeInsetLabel.swift in Sources */,
 				B3E7BA4923F9105F0088259F /* FlashViewController.swift in Sources */,
+				DF1F77082604B9EA00DA0B94 /* EditServicePresenter.swift in Sources */,
 				FD82CE66249745AE0075C1AC /* ReceiptInteractor.swift in Sources */,
 				B36809A7240A5777002F8D00 /* CreateNewReceiptViewController.swift in Sources */,
 				B38B9D2A2406B0EC006D69B0 /* TabbarReceptionistPresenter.swift in Sources */,
@@ -2484,6 +2513,7 @@
 				B3E7BAAF23F9105F0088259F /* CheckVersionHelper.swift in Sources */,
 				DF6571F624C4168A00D20DA5 /* RoomManagementViewController.swift in Sources */,
 				DFCBD0FF2560F3540071EEE7 /* FooterAddConfigureGeneralCell.swift in Sources */,
+				DF1F77092604B9EA00DA0B94 /* EditServiceRouter.swift in Sources */,
 				B3E7BAA123F9105F0088259F /* AppEnum.swift in Sources */,
 				B368099C240A4C61002F8D00 /* ListReceiptCell.swift in Sources */,
 				B350C436241DFD8E0005288B /* HeaderRoomView.swift in Sources */,
@@ -2530,6 +2560,7 @@
 				DFFBEE9C254EC11F005EDBE9 /* EditGeneralRateSettingRouter.swift in Sources */,
 				B3E7BA5023F9105F0088259F /* UIView+Container.swift in Sources */,
 				B38B9D462406BD27006D69B0 /* ListReceiptViewController.swift in Sources */,
+				DF1F770C2604B9EA00DA0B94 /* EditServiceInteractor.swift in Sources */,
 				B3E7BA8523F9105F0088259F /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				B35FE7BC2425CBA60072D223 /* ServiceView.swift in Sources */,
 				B30957D924010B4400335639 /* LoginRouter.swift in Sources */,
@@ -2567,6 +2598,7 @@
 				B38B9D2E2406B0EC006D69B0 /* TabbarReceptionistInteractor.swift in Sources */,
 				B36809C8240A6AC5002F8D00 /* CheckInProtocols.swift in Sources */,
 				DF46B9B1254576DF00D8BE5B /* AddRateSettingPresenter.swift in Sources */,
+				DF1F770A2604B9EA00DA0B94 /* EditServiceViewController.swift in Sources */,
 				B3E7BA6423F9105F0088259F /* UIColor+Extension.swift in Sources */,
 				B3E7BA7823F9105F0088259F /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				B3E7BA3723F9105F0088259F /* EndPointType.swift in Sources */,
@@ -2735,14 +2767,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020111516;
+				CURRENT_PROJECT_VERSION = 2021031923;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = hms.com.Bizkasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Bizkasa;
@@ -2758,14 +2790,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2020111516;
+				CURRENT_PROJECT_VERSION = 2021031923;
 				DEVELOPMENT_TEAM = TL9L9926Y8;
 				INFOPLIST_FILE = Bizkasa/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = hms.com.Bizkasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Bizkasa;

@@ -26,6 +26,7 @@ class AppTextFieldLogo: BaseViewXib {
     override func setUpViews() {
         tfContent.delegate = self
         tfContent.tintColor = AppColor.line
+        tfContent.clearButtonMode = .whileEditing
     }
 
     func setHeightTitle(value: CGFloat) {
@@ -37,7 +38,7 @@ class AppTextFieldLogo: BaseViewXib {
     }
 
     func setText(_ text: String?) {
-        tfContent.text = text?.removeCommaDecimal()
+        tfContent.text = formatNumber ? text&.currencyInputFormatting() : text?.removeCommaDecimal()
     }
     
     func setTitleAndLogo(_ image: UIImage,
@@ -49,7 +50,7 @@ class AppTextFieldLogo: BaseViewXib {
         if placeholder&.isEmpty {
             tfContent.placeholder = "Nhập \(title.lowercased())"
         } else {
-            tfContent.placeholder = placeholder
+            tfContent.placeholder = formatNumber ? placeholder&.currencyInputFormatting() : placeholder
         }
     }
     

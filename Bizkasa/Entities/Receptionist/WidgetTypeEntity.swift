@@ -70,7 +70,7 @@ class WidgetEntity: Mappable {
         self.NumExport <- map["NumExport"]
         self.Residual <- map["Residual"]
         self.Note <- map["Note"]
-        self.NamePrice = "\(self.Name&) (\(self.Price ?? 0))"
+        self.NamePrice = "\(self.Name&) (\(self.PricePaid ?? 0))"
         self.Quantity <- map["Quantity"]
 
         self.Descriptions <- map["Descriptions"]
