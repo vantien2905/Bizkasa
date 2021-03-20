@@ -30,4 +30,20 @@ class EditServiceRouter: EditServiceWireframeProtocol {
 
         return view
     }
+    
+    static func createModule(listType: [WidgetTypeEntity]) -> EditServiceViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = EditServiceViewController.initFromNib()
+        let interactor = EditServiceInteractor()
+        let router = EditServiceRouter()
+        let presenter = EditServicePresenter(interface: view, interactor: interactor, router: router)
+
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        view.isAddNew = true
+        view.listType = listType
+
+        return view
+    }
 }

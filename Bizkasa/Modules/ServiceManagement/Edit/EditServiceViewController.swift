@@ -27,6 +27,10 @@ class EditServiceViewController: BaseViewController {
     var indexType: Int!
     
     var reloadListPage: (()->Void)?
+    
+    var isAddNew = false
+    
+    var addNewParam = WidgetEntity()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +59,11 @@ class EditServiceViewController: BaseViewController {
         
         serviceTypeDropdown.dropDownCallBack = { [weak self] index, item in
             guard let self = self else { return }
-            self.widget.GroupId = self.listType[index].GroupId
+            if self.isAddNew {
+                self.addNewParam.GroupId = self.listType[index].GroupId
+            } else {
+                self.widget.GroupId = self.listType[index].GroupId
+            }
         }
         
     }
@@ -65,30 +73,42 @@ class EditServiceViewController: BaseViewController {
     }
     
     private func setData() {
-        
-        serviceNameTextField.setText(widget.Name)
-        priceBuyTextField.setText("\(widget.Price ?? 0)")
-        priceSellTextField.setText("\(widget.PricePaid ?? 0)")
-        noteTextField.setText(widget.Note)
-        serviceTypeDropdown.itemSelected = indexType
+        if !isAddNew {
+            serviceNameTextField.setText(widget.Name)
+            priceBuyTextField.setText("\(widget.Price ?? 0)")
+            priceSellTextField.setText("\(widget.PricePaid ?? 0)")
+            noteTextField.setText(widget.Note)
+            allowWarehouseButton.isSelected = widget.IsRecept ?? false
+            serviceTypeDropdown.itemSelected = indexType
+        } else {
+            self.addNewParam.GroupId = self.listType.first?.GroupId
+        }
         serviceTypeDropdown.dataSource = listType.map({$0.GroupName&})
-        
-        allowWarehouseButton.isSelected = widget.IsRecept ?? false
     }
     
     @IBAction func acceptButtonTapped() {
-        widget.Name = serviceNameTextField.getText()
-        widget.Price = Int(priceBuyTextField.getText()&.removeCommaDecimal())
-        widget.PricePaid = Int(priceSellTextField.getText()&.removeCommaDecimal())
-        widget.Note = noteTextField.getText()
-        self.presenter?.addWidget(param: widget)
+        if isAddNew {
+            addNewParam.Name = serviceNameTextField.getText()
+            addNewParam.Price = Int(priceBuyTextField.getText()&.removeCommaDecimal())
+            addNewParam.PricePaid = Int(priceSellTextField.getText()&.removeCommaDecimal())
+            addNewParam.Note = noteTextField.getText()
+            self.presenter?.addWidget(param: addNewParam)
+        } else {
+            widget.Name = serviceNameTextField.getText()
+            widget.Price = Int(priceBuyTextField.getText()&.removeCommaDecimal())
+            widget.PricePaid = Int(priceSellTextField.getText()&.removeCommaDecimal())
+            widget.Note = noteTextField.getText()
+            self.presenter?.addWidget(param: widget)
+        }
     }
     
     @IBAction func allowWarehouseButtonTapped() {
         allowWarehouseButton.isSelected = !allowWarehouseButton.isSelected
-        
-        widget.IsRecept = allowWarehouseButton.isSelected
-        
+        if isAddNew {
+            addNewParam.IsRecept = allowWarehouseButton.isSelected
+        } else {
+            widget.IsRecept = allowWarehouseButton.isSelected
+        }
     }
 }
 

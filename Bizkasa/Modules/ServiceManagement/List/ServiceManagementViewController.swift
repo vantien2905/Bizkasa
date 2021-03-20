@@ -46,6 +46,18 @@ class ServiceManagementViewController: HomeBaseViewController {
     private func refreshData() {
         presenter?.getWidget(type: 1)
     }
+    
+    @IBAction func addNewButtonTapped() {
+        let vc = EditServiceRouter.createModule(listType: listWidgetType)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.reloadListPage = { [weak self] in
+            guard let self = self else { return }
+            self.presenter?.getWidget(type: 1)
+            self.makeToast(message: "Cập nhật thành công")
+        }
+        present(vc, animated: false, completion: nil)
+    }
 }
 
 extension ServiceManagementViewController: ServiceManagementViewProtocol {
