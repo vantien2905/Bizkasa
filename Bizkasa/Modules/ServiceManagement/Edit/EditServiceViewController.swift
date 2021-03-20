@@ -18,6 +18,7 @@ class EditServiceViewController: BaseViewController {
     @IBOutlet weak var priceSellTextField   : AppTextFieldLogo!
     @IBOutlet weak var noteTextField        : AppTextFieldLogo!
     @IBOutlet weak var btnAccept            : UIButton!
+    @IBOutlet weak var allowWarehouseButton : UIButton!
 
 	var presenter: EditServicePresenterProtocol?
     
@@ -71,6 +72,8 @@ class EditServiceViewController: BaseViewController {
         noteTextField.setText(widget.Note)
         serviceTypeDropdown.itemSelected = indexType
         serviceTypeDropdown.dataSource = listType.map({$0.GroupName&})
+        
+        allowWarehouseButton.isSelected = widget.IsRecept ?? false
     }
     
     @IBAction func acceptButtonTapped() {
@@ -79,6 +82,13 @@ class EditServiceViewController: BaseViewController {
         widget.PricePaid = Int(priceSellTextField.getText()&.removeCommaDecimal())
         widget.Note = noteTextField.getText()
         self.presenter?.addWidget(param: widget)
+    }
+    
+    @IBAction func allowWarehouseButtonTapped() {
+        allowWarehouseButton.isSelected = !allowWarehouseButton.isSelected
+        
+        widget.IsRecept = allowWarehouseButton.isSelected
+        
     }
 }
 

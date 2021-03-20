@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditServiceViewController">
             <connections>
+                <outlet property="allowWarehouseButton" destination="nyk-QP-lte" id="r8i-Gc-PoI"/>
                 <outlet property="btnAccept" destination="P55-3v-Obt" id="mi2-hx-gOq"/>
                 <outlet property="noteTextField" destination="TWX-p7-Cl2" id="6UP-ui-x2E"/>
                 <outlet property="priceBuyTextField" destination="ZuT-QW-rlq" id="KHl-8p-JOs"/>
@@ -33,10 +34,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhM-NA-Bo6">
-                    <rect key="frame" x="0.0" y="199.5" width="375" height="467.5"/>
+                    <rect key="frame" x="0.0" y="79.5" width="375" height="587.5"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wng-Kx-COg">
-                            <rect key="frame" x="20" y="10" width="335" height="371.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wng-Kx-COg">
+                            <rect key="frame" x="20" y="10" width="335" height="481.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHỈNH SỬA DỊCH VỤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFg-oT-QNc">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="21.5"/>
@@ -45,44 +46,56 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-Nd-5D1" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="31.5" width="335" height="60"/>
+                                    <rect key="frame" x="0.0" y="41.5" width="335" height="60"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="jr3-MV-f8W"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jd4-Ya-MOD" userLabel="serviceType" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="101.5" width="335" height="60"/>
+                                    <rect key="frame" x="0.0" y="121.5" width="335" height="60"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="pJc-MQ-tQS"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZuT-QW-rlq" userLabel="priceBuy" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="171.5" width="335" height="60"/>
+                                    <rect key="frame" x="0.0" y="201.5" width="335" height="60"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="kA7-VM-g8I"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4av-0R-Ib2" userLabel="priceSell" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="241.5" width="335" height="60"/>
+                                    <rect key="frame" x="0.0" y="281.5" width="335" height="60"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="GNL-qv-m9O"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWX-p7-Cl2" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="311.5" width="335" height="60"/>
+                                    <rect key="frame" x="0.0" y="361.5" width="335" height="60"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="vXU-VW-uM9"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyk-QP-lte">
+                                    <rect key="frame" x="0.0" y="441.5" width="335" height="40"/>
+                                    <state key="normal" title="Cho phép nhập kho" image="untick">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <state key="selected" title="Cho phép nhập kho" image="tick">
+                                        <color key="titleColor" red="0.074440979188017065" green="0.43856135102891436" blue="0.060134493039496084" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="allowWarehouseButtonTapped" destination="-1" eventType="touchUpInside" id="UJY-IG-85L"/>
+                                    </connections>
+                                </button>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="A6B-H9-Gqm">
-                            <rect key="frame" x="92.5" y="401.5" width="190" height="36"/>
+                            <rect key="frame" x="92.5" y="521.5" width="190" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P55-3v-Obt">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="36"/>
@@ -132,7 +145,7 @@
                         <constraint firstItem="A6B-H9-Gqm" firstAttribute="centerX" secondItem="hhM-NA-Bo6" secondAttribute="centerX" id="Da5-hG-yZr"/>
                         <constraint firstAttribute="bottom" secondItem="A6B-H9-Gqm" secondAttribute="bottom" constant="30" id="ODy-mP-gcc"/>
                         <constraint firstItem="wng-Kx-COg" firstAttribute="leading" secondItem="hhM-NA-Bo6" secondAttribute="leading" constant="20" id="VB0-sM-UR5"/>
-                        <constraint firstItem="A6B-H9-Gqm" firstAttribute="top" secondItem="wng-Kx-COg" secondAttribute="bottom" constant="20" id="rk8-pT-exp"/>
+                        <constraint firstItem="A6B-H9-Gqm" firstAttribute="top" secondItem="wng-Kx-COg" secondAttribute="bottom" constant="30" id="rk8-pT-exp"/>
                         <constraint firstAttribute="trailing" secondItem="wng-Kx-COg" secondAttribute="trailing" constant="20" id="xY7-5W-rdY"/>
                     </constraints>
                 </view>
@@ -152,6 +165,8 @@
         </view>
     </objects>
     <resources>
+        <image name="tick" width="40" height="40"/>
+        <image name="untick" width="40" height="40"/>
         <namedColor name="Main">
             <color red="0.23137254901960785" green="0.52941176470588236" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

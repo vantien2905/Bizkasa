@@ -17,7 +17,13 @@ class AppTextFieldLogo: BaseViewXib {
     
     var textFieldCallBack: ((_ value: String) -> Void)?
     
-    var formatNumber = false
+    var formatNumber = false {
+        didSet {
+            if self.formatNumber {
+                self.tfContent.keyboardType = .decimalPad
+            }
+        }
+    }
     
     override func draw(_ rect: CGRect) {
         tfContent.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
