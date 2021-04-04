@@ -59,12 +59,45 @@ class CheckOutViewController: BaseViewController {
     var room: RoomEntity!
 
     weak var delegate: CheckOutViewControllerDelegate?
+    
+    lazy var bottomView = ListBottomButton()
+    
+    lazy var listTitleAction = ["Trả phòng",
+                                "Lưu",
+                                "Chưa thanh toán"]
 
 	override func viewDidLoad() {
         super.viewDidLoad()
 
         getDataDetail()
         configureTableView()
+        observeKeyboardChange()
+    }
+    
+    override func setUpViews() {
+        view.addSubview(bottomView)
+        
+        bottomView.layer.zPosition = 1
+        bottomView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(safeBottomAnchor)
+        }
+        bottomView.listTitle = listTitleAction
+        bottomView.buttonActionCallback = { [weak self] title in
+            guard let self = self else { return }
+            switch title {
+            case self.listTitleAction[0]:
+                self.btnCheckOutTapped()
+            case self.listTitleAction[1]:
+                self.btnSaveTapped()
+            case self.listTitleAction[2]:
+                self.btnUnPaidTapped()
+            default:
+                break
+            }
+        }
+        
+        tbCheckOut.contentInset.bottom = 60
     }
 
     private func getDataDetail() {
@@ -75,15 +108,16 @@ class CheckOutViewController: BaseViewController {
 
     override func setUpNavigation() {
         addBackWhiteToNavigation()
-        addRightButtonNavigation(titles: ["Trả phòng",
-                                          "Lưu",
-                                          "Chưa thanh toán"],
-                                 actions: [#selector(btnCheckOutTapped),
-                                           #selector(btnSaveTapped),
-                                           #selector(btnUnPaidTapped)],
-                                 color: [AppColor.normalOrange,
-                                         AppColor.normalGreen,
-                                         AppColor.secondMain])
+        setTitleNavigation(title: "Trả phòng \(self.room.Name&)")
+//        addRightButtonNavigation(titles: ["Trả phòng",
+//                                          "Lưu",
+//                                          "Chưa thanh toán"],
+//                                 actions: [#selector(btnCheckOutTapped),
+//                                           #selector(btnSaveTapped),
+//                                           #selector(btnUnPaidTapped)],
+//                                 color: [AppColor.normalOrange,
+//                                         AppColor.normalGreen,
+//                                         AppColor.secondMain])
     }
 
     private func configureTableView() {
@@ -109,6 +143,26 @@ class CheckOutViewController: BaseViewController {
     @objc func btnUnPaidTapped() {
         orderInfo.OrderStatus = 1
         presenter?.updateOrder(param: orderInfo)
+    }
+    
+    override func keyboardWillHide(_ rect: CGRect, duration: TimeInterval, animationOptions: UIView.AnimationOptions = []) {
+        UIView.animate(withDuration: 0.3) {
+            self.bottomView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(self.safeBottomAnchor)
+            }
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    override func keyboardWillShow(_ rect: CGRect, duration: TimeInterval, animationOptions: UIView.AnimationOptions = []) {
+        UIView.animate(withDuration: 0.3) {
+            self.bottomView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(rect.size.height)
+            }
+            self.view.layoutIfNeeded()
+        }
+        
     }
 
 }

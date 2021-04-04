@@ -17,11 +17,12 @@ class HomeCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = .lightGray
     }
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        vBackground.setShadow()
+//        vBackground.setShadow()
     }
 
     func setData(index: Int) {

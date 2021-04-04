@@ -21,6 +21,7 @@ class CheckInViewController: BaseViewController {
     @IBOutlet weak var vConfigurePrice      : AppDropdown!
     @IBOutlet weak var vService             : ServiceView!
     @IBOutlet weak var tvNote               : AppTextViewLogo!
+    @IBOutlet weak var scrollView           : UIScrollView!
 
 	var presenter: CheckInPresenterProtocol?
 
@@ -46,10 +47,13 @@ class CheckInViewController: BaseViewController {
     var calculatorMode = 3
 
     var customer: [CustomerEntity] = []
+    
+    lazy var bottomView = ListBottomButton()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         getData()
+        observeKeyboardChange()
     }
 
     deinit {
@@ -64,7 +68,7 @@ class CheckInViewController: BaseViewController {
     override func setUpNavigation() {
         setTitleNavigation(title: "Phòng \(room.Name&)")
         addBackWhiteToNavigation()
-        addButtonTextToNavigation(title: "Nhận", style: .right, action: #selector(btnAcceptTapped))
+//        addButtonTextToNavigation(title: "Nhận", style: .right, action: #selector(btnAcceptTapped))
     }
 
     override func setUpViews() {
@@ -106,6 +110,20 @@ class CheckInViewController: BaseViewController {
             guard let self = self else { return }
             self.configPrice = self.listPrice[index]
         }
+        
+        view.addSubview(bottomView)
+        
+        bottomView.layer.zPosition = 1
+        bottomView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(safeBottomAnchor)
+        }
+        bottomView.listTitle = ["Nhận phòng"]
+        bottomView.buttonActionCallback = { [weak self] title in
+            self?.btnAcceptTapped()
+        }
+        
+        scrollView.contentInset.bottom = 60
     }
 
     @objc func btnAcceptTapped() {
@@ -138,6 +156,25 @@ class CheckInViewController: BaseViewController {
         }
     }
 
+    override func keyboardWillHide(_ rect: CGRect, duration: TimeInterval, animationOptions: UIView.AnimationOptions = []) {
+        UIView.animate(withDuration: 0.3) {
+            self.bottomView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(self.safeBottomAnchor)
+            }
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    override func keyboardWillShow(_ rect: CGRect, duration: TimeInterval, animationOptions: UIView.AnimationOptions = []) {
+        UIView.animate(withDuration: 0.3) {
+            self.bottomView.snp.updateConstraints {
+                $0.bottom.equalToSuperview().inset(rect.size.height)
+            }
+            self.view.layoutIfNeeded()
+        }
+        
+    }
 }
 
 extension CheckInViewController: CheckInViewProtocol {

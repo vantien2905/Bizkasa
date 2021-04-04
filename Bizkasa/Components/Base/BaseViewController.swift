@@ -25,6 +25,24 @@ class BaseViewController: UIViewController {
     let mainBackgroundColor = UIColor.white
     let mainNavigationBarColor = AppColor.main
     //    let SlideInPresentationManager.shared = SlideInPresentationManager()
+    private var scrollViewKeyboardController: ScrollViewKeyboardController?
+    private var isObservingKeyboard = false
+    
+    public var safeTopAnchor: CGFloat {
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            return window?.safeAreaInsets.top ?? 0
+        }
+        return 0
+    }
+    
+    public var safeBottomAnchor: CGFloat {
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            return window?.safeAreaInsets.bottom ?? 0
+        }
+        return 0
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +63,23 @@ class BaseViewController: UIViewController {
     }()
     
     deinit {
+        removeObserveKeyboardChange()
         print("Remove NotificationCenter Deinit")
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillShow(
+        _ rect: CGRect,
+        duration: TimeInterval,
+        animationOptions: UIView.AnimationOptions = []
+    ) {
+    }
+    
+    func keyboardWillHide(
+        _ rect: CGRect,
+        duration: TimeInterval,
+        animationOptions: UIView.AnimationOptions = []
+    ) {
     }
     
     let btnNavi: UIButton = UIButton()
@@ -551,5 +584,61 @@ extension BaseViewController {
         } else {
             dismiss(animated: true, completion: nil)
         }
+    }
+}
+
+// MARK: - Keyboard
+extension BaseViewController: KeyboardEvents {
+    func keyboardWillShowWithRect(
+        _ rect: CGRect,
+        duration: TimeInterval,
+        animationOptions: UIView.AnimationOptions = []
+    ) {
+        keyboardWillShow(rect, duration: duration)
+        scrollViewKeyboardController?.keyboardWillShowWithRect(
+            rect,
+            duration: duration,
+            animationOptions: animationOptions)
+    }
+    
+    func keyboardWillHideWithRect(
+        _ rect: CGRect,
+        duration: TimeInterval,
+        animationOptions: UIView.AnimationOptions = []
+    ) {
+        keyboardWillHide(rect, duration: duration)
+        scrollViewKeyboardController?.keyboardWillHideWithRect(
+            rect,
+            duration: duration,
+            animationOptions: animationOptions)
+    }
+    
+    public func observeKeyboardChange() {
+        KeyboardNotifier.sharedInstance.subscribeEvents(self)
+    }
+    
+    public func removeObserveKeyboardChange() {
+        KeyboardNotifier.sharedInstance.unsubscribeEvents(self)
+    }
+    
+    func adjustScrollViewInsetsForKeyboardChange(_ scrollView: UIScrollView) {
+        
+        observeKeyboardChange()
+        
+        if scrollViewKeyboardController == nil {
+            scrollViewKeyboardController = ScrollViewKeyboardController()
+        }
+        scrollViewKeyboardController!.scrollView = scrollView
+    }
+    
+    @discardableResult
+    public func addTapScreenDismissKeyboard() -> UIGestureRecognizer {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.endEditing))
+        self.view.addGestureRecognizer(tapGesture)
+        return tapGesture
+    }
+    
+    @objc fileprivate func endEditing() {
+        self.view.endEditing(true)
     }
 }

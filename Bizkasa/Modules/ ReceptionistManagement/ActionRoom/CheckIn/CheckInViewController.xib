@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckInViewController">
             <connections>
+                <outlet property="scrollView" destination="iYO-hY-ZFi" id="xhX-pc-blw"/>
                 <outlet property="tfAdress" destination="v9I-fH-kPi" id="sDf-eR-2WA"/>
                 <outlet property="tfCheckInTime" destination="Myz-Zq-PlS" id="mDE-8U-ZZb"/>
                 <outlet property="tfCustomerName" destination="w4k-t6-8k0" id="RMh-ox-mUo"/>
@@ -38,42 +40,42 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-t6-8k0" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="Le8-RS-yEB"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6EN-q3-VlQ" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="70" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImR-cd-dic" customClass="TextFieldCalendar" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="140" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9I-fH-kPi" customClass="AppTextFieldLogo" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="210" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myz-Zq-PlS" customClass="AppDateTime" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="280" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeU-jB-Hs8" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="350" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0O-0Z-QHc" customClass="AppDropdown" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="420" width="355" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Gu-Pm-xfp" customClass="ServiceView" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="490" width="355" height="50"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-0R-371" customClass="AppTextViewLogo" customModule="Bizkasa" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="550" width="355" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="hwI-PR-TOz"/>
                                             </constraints>
@@ -89,7 +91,7 @@
                                     </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="6dm-me-kOC" firstAttribute="leading" secondItem="G3Y-4A-Dzt" secondAttribute="leading" id="3GA-Kv-pMV"/>
                                 <constraint firstAttribute="bottom" secondItem="6dm-me-kOC" secondAttribute="bottom" id="Dfv-bE-t5k"/>
@@ -99,7 +101,7 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="G3Y-4A-Dzt" secondAttribute="bottom" id="0UJ-5t-4Fl"/>
+                        <constraint firstAttribute="bottom" secondItem="G3Y-4A-Dzt" secondAttribute="bottom" constant="60" id="0UJ-5t-4Fl"/>
                         <constraint firstAttribute="trailing" secondItem="G3Y-4A-Dzt" secondAttribute="trailing" id="AkY-DR-stz"/>
                         <constraint firstItem="G3Y-4A-Dzt" firstAttribute="top" secondItem="iYO-hY-ZFi" secondAttribute="top" id="bp7-L5-5gg"/>
                         <constraint firstItem="G3Y-4A-Dzt" firstAttribute="width" secondItem="iYO-hY-ZFi" secondAttribute="width" multiplier="1:1" id="cov-6a-nSC"/>
@@ -107,6 +109,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="iYO-hY-ZFi" firstAttribute="leading" secondItem="zIn-FR-UZl" secondAttribute="leading" constant="10" id="Dl2-Do-mmU"/>
@@ -114,8 +117,12 @@
                 <constraint firstItem="zIn-FR-UZl" firstAttribute="trailing" secondItem="iYO-hY-ZFi" secondAttribute="trailing" constant="10" id="dji-yN-8Xx"/>
                 <constraint firstItem="iYO-hY-ZFi" firstAttribute="top" secondItem="zIn-FR-UZl" secondAttribute="top" constant="10" id="fmd-JY-Ngm"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="zIn-FR-UZl"/>
             <point key="canvasLocation" x="140" y="153"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

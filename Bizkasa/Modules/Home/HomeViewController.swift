@@ -41,6 +41,11 @@ class HomeViewController: HomeBaseViewController {
     @IBOutlet weak var lbTotal      : UILabel!
 
     var presenter: HomePresenterProtocol?
+    
+    enum SectionType: Int, CaseIterable {
+        case notification
+        case management
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +61,11 @@ class HomeViewController: HomeBaseViewController {
 
     private func configureCollectionView() {
         cvHome.registerCollectionCell(HomeCVCell.self)
+        cvHome.registerCollectionCell(NotificationCollectionViewCell.self)
+        cvHome.register(header: HeaderCollectionReusableView.self)
         cvHome.delegate = self
         cvHome.dataSource = self
-        let screen = UIScreen.main.bounds
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: screen.width/2, height: screen.width/4)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         cvHome.collectionViewLayout = layout
@@ -91,19 +96,71 @@ extension HomeViewController: HomeViewProtocol {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return SectionType.allCases.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listTitle.count - 1
+        switch SectionType(rawValue: section) {
+        case .notification:
+            return 1
+        default:
+            return listTitle.count - 1
+        }
+       
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCollectionCell(HomeCVCell.self, indexPath: indexPath)
-        cell.lbTitle.text = listTitle[indexPath.row + 1]
-        cell.imgLogo.image = listImageTitle[indexPath.row]
-        return cell
+        switch SectionType(rawValue: indexPath.section) {
+        case .notification:
+            let cell = collectionView.dequeueCollectionCell(NotificationCollectionViewCell.self, indexPath: indexPath)
+            return cell
+        default:
+            let cell = collectionView.dequeueCollectionCell(HomeCVCell.self, indexPath: indexPath)
+            cell.lbTitle.text = listTitle[indexPath.row + 1]
+            cell.imgLogo.image = listImageTitle[indexPath.row]
+            return cell
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        setContentVC(index: indexPath.row + 1)
+        switch SectionType(rawValue: indexPath.section) {
+        case .notification:
+            break
+        default:
+            setContentVC(index: indexPath.row + 1)
+        }
+       
 
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch SectionType(rawValue: indexPath.section) {
+        case .notification:
+            return CGSize(width: collectionView.frame.width - 20, height: 150)
+        default:
+            return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.width/4)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeue(header: HeaderCollectionReusableView.self, indexPath: indexPath)
+            switch SectionType(rawValue: indexPath.section) {
+            case .notification:
+                header.titleLabel.text = "Thông báo"
+            default:
+                header.titleLabel.text = "Quản lý"
+            }
+            return header
+        default:  fatalError("Unexpected element kind")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
 }
