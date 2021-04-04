@@ -59,6 +59,8 @@ class ListRoomCVCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         configureDropDown()
+        lbRoomName.numberOfLines = 0
+        lbRoomName.textAlignment = .center
     }
 
     private func configureDropDown() {
@@ -98,6 +100,7 @@ class ListRoomCVCell: UICollectionViewCell {
 
     private func setColor(background: UIColor, text: UIColor) {
         vBackground.setShadow(color: background)
+//        vBackground.backgroundColor = background
         lbRoomName.textColor = text
         
         dropdown.shadowColor = .black

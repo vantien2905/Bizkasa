@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -32,7 +33,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxy-DE-xgg">
                                 <rect key="frame" x="10" y="5" width="40" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-Kr-3B3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZr-Kr-3B3">
                                         <rect key="frame" x="5" y="5" width="30" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                         <color key="textColor" name="WhiteColor"/>
@@ -61,22 +62,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d9q-ou-9Ak">
-                                <rect key="frame" x="60" y="5" width="143" height="54"/>
+                                <rect key="frame" x="60" y="5" width="142.5" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên: Nguyễn văn A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY1-2f-foJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CMT: 1234567890" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fak-HW-u9X">
-                                        <rect key="frame" x="0.0" y="20.5" width="143" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="142.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày tạo: 29/02/2020" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id0-6l-co9">
-                                        <rect key="frame" x="0.0" y="37" width="143" height="17"/>
+                                        <rect key="frame" x="0.0" y="37" width="142.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -84,31 +85,32 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Khách đang ở" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW9-df-qDr" customClass="AppLabel" customModule="Bizkasa" customModuleProvider="target">
-                                <rect key="frame" x="275" y="5" width="83" height="15.5"/>
+                                <rect key="frame" x="255" y="5" width="103" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                 <color key="textColor" name="WhiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHW-iv-Aoj">
-                                <rect key="frame" x="293.5" y="30.5" width="46" height="17.5"/>
+                                <rect key="frame" x="283.5" y="40.5" width="46" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng đôi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-lO-7W3">
-                                <rect key="frame" x="5.5" y="50" width="49" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phòng đôi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="7v5-lO-7W3">
+                                <rect key="frame" x="5" y="50" width="50" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eW9-df-qDr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d9q-ou-9Ak" secondAttribute="trailing" constant="10" id="3rf-qS-D7b"/>
                             <constraint firstItem="HHW-iv-Aoj" firstAttribute="top" secondItem="eW9-df-qDr" secondAttribute="bottom" constant="10" id="746-CZ-bP6"/>
                             <constraint firstItem="d9q-ou-9Ak" firstAttribute="top" secondItem="dxy-DE-xgg" secondAttribute="top" id="7Uz-po-cXh"/>
                             <constraint firstItem="HHW-iv-Aoj" firstAttribute="centerX" secondItem="eW9-df-qDr" secondAttribute="centerX" id="B7d-Ik-QQr"/>
-                            <constraint firstItem="7v5-lO-7W3" firstAttribute="centerX" secondItem="dxy-DE-xgg" secondAttribute="centerX" id="FQk-KG-s9c"/>
+                            <constraint firstItem="7v5-lO-7W3" firstAttribute="leading" secondItem="dxy-DE-xgg" secondAttribute="leading" constant="-5" id="Hxf-aY-dg2"/>
+                            <constraint firstItem="7v5-lO-7W3" firstAttribute="trailing" secondItem="dxy-DE-xgg" secondAttribute="trailing" constant="5" id="V1n-bn-3YO"/>
                             <constraint firstAttribute="trailing" secondItem="eW9-df-qDr" secondAttribute="trailing" constant="10" id="We8-st-Hb6"/>
                             <constraint firstItem="eW9-df-qDr" firstAttribute="top" secondItem="P9T-tm-Zj8" secondAttribute="top" constant="5" id="Wp0-2d-hkc"/>
                             <constraint firstItem="dxy-DE-xgg" firstAttribute="leading" secondItem="P9T-tm-Zj8" secondAttribute="leading" constant="10" id="ab8-a6-ic2"/>
@@ -140,6 +142,11 @@
             <point key="canvasLocation" x="114.49275362318842" y="30.46875"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="eW9-df-qDr">
+            <size key="intrinsicContentSize" width="103" height="25.5"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="WhiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -147,5 +154,11 @@
         <namedColor name="secondMain">
             <color red="0.58431372549019611" green="0.80784313725490198" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -30,7 +30,12 @@ class AppTextViewLogo: BaseViewXib {
     }
 
     func getText() -> String? {
-        return vTextView.textview.text
+        if vTextView.textview.text != vTextView.TEXTVIEW_PLACE_HOLDER {
+            return vTextView.textview.text
+        } else {
+            return nil
+        }
+        
     }
 
     func setTitleAndLogo(_ image: UIImage = AppImage.imgPayment,

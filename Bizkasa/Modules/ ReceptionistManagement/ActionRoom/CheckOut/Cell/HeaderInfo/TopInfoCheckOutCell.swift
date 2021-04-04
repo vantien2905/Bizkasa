@@ -71,7 +71,15 @@ class TopInfoCheckOutCell: UITableViewCell {
             setContentDropdown()
             vDropdown.dataSource = ["Tiền mặt", "Chuyển khoản", "Thanh toán online", "Khác"]
         case 8:
-            setContentTextField(text:  info.Notes)
+            if info.Notes&.isEmpty {
+                textField.placeholder = "Nhập ghi chú"
+                lbContent.isHidden = true
+                textField.isHidden = false
+                vDropdown.isHidden = true
+                vCalendar.isHidden = true
+            } else {
+                setContentTextField(text:  info.Notes)
+            }
         default:
             break
         }

@@ -138,7 +138,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch SectionType(rawValue: indexPath.section) {
         case .notification:
-            return CGSize(width: collectionView.frame.width - 20, height: 150)
+            return CGSize(width: collectionView.frame.width - 20, height: 100)
         default:
             return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.width/4)
         }
