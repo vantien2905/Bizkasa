@@ -16,21 +16,21 @@ let listTitle = ["Trang chủ",
                  "Phiếu chi",
                  "Quản lý tầng/ lầu",
                  "Dịch vụ",
-                 "Cài đặt giá phòng",
-                 "Báo cáo thống kê",
-                 "Giao ca",
-                 "Cấu hình hệ thống",
-                 "Thông tin khách sạn"]
+                 "Cài đặt giá phòng"]
+//                 "Báo cáo thống kê",
+//                 "Giao ca",
+//                 "Cấu hình hệ thống",
+//                 "Thông tin khách sạn"]
 let listImageTitle = [AppImage.receptionist,
                      AppImage.receipts,
                      AppImage.payment,
                      AppImage.manage,
                      AppImage.service,
-                     AppImage.setting,
-                     AppImage.statistic,
-                     AppImage.shift,
-                     AppImage.settingSystem,
-                     AppImage.info]
+                     AppImage.setting]
+//                     AppImage.statistic,
+//                     AppImage.shift,
+//                     AppImage.settingSystem,
+//                     AppImage.info]
 
 
 class HomeViewController: HomeBaseViewController {
@@ -39,6 +39,8 @@ class HomeViewController: HomeBaseViewController {
     @IBOutlet weak var lbService    : UILabel!
     @IBOutlet weak var lbRoom       : UILabel!
     @IBOutlet weak var lbTotal      : UILabel!
+    @IBOutlet weak var menuButton      : UIButton!
+    @IBOutlet weak var titleLabel      : UILabel!
 
     var presenter: HomePresenterProtocol?
     
@@ -57,6 +59,16 @@ class HomeViewController: HomeBaseViewController {
 
     override func setUpNavigation() {
         setTitleNavigation(title: "Trang chủ")
+        hideNavigation()
+        menuButton.setShadow(color: AppColor.main, radius: 20)
+        
+        guard let user = UserDefaultHelper.shared.getUser() else { return }
+        titleLabel.text = user.HotelName&.uppercased()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showNavigation()
     }
 
     private func configureCollectionView() {
@@ -69,8 +81,17 @@ class HomeViewController: HomeBaseViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         cvHome.collectionViewLayout = layout
-    }
 
+        let imageView = UIImageView(image: AppImage.hotelBackground)
+        imageView.image = AppImage.hotelBackground
+        imageView.contentMode = .scaleAspectFill
+        cvHome.backgroundView = imageView
+        cvHome.contentInset.top = 100
+    }
+    
+    @IBAction func menuButtonTapped() {
+        self.sideMenuController?.revealMenu()
+    }
 }
 
 extension HomeViewController: HomeViewProtocol {
@@ -118,8 +139,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             return cell
         default:
             let cell = collectionView.dequeueCollectionCell(HomeCVCell.self, indexPath: indexPath)
-            cell.lbTitle.text = listTitle[indexPath.row + 1]
-            cell.imgLogo.image = listImageTitle[indexPath.row]
+            cell.setData(index: indexPath.row)
+           
             return cell
         }
     }

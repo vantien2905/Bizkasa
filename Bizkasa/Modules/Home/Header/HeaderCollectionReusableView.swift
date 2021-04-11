@@ -15,6 +15,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = AppColor.secondMain
     }
     
 }

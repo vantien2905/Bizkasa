@@ -57,11 +57,11 @@ extension UIView {
         })
     }
 
-    func setShadow(color: UIColor) {
+    func setShadow(color: UIColor, radius: CGFloat = 5) {
         self.backgroundColor = color
 
         self.layer.masksToBounds = false
-        self.layer.cornerRadius = 5
+        self.layer.cornerRadius = radius
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
         self.layer.shadowOffset = CGSize(width: 1.0, height: 2.0)

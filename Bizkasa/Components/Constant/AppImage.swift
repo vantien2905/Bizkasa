@@ -54,4 +54,5 @@ struct AppImage {
     static let filter = UIImage(named: "filter")!
     static let moment = UIImage(named: "chooser-moment-button")!
     static let coupleRoom = UIImage(named: "coupleRoom")!
+    static let hotelBackground = UIImage(named: "hotel_background")!
 }

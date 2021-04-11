@@ -17,7 +17,12 @@ class NotificationCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         titleLabel.text = "Bizkasa chúc bạn một ngày mới tốt lành!!!"
-        background.setShadow(color: .systemOrange)
+        
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        background.setShadow(color: AppColor.normalOrange)
     }
 
 }
