@@ -50,7 +50,8 @@ class AddGeneralConfigureViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped() {
-        let vc = AddSurchargeRouter.createModule(type: type, addOrUpdateConfigParam: addOrUpdateConfigParam)
+        let vc = AddSurchargeRouter.createModule(type: type,
+                                                 addOrUpdateConfigParam: addOrUpdateConfigParam)
         vc.delegate = self
         self.push(controller: vc)
     }
@@ -85,7 +86,8 @@ extension AddGeneralConfigureViewController: UITableViewDataSource {
             let cell = tableView.dequeueTableCell(GeneralInfoCell.self)
             cell.setDataConfigure(index: indexPath.row)
             if self.type == .EditConfigPrice {
-                cell.setDataConfigureEdit(index: indexPath.row, price: self.addOrUpdateConfigParam.ConfigPrice)
+                cell.setDataConfigureEdit(index: indexPath.row,
+                                          price: self.addOrUpdateConfigParam.ConfigPrice)
             }
             cell.textfieldDidChangeCallback = {[weak self] text in
                 guard let self = self else { return }

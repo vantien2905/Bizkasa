@@ -181,7 +181,6 @@ extension CheckOutViewController: CheckOutViewProtocol {
     func didUpdateOrder(result: BaseResponse?, error: APIError?) {
         if let _ = result {
             self.makeToast(message: "Trả phòng thành công!")
-//            delegate?.checkOutSuccess()
             NotificationCenter.default.post(name: .refreshReceptionist, object: nil)
             self.closePage()
         } else {
@@ -271,7 +270,9 @@ extension CheckOutViewController: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 let cell = tableView.dequeueTableCell(TopInfoCheckOutCell.self)
                 cell.delegate = self
-                cell.setData(info: orderInfo, indexPath: indexPath, title: listCheckOutInfo[row - 1])
+                cell.setData(info: orderInfo,
+                             indexPath: indexPath,
+                             title: listCheckOutInfo[row - 1])
                 return cell
             case 2:
                 let cell = tableView.dequeueTableCell(RoomChargeCell.self)
@@ -376,7 +377,9 @@ extension CheckOutViewController: TopInfoCheckOutCellDelegate {
     func changeCalculatorMode(index: Int) {
         if let orderRoom = self.room.OrderRoom, let orderID = orderRoom.OrderId {
             let hotelID = room.HotelId*
-            presenter?.changCalculatorMode(orderID: orderID, mode: CaculatorMode.allValues[index].value*, hotelID: hotelID)
+            presenter?.changCalculatorMode(orderID: orderID,
+                                           mode: CaculatorMode.allValues[index].value*,
+                                           hotelID: hotelID)
         }
     }
 }

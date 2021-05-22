@@ -135,7 +135,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch SectionType(rawValue: indexPath.section) {
         case .notification:
-            let cell = collectionView.dequeueCollectionCell(NotificationCollectionViewCell.self, indexPath: indexPath)
+            let cell = collectionView.dequeueCollectionCell(NotificationCollectionViewCell.self,
+                                                            indexPath: indexPath)
             return cell
         default:
             let cell = collectionView.dequeueCollectionCell(HomeCVCell.self, indexPath: indexPath)
@@ -159,16 +160,19 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch SectionType(rawValue: indexPath.section) {
         case .notification:
-            return CGSize(width: collectionView.frame.width - 20, height: 100)
+            return CGSize(width: collectionView.frame.width - 20,
+                          height: 100)
         default:
-            return CGSize(width: collectionView.frame.width/4, height: collectionView.frame.width/4)
+            return CGSize(width: collectionView.frame.width/4,
+                          height: collectionView.frame.width/4)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let header = collectionView.dequeue(header: HeaderCollectionReusableView.self, indexPath: indexPath)
+            let header = collectionView.dequeue(header: HeaderCollectionReusableView.self,
+                                                indexPath: indexPath)
             switch SectionType(rawValue: indexPath.section) {
             case .notification:
                 header.titleLabel.text = "Thông báo"
@@ -181,7 +185,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
+        return CGSize(width: collectionView.frame.width,
+                      height: 50)
     }
     
 }

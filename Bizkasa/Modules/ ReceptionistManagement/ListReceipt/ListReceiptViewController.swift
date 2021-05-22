@@ -40,7 +40,9 @@ class ListReceiptViewController: HomeBaseViewController {
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         tbReceipt.addSubview(refreshControl) // not required when using UITableViewController
 
-        NotificationCenter.default.addObserver(forName: .refreshReceptionist, object: nil, queue: nil) { (_) in
+        NotificationCenter.default.addObserver(forName: .refreshReceptionist,
+                                               object: nil,
+                                               queue: nil) { (_) in
             self.refreshData()
         }
     }
@@ -61,7 +63,9 @@ class ListReceiptViewController: HomeBaseViewController {
 
     override func setUpNavigation() {
         setTitleNavigation(title: "Phiếu thu")
-        addButtonToNavigation(image: AppImage.imgAddNew, style: .right, action: #selector(btnAddNewTapped))
+        addButtonToNavigation(image: AppImage.imgAddNew,
+                              style: .right,
+                              action: #selector(btnAddNewTapped))
     }
 
     private func configureTableView() {

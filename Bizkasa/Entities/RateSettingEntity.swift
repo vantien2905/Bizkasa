@@ -35,9 +35,9 @@ class RateSettingEntity: Mappable {
 
 class PriceEntity: Mappable {
 
-    var ConfigPriceRow: ConfigPriceEntity?
-    var ConfigType: Int?
-    var IsDefault: Bool = false
+    var ConfigPriceRow      : ConfigPriceEntity?
+    var ConfigType          : Int?
+    var IsDefault           : Bool = false
     
     init() {
         self.ConfigPriceRow = ConfigPriceEntity()
@@ -48,8 +48,8 @@ class PriceEntity: Mappable {
     }
 
     func mapping(map: Map) {
-        self.ConfigPriceRow <- map["ConfigPriceRow"]
-        self.ConfigType <- map["ConfigType"]
-        self.IsDefault <- map["IsDefault"]
+        self.ConfigPriceRow         <- map["ConfigPriceRow"]
+        self.ConfigType             <- map["ConfigType"]
+        self.IsDefault              <- map["IsDefault"]
     }
 }

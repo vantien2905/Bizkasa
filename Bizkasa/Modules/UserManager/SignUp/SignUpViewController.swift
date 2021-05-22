@@ -28,7 +28,9 @@ class SignUpViewController: BaseViewController {
     override func setUpViews() {
         vUser.setTitleAndLogo(AppImage.imgUser, title: "Email")
         vUser.setPlaceHolder(title: "Nhập email")
-        vPassword.setTitleAndLogo(AppImage.imgPassword, title: "Mật khẩu", isSecurity: true)
+        vPassword.setTitleAndLogo(AppImage.imgPassword,
+                                  title: "Mật khẩu",
+                                  isSecurity: true)
         vPassword.setPlaceHolder(title: "Nhập mật khẩu")
         vHotelName.setTitleAndLogo(AppImage.imgHotel, title: "Tên khách sạn")
         vHotelName.setPlaceHolder(title: "Nhập tên khách sạn")
@@ -118,7 +120,8 @@ extension SignUpViewController: SignUpViewProtocol {
             UserDefaultHelper.shared.saveUser(result)
             let home = HomeRouter.createModule().convertNavi()
             let menu = LeftMenuRouter.createModule()
-            let vc = SideMenuController(contentViewController: home, menuViewController: menu)
+            let vc = SideMenuController(contentViewController: home,
+                                        menuViewController: menu)
             self.view.window?.rootViewController = vc
         } else {
             self.makeToast(message: error?.message?.first ?? "")

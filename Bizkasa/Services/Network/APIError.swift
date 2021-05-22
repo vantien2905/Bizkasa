@@ -37,13 +37,13 @@ class APIError: Error {
     }
 
     init(baseResponse: BaseResponse) {
-        self.code = baseResponse.status
-        self.message = baseResponse.message
-        self.data = baseResponse.data
+        self.code       = baseResponse.status
+        self.message    = baseResponse.message
+        self.data       = baseResponse.data
     }
 
     init(error: Error?) {
-        self.code = nil
-        self.message = [(error?.localizedDescription ?? "")]
+        self.code       = nil
+        self.message    = [(error?.localizedDescription ?? "")]
     }
 }

@@ -12,18 +12,16 @@ import UIKit
 
 class PaymentViewController: HomeBaseViewController {
     
-    @IBOutlet weak var tbPayment: UITableView!
-    @IBOutlet weak var vPaymentType     : AppDropdownBorder!
-    @IBOutlet weak var vTime            : AppDateTime!
-    @IBOutlet weak var hightFilterView  : NSLayoutConstraint!
-    @IBOutlet weak var btnHideFilter    : UIButton!
+    @IBOutlet weak var tbPayment            : UITableView!
+    @IBOutlet weak var vPaymentType         : AppDropdownBorder!
+    @IBOutlet weak var vTime                : AppDateTime!
+    @IBOutlet weak var hightFilterView      : NSLayoutConstraint!
+    @IBOutlet weak var btnHideFilter        : UIButton!
     @IBOutlet weak var hightAddPaymentView  : NSLayoutConstraint!
-    
-    @IBOutlet weak var vContent: AppTextViewLogo!
-    @IBOutlet weak var vCharge: AppTextFieldLogo!
-    @IBOutlet weak var vService: AppDropdownBorder!
-    
-    @IBOutlet weak var filterButton    : UIButton!
+    @IBOutlet weak var vContent             : AppTextViewLogo!
+    @IBOutlet weak var vCharge              : AppTextFieldLogo!
+    @IBOutlet weak var vService             : AppDropdownBorder!
+    @IBOutlet weak var filterButton         : UIButton!
     
     var presenter: PaymentPresenterProtocol?
     
@@ -80,7 +78,9 @@ class PaymentViewController: HomeBaseViewController {
     
     override func setUpNavigation() {
         setTitleNavigation(title: "Phiếu chi")
-        addButtonImageToNavigation(image: AppImage.imgAddNew, style: .right, action: #selector(btnAddNewPaymentTapped))
+        addButtonImageToNavigation(image: AppImage.imgAddNew,
+                                   style: .right,
+                                   action: #selector(btnAddNewPaymentTapped))
     }
     
     private func configureTableView() {
@@ -109,7 +109,9 @@ class PaymentViewController: HomeBaseViewController {
         vCharge.setPlaceHolder(title: "Nhập số tiền")
         vCharge.tfContent.keyboardType = .numberPad
         
-        vCharge.tfContent.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
+        vCharge.tfContent.addTarget(self,
+                                    action: #selector(myTextFieldDidChange),
+                                    for: .editingChanged)
         
         vService.dataSource = paymentType
         hightAddPaymentView.constant = 0

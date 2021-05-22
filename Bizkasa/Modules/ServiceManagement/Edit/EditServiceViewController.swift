@@ -25,11 +25,8 @@ class EditServiceViewController: BaseViewController {
     var listType: [WidgetTypeEntity] = []
     var widget: WidgetEntity!
     var indexType: Int!
-    
     var reloadListPage: (()->Void)?
-    
     var isAddNew = false
-    
     var addNewParam = WidgetEntity()
 
 	override func viewDidLoad() {

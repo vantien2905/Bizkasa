@@ -9,7 +9,7 @@ target 'Bizkasa' do
 pod 'SwiftyJSON', '4.2.0'
     pod 'Alamofire', '4.7.3'
     pod 'ObjectMapper' ,'3.3.0'
-    pod 'CryptoSwift', '0.7.2'
+    pod 'CryptoSwift'
     pod 'Toast-Swift'
     pod 'SDWebImage', '4.4.2'
     pod 'DropDown'

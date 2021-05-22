@@ -35,7 +35,13 @@ class DatePickerViewController: UIViewController {
     
     var haveSetTime = false
     
-    class open func createModule(fromTime:String, toTime:String, delegate:DatePickerViewControllerDelegate, isToTime:Bool = false, modalPresent:UIModalPresentationStyle = .overCurrentContext, modalTransition:UIModalTransitionStyle = .crossDissolve, haveSetTime: Bool = false) -> DatePickerViewController {
+    class open func createModule(fromTime:String,
+                                 toTime:String,
+                                 delegate:DatePickerViewControllerDelegate,
+                                 isToTime:Bool = false,
+                                 modalPresent:UIModalPresentationStyle = .overCurrentContext,
+                                 modalTransition:UIModalTransitionStyle = .crossDissolve,
+                                 haveSetTime: Bool = false) -> DatePickerViewController {
         let vc = DatePickerViewController.initFromNib()
         vc.fromTime = fromTime
         vc.toTime = toTime

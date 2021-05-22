@@ -11,9 +11,9 @@ import ObjectMapper
 
 class InsertRoomParam: Mappable {
 
-    var FloorId: Int?
-    var RoomClassId: Int?
-    var RoomName: String?
+    var FloorId         : Int?
+    var RoomClassId     : Int?
+    var RoomName        : String?
 
     required init?(map: Map) {
 
@@ -24,8 +24,8 @@ class InsertRoomParam: Mappable {
     }
 
     func mapping(map: Map) {
-        self.FloorId <- map["FloorId"]
-        self.RoomClassId <- map["RoomClassId"]
-        self.RoomName <- map["RoomName"]
+        self.FloorId        <- map["FloorId"]
+        self.RoomClassId    <- map["RoomClassId"]
+        self.RoomName       <- map["RoomName"]
     }
 }

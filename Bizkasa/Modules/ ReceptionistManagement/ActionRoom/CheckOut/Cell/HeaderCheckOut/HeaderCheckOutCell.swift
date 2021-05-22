@@ -14,11 +14,11 @@ protocol HeaderCheckOutCellDelegate: class {
 
 class HeaderCheckOutCell: UITableViewCell {
 
-    @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var lbTotal: UILabel!
-    @IBOutlet weak var btnAddMore: UIButton!
-    @IBOutlet weak var vTotal: UIView!
-    @IBOutlet weak var vSpace: UIView!
+    @IBOutlet weak var lbTitle      : UILabel!
+    @IBOutlet weak var lbTotal      : UILabel!
+    @IBOutlet weak var btnAddMore   : UIButton!
+    @IBOutlet weak var vTotal       : UIView!
+    @IBOutlet weak var vSpace       : UIView!
 
     var selectCallback: (()->Void)?
 
@@ -37,13 +37,18 @@ class HeaderCheckOutCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setData(header: HeaderCheckOut, indexPath: IndexPath, info: OrderInfoEntity) {
+    func setData(header: HeaderCheckOut,
+                 indexPath: IndexPath,
+                 info: OrderInfoEntity) {
         lbTitle.text = header.title
         self.indexPath = indexPath
         vTotal.isHidden = false
         vSpace.isHidden = false
 
-        if indexPath.section == 0 || indexPath.section == 8 || indexPath.section == 1 || indexPath.section == 2 {
+        if indexPath.section == 0
+            || indexPath.section == 8
+            || indexPath.section == 1
+            || indexPath.section == 2 {
             btnAddMore.isHidden = true
         } else {
             btnAddMore.isHidden = false
@@ -79,10 +84,6 @@ class HeaderCheckOutCell: UITableViewCell {
     }
 
     @IBAction func btnSelectTapped() {
-//        guard let data = headerCheckout else { return }
-//        data.isCollapse = !data.isCollapse
-//        imgCollapse.rotate(data.isCollapse ? .pi : 0)
-//        imgCollapse.rotate(.pi)
         selectCallback?()
 
     }

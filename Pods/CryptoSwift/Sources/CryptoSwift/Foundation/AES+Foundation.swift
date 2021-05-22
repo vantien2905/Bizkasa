@@ -1,5 +1,4 @@
 //
-//  AES+Foundation.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -17,12 +16,17 @@
 import Foundation
 
 extension AES {
-
-    public convenience init(key: String, iv: String, blockMode: BlockMode = .CBC, padding: Padding = .pkcs7) throws {
-        guard let kkey = key.data(using: String.Encoding.utf8, allowLossyConversion: false)?.bytes, let iiv = iv.data(using: String.Encoding.utf8, allowLossyConversion: false)?.bytes else {
-            throw Error.invalidKeyOrInitializationVector
-        }
-
-        try self.init(key: kkey, iv: iiv, blockMode: blockMode, padding: padding)
-    }
+  /// Initialize with CBC block mode.
+  ///
+  /// - Parameters:
+  ///   - key: Key as a String.
+  ///   - iv: IV as a String.
+  ///   - padding: Padding
+  /// - Throws: Error
+  ///
+  /// The input is a String, that is treat as sequence of bytes made directly out of String.
+  /// If input is Base64 encoded data (which is a String technically) it is not decoded automatically for you.
+  public convenience init(key: String, iv: String, padding: Padding = .pkcs7) throws {
+    try self.init(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: padding)
+  }
 }

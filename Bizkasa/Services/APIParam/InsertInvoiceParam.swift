@@ -11,13 +11,13 @@ import ObjectMapper
 
 class InsertInvoiceParam: Mappable {
 
-    var TotalAmount: Int?
-    var invoiceDetails: [WidgetEntity] = []
-    var InvoiceType: Int?
-    var InvoiceStatus: Int?
-    var CustomerName: String?
-    var Cashed: Int?
-    var Note: String?
+    var TotalAmount         : Int?
+    var invoiceDetails      : [WidgetEntity] = []
+    var InvoiceType         : Int?
+    var InvoiceStatus       : Int?
+    var CustomerName        : String?
+    var Cashed              : Int?
+    var Note                : String?
 
     required init?(map: Map) {
     }
@@ -26,25 +26,25 @@ class InsertInvoiceParam: Mappable {
     }
 
     func mapping(map: Map) {
-        self.TotalAmount <- map["TotalAmount"]
-        self.invoiceDetails <- map["invoiceDetails"]
-        self.InvoiceType <- map["InvoiceType"]
-        self.InvoiceStatus <- map["InvoiceStatus"]
-        self.CustomerName <- map["CustomerName"]
-        self.Cashed <- map["Cashed"]
-        self.Note <- map["Note"]
+        self.TotalAmount        <- map["TotalAmount"]
+        self.invoiceDetails     <- map["invoiceDetails"]
+        self.InvoiceType        <- map["InvoiceType"]
+        self.InvoiceStatus      <- map["InvoiceStatus"]
+        self.CustomerName       <- map["CustomerName"]
+        self.Cashed             <- map["Cashed"]
+        self.Note               <- map["Note"]
     }
 
 }
 
 class WidgetParam: Mappable {
-    var Title: String?
-    var RelatedId: Int?
-    var Descriptions: String?
-    var Price: Int?
-    var Quantity: Int?
-    var SubAmount: Int?
-    var CategoryInvoice: Int?
+    var Title           : String?
+    var RelatedId       : Int?
+    var Descriptions    : String?
+    var Price           : Int?
+    var Quantity        : Int?
+    var SubAmount       : Int?
+    var CategoryInvoice : Int?
 
     required init?(map: Map) {
 
@@ -55,12 +55,12 @@ class WidgetParam: Mappable {
     }
 
     func mapping(map: Map) {
-        self.Title <- map["Title"]
-        self.RelatedId <- map["RelatedId"]
-        self.Descriptions <- map["Descriptions"]
-        self.Price <- map["Price"]
-        self.Quantity <- map["Quantity"]
-        self.SubAmount <- map["SubAmount"]
+        self.Title          <- map["Title"]
+        self.RelatedId      <- map["RelatedId"]
+        self.Descriptions   <- map["Descriptions"]
+        self.Price          <- map["Price"]
+        self.Quantity       <- map["Quantity"]
+        self.SubAmount      <- map["SubAmount"]
         self.CategoryInvoice <- map["CategoryInvoice"]
     }
 }

@@ -38,7 +38,6 @@ class PaymentCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         vBackground.setShadow()
-//        lbCreateDate.setShadow(color: AppColor.secondMain)
     }
     
     private func setData() {

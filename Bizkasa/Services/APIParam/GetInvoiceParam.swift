@@ -34,8 +34,8 @@ class GetInvoiceParam: Mappable {
         self.ToDate         <- map["ToDate"]
         self.IsShowInDay    <- map["IsShowInDay"]
         self.Keyword        <- map["Keyword"]
-        self.PaymentMethod <- map["PaymentMethod"]
-        self.InvoiceStatus <- map["InvoiceStatus"]
+        self.PaymentMethod  <- map["PaymentMethod"]
+        self.InvoiceStatus  <- map["InvoiceStatus"]
         self.InvoiceCategory <- map["InvoiceCategory"]
     }
     

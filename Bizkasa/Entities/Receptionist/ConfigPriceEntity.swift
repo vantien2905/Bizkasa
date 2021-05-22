@@ -11,21 +11,21 @@ import ObjectMapper
 
 class ConfigPriceEntity: Mappable {
 
-    var Id: Int?
-    var Name: String?
-    var PriceByDay: Int?
-    var PriceByNight: Int?
-    var PriceByMonth: Int?
-    var RoomClassId: Int?
-    var IsActive: Bool = false
-    var IsDefault: Bool = false
-    var CheckoutDayList: [CheckoutEntity] = []
-    var CheckoutNightList: [CheckoutEntity] = []
-    var CheckinDayList: [CheckoutEntity] = []
-    var CheckinNightList: [CheckoutEntity] = []
-    var PriceByDayList: [CheckoutEntity] = []
-    var AddtionCustomerList: [CheckoutEntity] = []
-    var ConfigTime: String?
+    var Id                  : Int?
+    var Name                : String?
+    var PriceByDay          : Int?
+    var PriceByNight        : Int?
+    var PriceByMonth        : Int?
+    var RoomClassId         : Int?
+    var IsActive            : Bool = false
+    var IsDefault           : Bool = false
+    var CheckoutDayList     : [CheckoutEntity] = []
+    var CheckoutNightList   : [CheckoutEntity] = []
+    var CheckinDayList      : [CheckoutEntity] = []
+    var CheckinNightList    : [CheckoutEntity] = []
+    var PriceByDayList      : [CheckoutEntity] = []
+    var AddtionCustomerList : [CheckoutEntity] = []
+    var ConfigTime          : String?
     
     init() {
     }
@@ -35,21 +35,21 @@ class ConfigPriceEntity: Mappable {
     }
 
     func mapping(map: Map) {
-        self.Id <- map["Id"]
-        self.Name <- map["Name"]
-        self.PriceByDay <- map["PriceByDay"]
-        self.PriceByNight <- map["PriceByNight"]
-        self.PriceByMonth <- map["PriceByMonth"]
-        self.RoomClassId <- map["RoomClassId"]
-        self.IsActive <- map["IsActive"]
-        self.IsDefault <- map["IsDefault"]
-        self.CheckoutDayList <- map["CheckoutDayList"]
-        self.CheckoutNightList <- map["CheckoutNightList"]
-        self.CheckinDayList <- map["CheckinDayList"]
-        self.CheckinNightList <- map["CheckinNightList"]
-        self.PriceByDayList <- map["PriceByDayList"]
+        self.Id                 <- map["Id"]
+        self.Name               <- map["Name"]
+        self.PriceByDay         <- map["PriceByDay"]
+        self.PriceByNight       <- map["PriceByNight"]
+        self.PriceByMonth       <- map["PriceByMonth"]
+        self.RoomClassId        <- map["RoomClassId"]
+        self.IsActive           <- map["IsActive"]
+        self.IsDefault          <- map["IsDefault"]
+        self.CheckoutDayList    <- map["CheckoutDayList"]
+        self.CheckoutNightList  <- map["CheckoutNightList"]
+        self.CheckinDayList     <- map["CheckinDayList"]
+        self.CheckinNightList   <- map["CheckinNightList"]
+        self.PriceByDayList     <- map["PriceByDayList"]
         self.AddtionCustomerList <- map["AddtionCustomerList"]
-        self.ConfigTime <- map["ConfigTime"]
+        self.ConfigTime         <- map["ConfigTime"]
     }
 }
 

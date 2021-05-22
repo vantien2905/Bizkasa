@@ -11,18 +11,18 @@ import ObjectMapper
 
 class CheckInParam: Mappable {
 
-    var Customers: [CustomerEntity] = []
-    var Services: [WidgetEntity] = []
-    var Id: Int?
-    var RoomId: Int?
-    var RoomClassName: String?
-    var RoomName: String?
-    var CaculatorMode: Int?
-    var Price: Int?
-    var OrderStatus: Int?
-    var CustomerName: String?
-    var Notes: String?
-    var ConfigPriceId: Int?
+    var Customers       : [CustomerEntity] = []
+    var Services        : [WidgetEntity] = []
+    var Id              : Int?
+    var RoomId          : Int?
+    var RoomClassName   : String?
+    var RoomName        : String?
+    var CaculatorMode   : Int?
+    var Price           : Int?
+    var OrderStatus     : Int?
+    var CustomerName    : String?
+    var Notes           : String?
+    var ConfigPriceId   : Int?
 
     required init?(map: Map) {
 
@@ -33,18 +33,18 @@ class CheckInParam: Mappable {
     }
 
     func mapping(map: Map) {
-        self.Customers <- map["Customers"]
-        self.Services <- map["Services"]
-        self.Id <- map["Id"]
-        self.RoomId <- map["RoomId"]
-        self.RoomClassName <- map["RoomClassName"]
-        self.RoomName <- map["RoomName"]
-        self.CaculatorMode <- map["CaculatorMode"]
-        self.Price <- map["Price"]
-        self.OrderStatus <- map["OrderStatus"]
-        self.CustomerName <- map["CustomerName"]
-        self.Notes <- map["Notes"]
-        self.ConfigPriceId <- map["ConfigPriceId"]
+        self.Customers          <- map["Customers"]
+        self.Services           <- map["Services"]
+        self.Id                 <- map["Id"]
+        self.RoomId             <- map["RoomId"]
+        self.RoomClassName      <- map["RoomClassName"]
+        self.RoomName           <- map["RoomName"]
+        self.CaculatorMode      <- map["CaculatorMode"]
+        self.Price              <- map["Price"]
+        self.OrderStatus        <- map["OrderStatus"]
+        self.CustomerName       <- map["CustomerName"]
+        self.Notes              <- map["Notes"]
+        self.ConfigPriceId      <- map["ConfigPriceId"]
     }
 
 

@@ -1,5 +1,4 @@
 //
-//  StringExtension.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -17,59 +16,81 @@
 /** String extension */
 extension String {
 
-    public func md5() -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).md5().toHexString()
-    }
+  @inlinable
+  public var bytes: Array<UInt8> {
+    data(using: String.Encoding.utf8, allowLossyConversion: true)?.bytes ?? Array(utf8)
+  }
 
-    public func sha1() -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).sha1().toHexString()
-    }
+  @inlinable
+  public func md5() -> String {
+    self.bytes.md5().toHexString()
+  }
 
-    public func sha224() -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).sha224().toHexString()
-    }
+  @inlinable
+  public func sha1() -> String {
+    self.bytes.sha1().toHexString()
+  }
 
-    public func sha256() -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).sha256().toHexString()
-    }
+  @inlinable
+  public func sha224() -> String {
+    self.bytes.sha224().toHexString()
+  }
 
-    public func sha384() -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).sha384().toHexString()
-    }
+  @inlinable
+  public func sha256() -> String {
+    self.bytes.sha256().toHexString()
+  }
 
-    public func sha512() -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).sha512().toHexString()
-    }
+  @inlinable
+  public func sha384() -> String {
+    self.bytes.sha384().toHexString()
+  }
 
-    public func sha3(_ variant: SHA3.Variant) -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).sha3(variant).toHexString()
-    }
+  @inlinable
+  public func sha512() -> String {
+    self.bytes.sha512().toHexString()
+  }
 
-    public func crc32(seed: UInt32? = nil, reflect: Bool = true) -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).crc32(seed: seed, reflect: reflect).bytes().toHexString()
-    }
+  @inlinable
+  public func sha3(_ variant: SHA3.Variant) -> String {
+    self.bytes.sha3(variant).toHexString()
+  }
 
-    public func crc16(seed: UInt16? = nil) -> String {
-        return utf8.lazy.map({ $0 as UInt8 }).crc16(seed: seed).bytes().toHexString()
-    }
+  @inlinable
+  public func crc32(seed: UInt32? = nil, reflect: Bool = true) -> String {
+    self.bytes.crc32(seed: seed, reflect: reflect).bytes().toHexString()
+  }
 
-    /// - parameter cipher: Instance of `Cipher`
-    /// - returns: hex string of bytes
-    public func encrypt(cipher: Cipher) throws -> String {
-        return try Array(utf8).encrypt(cipher: cipher).toHexString()
-    }
+  @inlinable
+  public func crc32c(seed: UInt32? = nil, reflect: Bool = true) -> String {
+    self.bytes.crc32c(seed: seed, reflect: reflect).bytes().toHexString()
+  }
 
-    /// - parameter cipher: Instance of `Cipher`
-    /// - returns: base64 encoded string of encrypted bytes
-    public func encryptToBase64(cipher: Cipher) throws -> String? {
-        return try Array(utf8).encrypt(cipher: cipher).toBase64()
-    }
+  @inlinable
+  public func crc16(seed: UInt16? = nil) -> String {
+    self.bytes.crc16(seed: seed).bytes().toHexString()
+  }
 
-    // decrypt() does not make sense for String
+  /// - parameter cipher: Instance of `Cipher`
+  /// - returns: hex string of bytes
+  @inlinable
+  public func encrypt(cipher: Cipher) throws -> String {
+    try self.bytes.encrypt(cipher: cipher).toHexString()
+  }
 
-    /// - parameter authenticator: Instance of `Authenticator`
-    /// - returns: hex string of string
-    public func authenticate<A: Authenticator>(with authenticator: A) throws -> String {
-        return try Array(utf8).authenticate(with: authenticator).toHexString()
-    }
+  /// - parameter cipher: Instance of `Cipher`
+  /// - returns: base64 encoded string of encrypted bytes
+  @inlinable
+  public func encryptToBase64(cipher: Cipher) throws -> String? {
+    try self.bytes.encrypt(cipher: cipher).toBase64()
+  }
+
+  // decrypt() does not make sense for String
+
+  /// - parameter authenticator: Instance of `Authenticator`
+  /// - returns: hex string of string
+  @inlinable
+  public func authenticate<A: Authenticator>(with authenticator: A) throws -> String {
+    try self.bytes.authenticate(with: authenticator).toHexString()
+  }
 }

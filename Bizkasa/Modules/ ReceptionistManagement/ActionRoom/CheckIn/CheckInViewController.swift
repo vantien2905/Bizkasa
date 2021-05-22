@@ -40,14 +40,10 @@ class CheckInViewController: BaseViewController {
     }
 
     var room: RoomEntity!
-
     var price = 0
     var priceID: Int?
-
     var calculatorMode = 3
-
     var customer: [CustomerEntity] = []
-    
     lazy var bottomView = ListBottomButton()
 
 	override func viewDidLoad() {
@@ -68,26 +64,20 @@ class CheckInViewController: BaseViewController {
     override func setUpNavigation() {
         setTitleNavigation(title: "Phòng \(room.Name&)")
         addBackWhiteToNavigation()
-//        addButtonTextToNavigation(title: "Nhận", style: .right, action: #selector(btnAcceptTapped))
     }
 
     override func setUpViews() {
         tfCustomerName.setTitleAndLogo(AppImage.imgUser, title: "Khách hàng")
         tfIndentifierNumber.setTitleAndLogo(AppImage.imgReceipts, title: "CMT")
         tfAdress.setTitleAndLogo(AppImage.imgAddress, title: "Địa chỉ")
-
         vTimeType.setTitleAndLogo(AppImage.imgTime, title: "Tính theo")
         vConfigurePrice.setTitleAndLogo(AppImage.price, title: "Cấu hình giá")
-//        vService.setTitleAndLogo(AppImage.imgPayment, title: "Dịch vụ")
         tfIndentifierDate.setTitleAndLogo(AppImage.imgTime, title: "Ngày cấp")
         tfCheckInTime.setTitleAndLogo(AppImage.imgTime, title: "Thời gian")
-
         tvNote.setTitleAndLogo(AppImage.imgNote, title: "Ghi chú")
         vTimeType.itemSelected = 2
-        vTimeType.dataSource = CaculatorMode.allValues.map({$0.title&})// ["Theo giờ", "Theo ngày", "Qua đêm", "Theo tháng"]
-
+        vTimeType.dataSource = CaculatorMode.allValues.map({$0.title&})
         tfCheckInTime.titleDatePicker = ("NHẬN PHÒNG", "TRẢ PHÒNG")
-//        tfCheckInTime.dateTime = "2020-04-06T05:02:00"
         tfCheckInTime.haveSetTime = true
 
         vTimeType.dropDownCallBack = {[weak self] (index, item) in

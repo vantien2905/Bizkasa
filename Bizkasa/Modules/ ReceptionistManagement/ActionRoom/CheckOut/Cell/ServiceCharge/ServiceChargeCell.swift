@@ -14,9 +14,9 @@ protocol ServiceChargeCellDelegate: class {
 
 class ServiceChargeCell: UITableViewCell {
 
-    @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var lbContent: UILabel!
-    @IBOutlet weak var btnDelete: UIButton!
+    @IBOutlet weak var lbTitle      : UILabel!
+    @IBOutlet weak var lbContent    : UILabel!
+    @IBOutlet weak var btnDelete    : UIButton!
 
     var indexPath: IndexPath!
     var subCharge: SubFeeDetailEntity!

@@ -11,11 +11,11 @@ import ObjectMapper
 
 class AddCustomerParam: Mappable {
 
-    var Address: String?
-    var Name: String?
-    var OrderId: Int?
-    var PassportCreatedDate: String?
-    var PassportId: String?
+    var Address             : String?
+    var Name                : String?
+    var OrderId             : Int?
+    var PassportCreatedDate : String?
+    var PassportId          : String?
 
     required init?(map: Map) {
 
@@ -26,11 +26,11 @@ class AddCustomerParam: Mappable {
     }
 
     func mapping(map: Map) {
-        self.Address <- map["Address"]
-        self.Name <- map["Name"]
-        self.OrderId <- map["OrderId"]
-        self.PassportCreatedDate <- map["PassportCreatedDate"]
-        self.PassportId <- map["PassportId"]
+        self.Address                <- map["Address"]
+        self.Name                   <- map["Name"]
+        self.OrderId                <- map["OrderId"]
+        self.PassportCreatedDate    <- map["PassportCreatedDate"]
+        self.PassportId             <- map["PassportId"]
     }
 
 

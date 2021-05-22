@@ -12,13 +12,11 @@ import UIKit
 
 class CreateNewReceiptViewController: BaseViewController {
 
-    @IBOutlet weak var vCustomerName: AppTextFieldLogo!
-    @IBOutlet weak var vNote: AppTextFieldLogo!
-
-    @IBOutlet weak var vService: ServiceView!
-
-    @IBOutlet weak var lbEmployeeName: UILabel!
-    @IBOutlet weak var lbCurrentTime: UILabel!
+    @IBOutlet weak var vCustomerName    : AppTextFieldLogo!
+    @IBOutlet weak var vNote            : AppTextFieldLogo!
+    @IBOutlet weak var vService         : ServiceView!
+    @IBOutlet weak var lbEmployeeName   : UILabel!
+    @IBOutlet weak var lbCurrentTime    : UILabel!
 
 	var presenter: CreateNewReceiptPresenterProtocol?
     
@@ -30,7 +28,9 @@ class CreateNewReceiptViewController: BaseViewController {
 
     override func setUpNavigation() {
         addBackWhiteToNavigation()
-        addButtonTextToNavigation(title: "Đồng ý", style: .right, action: #selector(btnAcceptTapped))
+        addButtonTextToNavigation(title: "Đồng ý",
+                                  style: .right,
+                                  action: #selector(btnAcceptTapped))
     }
 
     override func setUpViews() {

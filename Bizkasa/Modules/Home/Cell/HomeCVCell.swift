@@ -44,9 +44,7 @@ class HomeCVCell: UICollectionViewCell {
     
     func setData(index: Int) {
         lbTitle.text = listTitle[index + 1]
-        
         imgLogo.backgroundColor = AppColor.homeArrayColor[index%5]
-
         imgLogo.image = listImageTitle[index].imageWithInsets(insetDimen: 5)
     }
 }

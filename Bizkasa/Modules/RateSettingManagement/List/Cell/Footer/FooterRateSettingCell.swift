@@ -25,8 +25,6 @@ class FooterRateSettingCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBAction func btnAddConfigureTapped() {

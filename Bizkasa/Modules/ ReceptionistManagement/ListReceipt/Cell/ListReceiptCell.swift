@@ -10,14 +10,14 @@ import UIKit
 
 class ListReceiptCell: UITableViewCell {
 
-    @IBOutlet weak var vBackground: UIView!
-    @IBOutlet weak var lbStatus: AppLabel!
-    @IBOutlet weak var lbName: UILabel!
-    @IBOutlet weak var lbIndentifierNumber: UILabel!
-    @IBOutlet weak var lbCreateDate: UILabel!
-    @IBOutlet weak var lbRoomType: UILabel!
-    @IBOutlet weak var lbRoomName: UILabel!
-    @IBOutlet weak var lbPrice: UILabel!
+    @IBOutlet weak var vBackground          : UIView!
+    @IBOutlet weak var lbStatus             : AppLabel!
+    @IBOutlet weak var lbName               : UILabel!
+    @IBOutlet weak var lbIndentifierNumber  : UILabel!
+    @IBOutlet weak var lbCreateDate         : UILabel!
+    @IBOutlet weak var lbRoomType           : UILabel!
+    @IBOutlet weak var lbRoomName           : UILabel!
+    @IBOutlet weak var lbPrice              : UILabel!
 
     var invoice: InvoiceEntity? {
         didSet {

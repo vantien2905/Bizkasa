@@ -43,7 +43,9 @@ class InfoRateSettingPopUpViewController: UIViewController {
     }
     
     private lazy var acceptButton = UIButton().build {
-        $0.addTarget(self, action: #selector(btnAcceptTapped), for: .touchUpInside)
+        $0.addTarget(self,
+                     action: #selector(btnAcceptTapped),
+                     for: .touchUpInside)
         $0.setContent(title: "Đồng ý",
                       titleColor: .white,
                       font: UIFont.systemFont(ofSize: 18, weight: .bold),
@@ -62,11 +64,15 @@ class InfoRateSettingPopUpViewController: UIViewController {
                       titleColor: .gray,
                       font: UIFont.systemFont(ofSize: 18, weight: .bold),
                       backgroundColor: .lightGray)
-        $0.addTarget(self, action: #selector(btnCancelTapped), for: .touchUpInside)
+        $0.addTarget(self,
+                     action: #selector(btnCancelTapped),
+                     for: .touchUpInside)
     }
     
     private lazy var closeButton = UIButton().build {
-        $0.addTarget(self, action: #selector(btnCancelTapped), for: .touchUpInside)
+        $0.addTarget(self,
+                     action: #selector(btnCancelTapped),
+                     for: .touchUpInside)
     }
     
     open lazy var vContent = UIView().build {

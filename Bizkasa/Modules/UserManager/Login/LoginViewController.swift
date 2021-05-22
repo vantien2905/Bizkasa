@@ -32,8 +32,6 @@ class LoginViewController: BaseViewController {
         vUser.setPlaceHolder(title: "Nhập tên đăng nhập")
         vPassword.setTitleAndLogo(AppImage.imgPassword, title: "Mật khẩu", isSecurity: true)
         vPassword.setPlaceHolder(title: "Nhập mật khẩu")
-//        vUser.setText("haichay88@gmail.com")
-//        vPassword.setText("123456")
     }
 
     override func viewDidLayoutSubviews() {
@@ -64,7 +62,8 @@ class LoginViewController: BaseViewController {
     @IBAction func btnLoginTapped() {
         view.endEditing(true)
         if validate() {
-            presenter?.login(userName: vUser.getText(), password: vPassword.getText().md5())
+            presenter?.login(userName: vUser.getText(),
+                             password: vPassword.getText().md5())
         }
     }
 
@@ -82,7 +81,8 @@ extension LoginViewController: LoginViewProtocol {
             UserDefaultHelper.shared.saveUser(result)
             let home = HomeRouter.createModule().convertNavi()
             let menu = LeftMenuRouter.createModule()
-            let vc = SideMenuController(contentViewController: home, menuViewController: menu)
+            let vc = SideMenuController(contentViewController: home,
+                                        menuViewController: menu)
             self.view.window?.rootViewController = vc
         } else {
             self.view.makeToast(error?.message?.first)

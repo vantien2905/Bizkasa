@@ -18,7 +18,9 @@ enum FloorAndRoomAction {
 }
 
 protocol InsertPopUpViewControllerDelegate: class {
-    func acceptTapped(action: FloorAndRoomAction, floorParam: InsertOrUpdateFloorParam?, roomParam: [EditRoomParam]?)
+    func acceptTapped(action: FloorAndRoomAction,
+                      floorParam: InsertOrUpdateFloorParam?,
+                      roomParam: [EditRoomParam]?)
 }
 
 class InsertPopUpViewController: BaseViewController {
@@ -137,8 +139,6 @@ class InsertPopUpViewController: BaseViewController {
     }
     
     override func setUpViews() {
-        //        vFloor.dataSource = ["Tang 1", "Tang 2", "tang 3"]
-        //        vRoomType.dataSource = ["Phong don", "Phong doi"]
         vFloor.dropDownCallBack = { index, item in
             self.roomParam.FloorId = self.listFloor[index].Id
         }
@@ -152,17 +152,28 @@ class InsertPopUpViewController: BaseViewController {
         switch actionType {
         case .addFloor:
             floorParam.Name = tfName.getText()
-            delegate?.acceptTapped(action: actionType, floorParam: floorParam, roomParam: nil)
+            delegate?.acceptTapped(action: actionType,
+                                   floorParam: floorParam,
+                                   roomParam: nil)
         case .editFloor:
             floorParam.Name = tfName.getText()
             floorParam.NumRooms = floor?.NumRooms
             floorParam.RoomClassId = floor?.RoomClassId
             floorParam.Id = floor?.Id
-            delegate?.acceptTapped(action: actionType, floorParam: floorParam, roomParam: nil)
+            delegate?.acceptTapped(action: actionType,
+                                   floorParam: floorParam,
+                                   roomParam: nil)
         default:
             roomParam.RoomName = tfName.getText()
-            let list = tfName.getText().splitted(by: ";").map({return EditRoomParam(FloorId: roomParam.FloorId*, RoomClassId: roomParam.RoomClassId*, RoomName: $0, roomID: roomParam.RoomId*)})
-            delegate?.acceptTapped(action: actionType, floorParam: nil, roomParam: list)
+            let list = tfName.getText().splitted(by: ";").map({
+                                                                return EditRoomParam(
+                                                                    FloorId: roomParam.FloorId*,
+                                                                    RoomClassId: roomParam.RoomClassId*,
+                                                                    RoomName: $0,
+                                                                    roomID: roomParam.RoomId*)})
+            delegate?.acceptTapped(action: actionType,
+                                   floorParam: nil,
+                                   roomParam: list)
         }
         
         btnCloseTapped()

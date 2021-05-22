@@ -29,9 +29,7 @@ class RoomManagementViewController: HomeBaseViewController {
     
     var buttonDisplayMode: ButtonDisplayMode = .imageOnly
     var buttonStyle: ButtonStyle = .backgroundColor
-    
     var refreshControl = UIRefreshControl()
-    
     var isHideAddAction = true
     
     override func viewDidLoad() {
@@ -40,7 +38,9 @@ class RoomManagementViewController: HomeBaseViewController {
         presenter?.getFloorWithRoom(token: UserDefaultHelper.shared.get(key: AppKey.tokenID)&)
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshControl.addTarget(self,
+                                 action: #selector(refreshData),
+                                 for: .valueChanged)
         tbRoomManagement.addSubview(refreshControl)
         
         showHideAction(true)
@@ -79,13 +79,19 @@ class RoomManagementViewController: HomeBaseViewController {
                 self.view.layoutIfNeeded()
             }
         case btnAddRoom:
-            let vc = InsertPopUpRouter.createModule(actionType: .addRoom, indexPath: nil, room: nil, floor: nil)
+            let vc = InsertPopUpRouter.createModule(actionType: .addRoom,
+                                                    indexPath: nil,
+                                                    room: nil,
+                                                    floor: nil)
             vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
             vc.delegate = self
             present(vc, animated: false, completion: nil)
         case btnAddFloor:
-            let vc = InsertPopUpRouter.createModule(actionType: .addFloor, indexPath: nil, room: nil, floor: nil)
+            let vc = InsertPopUpRouter.createModule(actionType: .addFloor,
+                                                    indexPath: nil,
+                                                    room: nil,
+                                                    floor: nil)
             vc.modalPresentationStyle = .overCurrentContext
             vc.modalTransitionStyle = .crossDissolve
             vc.delegate = self

@@ -1,5 +1,4 @@
 //
-//  Bit.swift
 //  CryptoSwift
 //
 //  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
@@ -15,13 +14,13 @@
 //
 
 public enum Bit: Int {
-    case zero
-    case one
+  case zero
+  case one
 }
 
 extension Bit {
-
-    func inverted() -> Bit {
-        return self == .zero ? .one : .zero
-    }
+  @inlinable
+  func inverted() -> Bit {
+    self == .zero ? .one : .zero
+  }
 }

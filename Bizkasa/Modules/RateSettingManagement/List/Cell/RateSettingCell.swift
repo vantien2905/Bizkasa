@@ -16,10 +16,10 @@ protocol RateSettingCellDelegate: class {
 
 class RateSettingCell: SwipeTableViewCell {
     
-    @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var lbDayRate: UILabel!
-    @IBOutlet weak var lbNightRate: UILabel!
-    @IBOutlet weak var lbMonthRate: UILabel!
+    @IBOutlet weak var lbTitle      : UILabel!
+    @IBOutlet weak var lbDayRate    : UILabel!
+    @IBOutlet weak var lbNightRate  : UILabel!
+    @IBOutlet weak var lbMonthRate  : UILabel!
     
     weak var rateDelegate: RateSettingCellDelegate?
 

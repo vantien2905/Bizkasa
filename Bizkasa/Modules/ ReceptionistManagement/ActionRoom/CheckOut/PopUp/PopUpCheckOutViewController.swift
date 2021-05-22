@@ -15,9 +15,9 @@ protocol PopUpCheckOutViewControllerDelegate: class {
 
 class PopUpCheckOutViewController: BaseViewController {
 
-    @IBOutlet weak var vContent: AppTextViewLogo!
-    @IBOutlet weak var vCharge: AppTextFieldLogo!
-    @IBOutlet weak var btnAccept: UIButton!
+    @IBOutlet weak var vContent     : AppTextViewLogo!
+    @IBOutlet weak var vCharge      : AppTextFieldLogo!
+    @IBOutlet weak var btnAccept    : UIButton!
 
     @IBOutlet weak var vService: ServiceViewSingle!
 

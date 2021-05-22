@@ -14,7 +14,6 @@ class HeaderMoreRateSettingCell: UITableViewHeaderFooterView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func setData(section: Int) {

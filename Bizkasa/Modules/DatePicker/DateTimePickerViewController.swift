@@ -27,7 +27,12 @@ class DateTimePickerViewController: UIViewController {
     
     let calendar = Calendar.current
     
-    class open func createModule(dateTime: String, format: String, delegate: DateTimePickerViewControllerDelegate, isToTime: Bool = false, modalPresent: UIModalPresentationStyle = .overCurrentContext, modalTransition: UIModalTransitionStyle = .crossDissolve) -> DateTimePickerViewController {
+    class open func createModule(dateTime: String,
+                                 format: String,
+                                 delegate: DateTimePickerViewControllerDelegate,
+                                 isToTime: Bool = false,
+                                 modalPresent: UIModalPresentationStyle = .overCurrentContext,
+                                 modalTransition: UIModalTransitionStyle = .crossDissolve) -> DateTimePickerViewController {
         let vc = DateTimePickerViewController.initFromNib()
         vc.dateTime = dateTime
         vc.dateFormat.dateFormat = format

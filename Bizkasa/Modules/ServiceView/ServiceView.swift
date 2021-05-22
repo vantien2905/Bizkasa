@@ -11,20 +11,16 @@ import UIKit
 
 class ServiceView: BaseViewXib {
 
-    @IBOutlet weak var vTotal: AppDropdownBorder!
-    @IBOutlet weak var lbService: UILabel!
-
-    @IBOutlet weak var heightTableView: NSLayoutConstraint!
-
-    @IBOutlet weak var tbListWidget: UITableView!
-    @IBOutlet weak var lbTotalPrice: UILabel!
-    @IBOutlet weak var vTotalPrice: UIView!
+    @IBOutlet weak var vTotal           : AppDropdownBorder!
+    @IBOutlet weak var lbService        : UILabel!
+    @IBOutlet weak var heightTableView  : NSLayoutConstraint!
+    @IBOutlet weak var tbListWidget     : UITableView!
+    @IBOutlet weak var lbTotalPrice     : UILabel!
+    @IBOutlet weak var vTotalPrice      : UIView!
 
     var widget: WidgetEntity?
     var total: Int = 1
-    
     var totalAmount = 0
-
     var listWidget: [(WidgetEntity, Int)] = [] {
         didSet {
             let totalPrice = self.listWidget.reduce(Int(0)) { result, item in
@@ -114,7 +110,9 @@ extension ServiceView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(WidgetCell.self)
-        cell.setData(widget: listWidget[indexPath.row].0, total: listWidget[indexPath.row].1, indexPath: indexPath)
+        cell.setData(widget: listWidget[indexPath.row].0,
+                     total: listWidget[indexPath.row].1,
+                     indexPath: indexPath)
         cell.deleteCallback = { indexPath in
             self.listWidget.remove(at: indexPath.row)
         }

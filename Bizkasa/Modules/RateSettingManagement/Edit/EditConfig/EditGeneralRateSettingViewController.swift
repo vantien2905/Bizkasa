@@ -16,9 +16,9 @@ protocol RateSettingDelegate: class {
 
 class EditGeneralRateSettingViewController: BaseViewController {
     
-    @IBOutlet weak var roomTypeView: AppTextFieldLogo!
-    @IBOutlet weak var bedNumView: AppTextFieldLogo!
-    @IBOutlet weak var customerNumView: AppTextFieldLogo!
+    @IBOutlet weak var roomTypeView     : AppTextFieldLogo!
+    @IBOutlet weak var bedNumView       : AppTextFieldLogo!
+    @IBOutlet weak var customerNumView  : AppTextFieldLogo!
 
 	var presenter: EditGeneralRateSettingPresenterProtocol?
     

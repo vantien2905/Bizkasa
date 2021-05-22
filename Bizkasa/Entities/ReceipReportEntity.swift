@@ -11,18 +11,18 @@ import ObjectMapper
 
 class ReceipReportEntity: Mappable {
 
-    var Amount: Int?
-    var CreatedDate: String?
-    var CreatedDateView: String?
+    var Amount              : Int?
+    var CreatedDate         : String?
+    var CreatedDateView     : String?
 
     required init?(map: Map) {
 
     }
 
     func mapping(map: Map) {
-        self.Amount <- map["Amount"]
-        self.CreatedDate <- map["CreatedDate"]
-        self.CreatedDateView <- map["CreatedDateView"]
+        self.Amount             <- map["Amount"]
+        self.CreatedDate        <- map["CreatedDate"]
+        self.CreatedDateView    <- map["CreatedDateView"]
     }
 
 

@@ -129,8 +129,8 @@ extension ServiceManagementViewController: SwipeTableViewCellDelegate {
     }
     
     func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
-        //        action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
-        action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
+        action.image = descriptor.image(forStyle: buttonStyle,
+                                        displayMode: buttonDisplayMode)
         
         switch buttonStyle {
         case .backgroundColor:

@@ -93,7 +93,9 @@ extension ReceptionistEndPoint: EndPointType {
             return param.toJSON()
         case .addOrder(let param):
             return param.toJSON()
-        case .changCalculatorMode(orderID: let orderID, mode: let mode, let hotelID):
+        case .changCalculatorMode(orderID: let orderID,
+                                  mode: let mode,
+                                  let hotelID):
             return ["orderId": orderID,
                     "mode": mode,
                     "HotelId": hotelID]

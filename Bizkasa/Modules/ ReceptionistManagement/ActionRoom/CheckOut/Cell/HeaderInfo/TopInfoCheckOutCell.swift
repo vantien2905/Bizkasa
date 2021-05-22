@@ -16,11 +16,11 @@ protocol TopInfoCheckOutCellDelegate: class {
 
 class TopInfoCheckOutCell: UITableViewCell {
 
-    @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var lbContent: UILabel!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var vDropdown: AppDropdownBorder!
-    @IBOutlet weak var vCalendar: TextFieldCalendar!
+    @IBOutlet weak var lbTitle      : UILabel!
+    @IBOutlet weak var lbContent    : UILabel!
+    @IBOutlet weak var textField    : UITextField!
+    @IBOutlet weak var vDropdown    : AppDropdownBorder!
+    @IBOutlet weak var vCalendar    : TextFieldCalendar!
 
     weak var delegate: TopInfoCheckOutCellDelegate?
 
@@ -29,7 +29,9 @@ class TopInfoCheckOutCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        textField.addTarget(self, action: #selector(changeTextValue), for: .editingChanged)
+        textField.addTarget(self,
+                            action: #selector(changeTextValue),
+                            for: .editingChanged)
         vDropdown.hideTextAndLogo()
         vCalendar.hideTitle()
         vCalendar.isChangeDate(false)
@@ -69,7 +71,10 @@ class TopInfoCheckOutCell: UITableViewCell {
             }
         case 7:
             setContentDropdown()
-            vDropdown.dataSource = ["Tiền mặt", "Chuyển khoản", "Thanh toán online", "Khác"]
+            vDropdown.dataSource = ["Tiền mặt",
+                                    "Chuyển khoản",
+                                    "Thanh toán online",
+                                    "Khác"]
         case 8:
             if info.Notes&.isEmpty {
                 textField.placeholder = "Nhập ghi chú"
