@@ -41,3 +41,22 @@ class EditRoomParam: Mappable {
         self.RoomName       <- map["RoomName"]
     }
 }
+
+class AddOrUpdateConfigPriceParam: Mappable {
+
+    var ConfigPrice: PriceEntity?
+    var roomClassId: Int?
+
+    required init?(map: Map) {
+
+    }
+
+    init() {
+
+    }
+
+    func mapping(map: Map) {
+        self.ConfigPrice        <- map["data"]
+        self.roomClassId    <- map["roomClassId"]
+    }
+}

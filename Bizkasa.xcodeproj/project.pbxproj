@@ -360,7 +360,6 @@
 		DF65720A24C42C8000D20DA5 /* RoomManagementAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */; };
 		DF69952F2545512700B81124 /* InfoRateSettingPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF69952E2545512700B81124 /* InfoRateSettingPopUpView.swift */; };
 		DF6995772545553E00B81124 /* PopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6995762545553E00B81124 /* PopUpHelper.swift */; };
-		DF88E03F255F9523006C76ED /* AddOrUpdateConfigPriceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF88E03E255F9523006C76ED /* AddOrUpdateConfigPriceParam.swift */; };
 		DFC7C79E24CE75BA001271C6 /* InsertRoomParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C79D24CE75BA001271C6 /* InsertRoomParam.swift */; };
 		DFC7C7A024CE7C48001271C6 /* InsertOrUpdateFloorParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C79F24CE7C48001271C6 /* InsertOrUpdateFloorParam.swift */; };
 		DFC7C7A224CE7D0D001271C6 /* EditRoomParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7C7A124CE7D0D001271C6 /* EditRoomParam.swift */; };
@@ -771,7 +770,6 @@
 		DF65720924C42C8000D20DA5 /* RoomManagementAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomManagementAPIService.swift; sourceTree = "<group>"; };
 		DF69952E2545512700B81124 /* InfoRateSettingPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRateSettingPopUpView.swift; sourceTree = "<group>"; };
 		DF6995762545553E00B81124 /* PopUpHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpHelper.swift; sourceTree = "<group>"; };
-		DF88E03E255F9523006C76ED /* AddOrUpdateConfigPriceParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddOrUpdateConfigPriceParam.swift; path = ../../../../../AddOrUpdateConfigPriceParam.swift; sourceTree = "<group>"; };
 		DFC7C79D24CE75BA001271C6 /* InsertRoomParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertRoomParam.swift; sourceTree = "<group>"; };
 		DFC7C79F24CE7C48001271C6 /* InsertOrUpdateFloorParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertOrUpdateFloorParam.swift; sourceTree = "<group>"; };
 		DFC7C7A124CE7D0D001271C6 /* EditRoomParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoomParam.swift; sourceTree = "<group>"; };
@@ -1371,7 +1369,6 @@
 				DFC7C79D24CE75BA001271C6 /* InsertRoomParam.swift */,
 				DFC7C79F24CE7C48001271C6 /* InsertOrUpdateFloorParam.swift */,
 				DFC7C7A124CE7D0D001271C6 /* EditRoomParam.swift */,
-				DF88E03E255F9523006C76ED /* AddOrUpdateConfigPriceParam.swift */,
 			);
 			path = APIParam;
 			sourceTree = "<group>";
@@ -2523,7 +2520,6 @@
 				B3E7BA8423F9105F0088259F /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DF310CFF2533197800A1DFC8 /* HourRateSettingCell.swift in Sources */,
 				B3680997240A452E002F8D00 /* AppLabel.swift in Sources */,
-				DF88E03F255F9523006C76ED /* AddOrUpdateConfigPriceParam.swift in Sources */,
 				DF6571F424C4168A00D20DA5 /* RoomManagementPresenter.swift in Sources */,
 				B36809C5240A6AC5002F8D00 /* CheckInPresenter.swift in Sources */,
 				DFD08891251720DD00B48905 /* RateSettingListViewController.swift in Sources */,
