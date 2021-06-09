@@ -19,7 +19,9 @@ class RateSettingListRouter: RateSettingListWireframeProtocol {
         let view = RateSettingListViewController(nibName: nil, bundle: nil)
         let interactor = RateSettingListInteractor()
         let router = RateSettingListRouter()
-        let presenter = RateSettingListPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = RateSettingListPresenter(interface: view,
+                                                 interactor: interactor,
+                                                 router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

@@ -21,7 +21,7 @@ class AppTextView: BaseView {
             textview.text = TEXTVIEW_PLACE_HOLDER
         }
     }
-
+    
     var didChangeCallBack: (() -> Void)?
     
     override func setUpViews() {
@@ -54,19 +54,19 @@ extension AppTextView: UITextViewDelegate {
             textView.borderColor = AppColor.normalGray
         }
     }
-
+    
     func textViewDidChange(_ textView: UITextView) {
         didChangeCallBack?()
     }
-
+    
     func setPlaceHolder(_ text: String) {
         self.TEXTVIEW_PLACE_HOLDER = text
     }
-
+    
     func getText() -> String {
         return textview.text
     }
-
+    
     func checkIsEmpty() -> Bool {
         return textview.text.isEmpty || textview.text == TEXTVIEW_PLACE_HOLDER
     }

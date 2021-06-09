@@ -50,7 +50,9 @@ class RateSettingListViewController: HomeBaseViewController {
         tbRateSetting.tableFooterView = UIView()
         tbRateSetting.contentInset.bottom = 50
         tbRateSetting.addSubview(refreshView)
-        refreshView.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        refreshView.addTarget(self,
+                              action: #selector(refreshData),
+                              for: .valueChanged)
     }
     
     @objc func refreshData() {
@@ -107,7 +109,7 @@ extension RateSettingListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listRateSetting[section].ConfigPrices.count// + 1
+        return listRateSetting[section].ConfigPrices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -140,7 +142,8 @@ extension RateSettingListViewController: HeaderRateSettingCellDelegate {
     func rateSettingAction(type: RateSettingAction, rateSetting: RateSettingEntity) {
         switch type {
         case .delete:
-            self.showAlert(title: "Xoá", message: "Bạn có chắc chắn muốn xoá?") {
+            self.showAlert(title: "Xoá",
+                           message: "Bạn có chắc chắn muốn xoá?") {
                 guard let id = rateSetting.RoomClass?.Id else { return }
                 self.presenter?.deleteRoomClass(listID: [id])
             }
@@ -180,13 +183,11 @@ extension RateSettingListViewController: SwipeTableViewCellDelegate {
         guard orientation == .right else { return nil }
         
         let edit = SwipeAction(style: .default, title: nil) { action, indexPath in
-            print("Edit")
             self.editActionTapped(indexPath: indexPath)
         }
         configure(action: edit, with: .edit)
         
         let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
-            print("Delete")
             self.deleteActionTapped(indexPath: indexPath)
         }
         configure(action: delete, with: .trash)
@@ -217,7 +218,8 @@ extension RateSettingListViewController: SwipeTableViewCellDelegate {
     
     private func deleteActionTapped(indexPath: IndexPath) {
         
-        self.showAlert(title: "Xoá", message: "Bạn có chắc chắn muốn xoá?") {
+        self.showAlert(title: "Xoá",
+                       message: "Bạn có chắc chắn muốn xoá?") {
             guard let id = self.listRateSetting[indexPath.section].ConfigPrices[indexPath.row].ConfigPriceRow?.Id else { return }
             self.presenter?.deleteConfigPrice(listID: [id])
         }

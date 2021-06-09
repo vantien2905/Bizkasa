@@ -12,12 +12,12 @@ import UIKit
 
 class SignUpViewController: BaseViewController {
 
-    @IBOutlet weak var vUser: AppTextFieldLogo!
-    @IBOutlet weak var vPassword: AppTextFieldLogo!
-    @IBOutlet weak var vHotelName: AppTextFieldLogo!
-    @IBOutlet weak var vPhone: AppTextFieldLogo!
-    @IBOutlet weak var vAddress: AppTextFieldLogo!
-    @IBOutlet weak var btnSignUp: UIButton!
+    @IBOutlet weak var vUser        : AppTextFieldLogo!
+    @IBOutlet weak var vPassword    : AppTextFieldLogo!
+    @IBOutlet weak var vHotelName   : AppTextFieldLogo!
+    @IBOutlet weak var vPhone       : AppTextFieldLogo!
+    @IBOutlet weak var vAddress     : AppTextFieldLogo!
+    @IBOutlet weak var btnSignUp    : UIButton!
 
 	var presenter: SignUpPresenterProtocol?
 

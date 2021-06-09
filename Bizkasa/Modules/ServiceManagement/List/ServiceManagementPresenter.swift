@@ -23,7 +23,9 @@ class ServiceManagementPresenter: ServiceManagementPresenterProtocol {
     var interactor: ServiceManagementInteractorInputProtocol?
     private let router: ServiceManagementWireframeProtocol
 
-    init(interface: ServiceManagementViewProtocol, interactor: ServiceManagementInteractorInputProtocol?, router: ServiceManagementWireframeProtocol) {
+    init(interface: ServiceManagementViewProtocol,
+         interactor: ServiceManagementInteractorInputProtocol?,
+         router: ServiceManagementWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

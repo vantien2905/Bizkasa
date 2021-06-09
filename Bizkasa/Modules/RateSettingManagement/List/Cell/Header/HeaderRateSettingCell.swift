@@ -15,7 +15,8 @@ enum RateSettingAction {
 }
 
 protocol HeaderRateSettingCellDelegate: class {
-    func rateSettingAction(type: RateSettingAction, rateSetting: RateSettingEntity)
+    func rateSettingAction(type: RateSettingAction,
+                           rateSetting: RateSettingEntity)
 }
 
 class HeaderRateSettingCell: UITableViewHeaderFooterView {

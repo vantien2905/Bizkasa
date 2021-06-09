@@ -19,7 +19,9 @@ class AddRateSettingRouter: AddRateSettingWireframeProtocol {
         let view = AddRateSettingViewController.initFromNib()
         let interactor = AddRateSettingInteractor()
         let router = AddRateSettingRouter()
-        let presenter = AddRateSettingPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = AddRateSettingPresenter(interface: view,
+                                                interactor: interactor,
+                                                router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

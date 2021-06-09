@@ -114,13 +114,11 @@ extension ServiceManagementViewController: SwipeTableViewCellDelegate {
         guard orientation == .right else { return nil }
         
         let edit = SwipeAction(style: .default, title: nil) { action, indexPath in
-            print("Edit")
             self.editActionTapped(indexPath: indexPath)
         }
         configure(action: edit, with: .edit)
         
         let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
-            print("Delete")
             self.deleteActionTapped(indexPath: indexPath)
         }
         configure(action: delete, with: .trash)
@@ -142,7 +140,10 @@ extension ServiceManagementViewController: SwipeTableViewCellDelegate {
     }
     
     private func editActionTapped(indexPath: IndexPath) {
-        let vc = EditServiceRouter.createModule(listType: listWidgetType, widget: listWidgetType[indexPath.section].Widgets[indexPath.row], indexType: indexPath.section)
+        let vc = EditServiceRouter.createModule(
+            listType: listWidgetType,
+            widget: listWidgetType[indexPath.section].Widgets[indexPath.row],
+            indexType: indexPath.section)
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         vc.reloadListPage = { [weak self] in

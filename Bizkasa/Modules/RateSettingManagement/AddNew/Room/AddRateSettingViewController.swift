@@ -74,18 +74,18 @@ extension AddRateSettingViewController: UITableViewDataSource {
     }
     
     private func setParam(index: Int, text: String) {
-        switch index {
-        case GeneralInfo.roomType.rawValue:
+        switch GeneralInfo(rawValue: index) {
+        case .roomType:
             param.RoomClass?.Name = text
-        case GeneralInfo.bedNum.rawValue:
+        case .bedNum:
             param.RoomClass?.NumBed = Int(text)
-        case GeneralInfo.customerNum.rawValue:
+        case .customerNum:
             param.RoomClass?.NumCustomer = Int(text)
-        case GeneralInfo.priceByDay.rawValue:
+        case .priceByDay:
             param.ConfigPrices.first?.ConfigPriceRow?.PriceByDay = Int(text)
-        case GeneralInfo.priceByNight.rawValue:
+        case .priceByNight:
             param.ConfigPrices.first?.ConfigPriceRow?.PriceByNight = Int(text)
-        case GeneralInfo.priceByMonth.rawValue:
+        case .priceByMonth:
             param.ConfigPrices.first?.ConfigPriceRow?.PriceByMonth = Int(text)
         default:
             break

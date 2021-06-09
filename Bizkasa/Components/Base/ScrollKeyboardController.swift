@@ -33,7 +33,9 @@ class ScrollViewKeyboardController: NSObject {
 }
 
 extension ScrollViewKeyboardController {
-    func keyboardWillShowWithRect(_ rect: CGRect, duration: TimeInterval, animationOptions: UIView.AnimationOptions = []) {
+    func keyboardWillShowWithRect(_ rect: CGRect,
+                                  duration: TimeInterval,
+                                  animationOptions: UIView.AnimationOptions = []) {
         guard let scrollView = scrollView else {
             return
         }
@@ -85,7 +87,8 @@ extension ScrollViewKeyboardController {
         )
     }
     
-    private func contentOffsetOfFirstResponder(in scrollView: UIScrollView, keyboardRect: CGRect) -> CGPoint? {
+    private func contentOffsetOfFirstResponder(in scrollView: UIScrollView,
+                                               keyboardRect: CGRect) -> CGPoint? {
         
         guard let responder = scrollView.findFirstResponder() else {
             return nil

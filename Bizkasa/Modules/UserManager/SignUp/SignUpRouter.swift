@@ -19,7 +19,9 @@ class SignUpRouter: SignUpWireframeProtocol {
         let view = SignUpViewController(nibName: nil, bundle: nil)
         let interactor = SignUpInteractor()
         let router = SignUpRouter()
-        let presenter = SignUpPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = SignUpPresenter(interface: view,
+                                        interactor: interactor,
+                                        router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

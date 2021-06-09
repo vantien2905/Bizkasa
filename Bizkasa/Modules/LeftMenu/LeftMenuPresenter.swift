@@ -16,7 +16,9 @@ class LeftMenuPresenter: LeftMenuPresenterProtocol {
     var interactor: LeftMenuInteractorInputProtocol?
     private let router: LeftMenuWireframeProtocol
 
-    init(interface: LeftMenuViewProtocol, interactor: LeftMenuInteractorInputProtocol?, router: LeftMenuWireframeProtocol) {
+    init(interface: LeftMenuViewProtocol,
+         interactor: LeftMenuInteractorInputProtocol?,
+         router: LeftMenuWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

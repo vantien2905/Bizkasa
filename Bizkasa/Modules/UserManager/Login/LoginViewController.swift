@@ -13,12 +13,12 @@ import CryptoSwift
 
 class LoginViewController: BaseViewController {
 
-    @IBOutlet weak var vUser: AppTextFieldLogo!
-    @IBOutlet weak var vPassword: AppTextFieldLogo!
-    @IBOutlet weak var btnFaceBook: UIButton!
-    @IBOutlet weak var btnGoogle: UIButton!
-    @IBOutlet weak var btnZalo: UIButton!
-    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var vUser        : AppTextFieldLogo!
+    @IBOutlet weak var vPassword    : AppTextFieldLogo!
+    @IBOutlet weak var btnFaceBook  : UIButton!
+    @IBOutlet weak var btnGoogle    : UIButton!
+    @IBOutlet weak var btnZalo      : UIButton!
+    @IBOutlet weak var btnLogin     : UIButton!
 
 
     var presenter: LoginPresenterProtocol?
@@ -30,7 +30,9 @@ class LoginViewController: BaseViewController {
     override func setUpViews() {
         vUser.setTitleAndLogo(AppImage.imgUser, title: "Tên đăng nhập")
         vUser.setPlaceHolder(title: "Nhập tên đăng nhập")
-        vPassword.setTitleAndLogo(AppImage.imgPassword, title: "Mật khẩu", isSecurity: true)
+        vPassword.setTitleAndLogo(AppImage.imgPassword,
+                                  title: "Mật khẩu",
+                                  isSecurity: true)
         vPassword.setPlaceHolder(title: "Nhập mật khẩu")
     }
 

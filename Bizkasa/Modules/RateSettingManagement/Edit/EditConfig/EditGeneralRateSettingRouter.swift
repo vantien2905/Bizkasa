@@ -19,7 +19,9 @@ class EditGeneralRateSettingRouter: EditGeneralRateSettingWireframeProtocol {
         let view = EditGeneralRateSettingViewController.initFromNib()
         let interactor = EditGeneralRateSettingInteractor()
         let router = EditGeneralRateSettingRouter()
-        let presenter = EditGeneralRateSettingPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = EditGeneralRateSettingPresenter(interface: view,
+                                                        interactor: interactor,
+                                                        router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

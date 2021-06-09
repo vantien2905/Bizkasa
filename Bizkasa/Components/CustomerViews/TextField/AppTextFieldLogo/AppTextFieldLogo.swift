@@ -26,25 +26,29 @@ class AppTextFieldLogo: BaseViewXib {
     }
     
     override func draw(_ rect: CGRect) {
-        tfContent.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        tfContent.addTarget(self,
+                            action: #selector(textFieldChanged),
+                            for: .editingChanged)
     }
-
+    
     override func setUpViews() {
         tfContent.delegate = self
         tfContent.tintColor = AppColor.line
         tfContent.clearButtonMode = .whileEditing
     }
-
+    
     func setHeightTitle(value: CGFloat) {
         heightTitle.constant = value
     }
-
+    
     func getText() -> String {
         return tfContent.text&
     }
-
+    
     func setText(_ text: String?) {
-        tfContent.text = formatNumber ? text&.currencyInputFormatting() : text?.removeCommaDecimal()
+        tfContent.text = formatNumber
+            ? text&.currencyInputFormatting()
+            : text&.removeCommaDecimal()
     }
     
     func setTitleAndLogo(_ image: UIImage,
@@ -56,7 +60,9 @@ class AppTextFieldLogo: BaseViewXib {
         if placeholder&.isEmpty {
             tfContent.placeholder = "Nhập \(title.lowercased())"
         } else {
-            tfContent.placeholder = formatNumber ? placeholder&.currencyInputFormatting() : placeholder
+            tfContent.placeholder = formatNumber
+                ? placeholder&.currencyInputFormatting()
+                : placeholder
         }
     }
     
@@ -97,7 +103,7 @@ extension AppTextFieldLogo: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         vBottomLine.backgroundColor = AppColor.line
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         vBottomLine.backgroundColor = UIColor.gray
     }

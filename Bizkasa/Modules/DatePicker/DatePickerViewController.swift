@@ -18,9 +18,6 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var vFromTime    : UIView!
     @IBOutlet weak var vToTime      : UIView!
     
-//    @IBOutlet weak var lbFromTitle  : UILabel!
-//    @IBOutlet weak var lbToTitle    : UILabel!
-    
     let dateFormat = DateFormatter()
     var date = Date()
     var fromTime = "", toTime = ""

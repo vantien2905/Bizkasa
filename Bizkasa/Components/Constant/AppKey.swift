@@ -15,5 +15,4 @@ struct AppKey {
     static let tokenID              = "TokenId"
     static let userName             = "UserName"
     static let logo                 = "Logo"
-
 }

@@ -20,7 +20,9 @@ class LoginPresenter: LoginPresenterProtocol {
     var interactor: LoginInteractorInputProtocol?
     private let router: LoginWireframeProtocol
 
-    init(interface: LoginViewProtocol, interactor: LoginInteractorInputProtocol?, router: LoginWireframeProtocol) {
+    init(interface: LoginViewProtocol,
+         interactor: LoginInteractorInputProtocol?,
+         router: LoginWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

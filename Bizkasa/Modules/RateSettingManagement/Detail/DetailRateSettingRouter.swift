@@ -19,7 +19,9 @@ class DetailRateSettingRouter: DetailRateSettingWireframeProtocol {
         let view = DetailRateSettingViewController(nibName: nil, bundle: nil)
         let interactor = DetailRateSettingInteractor()
         let router = DetailRateSettingRouter()
-        let presenter = DetailRateSettingPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = DetailRateSettingPresenter(interface: view,
+                                                   interactor: interactor,
+                                                   router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

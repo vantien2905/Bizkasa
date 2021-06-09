@@ -12,15 +12,15 @@ import UIKit
 class AppTextViewLogo: BaseViewXib {
     @IBOutlet weak var vTitle: AppTitleLogo!
     @IBOutlet weak var vTextView: AppTextView!
-
+    
     @IBOutlet var textViewHeightConstraint: NSLayoutConstraint!
-
+    
     var isEditData = false {
         didSet {
             vTextView.textview.isUserInteractionEnabled = self.isEditData
         }
     }
-
+    
     override func setUpViews() {
         super.setUpViews()
         self.textViewHeightConstraint.constant = self.vTextView.textview.contentSize.height
@@ -28,7 +28,7 @@ class AppTextViewLogo: BaseViewXib {
             self.textViewHeightConstraint.constant = self.vTextView.textview.contentSize.height
         }
     }
-
+    
     func getText() -> String? {
         if vTextView.textview.text != vTextView.TEXTVIEW_PLACE_HOLDER {
             return vTextView.textview.text
@@ -37,7 +37,7 @@ class AppTextViewLogo: BaseViewXib {
         }
         
     }
-
+    
     func setTitleAndLogo(_ image: UIImage = AppImage.imgPayment,
                          title: String,
                          placeHolder: String? = nil) {
@@ -48,11 +48,11 @@ class AppTextViewLogo: BaseViewXib {
             vTextView.TEXTVIEW_PLACE_HOLDER = "Nhập \(title.lowercased())"
         }
     }
-
+    
     func setPlaceholder(_ placeholder: String) {
         vTextView.TEXTVIEW_PLACE_HOLDER = placeholder
     }
-
+    
     func setContentTextView(_ content: String?) {
         if !content&.isEmpty {
             vTextView.textview.textColor = .black

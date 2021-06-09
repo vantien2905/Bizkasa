@@ -16,7 +16,9 @@ class FlashPresenter: FlashPresenterProtocol {
     var interactor: FlashInteractorInputProtocol?
     private let router: FlashWireframeProtocol
 
-    init(interface: FlashViewProtocol, interactor: FlashInteractorInputProtocol?, router: FlashWireframeProtocol) {
+    init(interface: FlashViewProtocol,
+         interactor: FlashInteractorInputProtocol?,
+         router: FlashWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

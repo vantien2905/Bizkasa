@@ -25,7 +25,9 @@ class SignUpPresenter: SignUpPresenterProtocol {
     var interactor: SignUpInteractorInputProtocol?
     private let router: SignUpWireframeProtocol
 
-    init(interface: SignUpViewProtocol, interactor: SignUpInteractorInputProtocol?, router: SignUpWireframeProtocol) {
+    init(interface: SignUpViewProtocol,
+         interactor: SignUpInteractorInputProtocol?,
+         router: SignUpWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

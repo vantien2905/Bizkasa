@@ -19,7 +19,9 @@ class LeftMenuRouter: LeftMenuWireframeProtocol {
         let view = LeftMenuViewController(nibName: nil, bundle: nil)
         let interactor = LeftMenuInteractor()
         let router = LeftMenuRouter()
-        let presenter = LeftMenuPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = LeftMenuPresenter(interface: view,
+                                          interactor: interactor,
+                                          router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

@@ -18,7 +18,9 @@ class HomeBaseViewController: BaseViewController {
     }
 
     func setUpDefaultNavigation() {
-        addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
+        addButtonToNavigation(image: AppImage.imgMenu,
+                              style: .left,
+                              action: #selector(btnMenuTapped))
     }
 
     func setUpView() {

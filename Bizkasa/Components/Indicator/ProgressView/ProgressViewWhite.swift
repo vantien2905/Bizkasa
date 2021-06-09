@@ -13,7 +13,7 @@ open class ProgressViewWhite {
 
     let vcontainer: UIView = {
         let v = UIView()
-        v.backgroundColor = .gray // AppColor.indicatorBackground
+        v.backgroundColor = .gray
 
         return v
     }()

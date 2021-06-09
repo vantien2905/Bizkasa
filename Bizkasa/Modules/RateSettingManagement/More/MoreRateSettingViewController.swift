@@ -62,18 +62,18 @@ extension MoreRateSettingViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let configure = configurePrice else { return 0}
-        switch section {
-        case Surchanrge.priceByHour.rawValue:
+        switch Surchanrge(rawValue: section) {
+        case .priceByHour:
             return configure.PriceByDayList.count
-        case Surchanrge.checkoutDayList.rawValue:
+        case .checkoutDayList:
             return configure.CheckoutDayList.count
-        case Surchanrge.checkoutNightList.rawValue:
+        case .checkoutNightList:
             return configure.CheckoutNightList.count
-        case Surchanrge.checkinDayList.rawValue:
+        case .checkinDayList:
             return configure.CheckinDayList.count
-        case Surchanrge.checkinNightList.rawValue:
+        case .checkinNightList:
             return configure.CheckinNightList.count
-        case Surchanrge.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             return configure.AddtionCustomerList.count
         default:
             return 0

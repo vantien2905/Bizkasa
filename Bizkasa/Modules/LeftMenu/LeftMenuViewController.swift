@@ -13,10 +13,10 @@ import SDWebImage
 
 class LeftMenuViewController: BaseViewController {
 
-    @IBOutlet weak var lbName: UILabel!
-    @IBOutlet weak var imgLogo: UIImageView!
-    @IBOutlet weak var tbLeftMenu: UITableView!
-    @IBOutlet weak var lbVersion: UILabel!
+    @IBOutlet weak var lbName       : UILabel!
+    @IBOutlet weak var imgLogo      : UIImageView!
+    @IBOutlet weak var tbLeftMenu   : UITableView!
+    @IBOutlet weak var lbVersion    : UILabel!
 
     var presenter: LeftMenuPresenterProtocol?
 
@@ -50,7 +50,9 @@ class LeftMenuViewController: BaseViewController {
     }
 
     @IBAction func btnLogoutTapped() {
-        self.showPopupAlert(title: "Đăng xuất", message: "Bạn có thực sự muốn đăng xuất?", actionTitles: ["Đồng ý", "Huỷ"], actions:  [{ (_) in
+        self.showPopupAlert(title: "Đăng xuất",
+                            message: "Bạn có thực sự muốn đăng xuất?",
+                            actionTitles: ["Đồng ý", "Huỷ"], actions:  [{ (_) in
             UserDefaultHelper.shared.clearDataUser()
             let vc = LoginRouter.createModule().convertNavi()
             self.view.window?.rootViewController = vc

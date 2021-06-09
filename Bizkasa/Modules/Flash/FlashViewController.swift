@@ -17,7 +17,6 @@ class FlashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         if CommonHelper.isIpad() {
             SideMenuController.preferences.basic.menuWidth = 400
         } else {

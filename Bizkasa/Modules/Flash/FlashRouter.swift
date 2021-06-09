@@ -19,7 +19,9 @@ class FlashRouter: FlashWireframeProtocol {
         let view = FlashViewController(nibName: nil, bundle: nil)
         let interactor = FlashInteractor()
         let router = FlashRouter()
-        let presenter = FlashPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = FlashPresenter(interface: view,
+                                       interactor: interactor,
+                                       router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

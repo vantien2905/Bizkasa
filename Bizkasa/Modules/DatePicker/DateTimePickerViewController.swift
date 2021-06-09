@@ -21,7 +21,6 @@ class DateTimePickerViewController: UIViewController {
     let dateFormat = DateFormatter()
     
     var dateTime = ""
-//    var format = DateFormat.DEFAULT
     
     weak var delegate: DateTimePickerViewControllerDelegate?
     

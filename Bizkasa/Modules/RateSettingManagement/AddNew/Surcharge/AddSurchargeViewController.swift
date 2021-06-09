@@ -17,6 +17,23 @@ enum SurchanrgeType: Int, CaseIterable {
     case checkinNightList
     case priceByHour
     case addtionCustomerList
+    
+    var name: String {
+        switch self {
+        case .checkinDayList:
+            return "Phụ thu checkin sớm (theo ngày)"
+        case .checkoutDayList:
+            return "Phụ thu quá giờ checkout (theo ngày)"
+        case .checkinNightList:
+            return "Phụ thu checkin sớm (theo đem)"
+        case .checkoutNightList:
+            return "Phụ thu quá giờ checkout (theo đêm)"
+        case .priceByHour:
+            return "Giá bán theo giờ"
+        case .addtionCustomerList:
+            return "Phụ thu thêm khách"
+        }
+    }
 }
 
 enum ConfigPriceType {
@@ -64,7 +81,9 @@ class AddSurchargeViewController: BaseViewController {
     }
     
     override func setUpNavigation() {
-        setTitleNavigation(title: type == .AddConfigPrice ? "Thêm phụ thu" : "Cập nhật phụ thu")
+        setTitleNavigation(title: type == .AddConfigPrice
+                            ? "Thêm phụ thu"
+                            : "Cập nhật phụ thu")
         addBackWhiteToNavigation()
     }
 
@@ -120,18 +139,18 @@ extension AddSurchargeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case SurchanrgeType.checkinDayList.rawValue:
+        switch SurchanrgeType(rawValue: section)  {
+        case .checkinDayList:
             return configPrice.CheckinDayList.count
-        case SurchanrgeType.checkoutDayList.rawValue:
+        case .checkoutDayList:
             return configPrice.CheckoutDayList.count
-        case SurchanrgeType.checkinNightList.rawValue:
+        case .checkinNightList:
             return configPrice.CheckinNightList.count
-        case SurchanrgeType.checkoutNightList.rawValue:
+        case .checkoutNightList:
             return configPrice.CheckoutNightList.count
-        case SurchanrgeType.priceByHour.rawValue:
+        case .priceByHour:
             return configPrice.PriceByDayList.count
-        case SurchanrgeType.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             return configPrice.AddtionCustomerList.count
         default:
             return 0
@@ -164,18 +183,18 @@ extension AddSurchargeViewController: UITableViewDataSource {
     }
     
     private func removeSurcharge(indexpath: IndexPath) {
-        switch indexpath.section {
-        case SurchanrgeType.checkinDayList.rawValue:
+        switch SurchanrgeType(rawValue: indexpath.section) {
+        case .checkinDayList:
             self.configPrice.CheckinDayList.remove(at: indexpath.row)
-        case SurchanrgeType.checkoutDayList.rawValue:
+        case .checkoutDayList:
             self.configPrice.CheckoutDayList.remove(at: indexpath.row)
-        case SurchanrgeType.checkinNightList.rawValue:
+        case .checkinNightList:
             self.configPrice.CheckinNightList.remove(at: indexpath.row)
-        case SurchanrgeType.checkoutNightList.rawValue:
+        case .checkoutNightList:
             self.configPrice.CheckoutNightList.remove(at: indexpath.row)
-        case SurchanrgeType.priceByHour.rawValue:
+        case .priceByHour:
             self.configPrice.PriceByDayList.remove(at: indexpath.row)
-        case SurchanrgeType.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             self.configPrice.AddtionCustomerList.remove(at: indexpath.row)
         default:
             break
@@ -184,18 +203,18 @@ extension AddSurchargeViewController: UITableViewDataSource {
     }
     
     private func addSurcharge(section: Int) {
-        switch section {
-        case SurchanrgeType.checkinDayList.rawValue:
+        switch SurchanrgeType(rawValue: section) {
+        case .checkinDayList:
             self.configPrice.CheckinDayList.append(CheckoutEntity())
-        case SurchanrgeType.checkoutDayList.rawValue:
+        case .checkoutDayList:
             self.configPrice.CheckoutDayList.append(CheckoutEntity())
-        case SurchanrgeType.checkinNightList.rawValue:
+        case .checkinNightList:
             self.configPrice.CheckinNightList.append(CheckoutEntity())
-        case SurchanrgeType.checkoutNightList.rawValue:
+        case .checkoutNightList:
             self.configPrice.CheckoutNightList.append(CheckoutEntity())
-        case SurchanrgeType.priceByHour.rawValue:
+        case .priceByHour:
             self.configPrice.PriceByDayList.append(CheckoutEntity())
-        case SurchanrgeType.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             self.configPrice.AddtionCustomerList.append(CheckoutEntity())
         default:
             break
@@ -211,18 +230,18 @@ extension AddSurchargeViewController: UITableViewDelegate {
 
 extension AddSurchargeViewController: AddSurchargeCellDelegate {
     func updateSurcharge(indexPath: IndexPath, surcharge: CheckoutEntity) {
-        switch indexPath.section {
-        case SurchanrgeType.checkinDayList.rawValue:
+        switch SurchanrgeType(rawValue: indexPath.section) {
+        case .checkinDayList:
             self.configPrice.CheckinDayList[indexPath.row] = surcharge
-        case SurchanrgeType.checkoutDayList.rawValue:
+        case .checkoutDayList:
             self.configPrice.CheckoutDayList[indexPath.row] = surcharge
-        case SurchanrgeType.checkinNightList.rawValue:
+        case .checkinNightList:
             self.configPrice.CheckinNightList[indexPath.row] = surcharge
-        case SurchanrgeType.checkoutNightList.rawValue:
+        case .checkoutNightList:
             self.configPrice.CheckoutNightList[indexPath.row] = surcharge
-        case SurchanrgeType.priceByHour.rawValue:
+        case .priceByHour:
             self.configPrice.PriceByDayList[indexPath.row] = surcharge
-        case SurchanrgeType.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             self.configPrice.AddtionCustomerList[indexPath.row] = surcharge
         default:
             break

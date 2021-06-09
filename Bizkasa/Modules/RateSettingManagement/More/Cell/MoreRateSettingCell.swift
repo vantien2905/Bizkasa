@@ -24,16 +24,16 @@ class MoreRateSettingCell: UITableViewCell {
         let row = indexPath.row
         let section = indexPath.section
         guard let config = configure else { return }
-        switch section {
-        case Surchanrge.checkoutDayList.rawValue:
+        switch Surchanrge(rawValue: section) {
+        case .checkoutDayList:
             setText(config.CheckoutDayList[row], row: row)
-        case Surchanrge.checkoutNightList.rawValue:
+        case .checkoutNightList:
             setText(config.CheckoutNightList[row], row: row)
-        case Surchanrge.checkinDayList.rawValue:
+        case .checkinDayList:
             setText(config.CheckinDayList[row], row: row)
-        case Surchanrge.checkinNightList.rawValue:
+        case .checkinNightList:
             setText(config.CheckinNightList[row], row: row)
-        case Surchanrge.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             setText(config.AddtionCustomerList[row], row: row)
         default:
             break

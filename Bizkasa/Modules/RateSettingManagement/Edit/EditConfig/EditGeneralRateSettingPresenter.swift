@@ -21,7 +21,9 @@ class EditGeneralRateSettingPresenter: EditGeneralRateSettingPresenterProtocol {
     var interactor: EditGeneralRateSettingInteractorInputProtocol?
     private let router: EditGeneralRateSettingWireframeProtocol
 
-    init(interface: EditGeneralRateSettingViewProtocol, interactor: EditGeneralRateSettingInteractorInputProtocol?, router: EditGeneralRateSettingWireframeProtocol) {
+    init(interface: EditGeneralRateSettingViewProtocol,
+         interactor: EditGeneralRateSettingInteractorInputProtocol?,
+         router: EditGeneralRateSettingWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

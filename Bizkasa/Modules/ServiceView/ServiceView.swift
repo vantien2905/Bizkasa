@@ -71,9 +71,6 @@ class ServiceView: BaseViewXib {
 
     @IBAction func btnAddNewTapped() {
         if let widget = widget, total != 0 {
-            //            addNewCallBack?(widget, total)
-            
-            
             if checkDouplicate() {
                 tbListWidget.reloadData()
             } else {

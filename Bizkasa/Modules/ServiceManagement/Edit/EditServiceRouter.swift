@@ -19,7 +19,9 @@ class EditServiceRouter: EditServiceWireframeProtocol {
         let view = EditServiceViewController.initFromNib()
         let interactor = EditServiceInteractor()
         let router = EditServiceRouter()
-        let presenter = EditServicePresenter(interface: view, interactor: interactor, router: router)
+        let presenter = EditServicePresenter(interface: view,
+                                             interactor: interactor,
+                                             router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter
@@ -36,7 +38,9 @@ class EditServiceRouter: EditServiceWireframeProtocol {
         let view = EditServiceViewController.initFromNib()
         let interactor = EditServiceInteractor()
         let router = EditServiceRouter()
-        let presenter = EditServicePresenter(interface: view, interactor: interactor, router: router)
+        let presenter = EditServicePresenter(interface: view,
+                                             interactor: interactor,
+                                             router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

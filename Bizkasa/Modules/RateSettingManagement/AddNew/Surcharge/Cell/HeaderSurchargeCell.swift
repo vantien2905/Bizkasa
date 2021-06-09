@@ -16,29 +16,12 @@ class HeaderSurchargeCell: UITableViewHeaderFooterView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     var addCallback: ((_ section: Int)->Void)?
     
     func setTitle(section: Int) {
-        self.section = section
-        switch section {
-        case SurchanrgeType.checkinDayList.rawValue:
-            titleLabel.text = "Phụ thu checkin sớm (theo ngày)"
-        case SurchanrgeType.checkoutDayList.rawValue:
-            titleLabel.text = "Phụ thu quá giờ checkout (theo ngày)"
-        case SurchanrgeType.checkinNightList.rawValue:
-            titleLabel.text = "Phụ thu checkin sớm (theo đem)"
-        case SurchanrgeType.checkoutNightList.rawValue:
-            titleLabel.text = "Phụ thu quá giờ checkout (theo đêm)"
-        case SurchanrgeType.priceByHour.rawValue:
-            titleLabel.text = "Giá bán theo giờ"
-        case SurchanrgeType.addtionCustomerList.rawValue:
-            titleLabel.text = "Phụ thu thêm khách"
-        default:
-            break
-        }
+        titleLabel.text = SurchanrgeType(rawValue: section)?.name
     }
     
     @IBAction func addButtonTapped() {

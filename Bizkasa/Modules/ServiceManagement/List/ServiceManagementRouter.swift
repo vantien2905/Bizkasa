@@ -19,7 +19,9 @@ class ServiceManagementRouter: ServiceManagementWireframeProtocol {
         let view = ServiceManagementViewController(nibName: nil, bundle: nil)
         let interactor = ServiceManagementInteractor()
         let router = ServiceManagementRouter()
-        let presenter = ServiceManagementPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = ServiceManagementPresenter(interface: view,
+                                                   interactor: interactor,
+                                                   router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

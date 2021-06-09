@@ -19,7 +19,9 @@ class ListServiceRouter: ListServiceWireframeProtocol {
         let view = ListServiceViewController.initFromNib()
         let interactor = ListServiceInteractor()
         let router = ListServiceRouter()
-        let presenter = ListServicePresenter(interface: view, interactor: interactor, router: router)
+        let presenter = ListServicePresenter(interface: view,
+                                             interactor: interactor,
+                                             router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

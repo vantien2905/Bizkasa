@@ -10,12 +10,6 @@ import Foundation
 import UIKit
 
 class AppDateTime: BaseViewXib {
-    //    @IBOutlet weak var lbFromDate   : UILabel!
-    //    @IBOutlet weak var lbToDate     : UILabel!
-    //    @IBOutlet weak var lbFromTime   : UILabel!
-    //    @IBOutlet weak var lbToTime     : UILabel!
-    //    @IBOutlet weak var vFromTime    : UIView!
-    //    @IBOutlet weak var vToTime      : UIView!
     @IBOutlet weak var vTitle: AppTitleLogo!
     @IBOutlet weak var tfContent: UITextField!
     @IBOutlet weak var vBottomLine: UIView!
@@ -30,11 +24,6 @@ class AppDateTime: BaseViewXib {
     var haveSetTime = false
     
     override func draw(_ rect: CGRect) {
-        //        vFromTime.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fromTimeAction)))
-        //        vToTime.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toTimeAction)))
-        //        vFromTime.isUserInteractionEnabled = true
-        //        vToTime.isUserInteractionEnabled = true
-        //
         getDateTime?(fromTime , toTime)
     }
     
@@ -97,7 +86,10 @@ class AppDateTime: BaseViewXib {
     
     @IBAction func btnCalendarTapped() {
         
-        let vc = DatePickerViewController.createModule(fromTime: self.fromTime, toTime: self.toTime, delegate: self, haveSetTime: haveSetTime)
+        let vc = DatePickerViewController.createModule(fromTime: self.fromTime,
+                                                       toTime: self.toTime,
+                                                       delegate: self,
+                                                       haveSetTime: haveSetTime)
         vc.view.layoutIfNeeded()
         vc.setTitle(from: titleDatePicker.0, to: titleDatePicker.1)
         UIApplication.topViewController()?.present(controller: vc)
@@ -115,7 +107,9 @@ extension AppDateTime : DatePickerViewControllerDelegate {
         let timeFrom = DateHelper.getTime(input: fromTime)
         let timeTo = DateHelper.getTime(input: toTime)
         
-        tfContent.text = haveSetTime ? "\(dateFrom) \(timeFrom) - \(dateTo) \(timeTo)" : "\(dateFrom) - \(dateTo)"
+        tfContent.text = haveSetTime
+            ? "\(dateFrom) \(timeFrom) - \(dateTo) \(timeTo)"
+            : "\(dateFrom) - \(dateTo)"
         
         getDateTime?(fromTime , toTime)
     }

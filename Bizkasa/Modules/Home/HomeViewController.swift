@@ -17,20 +17,13 @@ let listTitle = ["Trang chủ",
                  "Quản lý tầng/ lầu",
                  "Dịch vụ",
                  "Cài đặt giá phòng"]
-//                 "Báo cáo thống kê",
-//                 "Giao ca",
-//                 "Cấu hình hệ thống",
-//                 "Thông tin khách sạn"]
+
 let listImageTitle = [AppImage.receptionist,
                      AppImage.receipts,
                      AppImage.payment,
                      AppImage.manage,
                      AppImage.service,
                      AppImage.setting]
-//                     AppImage.statistic,
-//                     AppImage.shift,
-//                     AppImage.settingSystem,
-//                     AppImage.info]
 
 
 class HomeViewController: HomeBaseViewController {
@@ -39,8 +32,8 @@ class HomeViewController: HomeBaseViewController {
     @IBOutlet weak var lbService    : UILabel!
     @IBOutlet weak var lbRoom       : UILabel!
     @IBOutlet weak var lbTotal      : UILabel!
-    @IBOutlet weak var menuButton      : UIButton!
-    @IBOutlet weak var titleLabel      : UILabel!
+    @IBOutlet weak var menuButton   : UIButton!
+    @IBOutlet weak var titleLabel   : UILabel!
 
     var presenter: HomePresenterProtocol?
     

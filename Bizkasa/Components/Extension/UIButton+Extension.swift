@@ -9,7 +9,10 @@
 import UIKit
 
 extension UIButton {
-    func setAttributed(title: String, color: UIColor, font: UIFont?, isUnderLine: Bool = false ) {
+    func setAttributed(title: String,
+                       color: UIColor,
+                       font: UIFont?,
+                       isUnderLine: Bool = false ) {
         var attr = NSAttributedString()
         if isUnderLine {
             let attributes = [NSAttributedString.Key.foregroundColor: color,
@@ -17,7 +20,10 @@ extension UIButton {
                               NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue] as [NSAttributedString.Key : Any]
             attr = NSAttributedString(string: title, attributes: attributes)
         } else {
-            attr = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: font!])
+            attr = NSAttributedString(string: title,
+                                      attributes: [
+                                        NSAttributedString.Key.foregroundColor: color,
+                                        NSAttributedString.Key.font: font!])
         }
         self.setAttributedTitle(attr, for: .normal)
     }
@@ -29,9 +35,18 @@ extension UIButton {
         self.setTitle(text, for: state)
     }
     
-    func setTitle(text: String, font: UIFont, color: UIColor, textUnderline: String, fontLine: UIFont, colorLine: UIColor) {
+    func setTitle(text: String,
+                  font: UIFont,
+                  color: UIColor,
+                  textUnderline: String,
+                  fontLine: UIFont,
+                  colorLine: UIColor) {
         let formattedText = NSMutableAttributedString()
-        formattedText.normalText(text, font: font, color: color).underlineText(textUnderline, font: fontLine, color: colorLine)
+        formattedText.normalText(text,
+                                 font: font,
+                                 color: color).underlineText(textUnderline,
+                                                             font: fontLine,
+                                                             color: colorLine)
         self.setAttributedTitle(formattedText, for: .normal)
     }
 

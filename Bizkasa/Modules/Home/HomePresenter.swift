@@ -24,7 +24,9 @@ class HomePresenter: HomePresenterProtocol {
     var interactor: HomeInteractorInputProtocol?
     private let router: HomeWireframeProtocol
 
-    init(interface: HomeViewProtocol, interactor: HomeInteractorInputProtocol?, router: HomeWireframeProtocol) {
+    init(interface: HomeViewProtocol,
+         interactor: HomeInteractorInputProtocol?,
+         router: HomeWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

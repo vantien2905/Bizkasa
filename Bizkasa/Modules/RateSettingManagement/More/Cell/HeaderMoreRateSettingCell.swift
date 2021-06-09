@@ -17,18 +17,18 @@ class HeaderMoreRateSettingCell: UITableViewHeaderFooterView {
     }
     
     func setData(section: Int) {
-        switch section {
-        case Surchanrge.priceByHour.rawValue:
+        switch Surchanrge(rawValue: section) {
+        case .priceByHour:
             setText("Giá phòng theo giờ")
-        case Surchanrge.checkoutDayList.rawValue:
+        case .checkoutDayList:
             setText("Phụ thu trả phòng quá giờ tính theo ngày")
-        case Surchanrge.checkoutNightList.rawValue:
+        case .checkoutNightList:
             setText("Phụ thu trả phòng quá giờ tính qua đêm")
-        case Surchanrge.checkinDayList.rawValue:
+        case .checkinDayList:
             setText("Phụ thu nhận phòng sớm tính theo ngày")
-        case Surchanrge.checkinNightList.rawValue:
+        case .checkinNightList:
             setText("Phụ thu nhận phòng sớm tính qua đêm")
-        case Surchanrge.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             setText("Phụ thu thêm khách")
         default:
             break

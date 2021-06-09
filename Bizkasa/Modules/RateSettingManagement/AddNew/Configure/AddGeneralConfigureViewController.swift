@@ -37,7 +37,9 @@ class AddGeneralConfigureViewController: BaseViewController {
     }
     
     override func setUpNavigation() {
-        setTitleNavigation(title: type == .AddConfigPrice ? "Thêm cấu hình" : "Cập nhật cấu hình")
+        setTitleNavigation(title: type == .AddConfigPrice
+                            ? "Thêm cấu hình"
+                            : "Cập nhật cấu hình")
         addBackWhiteToNavigation()
     }
 

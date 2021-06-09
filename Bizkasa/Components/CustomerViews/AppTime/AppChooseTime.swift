@@ -19,12 +19,13 @@ class AppChooseTime: BaseViewXib {
     var dateTime = DateHelper.getDateTimeISO()
     
     override func draw(_ rect: CGRect) {
-        vContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fromTimeAction)))
+        vContainer.addGestureRecognizer(UITapGestureRecognizer(
+                                            target: self,
+                                            action: #selector(fromTimeAction)))
         vContainer.isUserInteractionEnabled = true
-        
         getDateTime?(dateTime)
     }
-
+    
     override func setUpViews() {
         super.setUpViews()
         self.setDateTime()
@@ -36,7 +37,10 @@ class AppChooseTime: BaseViewXib {
     }
     
     @objc func fromTimeAction(){
-        let vc = DateTimePickerViewController.createModule(dateTime: dateTime, format: DateFormat.DEFAULT, delegate: self)
+        let vc = DateTimePickerViewController.createModule(
+            dateTime: dateTime,
+            format: DateFormat.DEFAULT,
+            delegate: self)
         UIApplication.topViewController()?.present(controller: vc)
     }
 }
@@ -44,7 +48,6 @@ class AppChooseTime: BaseViewXib {
 extension AppChooseTime : DateTimePickerViewControllerDelegate {
     func getDateTimeSelected(dateTime: String) {
         self.dateTime = dateTime
-
         lbDate.text = DateHelper.getSimpleDate(input: dateTime)
         lbTime.text = DateHelper.getTime(input: dateTime)
         getDateTime?(dateTime)

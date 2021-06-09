@@ -19,7 +19,9 @@ class MoreRateSettingRouter: MoreRateSettingWireframeProtocol {
         let view = MoreRateSettingViewController(nibName: nil, bundle: nil)
         let interactor = MoreRateSettingInteractor()
         let router = MoreRateSettingRouter()
-        let presenter = MoreRateSettingPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = MoreRateSettingPresenter(interface: view,
+                                                 interactor: interactor,
+                                                 router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

@@ -16,7 +16,6 @@ class AppTitleLogo: BaseViewXib {
     func setTitleAndLogo(_ image: UIImage, title: String) {
         imgLogo.image = image
         lbTitle.text = title
-        
     }
     
     func setBold(){

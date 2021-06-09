@@ -63,7 +63,6 @@ class AppDropdownBorder: BaseViewXib {
     }
 
     private func configureDropDown() {
-        // Top of drop down will be below the anchorView
         self.setColor(AppColor.normalGray)
         imgArrow.image = AppImage.imgDropdown
         dropdown.anchorView = vBottom
@@ -74,16 +73,19 @@ class AppDropdownBorder: BaseViewXib {
         }
         
         dropdown.cellNib = UINib(nibName: "DropdownSelectedCell", bundle: nil)
-        dropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+        dropdown.customCellConfiguration = { (index: Index,
+                                              item: String,
+                                              cell: DropDownCell) -> Void in
             guard let cell = cell as? DropdownSelectedCell else { return }
            
             cell.title.text = self.dataSource[index].uppercased()
-            cell.img.image =  self.itemSelected == index ? AppImage.selected : AppImage.unselected
+            cell.img.image =  self.itemSelected == index
+                ? AppImage.selected
+                : AppImage.unselected
         }
         
         dropdown.selectionAction = { [weak self] (index: Int, item: String) in
             guard let self = self else { return }
-            //print("Selected item: \(item) at index: \(index)")
             self.itemSelected = index
             self.imgArrow.rotateView(0.0)
             self.setColor(AppColor.normalGray)

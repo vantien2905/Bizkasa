@@ -12,7 +12,9 @@ import UIKit
 
 class LoginInteractor: LoginInteractorInputProtocol {
     func login(userName: String, password: String) {
-        Provider.shared.userAPIService.login(userName: userName, password: password, success: {[weak self] (result) in
+        Provider.shared.userAPIService.login(userName: userName,
+                                             password: password,
+                                             success: {[weak self] (result) in
             guard let self = self else { return }
             self.presenter?.didLogin(result: result, error: nil)
         }) { (error) in

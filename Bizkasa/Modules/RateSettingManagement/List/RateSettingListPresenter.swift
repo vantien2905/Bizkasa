@@ -32,7 +32,9 @@ class RateSettingListPresenter: RateSettingListPresenterProtocol {
     var interactor: RateSettingListInteractorInputProtocol?
     private let router: RateSettingListWireframeProtocol
 
-    init(interface: RateSettingListViewProtocol, interactor: RateSettingListInteractorInputProtocol?, router: RateSettingListWireframeProtocol) {
+    init(interface: RateSettingListViewProtocol,
+         interactor: RateSettingListInteractorInputProtocol?,
+         router: RateSettingListWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

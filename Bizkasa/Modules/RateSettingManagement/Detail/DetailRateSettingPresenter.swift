@@ -16,7 +16,9 @@ class DetailRateSettingPresenter: DetailRateSettingPresenterProtocol {
     var interactor: DetailRateSettingInteractorInputProtocol?
     private let router: DetailRateSettingWireframeProtocol
 
-    init(interface: DetailRateSettingViewProtocol, interactor: DetailRateSettingInteractorInputProtocol?, router: DetailRateSettingWireframeProtocol) {
+    init(interface: DetailRateSettingViewProtocol,
+         interactor: DetailRateSettingInteractorInputProtocol?,
+         router: DetailRateSettingWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

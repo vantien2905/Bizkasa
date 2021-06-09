@@ -19,7 +19,9 @@ class LoginRouter: LoginWireframeProtocol {
         let view = LoginViewController(nibName: nil, bundle: nil)
         let interactor = LoginInteractor()
         let router = LoginRouter()
-        let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
+        let presenter = LoginPresenter(interface: view,
+                                       interactor: interactor,
+                                       router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

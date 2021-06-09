@@ -20,7 +20,9 @@ class ListServicePresenter: ListServicePresenterProtocol {
     var interactor: ListServiceInteractorInputProtocol?
     private let router: ListServiceWireframeProtocol
 
-    init(interface: ListServiceViewProtocol, interactor: ListServiceInteractorInputProtocol?, router: ListServiceWireframeProtocol) {
+    init(interface: ListServiceViewProtocol,
+         interactor: ListServiceInteractorInputProtocol?,
+         router: ListServiceWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

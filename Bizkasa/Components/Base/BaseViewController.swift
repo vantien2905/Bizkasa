@@ -383,60 +383,6 @@ extension BaseViewController {
         self.navigationItem.rightBarButtonItems = [button1, button2]
     }
     
-    func addListButtonToNavigation(actions: [TaskEnum],
-                                   action: Selector?,
-                                   textColor: UIColor = .white) {
-        
-        var listButton:[UIBarButtonItem] = []
-        
-        for i in (0..<actions.count).reversed() {
-            
-            let item = actions[i]
-            
-            let btn = UIButton()
-            
-            btn.contentHorizontalAlignment = .right
-            btn.setTitleColor(textColor, for: .normal)
-            btn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-            btn.titleLabel?.textAlignment = .center
-            btn.titleLabel?.lineBreakMode = .byWordWrapping
-            btn.titleLabel?.numberOfLines = 0
-            btn.contentEdgeInsets =  UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
-            btn.setBorder(cornerRadius: 10)
-            btn.clipsToBounds = true
-            
-            if let _action = action {
-                btn.addTarget(self, action: _action, for: .touchUpInside)
-            }
-            
-            if i < 2 {
-                btn.setTitle(text: item.name&)
-                btn.backgroundColor = AppColor.secondMain
-                let button = UIBarButtonItem(customView: btn)
-                listButton.append(button)
-            } else {
-                
-                if i < 3 {
-                    if i == 2 {
-                        btn.setImage(AppImage.imgSearchMore, for: .normal)
-                        btn.tag = AppConstant.more_tag
-                    } else {
-                        for j in (0..<3).reversed() {
-                            btn.backgroundColor = AppColor.secondMain
-                            btn.setTitle(text: actions[j].name&)
-                        }
-                    }
-                    
-                    let button = UIBarButtonItem(customView: btn)
-                    listButton.append(button)
-                }
-            }
-        }
-        
-        self.navigationItem.rightBarButtonItems = listButton
-    }
-    
-    
     func addButtonTextToNavigation(title: String,
                                    style: StyleNavigation,
                                    action: Selector?,
@@ -633,7 +579,8 @@ extension BaseViewController: KeyboardEvents {
     
     @discardableResult
     public func addTapScreenDismissKeyboard() -> UIGestureRecognizer {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.endEditing))
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(self.endEditing))
         self.view.addGestureRecognizer(tapGesture)
         return tapGesture
     }

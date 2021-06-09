@@ -16,7 +16,9 @@ class AddRateSettingPresenter: AddRateSettingPresenterProtocol {
     var interactor: AddRateSettingInteractorInputProtocol?
     private let router: AddRateSettingWireframeProtocol
 
-    init(interface: AddRateSettingViewProtocol, interactor: AddRateSettingInteractorInputProtocol?, router: AddRateSettingWireframeProtocol) {
+    init(interface: AddRateSettingViewProtocol,
+         interactor: AddRateSettingInteractorInputProtocol?,
+         router: AddRateSettingWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

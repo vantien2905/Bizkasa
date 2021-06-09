@@ -16,7 +16,9 @@ class AddGeneralConfigurePresenter: AddGeneralConfigurePresenterProtocol {
     var interactor: AddGeneralConfigureInteractorInputProtocol?
     private let router: AddGeneralConfigureWireframeProtocol
 
-    init(interface: AddGeneralConfigureViewProtocol, interactor: AddGeneralConfigureInteractorInputProtocol?, router: AddGeneralConfigureWireframeProtocol) {
+    init(interface: AddGeneralConfigureViewProtocol,
+         interactor: AddGeneralConfigureInteractorInputProtocol?,
+         router: AddGeneralConfigureWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router

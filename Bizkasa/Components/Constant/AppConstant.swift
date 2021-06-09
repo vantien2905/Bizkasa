@@ -9,29 +9,8 @@
 import UIKit
 
 struct AppConstant {
-    static let MASTER_WIDTH: CGFloat    = UIScreen.main.bounds.width*2/5
-    static let padingIpad: CGFloat      = 80.0
-    static let padingIphone: CGFloat    = 10.0
-    static let NOTIFICATION_UPDATE_APP  = "NOTIFICATION_UPDATE_APP"
-    static let defaultParentID          = "00000000-0000-0000-0000-000000000000"
-    static let TAG_TASK_VIEW_TYPE       = "TAG_TASK_VIEW_TYPE"
-    static let TAG_SAVE_USER_NAME_FOR_DMS       = "TAG_SAVE_USER_NAME_FOR_DMS"
-    static let moduleDMSOrder          = -2
-
-    static let URL_DOWNLOAD             = "/mobileapis/api/task/DownloadFileDocument?fileDocumentID="
-
-
-    static let logoLink = "/mobileapis/images/logo.png"
-    static let more_tag = 99999
-    
     static let firstPath = "/api/"
     static let BASE_URL = "http://media.bizkasa.com" //"http://test.api.bizkasa.com"
-
-//    static let calculatorModeAll: [Calculator] = [CaculatorMode.day.value,
-//                                              CaculatorMode.overNight.value,
-//                                              CaculatorMode.hour.value,
-//                                              CaculatorMode.month.value]
-
 }
 
 struct DateFormat {

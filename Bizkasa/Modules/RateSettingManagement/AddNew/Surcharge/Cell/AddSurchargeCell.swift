@@ -73,18 +73,18 @@ class AddSurchargeCell: UITableViewCell {
     }
     
     func setPrice(price: ConfigPriceEntity, indexPath: IndexPath) {
-        switch indexPath.section {
-        case SurchanrgeType.checkinDayList.rawValue:
+        switch SurchanrgeType(rawValue: indexPath.section) {
+        case .checkinDayList:
             setTextField(price.CheckinDayList[indexPath.row].Value)
-        case SurchanrgeType.checkoutDayList.rawValue:
+        case .checkoutDayList:
             setTextField(price.CheckoutDayList[indexPath.row].Value)
-        case SurchanrgeType.checkinNightList.rawValue:
+        case .checkinNightList:
             setTextField(price.CheckinNightList[indexPath.row].Value)
-        case SurchanrgeType.checkoutNightList.rawValue:
+        case .checkoutNightList:
             setTextField(price.CheckoutNightList[indexPath.row].Value)
-        case SurchanrgeType.priceByHour.rawValue:
+        case .priceByHour:
             setTextField(price.PriceByDayList[indexPath.row].Value)
-        case SurchanrgeType.addtionCustomerList.rawValue:
+        case .addtionCustomerList:
             setTextField(price.AddtionCustomerList[indexPath.row].Value)
         default:
             break
